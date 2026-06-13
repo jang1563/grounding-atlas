@@ -15,13 +15,13 @@ Run: python eval/ws3_retrieve.py  (rdkit + anthropic)
 Env: WS3_K (neighbors, default 10), WS3_N (balanced test size, default 150), WS3_MODEL,
 WS3_DRY. No em dashes.
 """
+import json
 import os
 import re
-import json
 from collections import defaultdict
 
 import numpy as np
-from rdkit import Chem, RDLogger, DataStructs
+from rdkit import Chem, DataStructs, RDLogger
 from rdkit.Chem import AllChem
 from rdkit.Chem.Scaffolds import MurckoScaffold
 from sklearn.metrics import roc_auc_score

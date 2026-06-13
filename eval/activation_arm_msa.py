@@ -9,18 +9,18 @@ regression on transparent column statistics (gap fraction, number of distinct re
 activation = Qwen3-8B hidden-state probe on the column text; output = 8B verbalized P(conserved).
 Data: signal/msa/msa_conservation.csv (Pfam seed alignments). Env: ACT_MODEL, ACT_N. No em dashes.
 """
+import csv
 import os
 import re
-import csv
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV = os.environ.get("ACT_CSV", os.path.join(ROOT, "signal", "msa", "msa_conservation.csv"))

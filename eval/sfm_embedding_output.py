@@ -16,16 +16,16 @@ Compared against: the PCA-D probe ceiling (what ICL could reach) and the raw-seq
 Env: SFM_COND (both), SFM_NQ (50), SFM_K (24), SFM_PCA (16), SFM_MODEL_LLM (claude-sonnet-4-6),
 SFM_DRY.
 """
+import json
 import os
 import re
-import json
 
 import numpy as np
 from sklearn.decomposition import PCA
-from sklearn.preprocessing import StandardScaler
 from sklearn.linear_model import LogisticRegression
-from sklearn.pipeline import make_pipeline
 from sklearn.metrics import roc_auc_score
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -152,7 +152,7 @@ def main():
     print("\nRead: zeroshot_full ~ chance = raw SFM embedding is not LLM-readable as text; "
           "icl_pca near its ceiling = the LLM can decode the embedding space in-context "
           "(orchestrate-via-ICL); icl_pca ~ chance = orchestrate needs a trained head.")
-    print(f"saved -> results/sfm_embedding_output.json")
+    print("saved -> results/sfm_embedding_output.json")
 
 
 if __name__ == "__main__":

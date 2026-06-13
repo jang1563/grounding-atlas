@@ -21,9 +21,9 @@ validated-but-not-authoritative set. Rows that fail the formula check are droppe
 DRY (ADMET_DRY=1 or no key): validate the set and print prompts, no API.
 Env: AXISA_MODEL (default claude-sonnet-4-6), AXISA_DRY. No em dashes.
 """
+import json
 import os
 import re
-import json
 from collections import defaultdict
 
 from rdkit import Chem

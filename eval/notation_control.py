@@ -20,10 +20,10 @@ and on the paired drops, because run-to-run sampling noise is ~0.03 at this n.
 Run: python eval/notation_control.py
 Env: NOTE_EP (default 'cyp3a4'), NOTE_N (balanced total, default 200), NOTE_MODEL. No em dashes.
 """
-import os
-import re
 import json
+import os
 import random as _random
+import re
 from collections import defaultdict
 
 import numpy as np

@@ -29,9 +29,9 @@ Env: CMP_MODALITY (smiles|protein|dna, default smiles), CMP_PROP (comma list or 
 CMP_N (balanced total, default 200), CMP_MODEL (default claude-sonnet-4-6), CMP_CONDITION,
 CMP_PAIRED, CMP_DRY. No em dashes.
 """
+import json
 import os
 import re
-import json
 from collections import Counter, defaultdict
 
 import numpy as np

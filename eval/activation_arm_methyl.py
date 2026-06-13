@@ -10,18 +10,18 @@ output = 8B verbalized age estimate. Prediction: ceiling high, activation + outp
 methylation probe values do not. Data: signal/methyl/methyl_age.csv. Env: ACT_MODEL, ACT_N,
 ACT_K (probes shown to the LLM). No em dashes.
 """
+import csv
 import os
 import re
-import csv
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV = os.environ.get("ACT_CSV", os.path.join(ROOT, "signal", "methyl", "methyl_age.csv"))

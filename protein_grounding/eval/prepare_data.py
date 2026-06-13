@@ -17,11 +17,11 @@ the cleanest test of the cross-domain hypothesis (protein encoding gap vs SMILES
 Env: PG_N (balanced total, default 1500), PG_MINLEN, PG_MAXLEN, PG_MINID (mmseqs
      --min-seq-id), PG_COV, MMSEQS_BIN, PG_FASTA_URL, PG_RAW, PG_OUT, PG_SEED.
 """
-import os
 import csv
+import os
 import shutil
-import tempfile
 import subprocess
+import tempfile
 from collections import Counter
 
 import numpy as np

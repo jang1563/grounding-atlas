@@ -7,24 +7,24 @@ Predicted from the OCSR proxy (image_rung.md, 0.759): activation ~0.75 = EXPRESS
 (the VLM encodes hERG from the image but cannot verbalize it), NOT encoding-limited.
 Env: VL_MODEL, VL_N (balanced total, default 400), VL_CSV (smiles,label). No em dashes.
 """
+import csv
+import io
 import os
 import re
-import io
-import csv
 from collections import Counter
 
 import numpy as np
 import torch
 from PIL import Image
-from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 from rdkit import Chem, RDLogger
 from rdkit.Chem import AllChem
 from rdkit.Chem.Draw import rdMolDraw2D
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 
 RDLogger.DisableLog("rdApp.*")
 MODEL = os.environ.get("VL_MODEL", "Qwen/Qwen2.5-VL-7B-Instruct")

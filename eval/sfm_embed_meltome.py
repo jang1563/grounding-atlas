@@ -11,18 +11,18 @@ Ceiling = logistic probe under a CLUSTER GroupKFold (Meltome's homology cluster 
 control) + shuffled-label selectivity. No em dashes.
 Env: SFM_N (320), SFM_MODEL (facebook/esm2_t30_150M_UR50D), SFM_BATCH (16).
 """
-import os
 import csv
 import json
+import os
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModel
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModel, AutoTokenizer
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

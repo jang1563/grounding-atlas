@@ -1,0 +1,16 @@
+# Ruff config for grounding-atlas (research code).
+line-length = 120
+target-version = "py310"
+
+# Correctness-focused: pyflakes (F), syntax errors (E9), import order (I), and
+# pycodestyle warnings (W). The stylistic E1-E7 rules (compound statements,
+# spacing) are not enforced on terse research scripts.
+[lint]
+select = ["F", "E9", "I", "W"]
+ignore = [
+  "F841",  # unused locals are common in exploratory code; auto-removal is unsafe
+           # (side-effecting RHS, tuple unpacking)
+]
+
+[lint.per-file-ignores]
+"__init__.py" = ["F401"]

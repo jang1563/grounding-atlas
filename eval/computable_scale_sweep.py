@@ -12,11 +12,11 @@ ask whether SCALE ALONE helps. Uniform N + token budget + truncation guard acros
 curve is clean. Reuses output_arm_computable helpers. Writes results/computable_scale_sweep.json.
 No em dashes. Env: CSW_N (10), CSW_MAXTOK (4000), CSW_MODELS, CSW_PROPS, CSW_DRY.
 """
-import os
 import json
+import os
 from collections import Counter
 
-import output_arm_computable as oac   # sibling import (run as: python eval/computable_scale_sweep.py)
+import output_arm_computable as oac  # sibling import (run as: python eval/computable_scale_sweep.py)
 
 MODELS = os.environ.get("CSW_MODELS",
                         "claude-haiku-4-5-20251001,claude-sonnet-4-6,claude-opus-4-8").split(",")

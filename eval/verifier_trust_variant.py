@@ -12,9 +12,9 @@ self-recall and DEPENDS on the verifier (follows it whether right or wrong). The
 verifier-WRONG subset: LLM final accuracy named >> anon means web-exposure drives verifier-reliance.
 source ~/.api_keys. No em dashes.
 """
+import csv
 import os
 import re
-import csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np

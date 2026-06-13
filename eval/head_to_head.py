@@ -23,15 +23,15 @@ Only the LLM-output arm. The LLM-activation arm (encoding vs expression) needs h
 states and runs on an open-weight model on Cayuga/Expanse. Env: HH_MODEL, HH_N, HH_COND, HH_PAIRED.
 """
 import os
-import re
 import random
+import re
 import sqlite3
 from collections import Counter, defaultdict
 
-import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score
-from rdkit import Chem
 import anthropic
+import numpy as np
+from rdkit import Chem
+from sklearn.metrics import average_precision_score, roc_auc_score
 
 DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 MODEL = os.environ.get("HH_MODEL", "claude-sonnet-4-5-20250929")

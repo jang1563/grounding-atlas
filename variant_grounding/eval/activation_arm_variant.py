@@ -21,19 +21,19 @@ contrast on activation is the encoding-side analog of the output-arm web-exposur
 
 Env: VG_CSV, ACT_MODEL, VG_N, VG_FORMS (default "text,seq"), ACT_4BIT, VG_CONTROL.
 """
+import csv
 import os
 import re
-import csv
 from collections import Counter
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 CSV = os.environ.get("VG_CSV", os.path.join(os.path.dirname(__file__), "..", "data", "variant_clinvar.csv"))
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")

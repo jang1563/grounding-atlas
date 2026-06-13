@@ -11,20 +11,20 @@ Env: ACT_MODEL (Qwen/Qwen3-8B), ACT_N (balanced total, default 1500), ACT_CSV (s
 DNA sequence), ACT_DUMP (per-item json). Data: dna_promoter.csv (genomic-benchmarks
 human_nontata_promoters, 6-mer gating 0.898). No em dashes.
 """
+import csv
 import os
 import re
-import csv
 from collections import Counter
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 CSV = os.environ.get("ACT_CSV", "dna_promoter.csv")
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")

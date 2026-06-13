@@ -25,17 +25,16 @@ Env: VG_CSV, VG_MODEL, VG_PROVIDER (anthropic|openai), VG_N (cap, balanced), VG_
      (comma list, default "text,seq,text_scramble"), VG_WORKERS, VG_MAXTOK.
 Keys: `set -a; source ~/.api_keys; set +a` first. Never prints key values.
 """
-import os
-import re
-import sys
-import time
-import random
 import csv
+import os
+import random
+import re
+import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 
 import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.metrics import average_precision_score, roc_auc_score
 
 CSV = os.environ.get("VG_CSV", os.path.join(os.path.dirname(__file__), "..", "data", "variant_clinvar.csv"))
 MODEL = os.environ.get("VG_MODEL", "claude-sonnet-4-5-20250929")
@@ -139,7 +138,7 @@ def ask(client, prompt, tries=3):
                     return 0.5, "refusal"
                 txt = m.content or ""
                 return parse_prob(txt) if txt.strip() else (0.5, "empty")
-        except Exception as e:
+        except Exception:
             if attempt == tries - 1:
                 return 0.5, "error"
             time.sleep(1.5 * (attempt + 1))

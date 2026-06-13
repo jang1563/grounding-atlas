@@ -27,12 +27,11 @@ Env: VG_RAW (dir of downloads), VG_N (balanced total, default 2000), VG_WIN (win
      default 32 -> 65aa), VG_MINSTAR (default 1), VG_SEED (42), VG_OUT (dir).
 No em dashes. Capability framing. See ../README.md, eval/README.md.
 """
-import os
-import re
 import csv
 import gzip
-import sys
-from collections import defaultdict, Counter
+import os
+import re
+from collections import Counter, defaultdict
 
 import numpy as np
 

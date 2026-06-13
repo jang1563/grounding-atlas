@@ -7,10 +7,10 @@ the failure mode is refusal (diagnostic call shaped out of the output distributi
 perception. Sends the SAME PatchCamelyon H&E patches to claude opus/sonnet/haiku and parses
 P(tumor). Reports AUROC and refusal/fallback rate per model. source ~/.api_keys. No em dashes.
 """
+import base64
+import csv
 import os
 import re
-import csv
-import base64
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np
@@ -80,14 +80,15 @@ def run(client, model, imgs):
 
 
 def main():
-    import anthropic
     from collections import Counter
+
+    import anthropic
     client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
     data = load(N)
     y = np.array([int(r["label"]) for r in data])
     imgs = [b64(r["img"]) for r in data]
     print(f"n={len(y)} pos={int(y.sum())}", flush=True)
-    print(f"reference: open Qwen2.5-VL-7B activation=0.827, output=0.463 (gap 0.364)", flush=True)
+    print("reference: open Qwen2.5-VL-7B activation=0.827, output=0.463 (gap 0.364)", flush=True)
     for model in MODELS:
         p, kinds = run(client, model, imgs)
         auc = roc_auc_score(y, p)

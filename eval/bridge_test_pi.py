@@ -13,12 +13,11 @@ Reuses output_arm_computable helpers (same seed-42 balanced sample, parse, trunc
 scoring), so the +pKa number is directly comparable to the baseline reason-regime pI. No em dashes.
 Env: BPI_N (default 12), BPI_MODEL (default claude-sonnet-4-6), BPI_MAXTOK (default 4000), BPI_DRY.
 """
-import os
 import json
+import os
 from collections import Counter
 
-import numpy as np
-import output_arm_computable as oac   # sibling module (run as: python eval/bridge_test_pi.py)
+import output_arm_computable as oac  # sibling module (run as: python eval/bridge_test_pi.py)
 
 PKA = ("N-terminus 9.0, C-terminus 2.0, Asp(D) 3.9, Glu(E) 4.1, His(H) 6.0, "
        "Cys(C) 8.3, Tyr(Y) 10.5, Lys(K) 10.5, Arg(R) 12.5")
@@ -59,7 +58,7 @@ def main():
     tol = oac.PANEL["isoelectric_point"][2]
     print(f"== pI BRIDGE TEST (+pKa supplied, rigorous HH instructed) :: "
           f"{'DRY' if DRY else MODEL} :: N={len(data)} :: MAXTOK={MAXTOK} ==")
-    print(f"   baseline (no constants, charge-balance estimate): AUROC 0.79, exact 0.25, mae 1.28")
+    print("   baseline (no constants, charge-balance estimate): AUROC 0.79, exact 0.25, mae 1.28")
     if DRY:
         print("   sample prompt:\n   " + prompt(data[0][0])[:300])
         return

@@ -23,20 +23,20 @@ SFM-embedding featurizer, gated on GPU (Expanse); see ../signal/README.md.
 
 Usage:  python generate_signal.py [endpoint ...]   (default: all ADMET endpoints)
 """
-import os
-import sys
 import json
+import os
 import sqlite3
+import sys
 from collections import defaultdict
 
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import StratifiedKFold, GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
 
 ADMET_DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 OUTDIR = os.path.join(os.path.dirname(__file__), "admet")

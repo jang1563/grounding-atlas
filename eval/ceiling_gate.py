@@ -8,6 +8,7 @@ fail to surface, so the domain is not a head-to-head candidate.
 This is the gate, not the head-to-head. Random (cold-compound) split; scaffold split
 is a stricter follow-up. See eval/README.md Phase 2.
 """
+import os
 import sqlite3
 import sys
 from collections import defaultdict
@@ -16,10 +17,10 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import StratifiedKFold, GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
 
 DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 ENDPOINT = sys.argv[1] if len(sys.argv) > 1 else "herg"

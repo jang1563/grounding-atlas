@@ -18,9 +18,9 @@ whether the over-call is asymmetric (inactive->active >> active->inactive).
 Data: NegBioDB admet.db, compound-level (any fail -> active=1, else inactive=0), best tier per
 compound. source ~/.api_keys. No em dashes.
 """
+import json
 import os
 import re
-import json
 import sqlite3
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -29,8 +29,8 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import cross_val_predict, StratifiedKFold
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))

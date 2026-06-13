@@ -15,20 +15,20 @@ also residualized: train on descriptor-residualized Morgan to see if structure a
 lipophilicity. Run: python eval/lipophilicity_control.py
 No em dashes.
 """
-import os
 import json
-import numpy as np
+import os
 from collections import defaultdict
 
+import numpy as np
 from rdkit import Chem, RDLogger
 from rdkit.Chem import AllChem, Descriptors
 from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.linear_model import LogisticRegression, LinearRegression
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LinearRegression, LogisticRegression
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.model_selection import GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score
 
 RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

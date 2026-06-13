@@ -10,11 +10,10 @@ SELF, AND that matches where Claude is actually right, then calibrated routing w
 orchestrator can be built on it. Over-confidence on a web-zero rung (high CONF, chance AUROC)
 is the orchestrator's failure mode. source ~/.api_keys. No em dashes.
 """
-import os
-import re
 import csv
 import json
-from collections import Counter
+import os
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np

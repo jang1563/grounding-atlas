@@ -6,9 +6,9 @@ queries. Run on gene-named and anon renderings: if ICL needs the gene anchor, th
 web-anchored; if ICL closes both, it is an in-context computation the model can do once shown
 examples. source ~/.api_keys. No em dashes.
 """
+import csv
 import os
 import re
-import csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np

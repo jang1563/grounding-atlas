@@ -13,14 +13,15 @@ label, cluster GroupKFold, shuffled-label selectivity as the other arms. No em d
 Env: ACT_MODEL (Qwen/Qwen2.5-0.5B-Instruct), SFM_BATCH (4).
 """
 import os
+
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -83,7 +84,7 @@ def main():
     ctrl = roc_auc_score(ys, pc)
     print(f"\nACTIVATION (best layer {bestL}/{len(H)-1}): AUROC={best:.3f} "
           f"(shuffled-label control={ctrl:.3f}, selectivity={best - ctrl:+.3f})", flush=True)
-    print(f"  vs ceiling (embedding probe) 0.81-0.85 | output zero-shot 0.47 / ICL 0.56", flush=True)
+    print("  vs ceiling (embedding probe) 0.81-0.85 | output zero-shot 0.47 / ICL 0.56", flush=True)
     gap_enc = 0.83 - best
     if best - ctrl < 0.10:
         print("  -> probe not selective; inconclusive")

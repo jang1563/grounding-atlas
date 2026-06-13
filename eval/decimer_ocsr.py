@@ -11,12 +11,12 @@ Runs on Cayuga in the `decimer` conda env (needs decimer + rdkit). Same 120-mole
 balanced hERG set, seed 42, same RDKit MolDraw2DCairo 320px render as ws3_image.py.
 No em dashes.
 """
-import os
 import json
+import os
 from collections import defaultdict
 
 import numpy as np
-from rdkit import Chem, RDLogger, DataStructs
+from rdkit import Chem, DataStructs, RDLogger
 from rdkit.Chem import AllChem
 from rdkit.Chem.Draw import rdMolDraw2D
 
@@ -87,7 +87,7 @@ def main():
     print(f"\nDECIMER OCSR (same 120 images): valid={out['valid_rate']} "
           f"mean_Tanimoto={out['mean_tanimoto']} exact={out['exact_rate']} "
           f"exact_flat={out['exact_flat_rate']}")
-    print(f"Claude was: valid 0.725, mean_Tanimoto 0.544, exact 0.158")
+    print("Claude was: valid 0.725, mean_Tanimoto 0.544, exact 0.158")
 
 
 if __name__ == "__main__":

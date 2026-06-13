@@ -9,13 +9,12 @@ name (so the LLM-output arm can be high while the gate is at chance, e.g. PPI 0.
 
 Reuses featurizers + gate() from gate_multimodal. No em dashes.
 """
+import csv
 import os
 import re
-import csv
 
 import numpy as np
-
-from gate_multimodal import feat_kv, feat_formula, feat_text, feat_geneset, gate, make_groups, ROOT
+from gate_multimodal import ROOT, feat_formula, feat_geneset, feat_kv, feat_text, gate, make_groups
 
 FEAT = {"kv": feat_kv, "formula": feat_formula, "text": feat_text, "geneset": feat_geneset}
 

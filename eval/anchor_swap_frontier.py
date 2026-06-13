@@ -6,9 +6,9 @@ the gene-named rendering verbalizes age better than the anonymized one, with num
 identical. Mirrors the single-cell gene-name vs anon contrast, now within methylation. Continuous
 MAE + Pearson and binary AUROC. source ~/.api_keys. No em dashes.
 """
+import csv
 import os
 import re
-import csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np

@@ -6,22 +6,21 @@ ceiling = Morgan FP on the SMILES; activation = LLM hidden-state probe on the te
 output = LLM verbalized P(hERG). Env: ACT_CSV, ACT_TEXT_FIELD (graph|nmr|xyz), ACT_MODEL, ACT_N.
 No em dashes.
 """
+import csv
 import os
 import re
-import csv
-from collections import Counter
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
-from rdkit import Chem, RDLogger
+from rdkit import Chem
 from rdkit.Chem import AllChem
 from rdkit.Chem.Scaffolds import MurckoScaffold
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")
 N = int(os.environ.get("ACT_N", "600"))

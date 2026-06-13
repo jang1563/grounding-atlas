@@ -15,18 +15,18 @@ the signal is genuine sequence content.
 
 Env: PG_CSV, ESM_MODEL, PG_BATCH.
 """
-import os
 import csv
+import os
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModel
-from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.preprocessing import StandardScaler
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
 from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import StratifiedKFold, GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModel, AutoTokenizer
 
 CSV = os.environ.get("PG_CSV", "protein_meltome.csv")
 ESM_MODEL = os.environ.get("ESM_MODEL", "facebook/esm2_t33_650M_UR50D")

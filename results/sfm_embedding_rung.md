@@ -27,6 +27,7 @@ ESM panel was deliberately not used.
 |---|---|
 | ceiling: probe on full 640-dim embedding | 0.811 |
 | ceiling: probe on PCA-16 embedding | 0.846 |
+| LLM activation: 0.5B hidden states on embedding-text, best layer | 0.710 (selective +0.22) |
 | LLM zero-shot, raw 640-dim embedding as text | 0.466 (chance) |
 | LLM few-shot ICL, PCA-16 vectors + 24 labeled examples | 0.562 (at / near chance, n=50) |
 | raw-sequence output arm (existing protein rung) | 0.486 (8B) / 0.585 (opus) |
@@ -39,6 +40,14 @@ web-zero-numeric-vector pattern as methylation and anonymized single-cell ids. F
 moves it (0.56, within noise of chance at n=50) and stays far below the PCA-16 ceiling (0.85): with
 24 labeled example vectors the LLM still cannot learn the decision boundary in an abstract embedding
 space in context.
+
+But the LLM DOES encode it internally. A linear probe on a 0.5B model's hidden states reading the
+same embedding-text recovers Tm at 0.710 (selective +0.22, best layer), well above its own output
+(0.47 to 0.56) and within ~0.12 of the ceiling. So this is an EXPRESSION gap like the numeric-vector
+rungs (methylation, single-cell-anon): the embedding-text signal IS carried into the activations, it
+is just not verbalized or usable through the prompt. The orchestrate failure is a verbalization /
+read-out gap, not an encoding gap, and the fix is a trained head (on the embedding, or on the LLM's
+activations), not prompting (zero-shot or ICL).
 
 **Consequence for the decision map.** Orchestrating an SFM means calling it and putting a TRAINED
 read-out head on its output (the ceiling probe), NOT pasting the embedding into the prompt. The LLM
@@ -54,7 +63,10 @@ not on a learned embedding whose axes are opaque. A direct same-harness comparis
 
 ## Caveats
 
-Output arm only (the 8B activation arm on embedding-as-text input is GPU work, deferred to Cayuga).
+All three arms now measured, but the activation arm is a 0.5B LOCAL PROXY (Qwen2.5-0.5B on MPS; the
+26GB box cannot host the 8B), and its best-layer AUROC is a selection-biased upper bound (no nested
+held-out-layer correction here, unlike `activation_arm.py`). Qwen3-8B on Cayuga is the comparable
+run (same script, ACT_MODEL=Qwen/Qwen3-8B) and would likely push activation closer to the ceiling.
 n=50 query makes the ICL AUROC noisy (treat 0.56 as at-chance, not a real lift). One property (Tm
 extremes), one ESM size (150M), one model (sonnet-4-6). ICL sees 24 examples vs the probe's 164, so
 it is not a sample-matched comparison; the qualitative result (chance vs a 0.85 ceiling) is the

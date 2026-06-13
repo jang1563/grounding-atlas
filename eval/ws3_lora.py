@@ -15,18 +15,18 @@ continuation of the prompt -> P(yes), AUROC vs the label. Manual LoRA loop (no t
 Runs on a Cayuga GPU. Env: LORA_MODEL, LORA_N (balanced, default 1000), LORA_EPOCHS (3).
 No em dashes.
 """
-import os
 import json
-import numpy as np
-import torch
+import os
 from collections import defaultdict
 
-from rdkit import Chem, RDLogger
-from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.model_selection import GroupShuffleSplit
-from sklearn.metrics import roc_auc_score
-from transformers import AutoTokenizer, AutoModelForCausalLM
+import numpy as np
+import torch
 from peft import LoraConfig, get_peft_model
+from rdkit import RDLogger
+from rdkit.Chem.Scaffolds import MurckoScaffold
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupShuffleSplit
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

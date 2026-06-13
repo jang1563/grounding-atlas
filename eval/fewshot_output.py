@@ -10,15 +10,15 @@ expression gap is real, not a trained-vs-zero-shot artifact.
 Same 1250 query set and seed as activation_arm.py; the K few-shot examples are held out
 from the query set. Env: ACT_MODEL, ACT_CSV, ACT_N, ACT_FEWSHOT.
 """
+import csv
 import os
 import re
-import csv
 from collections import Counter
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.metrics import roc_auc_score
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 CSV = os.environ.get("ACT_CSV", "herg.csv")
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")

@@ -22,11 +22,11 @@ DrugBank / ChEMBL / NCATS agreement set (Mazuz et al., eyalmazuz/DrugWithdrawn).
 DRY-RUN: WD_DRY=1 (no API). REAL: source ~/.api_keys. Env: WD_N (balanced total, default 500),
 WD_MODEL (default claude-sonnet-4-6), WD_WORKERS (default 8). No em dashes.
 """
-import os
-import re
 import csv
 import json
+import os
 import random
+import re
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
@@ -35,10 +35,10 @@ from rdkit import Chem, DataStructs, RDLogger
 from rdkit.Chem import AllChem
 from rdkit.Chem.Scaffolds import MurckoScaffold
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
 
 RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

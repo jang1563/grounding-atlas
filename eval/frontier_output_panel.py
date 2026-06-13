@@ -7,12 +7,12 @@ sequence or a mass spectrum better than the 8B, and (c) check the expression gap
 scale invariance on hard representations. (Activation is open-weight-only; Claude has no
 hidden states.) source ~/.api_keys. Env: PANEL_N (default 300), PANEL_WORKERS (8). No em dashes.
 """
-import os
-import re
 import csv
 import json
+import os
 import random
-from collections import defaultdict, Counter
+import re
+from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np

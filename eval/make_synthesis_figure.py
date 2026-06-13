@@ -3,12 +3,14 @@ colored by what CLOSES the gap. Auto-placed labels (adjustText) remove overlap; 
 before the text. Legend sits in the empty upper-right. Plain-language axes and regions for a
 non-specialist reader. ASCII arrows (font-safe). Standard + hi-res PNG. No em dashes."""
 import os
+
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-from matplotlib.patches import Rectangle
-from matplotlib.lines import Line2D
 from adjustText import adjust_text
+from matplotlib.lines import Line2D
+from matplotlib.patches import Rectangle
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 

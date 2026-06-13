@@ -32,17 +32,15 @@ Usage:
   python generate_computable.py --modality protein --source path/to/seqs.fasta
   python generate_computable.py --modality dna --source path/to/seqs.csv   # column 'sequence'
 """
-import os
-import sys
-import json
 import argparse
+import json
+import os
 import sqlite3
-from collections import defaultdict
 
 import numpy as np
 from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
 
 ADMET_DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 OUTROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "computable")
@@ -55,8 +53,8 @@ VARIANT_SUBSET = 250    # how many also get re_notation + scrambled variants
 # the clause is duplicated in eval/output_arm_computable.py; keep the two in sync.
 # ---------------------------------------------------------------------------
 def smiles_panel():
-    from rdkit.Chem import Descriptors, Crippen, rdMolDescriptors
     from rdkit import Chem
+    from rdkit.Chem import Crippen, Descriptors, rdMolDescriptors
 
     def n_stereo(m):
         try:
@@ -212,7 +210,6 @@ def scramble(s, seed=0):
 def morgan_decodability(items, labels):
     from rdkit.Chem import rdFingerprintGenerator
     from rdkit.Chem.Scaffolds import MurckoScaffold
-    from rdkit import Chem
     gen = rdFingerprintGenerator.GetMorganGenerator(radius=2, fpSize=2048)
     X, y, grp = [], [], []
     for (_id, _rep, mol), lab in zip(items, labels):

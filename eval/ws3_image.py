@@ -16,14 +16,14 @@ Run: python eval/ws3_image.py
 Env: IMG_N (balanced total, default 120), IMG_MODEL (default claude-sonnet-4-6), IMG_DRY.
 No em dashes.
 """
+import base64
+import json
 import os
 import re
-import json
-import base64
 from collections import defaultdict
 
 import numpy as np
-from rdkit import Chem, RDLogger, DataStructs
+from rdkit import Chem, DataStructs, RDLogger
 from rdkit.Chem import AllChem
 from rdkit.Chem.Draw import rdMolDraw2D
 from sklearn.metrics import roc_auc_score

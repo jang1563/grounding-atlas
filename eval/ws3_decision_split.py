@@ -9,17 +9,17 @@ up apples-to-apples with the LoRA solo (0.575) and weights (0.856) already measu
 No API, no GPU: rdkit Morgan + sklearn on the reproduced split. Run with the miniconda
 python (rdkit + sklearn). No em dashes.
 """
-import os
 import json
-import numpy as np
+import os
 from collections import defaultdict
 
-from rdkit import Chem, RDLogger, DataStructs
+import numpy as np
+from rdkit import Chem, DataStructs, RDLogger
 from rdkit.Chem import AllChem
 from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.model_selection import GroupShuffleSplit
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupShuffleSplit
 
 RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,8 +86,8 @@ def main():
            "orchestrate_morgan_probe": orch_auc}
     json.dump(out, open(os.path.join(ROOT, "results", "ws3_decision_split.json"), "w"), indent=2)
     print("\nhERG decision map, ALL on the same scaffold split (test n={}):".format(len(te_s)))
-    print(f"  solo (8B output)            = 0.575   (from ws3_lora base)")
-    print(f"  weights (LoRA output)       = 0.856   (from ws3_lora finetuned)")
+    print("  solo (8B output)            = 0.575   (from ws3_lora base)")
+    print("  weights (LoRA output)       = 0.856   (from ws3_lora finetuned)")
     print(f"  retrieve (no-LLM k-NN mean) = {knn_auc}")
     print(f"  orchestrate (Morgan probe)  = {orch_auc}")
 

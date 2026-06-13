@@ -11,16 +11,17 @@ the same rendered hERG molecules (ws3_image_items.jsonl, fields true_smiles, ocs
   output         = the VLM solo-image P(hERG) directly (prop)
 Run after re-running ws3_image.py (which saves the transcribed SMILES). No em dashes.
 """
-import os
 import json
+import os
+
 import numpy as np
 from rdkit import Chem, RDLogger
 from rdkit.Chem import AllChem
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.pipeline import make_pipeline
 from sklearn.preprocessing import StandardScaler
-from sklearn.model_selection import StratifiedKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score
 
 RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

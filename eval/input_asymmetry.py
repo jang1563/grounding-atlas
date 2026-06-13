@@ -13,16 +13,17 @@ an artifact of the probe's better (SFM-processed) input. Same balanced sample, s
 scaffold GroupKFold, shuffled-label selectivity control. Reference: ../results/selection_bias.md.
 """
 import csv
+
 import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.linear_model import LogisticRegression
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.preprocessing import StandardScaler, MaxAbsScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GroupKFold, cross_val_predict
+from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 CSV = "../data/herg.csv"
 N = 1250            # balanced 625/625, matches activation_arm.py

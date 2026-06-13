@@ -19,13 +19,13 @@ Claude reads surface composition yet cannot read the deep property (Tm).
 
 Env: HH_MODEL, PROBE_N, HH_WORKERS, HH_CSV. Keys: `set -a; source ~/.api_keys; set +a`.
 """
+import csv
 import os
 import re
-import csv
 from concurrent.futures import ThreadPoolExecutor
 
-import numpy as np
 import anthropic
+import numpy as np
 
 CSV = os.environ.get("HH_CSV", "protein_meltome.csv")
 MODEL = os.environ.get("HH_MODEL", "claude-sonnet-4-5-20250929")

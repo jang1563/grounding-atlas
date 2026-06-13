@@ -20,20 +20,20 @@ find it; flagged per row). No em dashes.
 
 Usage: python gate_multimodal.py
 """
-import os
-import re
 import csv
 import json
+import os
+import re
 from collections import Counter
 from itertools import product
 
 import numpy as np
-from sklearn.linear_model import LogisticRegression
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import StratifiedKFold, GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
-from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.cluster import KMeans
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
+from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GATE_COLD_AUROC = 0.65

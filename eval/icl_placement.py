@@ -5,9 +5,9 @@ closes a rung, that capability is served by retrieve/in-context and does not nee
 If ICL does not close it (and a specialist tool does), the placement is orchestrate. Binary rungs.
 Compares against the known 0-shot output and the specialist ceiling. source ~/.api_keys. No em dashes.
 """
+import csv
 import os
 import re
-import csv
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np

@@ -10,22 +10,22 @@ Fixes the review's blocking issues:
 
 Env: ACT_MODEL, ACT_N, ACT_CSV, ACT_4BIT.
 """
+import csv
 import os
 import re
-import csv
 from collections import Counter
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
+from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import GroupKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 CSV = os.environ.get("ACT_CSV", "herg.csv")
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")

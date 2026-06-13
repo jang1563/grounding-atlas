@@ -1,0 +1,44 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install tooling
+        run: pip install ruff==0.15.4 cffconvert
+
+      - name: Lint (ruff)
+        run: ruff check .
+
+      - name: Validate CITATION.cff
+        run: cffconvert --validate
+
+      - name: Validate committed JSON
+        run: |
+          python - <<'PY'
+          import glob, json, sys
+          bad = []
+          for f in glob.glob("**/*.json", recursive=True):
+              try:
+                  with open(f) as fh:
+                      json.load(fh)
+              except Exception as e:
+                  bad.append((f, str(e)))
+          for f, e in bad:
+              print(f"INVALID {f}: {e}")
+          sys.exit(1 if bad else 0)
+          PY

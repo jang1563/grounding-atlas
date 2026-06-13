@@ -17,13 +17,13 @@ Env: ADMET_EP (comma list or 'all', default the 5 unmeasured), ADMET_N (balanced
 default 200 = 100/100), ADMET_MODEL (default claude-sonnet-4-6), ADMET_DRY.
 No em dashes.
 """
+import json
 import os
 import re
-import json
 from collections import Counter, defaultdict
 
 import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.metrics import average_precision_score, roc_auc_score
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)

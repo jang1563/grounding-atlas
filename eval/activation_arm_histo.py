@@ -7,20 +7,19 @@ output = VLM verbalized P(tumor). Tests whether a general VLM grounds histopatho
 molecular-image rung but on tissue). Data: signal/histo/pcam.csv (img path, label). Env:
 VL_MODEL, VL_N. No em dashes.
 """
+import csv
 import os
 import re
-import csv
-from collections import Counter
 
 import numpy as np
 import torch
 from PIL import Image
-from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoProcessor, Qwen2_5_VLForConditionalGeneration
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MODEL = os.environ.get("VL_MODEL", "Qwen/Qwen2.5-VL-7B-Instruct")

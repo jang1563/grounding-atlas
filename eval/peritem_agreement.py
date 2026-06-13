@@ -11,10 +11,11 @@ Inputs (matched by exact SMILES, both read from the same withdrawn.csv):
   results/wd_act_peritem.json      8B: act (best-layer OOF probe), struct, output  (scp from cluster)
 Outputs results/peritem_agreement.json. No em dashes.
 """
-import os
 import json
+import os
+
 import numpy as np
-from scipy.stats import spearmanr, pearsonr
+from scipy.stats import pearsonr, spearmanr
 from sklearn.metrics import roc_auc_score
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

@@ -16,9 +16,9 @@ Produces the SAME CSV schema as prepare_data.py (so output_arm_variant.py runs u
 
 Env: VG_RAW, VG_DMS_IDS (comma list), VG_WIN, VG_PERDS (cap singles per dataset), VG_OUT, VG_SEED.
 """
-import os
 import csv
 import gzip
+import os
 import re
 from collections import defaultdict
 

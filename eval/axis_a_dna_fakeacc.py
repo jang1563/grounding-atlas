@@ -14,10 +14,10 @@ of famous accessions," which IS recognition; this does not by itself test a freq
 
 Run: python3 eval/axis_a_dna_fakeacc.py   Env: AXISA_MODEL. No em dashes.
 """
-import os
-import re
 import json
+import os
 import random
+import re
 
 from axis_a_dna import load_popular  # same 40 popular ClinVar genes + UniProt accessions
 

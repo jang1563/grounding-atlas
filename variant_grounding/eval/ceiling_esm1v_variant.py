@@ -15,14 +15,14 @@ on the variant so the position stays in context. Mirrors ../../protein_grounding
 
 Env: VG_CSV, ESM1V_MODEL, VG_RAW (for the FASTA), VG_MAXLEN, VG_BATCH.
 """
-import os
 import csv
 import gzip
+import os
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForMaskedLM
-from sklearn.metrics import roc_auc_score, average_precision_score
+from sklearn.metrics import average_precision_score, roc_auc_score
+from transformers import AutoModelForMaskedLM, AutoTokenizer
 
 CSV = os.environ.get("VG_CSV", os.path.join(os.path.dirname(__file__), "..", "data", "variant_clinvar.csv"))
 RAW = os.environ.get("VG_RAW", os.path.join(os.path.dirname(__file__), "..", "data", "raw"))

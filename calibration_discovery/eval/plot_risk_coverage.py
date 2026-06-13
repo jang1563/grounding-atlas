@@ -15,14 +15,15 @@ eval/make_synthesis_figure.py convention. No API calls. No em dashes.
 
 Run: PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/plot_risk_coverage.py
 """
-import os
 import csv
-import numpy as np
+import os
+
 import matplotlib
+import numpy as np
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
-
-from selective_eval import risk_coverage   # the exact metric used in the eval
+from selective_eval import risk_coverage  # the exact metric used in the eval
 
 BRANCH = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RES = os.path.join(BRANCH, "results")

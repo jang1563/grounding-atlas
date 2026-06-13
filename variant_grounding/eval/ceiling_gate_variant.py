@@ -18,13 +18,13 @@ specialist, mirrors the hERG fingerprint): see ceiling_esm1v_variant.py (GPU).
 
 Env: VG_CSV (default ../data/variant_clinvar_full.csv).
 """
-import os
 import csv
+import os
 
 import numpy as np
 from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
-from sklearn.metrics import roc_auc_score, average_precision_score
 
 CSV = os.environ.get("VG_CSV", os.path.join(os.path.dirname(__file__), "..", "data", "variant_clinvar_full.csv"))
 

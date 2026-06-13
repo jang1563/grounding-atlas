@@ -15,10 +15,10 @@ NOT shrink (AbstentionBench); web-exposure ~ conf on in/out strata but FAILS on 
 
 source ~/.api_keys. No em dashes.
 """
-import os
-import re
 import csv
 import json
+import os
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 import numpy as np
@@ -281,7 +281,7 @@ def main():
         print(f"  selective acc @cov0.5={sel50:.3f}  @cov0.8={sel80:.3f}   corr(conf,correct)={corr_ca:+.2f}  ECE={ece_v:.3f}", flush=True)
         print(f"  BEHAVIORAL abstention: coverage(SELF)={cov_beh:.3f}  risk={risk_beh:.3f}  frontier-risk@same-cov={risk_front:.3f}", flush=True)
         print(f"    risk-gap(over-answer)={gap:+.3f}   coverage-gap(over-defer waste)={cov_gap:+.3f}   signal-usage AUROC: CONF={auc_conf_sig:.3f} vs ROUTE={auc_route_sig:.3f}", flush=True)
-        print(f"  per-comp: " + "  ".join(f"{k}(acc{v['acc']},defer{v['defer']},conf{v['mconf']})" for k, v in comp_tab.items()), flush=True)
+        print("  per-comp: " + "  ".join(f"{k}(acc{v['acc']},defer{v['defer']},conf{v['mconf']})" for k, v in comp_tab.items()), flush=True)
 
         out[model] = dict(framing=FRAMING, n=len(recs), aurc_conf=aurc_conf, aurc_margin=aurc_marg, aurc_webexp=aurc_webx,
                           aurc_random=aurc_rand, aurc_oracle=aurc_orac, eaurc_conf=eaurc,

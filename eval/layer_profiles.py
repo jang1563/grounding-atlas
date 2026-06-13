@@ -12,10 +12,12 @@ Input: /tmp/layer_profiles.txt (4 blocks, '### name' then 'layer auroc' lines), 
 from act_rand_3038486.log (hERG canon+rand), act_wd_3038493.log (wd canon), act_wd_3038495.log
 (wd rand). Outputs results/layer_profiles.json + results/layer_profiles.png. No em dashes.
 """
-import os
 import json
-import numpy as np
+import os
+
 import matplotlib
+import numpy as np
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 

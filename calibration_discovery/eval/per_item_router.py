@@ -12,19 +12,19 @@ binary DEFER.
 No API calls: the model's per-item PRED/CONF/ROUTE are read from results/per_item.csv (v1 run),
 the specialist is computed here, and the two are aligned by load() order (same seed/N). No em dashes.
 """
-import os
-import re
 import csv
 import json
-import numpy as np
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import cross_val_predict, StratifiedKFold
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.metrics import roc_auc_score
+import os
+import re
 
-from selective_eval import RUNGS, ROOT   # reuse identical item sampling (load_raw below mirrors load())
+import numpy as np
+from selective_eval import ROOT, RUNGS  # reuse identical item sampling (load_raw below mirrors load())
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 N = int(os.environ.get("SE_N", "80"))
 PER_ITEM = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "results", "per_item.csv")

@@ -9,9 +9,11 @@ specialist. Lollipop/dot layout (non-zero x-axis is honest here, no bars-from-ze
 
 Run: PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/plot_router.py
 """
-import os
 import json
+import os
+
 import matplotlib
+
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 from matplotlib.lines import Line2D

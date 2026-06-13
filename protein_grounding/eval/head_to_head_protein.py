@@ -19,16 +19,16 @@ that is direct name-grounding. Needs the organism column (protein_meltome_named.
 
 Env: HH_MODEL, HH_N, HH_COND, HH_PAIRED, HH_WORKERS, HH_CSV. Keys: `set -a; source ~/.api_keys; set +a`.
 """
-import os
-import re
 import csv
+import os
 import random
+import re
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 
-import numpy as np
-from sklearn.metrics import roc_auc_score, average_precision_score
 import anthropic
+import numpy as np
+from sklearn.metrics import average_precision_score, roc_auc_score
 
 CSV = os.environ.get("HH_CSV", "protein_meltome_named.csv")
 MODEL = os.environ.get("HH_MODEL", "claude-sonnet-4-5-20250929")

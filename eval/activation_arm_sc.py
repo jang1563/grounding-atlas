@@ -10,20 +10,19 @@ tokens), activation (LLM hidden-state probe), output (LLM verbalized P(T cell)).
 cell_sentence output >> anon output (only gene names let the model verbalize the cell type), and
 cell_sentence activation > anon activation. Env: ACT_MODEL, ACT_N. No em dashes.
 """
+import csv
 import os
 import re
-import csv
-from collections import Counter
 
 import numpy as np
 import torch
-from transformers import AutoTokenizer, AutoModelForCausalLM
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import StratifiedKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import StratifiedKFold, cross_val_predict
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")
 N = int(os.environ.get("ACT_N", "384"))

@@ -14,10 +14,10 @@ Deterministic scoring: a response is recognized if the correct gene symbol is pr
 Run: python3 eval/axis_a_dna.py   Env: AXISA_MODEL, AXISA_N (default 40), AXISA_DRY.
 No em dashes.
 """
-import os
-import re
 import csv
 import json
+import os
+import re
 from collections import Counter, defaultdict
 
 HERE = os.path.dirname(os.path.abspath(__file__))

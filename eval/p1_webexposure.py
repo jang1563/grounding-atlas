@@ -19,10 +19,10 @@ grounding tracks it. Cross-modality is NOT fit (n=5, ceiling-confound 0.70-0.96,
 web-poor forms are not faithfully countable). Reference: ../PROJECT_DESIGN.md section 7,
 ../docs/WS1_BACKLOG.md item D, ../results/selection_bias.md.
 """
-import urllib.request
-import urllib.parse
 import json
 import time
+import urllib.parse
+import urllib.request
 
 
 def pmc_count(term, retries=3):
