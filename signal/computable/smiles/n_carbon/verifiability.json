@@ -1,0 +1,14 @@
+{
+  "property": "n_carbon",
+  "modality": "smiles",
+  "kind": "int",
+  "n": 1500,
+  "threshold_median": 23.0,
+  "value_min": 2.0,
+  "value_max": 219.0,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": 0.899,
+  "n_renotation_variants": 250,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/n_carbon/pairs.jsonl",
+  "act_csv": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/n_carbon/n_carbon.csv"
+}

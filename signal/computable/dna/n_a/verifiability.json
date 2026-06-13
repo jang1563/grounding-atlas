@@ -1,0 +1,14 @@
+{
+  "property": "n_a",
+  "modality": "dna",
+  "kind": "int",
+  "n": 1500,
+  "threshold_median": 44.0,
+  "value_min": 9.0,
+  "value_max": 110.0,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": null,
+  "n_renotation_variants": 0,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/dna/n_a/pairs.jsonl",
+  "act_csv": null
+}

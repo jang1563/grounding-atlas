@@ -1,0 +1,14 @@
+{
+  "property": "tpsa",
+  "modality": "smiles",
+  "kind": "float",
+  "n": 1500,
+  "threshold_median": 84.5,
+  "value_min": 0.0,
+  "value_max": 2941.19,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": 0.902,
+  "n_renotation_variants": 250,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/tpsa/pairs.jsonl",
+  "act_csv": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/tpsa/tpsa.csv"
+}

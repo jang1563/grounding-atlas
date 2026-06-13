@@ -1,0 +1,98 @@
+[
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "property": "n_carbon",
+    "modality": "smiles",
+    "kind": "int",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 10
+    },
+    "n_scored": 10,
+    "n_parsed": 10,
+    "exact_acc": 0.3,
+    "mae": 1.2,
+    "spearman": 0.96,
+    "auroc": 0.98
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "property": "n_carbon",
+    "modality": "smiles",
+    "kind": "int",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 10
+    },
+    "n_scored": 10,
+    "n_parsed": 10,
+    "exact_acc": 0.8,
+    "mae": 0.2,
+    "spearman": 1.0,
+    "auroc": 1.0
+  },
+  {
+    "model": "claude-opus-4-8",
+    "property": "n_carbon",
+    "modality": "smiles",
+    "kind": "int",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 10
+    },
+    "n_scored": 10,
+    "n_parsed": 10,
+    "exact_acc": 0.9,
+    "mae": 0.1,
+    "spearman": 1.0,
+    "auroc": 1.0
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "property": "isoelectric_point",
+    "modality": "protein",
+    "kind": "float",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 10
+    },
+    "n_scored": 10,
+    "n_parsed": 10,
+    "exact_acc": 0.1,
+    "mae": 1.7199,
+    "spearman": 0.383,
+    "auroc": 0.5
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "property": "isoelectric_point",
+    "modality": "protein",
+    "kind": "float",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 10
+    },
+    "n_scored": 10,
+    "n_parsed": 10,
+    "exact_acc": 0.1,
+    "mae": 1.1811,
+    "spearman": 0.745,
+    "auroc": 0.8
+  },
+  {
+    "model": "claude-opus-4-8",
+    "property": "isoelectric_point",
+    "modality": "protein",
+    "kind": "float",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 10
+    },
+    "n_scored": 10,
+    "n_parsed": 10,
+    "exact_acc": 0.2,
+    "mae": 1.0372,
+    "spearman": 0.806,
+    "auroc": 0.84
+  }
+]

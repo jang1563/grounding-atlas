@@ -1,0 +1,9 @@
+{
+  "split": "ws3_lora scaffold split (n=2000, seed 42)",
+  "n_train": 1097,
+  "n_test": 528,
+  "solo_8b_output": 0.575,
+  "weights_lora_output": 0.856,
+  "retrieve_knn_neighbor_mean": 0.901,
+  "orchestrate_morgan_probe": 0.899
+}

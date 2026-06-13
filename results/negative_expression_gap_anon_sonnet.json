@@ -1,0 +1,46 @@
+[
+  {
+    "endpoint": "herg",
+    "model": "claude-sonnet-4-6",
+    "cond": "anon",
+    "n": 240,
+    "ceiling": 0.874,
+    "output_auroc": 0.462,
+    "fp": 0.25,
+    "fn": 0.833,
+    "asym": -0.583
+  },
+  {
+    "endpoint": "cyp3a4",
+    "model": "claude-sonnet-4-6",
+    "cond": "anon",
+    "n": 240,
+    "ceiling": 0.771,
+    "output_auroc": 0.512,
+    "fp": 0.0,
+    "fn": 0.983,
+    "asym": -0.983
+  },
+  {
+    "endpoint": "cyp2d6",
+    "model": "claude-sonnet-4-6",
+    "cond": "anon",
+    "n": 240,
+    "ceiling": 0.834,
+    "output_auroc": 0.504,
+    "fp": 0.008,
+    "fn": 0.983,
+    "asym": -0.975
+  },
+  {
+    "endpoint": "ames",
+    "model": "claude-sonnet-4-6",
+    "cond": "anon",
+    "n": 206,
+    "ceiling": 0.899,
+    "output_auroc": 0.313,
+    "fp": 0.398,
+    "fn": 0.903,
+    "asym": -0.505
+  }
+]

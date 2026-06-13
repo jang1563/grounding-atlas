@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grounding-atlas"
+version = "0.1.0"
+description = "A measurement-first map of where a language model grounds biological content (by content vs by name), and where each capability should live: train / retrieve / orchestrate."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "JangKeun Kim" }]
+keywords = [
+  "language-models",
+  "biological-foundation-models",
+  "grounding",
+  "model-evaluation",
+  "orchestration",
+  "calibration",
+]
+
+# Versions intentionally unpinned (research code). Pin with a lockfile before
+# publishing a reproducible release.
+dependencies = [
+  "anthropic",
+  "openai",
+  "transformers",
+  "torch",
+  "peft",
+  "scikit-learn",
+  "numpy",
+  "scipy",
+  "rdkit",
+  "biopython",
+  "pillow",
+  "matplotlib",
+  "adjustText",
+]
+
+[project.urls]
+Repository = "https://github.com/jang1563/grounding-atlas"
+
+[tool.setuptools]
+# Research code organized by workstream (eval/, signal/, decision_map/, ...),
+# not a importable package. `pip install -e .` installs the dependencies only.
+packages = []

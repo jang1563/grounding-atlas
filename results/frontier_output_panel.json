@@ -1,0 +1,766 @@
+{
+  "dna": {
+    "n": 300,
+    "qwen3_8b": 0.396,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.815,
+        "ci95": [
+          0.768,
+          0.859
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.798,
+        "ci95": [
+          0.75,
+          0.843
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.622,
+        "ci95": [
+          0.565,
+          0.679
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      }
+    }
+  },
+  "spectra": {
+    "n": 300,
+    "qwen3_8b": 0.502,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.459,
+        "ci95": [
+          0.41,
+          0.506
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.47,
+        "ci95": [
+          0.409,
+          0.529
+        ],
+        "parse": {
+          "parsed": 286,
+          "fallback": 14
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.497,
+        "ci95": [
+          0.443,
+          0.549
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      }
+    }
+  },
+  "protein_seq": {
+    "n": 300,
+    "qwen3_8b": 0.486,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.585,
+        "ci95": [
+          0.521,
+          0.651
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.561,
+        "ci95": [
+          0.499,
+          0.627
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.481,
+        "ci95": [
+          0.428,
+          0.535
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      }
+    }
+  },
+  "protein_org": {
+    "n": 300,
+    "qwen3_8b": 0.486,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.647,
+        "ci95": [
+          0.577,
+          0.706
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.631,
+        "ci95": [
+          0.574,
+          0.697
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.617,
+        "ci95": [
+          0.559,
+          0.676
+        ],
+        "parse": {
+          "parsed": 300
+        }
+      }
+    }
+  },
+  "sc_cellsentence": {
+    "n": 384,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.993,
+        "ci95": [
+          0.988,
+          0.997
+        ],
+        "parse": {
+          "parsed": 384
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.977,
+        "ci95": [
+          0.963,
+          0.989
+        ],
+        "parse": {
+          "parsed": 362,
+          "percent": 14,
+          "fallback": 8
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.965,
+        "ci95": [
+          0.945,
+          0.982
+        ],
+        "parse": {
+          "parsed": 384
+        }
+      }
+    }
+  },
+  "sc_anon": {
+    "n": 384,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.47,
+        "ci95": [
+          0.424,
+          0.518
+        ],
+        "parse": {
+          "parsed": 384
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.452,
+        "ci95": [
+          0.402,
+          0.501
+        ],
+        "parse": {
+          "parsed": 384
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.458,
+        "ci95": [
+          0.401,
+          0.512
+        ],
+        "parse": {
+          "parsed": 384
+        }
+      }
+    }
+  },
+  "structure3d": {
+    "n": 400,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.539,
+        "ci95": [
+          0.481,
+          0.591
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.515,
+        "ci95": [
+          0.459,
+          0.563
+        ],
+        "parse": {
+          "parsed": 388,
+          "fallback": 12
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.487,
+        "ci95": [
+          0.466,
+          0.506
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      }
+    }
+  },
+  "mat_formula": {
+    "n": 400,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.837,
+        "ci95": [
+          0.795,
+          0.877
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.743,
+        "ci95": [
+          0.695,
+          0.789
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.717,
+        "ci95": [
+          0.669,
+          0.765
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      }
+    }
+  },
+  "mat_anon": {
+    "n": 400,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.536,
+        "ci95": [
+          0.499,
+          0.574
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.441,
+        "ci95": [
+          0.39,
+          0.497
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.518,
+        "ci95": [
+          0.475,
+          0.558
+        ],
+        "parse": {
+          "parsed": 399,
+          "fallback": 1
+        }
+      }
+    }
+  },
+  "minerals_name": {
+    "n": 54,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.999,
+        "ci95": [
+          0.992,
+          1.0
+        ],
+        "parse": {
+          "parsed": 54
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.986,
+        "ci95": [
+          0.96,
+          1.0
+        ],
+        "parse": {
+          "parsed": 54
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.967,
+        "ci95": [
+          0.918,
+          1.0
+        ],
+        "parse": {
+          "parsed": 54
+        }
+      }
+    }
+  },
+  "minerals_anon": {
+    "n": 54,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.609,
+        "ci95": [
+          0.47,
+          0.757
+        ],
+        "parse": {
+          "parsed": 54
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.577,
+        "ci95": [
+          0.44,
+          0.713
+        ],
+        "parse": {
+          "parsed": 54
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.346,
+        "ci95": [
+          0.227,
+          0.469
+        ],
+        "parse": {
+          "parsed": 53,
+          "fallback": 1
+        }
+      }
+    }
+  },
+  "elements_name": {
+    "n": 50,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 50
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 50
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 50
+        }
+      }
+    }
+  },
+  "elements_anon": {
+    "n": 50,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "parse": {
+          "parsed": 50
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.48,
+        "ci95": [
+          0.438,
+          0.5
+        ],
+        "parse": {
+          "parsed": 50
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.462,
+        "ci95": [
+          0.337,
+          0.598
+        ],
+        "parse": {
+          "parsed": 50
+        }
+      }
+    }
+  },
+  "glass_formula": {
+    "n": 400,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.652,
+        "ci95": [
+          0.601,
+          0.703
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.654,
+        "ci95": [
+          0.606,
+          0.703
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.633,
+        "ci95": [
+          0.581,
+          0.684
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      }
+    }
+  },
+  "glass_anon": {
+    "n": 400,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.603,
+        "ci95": [
+          0.554,
+          0.65
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.542,
+        "ci95": [
+          0.51,
+          0.578
+        ],
+        "parse": {
+          "parsed": 400
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.568,
+        "ci95": [
+          0.516,
+          0.622
+        ],
+        "parse": {
+          "parsed": 398,
+          "fallback": 2
+        }
+      }
+    }
+  },
+  "aminoacid_name": {
+    "n": 18,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.988,
+        "ci95": [
+          0.926,
+          1.0
+        ],
+        "parse": {
+          "parsed": 18
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.994,
+        "ci95": [
+          0.963,
+          1.0
+        ],
+        "parse": {
+          "parsed": 18
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 18
+        }
+      }
+    }
+  },
+  "aminoacid_anon": {
+    "n": 18,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.556,
+        "ci95": [
+          0.333,
+          0.773
+        ],
+        "parse": {
+          "parsed": 18
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.5,
+        "ci95": [
+          0.35,
+          0.637
+        ],
+        "parse": {
+          "parsed": 18
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.543,
+        "ci95": [
+          0.24,
+          0.821
+        ],
+        "parse": {
+          "parsed": 17,
+          "fallback": 1
+        }
+      }
+    }
+  },
+  "drugclass_name": {
+    "n": 44,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 44
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 44
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 44
+        }
+      }
+    }
+  },
+  "drugclass_anon": {
+    "n": 44,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.573,
+        "ci95": [
+          0.412,
+          0.744
+        ],
+        "parse": {
+          "parsed": 44
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.475,
+        "ci95": [
+          0.336,
+          0.625
+        ],
+        "parse": {
+          "parsed": 44
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.457,
+        "ci95": [
+          0.296,
+          0.633
+        ],
+        "parse": {
+          "parsed": 44
+        }
+      }
+    }
+  },
+  "metabolite_name": {
+    "n": 28,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 28
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 28
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 1.0,
+        "ci95": [
+          1.0,
+          1.0
+        ],
+        "parse": {
+          "parsed": 28
+        }
+      }
+    }
+  },
+  "metabolite_anon": {
+    "n": 28,
+    "qwen3_8b": null,
+    "models": {
+      "claude-opus-4-8": {
+        "auroc": 0.505,
+        "ci95": [
+          0.29,
+          0.713
+        ],
+        "parse": {
+          "parsed": 28
+        }
+      },
+      "claude-sonnet-4-6": {
+        "auroc": 0.5,
+        "ci95": [
+          0.5,
+          0.5
+        ],
+        "parse": {
+          "parsed": 28
+        }
+      },
+      "claude-haiku-4-5-20251001": {
+        "auroc": 0.395,
+        "ci95": [
+          0.214,
+          0.583
+        ],
+        "parse": {
+          "parsed": 28
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "endpoint": "cyp3a4",
+  "model": "claude-sonnet-4-6",
+  "n": 300,
+  "self_auroc_cyp3a4_vs_cyp3a4label": 0.6,
+  "self_ci": [
+    0.538,
+    0.658
+  ],
+  "control_auroc_solubility_vs_cyp3a4label": 0.379,
+  "control_ci": [
+    0.318,
+    0.441
+  ],
+  "pearson_corr_Preal_Pctrl": -0.477,
+  "verdict": "CONFOUNDED: control AUROC 0.379 is informative-anti (|0.379-0.5|=0.121); a shared lipophilicity axis reproduces self 0.60 / ctrl 0.38 / corr -0.48, so property-specificity is NOT established. Needs a control orthogonal to lipophilicity."
+}

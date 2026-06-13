@@ -1,0 +1,48 @@
+[
+  {
+    "endpoint": "cyp2d6",
+    "model": "claude-sonnet-4-6",
+    "n": 888,
+    "balanced": true,
+    "canonical_auroc": 0.631,
+    "canonical_ci": [
+      0.597,
+      0.664
+    ],
+    "randomized_auroc": 0.611,
+    "randomized_ci": [
+      0.577,
+      0.644
+    ],
+    "scrambled_auroc": 0.55,
+    "scrambled_ci": [
+      0.513,
+      0.586
+    ],
+    "drop_canonical_minus_randomized": 0.02,
+    "drop_canonical_minus_scrambled": 0.081
+  },
+  {
+    "endpoint": "cyp3a4",
+    "model": "claude-sonnet-4-6",
+    "n": 1000,
+    "balanced": true,
+    "canonical_auroc": 0.581,
+    "canonical_ci": [
+      0.547,
+      0.614
+    ],
+    "randomized_auroc": 0.582,
+    "randomized_ci": [
+      0.548,
+      0.615
+    ],
+    "scrambled_auroc": 0.507,
+    "scrambled_ci": [
+      0.473,
+      0.541
+    ],
+    "drop_canonical_minus_randomized": -0.001,
+    "drop_canonical_minus_scrambled": 0.074
+  }
+]

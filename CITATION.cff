@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "grounding-atlas: a measurement-first map of biological content-grounding in language models"
+abstract: >-
+  A research program that measures whether a language model does biology by the
+  content of a specialist model's output (sequence, structure, identifier, numeric
+  prediction) or merely by its name, decomposes grounding into encoding (a linear
+  probe on hidden states) versus expression (generation) against a specialist
+  ceiling, and maps where each capability should live across train, retrieve, and
+  orchestrate. Findings span a modality ladder (small molecules, proteins, variants,
+  methylation, histopathology, single-cell, and more) under leakage-controlled splits,
+  and characterize a web-exposure law that predicts where a general model can and
+  cannot ground biological content.
+type: software
+authors:
+  - family-names: Kim
+    given-names: JangKeun
+    affiliation: "Weill Cornell Medicine (Mason Lab)"
+keywords:
+  - language models
+  - biological foundation models
+  - grounding
+  - model evaluation
+  - orchestration
+  - calibration
+  - web-exposure law
+license: Apache-2.0
+repository-code: "https://github.com/jang1563/grounding-atlas"
+version: "0.1.0"
+date-released: "2026-06-13"

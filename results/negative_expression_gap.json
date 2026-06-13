@@ -1,0 +1,90 @@
+[
+  {
+    "endpoint": "herg",
+    "model": "claude-haiku-4-5-20251001",
+    "cond": "named",
+    "n": 240,
+    "ceiling": 0.874,
+    "output_auroc": 0.48,
+    "fp": 0.983,
+    "fn": 0.033,
+    "asym": 0.95
+  },
+  {
+    "endpoint": "herg",
+    "model": "claude-opus-4-8",
+    "cond": "named",
+    "n": 240,
+    "ceiling": 0.874,
+    "output_auroc": 0.629,
+    "fp": 0.35,
+    "fn": 0.458,
+    "asym": -0.108
+  },
+  {
+    "endpoint": "cyp3a4",
+    "model": "claude-haiku-4-5-20251001",
+    "cond": "named",
+    "n": 240,
+    "ceiling": 0.771,
+    "output_auroc": 0.462,
+    "fp": 0.683,
+    "fn": 0.375,
+    "asym": 0.308
+  },
+  {
+    "endpoint": "cyp3a4",
+    "model": "claude-opus-4-8",
+    "cond": "named",
+    "n": 240,
+    "ceiling": 0.771,
+    "output_auroc": 0.64,
+    "fp": 0.567,
+    "fn": 0.25,
+    "asym": 0.317
+  },
+  {
+    "endpoint": "cyp2d6",
+    "model": "claude-haiku-4-5-20251001",
+    "cond": "named",
+    "n": 240,
+    "ceiling": 0.834,
+    "output_auroc": 0.57,
+    "fp": 0.758,
+    "fn": 0.117,
+    "asym": 0.642
+  },
+  {
+    "endpoint": "cyp2d6",
+    "model": "claude-opus-4-8",
+    "cond": "named",
+    "n": 240,
+    "ceiling": 0.834,
+    "output_auroc": 0.731,
+    "fp": 0.233,
+    "fn": 0.467,
+    "asym": -0.233
+  },
+  {
+    "endpoint": "ames",
+    "model": "claude-haiku-4-5-20251001",
+    "cond": "named",
+    "n": 206,
+    "ceiling": 0.899,
+    "output_auroc": 0.411,
+    "fp": 0.932,
+    "fn": 0.34,
+    "asym": 0.592
+  },
+  {
+    "endpoint": "ames",
+    "model": "claude-opus-4-8",
+    "cond": "named",
+    "n": 206,
+    "ceiling": 0.899,
+    "output_auroc": 0.451,
+    "fp": 0.951,
+    "fn": 0.33,
+    "asym": 0.621
+  }
+]

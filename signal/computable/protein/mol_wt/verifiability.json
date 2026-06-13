@@ -1,0 +1,14 @@
+{
+  "property": "mol_wt",
+  "modality": "protein",
+  "kind": "float",
+  "n": 1500,
+  "threshold_median": 32844.8442,
+  "value_min": 6062.855,
+  "value_max": 61071.029,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": null,
+  "n_renotation_variants": 0,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/protein/mol_wt/pairs.jsonl",
+  "act_csv": null
+}

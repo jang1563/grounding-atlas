@@ -1,0 +1,20 @@
+{
+  "property": "isoelectric_point",
+  "condition": "+pKa_supplied",
+  "model": "claude-sonnet-4-6",
+  "max_tokens": 4000,
+  "parse": {
+    "parsed": 12
+  },
+  "n_scored": 12,
+  "n_parsed": 12,
+  "exact_acc": 0.167,
+  "mae": 1.4492,
+  "spearman": 0.823,
+  "auroc": 0.972,
+  "baseline_reason": {
+    "auroc": 0.792,
+    "exact": 0.25,
+    "mae": 1.278
+  }
+}

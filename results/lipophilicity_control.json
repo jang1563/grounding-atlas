@@ -1,0 +1,17 @@
+{
+  "n": 1625,
+  "A_lipophilicity": {
+    "descriptors_only_logP_MW_TPSA": 0.675,
+    "morgan_fp": 0.825,
+    "morgan_plus_descriptors": 0.829,
+    "morgan_residualized_on_descriptors": 0.768
+  },
+  "B_orthography": {
+    "char_ngram_canonical": 0.845,
+    "char_ngram_randomized": 0.812
+  },
+  "refs": {
+    "activation_probe": 0.787,
+    "output_arm": 0.453
+  }
+}

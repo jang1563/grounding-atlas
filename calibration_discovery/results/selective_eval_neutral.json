@@ -1,0 +1,131 @@
+{
+  "claude-opus-4-8": {
+    "framing": "neutral",
+    "n": 640,
+    "aurc_conf": 0.16231626985366887,
+    "aurc_margin": 0.1531945386160153,
+    "aurc_webexp": 0.2125793425377881,
+    "aurc_random": 0.31816028446268924,
+    "aurc_oracle": 0.05812018748419596,
+    "eaurc_conf": 0.10419608236947292,
+    "sel_acc_50": 0.83275,
+    "sel_acc_80": 0.7207812499999999,
+    "corr_conf_correct": 0.3577342002485939,
+    "ece": 0.047531250000000004,
+    "behavioral": {
+      "coverage": 0.5265625,
+      "risk": 0.17507418397626112,
+      "frontier_risk": 0.17448071216617214,
+      "risk_gap": 0.0005934718100889802,
+      "coverage_gap": 0.0031249999999999334,
+      "signal_auc_conf": 0.7199943930473788,
+      "signal_auc_route": 0.6756377908606672
+    },
+    "per_comp": {
+      "in": {
+        "n": 240,
+        "acc": 0.842,
+        "defer": 0.133,
+        "mconf": 0.597
+      },
+      "out": {
+        "n": 320,
+        "acc": 0.528,
+        "defer": 0.747,
+        "mconf": 0.232
+      },
+      "novel": {
+        "n": 80,
+        "acc": 0.8,
+        "defer": 0.4,
+        "mconf": 0.46
+      }
+    }
+  },
+  "claude-sonnet-4-6": {
+    "framing": "neutral",
+    "n": 640,
+    "aurc_conf": 0.2092640088100775,
+    "aurc_margin": 0.20933740687874602,
+    "aurc_webexp": 0.21532138089793534,
+    "aurc_random": 0.3203844633638513,
+    "aurc_oracle": 0.05812018748419596,
+    "eaurc_conf": 0.15114382132588156,
+    "sel_acc_50": 0.7481250000000002,
+    "sel_acc_80": 0.708515625,
+    "corr_conf_correct": 0.21280200361947094,
+    "ece": 0.12068749999999995,
+    "behavioral": {
+      "coverage": 0.8734375,
+      "risk": 0.2898032200357782,
+      "frontier_risk": 0.29338103756708395,
+      "risk_gap": -0.0035778175313057603,
+      "coverage_gap": -0.15000000000000002,
+      "signal_auc_conf": 0.6304962153069806,
+      "signal_auc_route": 0.5611998878609475
+    },
+    "per_comp": {
+      "in": {
+        "n": 240,
+        "acc": 0.829,
+        "defer": 0.004,
+        "mconf": 0.663
+      },
+      "out": {
+        "n": 320,
+        "acc": 0.531,
+        "defer": 0.25,
+        "mconf": 0.456
+      },
+      "novel": {
+        "n": 80,
+        "acc": 0.825,
+        "defer": 0.0,
+        "mconf": 0.542
+      }
+    }
+  },
+  "claude-haiku-4-5-20251001": {
+    "framing": "neutral",
+    "n": 640,
+    "aurc_conf": 0.25358870436022085,
+    "aurc_margin": 0.28112309104231087,
+    "aurc_webexp": 0.2885595504252079,
+    "aurc_random": 0.3719258255124742,
+    "aurc_oracle": 0.08154050210732987,
+    "eaurc_conf": 0.17204820225289097,
+    "sel_acc_50": 0.6885,
+    "sel_acc_80": 0.649921875,
+    "corr_conf_correct": 0.2263708296342347,
+    "ece": 0.1502343750000001,
+    "behavioral": {
+      "coverage": 0.690625,
+      "risk": 0.332579185520362,
+      "frontier_risk": 0.33764705882352936,
+      "risk_gap": -0.005067873303167381,
+      "coverage_gap": -0.03593750000000007,
+      "signal_auc_conf": 0.63296875,
+      "signal_auc_route": 0.5625
+    },
+    "per_comp": {
+      "in": {
+        "n": 240,
+        "acc": 0.725,
+        "defer": 0.142,
+        "mconf": 0.57
+      },
+      "out": {
+        "n": 320,
+        "acc": 0.503,
+        "defer": 0.481,
+        "mconf": 0.401
+      },
+      "novel": {
+        "n": 80,
+        "acc": 0.812,
+        "defer": 0.125,
+        "mconf": 0.55
+      }
+    }
+  }
+}

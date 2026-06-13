@@ -1,0 +1,18 @@
+{
+  "endpoint": "ames",
+  "modality": "smiles",
+  "featurizer": "morgan_r2_2048",
+  "split": "murcko_scaffold_groupkfold5",
+  "n": 517,
+  "pos": 414,
+  "baseline": 0.801,
+  "n_groups": 220,
+  "random_auroc": 0.925,
+  "cold_auroc": 0.847,
+  "cold_auroc_rf": 0.853,
+  "cold_auprc": 0.958,
+  "control_auroc": 0.516,
+  "selectivity": 0.331,
+  "leakage_drop": 0.078,
+  "passed": true
+}

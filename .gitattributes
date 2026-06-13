@@ -1,0 +1,13 @@
+# Normalize line endings on checkout/commit
+* text=auto eol=lf
+
+# Binary assets
+*.png binary
+*.jpg binary
+*.gz binary
+
+# Keep generated data and writeups out of GitHub linguist language stats
+results/**   linguist-documentation
+docs/**      linguist-documentation
+*.jsonl      linguist-generated
+*.csv        linguist-generated

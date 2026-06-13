@@ -1,0 +1,18 @@
+{
+  "endpoint": "herg",
+  "modality": "smiles",
+  "featurizer": "morgan_r2_2048",
+  "split": "murcko_scaffold_groupkfold5",
+  "n": 3963,
+  "pos": 625,
+  "baseline": 0.158,
+  "n_groups": 1773,
+  "random_auroc": 0.92,
+  "cold_auroc": 0.895,
+  "cold_auroc_rf": 0.913,
+  "cold_auprc": 0.692,
+  "control_auroc": 0.53,
+  "selectivity": 0.365,
+  "leakage_drop": 0.025,
+  "passed": true
+}

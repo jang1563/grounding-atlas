@@ -1,0 +1,7 @@
+# Raw downloads (re-fetchable via eval/setup_data_cayuga.sh): AlphaMissense ~1.1G,
+# three ClinVar releases ~1.2G, UniProt FASTA, ProteinGym DMS. Do not commit.
+data/raw/
+# Large derived table (184k variants); the balanced eval CSVs are the committed inputs.
+data/variant_clinvar_full.csv
+__pycache__/
+*.pyc

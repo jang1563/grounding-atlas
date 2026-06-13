@@ -1,0 +1,206 @@
+{
+  "claude-opus-4-8": {
+    "rungs": [
+      {
+        "rung": "dna_promoter",
+        "tag": "web-rich",
+        "auroc": 0.871,
+        "mean_conf": 0.261,
+        "defer_rate": 1.0,
+        "ceiling": 0.889
+      },
+      {
+        "rung": "msa_conserv",
+        "tag": "web-rich",
+        "auroc": 0.902,
+        "mean_conf": 0.394,
+        "defer_rate": 0.825,
+        "ceiling": 0.999
+      },
+      {
+        "rung": "sc_cellsentence",
+        "tag": "web-rich",
+        "auroc": 0.983,
+        "mean_conf": 0.691,
+        "defer_rate": 0.225,
+        "ceiling": 0.989
+      },
+      {
+        "rung": "sc_anon",
+        "tag": "web-zero",
+        "auroc": 0.5,
+        "mean_conf": 0.02,
+        "defer_rate": 1.0,
+        "ceiling": 0.989
+      },
+      {
+        "rung": "smiles_herg",
+        "tag": "web-zero-out",
+        "auroc": 0.643,
+        "mean_conf": 0.32,
+        "defer_rate": 1.0,
+        "ceiling": 0.825
+      },
+      {
+        "rung": "nmr_herg",
+        "tag": "web-zero",
+        "auroc": 0.501,
+        "mean_conf": 0.08,
+        "defer_rate": 1.0,
+        "ceiling": 0.866
+      },
+      {
+        "rung": "methyl_age",
+        "tag": "web-zero",
+        "auroc": 0.5,
+        "mean_conf": 0.132,
+        "defer_rate": 1.0,
+        "ceiling": 0.701
+      }
+    ],
+    "calib_conf": 0.900937462695559,
+    "calib_defer": -0.8090398349558906,
+    "routing": {
+      "self": 0.7000000000000001,
+      "routed": 0.893142857142857,
+      "tool": 0.8939999999999999,
+      "oracle": 0.8939999999999999
+    }
+  },
+  "claude-sonnet-4-6": {
+    "rungs": [
+      {
+        "rung": "dna_promoter",
+        "tag": "web-rich",
+        "auroc": 0.836,
+        "mean_conf": 0.478,
+        "defer_rate": 0.263,
+        "ceiling": 0.889
+      },
+      {
+        "rung": "msa_conserv",
+        "tag": "web-rich",
+        "auroc": 0.923,
+        "mean_conf": 0.599,
+        "defer_rate": 0.0,
+        "ceiling": 0.999
+      },
+      {
+        "rung": "sc_cellsentence",
+        "tag": "web-rich",
+        "auroc": 0.973,
+        "mean_conf": 0.824,
+        "defer_rate": 0.0,
+        "ceiling": 0.989
+      },
+      {
+        "rung": "sc_anon",
+        "tag": "web-zero",
+        "auroc": 0.467,
+        "mean_conf": 0.096,
+        "defer_rate": 1.0,
+        "ceiling": 0.989
+      },
+      {
+        "rung": "smiles_herg",
+        "tag": "web-zero-out",
+        "auroc": 0.672,
+        "mean_conf": 0.638,
+        "defer_rate": 0.013,
+        "ceiling": 0.825
+      },
+      {
+        "rung": "nmr_herg",
+        "tag": "web-zero",
+        "auroc": 0.491,
+        "mean_conf": 0.323,
+        "defer_rate": 0.85,
+        "ceiling": 0.866
+      },
+      {
+        "rung": "methyl_age",
+        "tag": "web-zero",
+        "auroc": 0.413,
+        "mean_conf": 0.564,
+        "defer_rate": 0.463,
+        "ceiling": 0.701
+      }
+    ],
+    "calib_conf": 0.642857142857143,
+    "calib_defer": -0.8468812149338255,
+    "routing": {
+      "self": 0.6821428571428572,
+      "routed": 0.8102857142857143,
+      "tool": 0.8939999999999999,
+      "oracle": 0.8939999999999999
+    }
+  },
+  "claude-haiku-4-5-20251001": {
+    "rungs": [
+      {
+        "rung": "dna_promoter",
+        "tag": "web-rich",
+        "auroc": 0.55,
+        "mean_conf": 0.351,
+        "defer_rate": 1.0,
+        "ceiling": 0.889
+      },
+      {
+        "rung": "msa_conserv",
+        "tag": "web-rich",
+        "auroc": 0.724,
+        "mean_conf": 0.497,
+        "defer_rate": 0.65,
+        "ceiling": 0.999
+      },
+      {
+        "rung": "sc_cellsentence",
+        "tag": "web-rich",
+        "auroc": 0.9,
+        "mean_conf": 0.771,
+        "defer_rate": 0.062,
+        "ceiling": 0.989
+      },
+      {
+        "rung": "sc_anon",
+        "tag": "web-zero",
+        "auroc": 0.562,
+        "mean_conf": 0.137,
+        "defer_rate": 1.0,
+        "ceiling": 0.989
+      },
+      {
+        "rung": "smiles_herg",
+        "tag": "web-zero-out",
+        "auroc": 0.513,
+        "mean_conf": 0.616,
+        "defer_rate": 0.275,
+        "ceiling": 0.825
+      },
+      {
+        "rung": "nmr_herg",
+        "tag": "web-zero",
+        "auroc": 0.413,
+        "mean_conf": 0.26,
+        "defer_rate": 1.0,
+        "ceiling": 0.866
+      },
+      {
+        "rung": "methyl_age",
+        "tag": "web-zero",
+        "auroc": 0.502,
+        "mean_conf": 0.62,
+        "defer_rate": 1.0,
+        "ceiling": 0.701
+      }
+    ],
+    "calib_conf": 0.25,
+    "calib_defer": -0.5910828046793255,
+    "routing": {
+      "self": 0.5948571428571429,
+      "routed": 0.8367142857142856,
+      "tool": 0.8939999999999999,
+      "oracle": 0.8939999999999999
+    }
+  }
+}

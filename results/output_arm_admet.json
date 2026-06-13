@@ -1,0 +1,117 @@
+[
+  {
+    "endpoint": "ames",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "direction_verified": true,
+    "clause": "is MUTAGENIC in the Ames test",
+    "auroc": 0.379,
+    "auprc": 0.466,
+    "parse": {
+      "parsed": 200
+    },
+    "label1_means": "mutagenic (fail 24% vs pass ~0%)",
+    "clause_matches_label1": true,
+    "oriented_auroc": 0.379,
+    "solo_signal_abs": 0.121
+  },
+  {
+    "endpoint": "clearance",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "direction_verified": false,
+    "clause": "has high metabolic clearance",
+    "auroc": 0.485,
+    "auprc": 0.517,
+    "parse": {
+      "parsed": 200
+    },
+    "label1_means": "heterogeneous units (fail 26.6% vs pass 22 mL/min/kg)",
+    "clause_matches_label1": null,
+    "oriented_auroc": 0.485,
+    "solo_signal_abs": 0.015
+  },
+  {
+    "endpoint": "cyp2d6",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "direction_verified": true,
+    "clause": "INHIBITS the CYP2D6 enzyme",
+    "auroc": 0.608,
+    "auprc": 0.568,
+    "parse": {
+      "parsed": 200
+    },
+    "label1_means": "potent CYP2D6 inhibitor (fail 270nM vs pass 20000nM)",
+    "clause_matches_label1": true,
+    "oriented_auroc": 0.608,
+    "solo_signal_abs": 0.108
+  },
+  {
+    "endpoint": "cyp3a4",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "clause_matches_label1": true,
+    "clause": "INHIBITS the CYP3A4 enzyme",
+    "auroc": 0.611,
+    "oriented_auroc": 0.611,
+    "auprc": 0.594,
+    "parse": {
+      "parsed": 200
+    }
+  },
+  {
+    "endpoint": "herg",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "clause_matches_label1": true,
+    "clause": "BLOCKS the hERG potassium channel (cardiotoxicity risk)",
+    "auroc": 0.633,
+    "oriented_auroc": 0.633,
+    "auprc": 0.621,
+    "parse": {
+      "parsed": 199,
+      "fallback": 1
+    }
+  },
+  {
+    "endpoint": "permeability",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "direction_verified": true,
+    "clause": "is highly permeable across a cell membrane",
+    "auroc": 0.281,
+    "auprc": 0.395,
+    "parse": {
+      "parsed": 199,
+      "fallback": 1
+    },
+    "label1_means": "IMPERMEABLE (fail 71 vs pass 579)",
+    "clause_matches_label1": false,
+    "oriented_auroc": 0.719,
+    "solo_signal_abs": 0.219
+  },
+  {
+    "endpoint": "solubility",
+    "model": "claude-sonnet-4-6",
+    "n_scored": 200,
+    "balanced_per_class": 100,
+    "direction_verified": false,
+    "clause": "is highly soluble in water",
+    "auroc": 0.347,
+    "auprc": 0.438,
+    "parse": {
+      "parsed": 200
+    },
+    "label1_means": "INSOLUBLE (fail 1.1 vs pass 313 ug/mL)",
+    "clause_matches_label1": false,
+    "oriented_auroc": 0.653,
+    "solo_signal_abs": 0.153
+  }
+]

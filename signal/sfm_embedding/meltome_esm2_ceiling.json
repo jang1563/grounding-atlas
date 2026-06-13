@@ -1,0 +1,11 @@
+{
+  "model": "facebook/esm2_t30_150M_UR50D",
+  "n": 320,
+  "dim": 640,
+  "tm_median": 50.25975,
+  "ceiling_auroc": 0.633,
+  "control_auroc": 0.477,
+  "selectivity": 0.156,
+  "split": "cluster_groupkfold",
+  "npz": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/sfm_embedding/meltome_esm2.npz"
+}

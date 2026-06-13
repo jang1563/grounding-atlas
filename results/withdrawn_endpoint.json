@@ -1,0 +1,57 @@
+{
+  "endpoint": "market_withdrawal_safety",
+  "n": 500,
+  "pos": 250,
+  "model": "claude-sonnet-4-6",
+  "arms": {
+    "morgan": {
+      "auroc": 0.662,
+      "auprc": 0.652,
+      "ci95": [
+        0.615,
+        0.708
+      ]
+    },
+    "knn": {
+      "auroc": 0.544,
+      "auprc": 0.546,
+      "ci95": [
+        0.496,
+        0.591
+      ]
+    },
+    "llm_smiles": {
+      "auroc": 0.548,
+      "auprc": 0.56,
+      "ci95": [
+        0.5,
+        0.593
+      ],
+      "parse": {
+        "parsed": 500
+      }
+    },
+    "llm_name": {
+      "auroc": 0.761,
+      "auprc": 0.761,
+      "ci95": [
+        0.72,
+        0.799
+      ],
+      "parse": {
+        "parsed": 500
+      }
+    },
+    "llm_fake": {
+      "auroc": 0.505,
+      "auprc": 0.519,
+      "ci95": [
+        0.46,
+        0.552
+      ],
+      "parse": {
+        "parsed": 500
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "tool": "DECIMER",
+  "n": 120,
+  "valid_rate": 1.0,
+  "mean_tanimoto": 0.97,
+  "exact_rate": 0.85,
+  "exact_flat_rate": 0.858,
+  "claude_ref": {
+    "valid": 0.725,
+    "mean_tanimoto": 0.544,
+    "exact": 0.158
+  }
+}

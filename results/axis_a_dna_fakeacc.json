@@ -1,0 +1,290 @@
+{
+  "control": "fake_accession",
+  "model": "claude-sonnet-4-6",
+  "n": 40,
+  "confabulation_rate": 0.025,
+  "unknown_rate": 0.1,
+  "real_uniprot_recognition_ref": 0.6,
+  "per_gene": [
+    {
+      "gene": "FBN1",
+      "real_acc": "P35555",
+      "fake_acc": "55553P",
+      "resp": "The UniProt accession format is typically a combination of l",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "KMT2D",
+      "real_acc": "O14686",
+      "fake_acc": "O64681",
+      "resp": "O64681 is a UniProt accession. Let me think about this caref",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "DNAH11",
+      "real_acc": "Q96DT5",
+      "fake_acc": "Q95D6T",
+      "resp": "The UniProt accession Q95D6T does not appear to correspond t",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "SCN1A",
+      "real_acc": "P35498",
+      "fake_acc": "P35894",
+      "resp": "The UniProt accession P35894 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "LDLR",
+      "real_acc": "P01130",
+      "fake_acc": "P10301",
+      "resp": "RAS\n\nWait, let me be more specific. UniProt P10301 correspon",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL4A5",
+      "real_acc": "P29400",
+      "fake_acc": "P90042",
+      "resp": "The UniProt accession P90042 does not correspond to a standa",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "BRCA2",
+      "real_acc": "P51587",
+      "fake_acc": "P81755",
+      "resp": "I need to find the human gene corresponding to UniProt acces",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "ABCA4",
+      "real_acc": "P78363",
+      "fake_acc": "P36738",
+      "resp": "The UniProt accession P36738 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "NEB",
+      "real_acc": "P20929",
+      "fake_acc": "P99202",
+      "resp": "The UniProt accession P99202 does not correspond to a known ",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "ADGRV1",
+      "real_acc": "Q8WXG9",
+      "fake_acc": "Q98GWX",
+      "resp": "Q98GWX is a UniProt accession. Let me think about this caref",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "GLA",
+      "real_acc": "P06280",
+      "fake_acc": "P20860",
+      "resp": "The UniProt accession P20860 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "BRCA1",
+      "real_acc": "P38398",
+      "fake_acc": "P93838",
+      "resp": "P93838 is a UniProt accession. Let me think about this caref",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL2A1",
+      "real_acc": "P02458",
+      "fake_acc": "P52804",
+      "resp": "The UniProt accession P52804 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL1A2",
+      "real_acc": "P08123",
+      "fake_acc": "P28301",
+      "resp": "The UniProt accession P28301 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL1A1",
+      "real_acc": "P02452",
+      "fake_acc": "P22540",
+      "resp": "The UniProt accession P22540 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "SACS",
+      "real_acc": "Q9NZJ4",
+      "fake_acc": "QJN9Z4",
+      "resp": "I need to find the human gene corresponding to UniProt acces",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL7A1",
+      "real_acc": "Q02388",
+      "fake_acc": "Q82830",
+      "resp": "The UniProt accession Q82830 does not correspond to a human ",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "PAH",
+      "real_acc": "P00439",
+      "fake_acc": "P00943",
+      "resp": "The UniProt accession P00943 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "NF1",
+      "real_acc": "P21359",
+      "fake_acc": "P92153",
+      "resp": "P92153 is not a standard UniProt accession for a human prote",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL3A1",
+      "real_acc": "P02461",
+      "fake_acc": "P21640",
+      "resp": "The UniProt accession P21640 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "USH2A",
+      "real_acc": "O75445",
+      "fake_acc": "O54547",
+      "resp": "The UniProt accession O54547 corresponds to a mouse (Mus mus",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "DNAH5",
+      "real_acc": "Q8TE73",
+      "fake_acc": "Q7TE38",
+      "resp": "Q7TE38 is a UniProt accession. Let me recall: Q7TE38 corresp",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "MSH2",
+      "real_acc": "P43246",
+      "fake_acc": "P43624",
+      "resp": "The UniProt accession P43624 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "KMT2C",
+      "real_acc": "Q8NEZ4",
+      "fake_acc": "QEN8Z4",
+      "resp": "I need to look up UniProt accession QEN8Z4.\n\nUniProt accessi",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "NSD1",
+      "real_acc": "Q96L73",
+      "fake_acc": "QL7963",
+      "resp": "UNKNOWN",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "KAT6A",
+      "real_acc": "Q92794",
+      "fake_acc": "Q74992",
+      "resp": "The UniProt accession Q74992 does not correspond to a human ",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "TP53",
+      "real_acc": "P04637",
+      "fake_acc": "P64037",
+      "resp": "P64037 is a UniProt accession. Let me think about this caref",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "SCN2A",
+      "real_acc": "Q99250",
+      "fake_acc": "Q99025",
+      "resp": "The UniProt accession Q99025 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "CHD7",
+      "real_acc": "Q9P2D1",
+      "fake_acc": "Q12D9P",
+      "resp": "I need to find the human gene corresponding to UniProt acces",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "TSC2",
+      "real_acc": "P49815",
+      "fake_acc": "P51948",
+      "resp": "The UniProt accession P51948 corresponds to the human gene *",
+      "confabulated_real_gene": 1
+    },
+    {
+      "gene": "GCK",
+      "real_acc": "P35557",
+      "fake_acc": "P37555",
+      "resp": "The UniProt accession P37555 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "KCNQ2",
+      "real_acc": "O43526",
+      "fake_acc": "O63452",
+      "resp": "The UniProt accession O63452 does not correspond to a human ",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "MYH7",
+      "real_acc": "P12883",
+      "fake_acc": "38821P",
+      "resp": "UNKNOWN",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "COL4A3",
+      "real_acc": "Q01955",
+      "fake_acc": "Q90551",
+      "resp": "The UniProt accession Q90551 corresponds to a chicken (Gallu",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "APOB",
+      "real_acc": "P04114",
+      "fake_acc": "P44011",
+      "resp": "The UniProt accession P44011 corresponds to a *Haemophilus i",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "DYNC1H1",
+      "real_acc": "Q14204",
+      "fake_acc": "Q10424",
+      "resp": "I need to find the human gene corresponding to UniProt acces",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "ATRX",
+      "real_acc": "P46100",
+      "fake_acc": "P61040",
+      "resp": "The UniProt accession P61040 corresponds to the human gene *",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "EHMT1",
+      "real_acc": "Q9H9B1",
+      "fake_acc": "QH9B91",
+      "resp": "I need to look up UniProt accession QH9B91.\n\nUniProt accessi",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "CACNA1E",
+      "real_acc": "Q15878",
+      "fake_acc": "Q78185",
+      "resp": "I need to find the human gene corresponding to UniProt acces",
+      "confabulated_real_gene": 0
+    },
+    {
+      "gene": "KMT2B",
+      "real_acc": "Q9UMN6",
+      "fake_acc": "QUMN69",
+      "resp": "I need to look up UniProt accession Q8MN69 (I'll assume this",
+      "confabulated_real_gene": 0
+    }
+  ]
+}

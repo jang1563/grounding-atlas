@@ -1,0 +1,36 @@
+[
+  {
+    "property": "isoelectric_point",
+    "model": "claude-sonnet-4-6",
+    "modality": "protein",
+    "kind": "float",
+    "condition": "matched",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 12
+    },
+    "n_scored": 12,
+    "n_parsed": 12,
+    "exact_acc": 0.25,
+    "mae": 1.278,
+    "spearman": 0.802,
+    "auroc": 0.792
+  },
+  {
+    "property": "length",
+    "model": "claude-sonnet-4-6",
+    "modality": "protein",
+    "kind": "int",
+    "condition": "matched",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 12
+    },
+    "n_scored": 12,
+    "n_parsed": 12,
+    "exact_acc": 0.583,
+    "mae": 1.0833,
+    "spearman": 0.991,
+    "auroc": 1.0
+  }
+]

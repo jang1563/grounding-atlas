@@ -1,0 +1,36 @@
+[
+  {
+    "property": "gc_content",
+    "model": "claude-sonnet-4-6",
+    "modality": "dna",
+    "kind": "float",
+    "condition": "matched",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 12
+    },
+    "n_scored": 12,
+    "n_parsed": 12,
+    "exact_acc": 0.667,
+    "mae": 2.5067,
+    "spearman": 0.968,
+    "auroc": 1.0
+  },
+  {
+    "property": "n_a",
+    "model": "claude-sonnet-4-6",
+    "modality": "dna",
+    "kind": "int",
+    "condition": "matched",
+    "max_tokens": 4000,
+    "parse": {
+      "parsed": 12
+    },
+    "n_scored": 12,
+    "n_parsed": 12,
+    "exact_acc": 0.25,
+    "mae": 3.75,
+    "spearman": 0.956,
+    "auroc": 1.0
+  }
+]

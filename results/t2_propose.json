@@ -1,0 +1,40 @@
+[
+  {
+    "endpoint": "cyp3a4",
+    "model": "claude-sonnet-4-6",
+    "asked": 15,
+    "returned": 15,
+    "valid_smiles": 14,
+    "unique_valid": 14,
+    "proposal_mean_P_active": 0.178,
+    "proposal_active_rate": 0.143,
+    "ref_P_active_on_real_actives": 0.763,
+    "ref_P_active_on_real_inactives": 0.041,
+    "example_proposals": [
+      "CCc1nn(C)c2cc(-c3ccc(OCC(=O)N4CCN(C(=O)c5cccs5)CC4)cc3F)cnc12",
+      "CN1CCN(Cc2ccc(-c3ccc(CC4=NNC(=O)c5ccccc54)cc3)cc2)CC1",
+      "Clc1ccc2nc(N3CCOCC3)c(-c3cnnc4ccccc34)cc2c1",
+      "CC(=O)N1CCC(n2cc(-c3ccc(Oc4ccccc4Cl)cc3)cn2)CC1",
+      "Cc1ccc(-n2ccnc2)cc1OCC(=O)N1CCC(c2ccccc2F)CC1"
+    ]
+  },
+  {
+    "endpoint": "cyp2d6",
+    "model": "claude-sonnet-4-6",
+    "asked": 15,
+    "returned": 15,
+    "valid_smiles": 15,
+    "unique_valid": 15,
+    "proposal_mean_P_active": 0.137,
+    "proposal_active_rate": 0.067,
+    "ref_P_active_on_real_actives": 0.715,
+    "ref_P_active_on_real_inactives": 0.036,
+    "example_proposals": [
+      "COc1ccc2c(c1)CC(N(C)C)C2",
+      "CCN(CC)CCc1ccc(OC)cc1",
+      "Cc1ccc(NC(=O)c2ccccc2)cc1",
+      "COc1ccc(CCN2CCCCC2)cc1OC",
+      "CN1CCC2=CC(=C(OC)C=C2C1)OC"
+    ]
+  }
+]

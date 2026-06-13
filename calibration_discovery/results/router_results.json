@@ -1,0 +1,38 @@
+{
+  "specialist_auroc": {
+    "sc_cellsentence": 0.994,
+    "msa_conserv": 1.0,
+    "dna_promoter": 0.834,
+    "sc_anon": 0.994,
+    "smiles_herg": 0.858,
+    "nmr_herg": 0.718,
+    "methyl_age": 0.474,
+    "variant_novel": 0.929
+  },
+  "models": {
+    "claude-opus-4-8": {
+      "always_model": 0.689,
+      "always_spec": 0.811,
+      "own_defer": 0.812,
+      "conf_route": 0.817,
+      "oracle": 0.909,
+      "spec_call_rate": 0.839
+    },
+    "claude-sonnet-4-6": {
+      "always_model": 0.684,
+      "always_spec": 0.811,
+      "own_defer": 0.762,
+      "conf_route": 0.811,
+      "oracle": 0.908,
+      "spec_call_rate": 0.903
+    },
+    "claude-haiku-4-5-20251001": {
+      "always_model": 0.609,
+      "always_spec": 0.811,
+      "own_defer": 0.777,
+      "conf_route": 0.811,
+      "oracle": 0.911,
+      "spec_call_rate": 0.997
+    }
+  }
+}

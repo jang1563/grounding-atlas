@@ -1,0 +1,26 @@
+# grounding-atlas dependencies (research code; versions intentionally unpinned).
+# Quick start:  pip install -r requirements.txt
+# Or use the project metadata:  pip install -e .
+
+# LLM clients
+anthropic
+openai
+
+# Open-weight models / probing
+transformers
+torch
+peft
+
+# ML / numerics
+scikit-learn
+numpy
+scipy
+
+# Domain (cheminformatics, sequences, imaging)
+rdkit
+biopython
+pillow
+
+# Plotting
+matplotlib
+adjustText

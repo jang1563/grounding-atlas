@@ -1,0 +1,85 @@
+[
+  {
+    "property": "logp",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "float",
+    "condition": "matched",
+    "parse": {
+      "parsed": 20
+    },
+    "n_scored": 20,
+    "n_parsed": 20,
+    "exact_acc": 0.1,
+    "mae": 3.5781,
+    "spearman": 0.231,
+    "auroc": 0.595
+  },
+  {
+    "property": "mol_wt",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "float",
+    "condition": "matched",
+    "max_tokens": 2500,
+    "parse": {
+      "parsed": 14
+    },
+    "n_scored": 14,
+    "n_parsed": 14,
+    "exact_acc": 0.857,
+    "mae": 3.3357,
+    "spearman": 1.0,
+    "auroc": 1.0
+  },
+  {
+    "property": "n_aromatic_rings",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "parse": {
+      "parsed": 20
+    },
+    "n_scored": 20,
+    "n_parsed": 20,
+    "exact_acc": 0.65,
+    "mae": 0.75,
+    "spearman": 0.517,
+    "auroc": 0.63
+  },
+  {
+    "property": "n_carbon",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "max_tokens": 2500,
+    "parse": {
+      "parsed": 14
+    },
+    "n_scored": 14,
+    "n_parsed": 14,
+    "exact_acc": 0.643,
+    "mae": 0.3571,
+    "spearman": 0.996,
+    "auroc": 1.0
+  },
+  {
+    "property": "n_hbd",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "max_tokens": 2500,
+    "parse": {
+      "parsed": 14
+    },
+    "n_scored": 14,
+    "n_parsed": 14,
+    "exact_acc": 0.714,
+    "mae": 0.4286,
+    "spearman": 0.86,
+    "auroc": 0.939
+  }
+]

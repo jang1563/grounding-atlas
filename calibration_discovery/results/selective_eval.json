@@ -1,0 +1,128 @@
+{
+  "claude-opus-4-8": {
+    "n": 640,
+    "aurc_conf": 0.15488963526635158,
+    "aurc_margin": 0.14236582439227025,
+    "aurc_webexp": 0.19808688333275992,
+    "aurc_random": 0.309740563060498,
+    "aurc_oracle": 0.054557334073984234,
+    "eaurc_conf": 0.10033230119236734,
+    "sel_acc_50": 0.846875,
+    "sel_acc_80": 0.736328125,
+    "corr_conf_correct": 0.364142366638652,
+    "ece": 0.038171875000000036,
+    "behavioral": {
+      "coverage": 0.1359375,
+      "risk": 0.0,
+      "frontier_risk": 0.0,
+      "risk_gap": 0.0,
+      "coverage_gap": 0.004687500000000011,
+      "signal_auc_conf": 0.7249171025193998,
+      "signal_auc_route": 0.5986394557823129
+    },
+    "per_comp": {
+      "in": {
+        "n": 240,
+        "acc": 0.85,
+        "defer": 0.675,
+        "mconf": 0.447
+      },
+      "out": {
+        "n": 320,
+        "acc": 0.528,
+        "defer": 1.0,
+        "mconf": 0.136
+      },
+      "novel": {
+        "n": 80,
+        "acc": 0.85,
+        "defer": 0.888,
+        "mconf": 0.411
+      }
+    }
+  },
+  "claude-sonnet-4-6": {
+    "n": 640,
+    "aurc_conf": 0.19121417080886244,
+    "aurc_margin": 0.1854658684466168,
+    "aurc_webexp": 0.201248395016564,
+    "aurc_random": 0.3135993534888012,
+    "aurc_oracle": 0.05632270758532617,
+    "eaurc_conf": 0.13489146322353626,
+    "sel_acc_50": 0.7625,
+    "sel_acc_80": 0.7421875,
+    "corr_conf_correct": 0.26220503762709696,
+    "ece": 0.10634374999999989,
+    "behavioral": {
+      "coverage": 0.6609375,
+      "risk": 0.22695035460992907,
+      "frontier_risk": 0.2695035460992908,
+      "risk_gap": -0.04255319148936171,
+      "coverage_gap": -0.22499999999999998,
+      "signal_auc_conf": 0.6622417378724174,
+      "signal_auc_route": 0.6356639088566391
+    },
+    "per_comp": {
+      "in": {
+        "n": 240,
+        "acc": 0.846,
+        "defer": 0.079,
+        "mconf": 0.635
+      },
+      "out": {
+        "n": 320,
+        "acc": 0.522,
+        "defer": 0.597,
+        "mconf": 0.408
+      },
+      "novel": {
+        "n": 80,
+        "acc": 0.85,
+        "defer": 0.088,
+        "mconf": 0.585
+      }
+    }
+  },
+  "claude-haiku-4-5-20251001": {
+    "n": 640,
+    "aurc_conf": 0.2899110967086516,
+    "aurc_margin": 0.27874833990209547,
+    "aurc_webexp": 0.3094107444864063,
+    "aurc_random": 0.3878077666084174,
+    "aurc_oracle": 0.08909346507953227,
+    "eaurc_conf": 0.20081763162911936,
+    "sel_acc_50": 0.66875,
+    "sel_acc_80": 0.642578125,
+    "corr_conf_correct": 0.19051257631035476,
+    "ece": 0.15056250000000002,
+    "behavioral": {
+      "coverage": 0.2625,
+      "risk": 0.25,
+      "frontier_risk": 0.22023809523809523,
+      "risk_gap": 0.029761904761904767,
+      "coverage_gap": 0.0703125,
+      "signal_auc_conf": 0.6119692307692308,
+      "signal_auc_route": 0.5775384615384616
+    },
+    "per_comp": {
+      "in": {
+        "n": 240,
+        "acc": 0.692,
+        "defer": 0.571,
+        "mconf": 0.537
+      },
+      "out": {
+        "n": 320,
+        "acc": 0.497,
+        "defer": 0.816,
+        "mconf": 0.41
+      },
+      "novel": {
+        "n": 80,
+        "acc": 0.812,
+        "defer": 0.925,
+        "mconf": 0.547
+      }
+    }
+  }
+}

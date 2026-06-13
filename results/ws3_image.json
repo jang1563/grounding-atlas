@@ -1,0 +1,13 @@
+{
+  "point": "molecular_image",
+  "endpoint": "herg",
+  "model": "claude-sonnet-4-6",
+  "n": 120,
+  "solo_image_auroc": 0.566,
+  "ocsr_valid_rate": 0.758,
+  "ocsr_mean_tanimoto": 0.552,
+  "ocsr_exact_rate": 0.167,
+  "ref_solo_text_frontier": 0.633,
+  "ref_orchestrate_ceiling": 0.895,
+  "ref_lit_molvision_image": 0.15
+}

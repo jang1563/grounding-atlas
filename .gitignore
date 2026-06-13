@@ -1,0 +1,42 @@
+# ── Python ───────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.ipynb_checkpoints/
+.venv/
+venv/
+env/
+.python-version
+
+# ── OS / editor ──────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
+
+# ── Secrets (never commit) ───────────────────────────────────────────
+.env
+.env.*
+.api_keys
+*.key
+*.pem
+credentials.json
+
+# ── Logs / run artifacts ─────────────────────────────────────────────
+*.log
+results/expanse_logs/
+
+# ── Large / re-fetchable data ────────────────────────────────────────
+# Provenance: re-fetch via the per-branch setup scripts (e.g. eval/setup_data_*.sh).
+# Public reference DBs live under */data/raw/ (AlphaMissense ~1.1G, three ClinVar
+# releases ~1.2G, UniProt FASTA, ProteinGym DMS) and must not be committed.
+**/data/raw/
+*.gz
+# Large derived table (~184k variants); the balanced eval CSVs are the committed inputs.
+variant_grounding/data/variant_clinvar_full.csv

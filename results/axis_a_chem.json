@@ -1,0 +1,223 @@
+{
+  "n": 35,
+  "model": "claude-sonnet-4-6",
+  "recognition_rate": {
+    "name": 1.0,
+    "smiles": 0.857,
+    "inchikey": 0.686
+  },
+  "per_drug": [
+    {
+      "drug": "aspirin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "caffeine",
+      "name": 1,
+      "smiles": 0,
+      "inchikey": 1
+    },
+    {
+      "drug": "ibuprofen",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "paracetamol",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "nicotine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "metformin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "dopamine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "serotonin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "diazepam",
+      "name": 1,
+      "smiles": 0,
+      "inchikey": 1
+    },
+    {
+      "drug": "naproxen",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "warfarin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "theophylline",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "amphetamine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "ascorbic acid",
+      "name": 1,
+      "smiles": 0,
+      "inchikey": 1
+    },
+    {
+      "drug": "penicillin g",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "phenobarbital",
+      "name": 1,
+      "smiles": 0,
+      "inchikey": 0
+    },
+    {
+      "drug": "lidocaine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "salbutamol",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "omeprazole",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "fluoxetine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "diphenhydramine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "methamphetamine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "histamine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "levodopa",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "epinephrine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "ketamine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "propofol",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "valproic acid",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "chlorpromazine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "atropine",
+      "name": 1,
+      "smiles": 0,
+      "inchikey": 0
+    },
+    {
+      "drug": "gabapentin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "ranitidine",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "acetazolamide",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    },
+    {
+      "drug": "amoxicillin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 1
+    },
+    {
+      "drug": "ciprofloxacin",
+      "name": 1,
+      "smiles": 1,
+      "inchikey": 0
+    }
+  ],
+  "gap_name_minus_inchikey": 0.314,
+  "gap_smiles_minus_inchikey": 0.171
+}

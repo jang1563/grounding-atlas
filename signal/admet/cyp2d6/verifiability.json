@@ -1,0 +1,18 @@
+{
+  "endpoint": "cyp2d6",
+  "modality": "smiles",
+  "featurizer": "morgan_r2_2048",
+  "split": "murcko_scaffold_groupkfold5",
+  "n": 6226,
+  "pos": 674,
+  "baseline": 0.108,
+  "n_groups": 3674,
+  "random_auroc": 0.879,
+  "cold_auroc": 0.828,
+  "cold_auroc_rf": 0.864,
+  "cold_auprc": 0.46,
+  "control_auroc": 0.49,
+  "selectivity": 0.338,
+  "leakage_drop": 0.051,
+  "passed": true
+}

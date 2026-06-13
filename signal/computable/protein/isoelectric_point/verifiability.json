@@ -1,0 +1,14 @@
+{
+  "property": "isoelectric_point",
+  "modality": "protein",
+  "kind": "float",
+  "n": 1500,
+  "threshold_median": 6.2036,
+  "value_min": 4.05,
+  "value_max": 11.649,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": null,
+  "n_renotation_variants": 0,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/protein/isoelectric_point/pairs.jsonl",
+  "act_csv": null
+}

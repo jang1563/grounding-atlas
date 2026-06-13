@@ -1,0 +1,12 @@
+{
+  "modality": "molecular_image",
+  "endpoint": "herg",
+  "n": 120,
+  "ocsr_valid": 91,
+  "model": "claude-sonnet-4-6 (VLM, no hidden states)",
+  "ceiling_morgan_on_true": 0.784,
+  "encoding_proxy_morgan_on_perceived": 0.759,
+  "output_solo_image": 0.566,
+  "encoding_gap_proxy": 0.025,
+  "regime": "encoding-limited (perception floor)"
+}

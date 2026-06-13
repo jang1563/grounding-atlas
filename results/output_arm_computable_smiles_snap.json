@@ -1,0 +1,100 @@
+[
+  {
+    "property": "logp",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "float",
+    "condition": "matched",
+    "parse": {
+      "fallback": 119,
+      "parsed": 1
+    },
+    "n_scored": 120,
+    "n_parsed": 1
+  },
+  {
+    "property": "mol_wt",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "float",
+    "condition": "matched",
+    "parse": {
+      "fallback": 103,
+      "parsed": 17
+    },
+    "n_scored": 120,
+    "n_parsed": 17,
+    "exact_acc": 0.059,
+    "mae": 323.8123,
+    "spearman": 0.289,
+    "auroc": 0.595
+  },
+  {
+    "property": "n_aromatic_rings",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "parse": {
+      "fallback": 46,
+      "parsed": 74
+    },
+    "n_scored": 120,
+    "n_parsed": 74,
+    "exact_acc": 0.73,
+    "mae": 0.2703,
+    "spearman": 0.839,
+    "auroc": 0.636
+  },
+  {
+    "property": "n_carbon",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "parse": {
+      "fallback": 88,
+      "parsed": 32
+    },
+    "n_scored": 120,
+    "n_parsed": 32,
+    "exact_acc": 0.0,
+    "mae": 17.4688,
+    "spearman": -0.437,
+    "auroc": 0.636
+  },
+  {
+    "property": "n_hba",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "parse": {
+      "fallback": 116,
+      "parsed": 4
+    },
+    "n_scored": 120,
+    "n_parsed": 4,
+    "exact_acc": 0.75,
+    "mae": 0.25,
+    "spearman": 0.816,
+    "auroc": 0.517
+  },
+  {
+    "property": "n_hbd",
+    "model": "claude-sonnet-4-6",
+    "modality": "smiles",
+    "kind": "int",
+    "condition": "matched",
+    "parse": {
+      "fallback": 64,
+      "parsed": 56
+    },
+    "n_scored": 120,
+    "n_parsed": 56,
+    "exact_acc": 0.804,
+    "mae": 0.1964,
+    "spearman": 0.864,
+    "auroc": 0.752
+  }
+]

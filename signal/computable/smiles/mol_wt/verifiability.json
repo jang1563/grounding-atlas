@@ -1,0 +1,14 @@
+{
+  "property": "mol_wt",
+  "modality": "smiles",
+  "kind": "float",
+  "n": 1500,
+  "threshold_median": 438.8755,
+  "value_min": 76.526,
+  "value_max": 7543.898,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": 0.9,
+  "n_renotation_variants": 250,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/mol_wt/pairs.jsonl",
+  "act_csv": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/mol_wt/mol_wt.csv"
+}

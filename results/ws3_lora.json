@@ -1,0 +1,44 @@
+[
+  {
+    "model": "Qwen/Qwen3-8B",
+    "n_train": 721,
+    "n_test": 279,
+    "epochs": 3,
+    "base_output_auroc": 0.526,
+    "finetuned_output_auroc": 0.608,
+    "lift": 0.082,
+    "ref_output_arm": 0.453,
+    "ref_activation_probe": 0.787,
+    "ref_structure_ceiling": 0.825
+  },
+  {
+    "tag": "n2000_r32_e5",
+    "model": "Qwen/Qwen3-8B",
+    "n_train": 1097,
+    "n_test": 528,
+    "epochs": 5,
+    "lora_r": 32,
+    "shuffled_control": false,
+    "base_output_auroc": 0.575,
+    "finetuned_output_auroc": 0.856,
+    "lift": 0.281,
+    "ref_output_arm": 0.453,
+    "ref_activation_probe": 0.787,
+    "ref_structure_ceiling": 0.825
+  },
+  {
+    "tag": "shuffled",
+    "model": "Qwen/Qwen3-8B",
+    "n_train": 721,
+    "n_test": 279,
+    "epochs": 3,
+    "lora_r": 16,
+    "shuffled_control": true,
+    "base_output_auroc": 0.526,
+    "finetuned_output_auroc": 0.484,
+    "lift": -0.042,
+    "ref_output_arm": 0.453,
+    "ref_activation_probe": 0.787,
+    "ref_structure_ceiling": 0.825
+  }
+]

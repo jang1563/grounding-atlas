@@ -1,0 +1,18 @@
+{
+  "endpoint": "solubility",
+  "modality": "smiles",
+  "featurizer": "morgan_r2_2048",
+  "split": "murcko_scaffold_groupkfold5",
+  "n": 866,
+  "pos": 184,
+  "baseline": 0.212,
+  "n_groups": 486,
+  "random_auroc": 0.85,
+  "cold_auroc": 0.791,
+  "cold_auroc_rf": 0.776,
+  "cold_auprc": 0.487,
+  "control_auroc": 0.502,
+  "selectivity": 0.289,
+  "leakage_drop": 0.059,
+  "passed": true
+}

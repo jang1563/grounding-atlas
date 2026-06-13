@@ -1,0 +1,18 @@
+{
+  "endpoint": "permeability",
+  "modality": "smiles",
+  "featurizer": "morgan_r2_2048",
+  "split": "murcko_scaffold_groupkfold5",
+  "n": 2057,
+  "pos": 1882,
+  "baseline": 0.915,
+  "n_groups": 1124,
+  "random_auroc": 0.919,
+  "cold_auroc": 0.878,
+  "cold_auroc_rf": 0.894,
+  "cold_auprc": 0.981,
+  "control_auroc": 0.501,
+  "selectivity": 0.377,
+  "leakage_drop": 0.041,
+  "passed": true
+}

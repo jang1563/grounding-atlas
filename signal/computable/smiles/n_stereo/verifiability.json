@@ -1,0 +1,14 @@
+{
+  "property": "n_stereo",
+  "modality": "smiles",
+  "kind": "int",
+  "n": 1500,
+  "threshold_median": 1.0,
+  "value_min": 0.0,
+  "value_max": 111.0,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": 0.938,
+  "n_renotation_variants": 250,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/n_stereo/pairs.jsonl",
+  "act_csv": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/n_stereo/n_stereo.csv"
+}

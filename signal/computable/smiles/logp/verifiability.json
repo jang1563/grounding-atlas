@@ -1,0 +1,14 @@
+{
+  "property": "logp",
+  "modality": "smiles",
+  "kind": "float",
+  "n": 1500,
+  "threshold_median": 3.8056,
+  "value_min": -52.014,
+  "value_max": 9.553,
+  "ceiling_exact": 1.0,
+  "morgan_decodability_auroc": 0.86,
+  "n_renotation_variants": 250,
+  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/logp/pairs.jsonl",
+  "act_csv": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/logp/logp.csv"
+}

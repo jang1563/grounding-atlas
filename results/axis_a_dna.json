@@ -1,0 +1,294 @@
+{
+  "n": 40,
+  "model": "claude-sonnet-4-6",
+  "recognition_rate": {
+    "symbol": 1.0,
+    "uniprot": 0.6,
+    "rsid": 0.025,
+    "sequence": 0.025
+  },
+  "gap_symbol_minus_uniprot": 0.4,
+  "gap_symbol_minus_sequence": 0.975,
+  "per_gene": [
+    {
+      "gene": "FBN1",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "KMT2D",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "DNAH11",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "SCN1A",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "LDLR",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL4A5",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "BRCA2",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 1,
+      "sequence": 0
+    },
+    {
+      "gene": "ABCA4",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "NEB",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "ADGRV1",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "GLA",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "BRCA1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL2A1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL1A2",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL1A1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "SACS",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL7A1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "PAH",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "NF1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL3A1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "USH2A",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "DNAH5",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "MSH2",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "KMT2C",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "NSD1",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "KAT6A",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "TP53",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 1
+    },
+    {
+      "gene": "SCN2A",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "CHD7",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "TSC2",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "GCK",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "KCNQ2",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "MYH7",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "COL4A3",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "APOB",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "DYNC1H1",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "ATRX",
+      "symbol": 1,
+      "uniprot": 1,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "EHMT1",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "CACNA1E",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    },
+    {
+      "gene": "KMT2B",
+      "symbol": 1,
+      "uniprot": 0,
+      "rsid": 0,
+      "sequence": 0
+    }
+  ]
+}

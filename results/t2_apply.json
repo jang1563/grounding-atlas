@@ -1,0 +1,136 @@
+{
+  "title": "T2 apply: SOLVE mode, orchestrate vs solo",
+  "anchors": [
+    {
+      "modality": "smiles",
+      "task": "hERG",
+      "ceiling": 0.825,
+      "activation": 0.787,
+      "solo_output": 0.453,
+      "orchestrate_headroom": 0.372,
+      "expression_gap": 0.334,
+      "encoding_gap": 0.038,
+      "t2_route": "WS3-weights: train the read-out (expression-limited)",
+      "ceiling_source": "Morgan r2 (balanced same-set)",
+      "note": "best frontier output 0.581 (sonnet-4-6)"
+    },
+    {
+      "modality": "smiles",
+      "task": "CYP3A4",
+      "ceiling": 0.745,
+      "activation": 0.684,
+      "solo_output": 0.502,
+      "orchestrate_headroom": 0.243,
+      "expression_gap": 0.182,
+      "encoding_gap": 0.061,
+      "t2_route": "WS3-weights: train the read-out (expression-limited)",
+      "ceiling_source": "Morgan r2 (balanced same-set)",
+      "note": ""
+    },
+    {
+      "modality": "variant",
+      "task": "ClinVar (text)",
+      "ceiling": 0.962,
+      "activation": 0.795,
+      "solo_output": 0.599,
+      "orchestrate_headroom": 0.363,
+      "expression_gap": 0.196,
+      "encoding_gap": 0.167,
+      "t2_route": "weights + orchestrate (mixed: both gaps large)",
+      "ceiling_source": "AlphaMissense + ESM-1v",
+      "note": "web-rich text form; gene-prior recall confound"
+    },
+    {
+      "modality": "variant",
+      "task": "ClinVar (seq)",
+      "ceiling": 0.962,
+      "activation": 0.74,
+      "solo_output": 0.494,
+      "orchestrate_headroom": 0.468,
+      "expression_gap": 0.246,
+      "encoding_gap": 0.222,
+      "t2_route": "weights + orchestrate (mixed: both gaps large)",
+      "ceiling_source": "AlphaMissense + ESM-1v",
+      "note": "web-poor seq form; floor rises with scale"
+    },
+    {
+      "modality": "protein",
+      "task": "meltome Tm",
+      "ceiling": 0.699,
+      "activation": 0.609,
+      "solo_output": 0.486,
+      "orchestrate_headroom": 0.213,
+      "expression_gap": 0.123,
+      "encoding_gap": 0.09,
+      "t2_route": "orchestrate (thin signal: low ceiling, little to surface)",
+      "ceiling_source": "ESM-2",
+      "note": "low ceiling, encoding-weak + organism-name"
+    }
+  ],
+  "admet_solve_coverage": [
+    {
+      "endpoint": "ames",
+      "n": 517,
+      "orchestrate_ceiling_cold": 0.847,
+      "solo_auroc": 0.379,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.468,
+      "solo_status": "measured"
+    },
+    {
+      "endpoint": "clearance",
+      "n": 46958,
+      "orchestrate_ceiling_cold": 0.746,
+      "solo_auroc": 0.485,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.261,
+      "solo_status": "measured"
+    },
+    {
+      "endpoint": "cyp2d6",
+      "n": 6226,
+      "orchestrate_ceiling_cold": 0.828,
+      "solo_auroc": 0.608,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.22,
+      "solo_status": "measured"
+    },
+    {
+      "endpoint": "cyp3a4",
+      "n": 9929,
+      "orchestrate_ceiling_cold": 0.83,
+      "solo_auroc": 0.611,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.219,
+      "solo_status": "measured"
+    },
+    {
+      "endpoint": "herg",
+      "n": 3963,
+      "orchestrate_ceiling_cold": 0.895,
+      "solo_auroc": 0.633,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.262,
+      "solo_status": "measured"
+    },
+    {
+      "endpoint": "permeability",
+      "n": 2057,
+      "orchestrate_ceiling_cold": 0.878,
+      "solo_auroc": 0.719,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.159,
+      "solo_status": "measured"
+    },
+    {
+      "endpoint": "solubility",
+      "n": 866,
+      "orchestrate_ceiling_cold": 0.791,
+      "solo_auroc": 0.653,
+      "solo_source": "frontier sonnet-4-6 (oriented)",
+      "orchestrate_headroom": 0.138,
+      "solo_status": "measured"
+    }
+  ],
+  "headline": "On the 8B 3-arm anchors solo output sits near chance (0.45-0.60) below a 0.70-0.96 specialist ceiling, and the headroom splits into an expression part (recoverable by training the read-out, WS3-weights) and an encoding part (must orchestrate the specialist) = the T2 routing rule. But the clean frontier ADMET sweep (sonnet-4-6, all 7, oriented) shows solo transfer is endpoint-dependent and mostly ABOVE chance: 5 of 7 at 0.61-0.72 (permeability 0.72, solubility 0.65, hERG 0.63, CYP3A4 0.61, CYP2D6 0.61, all web-exposed physicochemical), AMES 0.38 (anti, toxicophore SAR), clearance 0.49 (chance). So the 8B near-chance output is a model-scale expression gap, not a ceiling on the capability; the frontier closes most of it. Orchestration still wins for max accuracy (cold ceiling > solo everywhere)."
+}

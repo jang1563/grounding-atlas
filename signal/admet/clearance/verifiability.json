@@ -1,0 +1,18 @@
+{
+  "endpoint": "clearance",
+  "modality": "smiles",
+  "featurizer": "morgan_r2_2048",
+  "split": "murcko_scaffold_groupkfold5",
+  "n": 46958,
+  "pos": 8787,
+  "baseline": 0.187,
+  "n_groups": 24219,
+  "random_auroc": 0.796,
+  "cold_auroc": 0.746,
+  "cold_auroc_rf": 0.88,
+  "cold_auprc": 0.403,
+  "control_auroc": 0.504,
+  "selectivity": 0.242,
+  "leakage_drop": 0.05,
+  "passed": true
+}
