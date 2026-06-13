@@ -53,7 +53,7 @@ What exists today does **not** decide this. The NMSE Evaluation Report shows a p
 
 Source (probe): `Narrow_Model_Safety_Eval/results/separability_results.json`, `src/03_esm2_separability.py` (model = `facebook/esm2_t33_650M_UR50D`, embeddings of shape 60+60). The 0.994 -> 0.981 correction is from UniProt accession fixes, `docs/DATA_CORRECTIONS.md`. Absence of LLM side: re-verified across the whole project (high confidence). The one `anthropic` call (`src/18_realizability_automation.py`) is off-pipeline and scores realizability from UniProt/PubMed metadata, not a classification of the panel sequences.
 
-**Capability read:** this is exactly what WS1 should measure, and it needs both arms plus an **LLM-activation probe** (a simple linear probe, not an LLM verbalizer; 2509.13316) to separate encoding from expression. The 2026-06 scan confirms it is open: Inside-Out (2503.15299) formalizes encoding-vs-expression for general QA, Masked-by-Consensus (2604.12373) does self-vs-peer LLM probing, InterPLM probes ESM-2 alone, but none apply an LLM-activation probe to a biological SFM-grounded property. Resolving it is the project's central contribution, a question to answer, not a result to cite. **This, with A and E, is the mine-to-claim core that stands without NegBioDB.**
+**Capability read:** this is exactly what WS1 should measure, and it needs both arms plus an **LLM-activation probe** (a simple linear probe, not an LLM verbalizer; 2509.13316) to separate encoding from expression. The 2026-06 scan confirms it is open: Inside-Out (2503.15299) formalizes encoding-vs-expression for general QA, Masked-by-Consensus (2604.12373) does self-vs-peer LLM probing, InterPLM probes ESM-2 alone, but none apply an LLM-activation probe to a biological SFM-grounded property. Resolving it is the project's central contribution, a question to answer, not a result to cite. **This, with A and E, is the core contribution that stands without NegBioDB.**
 
 ---
 
@@ -118,7 +118,7 @@ Listed because it is easy to conflate with grounding and because the draft taxon
 
 ## Implications for the workstreams
 
-- **WS1 (instrument):** the mine-to-claim core is the **B-axis** (probe-vs-LLM head-to-head + LLM-activation probe + content-sensitivity), with **A** and **E** as measured supporting findings from FRT. This is what stands on its own, without NegBioDB. Axes reframed safety -> capability.
+- **WS1 (instrument):** the core contribution is the **B-axis** (probe-vs-LLM head-to-head + LLM-activation probe + content-sensitivity), with **A** and **E** as measured supporting findings from FRT. This is what stands on its own, without NegBioDB. Axes reframed safety -> capability.
 - **WS2 (signal):** NullAtlas is the load-bearing substrate here (negative-evidence coverage, the verifiable-signal engine). The B-axis Phase 2 also draws raw data from NegBioDB, but as **one source among options**, and the head-to-head gap must not depend on it.
 - **Do not import** NullAtlas's L4/PBS results as instrument findings. Cite them as NullAtlas's; this instrument measures grounding (A/B/E/D).
 - **WS3 / D:** D needs a human-rater pass before it can carry weight; treat as exploratory.

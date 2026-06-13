@@ -4,7 +4,7 @@
 
 ## Maturity read: findings solid, eval coverage uneven
 
-The B-axis claim (encoding vs expression + the web-exposure law) is mine-to-claim and SOLID across three modalities (SMILES, protein, variant), with regime spectrum, selectivity control, and leakage-free specialist ceilings. That is enough to carry the headline.
+The B-axis claim (encoding vs expression + the web-exposure law) is the central claim and SOLID across three modalities (SMILES, protein, variant), with regime spectrum, selectivity control, and leakage-free specialist ceilings. That is enough to carry the main result.
 
 But as an instrument the coverage is a sketch in places, not uniform:
 - **Depth is uneven.** SMILES is deep (5-model panel, 2 endpoints, thinking, selectivity, randomized). Variant is rich (6-model panel, activation arm, ESM-1v, DMS, temporal holdout). Protein is thin (1 activation model Qwen3-8B + a Claude axis-A arm), one low-ceiling property (Tm 0.70), no selectivity yet.
@@ -36,7 +36,7 @@ But as an instrument the coverage is a sketch in places, not uniform:
 - **Ladder fill:** DNA/RNA (Evo/NT ceiling, full 3-arm), molecular image (ImageMol ceiling, 2-arm VLM), spectra (SpecTUS, 2-arm), to span the spectrum. [DNA heavy; image/spectra light]
 - **P2:** confirm the bottleneck-shift fix (read-out training closes an expression-limited gap, not an encoding-limited one) = WS3.
 
-### E. Methodology hardening (reviewer-proofing)
+### E. Methodology hardening
 - **selectivity control on every modality: DONE on all rungs (Expanse H100 run, `results/expanse_logs/`).** Protein (the previously-missing rung) measured: structure-probe +0.193, activation **+0.114** (positive, real ESM-grounded signal, lower than the others consistent with encoding-weak). SMILES structure +0.331 / activation +0.301, variant text +0.301 / seq +0.218. See `results/confound_controls.md`.
 - **best-layer selection-bias: MEASURED (`results/selection_bias.md`).** Nested-CV held-out-layer protocol in `eval/activation_arm.py:heldout_layer_auroc` was RUN (Expanse H100): measured bias SMILES +0.007, variant-text +0.003, variant-seq +0.012, protein +0.034 (largest, an early-layer spike, exactly as the prior bound predicted). The expression gap is layer-selection-immune and stays large under the held-out estimate; no regime label flips.
 - **supervision-asymmetry control: DONE (SMILES/hERG).** 8B few-shot K=10 output = 0.493, unchanged from zero-shot 0.453 and far below activation 0.787 (`eval/fewshot_output.py`, job 3027033), so the probe advantage is not supervision. Extend to other modalities/endpoints if a reviewer asks.
@@ -53,5 +53,5 @@ But as an instrument the coverage is a sketch in places, not uniform:
 
 ## Priority read
 
-- **For the application** (findings + vision, not exhaustive): the eval is sketch-in-places but the LAW is demonstrated, which is sufficient. The reviewer-proofing pass is now DONE end-to-end: **D P1** is diagnosed and reframed as a within-entity qualitative law (`results/p1_webexposure.md`, not a fitted regression, which would have been the overclaim); **E** is fully closed with measured numbers (Expanse H100 run, `results/expanse_logs/`, summarized in `results/confound_controls.md` and `results/selection_bias.md`): best-layer selection bias measured (+0.003 to +0.034, protein largest as predicted), protein selectivity measured (+0.114, the last open rung), input-asymmetry controlled for SMILES (raw-text probe 0.801 vs output 0.453). No confound on the encoding claim remains open.
+- **Overall** (findings + vision, not exhaustive): the eval is sketch-in-places but the LAW is demonstrated, which is sufficient. The robustness pass is now DONE end-to-end: **D P1** is diagnosed and reframed as a within-entity qualitative law (`results/p1_webexposure.md`, not a fitted regression, which would have been the overclaim); **E** is fully closed with measured numbers (Expanse H100 run, `results/expanse_logs/`, summarized in `results/confound_controls.md` and `results/selection_bias.md`): best-layer selection bias measured (+0.003 to +0.034, protein largest as predicted), protein selectivity measured (+0.114, the last open rung), input-asymmetry controlled for SMILES (raw-text probe 0.801 vs output 0.453). No confound on the encoding claim remains open.
 - **For a full research program** (post-join): **A** (modality depth, esp. protein) + **B** (T2 SOLVE now done, `../results/t2_apply.md`; its route decomposition hands WS3 its first decision-map points) + **D ladder fill** are the systematic completion. WS3 (placement) is the natural home for T2-propose/P2, and is now seeded by the T2 routing rule.

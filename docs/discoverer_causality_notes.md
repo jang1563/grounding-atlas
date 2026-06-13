@@ -1,8 +1,8 @@
 # Thinking notes: can today's AI become a discoverer? Causality as a data / architecture / signal problem
 
-*Living note, started 2026-06-12. An ongoing dialogue (JK + Claude) developing the discoverer question beyond the placement results. Keep updating. Companion to `docs/field_message.md` and `docs/ai_scientist_roadmap.md`. No em dashes.*
+*Living note, started 2026-06-12. An ongoing dialogue developing the discoverer question beyond the placement results. Keep updating. Companion to `docs/field_message.md` and `docs/ai_scientist_roadmap.md`. No em dashes.*
 
-## The framing that organizes everything (JK's insight)
+## The framing that organizes everything
 
 The limit on going from ACCELERATOR (interpolation, recall) to DISCOVERER (extrapolation, causation) is not one problem but three entangled ones, and they map cleanly onto the three questions we were chasing:
 - **a. why observation alone cannot give causation = DATA problem**

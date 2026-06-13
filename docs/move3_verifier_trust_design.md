@@ -19,7 +19,7 @@ The decisive contrast is (2) vs (3): the SAME variant task, only the gene name r
 ## Verifiers (candidates, to finalize)
 
 - web-poor (1): ESM-based stability / ddG predictor (ground truth = Tsuboyama 2023 mega-scale ddG ~776k; runnable on Cayuga, ESM already in use) OR Boltz-2 binding affinity (documented miscalibration is ideal, but heavy to run). Lean: start with ESM-stability for tractability; Boltz as an optional second web-poor verifier.
-- web-rich (2)(3): a variant-effect FM scoring ClinVar variants we already hold. Candidates: AlphaMissense (public genome-wide scores, easy match) or Evo2 (JK asset, 215k variants already scored, documented benign-error on TERT/non-coding). Lean: AlphaMissense for genome-wide coverage; Evo2 as the JK-asset variant with a known failure region.
+- web-rich (2)(3): a variant-effect FM scoring ClinVar variants we already hold. Candidates: AlphaMissense (public genome-wide scores, easy match) or Evo2 (an available asset, 215k variants already scored, documented benign-error on TERT/non-coding). Lean: AlphaMissense for genome-wide coverage; Evo2 as the in-house-scored variant with a known failure region.
 
 Open requirement for ALL verifiers: a documented or measured BENIGN-ERROR structure (a predictable subset where the verifier is wrong), because the escalate-correct cases live there. We will measure each verifier's error map ourselves (run it, see where it misses) rather than assume.
 
@@ -43,7 +43,7 @@ The LLM router must match/beat the FM's own confidence and approach the classica
 
 trust-calibration high in (1), LOW in (2), recovered in (3). The (2)->(3) recovery under anonymization isolates web-exposure as the orchestration variable. If (2) == (3) (no recovery), the cause is not web-anchored self-recall but something else (e.g. the LLM never trusts a numeric verifier regardless), which is itself a clean result.
 
-## Honest limits + positioning
+## Honest limits
 
 - Narrow claim only: the orchestrator-judges-a-black-box-scientific-FM-verifier instantiation + the web-exposure modulation. Do NOT claim the trust-vs-escalate mechanism (Trust-or-Escalate ICLR 2025), calibrated escalation (2602.17633), or scientific surrogate trust (PROBE).
 - This is one cell of the measurement layer, the natural extension of calibration-routing, not a standalone headline. Same question as CausalAtlas P2b on a different substrate, do not double-count.

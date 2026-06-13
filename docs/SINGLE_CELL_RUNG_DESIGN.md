@@ -1,10 +1,10 @@
 # Single-cell rung design: the descriptive grounding rung with a built-in web-exposure contrast
 
-*Design doc. 2026-06-12. The 7th modality rung, the JK-flagship. Single-cell DESCRIPTIVE grounding (cell-type from an expression vector); the CAUSAL/perturbation question is the sibling CausalAtlas project, OUT OF SCOPE. No em dashes.*
+*Design doc. 2026-06-12. The 7th modality rung, the flagship modality. Single-cell DESCRIPTIVE grounding (cell-type from an expression vector); the CAUSAL/perturbation question is the sibling CausalAtlas project, OUT OF SCOPE. No em dashes.*
 
 ## Why this rung
 
-The deep-research sweep (`docs/MODALITY_LANDSCAPE.md`) ranked single-cell #1: it is JK's flagship domain AND it has a built-in within-entity web-exposure contrast, exactly the variant text-vs-seq structure that is the project's cleanest test. The same cell has:
+The deep-research sweep (`docs/MODALITY_LANDSCAPE.md`) ranked single-cell #1: it is a flagship domain AND it has a built-in within-entity web-exposure contrast, exactly the variant text-vs-seq structure that is the project's cleanest test. The same cell has:
 - a WEB-ZERO raw form: the numeric expression vector (the model cannot read 20k floats), and
 - a WEB-RICH symbolic form: the rank-ordered gene SYMBOLS (Cell2Sentence "cell sentence"), which the model can read because gene names are common in pretraining text.
 Cell2Sentence (and C2S-Scale reaching ~95% cell-type accuracy, near the scGPT/Geneformer ceiling) proves the symbolic form is groundable; the raw numeric form should not be. So the rung extends the web-exposure law into omics.
@@ -36,7 +36,7 @@ The load-bearing contrast is anonymized (1) vs cell-sentence (3): the lift is th
 
 - anonymized numeric: encoding-limited / expression-limited at the web-zero extreme (like the raw-sequence forms).
 - cell sentence: scale-closable expression gap (the model encodes and, at scale or with C2S fine-tuning, verbalizes via gene-name markers).
-The within-modality contrast (anonymized vs cell-sentence) is the clean web-exposure test at a fixed ceiling, the project's strongest design, now in JK's flagship modality and the plan's stated SFM-as-input white-space.
+The within-modality contrast (anonymized vs cell-sentence) is the clean web-exposure test at a fixed ceiling, the project's strongest design, now in the flagship modality and the plan's stated SFM-as-input area.
 
 ## Build order (disciplined, gating first)
 

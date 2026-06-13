@@ -1,6 +1,6 @@
 # Roadmap to an ultimate AI scientist, and where our measurement layer fits
 
-*2026-06-12. From a 5-dimension deep-research sweep (`ultimate-ai-scientist-roadmap` workflow; full sources in the workflow output). The single diagnosis, the layer-by-layer known-vs-missing, the bottleneck, our position, and the next 3 moves. Reuse for cover letter / position paper / interview. No em dashes.*
+*2026-06-12. From a 5-dimension deep-research sweep (`ultimate-ai-scientist-roadmap` workflow; full sources in the workflow output). The single diagnosis, the layer-by-layer known-vs-missing, the bottleneck, the current position, and the next 3 moves. No em dashes.*
 
 ## The single diagnosis
 
@@ -33,7 +33,7 @@ Our measured contribution IS the instrument for the bottleneck. Placement (train
 2. Calibration inside discovery. Promote our calibrated-router result to a risk-coverage / selective-prediction benchmark for discovery, where the correct move on an unfalsifiable or out-of-competence task is to abstain or hand off, the axis AbstentionBench shows scaling degrades, which no discovery eval scores. Converts +0.90 routing into the calibration layer the bottleneck demands.
 3. Closed-loop placement probe (small, decisive). Wrap one cheap in-silico verifier (Boltz-2) behind an MCP contract and measure the ORCHESTRATION DECISION itself: when does the frontier router correctly trust the simulated reward versus escalate? Produces the measured verifier-reliability signal infrastructure lacks, scores the orchestration decision nobody scores, tests whether retrieve+orchestrate suffices on a causal/computation-bound task. Wet-lab out of scope (the in-silico half is enough).
 
-Sequencing: Moves 1 and 2 are pure measurement extensions of our three existing results (low cost, publishable from current data); Move 3 bridges to infrastructure and sets up an eventual closed-loop collaboration. All three stay in the measurement + calibration + placement lane, our defensible white space, rather than competing with FutureHouse/Google on building agents.
+Sequencing: Moves 1 and 2 are pure measurement extensions of our three existing results (low cost, publishable from current data); Move 3 bridges to infrastructure and sets up an eventual closed-loop collaboration. All three stay in the measurement + calibration + placement lane, rather than building agents.
 
 ## Hype vs real
 

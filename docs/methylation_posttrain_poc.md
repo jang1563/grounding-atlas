@@ -45,7 +45,7 @@ Before any training, render gene-named vs anon and measure FRONTIER output AUROC
 
 ---
 
-## Phase 2: SFM-teacher, label-free (the rBio-narrative version, heavy)
+## Phase 2: SFM-teacher, label-free (the rBio-style version, heavy)
 
 This is where the clock-as-soft-verifier belongs, and it answers a genuinely different and more interesting question: can an SFM teacher close the gap on a cohort with NO chronological-age labels (the situation rBio actually solved for perturbation). Only here do GRPO and its costs apply.
 
@@ -59,7 +59,7 @@ Because there is no true label in this cohort, the clock IS a proxy reward, so a
 
 ### What it adds
 
-Phase 1 answers "does post-training close it, and is it web-anchored". Phase 2 answers "can you do it with an SFM teacher and no labels", which is the directly transferable answer for the many biology properties that have no clean ground truth, and the rBio-aligned narrative for the application.
+Phase 1 answers "does post-training close it, and is it web-anchored". Phase 2 answers "can you do it with an SFM teacher and no labels", which is the directly transferable answer for the many biology properties that have no clean ground truth, and the rBio-aligned framing.
 
 ---
 

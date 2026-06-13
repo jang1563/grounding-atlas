@@ -12,7 +12,7 @@ The exact 5-way combination (frontier LLM orchestrator + per-instance verifier-t
 
 White-space corners (confirmed): ATTC (arXiv:2604.08281) establishes the PHENOMENON ("Tool Ignored," 15-60% of errors) but is a method, math-only, single tool, no trust-decision metric. AstaBench (arXiv:2510.21652) has the cost-Pareto science harness but explicitly excludes grading verification decisions. The fusion (LLM-orchestrator over a scientific-FM-verifier, calibration as the scored object) is unoccupied.
 
-## The defensible novel claim (narrow, reviewer-proof)
+## The novel claim (narrow)
 
 The first benchmark scoring a frontier LLM orchestrator's per-instance calibrated decision to TRUST or ESCALATE a specialist-FM in-silico verifier (Boltz-2-class), where (i) the decider is a general LLM with NO access to the verifier's internals or self-confidence (judges from returned output + context); (ii) the verifier is non-adversarial and benignly wrong on a structured subset (e.g. Boltz-2 OOD molecular glues, documented negative correlation); (iii) ground truth is KNOWN so the trust decision is scored as a calibration object (trust precision/recall, override-rate/accuracy, selective-reliance risk-coverage), not final-task or FM accuracy; (iv) escalation target is an asymmetric-cost oracle. Thesis no prior states: extending "does the model know ITSELF" (our +0.90 self-confidence router) to "does the model know its TOOL" whose error structure it never sees. Connect the web-exposure law as the verifier-trust prior (kinase-trustworthy vs glue-escalate = a coverage prior the router should exploit).
 
@@ -38,4 +38,4 @@ Make-or-break baselines a reviewer will demand: (1) the FM's own self-reported c
 
 ## Honest implication for the program
 
-Move 3 standalone is narrow and risky (Trust-or-Escalate owns the abstraction; the classical baselines may dominate). It is best positioned as ONE cell of the larger measurement layer (grounding + calibration +0.90 + placement + Move 1 causal), the natural extension of our self-knowledge-calibration to tool-knowledge, not a standalone headline. Re-evaluation signal: because Move 3 is this crowded, Move 1 (causal grounding eval: beats-additive-baseline + anon-invariant + held-out-intervention) is likely the cleaner white space; check its prior art next before committing effort.
+Move 3 standalone is narrow and risky (Trust-or-Escalate owns the abstraction; the classical baselines may dominate). It fits best as one cell of the larger measurement layer (grounding + calibration +0.90 + placement + Move 1 causal), the natural extension of self-knowledge-calibration to tool-knowledge, rather than a standalone result. Re-evaluation signal: because Move 3 is this crowded, Move 1 (causal grounding eval: beats-additive-baseline + anon-invariant + held-out-intervention) is likely the cleaner white space; check its prior art next before committing effort.

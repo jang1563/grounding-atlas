@@ -1,6 +1,6 @@
 # Field message: what the placement results say to agentic AI, AI scientists, and AI for science
 
-*2026-06-12 (updated 2026-06-13 with the negative-class expression gap and the multimodal verifiability gate). The framing layer of Bio_Grounding_Eval, distilled for reuse in a cover letter, position paper, talk, or interview. Anchored to the measured results (`results/decision_map_placement.md`, `results/SYNTHESIS.md`, `results/calibration_routing.md`). The empirical claims are measured; the philosophical framing is the interpretation. No em dashes.*
+*2026-06-12 (updated 2026-06-13 with the negative-class expression gap and the multimodal verifiability gate). The framing layer of Bio_Grounding_Eval, distilled. Anchored to the measured results (`results/decision_map_placement.md`, `results/SYNTHESIS.md`, `results/calibration_routing.md`). The empirical claims are measured; the philosophical framing is the interpretation. No em dashes.*
 
 ## One-line message
 
@@ -51,6 +51,6 @@ Our results are a calibration of the "LLMs understand biology" hype. Much of the
 
 We built the ruler that separates the two regimes: how far you get without understanding (retrieve/orchestrate) and where understanding (causal, novel, principle) becomes necessary. The job is to deploy honestly what works without understanding, and to point precisely at where understanding is needed. That is the contribution: not a model that grounds, but a measurement of grounding and of the train/retrieve/orchestrate boundary, with calibration as the bridge.
 
-## Reuse pointers
+## Key framings
 
-Lead a cover letter with the one-line message + the closed-weight conclusion (`results/decision_map_placement.md`). Lead a position paper with the understanding-vs-orchestration line and the honest boundary. The "encode but cannot say" point now has a direct activation-arm proof on the negative class (`results/negative_expression_gap.md`) and a signal-side memorization detector (`signal/verifiability_multimodal.md`); use the AMES case (encoded at ceiling, verbalized at chance) as the single sharpest example.
+The sharpest framings: the one-line message and the closed-weight conclusion (`results/decision_map_placement.md`); the understanding-vs-orchestration line and the honest boundary. The "encode but cannot say" point now has a direct activation-arm proof on the negative class (`results/negative_expression_gap.md`) and a signal-side memorization detector (`signal/verifiability_multimodal.md`); use the AMES case (encoded at ceiling, verbalized at chance) as the single sharpest example.
