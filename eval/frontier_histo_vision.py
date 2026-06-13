@@ -5,7 +5,7 @@ The open VLM (Qwen2.5-VL-7B) ENCODES tumor (activation 0.827) but verbalizes at 
 closes it (like scale closed DNA-promoter and single-cell-gene-name) or also fails, and whether
 the failure mode is refusal (diagnostic call shaped out of the output distribution) rather than
 perception. Sends the SAME PatchCamelyon H&E patches to claude opus/sonnet/haiku and parses
-P(tumor). Reports AUROC and refusal/fallback rate per model. source ~/.api_keys. No em dashes.
+P(tumor). Reports AUROC and refusal/fallback rate per model. source <your-keys-file>. No em dashes.
 """
 import base64
 import csv

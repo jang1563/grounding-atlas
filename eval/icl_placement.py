@@ -3,7 +3,7 @@
 Fills the RETRIEVE column of the decision map (train / retrieve / orchestrate). If k-shot ICL
 closes a rung, that capability is served by retrieve/in-context and does not need weight training.
 If ICL does not close it (and a specialist tool does), the placement is orchestrate. Binary rungs.
-Compares against the known 0-shot output and the specialist ceiling. source ~/.api_keys. No em dashes.
+Compares against the known 0-shot output and the specialist ceiling. source <your-keys-file>. No em dashes.
 """
 import csv
 import os

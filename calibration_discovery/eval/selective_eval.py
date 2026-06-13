@@ -13,7 +13,7 @@ and compute:
 Prediction: AURC_conf improves with scale but the action gap (behavioral worse than frontier) does
 NOT shrink (AbstentionBench); web-exposure ~ conf on in/out strata but FAILS on the novel stratum.
 
-source ~/.api_keys. No em dashes.
+source <your-keys-file>. No em dashes.
 """
 import csv
 import json

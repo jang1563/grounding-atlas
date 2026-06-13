@@ -23,7 +23,7 @@ matched on the same items and reports mean|delta| + correlation (the invariance 
 like head_to_head.py).
 
 DRY-RUN (CMP_DRY=1 or no ANTHROPIC_API_KEY): loads pairs, balances, prints n / class balance / a
-sample prompt per property, no API spend. REAL run needs ANTHROPIC_API_KEY (source ~/.api_keys).
+sample prompt per property, no API spend. REAL run needs ANTHROPIC_API_KEY (source <your-keys-file>).
 
 Env: CMP_MODALITY (smiles|protein|dna, default smiles), CMP_PROP (comma list or 'all'),
 CMP_N (balanced total, default 200), CMP_MODEL (default claude-sonnet-4-6), CMP_CONDITION,

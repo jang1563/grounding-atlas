@@ -4,7 +4,7 @@ Renders the SAME methylation beta-values two ways - gene-named (web-rich tokens)
 feature IDs (web-zero) - and asks a frontier model to estimate age. The web-exposure law predicts
 the gene-named rendering verbalizes age better than the anonymized one, with numeric content
 identical. Mirrors the single-cell gene-name vs anon contrast, now within methylation. Continuous
-MAE + Pearson and binary AUROC. source ~/.api_keys. No em dashes.
+MAE + Pearson and binary AUROC. source <your-keys-file>. No em dashes.
 """
 import csv
 import os

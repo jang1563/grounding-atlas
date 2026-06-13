@@ -5,7 +5,7 @@ runs the OUTPUT arm (verbalized property) for the three latest Claude models, to
 the frontier comparison the new rungs lack, (b) test whether a frontier model reads a DNA
 sequence or a mass spectrum better than the 8B, and (c) check the expression gap's vendor/
 scale invariance on hard representations. (Activation is open-weight-only; Claude has no
-hidden states.) source ~/.api_keys. Env: PANEL_N (default 300), PANEL_WORKERS (8). No em dashes.
+hidden states.) source <your-keys-file>. Env: PANEL_N (default 300), PANEL_WORKERS (8). No em dashes.
 """
 import csv
 import json

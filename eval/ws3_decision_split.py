@@ -6,7 +6,7 @@ placements (a no-LLM neighbor-mean k-NN and the Morgan-fingerprint specialist pr
 EXACT train/test scaffold split that ws3_lora.py used (same seed, same load), so they line
 up apples-to-apples with the LoRA solo (0.575) and weights (0.856) already measured there.
 
-No API, no GPU: rdkit Morgan + sklearn on the reproduced split. Run with the miniconda
+No API, no GPU: rdkit Morgan + sklearn on the reproduced split. Run with a local Python (rdkit + sklearn)
 python (rdkit + sklearn). No em dashes.
 """
 import json

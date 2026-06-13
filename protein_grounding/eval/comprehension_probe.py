@@ -17,7 +17,7 @@ guesses from priors). Pairs with head_to_head_protein.py: comprehension here, ut
 there. The expected dissociation mirrors the SMILES O2 (validity-known-but-property-unknown):
 Claude reads surface composition yet cannot read the deep property (Tm).
 
-Env: HH_MODEL, PROBE_N, HH_WORKERS, HH_CSV. Keys: `set -a; source ~/.api_keys; set +a`.
+Env: HH_MODEL, PROBE_N, HH_WORKERS, HH_CSV. Keys: `set -a; source <your-keys-file>; set +a`.
 """
 import csv
 import os

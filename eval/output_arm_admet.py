@@ -11,7 +11,7 @@ hERG anchor.
 
 DRY-RUN (no API key, no spend): ADMET_DRY=1 loads the data, balances, builds prompts and
 prints n / class balance / a sample prompt per endpoint, validating everything except
-the model call. REAL run needs ANTHROPIC_API_KEY (source ~/.api_keys).
+the model call. REAL run needs ANTHROPIC_API_KEY (source <your-keys-file>).
 
 Env: ADMET_EP (comma list or 'all', default the 5 unmeasured), ADMET_N (balanced total,
 default 200 = 100/100), ADMET_MODEL (default claude-sonnet-4-6), ADMET_DRY.

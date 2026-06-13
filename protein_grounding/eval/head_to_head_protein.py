@@ -17,7 +17,7 @@ test: meltome thermostability is strongly organism-determined (thermophiles high
 low), so if Claude predicts Tm from the organism NAME alone far better than from the SEQUENCE,
 that is direct name-grounding. Needs the organism column (protein_meltome_named.csv).
 
-Env: HH_MODEL, HH_N, HH_COND, HH_PAIRED, HH_WORKERS, HH_CSV. Keys: `set -a; source ~/.api_keys; set +a`.
+Env: HH_MODEL, HH_N, HH_COND, HH_PAIRED, HH_WORKERS, HH_CSV. Keys: `set -a; source <your-keys-file>; set +a`.
 """
 import csv
 import os

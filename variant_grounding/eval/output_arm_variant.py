@@ -23,7 +23,7 @@ Compare the SMILES branch: SMILES has no web-rich symbolic form, so its output s
 
 Env: VG_CSV, VG_MODEL, VG_PROVIDER (anthropic|openai), VG_N (cap, balanced), VG_COND
      (comma list, default "text,seq,text_scramble"), VG_WORKERS, VG_MAXTOK.
-Keys: `set -a; source ~/.api_keys; set +a` first. Never prints key values.
+Keys: `set -a; source <your-keys-file>; set +a` first. Never prints key values.
 """
 import csv
 import os
