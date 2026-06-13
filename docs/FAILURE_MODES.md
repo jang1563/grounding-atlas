@@ -2,7 +2,7 @@
 
 *Shared reference for WS1-3. 2026-06-08. Capability-first framing. No em dashes.*
 
-This document fixes the grounding failure taxonomy from the **actual measured results** of the existing assets (FRT_Pilot_Execution, the NMSE Evaluation Report), not from planning docs. Every figure carries its source path. We use **aggregate behavioral numbers only**; the FRT `disclosure/` raw bypass material does not enter this project (see `../GUARDRAILS.md`).
+This document fixes the grounding failure taxonomy from the **actual measured results** of the existing assets (FRT_Pilot_Execution, the NMSE Evaluation Report), not from planning docs. Every figure carries its source path. We use **aggregate behavioral numbers only**; the FRT `disclosure/` raw bypass material does not enter this project (see `SECURITY.md`).
 
 **Scope.** These are the failure axes of the grounding **instrument** (WS1): does the model ground a representation by content vs name (A, B), and how does it act on what it detects (E, D). **Negative-evidence coverage** (telling tested-and-failed from never-tested) is an *adjacent* epistemic capability, measured by NullAtlas as the WS2 substrate, **not a grounding-instrument axis**. It is cited below, not owned here; conflating it with grounding is exactly the drift this revision corrects.
 
@@ -71,7 +71,7 @@ Source: `FRT_Pilot_Execution/pilots/P2_kill_chain_propagation/FINAL_REPORT.md` �
 Shown a specialist model's output, the model reflects the output's flagged **source reliability** but does not separate its **relevance/hazard**. The danger-orthogonal rejection contrast for a select-agent toxin vs a benign protein covers zero (appropriate-rejection ~0.79 rule / ~0.93 judge; danger-orthogonal contrast ~+0.017 rule / ~+0.025 judge), holding in 8-9 of 10 open-weight models.
 **Caveat that downgrades this to exploratory:** several of these automated scores are below the publication inter-rater-reliability threshold (kappa ~0.36), and the full model/vendor list is not enumerated in the result files. Do not quote D as a confirmed result without a human-rater pass.
 **Sharper open reframing:** content-grounded over-reliance: does the LLM over-trust a *corrupted* specialist output it cannot actually read? Generic trust-calibration (BixBench, To-Rely-or-Not, and similar) is scooped, but this content-tied version, which intersects the content-sensitivity controls, is open. Worth re-casting D toward it.
-Source: the 8-9 of 10 and kappa ~0.36 are in `FRT_Pilot_Execution/disclosure/` §1.5 (aggregate behavioral numbers only; raw material excluded per the disclosure boundary); the 0.79/0.93/0.017/0.025 contrast figures are in `../PRELIMINARY_DATA.md` (not in briefing §1.5). Because this axis leans on disclosure-held results and sub-threshold scores, keep it exploratory until replicated from a non-disclosure source.
+Source: the 8-9 of 10 and kappa ~0.36 are in `FRT_Pilot_Execution/disclosure/` §1.5 (aggregate behavioral numbers only; raw material excluded per the disclosure boundary); the 0.79/0.93/0.017/0.025 contrast figures (not in briefing §1.5). Because this axis leans on disclosure-held results and sub-threshold scores, keep it exploratory until replicated from a non-disclosure source.
 
 ---
 

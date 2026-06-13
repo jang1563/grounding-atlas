@@ -33,4 +33,4 @@ One non-bio domain (materials), one binary property (metallicity), frontier outp
 
 ## Reproduce
 
-Data: matminer `load_dataset("matbench_expt_is_metal")`, render formula vs anonymized-element composition. `source ~/.api_keys && PANEL_RUNGS=mat_formula,mat_anon PANEL_N=400 python eval/frontier_output_panel.py`. Raw in `results/frontier_output_panel.json`.
+Data: matminer `load_dataset("matbench_expt_is_metal")`, render formula vs anonymized-element composition. `PANEL_RUNGS=mat_formula,mat_anon PANEL_N=400 python eval/frontier_output_panel.py`. Raw in `results/frontier_output_panel.json`.

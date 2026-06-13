@@ -44,7 +44,7 @@ intent: no near-neighbor in both train and test.
 
 The last two are the **axis-A "does Claude understand and utilize the domain language" check**
 (the original-plan question, see `../results/head_to_head.md`). They run locally against the
-Claude API (`set -a; source ~/.api_keys; set +a`), not on Cayuga. `head_to_head_protein.py` is
+Claude API (`set -a; source <your-keys-file>; set +a`), not on Cayuga. `head_to_head_protein.py` is
 the protein copy of `../../eval/head_to_head.py`; its `HH_COND` conditions are
 `real` (content-only) / `scrambled` / `mismatched` / `name_only` / `matched`. The `name_only`
 and `matched` conditions test name-vs-content and need the `organism` column in

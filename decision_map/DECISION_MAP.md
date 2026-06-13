@@ -104,4 +104,4 @@ The adversarial-neighbor arm is run (flipped labels drop the LLM to 0.105, a nea
 
 ## Reproduce
 
-Retrieve (LLM arm + the mandatory no-LLM baseline in one run): `/Users/jak4013/miniconda3-arm64/bin/python eval/ws3_retrieve.py` (add `WS3_SCAFFOLD_HOLDOUT=1`, `WS3_POOL_CAP=40`); results in `../results/ws3_retrieve_*.json` (`retrieve_auroc` vs `neighbor_mean_baseline_auroc`). Image: `eval/ws3_image.py`. Weights: `sbatch run_activation_cayuga.sh` on Cayuga. Orchestrate: `../signal/admet/herg/verifiability.json` cold_auroc.
+Retrieve (LLM arm + the mandatory no-LLM baseline in one run): `python eval/ws3_retrieve.py` (add `WS3_SCAFFOLD_HOLDOUT=1`, `WS3_POOL_CAP=40`); results in `../results/ws3_retrieve_*.json` (`retrieve_auroc` vs `neighbor_mean_baseline_auroc`). Image: `eval/ws3_image.py`. Weights: `sbatch run_activation_cayuga.sh` on Cayuga. Orchestrate: `../signal/admet/herg/verifiability.json` cold_auroc.

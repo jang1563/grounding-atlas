@@ -74,4 +74,4 @@ it honestly either way: a small protein encoding gap would falsify it.
   general LLM could read it without "understanding" structure. A composition-preserving
   shuffle control is the natural next step (the protein analog of the SMILES scramble arm).
 - One property, one open-weight model to start (Qwen3-8B); the panel and controls extend it.
-- No em dashes; verified numbers only; capability framing (see `../GUARDRAILS.md`).
+- No em dashes; verified numbers only; capability framing.

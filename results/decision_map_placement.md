@@ -57,4 +57,4 @@ Four capabilities, one specialist ceiling each, frontier = opus, k=12 to 16 shot
 
 ## Connection
 
-WS1 instrument: `PROJECT_DESIGN.md` 7.2 + `results/SYNTHESIS.md`. Orchestrate arm: `results/calibration_routing.md`. Application framing: `~/Dropbox/Lab/.../RS_Life_Sciences/Review_5Axis_DecisionMap_BioGroundingEvidence_2026_06_12.md` (the 5-axis pre/post-train/tool/MCP/retrieval split; this result says retrieve + tool/MCP dominate and post-train is rarely the winner, which is the closed-weight-friendly conclusion).
+WS1 instrument: `PROJECT_DESIGN.md` 7.2 + `results/SYNTHESIS.md`. Orchestrate arm: `results/calibration_routing.md`. Placement framing: a 5-axis pre / post-train / tool / MCP / retrieval split; this result says retrieve + tool/MCP dominate and post-train is rarely the winner, the closed-weight-friendly conclusion.

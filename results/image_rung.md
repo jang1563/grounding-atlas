@@ -40,4 +40,4 @@ A genuinely encoding-limited anchor needs a FINE-structure property (where the 0
 
 ## Reproduce
 
-`source ~/.api_keys && IMG_N=120 python eval/ws3_image.py` then `python eval/image_rung.py`. Raw: `results/ws3_image.json`, `results/ws3_image_items.jsonl`, `results/image_rung.json`.
+`IMG_N=120 python eval/ws3_image.py` then `python eval/image_rung.py`. Raw: `results/ws3_image.json`, `results/ws3_image_items.jsonl`, `results/image_rung.json`.

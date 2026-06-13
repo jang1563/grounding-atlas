@@ -69,4 +69,4 @@ rBio1 (bioRxiv 2025.08.18.670981) Phase 2 template; LLMs Know More About Numbers
 
 ## Connection to the program
 
-Phase 1 fills the post-train cell of the decision map cheaply and answers the web-exposure question; pairs with `results/calibration_routing.md` (orchestrate arm) and the application review `RS_Life_Sciences/Review_5Axis_DecisionMap_BioGroundingEvidence_2026_06_12.md`. Phase 2 is the SFM-teacher / label-free extension and the rBio-aligned narrative, and the only part that needs the H100 fleet.
+Phase 1 fills the post-train cell of the decision map cheaply and answers the web-exposure question; pairs with `results/calibration_routing.md` (orchestrate arm). Phase 2 is the SFM-teacher / label-free extension, and the only part that needs the H100 fleet.

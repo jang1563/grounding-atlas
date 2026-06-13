@@ -35,4 +35,4 @@ Seven domains, binary properties, frontier output only (activation open-weight-o
 
 ## Reproduce
 
-`source ~/.api_keys && PANEL_RUNGS=minerals_name,minerals_anon,elements_name,elements_anon,glass_formula,glass_anon,aminoacid_name,aminoacid_anon,drugclass_name,drugclass_anon,metabolite_name,metabolite_anon PANEL_N=400 python eval/frontier_output_panel.py`. Data built in `signal/generality/`. Raw in `results/frontier_output_panel.json`.
+`PANEL_RUNGS=minerals_name,minerals_anon,elements_name,elements_anon,glass_formula,glass_anon,aminoacid_name,aminoacid_anon,drugclass_name,drugclass_anon,metabolite_name,metabolite_anon PANEL_N=400 python eval/frontier_output_panel.py`. Data built in `signal/generality/`. Raw in `results/frontier_output_panel.json`.

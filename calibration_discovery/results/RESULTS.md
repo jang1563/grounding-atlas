@@ -111,4 +111,4 @@ Selective prediction, risk-coverage, and E-AURC are standard (Geifman-El-Yaniv; 
 
 ## Reproduce
 
-`source ~/.api_keys && SE_N=80 SE_WORKERS=12 SE_MODELS=claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001 python calibration_discovery/eval/selective_eval.py`
+`SE_N=80 SE_WORKERS=12 SE_MODELS=claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001 python calibration_discovery/eval/selective_eval.py`

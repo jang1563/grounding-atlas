@@ -39,4 +39,4 @@ The symbol condition is engagement-scored (recognized if not UNKNOWN) which is a
 
 ## Reproduce
 
-`python3 eval/axis_a_dna.py` (anthropic only, no rdkit; ANTHROPIC_API_KEY from `~/.api_keys`; `AXISA_DRY=1` validates data and prints prompts). Per-gene hits and rates in `results/axis_a_dna.json`.
+`python3 eval/axis_a_dna.py` (anthropic only, no rdkit; ANTHROPIC_API_KEY from API keys are read from the environment. Per-gene hits and rates in `results/axis_a_dna.json`.

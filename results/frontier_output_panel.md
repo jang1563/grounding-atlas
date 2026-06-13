@@ -50,4 +50,4 @@ The DNA rung's "expression-dominant, output anti-correlated" label was the 8B vi
 
 ## Reproduce
 
-`source ~/.api_keys && PANEL_N=300 python eval/frontier_output_panel.py`. Raw: `results/frontier_output_panel.json`. Models: claude-opus-4-8, claude-sonnet-4-6, claude-haiku-4-5-20251001.
+`PANEL_N=300 python eval/frontier_output_panel.py`. Raw: `results/frontier_output_panel.json`. Models: claude-opus-4-8, claude-sonnet-4-6, claude-haiku-4-5-20251001.

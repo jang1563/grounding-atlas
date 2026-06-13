@@ -35,4 +35,4 @@ This is JK's flagship domain (single-cell), and it extends the web-exposure law 
 
 ## Reproduce
 
-Data: `eval` build from scanpy pbmc68k_reduced (top-50 genes, T-cell-vs-rest, gene-name vs anon-ID render); gating supervised ceiling 0.989, bag-of-names probe 0.990. Output: `source ~/.api_keys && PANEL_RUNGS=sc_cellsentence,sc_anon PANEL_N=384 python eval/frontier_output_panel.py`. Raw in `results/frontier_output_panel.json`. Activation: `sbatch run_activation_sc_cayuga.sh` (`eval/activation_arm_sc.py`).
+Data: `eval` build from scanpy pbmc68k_reduced (top-50 genes, T-cell-vs-rest, gene-name vs anon-ID render); gating supervised ceiling 0.989, bag-of-names probe 0.990. Output: `PANEL_RUNGS=sc_cellsentence,sc_anon PANEL_N=384 python eval/frontier_output_panel.py`. Raw in `results/frontier_output_panel.json`. Activation: `sbatch run_activation_sc_cayuga.sh` (`eval/activation_arm_sc.py`).

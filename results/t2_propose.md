@@ -1,6 +1,6 @@
 # T2 (apply) PROPOSE: generate a molecule with a property, probe-judged
 
-*Results section. 2026-06-10. Instrument: `eval/t2_propose.py` (rdkit + sklearn + anthropic, miniconda py3.13). No em dashes.*
+*Results section. 2026-06-10. Instrument: `eval/t2_propose.py` (rdkit + sklearn + anthropic, Python 3.13). No em dashes.*
 
 ## What this is
 
@@ -32,4 +32,4 @@ Single frontier model, K=15 per endpoint (small), two endpoints, resubstitution 
 
 ## Reproduce
 
-`/Users/jak4013/miniconda3-arm64/bin/python eval/t2_propose.py` (rdkit + sklearn + anthropic; ANTHROPIC_API_KEY from `~/.api_keys`; `PROP_DRY=1` trains the probe and prints base rates with no API). Raw proposals and scores in `results/t2_propose.json`.
+`python eval/t2_propose.py` (rdkit + sklearn + anthropic; ANTHROPIC_API_KEY from API keys are read from the environment. Raw proposals and scores in `results/t2_propose.json`.

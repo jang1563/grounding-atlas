@@ -55,4 +55,4 @@ The larger-n power-up is DONE (n=1000 above, scrambled drop now significant). Re
 
 ## Reproduce
 
-`/Users/jak4013/miniconda3-arm64/bin/python eval/notation_control.py` (rdkit + anthropic; `NOTE_EP`, `NOTE_N`). Raw in `results/notation_control.json`.
+`python eval/notation_control.py` (rdkit + anthropic; `NOTE_EP`, `NOTE_N`). Raw in `results/notation_control.json`.

@@ -37,4 +37,3 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 |---|---|
 | [`discoverer_causality_notes.md`](discoverer_causality_notes.md) | can today's AI become a discoverer? causality as a data / architecture / signal problem |
 | [`signal_vs_architecture_perturbFM_2026_06_12.md`](signal_vs_architecture_perturbFM_2026_06_12.md) | perturbation-FM failure: signal/data vs architecture/identifiability |
-| [`SESSION_CHECKPOINT_2026-06-11.md`](SESSION_CHECKPOINT_2026-06-11.md) | session checkpoint (2026-06-11) |

@@ -6,7 +6,7 @@
 
 Axis D (reliability-relevance conflation) is exploratory because the automated scores sit at kappa ~0.36, below the publication inter-rater-reliability threshold (`FAILURE_MODES.md` D). A human-rater pass with an UNAMBIGUOUS rubric is the gate to a claim. It is the same setup T2-evaluate reuses (`../eval/README.md` Bridge to T2), so this one pass unblocks both. The low kappa is almost certainly rubric ambiguity, not rater noise, so this protocol is built to remove the ambiguity: binary dimensions, explicit decision rules, anchored examples, raters blind to condition.
 
-Boundary: the raw D items live in `FRT_Pilot_Execution/disclosure/` and do NOT enter this repo (the disclosure boundary, `../GUARDRAILS.md`). This package is the protocol plus the agreement tooling plus a blank sheet; it is applied where the data lives.
+Boundary: the raw D items live in `FRT_Pilot_Execution/disclosure/` and do NOT enter this repo (the disclosure boundary). This package is the protocol plus the agreement tooling plus a blank sheet; it is applied where the data lives.
 
 ## What is rated
 

@@ -5,19 +5,20 @@
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Approach: measurement-first](https://img.shields.io/badge/approach-measurement--first-8A2BE2)
 
-**Contents:** [Why](#why-this-project-exists) · [Thesis](#the-thesis-one-line) · [Workstreams](#three-workstreams) · [Results at a glance](#results-at-a-glance) · [Repository map](#repository-map) · [Setup](#setup) · [Cite](#cite) · [Hard rules](#hard-rules-see-guardrailsmd)
+**Contents:** [Why](#why-this-project-exists) · [Thesis](#the-thesis-one-line) · [Workstreams](#three-workstreams) · [Results at a glance](#results-at-a-glance) · [Repository map](#repository-map) · [Setup](#setup) · [Cite](#cite) · [Scope & claims](#scope-and-claims)
 
 **Does a language model do biology by the *content* of a specialist model's output (sequence, structure, identifier, numeric prediction), or just by its *name*? Measure it, manufacture verifiable signal to close it, and map where each capability should live.**
 
-A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Synthesizes several existing projects (NMSE, the LLM x SFM over-trust instrument, NullAtlas/NegBioRL, LabCraft) into one program tailored to an Anthropic Research Scientist, Life Sciences direction.
+A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Synthesizes several existing projects (NMSE, the LLM x SFM over-trust instrument, NullAtlas/NegBioRL, LabCraft) into one program.
 
-Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`. Assets this builds on are catalogued in `ASSET_REUSE_MAP.md`.
+Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`.
 
 ---
 
 ## Why this project exists
-1. **Standalone research.** The grounding gap is real: a measured name-vs-content recognition gap (name ~100% vs accession ~2-28%), plus the open question of whether the model surfaces what a probe reads from a representation (encoding vs expression). Closing it is a genuine path to a better science model.
-2. **Application artifact.** It is the project JK brings to the Anthropic RS Life Sciences application ("here is what I would build, here is the preliminary data I already have"). The adjacent layers are filling in (June 2026): BioMysteryBench measures task solve-rate through tools; gget virus / VirBench (2026-06-08) measures agent retrieval accuracy. Neither measures content-grounding or trust-calibration. **This is the layer those evals do not run** - the chain is retrieval -> content-grounding (this) -> downstream. Eric Kauderer-Abrams names the obstacle as "no single unambiguous source of truth for the training signal" (and is acknowledged on the VirBench work).
+The grounding gap is real: a measured name-vs-content recognition gap (name ~100% vs accession ~2-28%), plus the question of whether the model surfaces what a probe reads from a representation (encoding vs expression). Closing it is a genuine path to a better science model.
+
+It is also a distinct layer in the agentic-bio stack. Adjacent evals measure other things: BioMysteryBench measures task solve-rate through tools, and gget virus / VirBench (2026-06-08) measures agent retrieval accuracy against deterministic ground truth. Neither measures whether the model grounds the *content* of what a specialist emits, nor whether it calibrates trust on that output. The complementary chain is **retrieval -> content-grounding (this project) -> downstream**.
 
 ## The thesis (one line)
 A science model is only as good as it grounds the *content* of a specialist model's output, not its *name*. Today that grounding is decided by assertion. This project makes it measured.
@@ -53,11 +54,8 @@ The methylation / MSA pair is the controlled proof: identical task shape, both e
 **Documents**
 | File | What |
 |---|---|
-| `PROJECT_DESIGN.md` | thesis, the gap, WS1-3 in detail, local PoC, fit, honest scoping |
-| `ASSET_REUSE_MAP.md` | which existing project feeds which workstream (real paths) + reuse vs adapt |
-| `PRELIMINARY_DATA.md` | exact existing results + numbers + source paths (the "data I already have") |
-| `GUARDRAILS.md` | novelty claim/do-not-claim + citations, disclosure-first, style rules |
-| `RESEARCH_STATEMENT.md` | the application-facing research statement |
+| `PROJECT_DESIGN.md` | thesis, the gap, WS1-3 in detail, scope and honest caveats |
+| `RESEARCH_STATEMENT.md` | the research statement: aims, the web-exposure law, the orchestration map |
 
 **Code and outputs**
 | Path | What |
@@ -72,10 +70,10 @@ The methylation / MSA pair is the controlled proof: identical task shape, both e
 | `data/` | shared curated inputs (large/re-fetchable reference DBs are gitignored) |
 
 ## Where to start (reading order)
-1. Read `ASSET_REUSE_MAP.md` + `PRELIMINARY_DATA.md`, then the source READMEs they point to (especially `FRT_Pilot_Execution/` aggregate outcomes and `Narrow_Model_Safety_Eval/results`).
-2. **WS1 first** (the durable, defensible lead): build the content-grounding instrument (axis B) in `eval/` - the probe-vs-LLM head-to-head, the LLM-activation probe, and content-sensitivity - reusing the FRT harness (axes A, E) reframed safety -> capability. See `eval/README.md` for the spec.
-3. **WS2 spec** in parallel: write the grounding-signal dataset spec in `signal/` (the (representation, verifiable-property) pair generator), reusing the NullAtlas/NegBioRL machinery.
-4. WS3 (local PoC) comes after WS1+WS2 produce a runnable eval and a signal sample.
+1. [`results/SYNTHESIS.md`](results/SYNTHESIS.md) - the law, the 17-representation master table, and the orchestrator it prescribes.
+2. [`docs/field_message.md`](docs/field_message.md) - the framing: a frontier model's job is to ground and route, not to know.
+3. [`PROJECT_DESIGN.md`](PROJECT_DESIGN.md) - the full design and the three workstreams.
+4. [`eval/README.md`](eval/README.md) and [`signal/README.md`](signal/README.md) - the instrument and the signal generators; [`results/`](results/README.md) and [`docs/`](docs/README.md) index everything else.
 
 ## Setup
 
@@ -99,9 +97,8 @@ Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) (GitHub renders a
 
 > JangKeun Kim. *grounding-atlas: a measurement-first map of biological content-grounding in language models.* 2026.
 
-## Hard rules (see `GUARDRAILS.md`)
-- **Capability-first.** Lead with the instrument + the verifiable-signal substrate. Safety is one supporting line ("the same instrument flags where a grounded model is unsafe").
-- **Claim measurement + signal-engineering; do NOT claim the multimodal build or the general weights-vs-retrieve framing as novel.** Cite the ancestors (Ovadia 2312.05934; In-Tool Learning 2508.20755; NatureLM 2502.07527; Mozi 2603.03655).
-- **Numeric over-trust = a verbalization/calibration gap** (the magnitude is in the LLM's activations; do not overstate as "LLMs cannot represent numbers"). **Do NOT extend this to the NMSE AUROC-0.981 result** - that probe is on ESM-2, not the LLM, so it is an encoding-vs-expression question that is still unmeasured.
-- **Disclosure-first.** The `FRT_Pilot_Execution/disclosure/` raw bypass material stays out of this capability project. Use AGGREGATE results only. No operational content.
-- **No em dashes** in any writeup or application-facing text. Verified facts only.
+## Scope and claims
+- **Capability-first, measurement-first.** The contribution is the instrument and the verifiable-signal substrate, not a multimodal model build; the same instrument also flags where a grounded model is unsafe.
+- **What is novel vs cited.** The cross-representation grounding measurement and the signal engineering are the contribution; the train-vs-retrieve-vs-orchestrate framing and the encoding-vs-expression decomposition build on prior work (Ovadia 2312.05934; In-Tool Learning 2508.20755; NatureLM 2502.07527; Mozi 2603.03655; Inside-Out 2503.15299).
+- **Numeric over-trust is a verbalization/calibration gap**, not an inability to represent numbers (the signal is in the activations). This is not extended to the ESM-2 probe result, which is an encoding question measured on the specialist, not the LLM.
+- **Disclosure-first.** No raw bypass or operational content; aggregate results only (see [`SECURITY.md`](SECURITY.md)).

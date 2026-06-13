@@ -40,3 +40,6 @@ results/expanse_logs/
 *.gz
 # Large derived table (~184k variants); the balanced eval CSVs are the committed inputs.
 variant_grounding/data/variant_clinvar_full.csv
+
+# Internal working notes (strategy, application framing, session checkpoints) — local only
+internal/

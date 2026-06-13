@@ -88,4 +88,4 @@ So the 8B activation aligns with the frontier KNOWLEDGE channel at the same leve
 
 ## Reproduce
 
-`source ~/.api_keys && WD_N=500 python eval/withdrawn_endpoint.py`. Raw in `results/withdrawn_endpoint.json`. Data `signal/withdrawn/withdrawn.csv`.
+`WD_N=500 python eval/withdrawn_endpoint.py`. Raw in `results/withdrawn_endpoint.json`. Data `signal/withdrawn/withdrawn.csv`.

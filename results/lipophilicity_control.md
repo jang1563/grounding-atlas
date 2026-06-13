@@ -54,4 +54,4 @@ Bottom line across all four controls: the expression GAP is fully intact and tri
 
 ## Reproduce
 
-`/Users/jak4013/miniconda3-arm64/bin/python eval/lipophilicity_control.py` (rdkit + sklearn, CPU). Raw in `results/lipophilicity_control.json`. Activation re-notation: `sbatch run_activation_randomize_cayuga.sh` on Cayuga (logs `act_rand_*.log`); few-shot: `sbatch run_fewshot_cayuga.sh` (`fewshot_*.log`).
+`python eval/lipophilicity_control.py` (rdkit + sklearn, CPU). Raw in `results/lipophilicity_control.json`. Activation re-notation: `sbatch run_activation_randomize_cayuga.sh` on Cayuga (logs `act_rand_*.log`); few-shot: `sbatch run_fewshot_cayuga.sh` (`fewshot_*.log`).

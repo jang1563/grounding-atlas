@@ -49,4 +49,4 @@ n=80 per rung, single run, 7 rungs. CONF and DEFER are elicited under a "special
 
 ## Reproduce
 
-`source ~/.api_keys && CR_N=80 CR_MODELS=claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001 python eval/calibration_routing.py`
+`CR_N=80 CR_MODELS=claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001 python eval/calibration_routing.py`

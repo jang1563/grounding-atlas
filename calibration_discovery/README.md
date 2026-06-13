@@ -70,6 +70,6 @@ calibration_discovery/
   results/selective_eval{,_neutral,_variant}.json   aggregate metrics per run
 ```
 
-Reproduce: `source ~/.api_keys && python calibration_discovery/eval/selective_eval.py` (the eval, needs API); then with `PYTHONPATH=calibration_discovery/eval` and no API: `per_item_router.py` (router + router_results.json), `plot_risk_coverage.py`, `plot_scale_frontier.py`, `plot_router.py` (the three figures).
+Reproduce: `python calibration_discovery/eval/selective_eval.py` (the eval, needs API); then with `PYTHONPATH=calibration_discovery/eval` and no API: `per_item_router.py` (router + router_results.json), `plot_risk_coverage.py`, `plot_scale_frontier.py`, `plot_router.py` (the three figures).
 
-`source ~/.api_keys && SE_N=80 SE_MODELS=claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001 python calibration_discovery/eval/selective_eval.py`
+`SE_N=80 SE_MODELS=claude-opus-4-8,claude-sonnet-4-6,claude-haiku-4-5-20251001 python calibration_discovery/eval/selective_eval.py`

@@ -1,6 +1,6 @@
 # Axis A (identity resolution), chemistry: the within-entity recognition gap
 
-*Results section. 2026-06-10. Instrument: `eval/axis_a_chem.py` (rdkit + anthropic, run under miniconda py3.13). Set: 35 famous drugs, hand-curated and RDKit formula-validated. No em dashes.*
+*Results section. 2026-06-10. Instrument: `eval/axis_a_chem.py` (rdkit + anthropic, run under Python 3.13). Set: 35 famous drugs, hand-curated and RDKit formula-validated. No em dashes.*
 
 ## What this measures
 
@@ -28,4 +28,4 @@ Curated set, RDKit formula-validated (all 35 real drugs matched their known mole
 
 ## Reproduce
 
-`/Users/jak4013/miniconda3-arm64/bin/python eval/axis_a_chem.py` (needs rdkit + anthropic in the same interpreter; ANTHROPIC_API_KEY from `~/.api_keys`). `AXISA_DRY=1` validates the set and prints prompts with no API call. Raw per-drug hits and rates in `results/axis_a_chem.json`.
+`python eval/axis_a_chem.py` (needs rdkit + anthropic in the same interpreter; ANTHROPIC_API_KEY from API keys are read from the environment. `AXISA_DRY=1` validates the set and prints prompts with no API call. Raw per-drug hits and rates in `results/axis_a_chem.json`.
