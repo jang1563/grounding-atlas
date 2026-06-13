@@ -15,7 +15,7 @@
 
 A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Builds on and unifies several of my own prior projects (NMSE, the LLM x SFM over-trust instrument, NullAtlas/NegBioRL, LabCraft).
 
-*Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563) · silveray1563@gmail.com*
+*Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563) · [jak4013@med.cornell.edu](mailto:jak4013@med.cornell.edu)*
 
 Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`.
 
