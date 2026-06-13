@@ -81,7 +81,7 @@ Listed because it is easy to conflate with grounding and because the draft taxon
 
 - **What it is:** whether a model distinguishes a relation that was experimentally tested-and-failed from one never tested. NullAtlas measures it: Spearman **rho = -0.7006** between domain Publication Bias Score and L4 tested-vs-untested MCC (p = 3.4e-5, 95% CI [-0.84,-0.43], 30 domains, all-negative LOO; models haiku-4-5 / gemini-2.5-flash / gpt-4o-mini). Strong and re-verified.
 - **Why it is not a grounding axis (B):** L4 tested-vs-untested is knowledge-supply/memorization, not reading a property from representation content. Scrambling the SMILES does not change the answer (DTI L4 shows the SMILES yet LLM MCC = 0.0424). It grounds a claim's *epistemic status*, not a representation's *content*. Different capability.
-- **Whose result it is:** NullAtlas's, an independent project (selected for AI for Science; NAIRR award). This instrument **cites** it; it does not own or re-measure it. Keeping it separate is what prevents Bio_Grounding_Eval's contribution from being mistaken for NullAtlas's.
+- **Whose result it is:** NullAtlas's, an independent project (selected for AI for Science; NAIRR award). This instrument **cites** it; it does not own or re-measure it. Keeping it separate is what prevents grounding-atlas's contribution from being mistaken for NullAtlas's.
 - **Role here:** WS2 substrate, and one optional difficulty reference (the PBS gradient). Source: `Negative_result_DB/results/spinout/phase30/p6_n30_handoff.json`, `paper_pbs_law/NUMBER_LOCK.md`.
 
 ---

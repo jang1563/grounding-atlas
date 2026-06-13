@@ -1,6 +1,6 @@
 # Synthesis: a descriptive law of grounding, and the orchestrator it prescribes
 
-*2026-06-12. Synthesis across the full Bio_Grounding_Eval sweep: 17 representations measured on one 3-arm instrument, plus the calibration/routing axis. Ties the descriptive finding (where LLMs encode but cannot verbalize) to its prescriptive consequence (a grounded orchestrator). All numbers from `PROJECT_DESIGN.md` 7.2 and `results/*_rung.md` / `results/calibration_routing.md`. No em dashes.*
+*2026-06-12. Synthesis across the full grounding-atlas sweep: 17 representations measured on one 3-arm instrument, plus the calibration/routing axis. Ties the descriptive finding (where LLMs encode but cannot verbalize) to its prescriptive consequence (a grounded orchestrator). All numbers from `PROJECT_DESIGN.md` 7.2 and `results/*_rung.md` / `results/calibration_routing.md`. No em dashes.*
 
 ## 1. One instrument, three arms
 

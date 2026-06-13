@@ -1,4 +1,4 @@
-# protein_grounding - the protein branch of Bio_Grounding_Eval
+# protein_grounding - the protein branch of grounding-atlas
 
 A parallel copy of the axis-B grounding instrument (`../eval/`, `../results/head_to_head.md`),
 run on **protein sequences** instead of SMILES. Same question, same three arms, one balanced

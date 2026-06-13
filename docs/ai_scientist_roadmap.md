@@ -23,7 +23,7 @@ Today's systems are strong ACCELERATION engines (hypothesis generation, literatu
 
 Trustworthy autonomous verification: the system reliably knowing when its own intermediate result is wrong. It is the A-Lab disaster directly, it is why the data layer is stuck (soft verifiers cannot exceed what they encode, oracle calibration unquantified), why infrastructure cannot close the loop (no verifier-reliability signal; REPRO-Bench 21%), and why evaluation is misleading (fit-to-data metrics cannot detect absent causal structure). Not a bigger model, and not a self-judging LLM (ChemCrow).
 
-## Where the Bio_Grounding_Eval layer fits
+## Where the grounding-atlas layer fits
 
 Our measured contribution IS the instrument for the bottleneck. Placement (train/retrieve/orchestrate; train wins nowhere -> closed-weight models fine as orchestrators), grounding (encode >> verbalize, web-exposure-gated), and calibration (frontier = calibrated router, corr +0.90, routed ~ oracle) form the measurement substrate under the gate the whole loop must pass. The web-exposure law is the routing prior for verification-aware orchestration: the same finding that governs whether a model should answer a question governs whether an autonomous scientist should trust its own intermediate result. The ACCELERATION-vs-DISCOVERY framing is the field's fault line, now backed by CausalBench and Ahlmann-Eltze.
 
