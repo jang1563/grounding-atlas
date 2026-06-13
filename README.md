@@ -38,7 +38,7 @@ A science model is only as good as it grounds the *content* of a specialist mode
 
 ## Three workstreams
 - **WS1 - the instrument (MEASURE).** Does the model ground a representation by content or by name? The core is the content-grounding axis (probe-vs-LLM + LLM-activation probe + content-sensitivity), with identity-resolution and channel/action-policy as measured supporting axes. Deterministic, non-LLM-judge, matched controls. Negative-evidence coverage is NullAtlas's (WS2), cited not absorbed.
-- **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal.
+- **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal. The ADMET and computable pairs (55,703 rows) are published as a dataset: [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas).
 - **WS3 - the decision map (MAP THE LINE).** Per capability, measure train (weights) vs retrieve (MCP/RAG) vs orchestrate (call the SFM). Principle: train the skill, retrieve the knowledge, orchestrate the heavy specialist. Local open-weight PoC for the first data points.
 
 Full design: `PROJECT_DESIGN.md`.
