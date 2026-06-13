@@ -5,7 +5,7 @@
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Approach: measurement-first](https://img.shields.io/badge/approach-measurement--first-8A2BE2)
 
-**Contents:** [Why](#why-this-project-exists) · [Thesis](#the-thesis-one-line) · [Workstreams](#three-workstreams) · [Repository map](#repository-map) · [Setup](#setup) · [Cite](#cite) · [Hard rules](#hard-rules-see-guardrailsmd)
+**Contents:** [Why](#why-this-project-exists) · [Thesis](#the-thesis-one-line) · [Workstreams](#three-workstreams) · [Results at a glance](#results-at-a-glance) · [Repository map](#repository-map) · [Setup](#setup) · [Cite](#cite) · [Hard rules](#hard-rules-see-guardrailsmd)
 
 **Does a language model do biology by the *content* of a specialist model's output (sequence, structure, identifier, numeric prediction), or just by its *name*? Measure it, manufacture verifiable signal to close it, and map where each capability should live.**
 
@@ -28,6 +28,25 @@ A science model is only as good as it grounds the *content* of a specialist mode
 - **WS3 - the decision map (MAP THE LINE).** Per capability, measure train (weights) vs retrieve (MCP/RAG) vs orchestrate (call the SFM). Principle: train the skill, retrieve the knowledge, orchestrate the heavy specialist. Local open-weight PoC for the first data points.
 
 Full design: `PROJECT_DESIGN.md`.
+
+## Results at a glance
+
+*Pilot-scale; see [`results/SYNTHESIS.md`](results/SYNTHESIS.md) for the full 17-representation master table and caveats, and [`results/`](results/README.md) for every writeup.*
+
+**The law.** LLMs encode far more biology than they verbalize. A linear probe on an open model's hidden states recovers the property near a specialist ceiling (the *encoding* gap is under 0.10 for 13 of 17 representations), but the verbalized output lags far behind (the *verbalization* gap runs 0.12 to 0.49). What sets that gap is how web-documented the representation-to-property mapping is, not the modality.
+
+| representation → property | ceiling | probe (encode) | output (verbalize) | reads out? |
+|---|---|---|---|---|
+| MSA column → conserved | 0.999 | 1.000 | 0.795 | grounds (web-rich) |
+| single-cell → T cell (gene names) | 0.989 | 0.983 | 0.50 → opus 0.99 | closes with scale |
+| single-cell → T cell (anon ids) | 0.989 | 0.964 | 0.497 | invariant (web-zero) |
+| methylation → age | 0.701 | 0.685 | 0.487 | invariant (web-zero numbers) |
+| histopathology H&E → tumor | ~0.90 | 0.827 | 0.463 | partial, plateau ~0.65 |
+| 3D coords → hERG | 0.826 | 0.669 | 0.490 | encoding-limited |
+
+The methylation / MSA pair is the controlled proof: identical task shape, both encoded to ceiling, opposite output (MSA 0.795 vs methylation 0.487) — the only difference is whether the mapping is web-documented.
+
+**The prescription.** Because the frontier is *calibrated* about where it grounds (opus self-confidence tracks actual grounding at corr +0.90), the same map is a routing policy: routing on continuous self-confidence reaches 0.893 mean AUROC, matching the oracle (0.894), versus 0.700 answering everything itself. The web-exposure tag, known a priori before any model call, is itself a competitive deferral prior. Details in [`results/calibration_routing.md`](results/calibration_routing.md) and [`results/decision_map_placement.md`](results/decision_map_placement.md).
 
 ## Repository map
 
