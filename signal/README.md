@@ -64,3 +64,9 @@ Borrows NullAtlas's verifiable-signal method (`Negative_result_DB/`, the WS2 sub
 - `generate_signal.py` - the generator + gate (modality-general; SMILES implemented).
 - `admet/<endpoint>/pairs.jsonl` - generated (representation, verifiable-property) pairs + content-sensitivity variants.
 - `admet/<endpoint>/verifiability.json` + `verifiability_report.md` - the gate result per endpoint (which are admissible B-axis tasks).
+
+### v2 (2026-06-13): the gate generalized + the negative class
+
+- `gate_multimodal.py` + `verifiability_multimodal.md` - the gate run on 19 modality cells under cheap local featurizers (Morgan / k-mer / char-ngram / element-fraction / pixel-stat). 17/19 PASS; the 2 fails are PPI-as-NAME (web-memorization, no content signal in the names), the SIGNAL-side confirmation of the WS1 anonymization collapse. So the gate is the WS2-to-WS3 bridge: gate-PASS-even-anon = in-data-pattern (retrieve closes it); gate-FAIL = web-anchor only (orchestrate / memory).
+- `gate_anon.py` - the named-vs-anon gate map (Delta = named - anon best-cold): 5/6 CONTENT (anon-invariant), PPI only surface-blind.
+- `../results/negative_expression_gap.md` (+ `../eval/negative_expression_gap.py`, `../eval/activation_arm.py` on Expanse; data `../eval/data/neg_*.csv`) - the 3-arm instrument applied to the NEGATIVE class, the one piece of verifiable-negative signal that does NOT overlap NullAtlas: an open 8B encodes confirmed-inactive near the Morgan ceiling but verbalizes it at chance (expression gap, cross-family Qwen3-8B + OLMo-2-7B). Robust headline hERG (0.33, n=1250); the first AMES point (0.376, n=206) was corrected to 0.145 on the Hansen n=2000 benchmark.

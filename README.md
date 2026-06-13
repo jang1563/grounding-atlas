@@ -38,7 +38,7 @@ A science model is only as good as it grounds the *content* of a specialist mode
 
 ## Three workstreams
 - **WS1 - the instrument (MEASURE).** Does the model ground a representation by content or by name? The core is the content-grounding axis (probe-vs-LLM + LLM-activation probe + content-sensitivity), with identity-resolution and channel/action-policy as measured supporting axes. Deterministic, non-LLM-judge, matched controls. Negative-evidence coverage is NullAtlas's (WS2), cited not absorbed.
-- **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal. The ADMET and computable pairs (55,703 rows) are published as a dataset: [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas).
+- **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal. The ADMET and computable pairs (55,703 rows) are packaged as a dataset, [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) (private during review, available on request).
 - **WS3 - the decision map (MAP THE LINE).** Per capability, measure train (weights) vs retrieve (MCP/RAG) vs orchestrate (call the SFM). Principle: train the skill, retrieve the knowledge, orchestrate the heavy specialist. Local open-weight PoC for the first data points.
 
 Full design: `PROJECT_DESIGN.md`.
@@ -61,6 +61,8 @@ Full design: `PROJECT_DESIGN.md`.
 > **The sharpest result (a controlled pair).** methylation and MSA have identical task shape and are both encoded to the specialist ceiling, yet opposite output: MSA verbalizes at 0.795 while methylation stays at chance (0.487). The only thing that differs is whether the representation-to-property mapping is web-documented, isolating web-exposure as the cause of the verbalization gap.
 
 **The prescription.** Because the frontier is *calibrated* about where it grounds (opus self-confidence tracks actual grounding at corr +0.90), the same map is a routing policy: routing on continuous self-confidence reaches 0.893 mean AUROC, matching the oracle (0.894), versus 0.700 answering everything itself. The web-exposure tag, known a priori before any model call, is itself a competitive deferral prior. Details in [`results/calibration_routing.md`](results/calibration_routing.md) and [`results/decision_map_placement.md`](results/decision_map_placement.md).
+
+**The negative class too.** The same encode-but-cannot-verbalize gap holds for confirmed NEGATIVES (this compound is inactive / safe): an open 8B encodes confirmed-inactive near the Morgan ceiling yet verbalizes it at chance, replicated cross-family (Qwen3-8B + OLMo-2-7B), so the known "no negative data leads to excessive false positives" failure is itself an *expression* gap. See [`results/negative_expression_gap.md`](results/negative_expression_gap.md). The verifiability gate that certifies signal also generalizes to 19 modality cells (17/19 PASS) and doubles as a signal-side memorization detector that flags PPI-by-name as recall, not grounding ([`signal/verifiability_multimodal.md`](signal/verifiability_multimodal.md)).
 
 ## Repository map
 
