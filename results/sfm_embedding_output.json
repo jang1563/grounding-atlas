@@ -1,0 +1,14 @@
+{
+  "model": "claude-sonnet-4-6",
+  "n_query": 50,
+  "K": 24,
+  "pca_d": 16,
+  "ceiling_full": 0.811,
+  "ceiling_pca": 0.846,
+  "raw_seq_output_prior": {
+    "8B": 0.486,
+    "opus": 0.585
+  },
+  "zeroshot_full_auroc": 0.466,
+  "icl_pca_auroc": 0.562
+}

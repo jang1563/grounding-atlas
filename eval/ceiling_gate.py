@@ -21,7 +21,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import StratifiedKFold, GroupKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score, average_precision_score
 
-DB = "/Users/jak4013/Dropbox/Bioinformatics/Claude/Negative_result_DB/data/negbiodb_admet.db"
+DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 ENDPOINT = sys.argv[1] if len(sys.argv) > 1 else "herg"
 
 

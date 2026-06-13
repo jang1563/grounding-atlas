@@ -72,6 +72,8 @@ bash protein_grounding/eval/setup_data_cayuga.sh
 
 LLM clients read API keys from the environment (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`); keys are never committed. The activation/probe sweeps are GPU jobs (`eval/run_activation_*_cayuga.sh`).
 
+Some ADMET scripts read a SQLite DB from the sibling `Negative_result_DB` project; the path defaults to `../../Negative_result_DB/data/negbiodb_admet.db` and can be overridden with `NEGBIODB_ADMET`.
+
 ## Cite
 
 Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) (GitHub renders a "Cite this repository" button). In short:

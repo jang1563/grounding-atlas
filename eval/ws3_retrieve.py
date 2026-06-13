@@ -11,7 +11,7 @@ neighbors (it reads SMILES at chance), nearest-neighbor context lands near rando
 (~0.49), not near the ceiling. That would be the decision-map verdict: an expression-
 limited capability cannot be retrieved into place, so it routes to weights or orchestrate.
 
-Run: /Users/jak4013/miniconda3-arm64/bin/python eval/ws3_retrieve.py  (rdkit + anthropic)
+Run: python eval/ws3_retrieve.py  (rdkit + anthropic)
 Env: WS3_K (neighbors, default 10), WS3_N (balanced test size, default 150), WS3_MODEL,
 WS3_DRY. No em dashes.
 """

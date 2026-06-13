@@ -33,7 +33,7 @@ from sklearn.model_selection import cross_val_predict, StratifiedKFold
 from sklearn.metrics import roc_auc_score
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB = "/Users/jak4013/Dropbox/Bioinformatics/Claude/Negative_result_DB/data/negbiodb_admet.db"
+DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 
 # endpoint -> (named target phrasing, anonymized generic phrasing)
 ENDPOINTS = {

@@ -12,7 +12,7 @@ Two arms on rendered hERG molecules:
   ocsr       : image -> SMILES transcription, validity + Tanimoto to truth  (can it read
                the STRUCTURE at all = the perception floor that gates everything else)
 
-Run: /Users/jak4013/miniconda3-arm64/bin/python eval/ws3_image.py
+Run: python eval/ws3_image.py
 Env: IMG_N (balanced total, default 120), IMG_MODEL (default claude-sonnet-4-6), IMG_DRY.
 No em dashes.
 """

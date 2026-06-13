@@ -12,7 +12,7 @@ structure/orthography probes locally (the activation arm needs GPU and is queued
 
 All under the same Murcko-scaffold GroupKFold as the activation arm. Morgan/descriptors
 also residualized: train on descriptor-residualized Morgan to see if structure adds beyond
-lipophilicity. Run: /Users/jak4013/miniconda3-arm64/bin/python eval/lipophilicity_control.py
+lipophilicity. Run: python eval/lipophilicity_control.py
 No em dashes.
 """
 import os

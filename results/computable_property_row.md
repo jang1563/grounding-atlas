@@ -85,17 +85,17 @@ gestalt-answered.)
 
 ### Bridge test (does supplying the constants close pI?)
 
-**Result (N=12, +pKa table supplied, rigorous Henderson-Hasselbalch instructed):** ranking AUROC
-rose 0.79 -> 0.97, while exact-match was unchanged (0.25 -> 0.17) and MAE stayed ~1.4 pH. So
-supplying the empirical constants helps the model ORDER proteins by pI, which is suggestive that
-constant-recall is part of the bottleneck. But the support is not clean, and a raw-trace
-spot-check is why we do not overclaim: N=12 makes the 0.97 high-variance, and the model still
-commits gross charge-balance errors with the constants in hand. One protein (true pI 5.40):
-it counted 34 positive vs 44 negative groups (net acidic, so pI ~5), yet concluded "basic, pI
-approx 9.7", an error of ~4 pH in the wrong direction. So pI is execution-AND-constant limited:
-supplied constants improve ranking but do not fully close it, and a larger-N run is needed to
-trust the magnitude. Net: pI sits on the computable-empirical seam, with a memorized-constant
-component (a tool helps) and a residual reasoning-reliability component (a tool does not fix).
+**Result (+pKa table supplied, rigorous Henderson-Hasselbalch instructed):** at N=40, ranking AUROC
+rose only modestly, 0.79 -> 0.834 (parsed 36/40), with exact-match still ~0.19 and MAE ~1.34 pH.
+An initial N=12 gave a noisy 0.97 that the larger run CORRECTED downward, exactly the small-sample
+over-claim the N=12 caveat warned about (and the reason the larger-N run was worth doing). So
+supplying the empirical constants gives a SMALL ranking lift (+0.04), NOT closure. A raw-trace
+spot-check shows why: the model still commits gross charge-balance errors with the constants in
+hand. One protein (true pI 5.40): it counted 34 positive vs 44 negative groups (net acidic, so
+pI ~5), yet concluded "basic, pI approx 9.7", an error of ~4 pH in the wrong direction. So the
+seam is mainly EXECUTION-reliability limited (the Henderson-Hasselbalch root-solve), with the
+constant-recall component real but small. Net: pI sits on the computable-empirical seam, and
+neither lever closes it (the scale curve below reaches only ~0.84 at opus).
 
 ### Scale / recovery curve (haiku to opus, `results/computable_scale_sweep.json`)
 
@@ -110,9 +110,10 @@ of section 7.3's scale-closable vs scale-invariant split for empirical rungs:
 Counting is scale-closable like a web-rich empirical rung: the ranking is solved from haiku up,
 and scale buys exact-count precision. The pI seam is a third pattern: scale partially closes it
 (chance at haiku to 0.84 at opus) but saturates well short of counting, and the exact value stays
-approximate. Combined with the bridge test (supplied constants lift ranking to 0.97 but execution
-errors persist), the seam is bottlenecked by BOTH approximate constant-recall (a tool helps) AND
-reasoning reliability (scale helps), and neither lever alone closes it. Within computable, then:
+approximate. Combined with the bridge test (supplied constants give only a +0.04 lift to 0.83 at
+N=40, the N=12 0.97 being small-sample noise), neither lever closes the seam: scale reaches 0.84,
+constants reach 0.83, both short of counting's 1.0. It is bottlenecked mainly by reasoning
+reliability (the root-solve), with constant-recall a small secondary component. Within computable, then:
 counting / summing close with reasoning and scale; formula-plus-constants only partially closes,
 needs a tool for the constants, and still carries residual execution error.
 
@@ -122,7 +123,7 @@ needs a tool for the constants, and still carries residual execution error.
 |---|---|---|---|
 | EMPIRICAL (hERG, Tm, the 17 rungs) | yes (gestalt) | web-documented knowledge | retrieve / scale (web-exposure law) |
 | COMPUTABLE (count, sum, length) | no (must execute) | reasoning execution | reasoning tokens or a tool |
-| SEAM (pI, logP) | no | algorithm + memorized constants | partly: supplied constants raise ranking (AUROC 0.79->0.97, N=12) but execution errors persist |
+| SEAM (pI, logP) | no | algorithm + memorized constants | barely: supplied constants give only +0.04 (AUROC 0.79->0.83, N=40), scale only ~0.84; execution-reliability-bound, neither lever closes it |
 
 This row anchors the execution corner that the 17 empirical rungs never touched, and it BOUNDS the
 web-exposure law: web-exposure governs empirical verbalization, not computable. The two axes are

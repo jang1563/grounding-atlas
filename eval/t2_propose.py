@@ -15,7 +15,7 @@ LogisticRegression probe on the WS2 matched data (label-1=inhibitor) -> score ea
 proposal P(inhibitor). Reference points: the probe's mean P on the WS2 actives (label-1)
 and inactives (label-0), so the proposals' active-rate is read against the base rates.
 
-Run: /Users/jak4013/miniconda3-arm64/bin/python eval/t2_propose.py  (rdkit+sklearn+anthropic)
+Run: python eval/t2_propose.py  (rdkit+sklearn+anthropic)
 Env: PROP_MODEL (default claude-sonnet-4-6), PROP_K (default 15), PROP_DRY. No em dashes.
 """
 import os

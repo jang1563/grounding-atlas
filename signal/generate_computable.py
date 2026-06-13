@@ -44,7 +44,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import GroupKFold, cross_val_predict
 from sklearn.metrics import roc_auc_score
 
-ADMET_DB = "/Users/jak4013/Dropbox/Bioinformatics/Claude/Negative_result_DB/data/negbiodb_admet.db"
+ADMET_DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
 OUTROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "computable")
 MAX_MOL = 1500          # cap molecules featurized (CPU budget)
 VARIANT_SUBSET = 250    # how many also get re_notation + scrambled variants

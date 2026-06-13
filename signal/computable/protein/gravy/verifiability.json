@@ -9,6 +9,6 @@
   "ceiling_exact": 1.0,
   "morgan_decodability_auroc": null,
   "n_renotation_variants": 0,
-  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/protein/gravy/pairs.jsonl",
+  "pairs": "signal/computable/protein/gravy/pairs.jsonl",
   "act_csv": null
 }

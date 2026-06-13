@@ -9,6 +9,6 @@
   "ceiling_exact": 1.0,
   "morgan_decodability_auroc": 0.902,
   "n_renotation_variants": 250,
-  "pairs": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/tpsa/pairs.jsonl",
-  "act_csv": "/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/computable/smiles/tpsa/tpsa.csv"
+  "pairs": "signal/computable/smiles/tpsa/pairs.jsonl",
+  "act_csv": "signal/computable/smiles/tpsa/tpsa.csv"
 }
