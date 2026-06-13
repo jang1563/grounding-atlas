@@ -9,9 +9,22 @@
 
 **Does a language model do biology by the *content* of a specialist model's output (sequence, structure, identifier, numeric prediction), or just by its *name*? Measure it, manufacture verifiable signal to close it, and map where each capability should live.**
 
-A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Synthesizes several existing projects (NMSE, the LLM x SFM over-trust instrument, NullAtlas/NegBioRL, LabCraft) into one program.
+**Bottom line:** today's language models internally represent far more biology than they can put into words, and *where* they fall silent is predictable from how often the representation-to-property mapping appears in web text. That tells an AI agent when to trust the model and when to call a specialist tool.
+
+![Two-axis decomposition of the grounding gap: encoding (does the model represent the property internally) vs verbalization (does it state it), across 17 representations.](results/synthesis_figure.png)
+
+A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Builds on and unifies several of my own prior projects (NMSE, the LLM x SFM over-trust instrument, NullAtlas/NegBioRL, LabCraft).
+
+*Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563) · silveray1563@gmail.com*
 
 Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`.
+
+| Component | State |
+|---|---|
+| WS1 instrument (encode vs verbalize) | built; 17 representations measured on one 3-arm instrument |
+| WS2 verifiable-signal generators | ~18 modality families |
+| WS3 placement + calibration | measured: train/retrieve/orchestrate map + per-item routing |
+| Scale | pilot (n ~80-1500 per rung); ceilings are cheap specialists or cited foundation models |
 
 ---
 
@@ -45,7 +58,7 @@ Full design: `PROJECT_DESIGN.md`.
 | histopathology H&E → tumor | ~0.90 | 0.827 | 0.463 | partial, plateau ~0.65 |
 | 3D coords → hERG | 0.826 | 0.669 | 0.490 | encoding-limited |
 
-The methylation / MSA pair is the controlled proof: identical task shape, both encoded to ceiling, opposite output (MSA 0.795 vs methylation 0.487) — the only difference is whether the mapping is web-documented.
+> **The sharpest result (a controlled pair).** methylation and MSA have identical task shape and are both encoded to the specialist ceiling, yet opposite output: MSA verbalizes at 0.795 while methylation stays at chance (0.487). The only thing that differs is whether the representation-to-property mapping is web-documented, isolating web-exposure as the cause of the verbalization gap.
 
 **The prescription.** Because the frontier is *calibrated* about where it grounds (opus self-confidence tracks actual grounding at corr +0.90), the same map is a routing policy: routing on continuous self-confidence reaches 0.893 mean AUROC, matching the oracle (0.894), versus 0.700 answering everything itself. The web-exposure tag, known a priori before any model call, is itself a competitive deferral prior. Details in [`results/calibration_routing.md`](results/calibration_routing.md) and [`results/decision_map_placement.md`](results/decision_map_placement.md).
 
