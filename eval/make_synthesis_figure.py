@@ -5,6 +5,7 @@ non-specialist reader. ASCII arrows (font-safe). Standard + hi-res PNG. No em da
 import os
 
 import matplotlib
+import numpy as np
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
@@ -49,7 +50,7 @@ plt.rcParams.update({"font.family": "sans-serif",
                      "font.sans-serif": ["Helvetica Neue", "Helvetica", "Arial", "DejaVu Sans"],
                      "axes.edgecolor": "#cccccc"})
 
-fig, ax = plt.subplots(figsize=(14.5, 10.4))
+fig, ax = plt.subplots(figsize=(15.5, 10.6))
 fig.subplots_adjust(top=0.82, left=0.078, right=0.975, bottom=0.115)
 
 # region shading
@@ -67,13 +68,18 @@ ax.text(0.045, 0.082, "knows it, and says it", fontsize=13,
 
 # points + labels (leader lines stop before the glyphs via shrinkB)
 texts = []
+xs = [ex for _, ex, _, _ in D]
+ys = [vy for _, _, vy, _ in D]
 for label, ex, vy, cat in D:
-    ax.scatter(ex, vy, s=180, color=COL[cat], edgecolor="white", linewidth=1.6, zorder=3, alpha=0.96)
-    texts.append(ax.text(ex, vy, label, fontsize=10, color="#1a1a1a", zorder=4))
-adjust_text(texts, ax=ax, only_move={"text": "xy"},
-            arrowprops=dict(arrowstyle="-", color="#c8c8c8", lw=0.6, shrinkA=4, shrinkB=17),
-            expand_text=(1.4, 1.85), expand_points=(1.95, 2.4),
-            force_text=(0.8, 1.3), force_points=(0.55, 0.9))
+    ax.scatter(ex, vy, s=150, color=COL[cat], edgecolor="white", linewidth=1.6, zorder=3, alpha=0.96)
+    texts.append(ax.text(ex, vy, label, fontsize=9.5, color="#1a1a1a", zorder=4))
+# adjustText 1.4 API (the old expand_*/force_points/only_move kwargs are silently ignored on 1.x).
+# Pass the point coords so labels repel from glyphs; pin the RNG so placement is reproducible.
+np.random.seed(7)
+adjust_text(texts, x=xs, y=ys, ax=ax,
+            force_text=(0.6, 1.15), force_static=(0.5, 0.85), force_pull=(0.004, 0.008),
+            expand=(1.6, 2.0), min_arrow_len=10, max_move=90, ensure_inside_axes=True,
+            arrowprops=dict(arrowstyle="-", color="#bbbbbb", lw=0.6))
 
 ax.set_xlim(-0.02, 0.315)
 ax.set_ylim(0.05, 0.615)
