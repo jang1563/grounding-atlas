@@ -81,6 +81,15 @@ web-exposure covariate is confounded; only the within-entity contrast is valid).
 China-bio data-war connection stays a strong framing (grounding-atlas as the map of
 where public-data models fail), but not a runnable rung as designed.
 
+A cell-STATE salvage (resting vs disease/activated states; `DD_SET=states`) was tried
+and confirms the NO-GO. States de-collinearize D and N somewhat (Spearman log N, log D
++0.61 vs +0.92 for types), but the marker-recall task still saturates at the frontier
+(recall ~1.0 for 10/11 states, including disease-associated microglia, exhausted T,
+M1/M2, CAF, senescence): cell-identity markers are memorized text the frontier holds in
+full, independent of D or N. Marker-grounding is recognition (memorized, uniform), not
+the D-gated content signal the rung needed; a non-memorized functional-grounding task
+would be a different, heavier construct.
+
 ## Implementation entry points
 
 Reuse `signal/single_cell/` (the cell-sentence vs anon generator) extended to N cell states; `eval/activation_arm_sc_cayuga.sh` for the probe; an output arm mirroring `eval/frontier_output_panel.py`. New: a `signal/single_cell/data_density.py` that pulls D(c) and N(c) from the public portals and writes a per-cell-state covariate table. First executable step: build the covariate table for ~10 cell states and confirm D(c) and N(c) are separable before any model run.

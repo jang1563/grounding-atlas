@@ -47,6 +47,23 @@ CELLS = [
     ("Kupffer cell",         "Kupffer cell",         "Kupffer cell single cell",         ["CLEC4F", "VSIG4", "CD5L", "TIMD4"]),
 ]
 
+# Cell STATES (resting vs disease/activated): the salvage. Disease states are named a
+# lot (clinical N) but functionally under-measured (low D), and their markers are less
+# textbook-canonical, so the task may un-saturate and D may dissociate from N.
+STATES = [
+    ("naive CD8 T cell",             "naive CD8 T cell",             "naive CD8 T cell single cell",             ["CCR7", "SELL", "TCF7", "LEF1", "IL7R"]),
+    ("exhausted CD8 T cell",         "exhausted T cell",             "exhausted T cell single cell",             ["PDCD1", "HAVCR2", "LAG3", "TOX", "TIGIT"]),
+    ("M1 macrophage",                "M1 macrophage",                "M1 macrophage single cell",                ["NOS2", "CD80", "IL1B", "TNF", "CXCL9"]),
+    ("M2 macrophage",                "M2 macrophage",                "M2 macrophage single cell",                ["MRC1", "ARG1", "CD163", "IL10", "MSR1"]),
+    ("homeostatic microglia",        "homeostatic microglia",        "homeostatic microglia single cell",        ["P2RY12", "TMEM119", "CX3CR1", "SALL1"]),
+    ("disease-associated microglia", "disease associated microglia", "disease associated microglia single cell", ["TREM2", "APOE", "CST7", "LPL", "ITGAX"]),
+    ("reactive astrocyte",           "reactive astrocyte",           "reactive astrocyte single cell",           ["GFAP", "VIM", "C3", "SERPINA3N", "LCN2"]),
+    ("cancer-associated fibroblast", "cancer associated fibroblast", "cancer associated fibroblast single cell", ["FAP", "ACTA2", "PDPN", "COL1A1", "PDGFRB"]),
+    ("senescent cell",               "cellular senescence",          "senescent cell single cell",               ["CDKN1A", "CDKN2A", "GLB1", "SERPINE1", "LMNB1"]),
+    ("plasma cell",                  "plasma cell",                  "plasma cell single cell",                  ["MZB1", "XBP1", "SDC1", "PRDM1", "JCHAIN"]),
+    ("tissue-resident memory T cell", "tissue resident memory T cell", "tissue resident memory T cell single cell", ["ITGAE", "CD69", "CXCR6", "ITGA1"]),
+]
+
 
 def _get(url):
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
@@ -87,8 +104,11 @@ def main():
     import anthropic
     client = anthropic.Anthropic()
 
+    is_states = os.environ.get("DD_SET") == "states"
+    cells = STATES if is_states else CELLS
+    out_path = os.path.join(HERE, f"data_density_arm_{'states' if is_states else 'types'}.csv")
     rows = []
-    for cell, pq, gq, markers in CELLS:
+    for cell, pq, gq, markers in cells:
         n = pubmed(pq); time.sleep(0.35)
         d = geo(gq); time.sleep(0.35)
         pred = ask_markers(client, cell)
@@ -98,7 +118,7 @@ def main():
                      "recall": round(recall, 3), "hit": len(pred & truth), "n_markers": len(truth)})
         print(f"  {cell:22s} N={n:6d} D={d:5d} recall={recall:.2f} ({len(pred & truth)}/{len(truth)})")
 
-    with open(OUT, "w", newline="") as f:
+    with open(out_path, "w", newline="") as f:
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader(); w.writerows(rows)
 
@@ -120,7 +140,7 @@ def main():
     if abs(rnd) > 0.7:
         flags.append(f"covariates collinear (Spearman log N,log D = {rnd:+.2f}); D and N inseparable among commensurable cell types")
     print(f"  -> {'INVALID: ' + '; '.join(flags) if flags else 'grounding loads on ' + ('N>D' if abs(rn) > abs(rd) else 'D>N')}")
-    print("wrote", OUT)
+    print("wrote", out_path)
 
 
 if __name__ == "__main__":

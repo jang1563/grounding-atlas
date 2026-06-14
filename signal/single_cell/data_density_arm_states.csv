@@ -1,0 +1,12 @@
+cell,N_pubmed,D_geo,recall,hit,n_markers
+naive CD8 T cell,6996,582,1.0,5,5
+exhausted CD8 T cell,10500,421,1.0,5,5
+M1 macrophage,23501,559,1.0,5,5
+M2 macrophage,29072,559,1.0,5,5
+homeostatic microglia,1093,76,1.0,4,4
+disease-associated microglia,15148,377,1.0,5,5
+reactive astrocyte,11818,132,0.8,4,5
+cancer-associated fibroblast,16628,189,1.0,5,5
+senescent cell,45872,1581,1.0,5,5
+plasma cell,390161,484,1.0,5,5
+tissue-resident memory T cell,1787,27,1.0,4,4
