@@ -1,6 +1,6 @@
 # Best-layer selection bias: the encoding claim survives an unbiased layer choice (measured)
 
-*Reviewer-proofing note for the activation arm. 2026-06-09. Companion to `head_to_head.md`, `confound_controls.md`, and `../docs/WS1_BACKLOG.md` (item E). No em dashes.*
+*Robustness note for the activation arm. 2026-06-09. Companion to `head_to_head.md`, `confound_controls.md`, and `../docs/WS1_BACKLOG.md` (item E). No em dashes.*
 
 ## The objection
 

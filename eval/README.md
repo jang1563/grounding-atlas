@@ -8,7 +8,7 @@ Per representation, does the model ground by **content** or by **name**, and doe
 
 | Tier | Question | How |
 |---|---|---|
-| T0 Recognize | does it resolve the identity of a representation | accession/SMILES -> name/family (reuses FRT A-axis) |
+| T0 Recognize | does it resolve the identity of a representation | accession/SMILES -> name/family (reuses the prior recognition study's A-axis) |
 | **T1 Comprehend** | does it read a verifiable property out of the content | **axis B head-to-head + content-sensitivity (below); negative-evidence coverage is adjacent, not this instrument** |
 | T2 Apply | does it use that understanding downstream | solve / propose / evaluate; **SOLVE + PROPOSE scored** (`../results/t2_apply.md`, `../results/t2_propose.md`), evaluate blocked on the D human-rater pass |
 
@@ -39,23 +39,23 @@ Cross four conditions on the LLM arm; the pattern is the content-sensitivity sco
 | Condition | content (seq/SMILES) | label (name/accession) | a true content-grounder should |
 |---|---|---|---|
 | **matched** | real | real (consistent) | be correct |
-| **mismatched** | real | wrong entity (= FRT Variant C) | follow content, not the name |
+| **mismatched** | real | wrong entity (prior-study mismatch) | follow content, not the name |
 | **scrambled** | corrupted | real | degrade (content destroyed) |
-| **content-only** | real | removed (= FRT Variant D) | still solve from content alone |
+| **content-only** | real | removed (prior-study content-only) | still solve from content alone |
 | **re-notation** | real, alternate VALID notation | real | give the same answer (notation-invariant) |
 
-The **re-notation** condition is the within-entity test of representation invariance: the SAME molecule as a canonical vs a randomized-but-valid SMILES, the same variant as gene+HGVS vs rsID vs raw sequence, the same protein by accession vs sequence. A content-grounder gives the same answer; if the answer moves with the notation while the content is held fixed, the model is grounding the surface form, not the content. This is the general-capability form of the FRT recognition gap (axis A: name ~100% vs accession ~2-28%), and the web-exposure law (`../PROJECT_DESIGN.md` section 7) predicts it within a single entity (a web-frequent notation grounded, a web-rare notation of the same content not). The variant branch measured it (text 0.79 vs seq 0.58 on the same variants); the SMILES randomized condition marks the floor (canonical 0.573 vs randomized 0.553, no notation effect where the output carries no signal to bind), so notation-sensitivity is measurable only where grounding already surfaces.
+The **re-notation** condition is the within-entity test of representation invariance: the SAME molecule as a canonical vs a randomized-but-valid SMILES, the same variant as gene+HGVS vs rsID vs raw sequence, the same protein by accession vs sequence. A content-grounder gives the same answer; if the answer moves with the notation while the content is held fixed, the model is grounding the surface form, not the content. This is the general-capability form of the prior study's recognition gap (axis A: name ~100% vs accession ~2-28%), and the web-exposure law (`../PROJECT_DESIGN.md` section 7) predicts it within a single entity (a web-frequent notation grounded, a web-rare notation of the same content not). The variant branch measured it (text 0.79 vs seq 0.58 on the same variants); the SMILES randomized condition marks the floor (canonical 0.573 vs randomized 0.553, no notation effect where the output carries no signal to bind), so notation-sensitivity is measurable only where grounding already surfaces.
 
-The scramble must actually destroy the signal, not just permute it. A plain residue shuffle preserves amino-acid composition, so a model reading composition alone would not degrade and the control would falsely read as a name shortcut. Use at least two strengths: a composition-preserving shuffle and a motif-targeted disruption (mutate the catalytic/functional residues the property depends on). The property counts as content-grounded only if it tracks the stronger disruption. FRT already built the mismatched and content-only halves. (GenomeQA 2604.05774 does a dinucleotide-preserving shuffle on one DNA task; our delta is the cross-modality, same-entity real-vs-corrupted matched contrast tied to the activation arm, not a single-task shuffle.)
+The scramble must actually destroy the signal, not just permute it. A plain residue shuffle preserves amino-acid composition, so a model reading composition alone would not degrade and the control would falsely read as a name shortcut. Use at least two strengths: a composition-preserving shuffle and a motif-targeted disruption (mutate the catalytic/functional residues the property depends on). The property counts as content-grounded only if it tracks the stronger disruption. The prior recognition study already built the mismatched and content-only halves. (GenomeQA 2604.05774 does a dinucleotide-preserving shuffle on one DNA task; our delta is the cross-modality, same-entity real-vs-corrupted matched contrast tied to the activation arm, not a single-task shuffle.)
 
-## Phase 1: NMSE method PoC (does the B-axis machinery work)
+## Phase 1: separability-probe method PoC (does the B-axis machinery work)
 
-NMSE is the one asset with a confirmed high probe ceiling on content (AUROC 0.9807 on frozen ESM-2). It is small and its strong label is dual-use/benign, so Phase 1 is a **method check, not the capability headline**: confirm the head-to-head and the four content-sensitivity conditions actually separate "signal present" from "signal surfaced," before investing in new data.
+The prior separability probe is the one asset with a confirmed high probe ceiling on content (AUROC 0.9807 on frozen ESM-2). It is small and its strong label is hazard-flagged/benign, so Phase 1 is a **method check, not the capability headline**: confirm the head-to-head and the four content-sensitivity conditions actually separate "signal present" from "signal surfaced," before investing in new data.
 
-- **Ceiling, reused:** the 0.9807 separability result stands as the "signal is in ESM-2's representation" anchor (a homolog sequence set; NMSE reports the AUROC on 60+60 arrays while its corrected panel is 71/62, an NMSE-internal discrepancy to reconcile before relying on it, and 60 is not large-N). It is a dual-use/benign label, so it validates the *method*, not a capability-neutral claim, and it is about ESM-2, not the LLM. Flag both.
+- **Ceiling, reused:** the 0.9807 separability result stands as the "signal is in ESM-2's representation" anchor (a homolog sequence set; the prior study reports the AUROC on 60+60 arrays while its corrected panel is 71/62, a study-internal discrepancy to reconcile before relying on it, and 60 is not large-N). It is a hazard-flagged/benign label, so it validates the *method*, not a capability-neutral claim, and it is about ESM-2, not the LLM. Flag both.
 - **LLM arm:** run the four content-sensitivity conditions on the panel sequences, score deterministically (LabCraft, `BioProtocolBench/labcraft`). Question: does the LLM surface what the probe reads, and does corrupting the sequence move its answer.
-- **Capability-flavored mini-case:** the two mechanism-matched pairs (zinc metalloprotease BoNT-A / astacin; RIP ricin / saporin-6) test whether the model reads mechanistic class from content independently of the danger label. Qualitative, n is tiny.
-- The earlier multiclass functional-class probe on the panel (16 annotated dual-use proteins + 3 benign controls) is dropped (too few members per class).
+- **Capability-flavored mini-case:** two mechanism-matched pairs (a hazard-flagged zinc-metalloprotease vs a benign one; a hazard-flagged ribosome-inactivating protein vs a benign RIP) test whether the model reads mechanistic class from content independently of the hazard label. Qualitative, n is tiny.
+- The earlier multiclass functional-class probe on the panel (16 annotated hazard-flagged proteins + 3 benign controls) is dropped (too few members per class).
 - **Output:** evidence that the B-axis method works (or not), and a first probe-minus-LLM gap on a known-high-ceiling task.
 
 ## Phase 2: a built content-property task (the real B-axis measurement)
@@ -71,7 +71,7 @@ The capability-neutral measurement runs on a **content-property task that has to
 
 ## Why axis B needs a built task (not NegBioDB's results)
 
-Axis B needs a content-grounded property task, and no existing asset provides one off the shelf (NMSE is small and dual-use-labeled; NegBioDB's measured tasks are memorization, not content grounding). So the real B-axis measurement needs a **task to be built** (WS2-style generation of (representation, verifiable-property) pairs), which partially inverts the original "WS1 first" sequence (WS4 doc pass). The dependency is on *building a task*, not on *importing NegBioDB's L4/PBS results*: NegBioDB is one raw-data source, not the measurement, and the instrument stands on axes A/B/E without it.
+Axis B needs a content-grounded property task, and no existing asset provides one off the shelf (the prior separability probe is small and hazard-labeled; NegBioDB's measured tasks are memorization, not content grounding). So the real B-axis measurement needs a **task to be built** (WS2-style generation of (representation, verifiable-property) pairs), which partially inverts the original "WS1 first" sequence (WS4 doc pass). The dependency is on *building a task*, not on *importing NegBioDB's L4/PBS results*: NegBioDB is one raw-data source, not the measurement, and the instrument stands on axes A/B/E without it.
 
 ## Adjacent: negative-evidence coverage (NullAtlas, WS2)
 
@@ -92,10 +92,10 @@ The capability test the project rests on: **does higher T1 grounding predict hig
 
 ## Guardrails carried in
 
-- Capability-neutral property for the headline (Phase 2); Phase 1 uses the NMSE dual-use label only as a method check, flagged as such.
-- FRT `disclosure/` material never enters; aggregate behavioral numbers only.
-- No em dashes; verified facts; NMSE is an "Evaluation Report"; substrate is NegBioDB/NullAtlas.
-- The mine-to-claim core is the axis-B grounding instrument (with A and E). NullAtlas/NegBioDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
+- Capability-neutral property for the headline (Phase 2); Phase 1 uses the prior probe's hazard label only as a method check, flagged as such.
+- No raw operational material enters; aggregate behavioral numbers only.
+- No em dashes; verified facts; substrate is NegBioDB/NullAtlas.
+- The core contribution is the axis-B grounding instrument (with A and E). NullAtlas/NegBioDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
 
 ## Compute
 Heavy or GPU work (ESM-2 / Evo2 embeddings, LLM hidden-state extraction for the activation arm, any model fine-tune) runs on **Cayuga** (WCM HPC) or **Expanse** (SDSC, for GPU), not locally. Local is only for light CPU probes. `eval/ceiling_gate.py` (rdkit + sklearn) is the local reference; the probe-vs-LLM head-to-head and the LLM-activation arm move to Cayuga/Expanse.

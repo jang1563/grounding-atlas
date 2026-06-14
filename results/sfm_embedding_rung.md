@@ -18,7 +18,7 @@ baseline for this existed.
 ESM-2 (esm2_t30_150M, 640-dim, mean-pooled) of 320 Meltome proteins, generated locally on MPS
 (no HPC). Property = thermostability, tercile-extreme label (top vs bottom third of Tm, the median
 split is too diluted: ceiling 0.633, terciles 0.754, quartiles 0.835). Ceiling = a probe on the
-embedding under a Meltome-cluster GroupKFold (leakage control). Capability-neutral; the dual-use
+embedding under a Meltome-cluster GroupKFold (leakage control). Capability-neutral; the prior hazard-flagged
 ESM panel was deliberately not used.
 
 ## Results (sonnet-4-6, query n=50, K=24 ICL examples, PCA-16)

@@ -22,7 +22,7 @@ The single-cell rung maps onto the project's instrument almost exactly, with a c
 - GENE-SYMBOL "cell sentence" (web-rich text): Cell2Sentence rank-orders gene NAMES by expression and an LLM reads it; the scaled C2S-Scale reaches ~95.4% cell-type accuracy, MEETING the SFM ceiling (scGPT 93.1%, Geneformer 94.0%). [https://www.biorxiv.org/content/10.1101/2023.09.11.557287v2.full; the 95.4% is from C2S-Scale scaling work, verify against the primary 2025 paper]
 - GPT-4 marker-gene annotation: operates on gene SYMBOLS (text), never the raw count matrix, and matches experts in >75% of cell types, beating SingleR/ScType. [https://www.nature.com/articles/s41592-024-02235-4]
 
-So single-cell is the perfect next rung: the SAME entity (a cell) has a web-zero raw form (expression vector) and a web-rich symbolic form (ranked gene names), exactly the variant text-vs-seq contrast, and it is a flagship domain for this program. Prediction: raw-vector activation/output low (expression-limited, the model cannot read 20k floats), cell-sentence output rising with scale/training (C2S evidence). This directly extends the web-exposure law into omics, the plan's stated flagship area.
+So single-cell is the perfect next rung: the SAME entity (a cell) has a web-zero raw form (expression vector) and a web-rich symbolic form (ranked gene names), exactly the variant text-vs-seq contrast, and it is a priority domain for this program. Prediction: raw-vector activation/output low (expression-limited, the model cannot read 20k floats), cell-sentence output rising with scale/training (C2S evidence). This directly extends the web-exposure law into omics, the plan's stated priority area.
 
 ## Rung 2 detail: 3D structure is the genuine encoding-limited candidate we lacked
 
@@ -42,4 +42,4 @@ The sweep found, per modality: (i) SFM-ceiling papers (scFoundation, Boltz-2, CO
 
 ## Recommendation
 
-Do rung 1 (single-cell, the flagship rung with the built-in raw-vector-vs-cell-sentence web-exposure contrast) for impact and domain fit, and rung 2 (3D structure -> Boltz-2 affinity) to finally land a genuine ENCODING-limited anchor. Anchor the single-cell ceiling to a strong supervised specialist, not a zero-shot FM.
+Do rung 1 (single-cell, the priority rung with the built-in raw-vector-vs-cell-sentence web-exposure contrast) for impact and domain fit, and rung 2 (3D structure -> Boltz-2 affinity) to finally land a genuine ENCODING-limited anchor. Anchor the single-cell ceiling to a strong supervised specialist, not a zero-shot FM.

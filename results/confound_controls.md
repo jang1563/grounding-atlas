@@ -1,6 +1,6 @@
 # Confound controls: the encoding-vs-expression gap survives every named confound
 
-*Reviewer-proofing summary for axis B. 2026-06-09. The three confounds are from `../eval/README.md` ("Three confounds the design must control"); selectivity and best-layer are the two probe defenses. No em dashes.*
+*Robustness summary for axis B. 2026-06-09. The three confounds are from `../eval/README.md` ("Three confounds the design must control"); selectivity and best-layer are the two probe defenses. No em dashes.*
 
 The headline is that a general LLM encodes a content property near the specialist ceiling yet outputs near chance (an expression gap). Every way that gap could be an artifact is controlled here, with the status and the number.
 

@@ -1,6 +1,6 @@
 # Single-cell rung: the cleanest web-exposure result in the project
 
-*Results. 2026-06-12. `eval/frontier_output_panel.py` (sc_cellsentence / sc_anon), data `signal/single_cell/pbmc_Tcell.csv` (scanpy pbmc68k_reduced, 384 cells balanced, T cell vs rest). The 7th rung, JK's flagship modality. 8B activation pending (job 3038603). No em dashes.*
+*Results. 2026-06-12. `eval/frontier_output_panel.py` (sc_cellsentence / sc_anon), data `signal/single_cell/pbmc_Tcell.csv` (scanpy pbmc68k_reduced, 384 cells balanced, T cell vs rest). The 7th rung, a priority modality. 8B activation pending (job 3038603). No em dashes.*
 
 ## The design: the same cell, two token-identities, one fixed signal
 
@@ -31,7 +31,7 @@ The cell-sentence expression gap is SCALE-DEPENDENT, not flat. The full ladder i
 
 ## Why it matters
 
-This is JK's flagship domain (single-cell), and it extends the web-exposure law into omics, the plan's stated SFM-as-input white-space, with the cleanest possible design: the within-entity notation contrast (cell-sentence vs anon) at a fixed ceiling and a fixed signal, parallel to variant text-vs-seq and protein seq-vs-organism but cleaner because here the signal is provably identical in both forms. Honest scope: a small pilot (n=384, pbmc68k_reduced, one binary cell type); the activation (encoding) side is pending. Cell-type-from-expression is the DESCRIPTIVE grounding question; the CAUSAL/perturbation question is the sibling CausalAtlas project, out of scope.
+This is a priority domain (single-cell), and it extends the web-exposure law into omics, the plan's stated SFM-as-input white-space, with the cleanest possible design: the within-entity notation contrast (cell-sentence vs anon) at a fixed ceiling and a fixed signal, parallel to variant text-vs-seq and protein seq-vs-organism but cleaner because here the signal is provably identical in both forms. Honest scope: a small pilot (n=384, pbmc68k_reduced, one binary cell type); the activation (encoding) side is pending. Cell-type-from-expression is the DESCRIPTIVE grounding question; the CAUSAL/perturbation question is the sibling CausalAtlas project, out of scope.
 
 ## Reproduce
 

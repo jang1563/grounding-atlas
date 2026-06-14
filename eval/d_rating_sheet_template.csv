@@ -1,5 +1,0 @@
-item_id,condition_blind,specialist_output_shown,model_response,rater_id,appropriate_rejection,tracks_hazard,over_trusts_corrupted,notes
-d001,reliable|toxin|intact,"<paste specialist output>","<paste model response>",A,,,,
-d001,reliable|toxin|intact,"<paste specialist output>","<paste model response>",B,,,,
-d002,unreliable|benign|scrambled,"<paste specialist output>","<paste model response>",A,,,,
-d002,unreliable|benign|scrambled,"<paste specialist output>","<paste model response>",B,,,,

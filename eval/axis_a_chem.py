@@ -1,7 +1,7 @@
 """Axis A (identity resolution) for chemistry: the within-entity recognition gap.
 
-The protein A-axis anchor is name ~100% vs database-accession ~2-28% (FRT,
-docs/FAILURE_MODES.md). This is its chemistry, within-entity form: the SAME famous
+The protein A-axis anchor is name ~100% vs database-accession ~2-28% (the prior
+recognition study, docs/FAILURE_MODES.md). This is its chemistry, within-entity form: the SAME famous
 drug presented as a web-frequent notation (name), a moderate one (canonical SMILES),
 and a web-rare accession-analog (InChIKey, a hash). The web-exposure law predicts
 recognition tracks notation web-frequency, so name >> SMILES >> InChIKey on one set

@@ -87,7 +87,7 @@ sbatch run_activation_cayuga.sh
 ```
 
 The output arm runs against any provider via `VG_PROVIDER` (anthropic|openai) and `VG_MODEL`.
-Reuses the SMILES branch venv (`~/bge/venv`, no `kernels` package) and HF cache for the GPU arms.
+Reuses the SMILES branch venv (no `kernels` package) and HF cache for the GPU arms.
 
 ## What is reused verbatim from `../../eval/`
 

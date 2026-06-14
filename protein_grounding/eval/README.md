@@ -52,11 +52,11 @@ and `matched` conditions test name-vs-content and need the `organism` column in
 full_dataset_sequences.fasta header, which carries the source organism). Per-item predictions
 are saved to `hh_preds_<cond>.csv` and `comprehension_preds.csv` for reanalysis.
 
-## Run order (Cayuga, mirrors the `~/bge` pattern in `~/pge`)
+## Run order (Cayuga; run from your branch checkout directory)
 
 ```bash
 # 0. one-time: data (CPU, login node)
-cd ~/pge && bash setup_data_cayuga.sh
+cd <protein branch dir> && bash setup_data_cayuga.sh
 
 # 1. ceiling gate (is the signal in the content?)
 sbatch run_ceiling_cayuga.sh
@@ -66,8 +66,8 @@ sbatch run_activation_cayuga.sh
 # panel: ACT_MODEL=Qwen/Qwen3-32B sbatch run_activation_cayuga.sh   (etc.)
 ```
 
-Reuses the SMILES branch venv (`~/bge/venv`: torch 2.12 / transformers 5.10 / sklearn 1.9,
-no `kernels` package) and HF cache (`~/bge/hf_cache`). a100 node g0001 is DRAIN; jobs target
+Reuses the SMILES branch venv (torch 2.12 / transformers 5.10 / sklearn 1.9,
+no `kernels` package) and its HF cache. a100 node g0001 is DRAIN; jobs target
 a40 (scu-gpu, qos=normal) with an h100 alternative (preempt_gpu, qos=low) commented in the
 sbatch.
 

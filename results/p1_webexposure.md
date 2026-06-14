@@ -1,6 +1,6 @@
 # P1 web-exposure covariate: the cross-modality regression is mis-specified; the within-entity contrast is the valid test
 
-*Reviewer-proofing note for the web-exposure law (P1). 2026-06-09. Companion to `../PROJECT_DESIGN.md` section 7, `../docs/WS1_BACKLOG.md` item D. Instrument: `../eval/p1_webexposure.py`. No em dashes.*
+*Robustness note for the web-exposure law (P1). 2026-06-09. Companion to `../PROJECT_DESIGN.md` section 7, `../docs/WS1_BACKLOG.md` item D. Instrument: `../eval/p1_webexposure.py`. No em dashes.*
 
 ## The objection (and the backlog status it resolves)
 
@@ -39,7 +39,7 @@ The law makes a sharper, measurable claim WITHIN a single entity: hold the conte
 - **Variant confirms the predicted direction on BOTH arms.** The web-rich symbol beats the web-poor sequence at activation (0.795 > 0.740) and output (0.599 > 0.494), at one fixed 0.962 ceiling, under a gene GroupKFold that removes the trivial gene-prior shortcut. Same biology, different surface form, web-exposure is the variable that moved.
 - **SMILES is a floor, not a counterexample.** Canonical 0.573 vs randomized 0.553 is no effect because there is no surfaced output signal to bind; notation-sensitivity is measurable only where grounding already surfaces. This is what the law predicts at the expression-dominant end, not a refutation.
 
-The notation-exposure rank itself (name/symbol > HGVS/canonical-SMILES/InChIKey > raw sequence/accession/randomized-SMILES) is corpus-grounded and stable, and it is the general-capability form of the FRT recognition gap (axis A: name ~100% vs accession ~2-28%).
+The notation-exposure rank itself (name/symbol > HGVS/canonical-SMILES/InChIKey > raw sequence/accession/randomized-SMILES) is corpus-grounded and stable, and it is the general-capability form of the prior study's recognition gap (axis A: name ~100% vs accession ~2-28%).
 
 ## Bottom line
 

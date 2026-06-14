@@ -2,7 +2,7 @@
 
 The "widest-open" rung (PROJECT_DESIGN 7.4): feed an SFM EMBEDDING to the LLM and ask whether it
 can read a property out of it (the orchestrate-condition input). Capability-neutral property =
-thermostability Tm (Meltome), NOT the dual-use panel. This stage only makes the embeddings and
+thermostability Tm (Meltome), NOT the prior hazard-flagged panel. This stage only makes the embeddings and
 confirms the ceiling is real (the property IS in the embedding); the LLM output / ICL arm is
 stage 2 (eval/sfm_embedding_output.py), gated on a high ceiling here.
 

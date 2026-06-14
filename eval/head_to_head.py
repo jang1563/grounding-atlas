@@ -2,7 +2,7 @@
 
 Give the LLM a molecule, ask for hERG-block probability, and compare AUROC against the
 probe ceiling (eval/ceiling_gate.py: hERG scaffold ~0.91). Caveat: that LLMs are near-
-chance at zero-shot property prediction from SMILES is PRIOR ART (see GUARDRAILS). Our
+chance at zero-shot property prediction from SMILES is PRIOR ART. Our
 contribution is the instrument, the validity-vs-property dissociation, and the activation
 arm; this script is the LLM-output arm.
 

@@ -13,7 +13,7 @@
 
 ![Two-axis decomposition of the grounding gap: encoding (does the model represent the property internally) vs verbalization (does it state it), across 17 representations.](results/synthesis_figure.png)
 
-A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Builds on and unifies several of my own prior projects (NMSE, the LLM x SFM over-trust instrument, NullAtlas/NegBioRL, LabCraft).
+A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Builds on and unifies several of my own prior projects (a frozen-embedding separability study, an LLM over-trust instrument, NullAtlas/NegBioRL, LabCraft).
 
 *Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563) · [jak4013@med.cornell.edu](mailto:jak4013@med.cornell.edu)*
 
@@ -70,7 +70,6 @@ Full design: `PROJECT_DESIGN.md`.
 | File | What |
 |---|---|
 | `PROJECT_DESIGN.md` | thesis, the gap, WS1-3 in detail, scope and honest caveats |
-| `RESEARCH_STATEMENT.md` | the research statement: aims, the web-exposure law, the orchestration map |
 
 **Code and outputs**
 | Path | What |

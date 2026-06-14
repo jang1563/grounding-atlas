@@ -1,9 +1,9 @@
 """Axis A (identity resolution), gene/DNA rung: within-entity recognition across notations.
 
-The third modality for axis A (protein via FRT, chem via axis_a_chem.py, gene here), so
+The third modality for axis A (protein via the prior study, chem via axis_a_chem.py, gene here), so
 the recognition gap is measured on one instrument across three modalities. Uses TRUSTED
 ClinVar data (variant_grounding/data/variant_clinvar_full.csv), no curation: each gene
-carries a symbol (web-frequent), a UniProt accession (web-rare, the FRT accession analog),
+carries a symbol (web-frequent), a UniProt accession (web-rare, the prior study's accession analog),
 a dbSNP rsID (web-rare), and a protein sequence window (web-rare). The web-exposure law
 predicts recognition tracks notation web-frequency: symbol >> accession / rsID / sequence.
 
