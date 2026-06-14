@@ -18,10 +18,10 @@ from rdkit import Chem, RDLogger
 from rdkit.Chem import BRICS, Descriptors, rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
 from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
-from sklearn.pipeline import make_pipeline
-from sklearn.model_selection import GroupShuffleSplit
 from sklearn.metrics import roc_auc_score
+from sklearn.model_selection import GroupShuffleSplit
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler
 
 RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
