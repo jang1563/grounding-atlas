@@ -27,7 +27,8 @@ ESM panel was deliberately not used.
 |---|---|
 | ceiling: probe on full 640-dim embedding | 0.811 |
 | ceiling: probe on PCA-16 embedding | 0.846 |
-| LLM activation: 0.5B hidden states on embedding-text, best layer | 0.710 (selective +0.22) |
+| LLM activation: 0.5B hidden states, best-layer / held-out-layer (unbiased) | 0.71 / 0.599 (selection bias +0.11) |
+| LLM activation: 8B hidden states (Cayuga), best-layer / held-out-layer | 0.775 / **0.655** (selection bias +0.12) |
 | LLM zero-shot, raw 640-dim embedding as text | 0.466 (chance) |
 | LLM few-shot ICL, PCA-16 vectors + 24 labeled examples | 0.562 (at / near chance, n=50) |
 | raw-sequence output arm (existing protein rung) | 0.486 (8B) / 0.585 (opus) |
@@ -41,13 +42,23 @@ moves it (0.56, within noise of chance at n=50) and stays far below the PCA-16 c
 24 labeled example vectors the LLM still cannot learn the decision boundary in an abstract embedding
 space in context.
 
-But the LLM DOES encode it internally. A linear probe on a 0.5B model's hidden states reading the
-same embedding-text recovers Tm at 0.710 (selective +0.22, best layer), well above its own output
-(0.47 to 0.56) and within ~0.12 of the ceiling. So this is an EXPRESSION gap like the numeric-vector
-rungs (methylation, single-cell-anon): the embedding-text signal IS carried into the activations, it
-is just not verbalized or usable through the prompt. The orchestrate failure is a verbalization /
-read-out gap, not an encoding gap, and the fix is a trained head (on the embedding, or on the LLM's
-activations), not prompting (zero-shot or ICL).
+Whether the LLM ENCODES it internally is UNRESOLVED at this proxy scale. A linear probe on a 0.5B
+model's hidden states reading the embedding-text reads 0.71 at the best layer, but that is a
+max-over-25-layers number: the selection-bias-corrected held-out-layer estimate (nested GroupKFold)
+is only 0.599 (bias +0.11), marginally above its own output (0.47 to 0.56) and far below the 0.83
+ceiling (encoding gap 0.23). So at 0.5B this is inconclusive: the small proxy does not cleanly encode
+Tm from the embedding-text. The 8B on Cayuga (job 3040969) now RESOLVES it: held-out-layer 0.655
+(best 0.775, bias +0.12), above output (~0.52) but far below the 0.83 ceiling (encoding gap 0.17,
+the magnitude of the structure-heavy 3D / graph rungs). So this is NOT a clean expression gap but a
+PARTIAL ENCODING gap: the abstract ESM-embedding floats are not fully readable as text even at 8B,
+unlike interpretable numeric vectors (methylation, where the probe reaches the ceiling). Scaling
+0.5B to 8B lifted the unbiased encode only 0.599 to 0.655. What is robust
+regardless of that: the output and ICL arms are at chance, so orchestrating by PROMPTING the embedding
+fails, and the fix is a trained head on the embedding (the ceiling probe, 0.83), not the prompt.
+
+(Note: the selection-bias correction here, like the larger-N pI bridge, deflated an optimistic
+first number, 0.71 -> 0.60. Two-for-two: refinements that correct downward, the honest-hype-check
+discipline working as intended.)
 
 **Consequence for the decision map.** Orchestrating an SFM means calling it and putting a TRAINED
 read-out head on its output (the ceiling probe), NOT pasting the embedding into the prompt. The LLM
@@ -63,10 +74,11 @@ not on a learned embedding whose axes are opaque. A direct same-harness comparis
 
 ## Caveats
 
-All three arms now measured, but the activation arm is a 0.5B LOCAL PROXY (Qwen2.5-0.5B on MPS; the
-26GB box cannot host the 8B), and its best-layer AUROC is a selection-biased upper bound (no nested
-held-out-layer correction here, unlike `activation_arm.py`). Qwen3-8B on Cayuga is the comparable
-run (same script, ACT_MODEL=Qwen/Qwen3-8B) and would likely push activation closer to the ceiling.
+The activation arm is a 0.5B LOCAL PROXY (Qwen2.5-0.5B on MPS; the 26GB box cannot host the 8B). Its
+best-layer 0.71 carries a +0.11 selection bias (held-out-layer 0.599). The Qwen3-8B comparable run
+(Cayuga job 3040969) settled it: held-out-layer 0.655 (best 0.775, bias +0.12), above output but far
+below the 0.83 ceiling, a partial encoding gap (not a clean expression gap). The output / ICL chance
+result and the orchestrate-needs-a-trained-head conclusion do not depend on this.
 n=50 query makes the ICL AUROC noisy (treat 0.56 as at-chance, not a real lift). One property (Tm
 extremes), one ESM size (150M), one model (sonnet-4-6). ICL sees 24 examples vs the probe's 164, so
 it is not a sample-matched comparison; the qualitative result (chance vs a 0.85 ceiling) is the

@@ -1,0 +1,21 @@
+{
+  "model": "Qwen/Qwen2.5-0.5B-Instruct",
+  "n": 214,
+  "best_layer_auroc": 0.71,
+  "best_layer": 4,
+  "heldout_layer_auroc": 0.599,
+  "selection_bias": 0.112,
+  "control": 0.495,
+  "selectivity": 0.216,
+  "layers_picked": [
+    12,
+    12,
+    1,
+    4,
+    3
+  ],
+  "ceiling": 0.83,
+  "output_zeroshot": 0.47,
+  "output_icl": 0.56,
+  "note": "local 0.5B proxy; held-out-layer 0.599 = inconclusive, 8B (cayuga_sfm_activation.sbatch) needed"
+}

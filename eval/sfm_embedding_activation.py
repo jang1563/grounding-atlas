@@ -40,6 +40,26 @@ def prompt(v):
             "Does it have high thermostability? Answer:")
 
 
+def heldout_layer_auroc(H, y, groups, clf_factory, n_splits=5):
+    """Unbiased best-layer AUROC: pick the layer on TRAIN folds only, score the held-out fold
+    (Cawley-Talbot JMLR 2010). best-layer minus held-out-layer = the selection bias."""
+    oof = np.zeros(len(y)); picked = []
+    for tr, te in GroupKFold(n_splits).split(H[0], y, groups):
+        g_tr = groups[tr]
+        inner = GroupKFold(min(n_splits, len(np.unique(g_tr))))
+        bL, ba = 0, -1.0
+        for L in range(len(H)):
+            p = cross_val_predict(clf_factory(), H[L][tr], y[tr], cv=inner, groups=g_tr,
+                                  method="predict_proba", n_jobs=-1)[:, 1]
+            a = roc_auc_score(y[tr], p)
+            if a > ba:
+                ba, bL = a, L
+        c = clf_factory().fit(H[bL][tr], y[tr])
+        oof[te] = c.predict_proba(H[bL][te])[:, 1]
+        picked.append(bL)
+    return roc_auc_score(y, oof), picked
+
+
 def main():
     d = np.load(NPZ, allow_pickle=True)
     X, tm, grp = d["emb"], d["tm"], d["groups"]
@@ -82,18 +102,31 @@ def main():
     ys = np.random.RandomState(123).permutation(y)
     pc = cross_val_predict(clf(), H[bestL], ys, cv=cv, groups=grp, method="predict_proba", n_jobs=-1)[:, 1]
     ctrl = roc_auc_score(ys, pc)
-    print(f"\nACTIVATION (best layer {bestL}/{len(H)-1}): AUROC={best:.3f} "
-          f"(shuffled-label control={ctrl:.3f}, selectivity={best - ctrl:+.3f})", flush=True)
+    ho, picked = heldout_layer_auroc(H, y, grp, clf)   # selection-bias-corrected (nested CV)
+    print(f"\nACTIVATION best-layer (max over {len(H)} layers): AUROC={best:.3f} (layer {bestL}, "
+          f"shuffled-label control={ctrl:.3f}, selectivity={best - ctrl:+.3f})", flush=True)
+    print(f"ACTIVATION held-out-layer (nested GroupKFold, UNBIASED): AUROC={ho:.3f} "
+          f"| selection bias = {best - ho:+.3f} (layers picked {picked})", flush=True)
     print("  vs ceiling (embedding probe) 0.81-0.85 | output zero-shot 0.47 / ICL 0.56", flush=True)
-    gap_enc = 0.83 - best
+    gap_enc = 0.83 - ho
     if best - ctrl < 0.10:
         print("  -> probe not selective; inconclusive")
-    elif gap_enc <= 0.12:
-        print(f"  -> EXPRESSION gap: the LLM ENCODES Tm from the embedding-text (act {best:.2f} ~ ceiling) "
-              f"but says it at chance. Same pattern as the numeric-vector rungs.")
+    elif gap_enc <= 0.15:
+        print(f"  -> EXPRESSION gap: the LLM ENCODES Tm from the embedding-text (unbiased act {ho:.2f}, "
+              f"selective) but says it at chance. Same pattern as the numeric-vector rungs.")
     else:
-        print(f"  -> partial/ENCODING gap: activation {best:.2f} well below ceiling 0.83 (enc gap {gap_enc:.2f}); "
-              f"this small proxy may not carry it, run the 8B on Cayuga before concluding.")
+        print(f"  -> partial/ENCODING gap: unbiased activation {ho:.2f} below ceiling 0.83 (enc gap {gap_enc:.2f}); "
+              f"this small 0.5B proxy may not fully carry it, run the 8B on Cayuga before concluding.")
+
+    import json
+    tag = MODEL.split("/")[-1]
+    json.dump({"model": MODEL, "n": int(len(y)), "best_layer_auroc": round(float(best), 3),
+               "best_layer": int(bestL), "heldout_layer_auroc": round(float(ho), 3),
+               "selection_bias": round(float(best - ho), 3), "control": round(float(ctrl), 3),
+               "selectivity": round(float(best - ctrl), 3), "layers_picked": [int(x) for x in picked],
+               "ceiling": 0.83, "output_zeroshot": 0.47, "output_icl": 0.56},
+              open(os.path.join(ROOT, "results", f"sfm_embedding_activation_{tag}.json"), "w"), indent=2)
+    print(f"saved -> results/sfm_embedding_activation_{tag}.json", flush=True)
 
 
 if __name__ == "__main__":
