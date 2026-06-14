@@ -15,6 +15,8 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 |---|---|
 | [`SINGLE_CELL_RUNG_DESIGN.md`](SINGLE_CELL_RUNG_DESIGN.md) | the descriptive rung with a built-in web-exposure contrast (gene-name vs anon) |
 | [`WS3_NONFP_ENDPOINT_DESIGN.md`](WS3_NONFP_ENDPOINT_DESIGN.md) | a non-fingerprint-local endpoint to break the decision-map circularity |
+| [`DATA_DENSITY_RUNG_DESIGN.md`](DATA_DENSITY_RUNG_DESIGN.md) | makes the web-exposure law a measured within-modality regression via public-data density per cell state (name vs data dissociation) |
+| [`ALPHAGENOME_CEILING_DESIGN.md`](ALPHAGENOME_CEILING_DESIGN.md) | a regulatory rung with AlphaGenome as a strong specialist ceiling; adds it to the orchestrate arm |
 
 ## Landscape and planning
 | File | What |
