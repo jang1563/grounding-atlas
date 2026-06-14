@@ -111,7 +111,9 @@ def main():
     for o in out:
         by_set.setdefault(o["set"], []).append(o["max_abs_raw"])
     if len(by_set) >= 2:
-        print("\nPRE-CHECK (max_abs_raw by set; expect known_eqtl > novel if split is real):")
+        # AlphaGenome is sequence-based and web-agnostic: it should NOT differ by
+        # web-exposure (known vs novel). That asymmetry is expected only in the LLM arm.
+        print("\nscores by set (AlphaGenome should be comparable across known/novel):")
         for s, vals in by_set.items():
             print(f"  {s:12s} n={len(vals):3d}  mean={sum(vals)/len(vals):.4f}")
 

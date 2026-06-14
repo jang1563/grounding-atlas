@@ -46,3 +46,4 @@ internal/
 
 # AlphaGenome-derived scores (non-commercial terms; regenerate via signal/regulatory/)
 signal/regulatory/variant_scores.csv
+signal/regulatory/eqtl_ceiling_gate.csv

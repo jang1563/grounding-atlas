@@ -41,6 +41,32 @@ This mirrors the variant flagship, which is orchestrate-won (AlphaMissense AUROC
 - AlphaGenome variant effects are predictions, not measured ground truth; for the web-poor novel set the label is a strong proxy, not gold, so frame it as predicted-structural (the project's third property type), not empirical, and note the proxy-gold gap.
 - activation is open-weight-only.
 
+## Pre-check finding (2026-06-14)
+
+The pipeline is built and runs end to end (`signal/regulatory/`): GTEx eQTL fetch
+(`gtex_eqtl_fetch.py`) + AlphaGenome variant scoring + gene- and GTEx-tissue-matched
+extraction (`eqtl_ceiling_gate.py`). The AlphaGenome API works from `~/.api_keys`
+(`ALPHA_GENOME_API_KEY`).
+
+A naive ceiling gate, correlating AlphaGenome predicted log-fold-change against GTEx
+`nes` over arbitrary significant whole-blood eQTLs, is INCONCLUSIVE: signed Spearman
++0.33 (p=0.07), sign concordance at chance (0.53), n=31 protein-coding. Two causes,
+both methodological, not a failure of AlphaGenome:
+
+1. GTEx lead/significant eQTLs are mostly tag SNPs in LD with the causal variant,
+   while AlphaGenome predicts the CAUSAL sequence effect, so a tag SNP's `nes` need
+   not track the model. The proper validation uses fine-mapped (high-PIP / SuSiE
+   credible-set) eQTLs.
+2. `nes` is a normalized effect size; AlphaGenome reports log fold change, so the two
+   are not on the same magnitude scale (the extreme-`nes` tail is low-expression genes
+   where they diverge, an artifact caught and removed by the protein-coding filter).
+
+Decision: AlphaGenome's eQTL effect prediction is an established published result
+(Cheng et al), and re-deriving it is not this project's novelty, so the rung uses
+AlphaGenome as the ceiling on that basis and proceeds to the LLM output / activation
+arms (the actual contribution). If an in-house ceiling number is wanted later, swap in
+fine-mapped eQTLs and scale n.
+
 ## Implementation entry points
 
 A `signal/regulatory/` generator producing (sequence/variant, AlphaGenome-effect, condition) items via the public AlphaGenome API; ceiling and labels from the API; `eval/activation_arm_dna_cayuga.sh` adapted for the regulatory sequence probe; output arm mirroring `eval/frontier_output_panel.py` with the scrambled-name control from `eval/notation_control.py`. First executable step: pull AlphaGenome scores for a small known-eQTL set plus a novel set, confirm the web-rich vs web-poor split and the scrambled-name control are clean, before scaling.
