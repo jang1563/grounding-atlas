@@ -1,0 +1,14 @@
+cell,class,encode_term,D_encode,N_pubmed,N_over_D
+K562,line,K562,2571,23604,9.2
+HepG2,line,HepG2,1793,45640,25.4
+GM12878,line,GM12878,490,201,0.4
+A549,line,A549,538,47295,87.7
+MCF-7,line,MCF-7,356,56414,158.0
+hepatocyte,primary,hepatocyte,33,162259,4772.3
+astrocyte,primary,astrocyte,45,87718,1906.9
+cardiac fibroblast,primary,cardiac fibroblast,13,22392,1599.4
+reactive astrocyte,disease,astrocyte,45,11818,256.9
+pancreatic beta cell,disease,endocrine pancreas,22,43182,1877.5
+dopaminergic neuron,disease,dopaminergic neuron,0,34102,34102.0
+microglia,disease,microglial cell,0,64256,64256.0
+regulatory T cell,disease,regulatory T cell,9,66050,6605.0

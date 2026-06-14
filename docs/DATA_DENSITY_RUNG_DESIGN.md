@@ -53,6 +53,23 @@ The project's name-vs-content thesis predicts they dissociate: the model's recog
 - pilot scale; the slope is the claim, not any single cell state's number.
 - activation is open-weight-only (the frontier exposes no hidden states), so the encoding axis is an open-model property as elsewhere in the project.
 
+## Probe finding (2026-06-14): GO
+
+The model-free precondition holds (`signal/single_cell/data_density.py`). Across 13
+cell states, D(c) = ENCODE Experiment count and N(c) = PubMed count **dissociate**:
+Spearman(log D, log N) = -0.23 (n.s.). Immortalized lines are functionally data-rich
+but named less (K562 D=2571), while primary and disease states are heavily named but
+ENCODE-sparse (microglia N=64k D=0; dopaminergic neuron N=34k D=0; pancreatic beta
+cell N=43k D=22; reactive astrocyte N=12k D=45; regulatory T cell N=66k D=9). The
+high-N / low-D anchors the rung needs (famous-by-name, functionally under-measured)
+exist abundantly, so an LLM's grounding can be regressed on D vs N to test which
+drives it.
+
+Caveats for the full rung (do not affect the go/no-go): D = ENCODE-only is a narrow
+regulatory-data proxy, so broaden it with scPerturb / GEO counts and fix the term
+mismatch where D=0 reflects an absent ENCODE term (e.g. microglia) rather than no
+data; N = PubMed conflates biological attention with naming; n=13 is a probe.
+
 ## Implementation entry points
 
 Reuse `signal/single_cell/` (the cell-sentence vs anon generator) extended to N cell states; `eval/activation_arm_sc_cayuga.sh` for the probe; an output arm mirroring `eval/frontier_output_panel.py`. New: a `signal/single_cell/data_density.py` that pulls D(c) and N(c) from the public portals and writes a per-cell-state covariate table. First executable step: build the covariate table for ~10 cell states and confirm D(c) and N(c) are separable before any model run.
