@@ -82,6 +82,7 @@ def main():
         w.writeheader(); w.writerows(rows)
 
     import math
+
     from scipy.stats import spearmanr
     logd = [math.log10(r["D_encode"] + 1) for r in rows]
     logn = [math.log10(r["N_pubmed"] + 1) for r in rows]
