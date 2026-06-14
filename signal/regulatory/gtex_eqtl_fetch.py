@@ -27,7 +27,7 @@ DATASET = os.environ.get("GTEX_DATASET", "gtex_v8")
 N_GENES = int(os.environ.get("GTEX_GENES", "90"))
 N_TARGET = int(os.environ.get("GTEX_N", "50"))
 MAX_PER_GENE = int(os.environ.get("GTEX_MAX_PER_GENE", "3"))
-OUT = os.path.join(HERE, f"gtex_eqtl_{TISSUE}.csv")
+OUT = os.path.join(HERE, f"gtex_eqtl_{TISSUE}{'_lead' if os.environ.get('GTEX_LEAD') else ''}.csv")
 
 
 def get(path, **params):
@@ -70,13 +70,22 @@ def main():
         k = (r["chrom"], r["pos"], r["ref"], r["alt"])
         if k not in seen:
             seen.add(k); uniq.append(r)
-    # cap per gene (one low-expression gene can otherwise dominate the |nes| tail)
-    per_gene, capped = {}, []
-    for r in sorted(uniq, key=lambda r: abs(r["nes"])):
-        per_gene[r["gene"]] = per_gene.get(r["gene"], 0) + 1
-        if per_gene[r["gene"]] <= MAX_PER_GENE:
-            capped.append(r)
-    uniq = capped
+    if os.environ.get("GTEX_LEAD"):
+        # lead eQTL per gene (min p-value): the best cheap causal-variant proxy
+        best = {}
+        for r in uniq:
+            g = r["gene"]
+            if g not in best or r["pval"] < best[g]["pval"]:
+                best[g] = r
+        uniq = list(best.values())
+    else:
+        # cap per gene (one low-expression gene can otherwise dominate the |nes| tail)
+        per_gene, capped = {}, []
+        for r in sorted(uniq, key=lambda r: abs(r["nes"])):
+            per_gene[r["gene"]] = per_gene.get(r["gene"], 0) + 1
+            if per_gene[r["gene"]] <= MAX_PER_GENE:
+                capped.append(r)
+        uniq = capped
     uniq.sort(key=lambda r: abs(r["nes"]))
     if len(uniq) > N_TARGET:
         step = len(uniq) / N_TARGET

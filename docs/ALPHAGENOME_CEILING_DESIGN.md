@@ -61,11 +61,22 @@ both methodological, not a failure of AlphaGenome:
    are not on the same magnitude scale (the extreme-`nes` tail is low-expression genes
    where they diverge, an artifact caught and removed by the protein-coding filter).
 
+Update (lead-eQTL salvage, 2026-06-14): restricting to lead eQTLs (lowest p-value per
+gene, the best cheap causal-variant proxy; `GTEX_LEAD=1`) did NOT improve the gate,
+signed Spearman +0.01 (p=0.92), sign concordance 0.40 (below chance, n=49). Large
+measured effects still get near-zero AlphaGenome scores (e.g. UTS2 nes=1.82, ag=0.025).
+So tag-SNP LD is not the sole cause: the homebrew GTEx-nes vs AlphaGenome-LFC extraction
+does not reproduce AlphaGenome's published eQTL benchmark, most likely a
+score-extraction / allele-orientation / aggregation methodology gap, not variant
+selection.
+
 Decision: AlphaGenome's eQTL effect prediction is an established published result
-(Cheng et al), and re-deriving it is not this project's novelty, so the rung uses
-AlphaGenome as the ceiling on that basis and proceeds to the LLM output / activation
-arms (the actual contribution). If an in-house ceiling number is wanted later, swap in
-fine-mapped eQTLs and scale n.
+(Cheng et al); re-deriving a clean in-house ceiling with a homebrew GTEx comparison
+does not work cheaply (two attempts, significant and lead eQTLs, both inconclusive) and
+would require reproducing their exact benchmark methodology. That is not this project's
+novelty, so the rung uses AlphaGenome as the ceiling on the published basis. The LLM
+arm would be confirmatory (orchestrate-won, the variant-flagship shape), so the
+regulatory rung is parked here.
 
 ## Implementation entry points
 
