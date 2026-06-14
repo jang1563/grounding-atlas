@@ -1,0 +1,32 @@
+[
+  {
+    "tag": "spectra_ms_n1250_r16_e5",
+    "model": "Qwen/Qwen3-8B",
+    "n_train": 769,
+    "n_test": 481,
+    "epochs": 5,
+    "lora_r": 16,
+    "shuffled_control": false,
+    "base_output_auroc": 0.536,
+    "finetuned_output_auroc": 0.706,
+    "lift": 0.17,
+    "ref_output_arm": 0.453,
+    "ref_activation_probe": 0.787,
+    "ref_structure_ceiling": 0.825
+  },
+  {
+    "tag": "variant_seq_n2000_r16_e3",
+    "model": "Qwen/Qwen3-8B",
+    "n_train": 1409,
+    "n_test": 591,
+    "epochs": 3,
+    "lora_r": 16,
+    "shuffled_control": false,
+    "base_output_auroc": 0.515,
+    "finetuned_output_auroc": 0.652,
+    "lift": 0.137,
+    "ref_output_arm": 0.453,
+    "ref_activation_probe": 0.787,
+    "ref_structure_ceiling": 0.825
+  }
+]

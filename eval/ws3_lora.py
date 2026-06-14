@@ -22,23 +22,26 @@ from collections import defaultdict
 import numpy as np
 import torch
 from peft import LoraConfig, get_peft_model
-from rdkit import RDLogger
-from rdkit.Chem.Scaffolds import MurckoScaffold
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupShuffleSplit
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
-RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PAIRS = os.path.join(ROOT, "signal", "admet", "herg", "pairs.jsonl")
+# Cell-parameterized (env), hERG-SMILES defaults preserved. Other WS3 train-placement cells
+# (MS->hERG, variant-seq->pathogenic) set LORA_PAIRS + LORA_PROMPT + LORA_CELL; their jsonl
+# carries an explicit "group" field (scaffold for MS, gene for variant) for the cold split.
+PAIRS = os.environ.get("LORA_PAIRS", os.path.join(ROOT, "signal", "admet", "herg", "pairs.jsonl"))
 MODEL = os.environ.get("LORA_MODEL", "Qwen/Qwen3-8B")
-PROMPT = ("SMILES: {smi}\nDoes this molecule block the hERG potassium channel "
-          "(cardiotoxicity)? Answer yes or no.\nAnswer:")
+PROMPT = os.environ.get("LORA_PROMPT", "SMILES: {rep}\nDoes this molecule block the hERG potassium "
+                        "channel (cardiotoxicity)? Answer yes or no.\nAnswer:")
 DEV = "cuda" if torch.cuda.is_available() else "cpu"
 
 
 def scaffold_of(smi):
-    try:
+    try:   # rdkit imported lazily: cells with an explicit "group" (variant=gene) never call this
+        from rdkit import RDLogger
+        from rdkit.Chem.Scaffolds import MurckoScaffold
+        RDLogger.DisableLog("rdApp.*")
         return MurckoScaffold.MurckoScaffoldSmiles(smi)
     except Exception:
         return smi
@@ -48,16 +51,17 @@ def load(n):
     by = defaultdict(list)
     for line in open(PAIRS):
         r = json.loads(line)
-        if r["condition"] == "matched":
-            by[int(r["label"])].append(r["representation"])
+        if r.get("condition", "matched") == "matched":   # condition optional (variant/MS jsonl omit it)
+            by[int(r["label"])].append(r)
     rng = np.random.RandomState(42)
-    smis, ys = [], []
+    smis, ys, groups = [], [], []
     for lab in (0, 1):
         it = by[lab][:]
         rng.shuffle(it)
-        for s in it[:n // 2]:
-            smis.append(s); ys.append(lab)
-    groups = [scaffold_of(s) for s in smis]
+        for r in it[:n // 2]:
+            rep = r["representation"]
+            smis.append(rep); ys.append(lab)
+            groups.append(r.get("group") or scaffold_of(rep))   # explicit group (gene), else Murcko scaffold
     tr, te = next(GroupShuffleSplit(1, test_size=0.3, random_state=42).split(smis, ys, groups))
     return ([smis[i] for i in tr], [ys[i] for i in tr],
             [smis[i] for i in te], [ys[i] for i in te])
@@ -73,7 +77,7 @@ def eval_output_auroc(model, tok, smis, ys, yes_ids, no_ids):
     model.eval()
     scores = []
     for smi in smis:
-        p = PROMPT.format(smi=smi)
+        p = PROMPT.format(rep=smi)
         ids = tok(p, return_tensors="pt").to(DEV)
         logits = model(**ids).logits[0, -1]  # next-token distribution after "Answer:"
         lp = torch.log_softmax(logits.float(), -1)
@@ -83,7 +87,7 @@ def eval_output_auroc(model, tok, smis, ys, yes_ids, no_ids):
 
 
 def build_example(tok, smi, lab, maxlen=256):
-    p = PROMPT.format(smi=smi)
+    p = PROMPT.format(rep=smi)
     tgt = " yes" if lab == 1 else " no"
     pid = tok(p, add_special_tokens=False).input_ids
     tid = tok(tgt, add_special_tokens=False).input_ids + [tok.eos_token_id]
@@ -140,7 +144,8 @@ def main():
 
     ft_auc = eval_output_auroc(model, tok, te_s, te_y, yes_ids, no_ids)
     print(f"FINETUNED output AUROC = {ft_auc}", flush=True)
-    tag = "shuffled" if shuffle else f"n{n}_r{R}_e{epochs}"
+    cell = os.environ.get("LORA_CELL", "herg")
+    tag = f"{cell}_shuffled" if shuffle else f"{cell}_n{n}_r{R}_e{epochs}"
     out = {"tag": tag, "model": MODEL, "n_train": len(tr_s), "n_test": len(te_s),
            "epochs": epochs, "lora_r": R, "shuffled_control": shuffle,
            "base_output_auroc": base_auc, "finetuned_output_auroc": ft_auc,
