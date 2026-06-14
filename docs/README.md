@@ -10,6 +10,7 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 | [`field_message.md`](field_message.md) | what the placement results say to agentic AI, AI scientists, and AI for science |
 | [`FAILURE_MODES.md`](FAILURE_MODES.md) | the grounding failure-mode taxonomy (diagnosis) |
 | [`DATA_WAR_THREAD.md`](DATA_WAR_THREAD.md) | the AlphaGenome-era data war and where grounding-atlas sits; synthesis of two rung explorations (both honest negatives) |
+| [`POSITION_SUPERHUMAN_SCIENTIST.md`](POSITION_SUPERHUMAN_SCIENTIST.md) | one-page position: the path to a superhuman scientist is calibration and orchestration, not knowledge (the whole project's evidence, distilled) |
 
 ## Rung and experiment designs
 | File | What |
