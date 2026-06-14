@@ -1,0 +1,4 @@
+chrom,pos,ref,alt,rsid,set
+chr22,36201698,A,C,,known_demo
+chr22,20000000,G,T,,novel
+chr22,40000000,C,A,,novel

@@ -43,3 +43,6 @@ variant_grounding/data/variant_clinvar_full.csv
 
 # Internal working notes (strategy, application framing, session checkpoints) — local only
 internal/
+
+# AlphaGenome-derived scores (non-commercial terms; regenerate via signal/regulatory/)
+signal/regulatory/variant_scores.csv
