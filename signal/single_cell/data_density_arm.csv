@@ -1,0 +1,13 @@
+cell,N_pubmed,D_geo,recall,hit,n_markers
+T cell,596805,41624,0.6,3,5
+macrophage,454371,12539,1.0,5,5
+hepatocyte,162259,7792,1.0,5,5
+microglia,64256,9199,1.0,5,5
+astrocyte,87718,6190,1.0,5,5
+pancreatic beta cell,43182,1571,1.0,5,5
+cardiomyocyte,101068,3482,1.0,5,5
+dopaminergic neuron,34102,865,1.0,5,5
+regulatory T cell,66050,2506,1.0,4,4
+Paneth cell,2885,77,1.0,4,4
+Tuft cell,1751,31,1.0,4,4
+Kupffer cell,12067,913,1.0,4,4

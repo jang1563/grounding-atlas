@@ -53,22 +53,33 @@ The project's name-vs-content thesis predicts they dissociate: the model's recog
 - pilot scale; the slope is the claim, not any single cell state's number.
 - activation is open-weight-only (the frontier exposes no hidden states), so the encoding axis is an open-model property as elsewhere in the project.
 
-## Probe finding (2026-06-14): GO
+## Finding (2026-06-14): NO-GO as a clean dissociation experiment
 
-The model-free precondition holds (`signal/single_cell/data_density.py`). Across 13
-cell states, D(c) = ENCODE Experiment count and N(c) = PubMed count **dissociate**:
-Spearman(log D, log N) = -0.23 (n.s.). Immortalized lines are functionally data-rich
-but named less (K562 D=2571), while primary and disease states are heavily named but
-ENCODE-sparse (microglia N=64k D=0; dopaminergic neuron N=34k D=0; pancreatic beta
-cell N=43k D=22; reactive astrocyte N=12k D=45; regulatory T cell N=66k D=9). The
-high-N / low-D anchors the rung needs (famous-by-name, functionally under-measured)
-exist abundantly, so an LLM's grounding can be regressed on D vs N to test which
-drives it.
+Two probes, reported honestly (a model-free precondition, then a one-model arm):
 
-Caveats for the full rung (do not affect the go/no-go): D = ENCODE-only is a narrow
-regulatory-data proxy, so broaden it with scPerturb / GEO counts and fix the term
-mismatch where D=0 reflects an absent ENCODE term (e.g. microglia) rather than no
-data; N = PubMed conflates biological attention with naming; n=13 is a probe.
+1. The precondition probe (`signal/single_cell/data_density.py`) appeared to show
+   D(ENCODE) and N(PubMed) dissociating (Spearman log D vs log N = -0.23). But that
+   dissociation was an ARTIFACT of mixing entity types: immortalized lines have lots
+   of ENCODE data but are named less, biological cell types the reverse, so the
+   apparent independence lived entirely in the line-vs-primary contrast.
+
+2. The grounding arm (`signal/single_cell/data_density_arm.py`; opus, 12 BIOLOGICAL
+   cell types; D = GEO single-cell dataset count) exposes the problem:
+   - among commensurable biological cell types, D(GEO) and N(PubMed) are COLLINEAR
+     (Spearman +0.92): both just track how studied a cell type is, so the rung's core
+     D-vs-N dissociation is impossible there;
+   - the marker-grounding task SATURATES at the frontier (recall ~1.0 for 11/12,
+     including rare Paneth / Tuft / Kupffer cells), so it resolves no gradient.
+
+Conclusion: the data-density rung does not yield a clean dissociation experiment.
+Where D and N separate (cell lines) the entities are incommensurable for a biological
+grounding task; where the entities are commensurable (biological cell types) D and N
+are collinear and the marker task saturates. The missing ingredient is a dissociating
+AND commensurable entity set (a well-named but functionally data-poor biological cell
+type), which may not exist cleanly. This mirrors the project's own P1 result (the
+web-exposure covariate is confounded; only the within-entity contrast is valid). The
+China-bio data-war connection stays a strong framing (grounding-atlas as the map of
+where public-data models fail), but not a runnable rung as designed.
 
 ## Implementation entry points
 
