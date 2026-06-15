@@ -17,6 +17,7 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 |---|---|
 | [`SINGLE_CELL_RUNG_DESIGN.md`](SINGLE_CELL_RUNG_DESIGN.md) | the descriptive rung with a built-in web-exposure contrast (gene-name vs anon) |
 | [`WS3_NONFP_ENDPOINT_DESIGN.md`](WS3_NONFP_ENDPOINT_DESIGN.md) | a non-fingerprint-local endpoint to break the decision-map circularity |
+| [`UQ_ROUTING_POC_DESIGN.md`](UQ_ROUTING_POC_DESIGN.md) | inject specialist self-uncertainty into the per-item router to close the measured 0.81 to 0.91 ceiling; the position's first-lever experiment |
 | [`DATA_DENSITY_RUNG_DESIGN.md`](DATA_DENSITY_RUNG_DESIGN.md) | web-exposure as a measured covariate via public-data density per cell state. **Outcome: NO-GO** (D and N collinear among commensurable cells; see its finding) |
 | [`ALPHAGENOME_CEILING_DESIGN.md`](ALPHAGENOME_CEILING_DESIGN.md) | a regulatory rung with AlphaGenome as the specialist ceiling. **Pipeline works; ceiling needs fine-mapped eQTLs; LLM arm confirmatory** (parked) |
 

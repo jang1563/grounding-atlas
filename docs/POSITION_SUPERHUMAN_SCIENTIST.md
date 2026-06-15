@@ -43,6 +43,32 @@ probe on hidden states), expression (verbalized output), and a specialist ceilin
   grounding at corr +0.90; routing on it reaches the oracle (0.893 vs 0.894) against
   0.700 answering everything itself. The web-exposure law is a free a-priori risk map.
 
+## The first lever: reading per-input competence (a UQ problem, not a wall)
+
+The single highest-value improvement is not knowledge but per-input competence: knowing,
+for THIS input, whether the model or the specialist is right. That is an
+uncertainty-quantification problem, tractable engineering, not a wall. The evidence: the
+per-item confidence frontier sharpens with scale (AURC 0.290 to 0.155; selective accuracy
+at 50% coverage 0.67 to 0.85, haiku to opus), and the model uses a good continuous signal
+near-optimally (rung-level routing reaches the oracle, 0.893 vs 0.894). So the bottleneck
+is signal quality, not the model's use of it: a better per-input competence signal in,
+better routing out.
+
+It has a measured ceiling, and the ceiling names the missing piece. With real per-item
+specialists, routing on the model's own confidence reduces to almost-always-call-the-
+specialist (0.81) and does not reach the per-item oracle (0.91), because the model cannot
+flag the roughly 10% of inputs where it BEATS the specialist. That residual is
+specialist-side. The missing signal is the specialist's own per-input reliability, so
+extract it (specialist self-uncertainty via ensemble variance or MC-dropout, the
+verifier-reliability signal no benchmark provides; plus a calibrated external classifier
+over content features, of which the web-exposure tag and the verifiability gate are
+working prototypes) and feed it to Claude as a tool output. This stays closed-weight
+friendly: Claude exposes no hidden states, so the competence reader is external and
+injected, not trained into the weights. The honest residual: UQ degrades out of
+distribution, so the un-readable part is the novel regime, which couples back to the
+knowledge wall. Competence raises the routing ceiling substantially but asymptotes
+toward, not through, the discovery frontier.
+
 ## Current limits, and which are improvable
 
 | limit | improvable? |
@@ -74,11 +100,13 @@ wrong target: it is memorization that breaks exactly in the discovery regime.
 ## The direction
 
 Do not train the reasoner into a biologist. Build the calibrated grounded orchestrator:
-a frontier reasoning core, callable specialist foundation models (ESM, AlphaFold,
-AlphaMissense, Evo, AlphaGenome, Boltz-2), in-context retrieval, the web-exposure law as
-the routing prior, and notation canonicalization so the model reads the form it grounds.
-For discovery, Claude is the calibrated conductor of a closed loop with the data-
-production ecosystem, not a solo discoverer.
+a frontier reasoning core; callable specialist foundation models (ESM, AlphaFold,
+AlphaMissense, Evo, AlphaGenome, Boltz-2); in-context retrieval; and, the first lever, a
+per-input competence reader that feeds the router both the model's calibrated confidence
+and the specialist's own per-input uncertainty, with the web-exposure law as the
+a-priori prior and notation canonicalization so the model reads the form it grounds. For
+discovery, Claude is the calibrated conductor of a closed loop with the data-production
+ecosystem, not a solo discoverer.
 
 **The honest definition of superhuman**: not a model that discovers new biology alone,
 but a tireless superhuman PI that knows who can do what (calibration), attaches the right
