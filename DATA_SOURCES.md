@@ -45,11 +45,11 @@ the items marked **verify** should be confirmed before a public release.
   published aging study, redistributable as a derived table with citation.
 - **single-cell** (PBMC): assessed clear. Public PBMC scRNA-seq (10x lineage), freely
   reusable; cite the specific dataset.
-- **ADMET compilation** (the `default` config, the largest): one owner-only fact remains.
-  If its labels come only from public sources (ChEMBL / TDC / MoleculeNet lineage) it is
-  redistributable; confirm no proprietary or no-redistribution source is mixed in.
+- **ADMET compilation** (the `default` config, the largest): confirmed by the author to come
+  only from public sources (ChEMBL / TDC / MoleculeNet lineage), no proprietary or
+  no-redistribution source. Redistributable as a derived table with attribution.
 
-License correctness: if any ADMET labels derive from ChEMBL (CC-BY-SA 3.0), the derived
-data inherits **share-alike**, so the data should be released under **CC-BY-SA 4.0**, not
-Apache-2.0. Code stays Apache-2.0; the dataset (here and on the Hub) should carry the data
-license separately. This is the one correction to make before flipping public.
+License: because some ADMET labels derive from ChEMBL (CC-BY-SA 3.0), the derived data
+inherits **share-alike**, so the datasets (the `signal/` tables here and the companion Hugging
+Face dataset) are released under **CC-BY-SA 4.0**. The code stays Apache-2.0. AlphaGenome
+scores are not redistributed (non-commercial).

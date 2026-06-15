@@ -1,6 +1,7 @@
 # grounding-atlas
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](LICENSE)
+[![Code: Apache 2.0](https://img.shields.io/badge/Code-Apache_2.0-blue.svg)](LICENSE)
+[![Data: CC BY-SA 4.0](https://img.shields.io/badge/Data-CC--BY--SA--4.0-blue.svg)](DATA_SOURCES.md)
 ![Status: active execution](https://img.shields.io/badge/status-active%20execution-brightgreen)
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Approach: measurement-first](https://img.shields.io/badge/approach-measurement--first-8A2BE2)
@@ -116,3 +117,7 @@ Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) (GitHub renders a
 - **What is novel vs cited.** The cross-representation grounding measurement and the signal engineering are the contribution; the train-vs-retrieve-vs-orchestrate framing and the encoding-vs-expression decomposition build on prior work (Ovadia 2312.05934; In-Tool Learning 2508.20755; NatureLM 2502.07527; Mozi 2603.03655; Inside-Out 2503.15299).
 - **Numeric over-trust is a verbalization/calibration gap**, not an inability to represent numbers (the signal is in the activations). This is not extended to the ESM-2 probe result, which is an encoding question measured on the specialist, not the LLM.
 - **Disclosure-first.** No raw bypass or operational content; aggregate results only (see [`SECURITY.md`](SECURITY.md)).
+
+## License
+
+Code is Apache-2.0 ([`LICENSE`](LICENSE)). The datasets (the `signal/` tables here and the companion Hugging Face dataset) are **CC-BY-SA 4.0**, because some ADMET labels derive from ChEMBL (CC-BY-SA, share-alike). Per-source attribution is in [`DATA_SOURCES.md`](DATA_SOURCES.md). AlphaGenome-derived scores are not redistributed (non-commercial terms).
