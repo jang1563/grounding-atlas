@@ -14,7 +14,7 @@ Candidates = the rungs whose cheap featurizer is weak: NMR, MS, 3D coordinates (
 benign anchor). For each we ask: is the cheap specialist really weak, and is there a HEAVY
 specialist that orchestrate uses instead.
 
-## Findings (local cheap ceilings measured this session, scaffold GroupKFold)
+## Findings (local cheap ceilings,  scaffold GroupKFold)
 
 | candidate | cheap featurizer (local) | 8B encode (best-layer) | retrieve/ICL | orchestrate specialist | TRAIN verdict |
 |---|---|---|---|---|---|
