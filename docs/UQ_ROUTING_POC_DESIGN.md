@@ -21,36 +21,56 @@ Data already exist: `calibration_discovery/results/per_item*.csv` give the model
 probability for every rung (cheap out-of-fold CV classifier; AlphaMissense `am` for the
 variant rung). The only new ingredient is a per-input specialist uncertainty U(x):
 
-- **cheap CV specialists** (chem Morgan, MSA column-stats, single-cell bag-of-genes, NMR
-  binned m/z): ensemble / bootstrap variance. Refit the out-of-fold classifier with K seeds
-  or bootstrap resamples and take the per-item standard deviation of the predicted
-  probability. This is epistemic uncertainty (MC-dropout's cheap cousin).
-- **AlphaMissense** (variant): ambiguity from the score itself, U = 1 - 2 |am - 0.5| (or the
-  binary entropy of `am`). AlphaMissense is deterministic, so its self-uncertainty is its
-  calibrated distance from the decision boundary.
+- **Primary: proba ambiguity** U = 1 - 2 |p - 0.5| (binary entropy of the specialist's
+  predicted probability). Works for every specialist including AlphaMissense `am`, and is
+  comparable across rungs because it is in [0, 1], which lets us pool for power.
+- **Secondary (heavy, follow-up): ensemble / bootstrap variance.** Bootstrap-resample the
+  training data and take the per-item std of the predicted probability. Note: for the cheap
+  deterministic specialists (logistic regression on fixed features) seed variance is near
+  zero, so this is only meaningful for stochastic or deep specialists (Boltz-2, AlphaGenome
+  MC-dropout); on the cheap specialists, ambiguity is the load-bearing U.
 
 ## Steps
 
-1. **Signal validity.** Per rung, AUROC of U(x) against specialist-incorrect. Does the
-   specialist's uncertainty predict the specialist's error? This is the load-bearing check.
+0. **Alignment check (do first).** The specialist proba is aligned to `per_item.csv` rows by
+   load order; verify it by reproducing the reported per-item specialist accuracy (~0.81 for
+   the variant) before trusting anything downstream. A misalignment silently corrupts every
+   metric below.
+
+1. **The decisive, non-tautological check.** Do NOT use AUROC(U, specialist-error): a
+   calibrated specialist's errors concentrate at its decision boundary (proba ~0.5), so
+   ambiguity predicts error almost by construction, a false green light. Instead test whether
+   U flags the RECOVERABLE inputs:
+   - recoverable set R = {model correct AND specialist wrong} (this is the 0.91 - 0.81 oracle
+     gap, the only items routing can recover).
+   - is U elevated on R versus the specialist-correct items (AUROC / Mann-Whitney, pooled
+     across rungs for power, per-rung secondary)?
+   - and the conditional that actually drives routing: P(model correct | U high) versus
+     P(specialist correct | U high). U helps only if the model is genuinely better where the
+     specialist is uncertain.
 2. **Router comparison** (per-item routed accuracy and AURC / risk-coverage):
    - R0 always-specialist (~0.81 baseline)
    - R1 route on model CONF alone (the measured ~0.81 ceiling)
-   - R2 route on [model CONF, specialist U] (a small cross-validated meta-rule: take the
-     model when it is confident AND the specialist is uncertain, else the specialist)
+   - R1b route on specialist confidence alone (1 - U), the naive baseline U must beat
+   - R2 route on [model CONF, specialist U] (a small cross-validated meta-rule)
    - oracle (~0.91)
-   - report the closed fraction (R2 - R1) / (oracle - R1).
+   - report the closed fraction (R2 - max(R1, R1b)) / (oracle - max(R1, R1b)).
 
 ## Prediction (falsifiable) and pre-registered risk
 
-- Prediction: U predicts specialist error (step 1 AUROC > 0.6), and R2 > R1, closing a
-  measurable part of the gap, because the inputs where the model beats the specialist
-  overlap the inputs where the specialist is uncertain.
-- **Pre-registered risk (the honest pre-mortem):** if the specialist tends to be CONFIDENTLY
-  wrong on the model-beats-specialist inputs (low U where it errs), U will not fire and R2
-  will not beat R1. That is itself an informative result: it localizes the failure to
-  confident specialist errors, which no self-uncertainty can catch, and points the next step
-  at a disagreement signal (model-specialist divergence) or a second independent specialist.
+- Prediction: U is elevated on the recoverable set and the model is better where U is high
+  (step 1), so R2 beats max(R1, R1b) and closes a measurable part of the gap. Measured on the
+  recoverable-set conditional, NOT on the near-tautological AUROC(U, error).
+- **Pre-registered risk, and the likely default:** if the specialist is CONFIDENTLY wrong on
+  the recoverable inputs (low U where the model beats it), U will not fire and R2 will not
+  beat R1b. This is the EXPECTED outcome for the variant rung specifically: the inputs where
+  Claude beats AlphaMissense are web-rich variants it recalls from ClinVar while AlphaMissense
+  scores them confidently (off-boundary) from sequence, so U is low exactly where it would
+  need to be high. The informative question is therefore WHICH rungs U helps in (the cheap
+  specialists whose errors are boundary-concentrated may behave better than the variant), and
+  the failure on variant localizes the unrecoverable residual to confident specialist errors,
+  pointing the next step at a disagreement signal (model-specialist divergence) or a second
+  independent specialist rather than self-uncertainty.
 
 ## Controls and honest residual
 
@@ -70,9 +90,12 @@ and on-thesis (route on signal quality, not on the model's say-so).
 
 ## First executable step
 
-Extend `per_item_router.py`: have `specialist_proba` also return U (ensemble std for the CV
-specialists via K-seed refits; `1 - 2|am - 0.5|` for the variant), run step 1 (AUROC of U vs
-specialist error) per rung. No new API calls; the model side is read from `per_item.csv`.
+Extend `per_item_router.py`: have `specialist_proba` also return U = 1 - 2 |p - 0.5|. Run
+step 0 (reproduce the ~0.81 specialist accuracy to confirm alignment), then step 1 on the
+recoverable set (is U elevated on {model correct AND specialist wrong}, pooled across rungs,
+plus P(model correct | U high))? No new API calls; the model side is read from
+`per_item.csv`. Treat the variant rung as the expected red case and report the per-rung
+pattern.
 
 ## Implementation entry points
 
