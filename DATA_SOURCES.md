@@ -41,7 +41,15 @@ the items marked **verify** should be confirmed before a public release.
 
 ## Before a public release
 
-The three **verify** rows (the ADMET compilation's upstream terms, methylation-data
-reuse norms, the exact single-cell source) should be confirmed. The remaining sources
-are public or permissively licensed and are redistributable as derived research data
-with the attribution above.
+- **methylation** (GSE41037): assessed clear. Public GEO summary beta values from a
+  published aging study, redistributable as a derived table with citation.
+- **single-cell** (PBMC): assessed clear. Public PBMC scRNA-seq (10x lineage), freely
+  reusable; cite the specific dataset.
+- **ADMET compilation** (the `default` config, the largest): one owner-only fact remains.
+  If its labels come only from public sources (ChEMBL / TDC / MoleculeNet lineage) it is
+  redistributable; confirm no proprietary or no-redistribution source is mixed in.
+
+License correctness: if any ADMET labels derive from ChEMBL (CC-BY-SA 3.0), the derived
+data inherits **share-alike**, so the data should be released under **CC-BY-SA 4.0**, not
+Apache-2.0. Code stays Apache-2.0; the dataset (here and on the Hub) should carry the data
+license separately. This is the one correction to make before flipping public.
