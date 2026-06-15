@@ -80,6 +80,30 @@ variant rung). The only new ingredient is a per-input specialist uncertainty U(x
   inputs where U is itself unreliable, the same novel regime that couples to the knowledge
   wall. Report R2 < oracle honestly.
 
+## Result (2026-06-14): the cheap version is RED
+
+Ran Step 0 to 2 (`calibration_discovery/eval/uq_competence.py`, opus, 640 pooled items).
+Step 0 reproduces the gap exactly (always-spec 0.811, always-model 0.689, oracle 0.909;
+recoverable 9.8%), confirming alignment. The decisive checks are negative:
+
+- Step 1a passes superficially: U flags the recoverable items (AUROC 0.75 separating
+  recoverable from specialist-correct), and even the variant rung shows AlphaMissense
+  uncertain (not confident) on its recoverable errors, refuting that part of the pre-mortem.
+- Step 1b fails: in the U-high tercile the specialist is still better than the model (0.640
+  vs 0.579), so routing the model in on high U loses.
+- Step 2 confirms: cross-validated, no router beats always-call-the-specialist. R1 conf
+  0.747, R1b U 0.686, R2 conf+U 0.702, all below always-spec 0.811 (the earlier 0.81 CONF
+  number was in-sample best-threshold optimism; honest CV is 0.747).
+
+So specialist self-uncertainty does not close the per-item gap. The recoverable 10% is real
+but not extractable from {model confidence, specialist self-uncertainty}: the
+specialist-uncertain inputs stay specialist-favorable, and the model's confidence does not
+flag its own wins. This extends the calibration_discovery result: not only can the model not
+flag where it beats the specialist, neither can the specialist's self-uncertainty. The
+missing signal is one that identifies model-superiority specifically (the model's unique
+recall beating the specialist), not uncertainty. Likely next signals: model-specialist
+disagreement magnitude, or a per-item recall / web-exposure flag.
+
 ## Why it matters
 
 This is the cheapest decisive test of the position's first lever. It uses existing per-item

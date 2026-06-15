@@ -58,16 +58,20 @@ It has a measured ceiling, and the ceiling names the missing piece. With real pe
 specialists, routing on the model's own confidence reduces to almost-always-call-the-
 specialist (0.81) and does not reach the per-item oracle (0.91), because the model cannot
 flag the roughly 10% of inputs where it BEATS the specialist. That residual is
-specialist-side. The missing signal is the specialist's own per-input reliability, so
-extract it (specialist self-uncertainty via ensemble variance or MC-dropout, the
-verifier-reliability signal no benchmark provides; plus a calibrated external classifier
-over content features, of which the web-exposure tag and the verifiability gate are
-working prototypes) and feed it to Claude as a tool output. This stays closed-weight
-friendly: Claude exposes no hidden states, so the competence reader is external and
-injected, not trained into the weights. The honest residual: UQ degrades out of
-distribution, so the un-readable part is the novel regime, which couples back to the
-knowledge wall. Competence raises the routing ceiling substantially but asymptotes
-toward, not through, the discovery frontier.
+specialist-side. A first candidate, the specialist's own per-input uncertainty, was tested
+and is insufficient on its own (`docs/UQ_ROUTING_POC_DESIGN.md`): measured on 640 items, no
+router on model confidence and specialist self-uncertainty beats always-call-the-specialist,
+because the inputs where the specialist is uncertain stay specialist-favorable. So the
+competence lever cleanly delivers one half, reaching specialist-level safely by deferring
+when the model is unreliable, the load-bearing safety value, achievable now. The other half,
+beating the specialist by flagging where the model's unique recall wins, is not extractable
+from uncertainty and needs a model-superiority signal (model-specialist disagreement, or a
+per-item recall flag), which is open. This stays closed-weight friendly: Claude exposes no
+hidden states, so the competence reader is external and injected, not trained into the
+weights. The honest residual: UQ degrades out of distribution, so the un-readable part is the
+novel regime, which couples back to the knowledge wall. Competence raises the routing floor
+to specialist-level safely, but beating the specialist per item is an open signal-design
+problem, not a free win.
 
 ## Current limits, and which are improvable
 
