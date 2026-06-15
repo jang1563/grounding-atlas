@@ -45,8 +45,7 @@ This mirrors the variant flagship, which is orchestrate-won (AlphaMissense AUROC
 
 The pipeline is built and runs end to end (`signal/regulatory/`): GTEx eQTL fetch
 (`gtex_eqtl_fetch.py`) + AlphaGenome variant scoring + gene- and GTEx-tissue-matched
-extraction (`eqtl_ceiling_gate.py`). The AlphaGenome API works from `~/.api_keys`
-(`ALPHA_GENOME_API_KEY`).
+extraction (`eqtl_ceiling_gate.py`). The AlphaGenome API works from the `ALPHA_GENOME_API_KEY` environment variable.
 
 A naive ceiling gate, correlating AlphaGenome predicted log-fold-change against GTEx
 `nes` over arbitrary significant whole-blood eQTLs, is INCONCLUSIVE: signed Spearman

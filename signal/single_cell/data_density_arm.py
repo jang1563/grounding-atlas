@@ -16,7 +16,7 @@ half (which should track D) is a heavier follow-up.
 Curated markers are textbook-canonical (e.g. CD3 for T cells), not author opinion;
 the curation is the honest limit (n=12, recall-only, alias misses).
 
-Run:  set -a; source ~/.api_keys; set +a
+Run:  set -a; source <your-keys-file>; set +a
       python signal/single_cell/data_density_arm.py
 """
 import csv
@@ -100,7 +100,7 @@ def ask_markers(client, cell):
 
 def main():
     if not os.environ.get("ANTHROPIC_API_KEY"):
-        raise SystemExit("set ANTHROPIC_API_KEY (source ~/.api_keys)")
+        raise SystemExit("set ANTHROPIC_API_KEY (source <your-keys-file>)")
     import anthropic
     client = anthropic.Anthropic()
 

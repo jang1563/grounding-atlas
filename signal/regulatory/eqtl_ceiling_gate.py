@@ -12,7 +12,7 @@ nearby gene x every track, GTEx `nes` is one eGene in one tissue, so a pooled
 score would be meaningless.
 
 Run:
-    set -a; source ~/.api_keys; set +a
+    set -a; source <your-keys-file>; set +a
     python signal/regulatory/eqtl_ceiling_gate.py            # all rows
     AG_VARIANTS=signal/regulatory/gtex_eqtl_Whole_Blood.csv AG_LIMIT=8 \
         python signal/regulatory/eqtl_ceiling_gate.py        # quick check
@@ -31,7 +31,7 @@ H = 524288  # half of the 2^20 context
 def main():
     key = os.environ.get("ALPHA_GENOME_API_KEY")
     if not key:
-        sys.exit("set ALPHA_GENOME_API_KEY (e.g. source ~/.api_keys)")
+        sys.exit("set ALPHA_GENOME_API_KEY in the environment")
     from alphagenome.data import genome
     from alphagenome.models import dna_client, variant_scorers
 
