@@ -64,14 +64,17 @@ router on model confidence and specialist self-uncertainty beats always-call-the
 because the inputs where the specialist is uncertain stay specialist-favorable. So the
 competence lever cleanly delivers one half, reaching specialist-level safely by deferring
 when the model is unreliable, the load-bearing safety value, achievable now. The other half,
-beating the specialist by flagging where the model's unique recall wins, is not extractable
-from uncertainty and needs a model-superiority signal (model-specialist disagreement, or a
-per-item recall flag), which is open. This stays closed-weight friendly: Claude exposes no
-hidden states, so the competence reader is external and injected, not trained into the
-weights. The honest residual: UQ degrades out of distribution, so the un-readable part is the
-novel regime, which couples back to the knowledge wall. Competence raises the routing floor
-to specialist-level safely, but beating the specialist per item is an open signal-design
-problem, not a free win.
+beating the specialist by flagging where the model's unique recall wins, was tested across
+five signal families (model confidence, specialist self-uncertainty, disagreement,
+web-exposure, and per-context reliability) and none beats always-call-the-specialist; much of
+the per-item oracle gap is the model being right by chance on hard items the specialist also
+misses, which carries no signal to route on. So the override is, on this evidence, closed.
+This stays closed-weight friendly: the competence reader is external and injected, and the
+orchestrator's optimal policy reduces to calling the right specialist. The honest consequence:
+Claude's value is domain routing, faithful grounding of the specialist's output, and
+calibration for safe deferral, not beating the specialist per item. Competence raises the
+routing floor to specialist-level safely; the per-item override is not a free win, and on the
+measured signals it is not a win at all.
 
 ## Current limits, and which are improvable
 

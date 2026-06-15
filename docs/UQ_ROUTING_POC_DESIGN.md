@@ -104,6 +104,19 @@ missing signal is one that identifies model-superiority specifically (the model'
 recall beating the specialist), not uncertainty. Likely next signals: model-specialist
 disagreement magnitude, or a per-item recall / web-exposure flag.
 
+Follow-up (`uq_signals.py`): those next signals also fail, and the reason becomes clear. The
+specialist is better than or tied with the model on every rung (the model "wins" only methyl,
+where both are at chance ~0.50, so it is noise). Per-context (per-rung) reliability routing
+therefore does nothing: in-sample upper bound 0.812, CV 0.792, against always-spec 0.811. And
+CV feature routers on disagreement, web-exposure flag, and rung identity all land at 0.70 to
+0.75, below always-spec. So the override is closed: across five signal families (model
+confidence, specialist self-uncertainty, disagreement, web-exposure, per-context reliability)
+nothing beats always-call-the-specialist. Much of the oracle gap is the model being right by
+chance on hard items the near-chance specialist also misses (methyl carries the largest
+recoverable fraction with both arms at chance), which carries no signal. The orchestrator's
+optimal policy reduces to call the right specialist; Claude's value is domain routing, faithful
+grounding of the specialist output, and calibration for safe deferral, not per-item override.
+
 ## Why it matters
 
 This is the cheapest decisive test of the position's first lever. It uses existing per-item
