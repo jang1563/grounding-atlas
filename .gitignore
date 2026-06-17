@@ -30,6 +30,10 @@ credentials.json
 
 # ── Logs / run artifacts ─────────────────────────────────────────────
 *.log
+*.out
+*.err
+slurm-*.out
+**/results/logs/
 results/expanse_logs/
 
 # ── Large / re-fetchable data ────────────────────────────────────────
@@ -38,6 +42,9 @@ results/expanse_logs/
 # releases ~1.2G, UniProt FASTA, ProteinGym DMS) and must not be committed.
 **/data/raw/
 *.gz
+*.db
+*.sqlite
+*.sqlite3
 # Large derived table (~184k variants); the balanced eval CSVs are the committed inputs.
 variant_grounding/data/variant_clinvar_full.csv
 
