@@ -8,7 +8,7 @@ NullAtlas's headline is "models without negative data produce excessive false po
 
 ## Instrument
 
-`eval/negative_expression_gap.py` (frontier output arm, local API) + `eval/activation_arm.py` on Expanse GPU (`run_neg.sh`, Qwen3-8B / OLMo-2-7B, singularity). One balanced confirmed-active(fail) vs confirmed-inactive(pass) set per endpoint from NegBioDB `admet.db` (`eval/data/neg_*.csv`), one Murcko-scaffold GroupKFold split, three arms (AMES additionally re-run on the Hansen 2009 Ames benchmark, 6512 compounds 3503 mutagen / 3009 non-mutagen, for a robust n=2000; `eval/data/neg_ames.csv`):
+`eval/negative_expression_gap.py` (frontier output arm, local API) + `eval/activation_arm.py` on GPU (`run_neg.sh`, Qwen3-8B / OLMo-2-7B, singularity). One balanced confirmed-active(fail) vs confirmed-inactive(pass) set per endpoint from NegBioDB `admet.db` (`eval/data/neg_*.csv`), one Murcko-scaffold GroupKFold split, three arms (AMES additionally re-run on the Hansen 2009 Ames benchmark, 6512 compounds 3503 mutagen / 3009 non-mutagen, for a robust n=2000; `eval/data/neg_ames.csv`):
 - **ceiling**: Morgan r2/2048 logistic probe (signal is in the structure)
 - **activation**: open-weight hidden-state linear probe, held-out-layer (nested GroupKFold, selection-bias controlled) + shuffled-label selectivity
 - **output**: 0-shot verbalized active-probability (same open model; plus a frontier Claude panel)

@@ -98,4 +98,4 @@ The capability test the project rests on: **does higher T1 grounding predict hig
 - The core contribution is the axis-B grounding instrument (with A and E). NullAtlas/NegBioDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
 
 ## Compute
-Heavy or GPU work (ESM-2 / Evo2 embeddings, LLM hidden-state extraction for the activation arm, any model fine-tune) runs on **Cayuga** (WCM HPC) or **Expanse** (SDSC, for GPU), not locally. Local is only for light CPU probes. `eval/ceiling_gate.py` (rdkit + sklearn) is the local reference; the probe-vs-LLM head-to-head and the LLM-activation arm move to Cayuga/Expanse.
+Heavy or GPU work (ESM-2 / Evo2 embeddings, LLM hidden-state extraction for the activation arm, any model fine-tune) runs on a GPU cluster, not locally. Local is only for light CPU probes. `eval/ceiling_gate.py` (rdkit + sklearn) is the local reference; the probe-vs-LLM head-to-head and the LLM-activation arm move to the GPU workflow.

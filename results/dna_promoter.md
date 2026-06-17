@@ -34,4 +34,4 @@ The 8B output (0.396, anti-correlated) is NOT the whole story: a frontier panel 
 
 ## Reproduce
 
-`sbatch run_activation_dna_cayuga.sh` on Cayuga (data `dna_promoter.csv` from genomic-benchmarks `human_nontata_promoters`, 6-mer gating 0.889). Per-item dump `results/dna_act_peritem.json`. The instrument is `eval/activation_arm_dna.py` (6-mer ceiling + StratifiedKFold + DNA prompt; the DNA counterpart of `eval/activation_arm.py`).
+`sbatch run_activation_dna_cayuga.sh` on a GPU cluster (data `dna_promoter.csv` from genomic-benchmarks `human_nontata_promoters`, 6-mer gating 0.889). Per-item dump `results/dna_act_peritem.json`. The instrument is `eval/activation_arm_dna.py` (6-mer ceiling + StratifiedKFold + DNA prompt; the DNA counterpart of `eval/activation_arm.py`).

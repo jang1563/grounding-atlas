@@ -17,7 +17,7 @@ Does a general LLM ground a specialist model's signal by **content**? Arms on on
 - **LLM-output:** the LLM generates a single pathogenicity probability. Does it VERBALIZE it?
   Run in **two surface forms** on the SAME variants (the headline, below).
 - **LLM-activation (optional, GPU stretch):** linear probe on the LLM's hidden states. Does it
-  ENCODE it internally? Scaffolded for Cayuga (`activation_arm_variant.py`); not required for
+  ENCODE it internally? Scaffolded for GPU execution (`activation_arm_variant.py`); not required for
   the first result. Here the 2-arm (ceiling + output) result is the deliverable.
 
 This branch leads with the **2-arm** instrument (ceiling + output). The activation arm is the
@@ -84,7 +84,7 @@ content vs echoing ClinVar" is directly actionable for novel-variant triage.
 | `eval/ceiling_gate_variant.py` | AlphaMissense score -> AUROC (primary), stratified by stars and pre/post-cutoff |
 | `eval/ceiling_esm1v_variant.py` | ESM-1v WT-marginal LLR ceiling (GPU, secondary) + sbatch |
 | `eval/output_arm_variant.py` | dual-form (text / sequence) LLM output arm + gene-scramble control, anchored parser + parsed/percent/fallback |
-| `eval/activation_arm_variant.py` | OPTIONAL 3rd arm: linear probe on hidden states (Cayuga GPU) |
+| `eval/activation_arm_variant.py` | OPTIONAL 3rd arm: linear probe on hidden states (GPU) |
 | `data/variant_clinvar.csv` | the balanced ClinVar sample |
 | `results/ceiling_gate.md` | is the signal in the AlphaMissense/ESM-1v content? (the gate) |
 | `results/head_to_head.md` | the dual-form output result + the web-exposure / memorization decomposition + SMILES contrast |

@@ -84,7 +84,7 @@ surfaced in the 17-rung sweep.)
 
 ## Empirical confirmation (MEASURED 2026-06-13)
 
-The pre-registered LoRA-output confirmation ran on Cayuga (Qwen3-8B, `eval/cayuga_ws3_lora_cells.sbatch`,
+The pre-registered LoRA-output confirmation ran on GPU (Qwen3-8B, `eval/cayuga_ws3_lora_cells.sbatch`,
 data `eval/prep_lora_cells.py`; results in `results/ws3_lora_cells.json`). Measured:
 
 | cell | base | finetuned (LoRA-8B) | bar TRAIN must STRICTLY beat | verdict |
@@ -121,7 +121,7 @@ prediction check of the session and the one that closed the last gap.)
 
 Local evidence: the NMR cheap ceiling (0.706, this run) and the 3D structure-recovery argument
 settle two of three candidates. The marginal MS cell can be confirmed empirically by a LoRA-MS
-output run on Cayuga (adapt `eval/ws3_lora.py` to the BRICS-MS representation), but the LoRA-SMILES
+output run on GPU (adapt `eval/ws3_lora.py` to the BRICS-MS representation), but the LoRA-SMILES
 precedent (recovers to the cheap ceiling, not above) predicts a strong second, not a win.
 
 ## Caveats

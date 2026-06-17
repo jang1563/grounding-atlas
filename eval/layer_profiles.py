@@ -9,8 +9,8 @@ The killer panel is the per-layer (canonical - randomized) deficit: for withdraw
 concentrate in deep layers (recognition lives there); for hERG it should be small and flat.
 
 Input: /tmp/layer_profiles.txt (4 blocks, '### name' then 'layer auroc' lines), extracted
-from act_rand_3038486.log (hERG canon+rand), act_wd_3038493.log (wd canon), act_wd_3038495.log
-(wd rand). Outputs results/layer_profiles.json + results/layer_profiles.png. No em dashes.
+from activation-profile cluster logs. Outputs results/layer_profiles.json +
+results/layer_profiles.png. No em dashes.
 """
 import json
 import os

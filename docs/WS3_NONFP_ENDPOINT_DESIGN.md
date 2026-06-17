@@ -71,7 +71,7 @@ Predicted decision-map row for DILI:
 
 - `eval/fetch_dili.py` (network-enabled environment): TDC `Tox(name='DILI')` -> `signal/dili/dili.csv` with columns name, smiles, label; print balance + n.
 - `eval/nonfp_endpoint.py` (local CPU for arms 1 to 2, frontier API for arms 3 to 4): Morgan probe + k-NN + LLM-name + LLM-SMILES + fake-name control, bootstrap CIs, JSON out. Reuses `lipophilicity_control.py` (probe/scaffold) and `output_arm_admet.py` (frontier protocol) patterns.
-- Arm 5 activation: `activation_arm.py ACT_CSV=dili.csv` on Cayuga a40 (same module-init fix as `run_activation_randomize_cayuga.sh`).
+- Arm 5 activation: `activation_arm.py ACT_CSV=dili.csv` on a GPU worker (same module-init fix as `run_activation_randomize_cayuga.sh`).
 - `results/nonfp_endpoint.md` + a DILI row appended to `decision_map/DECISION_MAP.md`.
 
 ## Open decisions

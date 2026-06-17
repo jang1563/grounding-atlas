@@ -153,7 +153,7 @@ direct check, sonnet-4-6 (newer than 4-5) scores LOWER on holdout text (0.743 vs
 higher, so the holdout shows no memorization inflation for the post-4-5 versions that predate the
 boundary; opus-4-8 is the one model where the boundary and cutoff collide.
 
-## Activation arm (Qwen3-8B, Cayuga): does the LLM ENCODE pathogenicity, per surface form?
+## Activation arm (Qwen3-8B, GPU): does the LLM ENCODE pathogenicity, per surface form?
 
 The third arm (the genuinely novel measurement): a per-layer linear probe on Qwen3-8B hidden
 states, run for BOTH surface forms on the same 1500-variant set under a **GroupKFold grouped by
@@ -236,7 +236,7 @@ the SMILES scaffold split). Open-weight model because hidden states are needed. 
 
 ## Next
 
-- Optional activation arm (`activation_arm_variant.py`, Cayuga): is the text-vs-seq gap an
+- Optional activation arm (`activation_arm_variant.py`, GPU): is the text-vs-seq gap an
   ENCODING gap or an EXPRESSION gap, per form, under the gene GroupKFold? (opus-style strong seq
   reading predicts a smaller encoding gap than SMILES.)
 - ESM-1v secondary ceiling (`ceiling_esm1v_variant.py`): an unsupervised specialist holdout

@@ -41,13 +41,13 @@ A random-label probe must sit at chance, or the probe is fitting noise not readi
 | SMILES / hERG | +0.331 | +0.301 | done |
 | variant / text | - (AlphaMissense ceiling, no trained probe) | +0.301 | done |
 | variant / seq | - | +0.218 | done |
-| protein / Tm | **+0.193** | **+0.114** | **DONE** (Expanse H100 run, `results/expanse_logs/pge-act_50612829.log`; was the one missing rung) |
+| protein / Tm | **+0.193** | **+0.114** | **DONE** (GPU rerun; was the one missing rung) |
 
-(Values from the Expanse H100 re-run; the SMILES and variant selectivities reproduce the earlier Cayuga numbers within re-run variance. Protein's activation selectivity +0.114 is positive and well above chance, so the protein probe reads real ESM-grounded thermostability signal, not noise; it is lower than SMILES and variant, consistent with protein being the weakest-encoding rung.)
+(Values from the GPU re-run; the SMILES and variant selectivities reproduce the earlier numbers within re-run variance. Protein's activation selectivity +0.114 is positive and well above chance, so the protein probe reads real ESM-grounded thermostability signal, not noise; it is lower than SMILES and variant, consistent with protein being the weakest-encoding rung.)
 
 ## Probe defense B: best-layer selection bias - CONTROLLED (measured)
 
-Activation is reported max-over-layers. The nested-CV held-out-layer protocol (`../eval/activation_arm.py:heldout_layer_auroc`, wired into all three activation scripts) was RUN on a GPU pass (Expanse H100). Measured bias: SMILES +0.007, variant-text +0.003, variant-seq +0.012, protein +0.034 (largest, as predicted, an early-layer spike). The expression gap is layer-selection-immune and stays large under the held-out estimate; no regime label flips. Full analysis in `selection_bias.md`.
+Activation is reported max-over-layers. The nested-CV held-out-layer protocol (`../eval/activation_arm.py:heldout_layer_auroc`, wired into all three activation scripts) was RUN on a GPU pass. Measured bias: SMILES +0.007, variant-text +0.003, variant-seq +0.012, protein +0.034 (largest, as predicted, an early-layer spike). The expression gap is layer-selection-immune and stays large under the held-out estimate; no regime label flips. Full analysis in `selection_bias.md`.
 
 ## Status line
 

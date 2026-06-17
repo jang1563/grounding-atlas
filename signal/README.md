@@ -48,12 +48,12 @@ A Source supplies `(content, label, modality)` + a featurizer + a leakage-contro
 | modality | source | featurizer (ceiling) | cold split | gate runs on |
 |---|---|---|---|---|
 | SMILES (done) | NegBioDB ADMET (7 endpoints) | Morgan r2/2048 | Murcko scaffold | local (CPU) |
-| protein | FLIP / meltome, NegBioDB | ESM2-650M embedding | MMseqs2 cluster | Expanse GPU |
-| variant | ClinVar + AlphaMissense / DMS | ESM-1v / AM score | gene GroupKFold | Expanse GPU |
-| DNA/RNA | promoter / motif sets | NT / Evo2 embedding | chromosome / cluster | Expanse GPU |
+| protein | FLIP / meltome, NegBioDB | ESM2-650M embedding | MMseqs2 cluster | GPU |
+| variant | ClinVar + AlphaMissense / DMS | ESM-1v / AM score | gene GroupKFold | GPU |
+| DNA/RNA | promoter / motif sets | NT / Evo2 embedding | chromosome / cluster | GPU |
 | metabolite | HMDB | fingerprint / spectrum | scaffold | local / GPU |
 
-The sequence rungs reuse the activation-arm container env already built on Expanse (`results/expanse_logs/`); adding one is a Source entry + the featurizer, not new machinery.
+The sequence rungs reuse the activation-arm GPU container environment; adding one is a Source entry + the featurizer, not new machinery.
 
 ## Provenance
 
@@ -69,4 +69,4 @@ Borrows NullAtlas's verifiable-signal method (`Negative_result_DB/`, the WS2 sub
 
 - `gate_multimodal.py` + `verifiability_multimodal.md` - the gate run on 19 modality cells under cheap local featurizers (Morgan / k-mer / char-ngram / element-fraction / pixel-stat). 17/19 PASS; the 2 fails are PPI-as-NAME (web-memorization, no content signal in the names), the SIGNAL-side confirmation of the WS1 anonymization collapse. So the gate is the WS2-to-WS3 bridge: gate-PASS-even-anon = in-data-pattern (retrieve closes it); gate-FAIL = web-anchor only (orchestrate / memory).
 - `gate_anon.py` - the named-vs-anon gate map (Delta = named - anon best-cold): 5/6 CONTENT (anon-invariant), PPI only surface-blind.
-- `../results/negative_expression_gap.md` (+ `../eval/negative_expression_gap.py`, `../eval/activation_arm.py` on Expanse; data `../eval/data/neg_*.csv`) - the 3-arm instrument applied to the NEGATIVE class, the one piece of verifiable-negative signal that does NOT overlap NullAtlas: an open 8B encodes confirmed-inactive near the Morgan ceiling but verbalizes it at chance (expression gap, cross-family Qwen3-8B + OLMo-2-7B). Robust headline hERG (0.33, n=1250); the first AMES point (0.376, n=206) was corrected to 0.145 on the Hansen n=2000 benchmark.
+- `../results/negative_expression_gap.md` (+ `../eval/negative_expression_gap.py`, `../eval/activation_arm.py` on GPU; data `../eval/data/neg_*.csv`) - the 3-arm instrument applied to the NEGATIVE class, the one piece of verifiable-negative signal that does NOT overlap NullAtlas: an open 8B encodes confirmed-inactive near the Morgan ceiling but verbalizes it at chance (expression gap, cross-family Qwen3-8B + OLMo-2-7B). Robust headline hERG (0.33, n=1250); the first AMES point (0.376, n=206) was corrected to 0.145 on the Hansen n=2000 benchmark.

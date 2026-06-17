@@ -46,4 +46,4 @@ The MS is a crude deterministic simulation (BRICS fragment exact masses, binned)
 
 ## Reproduce
 
-`sbatch run_activation_spectra_cayuga.sh` on Cayuga (`eval/activation_arm_spectra.py`, simulated MS from `herg.csv` via RDKit BRICS).
+`sbatch run_activation_spectra_cayuga.sh` on a GPU cluster (`eval/activation_arm_spectra.py`, simulated MS from `herg.csv` via RDKit BRICS).

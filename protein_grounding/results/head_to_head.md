@@ -1,6 +1,6 @@
 # Head-to-head, protein branch: ESM2 ceiling vs LLM (meltome thermostability, axis B)
 
-*2026-06-09. Qwen3-8B three arms on Cayuga GPU (a40, `eval/activation_arm_protein.py`, non-thinking). Claude domain-language arm via local API (`eval/head_to_head_protein.py` + `eval/comprehension_probe.py`, claude-sonnet-4-5; panel adds opus-4-8 and sonnet-4-6). No em dashes.*
+*2026-06-09. Qwen3-8B three arms on GPU (`eval/activation_arm_protein.py`, non-thinking). Claude domain-language arm via local API (`eval/head_to_head_protein.py` + `eval/comprehension_probe.py`, claude-sonnet-4-5; panel adds opus-4-8 and sonnet-4-6). No em dashes.*
 
 **Question:** the structure-probe reads protein thermostability from the sequence content
 (ESM2 cluster AUROC 0.70 LogReg / 0.74 RF, see `ceiling_gate.md`). Does a general LLM ground

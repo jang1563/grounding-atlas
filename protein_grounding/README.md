@@ -59,7 +59,7 @@ it honestly either way: a small protein encoding gap would falsify it.
 
 | Path | What |
 |---|---|
-| `eval/` | the three-arm code + Cayuga sbatch (see `eval/README.md`) |
+| `eval/` | the three-arm code + GPU sbatch wrappers (see `eval/README.md`) |
 | `data/protein_meltome.csv` | the balanced sample (id, sequence, label, tm, cluster) |
 | `results/ceiling_gate.md` | is the signal in the ESM2 content? (the gate) |
 | `results/head_to_head.md` | the three-arm result + cross-domain comparison to SMILES |

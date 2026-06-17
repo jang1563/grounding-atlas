@@ -1,6 +1,6 @@
 # Ceiling-gate results, protein branch (axis-B candidate screening)
 
-*2026-06-09. Cayuga GPU (a40), ESM2 650M + sklearn. Script: `eval/ceiling_gate_protein.py`.*
+*2026-06-09. GPU run, ESM2 650M + sklearn. Script: `eval/ceiling_gate_protein.py`.*
 
 **Question:** is the property predictable from the representation CONTENT (here the amino-acid
 sequence, via a protein SFM)? A high supervised ceiling means the signal is in the

@@ -36,4 +36,4 @@ Both show probe >> output, but they are NOT two kinds of the same gap: hERG is a
 
 ## Reproduce
 
-`python eval/layer_profiles.py` (reads `/tmp/layer_profiles.txt`, extracted from `act_rand_3038486.log`, `act_wd_3038493.log`, `act_wd_3038495.log` on Cayuga).
+`python eval/layer_profiles.py` (reads `/tmp/layer_profiles.txt`, extracted from activation-profile cluster logs).

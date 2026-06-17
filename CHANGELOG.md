@@ -26,7 +26,7 @@ Initial versioned release of the research repository.
   `eval/firm_spectra_ms.py`; `results/ws3_train_placement.md`): LoRA on the weak-cheap-specialist
   cells (variant-sequence, MS spectra) confirms TRAIN wins nowhere; the live placements are
   retrieve and orchestrate.
-- Cayuga GPU job templates (`eval/cayuga_sfm_activation.sbatch`, `eval/cayuga_ws3_lora_cells.sbatch`).
+- GPU job templates (`eval/cayuga_sfm_activation.sbatch`, `eval/cayuga_ws3_lora_cells.sbatch`).
 
 ### Changed
 - Reproducibility: removed hardcoded personal paths from scripts and output JSONs;

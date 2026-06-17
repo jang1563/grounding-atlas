@@ -11,7 +11,7 @@ R3 found the frontier model "reads" CYP3A4 inhibition at AUROC ~0.61 with the pr
 
 Reads: canonical ~ randomized AND canonical >> scrambled means it reads the structure; canonical dropping on randomized means string memorization; all three equal and above chance means a non-structural prior.
 
-## Result (claude-sonnet-4-6), two endpoints on Cayuga
+## Result (claude-sonnet-4-6), two GPU-run endpoints
 
 CYP3A4 at n=200 (underpowered pilot) then n=1000, replicated on CYP2D6 at n=888:
 

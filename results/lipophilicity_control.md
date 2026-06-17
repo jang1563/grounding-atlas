@@ -36,7 +36,7 @@ The honest framing therefore stands as corrected in `head_to_head.md`: report a 
 
 ## GPU confirmation: the LLM activation probe on randomized SMILES (added 2026-06-11)
 
-The local controls above are on the structure/orthography probes. The decisive LLM-side test (does the hidden-state signal survive re-notation like the char-n-gram does, or is it canonical-string-specific) was then run on Cayuga (`activation_arm.py ACT_RANDOMIZE`, log `act_rand_3038486.log`, Qwen3-8B, same 1250 hERG molecules, same scaffold split):
+The local controls above are on the structure/orthography probes. The decisive LLM-side test (does the hidden-state signal survive re-notation like the char-n-gram does, or is it canonical-string-specific) was then run with `activation_arm.py ACT_RANDOMIZE` on a GPU worker (Qwen3-8B, same 1250 hERG molecules, same scaffold split):
 
 | arm | best-layer AUROC | best layer | held-out-layer AUROC |
 |---|---|---|---|
@@ -48,10 +48,10 @@ Three readings:
 - But the surviving signal (0.739) is BELOW the no-chemistry char-n-gram on randomized SMILES (0.812 above), so the LLM hidden states do NOT exceed a surface substring probe even after randomization. This is the direct confirmation (not the proxy) that "encodes chemistry" is not supported over "linearly decodable structural signal."
 - The best layer MOVES from 2 (canonical, very early = surface feature) to 20 (randomized, deeper). The early-layer canonical signal had an orthographic component that dropped on randomization, while a deeper notation-invariant structural component remained. This is the cleanest single piece of evidence that the canonical-string activation signal is part orthographic, part structural.
 
-Companion supervision control (`fewshot_3038487.log`): the FIXED balanced K=10 few-shot output is 0.478 (n=1240, all parsed), near chance and barely above zero-shot 0.453. So given labeled in-context examples the model still cannot verbalize hERG; the probe advantage is not supervision and the expression gap is real.
+Companion supervision control: the FIXED balanced K=10 few-shot output is 0.478 (n=1240, all parsed), near chance and barely above zero-shot 0.453. So given labeled in-context examples the model still cannot verbalize hERG; the probe advantage is not supervision and the expression gap is real.
 
 Bottom line across all four controls: the expression GAP is fully intact and triangulated; what the model encodes is a notation-invariant structural signal that does not exceed a substring probe, so the framing stays "decodable structure," not "represents chemistry."
 
 ## Reproduce
 
-`python eval/lipophilicity_control.py` (rdkit + sklearn, CPU). Raw in `results/lipophilicity_control.json`. Activation re-notation: `sbatch run_activation_randomize_cayuga.sh` on Cayuga (logs `act_rand_*.log`); few-shot: `sbatch run_fewshot_cayuga.sh` (`fewshot_*.log`).
+`python eval/lipophilicity_control.py` (rdkit + sklearn, CPU). Raw in `results/lipophilicity_control.json`. Activation re-notation: `sbatch run_activation_randomize_cayuga.sh` on a GPU cluster; few-shot: `sbatch run_fewshot_cayuga.sh`.

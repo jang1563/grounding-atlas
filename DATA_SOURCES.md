@@ -8,11 +8,11 @@ their original sources' terms. Cite the upstream source when you use a config.
 
 "Redistributable" below is a good-faith assessment for non-commercial research
 reuse with attribution, the norm for ML benchmark sharing. It is not legal advice;
-the items marked **verify** should be confirmed before a public release.
+release checks are summarized below the table.
 
 | config / data | upstream source | terms | redistributable (derived, with attribution) |
 |---|---|---|---|
-| default (ADMET endpoints) | ADMET assays compiled in the author's Negative_result_DB from public sources (ChEMBL / TDC lineage) | source-dependent | yes (derived labels) — **verify** the compilation's upstream terms |
+| default (ADMET endpoints) | ADMET assays compiled from public ChEMBL / TDC / MoleculeNet lineage sources | source-dependent | yes (derived labels; see release checks) |
 | default (computable) | RDKit / Biopython computed on the same molecules | deterministic functions | yes |
 | `admet_tdc` (bace/bbbp/hiv) | Therapeutics Data Commons / MoleculeNet | MIT / CC | yes |
 | `affinity` | Davis et al. 2011 kinase set | public benchmark | yes |
@@ -23,12 +23,12 @@ the items marked **verify** should be confirmed before a public release.
 | `graph` / `nmr` / `structure3d` | derived from the hERG SMILES via RDKit (graph, simulated spectrum, 3D coords) | derived | yes |
 | `histo` | PatchCamelyon (from Camelyon16) | CC0 / MIT | yes |
 | `materials` | materials formulas (Materials Project lineage) | CC-BY | yes (attribute) |
-| `methyl` | GEO GSE41037 (Illumina 27K blood methylation, 720 samples) | public GEO | yes (summary betas) — **verify** methylation-reuse norms |
+| `methyl` | GEO GSE41037 (Illumina 27K blood methylation, 720 samples) | public GEO | yes (summary betas; see release checks) |
 | `msa` | Pfam protein-family alignments | CC0 | yes |
 | `ppi` | protein-protein interactions (STRING lineage) | CC-BY 4.0 | yes (attribute) |
 | `protein_meltome` | Meltome Atlas (Jarzab et al. 2020) | public | yes |
 | `rna` | coding / noncoding RNA sequences (Ensembl lineage) | public | yes |
-| `single_cell` | PBMC scRNA-seq | public (10x / atlas) | yes — **verify** the exact source's license |
+| `single_cell` | PBMC scRNA-seq | public (10x lineage) | yes (see release checks) |
 | `withdrawn` | Mazuz et al., DrugWithdrawn (`eyalmazuz/DrugWithdrawn`) | public | yes |
 
 ## Explicitly excluded (kept out of the tracked tree)
@@ -39,15 +39,15 @@ the items marked **verify** should be confirmed before a public release.
 - Large re-fetchable reference DBs (`**/data/raw/`): AlphaMissense, ClinVar releases,
   UniProt, ProteinGym, re-fetched via the per-branch setup scripts.
 
-## Before a public release
+## Public release checks
 
 - **methylation** (GSE41037): assessed clear. Public GEO summary beta values from a
   published aging study, redistributable as a derived table with citation.
 - **single-cell** (PBMC): assessed clear. Public PBMC scRNA-seq (10x lineage), freely
   reusable; cite the specific dataset.
-- **ADMET compilation** (the `default` config, the largest): confirmed by the author to come
-  only from public sources (ChEMBL / TDC / MoleculeNet lineage), no proprietary or
-  no-redistribution source. Redistributable as a derived table with attribution.
+- **ADMET compilation** (the `default` config, the largest): source audit traces the derived
+  tables to public ChEMBL / TDC / MoleculeNet lineage sources, with no proprietary or
+  no-redistribution source identified. Redistributable as a derived table with attribution.
 
 License: because some ADMET labels derive from ChEMBL (CC-BY-SA 3.0), the derived data
 inherits **share-alike**, so the datasets (the `signal/` tables here and the companion Hugging

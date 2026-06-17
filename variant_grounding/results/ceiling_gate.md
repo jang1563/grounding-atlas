@@ -55,8 +55,8 @@ substitution). 181,831 variants with a score (98.5% of the mapped set), P=56,653
 ## ESM-1v secondary ceiling (unsupervised, confirmed)
 
 ESM-1v 650M wild-type-marginal LLR (single forward pass, no MSA, fully unsupervised),
-`ceiling_esm1v_variant.py` on Cayuga a40 (jobs 3027001 main / 3027003 holdout; the full-184k run
-was too slow for the 2h limit, so it was run on the balanced sets).
+`ceiling_esm1v_variant.py` on an A40 GPU worker. The full-184k run was too slow for the 2h
+limit, so it was run on the balanced sets.
 
 | set | stratum | n | AUROC | AUPRC |
 |---|---|---|---|---|

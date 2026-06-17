@@ -19,4 +19,4 @@
 - **ames is held**: only 517 compounds, inverted imbalance (80% fail), and AUPRC sits near the base rate, so the "ceiling" is not informative here.
 
 ## Next
-Run the probe-vs-LLM head-to-head on hERG (and cyp3a4/cyp2d6): give the LLM the same SMILES, ask pass/fail, score deterministically, and compare against the probe ceiling above. Add the LLM-activation arm (linear probe on the LLM's hidden states) to separate encoding from expression. Heavy/GPU parts move to Cayuga/Expanse (see `eval/README.md` Compute).
+Run the probe-vs-LLM head-to-head on hERG (and cyp3a4/cyp2d6): give the LLM the same SMILES, ask pass/fail, score deterministically, and compare against the probe ceiling above. Add the LLM-activation arm (linear probe on the LLM's hidden states) to separate encoding from expression. Heavy/GPU parts move to the GPU workflow (see `eval/README.md` Compute).

@@ -28,7 +28,7 @@ ESM panel was deliberately not used.
 | ceiling: probe on full 640-dim embedding | 0.811 |
 | ceiling: probe on PCA-16 embedding | 0.846 |
 | LLM activation: 0.5B hidden states, best-layer / held-out-layer (unbiased) | 0.71 / 0.599 (selection bias +0.11) |
-| LLM activation: 8B hidden states (Cayuga), best-layer / held-out-layer | 0.775 / **0.655** (selection bias +0.12) |
+| LLM activation: 8B hidden states (GPU), best-layer / held-out-layer | 0.775 / **0.655** (selection bias +0.12) |
 | LLM zero-shot, raw 640-dim embedding as text | 0.466 (chance) |
 | LLM few-shot ICL, PCA-16 vectors + 24 labeled examples | 0.562 (at / near chance, n=50) |
 | raw-sequence output arm (existing protein rung) | 0.486 (8B) / 0.585 (opus) |

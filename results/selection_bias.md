@@ -8,7 +8,7 @@ The activation arm reports `max-over-layers` AUROC (the best of 37 per-layer lin
 
 ## The fix: a nested-CV held-out-layer protocol, now RUN
 
-`eval/activation_arm.py:heldout_layer_auroc` (wired into all three activation scripts): nested GroupKFold. The inner folds pick the best layer using train rows only; the held-out outer fold is scored at that layer. The mean over outer folds is the unbiased number, and `max - held-out` IS the selection bias. This was run on a direct GPU pass (Expanse H100, Qwen3-8B, same n and leakage-controlled splits as the anchors; raw logs in `results/expanse_logs/`).
+`eval/activation_arm.py:heldout_layer_auroc` (wired into all three activation scripts): nested GroupKFold. The inner folds pick the best layer using train rows only; the held-out outer fold is scored at that layer. The mean over outer folds is the unbiased number, and `max - held-out` IS the selection bias. This was run on a direct GPU pass (Qwen3-8B, same n and leakage-controlled splits as the anchors).
 
 ## Measured result (max vs nested-CV held-out, one run)
 
@@ -19,7 +19,7 @@ The activation arm reports `max-over-layers` AUROC (the best of 37 per-layer lin
 | variant / text | 0.962 (AlphaMissense) | 0.814 @ L25 | **0.810** | **+0.003** | 0.593 | 0.152 | **+0.217** |
 | variant / seq | 0.962 (AlphaMissense) | 0.743 @ L28 | **0.731** | **+0.012** | 0.494 | 0.231 | **+0.237** |
 
-(Held-out layers picked per outer fold: SMILES [22,26,2,2,2]; protein [1,36,24,36,1]; variant-text [25,25,32,34,25]; variant-seq [28,21,28,29,28] - the early-layer protein pick is less stable than the broad variant/SMILES plateau, which is exactly why protein carries the largest bias. This is a fresh H100 run; the max-over-layers values reproduce the original anchors within re-run variance, e.g. SMILES 0.786 vs 0.787, protein 0.605 vs 0.609, variant-seq 0.743 vs 0.740.)
+(Held-out layers picked per outer fold: SMILES [22,26,2,2,2]; protein [1,36,24,36,1]; variant-text [25,25,32,34,25]; variant-seq [28,21,28,29,28] - the early-layer protein pick is less stable than the broad variant/SMILES plateau, which is exactly why protein carries the largest bias. This fresh GPU run reproduces the original max-over-layers anchors within re-run variance, e.g. SMILES 0.786 vs 0.787, protein 0.605 vs 0.609, variant-seq 0.743 vs 0.740.)
 
 ## Reads
 

@@ -1,6 +1,6 @@
 # WS3 weights PoC: does LoRA finetuning close the hERG expression gap in OUTPUT?
 
-*Results section. 2026-06-11. Instrument: `eval/ws3_lora.py`, run on a Cayuga a40. The "train the read-out into weights" placement, tested at the OUTPUT level (not just a frozen probe). No em dashes.*
+*Results section. 2026-06-11. Instrument: `eval/ws3_lora.py`, run on a GPU worker. The "train the read-out into weights" placement, tested at the OUTPUT level (not just a frozen probe). No em dashes.*
 
 ## The test
 
@@ -30,4 +30,4 @@ On the same scaffold split, the trained weights output (0.856) is a strong SECON
 
 ## Reproduce
 
-On a Cayuga GPU (bge venv with torch/transformers/peft): `LORA_N=2000 LORA_R=32 LORA_EPOCHS=5 python eval/ws3_lora.py` (the SLURM wrapper `lora_job.sh` is generated Cayuga-side, not in this repo). Add `LORA_SHUFFLE=1` for the negative control. The same-split fingerprint baselines: `python eval/ws3_decision_split.py` (local, rdkit + sklearn). Results merge by tag into `results/ws3_lora.json`.
+On a GPU worker (bge venv with torch/transformers/peft): `LORA_N=2000 LORA_R=32 LORA_EPOCHS=5 python eval/ws3_lora.py` (the SLURM wrapper is generated cluster-side, not in this repo). Add `LORA_SHUFFLE=1` for the negative control. The same-split fingerprint baselines: `python eval/ws3_decision_split.py` (local, rdkit + sklearn). Results merge by tag into `results/ws3_lora.json`.
