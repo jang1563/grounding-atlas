@@ -47,7 +47,7 @@ model's hidden states reading the embedding-text reads 0.71 at the best layer, b
 max-over-25-layers number: the selection-bias-corrected held-out-layer estimate (nested GroupKFold)
 is only 0.599 (bias +0.11), marginally above its own output (0.47 to 0.56) and far below the 0.83
 ceiling (encoding gap 0.23). So at 0.5B this is inconclusive: the small proxy does not cleanly encode
-Tm from the embedding-text. The 8B on Cayuga (job 3040969) now RESOLVES it: held-out-layer 0.655
+Tm from the embedding-text. The 8B run now RESOLVES it: held-out-layer 0.655
 (best 0.775, bias +0.12), above output (~0.52) but far below the 0.83 ceiling (encoding gap 0.17,
 the magnitude of the structure-heavy 3D / graph rungs). So this is NOT a clean expression gap but a
 PARTIAL ENCODING gap: the abstract ESM-embedding floats are not fully readable as text even at 8B,
@@ -76,7 +76,7 @@ not on a learned embedding whose axes are opaque. A direct same-harness comparis
 
 The activation arm is a 0.5B LOCAL PROXY (Qwen2.5-0.5B on MPS; the 26GB box cannot host the 8B). Its
 best-layer 0.71 carries a +0.11 selection bias (held-out-layer 0.599). The Qwen3-8B comparable run
-(Cayuga job 3040969) settled it: held-out-layer 0.655 (best 0.775, bias +0.12), above output but far
+The 8B run settled it: held-out-layer 0.655 (best 0.775, bias +0.12), above output but far
 below the 0.83 ceiling, a partial encoding gap (not a clean expression gap). The output / ICL chance
 result and the orchestrate-needs-a-trained-head conclusion do not depend on this.
 n=50 query makes the ICL AUROC noisy (treat 0.56 as at-chance, not a real lift). One property (Tm

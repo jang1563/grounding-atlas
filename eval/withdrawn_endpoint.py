@@ -19,7 +19,7 @@ llm_name >> llm_fake means it is drug-SPECIFIC knowledge, not a generic "is-a-dr
 
 Data: signal/withdrawn/withdrawn.csv (name,smiles,label,inchikey) from the WITHDRAWN /
 DrugBank / ChEMBL / NCATS agreement set (Mazuz et al., eyalmazuz/DrugWithdrawn).
-DRY-RUN: WD_DRY=1 (no API). REAL: source <your-keys-file>. Env: WD_N (balanced total, default 500),
+DRY-RUN: WD_DRY=1 (no API). REAL: set ANTHROPIC_API_KEY in the environment. Env: WD_N (balanced total, default 500),
 WD_MODEL (default claude-sonnet-4-6), WD_WORKERS (default 8). No em dashes.
 """
 import csv

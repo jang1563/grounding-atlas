@@ -72,8 +72,8 @@ bash setup_data_cayuga.sh
 # 1. ceiling gate (is the signal in the content?) - CPU, instant
 python ceiling_gate_variant.py
 
-# 2. the dual-form output arm (the headline) - API. Load keys first, never print them:
-set -a; source <your-keys-file>; set +a
+# 2. the dual-form output arm (the headline) - API. Set ANTHROPIC_API_KEY in
+#    the environment first; never print key values.
 VG_CSV=../data/variant_clinvar.csv VG_COND=text,seq,text_scramble,text_nogene \
   VG_MODEL=claude-sonnet-4-5-20250929 python output_arm_variant.py        # main + strata
 VG_CSV=../data/variant_clinvar_post2026_01.csv VG_COND=text,seq python output_arm_variant.py  # strict holdout

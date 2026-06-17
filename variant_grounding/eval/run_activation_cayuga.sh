@@ -19,7 +19,7 @@ set -euo pipefail
 source "$HOME/bge/venv/bin/activate"
 
 export VG_CSV="${VG_CSV:-../data/variant_clinvar.csv}"
-export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen3-8B}"          # open-weight, no HF token
+export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen3-8B}"          # open-weight default
 export VG_N="${VG_N:-1500}"
 export VG_FORMS="${VG_FORMS:-text,seq}"
 export VG_CONTROL="${VG_CONTROL:-1}"                    # random-label selectivity control

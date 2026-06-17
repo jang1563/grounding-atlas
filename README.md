@@ -16,7 +16,7 @@
 
 A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Builds on and unifies several of my own prior projects (a frozen-embedding separability study, an LLM over-trust instrument, NullAtlas/NegBioRL, LabCraft).
 
-*Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563) · [jak4013@med.cornell.edu](mailto:jak4013@med.cornell.edu)*
+*Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563)*
 
 Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`.
 
@@ -122,13 +122,12 @@ Use the GitHub repository for the measurement instrument and result writeups; us
 # 1. Dependencies (research code; versions unpinned)
 pip install -r requirements.txt          # or: pip install -e .
 
-# 2. Data. Large public reference DBs (AlphaMissense, ClinVar, UniProt, ProteinGym
-#    DMS; ~2.3G) are gitignored and re-fetched per branch:
-bash variant_grounding/eval/setup_data_cayuga.sh
-bash protein_grounding/eval/setup_data_cayuga.sh
+# 2. Data. Large public reference DBs (AlphaMissense, ClinVar, UniProt,
+#    ProteinGym DMS; ~2.3G) are gitignored and re-fetched by the branch
+#    setup scripts under variant_grounding/eval/ and protein_grounding/eval/.
 ```
 
-LLM clients read API keys from the environment (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`); keys are never committed. The activation/probe sweeps are GPU jobs (`eval/run_activation_*_cayuga.sh`).
+LLM clients read provider credentials from environment variables such as `ANTHROPIC_API_KEY` and `OPENAI_API_KEY`; keys are never committed. The activation/probe sweeps use GPU job templates under `eval/`.
 
 Some ADMET scripts read a SQLite DB from the sibling `Negative_result_DB` project; the path defaults to `../../Negative_result_DB/data/negbiodb_admet.db` and can be overridden with `NEGBIODB_ADMET`.
 
@@ -142,7 +141,7 @@ Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) (GitHub renders a
 - **Capability-first, measurement-first.** The contribution is the instrument and the verifiable-signal substrate, not a multimodal model build; the same instrument also flags where a grounded model is unsafe.
 - **What is novel vs cited.** The cross-representation grounding measurement and the signal engineering are the contribution; the train-vs-retrieve-vs-orchestrate framing and the encoding-vs-expression decomposition build on prior work (Ovadia 2312.05934; In-Tool Learning 2508.20755; NatureLM 2502.07527; Mozi 2603.03655; Inside-Out 2503.15299).
 - **Numeric over-trust is a verbalization/calibration gap**, not an inability to represent numbers (the signal is in the activations). This is not extended to the ESM-2 probe result, which is an encoding question measured on the specialist, not the LLM.
-- **Disclosure-first.** No raw bypass or operational content; aggregate results only (see [`SECURITY.md`](SECURITY.md)).
+- **Public-safe release.** The committed tree contains evaluation code, derived benchmark rows, and aggregate outputs; secrets, large re-fetchable databases, and excluded generated scores stay out of git (see [`SECURITY.md`](SECURITY.md)).
 
 ## License
 

@@ -4,7 +4,7 @@ The free upper bound on SFT, and a test of whether the gap is closable at all wi
 updates. k age-stratified examples are prepended, then the model estimates age for held-out
 queries. Run on gene-named and anon renderings: if ICL needs the gene anchor, the gap is
 web-anchored; if ICL closes both, it is an in-context computation the model can do once shown
-examples. source <your-keys-file>. No em dashes.
+examples. set ANTHROPIC_API_KEY in the environment. No em dashes.
 """
 import csv
 import os

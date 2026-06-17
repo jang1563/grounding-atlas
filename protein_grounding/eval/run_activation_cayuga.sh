@@ -22,7 +22,7 @@ set -euo pipefail
 # breaks under `set -u`).
 source "$HOME/bge/venv/bin/activate"
 
-export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen3-8B}"          # open-weight, no HF token
+export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen3-8B}"          # open-weight default
 export ESM_MODEL="${ESM_MODEL:-facebook/esm2_t33_650M_UR50D}"
 export ACT_N="${ACT_N:-2000}"                           # caps to the balanced set size
 export ACT_CSV="${ACT_CSV:-protein_meltome.csv}"

@@ -82,7 +82,7 @@ even anonymized) and ORCHESTRATE (computation / specialist / canonicalize); TRAI
 niche would need a capability with no tool, no lookup, and no canonical form at all; none has
 surfaced in the 17-rung sweep.)
 
-## Empirical confirmation (MEASURED 2026-06-13, Cayuga job 3040970)
+## Empirical confirmation (MEASURED 2026-06-13)
 
 The pre-registered LoRA-output confirmation ran on Cayuga (Qwen3-8B, `eval/cayuga_ws3_lora_cells.sbatch`,
 data `eval/prep_lora_cells.py`; results in `results/ws3_lora_cells.json`). Measured:

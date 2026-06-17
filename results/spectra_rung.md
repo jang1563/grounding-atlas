@@ -1,6 +1,6 @@
 # Spectra rung (simulated MS): the non-renderable modality is STILL expression-limited for hERG
 
-*Results. 2026-06-11. `eval/activation_arm_spectra.py` (Qwen3-8B, Cayuga job 3038585, n=1250). The molecule is presented ONLY as a list of fragment m/z peaks (BRICS-fragmentation MS), never as a structure. The 6th and hardest rung, and it closes the modality ladder on a clear principle. No em dashes.*
+*Results. 2026-06-11. `eval/activation_arm_spectra.py` (Qwen3-8B, n=1250). The molecule is presented ONLY as a list of fragment m/z peaks (BRICS-fragmentation MS), never as a structure. The 6th and hardest rung, and it closes the modality ladder on a clear principle. No em dashes.*
 
 ## The setup (dual ceiling)
 

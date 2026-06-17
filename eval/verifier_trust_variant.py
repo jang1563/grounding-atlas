@@ -10,7 +10,7 @@ Prediction: named -> LLM self-recalls and acts on its own knowledge (overrides a
 to the truth = good, but also ignores a CORRECT verifier = Tool-Ignored); anon -> LLM cannot
 self-recall and DEPENDS on the verifier (follows it whether right or wrong). The headline is the
 verifier-WRONG subset: LLM final accuracy named >> anon means web-exposure drives verifier-reliance.
-source <your-keys-file>. No em dashes.
+set ANTHROPIC_API_KEY in the environment. No em dashes.
 """
 import csv
 import os

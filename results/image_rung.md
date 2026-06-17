@@ -26,7 +26,7 @@ The real gap is output, not perception: orchestrating the VLM's OWN transcriptio
 
 ## The direct test (B, DONE): the proxy is confirmed by the VLM hidden states
 
-The proxy measures perception via the TRANSCRIPTION, not the VLM's hidden states (Claude exposes none), so a direct open-VLM hidden-state 3-arm was run (`eval/activation_arm_image.py`, Qwen2.5-VL-7B, Cayuga job 3038579, n=400 rendered hERG molecules):
+The proxy measures perception via the TRANSCRIPTION, not the VLM's hidden states (Claude exposes none), so a direct open-VLM hidden-state 3-arm was run (`eval/activation_arm_image.py`, Qwen2.5-VL-7B, n=400 rendered hERG molecules):
 
 | arm (Qwen2.5-VL-7B, image input) | AUROC |
 |---|---|

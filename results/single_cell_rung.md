@@ -1,6 +1,6 @@
 # Single-cell rung: the cleanest web-exposure result in the project
 
-*Results. 2026-06-12. `eval/frontier_output_panel.py` (sc_cellsentence / sc_anon), data `signal/single_cell/pbmc_Tcell.csv` (scanpy pbmc68k_reduced, 384 cells balanced, T cell vs rest). The 7th rung, a priority modality. 8B activation pending (job 3038603). No em dashes.*
+*Results. 2026-06-12. `eval/frontier_output_panel.py` (sc_cellsentence / sc_anon), data `signal/single_cell/pbmc_Tcell.csv` (scanpy pbmc68k_reduced, 384 cells balanced, T cell vs rest). The 7th rung, a priority modality. 8B activation pending. No em dashes.*
 
 ## The design: the same cell, two token-identities, one fixed signal
 

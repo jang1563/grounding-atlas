@@ -2,7 +2,7 @@
 
 *Shared reference for WS1-3. 2026-06-08. Capability-first framing. No em dashes.*
 
-This document fixes the grounding failure taxonomy from the **actual measured results** of prior work (a protein identity-recognition study and a frozen-embedding separability study), not from planning docs. Every figure carries its source. We use **aggregate behavioral numbers only**; raw bypass material does not enter this project (see `SECURITY.md`).
+This document fixes the grounding failure taxonomy from the **actual measured results** of prior work (a protein identity-recognition study and a frozen-embedding separability study), not from planning docs. Every figure carries its source. Only aggregate behavioral numbers enter this project (see `SECURITY.md`).
 
 **Scope.** These are the failure axes of the grounding **instrument** (WS1): does the model ground a representation by content vs name (A, B), and how does it act on what it detects (E, D). **Negative-evidence coverage** (telling tested-and-failed from never-tested) is an *adjacent* epistemic capability, measured by NullAtlas as the WS2 substrate, **not a grounding-instrument axis**. It is cited below, not owned here; conflating it with grounding is exactly the drift this revision corrects.
 

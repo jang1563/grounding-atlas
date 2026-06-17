@@ -12,7 +12,7 @@ nearby gene x every track, GTEx `nes` is one eGene in one tissue, so a pooled
 score would be meaningless.
 
 Run:
-    set -a; source <your-keys-file>; set +a
+    set ANTHROPIC_API_KEY in the environment
     python signal/regulatory/eqtl_ceiling_gate.py            # all rows
     AG_VARIANTS=signal/regulatory/gtex_eqtl_Whole_Blood.csv AG_LIMIT=8 \
         python signal/regulatory/eqtl_ceiling_gate.py        # quick check

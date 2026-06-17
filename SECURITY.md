@@ -10,9 +10,9 @@ It holds evaluation data and writeups, not operational content.
 - **No secrets** are committed. LLM clients read API keys from the environment
   (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`); a `detect-private-key` pre-commit hook
   and a `*.key`/`.env` gitignore guard against accidents.
-- **Disclosure-first.** Any raw bypass or operational material from upstream safety
-  projects is kept out of this capability-focused repository; only aggregate results
-  are used.
+- **Public-safe scope.** The repository contains evaluation code, derived benchmark
+  rows, and aggregate outputs only; excluded source artifacts and generated scores
+  stay out of git.
 
 ## Reporting
 For sensitive issues, contact the author directly rather than opening a public

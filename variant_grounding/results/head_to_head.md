@@ -159,7 +159,7 @@ The third arm (the genuinely novel measurement): a per-layer linear probe on Qwe
 states, run for BOTH surface forms on the same 1500-variant set under a **GroupKFold grouped by
 GENE** (so the probe cannot exploit the memorized gene->label prior; the within-modality analog of
 the SMILES scaffold split). Open-weight model because hidden states are needed. Script:
-`activation_arm_variant.py`, job 3026996.
+`activation_arm_variant.py`.
 
 | form | ceiling (AlphaMissense) | activation (best layer) | output | encoding gap | expression gap | probe selectivity |
 |---|---|---|---|---|---|---|

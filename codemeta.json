@@ -17,8 +17,7 @@
     "affiliation": {
       "@type": "Organization",
       "name": "Weill Cornell Medicine (Mason Lab)"
-    },
-    "email": "mailto:jak4013@med.cornell.edu"
+    }
   },
   "keywords": [
     "language models",

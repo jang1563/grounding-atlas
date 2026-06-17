@@ -27,7 +27,7 @@ RDLogger.DisableLog("rdApp.*")
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 HERG = os.path.join(ROOT, "data", "herg.csv")
 N = 1250
-LORA_FT = 0.706   # spectra_ms finetuned, Cayuga job 3040970 (results/ws3_lora_cells.json)
+LORA_FT = 0.706   # spectra_ms finetuned (results/ws3_lora_cells.json)
 
 
 def peaks_scaf(smi):

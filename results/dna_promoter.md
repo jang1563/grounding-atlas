@@ -1,6 +1,6 @@
 # DNA/RNA modality rung: the promoter 3-arm
 
-*Results. 2026-06-11. Instrument: `eval/activation_arm_dna.py` (Qwen3-8B, Cayuga job 3038567, n=1500 balanced). Data: genomic-benchmarks `human_nontata_promoters`. Adds DNA as the 4th measured modality on the same 3-arm instrument (after SMILES, variant, protein). No em dashes.*
+*Results. 2026-06-11. Instrument: `eval/activation_arm_dna.py` (Qwen3-8B, n=1500 balanced). Data: genomic-benchmarks `human_nontata_promoters`. Adds DNA as the 4th measured modality on the same 3-arm instrument (after SMILES, variant, protein). No em dashes.*
 
 ## The rung
 

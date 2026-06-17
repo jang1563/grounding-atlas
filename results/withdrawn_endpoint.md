@@ -40,7 +40,7 @@ This is the honest counterpart to the hERG-SMILES corner (where a cheap Morgan/k
 - **Possible dataset exposure.** The model may have seen DrugBank withdrawn tags or the WITHDRAWN database during training. The fake-name control shows it uses the specific real name to recall the status, which is the knowledge route regardless of whether the source was the primary literature or a compiled dataset; for the decision-map purpose (ask the LLM about a known drug) the routing claim holds either way. It does limit the stronger scientific claim "reasons from pharmacological knowledge" vs "recalls a memorized label."
 - **Single frontier model, single endpoint.** Demonstrated on sonnet-4-6 and on withdrawal; the cell is illustrative of the class "fingerprint-weak, knowledge-documented, named," not a general law.
 
-## Arm 5 (encoding side): a SURPRISE, not the predicted null (Qwen3-8B, n=2000, job 3038493)
+## Arm 5 (encoding side): a SURPRISE, not the predicted null (Qwen3-8B, n=2000)
 
 I predicted the activation probe would be weak (~0.6, near Morgan), on the logic that a fingerprint-weak endpoint has little structure to encode. That prediction was WRONG, and the way it is wrong is the most interesting result here:
 
@@ -54,7 +54,7 @@ The activation probe (0.762, held-out 0.740) does not just match the structure p
 
 The most natural reading is that the model RECOGNIZES the drug from its SMILES and its hidden states then carry what it knows about that drug (including withdrawal status), an internal identity/recall signal it cannot surface as an answer. If so this is axis-A entity-recognition (not the axis-B content-grounding that hERG shows), surfaced through the activation probe; the discriminator below tests exactly that.
 
-### Discriminator (job 3038495, DONE): the above-structure signal is RECOGNITION, not richer structure
+### Discriminator (DONE): the above-structure signal is RECOGNITION, not richer structure
 
 The randomized-SMILES activation arm (same 2000 molecules, model sees deterministic re-notations, scaffold split and Morgan on canonical) resolves it:
 

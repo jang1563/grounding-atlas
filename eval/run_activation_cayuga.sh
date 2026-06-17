@@ -13,7 +13,7 @@ set -euo pipefail
 module load anaconda3/2023.09-3 cuda/12.1
 source venv/bin/activate
 
-export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen2.5-7B-Instruct}"   # open-weight, no HF token
+export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen2.5-7B-Instruct}"   # open-weight default
 export ACT_N="${ACT_N:-2000}"
 export ACT_CSV="${ACT_CSV:-herg.csv}"
 export HF_HOME="${HF_HOME:-$HOME/bge/hf_cache}"

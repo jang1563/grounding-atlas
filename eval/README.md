@@ -93,7 +93,7 @@ The capability test the project rests on: **does higher T1 grounding predict hig
 ## Guardrails carried in
 
 - Capability-neutral property for the headline (Phase 2); Phase 1 uses the prior probe's hazard label only as a method check, flagged as such.
-- No raw operational material enters; aggregate behavioral numbers only.
+- Aggregate behavioral numbers only; excluded source artifacts stay out of git.
 - No em dashes; verified facts; substrate is NegBioDB/NullAtlas.
 - The core contribution is the axis-B grounding instrument (with A and E). NullAtlas/NegBioDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
 

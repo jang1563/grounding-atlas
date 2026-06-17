@@ -8,7 +8,7 @@ and DEFER track ACTUAL grounding (the output AUROC), i.e. whether Claude is cali
 own limits. If web-zero rungs draw low CONF + high DEFER and web-rich rungs draw high CONF +
 SELF, AND that matches where Claude is actually right, then calibrated routing works and an
 orchestrator can be built on it. Over-confidence on a web-zero rung (high CONF, chance AUROC)
-is the orchestrator's failure mode. source <your-keys-file>. No em dashes.
+is the orchestrator's failure mode. set ANTHROPIC_API_KEY in the environment. No em dashes.
 """
 import csv
 import json
