@@ -1,0 +1,54 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "name": "grounding-atlas",
+  "description": "A measurement-first map of where language models ground biological content by content versus name, and where each capability should live across train, retrieve, and orchestrate.",
+  "codeRepository": "https://github.com/jang1563/grounding-atlas",
+  "issueTracker": "https://github.com/jang1563/grounding-atlas/issues",
+  "license": "https://spdx.org/licenses/Apache-2.0",
+  "programmingLanguage": "Python",
+  "runtimePlatform": "Python >=3.10",
+  "version": "0.1.0",
+  "datePublished": "2026-06-13",
+  "author": {
+    "@type": "Person",
+    "givenName": "JangKeun",
+    "familyName": "Kim",
+    "affiliation": {
+      "@type": "Organization",
+      "name": "Weill Cornell Medicine (Mason Lab)"
+    },
+    "email": "mailto:jak4013@med.cornell.edu"
+  },
+  "keywords": [
+    "language models",
+    "biological foundation models",
+    "grounding",
+    "model evaluation",
+    "bioinformatics",
+    "cheminformatics",
+    "calibration",
+    "orchestration"
+  ],
+  "applicationCategory": "Bioinformatics; model evaluation",
+  "softwareRequirements": [
+    "anthropic",
+    "openai",
+    "transformers",
+    "torch",
+    "peft",
+    "scikit-learn",
+    "numpy",
+    "scipy",
+    "rdkit",
+    "biopython",
+    "pillow",
+    "matplotlib"
+  ],
+  "relatedLink": [
+    "https://huggingface.co/datasets/jang1563/grounding-atlas",
+    "https://github.com/jang1563/grounding-atlas/blob/main/results/SYNTHESIS.md",
+    "https://github.com/jang1563/grounding-atlas/blob/main/DATA_SOURCES.md",
+    "https://github.com/jang1563/grounding-atlas/blob/main/CITATION.cff"
+  ]
+}

@@ -18,6 +18,15 @@ keywords = [
   "orchestration",
   "calibration",
 ]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Science/Research",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Topic :: Scientific/Engineering :: Bio-Informatics",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
 
 # Versions intentionally unpinned (research code). Pin with a lockfile before
 # publishing a reproducible release.
@@ -39,6 +48,11 @@ dependencies = [
 
 [project.urls]
 Repository = "https://github.com/jang1563/grounding-atlas"
+Dataset = "https://huggingface.co/datasets/jang1563/grounding-atlas"
+Results = "https://github.com/jang1563/grounding-atlas/tree/main/results"
+"Data sources" = "https://github.com/jang1563/grounding-atlas/blob/main/DATA_SOURCES.md"
+"Citation metadata" = "https://github.com/jang1563/grounding-atlas/blob/main/CITATION.cff"
+Issues = "https://github.com/jang1563/grounding-atlas/issues"
 
 [tool.setuptools]
 # Research code organized by workstream (eval/, signal/, decision_map/, ...),

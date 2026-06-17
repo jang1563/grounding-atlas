@@ -6,7 +6,7 @@
 ![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)
 ![Approach: measurement-first](https://img.shields.io/badge/approach-measurement--first-8A2BE2)
 
-**Contents:** [Why](#why-this-project-exists) · [Thesis](#the-thesis-one-line) · [Workstreams](#three-workstreams) · [Results at a glance](#results-at-a-glance) · [Repository map](#repository-map) · [Setup](#setup) · [Cite](#cite) · [Scope & claims](#scope-and-claims)
+**Contents:** [Why](#why-this-project-exists) · [Thesis](#the-thesis-one-line) · [Workstreams](#three-workstreams) · [Results at a glance](#results-at-a-glance) · [Artifact map](#artifact-map) · [Repository map](#repository-map) · [Dataset](#companion-hugging-face-dataset) · [Setup](#setup) · [Cite](#cite) · [Scope & claims](#scope-and-claims)
 
 **Does a language model do biology by the *content* of a specialist model's output (sequence, structure, identifier, numeric prediction), or just by its *name*? Measure it, manufacture verifiable signal to close it, and map where each capability should live.**
 
@@ -29,6 +29,18 @@ Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy
 
 ---
 
+## Artifact map
+
+| Surface | Human entry point | Machine-readable entry point |
+|---|---|---|
+| GitHub source | [`github.com/jang1563/grounding-atlas`](https://github.com/jang1563/grounding-atlas) | [`pyproject.toml`](pyproject.toml), [`codemeta.json`](codemeta.json), [`CITATION.cff`](CITATION.cff) |
+| Hugging Face dataset | [`datasets/jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) | Parquet configs with dataset-card YAML front matter |
+| Results | [`results/SYNTHESIS.md`](results/SYNTHESIS.md), [`results/README.md`](results/README.md) | sibling `.json` / `.jsonl` files under [`results/`](results/) |
+| Data provenance | [`DATA_SOURCES.md`](DATA_SOURCES.md) | per-config source/license table plus HF card metadata |
+| Safety and exclusions | [`SECURITY.md`](SECURITY.md) | explicit gitignore boundaries for secrets, raw DBs, and excluded generated scores |
+
+---
+
 ## Why this project exists
 The grounding gap is real: a measured name-vs-content recognition gap (name ~100% vs accession ~2-28%), plus the question of whether the model surfaces what a probe reads from a representation (encoding vs expression). Closing it is a genuine path to a better science model.
 
@@ -39,7 +51,7 @@ A science model is only as good as it grounds the *content* of a specialist mode
 
 ## Three workstreams
 - **WS1 - the instrument (MEASURE).** Does the model ground a representation by content or by name? The core is the content-grounding axis (probe-vs-LLM + LLM-activation probe + content-sensitivity), with identity-resolution and channel/action-policy as measured supporting axes. Deterministic, non-LLM-judge, matched controls. Negative-evidence coverage is NullAtlas's (WS2), cited not absorbed.
-- **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal. The ADMET and computable pairs (55,703 rows) are packaged as a dataset, [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) (private during review, available on request).
+- **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal. The ADMET and computable pairs (55,703 rows) are packaged as a public dataset, [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) (CC BY-SA 4.0).
 - **WS3 - the decision map (MAP THE LINE).** Per capability, measure train (weights) vs retrieve (MCP/RAG) vs orchestrate (call the SFM). Principle: train the skill, retrieve the knowledge, orchestrate the heavy specialist. Local open-weight PoC for the first data points.
 
 Full design: `PROJECT_DESIGN.md`.
@@ -83,6 +95,20 @@ Full design: `PROJECT_DESIGN.md`.
 | `results/` | measured outputs: writeups (`.md`), data (`.json`/`.jsonl`), figures (`.png`) |
 | `docs/` | design docs, failure-mode taxonomy, the field message |
 | `data/` | shared curated inputs (large/re-fetchable reference DBs are gitignored) |
+
+## Companion Hugging Face dataset
+
+The public companion dataset is [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas). The default config contains 55,703 uniform ADMET + computable rows; the additional configs expose modality-specific rungs as Parquet tables.
+
+```python
+from datasets import load_dataset
+
+ds = load_dataset("jang1563/grounding-atlas", split="train")
+methyl = load_dataset("jang1563/grounding-atlas", "methyl", split="train")
+cells = load_dataset("jang1563/grounding-atlas", "single_cell", split="train")
+```
+
+Use the GitHub repository for the measurement instrument and result writeups; use the Hugging Face dataset for training/evaluation rows, schema inspection, and downstream loaders.
 
 ## Where to start (reading order)
 1. [`results/SYNTHESIS.md`](results/SYNTHESIS.md) - the law, the 17-representation master table, and the orchestrator it prescribes.

@@ -1,8 +1,8 @@
 # Security and data handling
 
-This is a research repository on a defensive AI-safety topic: measuring whether
-language models ground the *content* of biological specialist outputs. It holds
-evaluation data and writeups, not operational content.
+This is a public research repository on biological content-grounding evaluation:
+measuring whether language models ground the *content* of specialist outputs.
+It holds evaluation data and writeups, not operational content.
 
 ## What is intentionally excluded
 - **Large public reference databases** (AlphaMissense, ClinVar, UniProt, ProteinGym
@@ -15,5 +15,5 @@ evaluation data and writeups, not operational content.
   are used.
 
 ## Reporting
-This is currently a private repository. For sensitive issues, contact the author
-directly rather than opening a public issue.
+For sensitive issues, contact the author directly rather than opening a public
+issue.
