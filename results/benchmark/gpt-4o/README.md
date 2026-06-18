@@ -37,9 +37,9 @@ Claude quirk:
   frontier-LLM failure on a subtle, poorly-web-documented structure→property mapping.
 - **Both ground solubility best** and sit weak-positive on CYP/permeability; every rung is
   below its Morgan ceiling (all gaps positive) for both models.
-- **herg is at chance for both on the same n=100 sample** (0.520 / 0.475), below the prior
-  0.633 reference. Since both providers agree on the identical 100 molecules (seed 0), this
-  looks like a hard subsample rather than a model effect — the herg n=300 diagnostic tests it.
+- **herg is weak-to-chance for both** (n=100: 0.520 / 0.475). The n=300 diagnostic resolves it:
+  **0.513 (gpt-4o)** and **0.564 (sonnet)** — the n=100 0.475 dip was a low fluctuation, but
+  herg grounding is genuinely weak (below the prior 0.633), one of the weaker output-arm rungs.
 
 ## Caveats
 

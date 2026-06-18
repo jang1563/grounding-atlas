@@ -41,6 +41,9 @@ see [`scorecard.json`](scorecard.json), [`raw.jsonl`](raw.jsonl), [`manifest.jso
 - **Pilot scale (n=100).** CIs are wide (±~0.1). Absolute AUROCs land ~0.07 below the n=200
   bespoke reference on average, but not uniformly (solubility is higher), so this is sampling
   variance, not a fixed prompt offset.
-- **herg is the one real miss.** 0.475 (at chance) vs the prior 0.633; herg has the largest
-  pool (3,963 rows), so a 100-item subsample can swing. Worth a higher-n re-check before
-  reading herg as a closed/non-grounded call.
+- **herg, resolved at n=300.** The n=100 0.475 was a low fluctuation: a herg-only n=300 re-run
+  gives **0.564 (sonnet)** and **0.513 (gpt-4o)**. So herg is not "closed", but its grounding is
+  genuinely weak-to-chance (~0.51–0.56), below the prior 0.633 reference and one of the weaker
+  output-arm rungs; the gap to the 0.893 ceiling stays large (~0.33–0.42). The leaderboard is
+  kept uniform at n=100; this is a diagnostic note (bootstrap CIs are why the single n=100
+  number should not be over-read).
