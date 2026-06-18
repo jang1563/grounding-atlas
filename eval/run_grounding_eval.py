@@ -153,7 +153,7 @@ def score_rung(prob, y, scr_prob, scr_y, ceiling, rng):
         "output_auroc": round(a, 3), "output_auroc_ci": ci(auroc, prob, y, rng),
         "ece": round(ece(prob, y), 3), "aurc": round(aurc(prob, y), 3),
         "sel_acc_50": round(sel_acc(prob, y), 3),
-        "ceiling": ceiling, "gap": round(ceiling - a, 3) if ceiling else None,
+        "ceiling": ceiling, "gap": round(ceiling - a, 3) if ceiling is not None else None,
         "memo_delta": None,
     }
     if scr_y is not None and len(scr_y) and len(set(scr_y)) > 1:
@@ -208,7 +208,9 @@ def main():
     ceilings = {}
     cf = os.path.join(OUT, "ceilings.json")
     if os.path.exists(cf):
-        ceilings = json.load(open(cf))
+        # ceilings.json values may be a bare float or a {ceiling, method, n} provenance dict
+        ceilings = {k: (v["ceiling"] if isinstance(v, dict) else v)
+                    for k, v in json.load(open(cf)).items()}
 
     model_dir = os.path.join(OUT, args.model.replace("/", "_"))
     os.makedirs(model_dir, exist_ok=True)

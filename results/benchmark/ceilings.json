@@ -1,0 +1,132 @@
+{
+  "admet/ames": {
+    "ceiling": 0.896,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 517
+  },
+  "admet/clearance": {
+    "ceiling": 0.658,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 4000
+  },
+  "admet/cyp2d6": {
+    "ceiling": 0.825,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 4000
+  },
+  "admet/cyp3a4": {
+    "ceiling": 0.809,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 4000
+  },
+  "admet/herg": {
+    "ceiling": 0.893,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 3963
+  },
+  "admet/permeability": {
+    "ceiling": 0.893,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 2057
+  },
+  "admet/solubility": {
+    "ceiling": 0.786,
+    "method": "Morgan(2048,r2) + LR, 5-fold out-of-fold CV",
+    "n": 866
+  },
+  "computable/dna/gc_content": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/dna/n_a": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/aromaticity": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/frac_cys": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/gravy": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/instability_index": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/isoelectric_point": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/length": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/protein/mol_wt": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/logp": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/mol_wt": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_aromatic_rings": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_carbon": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_hba": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_hbd": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_rings": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_rot_bonds": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/n_stereo": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  },
+  "computable/smiles/tpsa": {
+    "ceiling": 1.0,
+    "method": "deterministic (RDKit/Biopython exact)",
+    "n": 1500
+  }
+}

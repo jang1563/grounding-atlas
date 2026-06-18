@@ -15,6 +15,11 @@ All notable changes to grounding-atlas. Format based on
   metric with a bootstrap CI, no single-number reduction (per EleutherAI
   arXiv:2405.14782). GPU-free output arm; `--dry-run` validates the pipeline with no
   API. Outputs under `results/benchmark/<model>/` plus an aggregated `LEADERBOARD.md`.
+- **Specialist ceilings** (`eval/compute_ceilings.py`, `results/benchmark/ceilings.json`):
+  the cheap-specialist decodability ceiling per rung that populates the harness `gap`
+  column. Molecular rungs use Morgan(2048, r2) + logistic regression, out-of-fold 5-fold
+  CV (same recipe as `results/SYNTHESIS.md`); computable rungs are 1.0 by construction.
+  Reproducible (seeded CV, deterministic featurizer); committed with method + n provenance.
 
 ## [0.1.0] - 2026-06-13
 
