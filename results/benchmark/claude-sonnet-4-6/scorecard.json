@@ -1,18 +1,18 @@
 {
   "admet/ames": {
     "n": 100,
-    "output_auroc": 0.321,
+    "output_auroc": 0.679,
     "output_auroc_ci": [
-      0.212,
-      0.425
+      0.578,
+      0.788
     ],
-    "ece": 0.483,
-    "aurc": 0.691,
-    "sel_acc_50": 0.3,
+    "ece": 0.155,
+    "aurc": 0.309,
+    "sel_acc_50": 0.7,
     "ceiling": 0.896,
-    "gap": 0.575,
-    "memo_delta": -0.2,
-    "orientation": "align"
+    "gap": 0.217,
+    "memo_delta": 0.2,
+    "orientation": "oppose"
   },
   "admet/cyp2d6": {
     "n": 100,

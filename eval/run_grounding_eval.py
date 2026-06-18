@@ -49,7 +49,12 @@ CLAUSES = {
     "herg":         ("blocks the hERG potassium channel (cardiotoxicity risk)", "align"),
     "cyp3a4":       ("inhibits the CYP3A4 enzyme", "align"),
     "cyp2d6":       ("inhibits the CYP2D6 enzyme", "align"),
-    "ames":         ("is mutagenic in the Ames test", "align"),
+    # ames orientation is OPPOSE, not align: a structural-alert audit (eval/analyze_ames.py)
+    # shows label-0 is the nitroaromatic-rich (mutagenic) class, so positive = label-0. The
+    # earlier "align" made all models read as anti-grounding (~0.32); corrected they ground
+    # ames at ~0.68 by correctly flagging nitroaromatics. The prior eval/output_arm_admet.py
+    # carried the same inverted ames direction.
+    "ames":         ("is mutagenic in the Ames test", "oppose"),
     "solubility":   ("is highly soluble in water", "oppose"),
     "permeability": ("is highly permeable across a cell membrane", "oppose"),
 }

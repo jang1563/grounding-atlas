@@ -5,6 +5,15 @@ All notable changes to grounding-atlas. Format based on
 
 ## [Unreleased]
 
+### Fixed
+- **ames label-direction bug** (`eval/analyze_ames.py`, `eval/fix_ames_orientation.py`): a
+  structural-alert audit showed the Ames label was inverted — label-0 is the nitroaromatic-rich
+  (mutagenic) class, and all models' P(mutagenic) correlates +0.7 to +0.85 with aromatic-nitro
+  (correct toxicology). ames is now oriented `oppose`; the three scorecards were re-scored from
+  the committed raw outputs (zero API). The "ames anti-grounding ~0.32" result was an artifact;
+  corrected, all models ground ames at ~0.68. The prior `eval/output_arm_admet.py` carried the
+  same inverted direction.
+
 ### Added
 - **grounding-atlas-eval harness** (`eval/run_grounding_eval.py`, design
   `docs/BENCHMARK_DESIGN.md`): a model-agnostic benchmark that scores grounding
