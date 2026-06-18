@@ -38,8 +38,11 @@ the score grounding or memorization.
 - **Scorer**, per rung, every number with bootstrap CI:
   - grounding: output AUROC, and the gap to the specialist ceiling.
   - calibration: ECE, Brier, AURC (risk-coverage), selective accuracy at 50% coverage.
-  - memorization-transparency: `memo_delta` = AUROC(matched) - AUROC(scrambled or
-    web-poor); large delta flags recall over grounding.
+  - memorization-transparency: `memo_delta` = AUROC(matched) - AUROC(scrambled), where
+    scrambled shuffles the representation's characters (structure destroyed, composition
+    kept). A large positive delta means the score depends on the real structure = genuine
+    grounding; near zero means it rests on surface composition or chance. (A separate
+    web-rich minus web-poor contrast is the one that flags recall of documented items.)
 
 ## Outputs (provenance-complete)
 
