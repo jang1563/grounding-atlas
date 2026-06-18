@@ -26,22 +26,31 @@ ROOT = os.path.dirname(HERE)
 SIGNAL = os.path.join(ROOT, "signal")
 OUT = os.path.join(ROOT, "results", "benchmark")
 
-PROMPT_VERSION = "v1"
+PROMPT_VERSION = "v2"   # v2: system constraint + Probability: anchor + last-number parse
 DECODE = {"temperature": 0.0, "max_tokens": 16}
+
+# Without a system constraint a reasoning model ignores "only the number" and emits a preamble
+# that never reaches a number in the token budget (validated in eval/output_arm_admet.py: up to
+# 96% fallback). This forces a bare number (~90% compliance). The model must not use prefill.
+SYSTEM = (
+    "You are a property predictor. Respond with ONLY a single decimal number between 0 and 1 "
+    "(for example: 0.42). No words, no explanation, no analysis, no units. Your entire reply "
+    "must be just the number."
+)
 
 
 def prompt_for(item):
-    """Versioned output-arm prompt. Computable rungs ask about a threshold, empirical ones
-    about presence of the property."""
+    """Versioned output-arm prompt. Computable rungs ask about a threshold, empirical ones about
+    presence of the property. Ends with a `Probability:` anchor so the model emits the number."""
     mod = item.get("modality", "input")
     prop = item.get("property", "the target property")
     rep = item["representation"]
     if item.get("threshold") not in (None, ""):
-        q = f"whether the {prop} of this {mod} exceeds {item['threshold']}"
+        q = f"that the {prop} of this {mod} exceeds {item['threshold']}"
     else:
-        q = f"whether this {mod} has the property '{prop}'"
-    return (f"Estimate the probability (a number between 0 and 1) of {q}.\n"
-            f"{mod}: {rep}\nReply with only the number.")
+        q = f"that this {mod} has the property: {prop}"
+    return (f"Estimate the probability (a single number between 0 and 1) {q}. "
+            f"Judge only from the representation below.\n{mod}: {rep}\nProbability:")
 
 
 # ---------- Dataset ----------
@@ -75,30 +84,43 @@ def complete(model, prompt):
         import anthropic
         m = anthropic.Anthropic().messages.create(
             model=model, max_tokens=DECODE["max_tokens"], temperature=DECODE["temperature"],
-            messages=[{"role": "user", "content": prompt}])
+            system=SYSTEM, messages=[{"role": "user", "content": prompt}])
         return "".join(b.text for b in m.content if b.type == "text")
     if model.startswith(("gpt", "o1", "o3")):
         import openai
         r = openai.OpenAI().chat.completions.create(
             model=model, max_tokens=DECODE["max_tokens"], temperature=DECODE["temperature"],
-            messages=[{"role": "user", "content": prompt}])
+            messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}])
         return r.choices[0].message.content
     raise SystemExit(f"unknown model provider for {model}")
 
 
 def parse_prob(text):
-    m = re.search(r"(?<![\d.])(0?\.\d+|0|1(?:\.0+)?)", text or "")
-    return float(m.group(1)) if m else 0.5
+    """Anchored parse: take the LAST number (the answer follows the preamble); a value in [0,1]
+    is a probability, (1,100] is read as a percent. Falls back to 0.5 when nothing parses."""
+    for tok in reversed(re.findall(r"\d*\.?\d+", text or "")):
+        try:
+            v = float(tok)
+        except ValueError:
+            continue
+        if 0.0 <= v <= 1.0:
+            return v
+        if 1.0 < v <= 100.0:
+            return v / 100.0
+    return 0.5
 
 
 def solve(model, items, dry, rng):
-    probs = []
+    """Returns (probs, raw_texts). The raw text is saved so anyone can re-score."""
+    probs, texts = [], []
     for it in items:
         if dry:
-            probs.append(min(1.0, max(0.0, 0.30 + 0.40 * int(it["label"]) + rng.normal(0, 0.18))))
+            p = min(1.0, max(0.0, 0.30 + 0.40 * int(it["label"]) + rng.normal(0, 0.18)))
+            probs.append(p); texts.append(f"{p:.3f} (dry)")
         else:
-            probs.append(parse_prob(complete(model, prompt_for(it))))
-    return np.array(probs)
+            t = complete(model, prompt_for(it))
+            texts.append(t); probs.append(parse_prob(t))
+    return np.array(probs), texts
 
 
 # ---------- Scorer ----------
@@ -219,14 +241,14 @@ def main():
         if rung not in paths:
             print(f"  skip {rung} (no pairs.jsonl)"); continue
         items, scr = load_rung(paths[rung], args.n, rng)
-        prob = solve(args.model, items, args.dry_run, rng)
+        prob, texts = solve(args.model, items, args.dry_run, rng)
         y = np.array([int(it["label"]) for it in items])
-        sprob = solve(args.model, scr, args.dry_run, rng) if scr else None
+        sprob = solve(args.model, scr, args.dry_run, rng)[0] if scr else None
         sy = np.array([int(it["label"]) for it in scr]) if scr else None
         scorecard[rung] = score_rung(prob, y, sprob, sy, ceilings.get(rung), rng)
-        for i, (it, p) in enumerate(zip(items, prob)):
+        for i, (it, p, t) in enumerate(zip(items, prob, texts)):
             raw.append({"rung": rung, "id": it.get("id", f"{rung}:{i}"),
-                        "label": int(it["label"]), "prob": round(float(p), 4)})
+                        "label": int(it["label"]), "prob": round(float(p), 4), "output": t})
         r = scorecard[rung]
         print(f"  {rung:30s} AUROC={r['output_auroc']} {r['output_auroc_ci']} ECE={r['ece']} "
               f"AURC={r['aurc']} memo_delta={r['memo_delta']}")
