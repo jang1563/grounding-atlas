@@ -15,6 +15,11 @@ All notable changes to grounding-atlas. Format based on
   metric with a bootstrap CI, no single-number reduction (per EleutherAI
   arXiv:2405.14782). GPU-free output arm; `--dry-run` validates the pipeline with no
   API. Outputs under `results/benchmark/<model>/` plus an aggregated `LEADERBOARD.md`.
+  Elicitation forces a bare number via a system constraint + `Probability:` anchor
+  (a reasoning model otherwise preambles past the token budget); empirical endpoints
+  carry a directional clause and an a priori label orientation (ported from
+  `eval/output_arm_admet.py`) so AUROC measures grounding regardless of assay polarity,
+  and the raw model text is saved per item for re-scoring.
 - **Specialist ceilings** (`eval/compute_ceilings.py`, `results/benchmark/ceilings.json`):
   the cheap-specialist decodability ceiling per rung that populates the harness `gap`
   column. Molecular rungs use Morgan(2048, r2) + logistic regression, out-of-fold 5-fold

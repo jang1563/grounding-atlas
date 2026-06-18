@@ -26,7 +26,7 @@ ROOT = os.path.dirname(HERE)
 SIGNAL = os.path.join(ROOT, "signal")
 OUT = os.path.join(ROOT, "results", "benchmark")
 
-PROMPT_VERSION = "v2"   # v2: system constraint + Probability: anchor + last-number parse
+PROMPT_VERSION = "v3"   # v3: directional clause + a priori orientation (v2 = system + anchor)
 DECODE = {"temperature": 0.0, "max_tokens": 16}
 
 # Without a system constraint a reasoning model ignores "only the number" and emits a preamble
@@ -38,6 +38,22 @@ SYSTEM = (
     "must be just the number."
 )
 
+# A grounding benchmark must anchor directionality: a bare property name ("ames") does not tell
+# the model which way is positive, and the AUROC sign is then meaningless. Each empirical
+# endpoint gets a directional clause and an a priori orientation (ported from
+# eval/output_arm_admet.py). label-1 = NegBioDB FAIL; an hERG/CYP/AMES fail IS the active
+# (positive) outcome so the clause "align"s with label-1, but a solubility/permeability fail is
+# the LOW-value compound so the natural clause "oppose"s label-1 (oriented label = 1 - label).
+# clearance is omitted: heterogeneous units leave its orientation unresolved.
+CLAUSES = {
+    "herg":         ("blocks the hERG potassium channel (cardiotoxicity risk)", "align"),
+    "cyp3a4":       ("inhibits the CYP3A4 enzyme", "align"),
+    "cyp2d6":       ("inhibits the CYP2D6 enzyme", "align"),
+    "ames":         ("is mutagenic in the Ames test", "align"),
+    "solubility":   ("is highly soluble in water", "oppose"),
+    "permeability": ("is highly permeable across a cell membrane", "oppose"),
+}
+
 
 def prompt_for(item):
     """Versioned output-arm prompt. Computable rungs ask about a threshold, empirical ones about
@@ -47,6 +63,8 @@ def prompt_for(item):
     rep = item["representation"]
     if item.get("threshold") not in (None, ""):
         q = f"that the {prop} of this {mod} exceeds {item['threshold']}"
+    elif prop in CLAUSES:
+        q = f"that this molecule {CLAUSES[prop][0]}"
     else:
         q = f"that this {mod} has the property: {prop}"
     return (f"Estimate the probability (a single number between 0 and 1) {q}. "
@@ -242,10 +260,16 @@ def main():
             print(f"  skip {rung} (no pairs.jsonl)"); continue
         items, scr = load_rung(paths[rung], args.n, rng)
         prob, texts = solve(args.model, items, args.dry_run, rng)
+        prop = items[0].get("property") if items else None
+        orient = CLAUSES.get(prop, (None, "align"))[1]   # 'oppose': positive class is label 0
         y = np.array([int(it["label"]) for it in items])
         sprob = solve(args.model, scr, args.dry_run, rng)[0] if scr else None
         sy = np.array([int(it["label"]) for it in scr]) if scr else None
+        if orient == "oppose":   # model emits P(clause); orient the label to the clause
+            y = 1 - y
+            sy = None if sy is None else 1 - sy
         scorecard[rung] = score_rung(prob, y, sprob, sy, ceilings.get(rung), rng)
+        scorecard[rung]["orientation"] = orient
         for i, (it, p, t) in enumerate(zip(items, prob, texts)):
             raw.append({"rung": rung, "id": it.get("id", f"{rung}:{i}"),
                         "label": int(it["label"]), "prob": round(float(p), 4), "output": t})
