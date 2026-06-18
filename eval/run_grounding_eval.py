@@ -100,9 +100,15 @@ def load_rung(path, n, rng):
 def complete(model, prompt):
     if model.startswith(("claude", "anthropic")):
         import anthropic
-        m = anthropic.Anthropic().messages.create(
-            model=model, max_tokens=DECODE["max_tokens"], temperature=DECODE["temperature"],
-            system=SYSTEM, messages=[{"role": "user", "content": prompt}])
+        client = anthropic.Anthropic()
+        kw = dict(model=model, max_tokens=DECODE["max_tokens"], system=SYSTEM,
+                  messages=[{"role": "user", "content": prompt}])
+        try:
+            m = client.messages.create(temperature=DECODE["temperature"], **kw)
+        except anthropic.BadRequestError as e:
+            if "temperature" not in str(e).lower():
+                raise
+            m = client.messages.create(**kw)   # newer models (e.g. opus-4-8) deprecate temperature
         return "".join(b.text for b in m.content if b.type == "text")
     if model.startswith(("gpt", "o1", "o3")):
         import openai
