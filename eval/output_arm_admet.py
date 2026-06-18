@@ -31,17 +31,22 @@ ADMET = os.path.join(ROOT, "signal", "admet")
 
 # endpoint -> (property clause for the prompt, clause_matches_label1)
 # label-1 = NegBioDB FAIL (generate_signal.py). Direction RESOLVED against assay-value
-# medians in negbiodb_admet.db (outcome vs standard_value): a hERG/CYP/AMES fail is the
+# medians in negbiodb_admet.db (outcome vs standard_value): a hERG/CYP fail is the
 # active/positive outcome (clause aligned), but a solubility/permeability fail is the
 # LOW-value compound (insoluble fail 1.1 vs pass 313 ug/mL; impermeable fail 71 vs pass
 # 579), so the "soluble/permeable" clause OPPOSES label-1 there -> oriented AUROC = 1-raw
 # (handled in post-processing; see results/t2_apply.md R3 + results/output_arm_admet.json).
 # Clearance pools heterogeneous units (fail 26.6% vs pass 22 mL/min/kg), left unresolved.
+# AMES CORRECTED 2026-06-18 to OPPOSE (was True/align): a structural-alert audit
+# (eval/analyze_ames.py + eval/audit_orientations.py) shows label-0 is the nitroaromatic-rich
+# mutagenic class, so "is mutagenic" OPPOSES label-1. The earlier align read as anti-grounding
+# (~0.32, see the now-superseded oriented_auroc in results/output_arm_admet.json); corrected,
+# the model grounds ames (~0.68).
 PROPERTY = {
     "herg":         ("BLOCKS the hERG potassium channel (cardiotoxicity risk)", True),
     "cyp3a4":       ("INHIBITS the CYP3A4 enzyme", True),
     "cyp2d6":       ("INHIBITS the CYP2D6 enzyme", True),
-    "ames":         ("is MUTAGENIC in the Ames test", True),
+    "ames":         ("is MUTAGENIC in the Ames test", False),  # CORRECTED: oppose (label-0 = mutagenic)
     "solubility":   ("is highly soluble in water", False),    # clause opposes label-1 (fail=insoluble)
     "permeability": ("is highly permeable across a cell membrane", False),  # clause opposes label-1 (fail=impermeable)
     "clearance":    ("has high metabolic clearance", None),   # heterogeneous units, unresolved

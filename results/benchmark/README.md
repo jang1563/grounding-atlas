@@ -35,5 +35,17 @@ fixed, so a re-run on the same data commit reproduces the scorecard.
   verbalizes the property from the representation.
 - **calibration** — `ece` (10-bin), `aurc` (risk-coverage), `sel_acc_50` (accuracy at 50%
   coverage). Low AURC = confidence ranks correctness, so abstention recovers accuracy.
-- **memorization-transparency** — `memo_delta` = AUROC(matched) - AUROC(scrambled). A large
-  positive delta flags recall of web-documented items over grounding of the representation.
+- **memorization-transparency** — `memo_delta` = AUROC(matched) - AUROC(scrambled), where
+  scrambled shuffles the SMILES characters (structure destroyed, composition kept). A large
+  *positive* delta means the score depends on the real structure = genuine grounding; near zero
+  means it rests on surface composition or chance.
+
+## Label-orientation audit
+
+Each empirical endpoint's label direction is verified against an independent physicochemical
+prior (`eval/audit_orientations.py`): mutagens are nitroaromatic-rich (ames), hERG blockers and
+CYP inhibitors are lipophilic / basic, soluble compounds have lower logP, permeable compounds
+lower TPSA. **All six rungs are consistent** after the ames correction — ames was found inverted
+(`align` → `oppose`) by a structural-alert audit (`eval/analyze_ames.py`) and re-scored from raw
+outputs (`eval/fix_ames_orientation.py`). A benchmark's largest risk is label provenance, so the
+audit is part of the instrument.
