@@ -36,6 +36,7 @@ Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy
 | GitHub source | [`github.com/jang1563/grounding-atlas`](https://github.com/jang1563/grounding-atlas) | [`pyproject.toml`](pyproject.toml), [`codemeta.json`](codemeta.json), [`CITATION.cff`](CITATION.cff) |
 | Hugging Face dataset | [`datasets/jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) | Parquet configs with dataset-card YAML front matter |
 | Results | [`results/SYNTHESIS.md`](results/SYNTHESIS.md), [`results/README.md`](results/README.md) | sibling `.json` / `.jsonl` files under [`results/`](results/) |
+| Benchmark | [`docs/BENCHMARK_DESIGN.md`](docs/BENCHMARK_DESIGN.md), [`results/benchmark/`](results/benchmark/README.md) | [`eval/run_grounding_eval.py`](eval/run_grounding_eval.py) (`--model X`); per-model `scorecard.json` / `manifest.json` / `raw.jsonl` + `LEADERBOARD.md` |
 | Data provenance | [`DATA_SOURCES.md`](DATA_SOURCES.md) | per-config source/license table plus HF card metadata |
 | Safety and exclusions | [`SECURITY.md`](SECURITY.md) | explicit gitignore boundaries for secrets, raw DBs, and excluded generated scores |
 

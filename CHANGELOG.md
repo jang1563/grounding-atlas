@@ -3,6 +3,19 @@
 All notable changes to grounding-atlas. Format based on
 [Keep a Changelog](https://keepachangelog.com/); dates are ISO 8601.
 
+## [Unreleased]
+
+### Added
+- **grounding-atlas-eval harness** (`eval/run_grounding_eval.py`, design
+  `docs/BENCHMARK_DESIGN.md`): a model-agnostic benchmark that scores grounding
+  (output AUROC + gap to ceiling), calibration (ECE / AURC / selective-accuracy),
+  and memorization-transparency (`memo_delta` = AUROC(matched) - AUROC(scrambled))
+  on the verifiable-signal pairs. Inspect-style Dataset / Solver / Scorer; one
+  versioned prompt, fixed decode, raw outputs + provenance manifest released, every
+  metric with a bootstrap CI, no single-number reduction (per EleutherAI
+  arXiv:2405.14782). GPU-free output arm; `--dry-run` validates the pipeline with no
+  API. Outputs under `results/benchmark/<model>/` plus an aggregated `LEADERBOARD.md`.
+
 ## [0.1.0] - 2026-06-13
 
 Initial versioned release of the research repository.
