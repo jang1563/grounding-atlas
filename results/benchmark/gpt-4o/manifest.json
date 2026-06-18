@@ -1,0 +1,21 @@
+{
+  "model": "gpt-4o",
+  "prompt_version": "v3",
+  "decode": {
+    "temperature": 0.0,
+    "max_tokens": 16
+  },
+  "seed": 0,
+  "n_per_rung": 100,
+  "dry_run": false,
+  "data_commit": "cc2a20e",
+  "date_utc": "2026-06-18T20:36Z",
+  "rungs": [
+    "admet/ames",
+    "admet/cyp2d6",
+    "admet/cyp3a4",
+    "admet/herg",
+    "admet/permeability",
+    "admet/solubility"
+  ]
+}

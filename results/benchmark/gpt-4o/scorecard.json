@@ -1,0 +1,92 @@
+{
+  "admet/ames": {
+    "n": 100,
+    "output_auroc": 0.314,
+    "output_auroc_ci": [
+      0.22,
+      0.413
+    ],
+    "ece": 0.253,
+    "aurc": 0.662,
+    "sel_acc_50": 0.3,
+    "ceiling": 0.896,
+    "gap": 0.582,
+    "memo_delta": -0.088,
+    "orientation": "align"
+  },
+  "admet/cyp2d6": {
+    "n": 100,
+    "output_auroc": 0.52,
+    "output_auroc_ci": [
+      0.433,
+      0.608
+    ],
+    "ece": 0.199,
+    "aurc": 0.569,
+    "sel_acc_50": 0.28,
+    "ceiling": 0.825,
+    "gap": 0.305,
+    "memo_delta": 0.051,
+    "orientation": "align"
+  },
+  "admet/cyp3a4": {
+    "n": 100,
+    "output_auroc": 0.57,
+    "output_auroc_ci": [
+      0.488,
+      0.653
+    ],
+    "ece": 0.209,
+    "aurc": 0.513,
+    "sel_acc_50": 0.42,
+    "ceiling": 0.809,
+    "gap": 0.239,
+    "memo_delta": 0.131,
+    "orientation": "align"
+  },
+  "admet/herg": {
+    "n": 100,
+    "output_auroc": 0.52,
+    "output_auroc_ci": [
+      0.448,
+      0.595
+    ],
+    "ece": 0.26,
+    "aurc": 0.708,
+    "sel_acc_50": 0.22,
+    "ceiling": 0.893,
+    "gap": 0.373,
+    "memo_delta": 0.079,
+    "orientation": "align"
+  },
+  "admet/permeability": {
+    "n": 100,
+    "output_auroc": 0.567,
+    "output_auroc_ci": [
+      0.496,
+      0.648
+    ],
+    "ece": 0.156,
+    "aurc": 0.252,
+    "sel_acc_50": 0.9,
+    "ceiling": 0.893,
+    "gap": 0.326,
+    "memo_delta": 0.094,
+    "orientation": "oppose"
+  },
+  "admet/solubility": {
+    "n": 100,
+    "output_auroc": 0.668,
+    "output_auroc_ci": [
+      0.564,
+      0.756
+    ],
+    "ece": 0.126,
+    "aurc": 0.284,
+    "sel_acc_50": 0.64,
+    "ceiling": 0.786,
+    "gap": 0.118,
+    "memo_delta": 0.126,
+    "orientation": "oppose"
+  }
+}
