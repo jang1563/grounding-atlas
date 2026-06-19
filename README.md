@@ -18,7 +18,7 @@ A measurement-first research project toward a **grounded biology orchestrator**.
 
 *Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563)*
 
-Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`.
+Status: **active execution** (updated 2026-06-19; the benchmark surface is GroundBench, 23 tasks / 9 modalities / 3 models + a cheap-head baseline, see [`docs/GROUNDBENCH.md`](docs/GROUNDBENCH.md)). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`.
 
 | Component | State |
 |---|---|
@@ -36,11 +36,29 @@ Status: **active execution** (updated 2026-06-13). Thesis, failure-mode taxonomy
 | GitHub source | [`github.com/jang1563/grounding-atlas`](https://github.com/jang1563/grounding-atlas) | [`pyproject.toml`](pyproject.toml), [`codemeta.json`](codemeta.json), [`CITATION.cff`](CITATION.cff) |
 | Hugging Face dataset | [`datasets/jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) | Parquet configs with dataset-card YAML front matter |
 | Results | [`results/SYNTHESIS.md`](results/SYNTHESIS.md), [`results/README.md`](results/README.md) | sibling `.json` / `.jsonl` files under [`results/`](results/) |
-| Benchmark | [`docs/BENCHMARK_DESIGN.md`](docs/BENCHMARK_DESIGN.md), [`results/benchmark/`](results/benchmark/README.md) | [`eval/run_grounding_eval.py`](eval/run_grounding_eval.py) (`--model X`); per-model `scorecard.json` / `manifest.json` / `raw.jsonl` + `LEADERBOARD.md` |
+| GroundBench | [`docs/GROUNDBENCH.md`](docs/GROUNDBENCH.md) (run it), [`docs/GROUNDBENCH_SPEC.md`](docs/GROUNDBENCH_SPEC.md) (contract), [`results/benchmark/LEADERBOARD.md`](results/benchmark/LEADERBOARD.md) | [`eval/run_grounding_eval.py`](eval/run_grounding_eval.py) (`--model X`); per-model `scorecard.json` / `manifest.json` / `raw.jsonl` + `LEADERBOARD.md` |
 | Data provenance | [`DATA_SOURCES.md`](DATA_SOURCES.md) | per-config source/license table plus HF card metadata |
 | Safety and exclusions | [`SECURITY.md`](SECURITY.md) | explicit gitignore boundaries for secrets, raw DBs, and excluded generated scores |
 
 ---
+
+## GroundBench: run it on your model
+
+The benchmark surface of this project is **GroundBench**: 23 tasks across 9 modalities x 3 models, plus a
+reproducible cheap-head baseline, on one GPU-free output-arm harness. The leaderboard
+([`results/benchmark/LEADERBOARD.md`](results/benchmark/LEADERBOARD.md)) is organized by the a-priori
+web-exposure tag, so it reads as evidence of the law itself: `web=zero` rows sit near chance, `web=rich`
+rows ground, and the cheap-head column grounds even where the models are at chance.
+
+```bash
+pip install -e .
+export ANTHROPIC_API_KEY=...   # or OPENAI_API_KEY, or OPENAI_BASE_URL for any OpenAI-compatible server
+python eval/run_grounding_eval.py --model claude-opus-4-8     # or --dry-run to validate with no API
+```
+
+Quickstart and bring-your-own-model instructions: [`docs/GROUNDBENCH.md`](docs/GROUNDBENCH.md). Task
+schema, adding a task, and the mandatory orientation audit: [`docs/GROUNDBENCH_SPEC.md`](docs/GROUNDBENCH_SPEC.md).
+Putting your model on the leaderboard: [`SUBMITTING.md`](SUBMITTING.md).
 
 ## Why this project exists
 The grounding gap is real: a measured name-vs-content recognition gap (name ~100% vs accession ~2-28%), plus the question of whether the model surfaces what a probe reads from a representation (encoding vs expression). Closing it is a genuine path to a better science model.
@@ -121,7 +139,9 @@ Use the GitHub repository for the measurement instrument and result writeups; us
 
 ```bash
 # 1. Dependencies (research code; versions unpinned)
-pip install -r requirements.txt          # or: pip install -e .
+pip install -e .            # light: runs GroundBench (output arm + cheap-head baseline), no GPU
+pip install -e ".[full]"    # everything: regenerate signal, ceilings, activation probes, figures
+#   (requirements.txt also pins the full stack, e.g. for the activation/probe GPU jobs)
 
 # 2. Data. Large public reference DBs (AlphaMissense, ClinVar, UniProt,
 #    ProteinGym DMS; ~2.3G) are gitignored and re-fetched by the branch

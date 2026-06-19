@@ -50,32 +50,65 @@ def _b64(path):
         return base64.standard_b64encode(f.read()).decode()
 
 
+def _anthropic(model, prompt, image=None):
+    import anthropic
+    client = anthropic.Anthropic()
+    content = prompt if image is None else [
+        {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": _b64(image)}},
+        {"type": "text", "text": prompt}]
+    kw = dict(model=model, max_tokens=DECODE["max_tokens"], system=SYSTEM,
+              messages=[{"role": "user", "content": content}])
+    try:
+        m = client.messages.create(temperature=DECODE["temperature"], **kw)
+    except anthropic.BadRequestError as e:
+        if "temperature" not in str(e).lower():
+            raise
+        m = client.messages.create(**kw)   # newer models (e.g. opus-4-8) deprecate temperature
+    return "".join(b.text for b in m.content if b.type == "text")
+
+
+def _openai(model, prompt, image=None, base_url=None):
+    import openai
+    client = openai.OpenAI(base_url=base_url) if base_url else openai.OpenAI()
+    user = prompt if image is None else [
+        {"type": "text", "text": prompt},
+        {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{_b64(image)}"}}]
+    r = client.chat.completions.create(
+        model=model, max_tokens=DECODE["max_tokens"], temperature=DECODE["temperature"],
+        messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}])
+    return r.choices[0].message.content
+
+
+# Ordered (predicate, handler) registry. Handler signature: (model, prompt, image) -> str.
+# Built-ins cover Anthropic, OpenAI, and ANY OpenAI-compatible server (vLLM / Ollama / together /
+# groq / a local llama.cpp endpoint, ...) via the `oai:` prefix plus the OPENAI_BASE_URL env var,
+# e.g. --model oai:meta-llama/Llama-3.1-8B-Instruct with OPENAI_BASE_URL=http://localhost:8000/v1.
+PROVIDERS = [
+    (lambda m: m.startswith(("claude", "anthropic")), _anthropic),
+    (lambda m: m.startswith("oai:"),
+     lambda m, p, i=None: _openai(m[4:], p, i, base_url=os.environ.get("OPENAI_BASE_URL"))),
+    (lambda m: m.startswith(("gpt", "o1", "o3", "o4", "chatgpt")), _openai),
+]
+
+
+def register_provider(predicate, handler, front=True):
+    """Add a provider so you can evaluate ANY model without editing this file.
+
+    predicate(model:str)->bool selects which model ids you handle; handler(model, prompt, image)->str
+    runs inference (image is a PNG path or None). front=True gives it priority over the built-ins.
+    For a one-off, prefer evaluate(..., complete_fn=your_fn). See docs/GROUNDBENCH.md.
+    """
+    PROVIDERS.insert(0 if front else len(PROVIDERS), (predicate, handler))
+
+
 def complete(model, prompt, image=None):
-    if model.startswith(("claude", "anthropic")):
-        import anthropic
-        client = anthropic.Anthropic()
-        content = prompt if image is None else [
-            {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": _b64(image)}},
-            {"type": "text", "text": prompt}]
-        kw = dict(model=model, max_tokens=DECODE["max_tokens"], system=SYSTEM,
-                  messages=[{"role": "user", "content": content}])
-        try:
-            m = client.messages.create(temperature=DECODE["temperature"], **kw)
-        except anthropic.BadRequestError as e:
-            if "temperature" not in str(e).lower():
-                raise
-            m = client.messages.create(**kw)   # newer models (e.g. opus-4-8) deprecate temperature
-        return "".join(b.text for b in m.content if b.type == "text")
-    if model.startswith(("gpt", "o1", "o3")):
-        import openai
-        user = prompt if image is None else [
-            {"type": "text", "text": prompt},
-            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{_b64(image)}"}}]
-        r = openai.OpenAI().chat.completions.create(
-            model=model, max_tokens=DECODE["max_tokens"], temperature=DECODE["temperature"],
-            messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}])
-        return r.choices[0].message.content
-    raise SystemExit(f"unknown model provider for {model}")
+    for pred, fn in PROVIDERS:
+        if pred(model):
+            return fn(model, prompt, image)
+    raise SystemExit(
+        f"No provider for model '{model}'. Built-ins: Anthropic (claude*), OpenAI (gpt*/o1*/o3*), "
+        "and any OpenAI-compatible server ('oai:<name>' + OPENAI_BASE_URL). For a local or custom "
+        "model, register_provider(pred, handler) or call evaluate(model, complete_fn=your_fn).")
 
 
 def parse_prob(text):
@@ -92,15 +125,17 @@ def parse_prob(text):
     return 0.5
 
 
-def solve(model, items, prompt_tmpl, dry, rng):
-    """Returns (probs, raw_texts). Raw text is saved so anyone can re-score."""
+def solve(model, items, prompt_tmpl, dry, rng, complete_fn=None):
+    """Returns (probs, raw_texts). Raw text is saved so anyone can re-score. complete_fn overrides the
+    built-in provider dispatch (bring-your-own model: a callable (model, prompt, image=None) -> str)."""
+    fn = complete_fn or complete
     probs, texts = [], []
     for it in items:
         if dry:
             p = min(1.0, max(0.0, 0.30 + 0.40 * int(it["label"]) + rng.normal(0, 0.18)))
             probs.append(p); texts.append(f"{p:.3f} (dry)")
         else:
-            t = complete(model, prompt_tmpl.format(rep=it.get("rep", "")), image=it.get("image"))
+            t = fn(model, prompt_tmpl.format(rep=it.get("rep", "")), image=it.get("image"))
             texts.append(t); probs.append(parse_prob(t))
     return np.array(probs), texts
 
@@ -201,10 +236,12 @@ def _ceilings():
     return {k: (v["ceiling"] if isinstance(v, dict) else v) for k, v in json.load(open(cf)).items()}
 
 
-def evaluate(model="dry", tasks=None, n=100, seed=0, dry=False, merge=True):
+def evaluate(model="dry", tasks=None, n=100, seed=0, dry=False, merge=True, complete_fn=None):
     """Run GroundBench for one model over a list of task ids (default CORE). With merge=True the
     run's tasks are ADDED to any existing scorecard (incremental: add a task without re-running the
-    rest). Writes results/benchmark/<model>/{scorecard,manifest,raw} + LEADERBOARD.md; returns it."""
+    rest). complete_fn=(model, prompt, image=None)->str evaluates ANY model with no code edits
+    (bring-your-own; otherwise the PROVIDERS dispatch handles the model id). Writes
+    results/benchmark/<model>/{scorecard,manifest,raw} + LEADERBOARD.md; returns the scorecard."""
     rng = np.random.default_rng(seed)
     task_ids = list(CORE) if tasks in (None, "core", "all") else tasks
     ceilings = _ceilings()
@@ -218,9 +255,9 @@ def evaluate(model="dry", tasks=None, n=100, seed=0, dry=False, merge=True):
         items, scr = task_items(tid, n, rng)
         if not items:
             continue
-        prob, texts = solve(model, items, t["prompt"], dry, rng)
+        prob, texts = solve(model, items, t["prompt"], dry, rng, complete_fn)
         y = np.array([it["label"] for it in items])
-        sprob = solve(model, scr, t["prompt"], dry, rng)[0] if scr else None
+        sprob = solve(model, scr, t["prompt"], dry, rng, complete_fn)[0] if scr else None
         sy = np.array([it["label"] for it in scr]) if scr else None
         if t["orient"] == "oppose":
             y = 1 - y

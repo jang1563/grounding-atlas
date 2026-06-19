@@ -28,20 +28,26 @@ classifiers = [
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 
-# Versions intentionally unpinned (research code). Pin with a lockfile before
-# publishing a reproducible release.
+# Versions intentionally unpinned (research code). Pin with a lockfile before publishing a
+# reproducible release. The base set runs the GroundBench output arm and the cheap-head baseline
+# (no GPU); the `full` extra adds the heavy stack used to regenerate signal, ceilings, the
+# open-weight activation probes, and figures.
 dependencies = [
   "anthropic",
   "openai",
+  "numpy",
+  "scikit-learn",
+  "pillow",
+]
+
+[project.optional-dependencies]
+full = [
   "transformers",
   "torch",
   "peft",
-  "scikit-learn",
-  "numpy",
   "scipy",
   "rdkit",
   "biopython",
-  "pillow",
   "matplotlib",
   "adjustText",
 ]
