@@ -1,0 +1,218 @@
+{
+  "admet/herg": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.893,
+    "n": 1250,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/cyp3a4": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.809,
+    "n": 1178,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule inhibits the CYP3A4 enzyme. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/cyp2d6": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.825,
+    "n": 888,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule inhibits the CYP2D6 enzyme. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/ames": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "oppose",
+    "ceiling": 0.896,
+    "n": 206,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is mutagenic in the Ames test. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/solubility": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "oppose",
+    "ceiling": 0.786,
+    "n": 368,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is highly soluble in water. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/permeability": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "oppose",
+    "ceiling": 0.893,
+    "n": 350,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is highly permeable across a cell membrane. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "single_cell/cd8t_nk:name": {
+    "modality": "single-cell expression",
+    "kind": "twocol",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.992,
+    "n": 308,
+    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
+  },
+  "single_cell/cd8t_nk:anon": {
+    "modality": "single-cell expression",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.992,
+    "n": 308,
+    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
+  },
+  "single_cell/mono:name": {
+    "modality": "single-cell expression",
+    "kind": "twocol",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.989,
+    "n": 300,
+    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a classical CD14+ monocyte or a non-classical CD16+ monocyte? Reply with ONLY a number between 0 and 1 = the probability that it is a classical CD14+ monocyte."
+  },
+  "single_cell/mono:anon": {
+    "modality": "single-cell expression",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.989,
+    "n": 300,
+    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a classical CD14+ monocyte or a non-classical CD16+ monocyte? Reply with ONLY a number between 0 and 1 = the probability that it is a classical CD14+ monocyte."
+  },
+  "single_cell/cd8t_nk:obscure": {
+    "modality": "single-cell expression",
+    "kind": "twocol",
+    "web": "mixed",
+    "orientation": "align",
+    "ceiling": 0.979,
+    "n": 308,
+    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
+  },
+  "variant/text": {
+    "modality": "protein variant",
+    "kind": "twocol",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.962,
+    "n": 2400,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this human genetic variant is pathogenic. Judge only from the representation below.\nvariant: {rep}\nProbability:"
+  },
+  "variant/seq": {
+    "modality": "protein variant",
+    "kind": "pairs",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.962,
+    "n": 2000,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this human genetic variant is pathogenic. Judge only from the representation below.\nvariant: {rep}\nProbability:"
+  },
+  "methyl/age": {
+    "modality": "DNA methylation",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.701,
+    "n": 704,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this individual is over 40 years old, from their blood DNA methylation profile (CpG site: beta-value pairs). Judge only from the values below.\nmethylation: {rep}\nProbability:"
+  },
+  "msa/conservation": {
+    "modality": "protein MSA",
+    "kind": "twocol",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.999,
+    "n": 658,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this column of a protein multiple-sequence alignment is evolutionarily conserved. Judge only from the residues below.\ncolumn: {rep}\nProbability:"
+  },
+  "materials/metal:formula": {
+    "modality": "materials composition",
+    "kind": "twocol",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.927,
+    "n": 4902,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this chemical compound is a metal. Judge only from the composition below.\ncomposition: {rep}\nProbability:"
+  },
+  "materials/metal:anon": {
+    "modality": "materials composition",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.927,
+    "n": 4902,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this chemical compound is a metal. Judge only from the composition below.\ncomposition: {rep}\nProbability:"
+  },
+  "protein/esm2_emb": {
+    "modality": "SFM embedding",
+    "kind": "emb",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.633,
+    "n": 320,
+    "prompt": "Below is a 640-dimensional protein embedding from the ESM-2 protein language model (a scientific foundation model). Estimate the probability (a single number between 0 and 1) that this protein is thermostable (melting temperature above the dataset median). Judge only from the embedding.\nembedding: {rep}\nProbability:"
+  },
+  "herg/graph": {
+    "modality": "molecule",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.892,
+    "n": 600,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\nmolecular graph: {rep}\nProbability:"
+  },
+  "herg/nmr": {
+    "modality": "molecule",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.892,
+    "n": 600,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\ncarbon-13 NMR chemical shifts: {rep}\nProbability:"
+  },
+  "herg/struct3d": {
+    "modality": "molecule",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.868,
+    "n": 400,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\n3D atomic coordinates (element x y z): {rep}\nProbability:"
+  },
+  "rna/coding": {
+    "modality": "RNA sequence",
+    "kind": "twocol",
+    "web": "mixed",
+    "orientation": "align",
+    "ceiling": 0.856,
+    "n": 1500,
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this nucleotide sequence is protein-coding (vs non-coding). Judge only from the sequence below.\nsequence: {rep}\nProbability:"
+  },
+  "histo/pcam_tumor": {
+    "modality": "histopathology image",
+    "kind": "image",
+    "web": "rich",
+    "orientation": "align",
+    "ceiling": 0.9,
+    "n": 400,
+    "prompt": "This is an H&E-stained histopathology image patch. Estimate the probability (a single number between 0 and 1) that it contains tumor tissue (vs normal).\nProbability:"
+  },
+  "rna/nt_emb": {
+    "modality": "SFM embedding",
+    "kind": "emb",
+    "web": "zero",
+    "orientation": "align",
+    "ceiling": 0.918,
+    "n": 600,
+    "prompt": "Below is a 512-dimensional nucleotide-sequence embedding from the Nucleotide Transformer (a genomic foundation model). Estimate the probability (a single number between 0 and 1) that the underlying sequence is protein-coding (vs non-coding). Judge only from the embedding.\nembedding: {rep}\nProbability:"
+  }
+}

@@ -103,6 +103,15 @@ scope: pilot `n` per task; the specialist ceiling is a cheap or cited model; the
 and, for the SFM legs, a separate transformers-4.x environment (see `eval/sfm_embed_nt.py`). The
 committed embeddings let those tasks run without that environment.
 
+## Dataset export (Hugging Face / Croissant)
+
+`pip install -e ".[dataset]"` then `python eval/export_dataset.py` writes `dataset/groundbench.parquet`
+(every task's balanced items, one self-describing table), `dataset/tasks.json`, and a Hugging Face
+dataset card; `python eval/make_croissant.py` emits `dataset/croissant.json` (machine-readable Croissant
+1.0 metadata, validated with `mlcroissant`). Upload `dataset/` to the companion Hugging Face dataset.
+
+## Submitting
+
 To put your model on the public leaderboard, see [`../SUBMITTING.md`](../SUBMITTING.md): run the CORE
 set, validate with `python eval/validate_submission.py results/benchmark/<model>`, and open a PR adding
 the `<model>/` directory. To add a new task, follow [`GROUNDBENCH_SPEC.md`](GROUNDBENCH_SPEC.md),

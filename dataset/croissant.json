@@ -1,0 +1,217 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "cr": "http://mlcommons.org/croissant/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "dct": "http://purl.org/dc/terms/",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "field": "cr:field",
+    "fileObject": "cr:fileObject",
+    "fileProperty": "cr:fileProperty",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sc": "https://schema.org/",
+    "samplingRate": "cr:samplingRate",
+    "separator": "cr:separator",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform"
+  },
+  "@type": "sc:Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.0",
+  "name": "GroundBench",
+  "description": "GroundBench: 24 tasks across 9 modalities measuring whether a language model can verbalize a property from a specialist representation it is shown. Each row is a (representation, verifiable binary property) item with an a-priori web-exposure tag (rich/zero/mixed). The web tag predicts the snap-verbalization floor; its mechanism is a capability-dependent mix of token-familiarity and mapping-documentation. Data git commit: 3d395d1.",
+  "license": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "url": "https://github.com/jang1563/grounding-atlas",
+  "version": "1.0.0",
+  "datePublished": "2026-06-19",
+  "citeAs": "JangKeun Kim. grounding-atlas / GroundBench: a measurement-first map of biological content-grounding in language models. 2026.",
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "groundbench.parquet",
+      "name": "groundbench.parquet",
+      "contentUrl": "groundbench.parquet",
+      "encodingFormat": "application/x-parquet",
+      "sha256": "bb6f33d4cefc3517abd197a42dd13df378ac0ffbe185a2d27e88d9e5aca2784e"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "items",
+      "name": "items",
+      "description": "One row per (representation, property) item.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "items/task",
+          "name": "task",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "task"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/modality",
+          "name": "modality",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "modality"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/kind",
+          "name": "kind",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "kind"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/web",
+          "name": "web",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "web"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/orientation",
+          "name": "orientation",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "orientation"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/ceiling",
+          "name": "ceiling",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "ceiling"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/rep_type",
+          "name": "rep_type",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "rep_type"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/representation",
+          "name": "representation",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "representation"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/label",
+          "name": "label",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/id",
+          "name": "id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "id"
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

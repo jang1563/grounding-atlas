@@ -55,6 +55,12 @@ full = [
 inspect = [
   "inspect-ai",
 ]
+# Export the dataset + Croissant (eval/export_dataset.py, eval/make_croissant.py)
+dataset = [
+  "pandas",
+  "pyarrow",
+  "mlcroissant",
+]
 
 [project.urls]
 Repository = "https://github.com/jang1563/grounding-atlas"
