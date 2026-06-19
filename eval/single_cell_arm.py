@@ -43,15 +43,25 @@ def main():
     items = load(args.n, rng)
     y = np.array([int(r["label"]) for r in items])
     out = {"model": args.model, "n": len(y)}
+    raw = []
     for cond in args.conditions.split(","):
         col = "cell_sentence" if cond == "name" else "anon"
-        prob = np.array([parse_prob(complete(args.model, PROMPT.format(s=r[col]))) for r in items])
+        probs = []
+        for i, r in enumerate(items):
+            p = parse_prob(complete(args.model, PROMPT.format(s=r[col])))
+            probs.append(p)
+            raw.append({"cell": i, "condition": cond, "label": int(r["label"]), "prob": round(float(p), 4)})
+        prob = np.array(probs)
         auroc = roc_auc_score(y, prob) if len(set(y.tolist())) > 1 else float("nan")
         out[cond] = round(float(auroc), 3)
         print(f"{args.model:20s} {cond:5s} AUROC={auroc:.3f}  n={len(y)}", flush=True)
     d = os.path.join(OUT, "single_cell")
     os.makedirs(d, exist_ok=True)
-    json.dump(out, open(os.path.join(d, args.model.replace("/", "_") + ".json"), "w"), indent=2)
+    tag = args.model.replace("/", "_")
+    json.dump(out, open(os.path.join(d, tag + ".json"), "w"), indent=2)
+    with open(os.path.join(d, tag + "_raw.jsonl"), "w") as f:
+        for r in raw:
+            f.write(json.dumps(r) + "\n")
     print(out, flush=True)
 
 
