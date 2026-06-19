@@ -20,8 +20,9 @@ from sklearn.preprocessing import StandardScaler
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+from benchmark_tasks import CLAUSES  # noqa: E402
 from compute_ceilings import SIGNAL, matched, morgan  # noqa: E402
-from run_grounding_eval import CLAUSES, OUT  # noqa: E402
+from run_grounding_eval import OUT  # noqa: E402
 
 MODELS = ["claude-opus-4-8", "claude-sonnet-4-6", "gpt-4o"]
 RUNGS = ["ames", "cyp2d6", "cyp3a4", "herg", "permeability", "solubility"]

@@ -15,8 +15,9 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
+from benchmark_tasks import CLAUSES  # noqa: E402
 from compute_ceilings import SIGNAL, matched  # noqa: E402
-from run_grounding_eval import CLAUSES, OUT, complete, parse_prob  # noqa: E402
+from run_grounding_eval import OUT, complete, parse_prob  # noqa: E402
 
 RUNGS = ["ames", "cyp2d6", "cyp3a4", "herg", "permeability", "solubility"]
 

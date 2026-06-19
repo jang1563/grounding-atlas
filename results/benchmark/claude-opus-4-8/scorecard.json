@@ -12,7 +12,8 @@
     "ceiling": 0.896,
     "gap": 0.221,
     "memo_delta": 0.169,
-    "orientation": "oppose"
+    "orientation": "oppose",
+    "web_exposure": "rich"
   },
   "admet/cyp2d6": {
     "n": 100,
@@ -27,7 +28,8 @@
     "ceiling": 0.825,
     "gap": 0.081,
     "memo_delta": 0.353,
-    "orientation": "align"
+    "orientation": "align",
+    "web_exposure": "rich"
   },
   "admet/cyp3a4": {
     "n": 100,
@@ -42,7 +44,8 @@
     "ceiling": 0.809,
     "gap": 0.176,
     "memo_delta": 0.123,
-    "orientation": "align"
+    "orientation": "align",
+    "web_exposure": "rich"
   },
   "admet/herg": {
     "n": 100,
@@ -57,7 +60,8 @@
     "ceiling": 0.893,
     "gap": 0.303,
     "memo_delta": 0.159,
-    "orientation": "align"
+    "orientation": "align",
+    "web_exposure": "rich"
   },
   "admet/permeability": {
     "n": 100,
@@ -72,7 +76,8 @@
     "ceiling": 0.893,
     "gap": 0.265,
     "memo_delta": -0.032,
-    "orientation": "oppose"
+    "orientation": "oppose",
+    "web_exposure": "rich"
   },
   "admet/solubility": {
     "n": 100,
@@ -87,6 +92,71 @@
     "ceiling": 0.786,
     "gap": 0.118,
     "memo_delta": 0.136,
-    "orientation": "oppose"
+    "orientation": "oppose",
+    "web_exposure": "rich"
+  },
+  "single_cell/cd8t_nk:name": {
+    "n": 200,
+    "output_auroc": 0.978,
+    "output_auroc_ci": [
+      0.962,
+      0.992
+    ],
+    "ece": 0.084,
+    "aurc": 0.086,
+    "sel_acc_50": 0.94,
+    "ceiling": 0.992,
+    "gap": 0.014,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "rich"
+  },
+  "single_cell/cd8t_nk:anon": {
+    "n": 200,
+    "output_auroc": 0.495,
+    "output_auroc_ci": [
+      0.428,
+      0.561
+    ],
+    "ece": 0.041,
+    "aurc": 0.476,
+    "sel_acc_50": 0.52,
+    "ceiling": 0.992,
+    "gap": 0.497,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
+  },
+  "single_cell/mono:name": {
+    "n": 200,
+    "output_auroc": 0.983,
+    "output_auroc_ci": [
+      0.961,
+      0.997
+    ],
+    "ece": 0.097,
+    "aurc": 0.031,
+    "sel_acc_50": 0.98,
+    "ceiling": 0.989,
+    "gap": 0.006,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "rich"
+  },
+  "single_cell/mono:anon": {
+    "n": 200,
+    "output_auroc": 0.5,
+    "output_auroc_ci": [
+      0.5,
+      0.5
+    ],
+    "ece": 0.0,
+    "aurc": 0.187,
+    "sel_acc_50": 0.98,
+    "ceiling": 0.989,
+    "gap": 0.489,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
   }
 }
