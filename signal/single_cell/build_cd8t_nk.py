@@ -27,6 +27,13 @@ from sklearn.preprocessing import StandardScaler
 # surface. This is a fixed a-priori gene filter, not cross-cell peeking.
 HOUSEKEEPING = re.compile(r"^(RP[LS]|MRP[LS]|MT-|MALAT1)")
 
+# Web-famous CD8-T / NK markers, for the token-familiarity dissociation (--drop-famous): keep real,
+# familiar gene SYMBOLS but remove the textbook markers, so the cell-sentence has familiar tokens with a
+# web-obscure marker-to-type mapping. A head still reads CD8-T vs NK from the remaining genes at ~0.98,
+# so the signal is intact; the question is whether the LLM grounds without the documented markers.
+CD8T_NK_FAMOUS = ("CD8A CD8B GZMB GZMA GZMH GZMK NKG7 GNLY KLRD1 KLRF1 KLRB1 KLRC1 KLRC2 NCAM1 FCGR3A "
+                  "PRF1 CCL5 NCR1 CD3D CD3E CD3G CD247 IL7R FGFBP2 SPON2 CST7 CTSW XCL1 XCL2 TYROBP").split()
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 TOPK = 50
 
@@ -36,13 +43,16 @@ def main():
     ap.add_argument("--pos", default="CD8 T cells")
     ap.add_argument("--neg", default="NK cells")
     ap.add_argument("--out", default=os.path.join(HERE, "cd8t_nk.csv"))
+    ap.add_argument("--drop-famous", action="store_true",
+                    help="drop web-famous CD8-T/NK markers (token-familiarity dissociation)")
     args = ap.parse_args()
     classes = {args.pos: 1, args.neg: 0}
+    drop = set(CD8T_NK_FAMOUS) if args.drop_famous else set()
     a = sc.datasets.pbmc3k_processed()
     raw = a.raw.to_adata() if a.raw is not None else a   # log-normalized abundance, full genes
     hvg = set(map(str, a.var_names))                     # the 1838 highly-variable genes
     genes_all = np.array([str(g) for g in raw.var_names], dtype=object)
-    mask = np.array([(g in hvg) and HOUSEKEEPING.match(g) is None for g in genes_all])
+    mask = np.array([(g in hvg) and HOUSEKEEPING.match(g) is None and g not in drop for g in genes_all])
     genes = genes_all[mask].astype(str)
     keep = a.obs["louvain"].isin(classes).values
     X = raw.X[keep]

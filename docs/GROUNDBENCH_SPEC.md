@@ -96,9 +96,14 @@ one of which is web-exposure proper:
 - The **histopath row** is web-rich yet fails: a second gate (medical refusal/hedging, or a
   vision-to-verbalization expression gap) that capability does not close.
 
-Untested: token-familiarity vs mapping-documentation (whether familiar symbols ground even when the
-mapping is undocumented). So cite web-exposure as established on the symbolic controlled pairs, not as a
-blanket explanation of the whole web=zero column.
+Measured: token-familiarity vs mapping-documentation
+([`../results/benchmark/token_familiarity.md`](../results/benchmark/token_familiarity.md)). Keeping real
+gene symbols but dropping the web-famous markers barely dents the frontier (opus 0.98 -> 0.88) while it
+collapses a weaker model (gpt-4o 0.83 -> 0.58): the name/anon gap decomposes into token-familiarity plus
+reasoning (dominant for the frontier, ~80% of the gap) and mapping-documentation (a recall crutch for
+weaker models, ~67% for gpt-4o). So even the cleanest controlled pair conflates two factors. Cite the
+name/anon gap as a real, large effect, but its mechanism as a capability-dependent mix of
+token-familiarity/reasoning and documentation, not a single web-exposure axis.
 
 ## Versioning, scope, naming
 

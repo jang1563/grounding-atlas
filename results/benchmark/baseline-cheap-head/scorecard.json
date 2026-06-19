@@ -119,12 +119,24 @@
     "orientation": "align",
     "method": "cheap-head: char3-5 hashing / value-vector / color"
   },
+  "single_cell/cd8t_nk:obscure": {
+    "n": 308,
+    "output_auroc": 0.968,
+    "output_auroc_ci": [
+      0.949,
+      0.985
+    ],
+    "ceiling": null,
+    "web_exposure": "mixed",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
   "variant/text": {
     "n": 2400,
-    "output_auroc": 0.941,
+    "output_auroc": 0.942,
     "output_auroc_ci": [
       0.934,
-      0.949
+      0.95
     ],
     "ceiling": null,
     "web_exposure": "rich",
@@ -133,10 +145,10 @@
   },
   "variant/seq": {
     "n": 2000,
-    "output_auroc": 0.754,
+    "output_auroc": 0.764,
     "output_auroc_ci": [
-      0.734,
-      0.772
+      0.743,
+      0.784
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -145,10 +157,10 @@
   },
   "methyl/age": {
     "n": 704,
-    "output_auroc": 0.823,
+    "output_auroc": 0.805,
     "output_auroc_ci": [
-      0.791,
-      0.854
+      0.77,
+      0.837
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -157,10 +169,10 @@
   },
   "msa/conservation": {
     "n": 658,
-    "output_auroc": 0.994,
+    "output_auroc": 0.993,
     "output_auroc_ci": [
       0.989,
-      0.997
+      0.996
     ],
     "ceiling": null,
     "web_exposure": "rich",
@@ -171,8 +183,8 @@
     "n": 4902,
     "output_auroc": 0.927,
     "output_auroc_ci": [
-      0.92,
-      0.933
+      0.919,
+      0.934
     ],
     "ceiling": null,
     "web_exposure": "rich",
@@ -184,7 +196,7 @@
     "output_auroc": 0.9,
     "output_auroc_ci": [
       0.892,
-      0.909
+      0.908
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -193,10 +205,10 @@
   },
   "protein/esm2_emb": {
     "n": 320,
-    "output_auroc": 0.65,
+    "output_auroc": 0.671,
     "output_auroc_ci": [
-      0.592,
-      0.714
+      0.609,
+      0.73
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -205,10 +217,10 @@
   },
   "herg/graph": {
     "n": 600,
-    "output_auroc": 0.637,
+    "output_auroc": 0.619,
     "output_auroc_ci": [
-      0.594,
-      0.682
+      0.57,
+      0.663
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -217,10 +229,10 @@
   },
   "herg/nmr": {
     "n": 600,
-    "output_auroc": 0.734,
+    "output_auroc": 0.735,
     "output_auroc_ci": [
-      0.695,
-      0.771
+      0.697,
+      0.77
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -229,10 +241,10 @@
   },
   "herg/struct3d": {
     "n": 400,
-    "output_auroc": 0.509,
+    "output_auroc": 0.517,
     "output_auroc_ci": [
-      0.452,
-      0.566
+      0.457,
+      0.575
     ],
     "ceiling": null,
     "web_exposure": "zero",
@@ -241,10 +253,10 @@
   },
   "rna/coding": {
     "n": 1500,
-    "output_auroc": 0.927,
+    "output_auroc": 0.926,
     "output_auroc_ci": [
-      0.916,
-      0.938
+      0.912,
+      0.94
     ],
     "ceiling": null,
     "web_exposure": "mixed",
@@ -253,10 +265,10 @@
   },
   "histo/pcam_tumor": {
     "n": 400,
-    "output_auroc": 0.73,
+    "output_auroc": 0.727,
     "output_auroc_ci": [
-      0.682,
-      0.773
+      0.679,
+      0.774
     ],
     "ceiling": null,
     "web_exposure": "rich",
@@ -265,10 +277,10 @@
   },
   "rna/nt_emb": {
     "n": 600,
-    "output_auroc": 0.931,
+    "output_auroc": 0.926,
     "output_auroc_ci": [
-      0.912,
-      0.949
+      0.905,
+      0.945
     ],
     "ceiling": null,
     "web_exposure": "zero",

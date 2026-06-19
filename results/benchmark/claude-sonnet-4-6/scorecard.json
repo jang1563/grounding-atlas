@@ -366,5 +366,21 @@
     "memo_delta": null,
     "orientation": "align",
     "web_exposure": "zero"
+  },
+  "single_cell/cd8t_nk:obscure": {
+    "n": 200,
+    "output_auroc": 0.684,
+    "output_auroc_ci": [
+      0.616,
+      0.75
+    ],
+    "ece": 0.156,
+    "aurc": 0.262,
+    "sel_acc_50": 0.86,
+    "ceiling": 0.979,
+    "gap": 0.295,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "mixed"
   }
 }

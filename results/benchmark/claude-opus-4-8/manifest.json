@@ -6,7 +6,7 @@
     "max_tokens": 16
   },
   "seed": 0,
-  "n_per_task": 100,
+  "n_per_task": 200,
   "dry_run": false,
   "tasks": [
     "admet/ames",
@@ -31,11 +31,12 @@
     "herg/struct3d",
     "rna/coding",
     "histo/pcam_tumor",
-    "rna/nt_emb"
+    "rna/nt_emb",
+    "single_cell/cd8t_nk:obscure"
   ],
   "last_run": [
-    "rna/nt_emb"
+    "single_cell/cd8t_nk:obscure"
   ],
-  "data_commit": "50373b7",
-  "date_utc": "2026-06-19T16:56Z"
+  "data_commit": "ad936bc",
+  "date_utc": "2026-06-19T21:01Z"
 }

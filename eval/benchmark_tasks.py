@@ -102,6 +102,13 @@ TASKS = {
     "single_cell/mono:anon":    dict(kind="twocol", data="single_cell/mono_cd14_fcgr3a.csv", col="anon",
                                      prompt=_cell("classical CD14+ monocyte", "non-classical CD16+ monocyte"),
                                      orient="align", web="zero", ceiling=0.989),
+    # Token-familiarity dissociation: the SAME CD8-T/NK cells as real, familiar gene SYMBOLS but with the
+    # web-famous markers (GZMB/NKG7/CD8A/...) dropped. Head still reads it (0.979), tokens stay familiar,
+    # but the marker->type mapping is web-obscure. name(0.83-0.98) vs THIS vs anon(0.50): if it grounds,
+    # familiarity suffices; if it falls toward chance, the model needs the DOCUMENTED markers. web=mixed.
+    "single_cell/cd8t_nk:obscure": dict(kind="twocol", data="single_cell/cd8t_nk_obscure.csv", col="cell_sentence",
+                                        prompt=_cell("CD8+ T cell", "NK cell"), orient="align",
+                                        web="mixed", ceiling=0.979),
     # Variant effect: the SAME variants as web-rich HGVS text vs a web-poor protein sequence
     # (within-entity web-exposure pair). label 1 = pathogenic (align; leakage-audited, 0/2400).
     "variant/text":       dict(kind="twocol", data="clinvar/variant_text.csv", col="text",
