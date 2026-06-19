@@ -7,6 +7,8 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 ## Read first (framing)
 | File | What |
 |---|---|
+| [`MANUSCRIPT.md`](MANUSCRIPT.md) | **the unified working manuscript**: the web-exposure law, the capability x web-exposure interaction, the decision map (route don't train), and calibrated permissioning, bound into one draft |
+| [`capability_web_exposure.md`](capability_web_exposure.md) | the single-cell study behind the interaction + permissioning figures (engine x fuel; the a-priori deferral lever) |
 | [`field_message.md`](field_message.md) | what the placement results say to agentic AI, AI scientists, and AI for science |
 | [`FAILURE_MODES.md`](FAILURE_MODES.md) | the grounding failure-mode taxonomy (diagnosis) |
 | [`DATA_WAR_THREAD.md`](DATA_WAR_THREAD.md) | the AlphaGenome-era data war and where grounding-atlas sits; synthesis of two rung explorations (both honest negatives) |
