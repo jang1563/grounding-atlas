@@ -1,0 +1,266 @@
+{
+  "admet/herg": {
+    "n": 1250,
+    "output_auroc": 0.879,
+    "output_auroc_ci": [
+      0.86,
+      0.896
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "admet/cyp3a4": {
+    "n": 1178,
+    "output_auroc": 0.767,
+    "output_auroc_ci": [
+      0.74,
+      0.794
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "admet/cyp2d6": {
+    "n": 888,
+    "output_auroc": 0.775,
+    "output_auroc_ci": [
+      0.746,
+      0.805
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "admet/ames": {
+    "n": 206,
+    "output_auroc": 0.848,
+    "output_auroc_ci": [
+      0.792,
+      0.903
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "oppose",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "admet/solubility": {
+    "n": 368,
+    "output_auroc": 0.689,
+    "output_auroc_ci": [
+      0.63,
+      0.746
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "oppose",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "admet/permeability": {
+    "n": 350,
+    "output_auroc": 0.795,
+    "output_auroc_ci": [
+      0.745,
+      0.841
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "oppose",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "single_cell/cd8t_nk:name": {
+    "n": 308,
+    "output_auroc": 0.988,
+    "output_auroc_ci": [
+      0.978,
+      0.996
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "single_cell/cd8t_nk:anon": {
+    "n": 308,
+    "output_auroc": 0.942,
+    "output_auroc_ci": [
+      0.916,
+      0.962
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "single_cell/mono:name": {
+    "n": 300,
+    "output_auroc": 0.986,
+    "output_auroc_ci": [
+      0.975,
+      0.995
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "single_cell/mono:anon": {
+    "n": 300,
+    "output_auroc": 0.944,
+    "output_auroc_ci": [
+      0.919,
+      0.967
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "variant/text": {
+    "n": 2400,
+    "output_auroc": 0.941,
+    "output_auroc_ci": [
+      0.934,
+      0.949
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "variant/seq": {
+    "n": 2000,
+    "output_auroc": 0.754,
+    "output_auroc_ci": [
+      0.734,
+      0.772
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "methyl/age": {
+    "n": 704,
+    "output_auroc": 0.823,
+    "output_auroc_ci": [
+      0.791,
+      0.854
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "msa/conservation": {
+    "n": 658,
+    "output_auroc": 0.994,
+    "output_auroc_ci": [
+      0.989,
+      0.997
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "materials/metal:formula": {
+    "n": 4902,
+    "output_auroc": 0.927,
+    "output_auroc_ci": [
+      0.92,
+      0.933
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "materials/metal:anon": {
+    "n": 4902,
+    "output_auroc": 0.9,
+    "output_auroc_ci": [
+      0.892,
+      0.909
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "protein/esm2_emb": {
+    "n": 320,
+    "output_auroc": 0.65,
+    "output_auroc_ci": [
+      0.592,
+      0.714
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "herg/graph": {
+    "n": 600,
+    "output_auroc": 0.637,
+    "output_auroc_ci": [
+      0.594,
+      0.682
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "herg/nmr": {
+    "n": 600,
+    "output_auroc": 0.734,
+    "output_auroc_ci": [
+      0.695,
+      0.771
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "herg/struct3d": {
+    "n": 400,
+    "output_auroc": 0.509,
+    "output_auroc_ci": [
+      0.452,
+      0.566
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "rna/coding": {
+    "n": 1500,
+    "output_auroc": 0.927,
+    "output_auroc_ci": [
+      0.916,
+      0.938
+    ],
+    "ceiling": null,
+    "web_exposure": "mixed",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "histo/pcam_tumor": {
+    "n": 400,
+    "output_auroc": 0.73,
+    "output_auroc_ci": [
+      0.682,
+      0.773
+    ],
+    "ceiling": null,
+    "web_exposure": "rich",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
+  }
+}
