@@ -158,5 +158,101 @@
     "memo_delta": null,
     "orientation": "align",
     "web_exposure": "zero"
+  },
+  "variant/text": {
+    "n": 100,
+    "output_auroc": 0.958,
+    "output_auroc_ci": [
+      0.921,
+      0.985
+    ],
+    "ece": 0.144,
+    "aurc": 0.034,
+    "sel_acc_50": 1.0,
+    "ceiling": 0.962,
+    "gap": 0.004,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "rich"
+  },
+  "variant/seq": {
+    "n": 100,
+    "output_auroc": 0.547,
+    "output_auroc_ci": [
+      0.459,
+      0.622
+    ],
+    "ece": 0.053,
+    "aurc": 0.319,
+    "sel_acc_50": 0.8,
+    "ceiling": 0.962,
+    "gap": 0.415,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
+  },
+  "methyl/age": {
+    "n": 100,
+    "output_auroc": 0.542,
+    "output_auroc_ci": [
+      0.442,
+      0.639
+    ],
+    "ece": 0.04,
+    "aurc": 0.599,
+    "sel_acc_50": 0.3,
+    "ceiling": 0.701,
+    "gap": 0.159,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
+  },
+  "msa/conservation": {
+    "n": 100,
+    "output_auroc": 0.962,
+    "output_auroc_ci": [
+      0.924,
+      0.991
+    ],
+    "ece": 0.152,
+    "aurc": 0.043,
+    "sel_acc_50": 0.98,
+    "ceiling": 0.999,
+    "gap": 0.037,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "rich"
+  },
+  "materials/metal:formula": {
+    "n": 100,
+    "output_auroc": 0.731,
+    "output_auroc_ci": [
+      0.613,
+      0.833
+    ],
+    "ece": 0.126,
+    "aurc": 0.282,
+    "sel_acc_50": 0.74,
+    "ceiling": 0.927,
+    "gap": 0.196,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "rich"
+  },
+  "materials/metal:anon": {
+    "n": 100,
+    "output_auroc": 0.524,
+    "output_auroc_ci": [
+      0.422,
+      0.62
+    ],
+    "ece": 0.123,
+    "aurc": 0.481,
+    "sel_acc_50": 0.58,
+    "ceiling": 0.927,
+    "gap": 0.403,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
   }
 }

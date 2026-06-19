@@ -6,16 +6,34 @@
     "max_tokens": 16
   },
   "seed": 0,
-  "n_per_rung": 100,
+  "n_per_task": 100,
   "dry_run": false,
-  "data_commit": "89b3f6c",
-  "date_utc": "2026-06-18T21:59Z",
-  "rungs": [
+  "tasks": [
     "admet/ames",
     "admet/cyp2d6",
     "admet/cyp3a4",
     "admet/herg",
     "admet/permeability",
-    "admet/solubility"
-  ]
+    "admet/solubility",
+    "single_cell/cd8t_nk:name",
+    "single_cell/cd8t_nk:anon",
+    "single_cell/mono:name",
+    "single_cell/mono:anon",
+    "variant/text",
+    "variant/seq",
+    "methyl/age",
+    "msa/conservation",
+    "materials/metal:formula",
+    "materials/metal:anon"
+  ],
+  "last_run": [
+    "variant/text",
+    "variant/seq",
+    "methyl/age",
+    "msa/conservation",
+    "materials/metal:formula",
+    "materials/metal:anon"
+  ],
+  "data_commit": "22c90e0",
+  "date_utc": "2026-06-19T15:04Z"
 }

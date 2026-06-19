@@ -32,6 +32,18 @@ def _cell(pos, neg):
             f"0 and 1 = the probability that it is a {pos}.")
 
 
+_VARIANT = ("Estimate the probability (a single number between 0 and 1) that this human genetic "
+            "variant is pathogenic. Judge only from the representation below.\nvariant: {rep}\nProbability:")
+_METHYL = ("Estimate the probability (a single number between 0 and 1) that this individual is over "
+           "40 years old, from their blood DNA methylation profile (CpG site: beta-value pairs). "
+           "Judge only from the values below.\nmethylation: {rep}\nProbability:")
+_MSA = ("Estimate the probability (a single number between 0 and 1) that this column of a protein "
+        "multiple-sequence alignment is evolutionarily conserved. Judge only from the residues "
+        "below.\ncolumn: {rep}\nProbability:")
+_METAL = ("Estimate the probability (a single number between 0 and 1) that this chemical compound is "
+          "a metal. Judge only from the composition below.\ncomposition: {rep}\nProbability:")
+
+
 TASKS = {
     # ADMET: SMILES -> empirical property (pairs.jsonl, matched/scrambled). web-rich (drug/SMILES
     # tokens are web-documented). orientation per the structural-alert audit (ames = oppose).
@@ -67,6 +79,24 @@ TASKS = {
     "single_cell/mono:anon":    dict(kind="twocol", data="single_cell/mono_cd14_fcgr3a.csv", col="anon",
                                      prompt=_cell("classical CD14+ monocyte", "non-classical CD16+ monocyte"),
                                      orient="align", web="zero", ceiling=0.989),
+    # Variant effect: the SAME variants as web-rich HGVS text vs a web-poor protein sequence
+    # (within-entity web-exposure pair). label 1 = pathogenic (align; leakage-audited, 0/2400).
+    "variant/text":       dict(kind="twocol", data="clinvar/variant_text.csv", col="text",
+                               prompt=_VARIANT, orient="align", web="rich", ceiling=0.962),
+    "variant/seq":        dict(kind="pairs", data="variant_seq/pairs.jsonl",
+                               prompt=_VARIANT, orient="align", web="zero", ceiling=0.962),
+    # Methylation beta vector -> age (web-zero numeric) and its web-rich controlled twin, MSA
+    # column -> conserved. Same "encoded-to-ceiling" shape, opposite web-documentation.
+    "methyl/age":         dict(kind="twocol", data="methyl/methyl_age.csv", col="beta_text",
+                               prompt=_METHYL, orient="align", web="zero", ceiling=0.701),
+    "msa/conservation":   dict(kind="twocol", data="msa/msa_conservation.csv", col="column",
+                               prompt=_MSA, orient="align", web="rich", ceiling=0.999),
+    # Materials (generality beyond biology): metal-vs-not from a formula, web-rich element symbols
+    # vs anonymized elements (a third name/anon controlled pair). label 1 = metal.
+    "materials/metal:formula": dict(kind="twocol", data="materials/metal.csv", col="formula",
+                                    prompt=_METAL, orient="align", web="rich", ceiling=0.927),
+    "materials/metal:anon":    dict(kind="twocol", data="materials/metal.csv", col="anon",
+                                    prompt=_METAL, orient="align", web="zero", ceiling=0.927),
 }
 
 # Default benchmark set (the empirical output arm). Computable / reasoning-mode tasks are excluded.

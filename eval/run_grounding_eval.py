@@ -182,9 +182,10 @@ def _ceilings():
     return {k: (v["ceiling"] if isinstance(v, dict) else v) for k, v in json.load(open(cf)).items()}
 
 
-def evaluate(model="dry", tasks=None, n=100, seed=0, dry=False):
-    """Run GroundBench for one model over a list of task ids (default CORE). Writes
-    results/benchmark/<model>/{scorecard,manifest,raw} + LEADERBOARD.md; returns the scorecard."""
+def evaluate(model="dry", tasks=None, n=100, seed=0, dry=False, merge=True):
+    """Run GroundBench for one model over a list of task ids (default CORE). With merge=True the
+    run's tasks are ADDED to any existing scorecard (incremental: add a task without re-running the
+    rest). Writes results/benchmark/<model>/{scorecard,manifest,raw} + LEADERBOARD.md; returns it."""
     rng = np.random.default_rng(seed)
     task_ids = list(CORE) if tasks in (None, "core", "all") else tasks
     ceilings = _ceilings()
@@ -215,18 +216,26 @@ def evaluate(model="dry", tasks=None, n=100, seed=0, dry=False):
         print(f"  {tid:28s} web={t['web']:4s} AUROC={rec['output_auroc']} {rec['output_auroc_ci']} "
               f"ECE={rec['ece']} memo_delta={rec['memo_delta']}", flush=True)
 
+    scp, rawp = os.path.join(model_dir, "scorecard.json"), os.path.join(model_dir, "raw.jsonl")
+    full = scorecard
+    if merge and os.path.exists(scp):
+        full = json.load(open(scp))
+        full.update(scorecard)                 # this run's tasks override / extend
+    if merge and os.path.exists(rawp):
+        kept = [r for r in (json.loads(line) for line in open(rawp)) if r.get("task") not in scorecard]
+        raw = kept + raw
     manifest = {"model": model, "prompt_version": PROMPT_VERSION, "decode": DECODE, "seed": seed,
-                "n_per_task": n, "dry_run": dry, "tasks": list(scorecard),
+                "n_per_task": n, "dry_run": dry, "tasks": list(full), "last_run": list(scorecard),
                 "data_commit": subprocess.getoutput("git rev-parse --short HEAD"),
                 "date_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ")}
-    json.dump(scorecard, open(os.path.join(model_dir, "scorecard.json"), "w"), indent=2)
+    json.dump(full, open(scp, "w"), indent=2)
     json.dump(manifest, open(os.path.join(model_dir, "manifest.json"), "w"), indent=2)
-    with open(os.path.join(model_dir, "raw.jsonl"), "w") as f:
+    with open(rawp, "w") as f:
         for r in raw:
             f.write(json.dumps(r) + "\n")
     update_leaderboard()
-    print(f"\nwrote {model_dir}/  [{len(scorecard)} tasks, commit {manifest['data_commit']}, prompt {PROMPT_VERSION}]")
-    return scorecard
+    print(f"\nwrote {model_dir}/  [{len(full)} tasks total, commit {manifest['data_commit']}, prompt {PROMPT_VERSION}]")
+    return full
 
 
 def main():
