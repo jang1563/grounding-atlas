@@ -28,10 +28,11 @@ MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")
 N = int(os.environ.get("ACT_N", "384"))
 CSV = os.environ.get("ACT_CSV", "pbmc_Tcell.csv")
 GEN = 12
-CEILING_SUPERVISED = 0.989  # supervised LogReg on the full expression vector (precomputed local)
-PROMPT = ("Below are the most highly expressed genes of a single human PBMC cell, in descending order "
-          "of expression. Estimate the probability (a single number between 0 and 1) that this cell is "
-          "a T lymphocyte (T cell). Reply with ONLY the number.\n\nGenes: {x}\nProbability:")
+CEILING_SUPERVISED = float(os.environ.get("ACT_CEILING", "0.989"))  # supervised LogReg on the vector
+PROMPT = os.environ.get("ACT_PROMPT",
+         "Below are the most highly expressed genes of a single human PBMC cell, in descending order "
+         "of expression. Estimate the probability (a single number between 0 and 1) that this cell is "
+         "a T lymphocyte (T cell). Reply with ONLY the number.\n\nGenes: {x}\nProbability:")
 
 
 def parse_prob(t):

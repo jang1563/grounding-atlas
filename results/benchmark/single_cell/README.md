@@ -49,6 +49,31 @@ non-trivial (shared cytotoxic genes → needs the symbol→type prior, not one m
 the cleanest available capacity axis; GPT-4o is the cross-provider reference, the 8B foot of the
 curve is in `results/SYNTHESIS.md` (the original single-cell rung).
 
+## The third arm: encode vs verbalize (open-weight probe)
+
+To check the "encoded equally" premise on an LLM's own activations (not only the cheap specialist),
+we ran the 3-arm on an open model (Qwen2.5-0.5B-Instruct, local MPS;
+[`eval/activation_arm_sc.py`](../../../eval/activation_arm_sc.py), CD8-T/NK, n=200): a probe on the
+last-token hidden state (ACTIVATION) vs the model's verbalized output (OUTPUT), against the
+bag-of-tokens surface and the 0.992 specialist.
+
+| condition | surface (bag-of-tokens) | activation (probe) | output (verbalize) | enc gap | exp gap |
+|---|---|---|---|---|---|
+| gene names | 0.987 | 0.947 | 0.461 | 0.045 | **0.486** |
+| anon | 0.987 | 0.764 | 0.433 | 0.228 | 0.331 |
+
+- **encode ≫ verbalize, measured directly.** On names the small model encodes cell type near the
+  ceiling (activation 0.947) yet verbalizes at chance (output 0.461): a 0.49 expression gap. The
+  information is in the activations; the model just cannot say it. The 0.461 is the *foot* of the
+  name-verbalization curve (0.5B 0.46 → Haiku 0.83 → Opus 0.98 above): the signal was encoded all
+  along, and capacity learns to read it out.
+- **The signal is equally present in the input** (bag-of-tokens 0.987 for both name and anon), so the
+  name/anon contrast isolates web-exposure, not information content.
+- **anon: encoded above its output (0.764 > 0.433) but not yet equal to names** at 0.5B; full
+  activation-equality (anon ≈ name) is a bigger-model property (the 8B reaches anon 0.964 ≈ name 0.983
+  in [`SYNTHESIS.md`](../../SYNTHESIS.md)). So deep encoding *also* improves with scale, while
+  verbalization of the web-zero form never does: the encode−verbalize gap for web-zero is permanent.
+
 ## Permissioning: the a-priori tag vs the model's self-confidence
 
 Pool the name + anon items and decide which to answer (trust the model) vs defer (to a specialist),

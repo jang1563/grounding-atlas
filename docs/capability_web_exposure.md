@@ -37,7 +37,10 @@ The anon arm is also the confound control. If Opus's name gain were just "a bigg
 training corpus," a more capable model would also do better on anon (it is a better pattern-finder).
 But Opus is at chance on anon. So the gain is specifically reading web-documented symbols, not generic
 capacity, and the specialist's ~0.99 shows the discriminative information is in the vector the whole
-time. Provider-invariant: GPT-4o sits on the same curve.
+time. A direct three-arm probe on an open model (Qwen2.5-0.5B) confirms this on the model's own
+activations: it encodes the cell type near the ceiling (activation 0.947 on names) while verbalizing
+at chance (output 0.461), the encode-greater-than-verbalize gap on the same substrate. Provider-
+invariant: GPT-4o sits on the same curve.
 
 ## The permissioning lever
 
