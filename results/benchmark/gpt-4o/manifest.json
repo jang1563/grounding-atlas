@@ -25,11 +25,18 @@
     "msa/conservation",
     "materials/metal:formula",
     "materials/metal:anon",
-    "protein/esm2_emb"
+    "protein/esm2_emb",
+    "herg/graph",
+    "herg/nmr",
+    "herg/struct3d",
+    "rna/coding"
   ],
   "last_run": [
-    "protein/esm2_emb"
+    "herg/graph",
+    "herg/nmr",
+    "herg/struct3d",
+    "rna/coding"
   ],
-  "data_commit": "e63a021",
-  "date_utc": "2026-06-19T15:14Z"
+  "data_commit": "e9598e9",
+  "date_utc": "2026-06-19T15:36Z"
 }

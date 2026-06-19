@@ -50,6 +50,16 @@ _ESM = ("Below is a 640-dimensional protein embedding from the ESM-2 protein lan
         "only from the embedding.\nembedding: {rep}\nProbability:")
 
 
+def _herg(repline):
+    return ("Estimate the probability (a single number between 0 and 1) that this molecule blocks the "
+            "hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\n"
+            f"{repline}: {{rep}}\nProbability:")
+
+
+_RNA = ("Estimate the probability (a single number between 0 and 1) that this nucleotide sequence is "
+        "protein-coding (vs non-coding). Judge only from the sequence below.\nsequence: {rep}\nProbability:")
+
+
 TASKS = {
     # ADMET: SMILES -> empirical property (pairs.jsonl, matched/scrambled). web-rich (drug/SMILES
     # tokens are web-documented). orientation per the structural-alert audit (ames = oppose).
@@ -110,6 +120,20 @@ TASKS = {
     # reading the embedding-as-text is expected at chance (prompt-pasting an SFM output fails).
     "protein/esm2_emb": dict(kind="emb", data="sfm_embedding/meltome_esm2.npz",
                              prompt=_ESM, orient="align", web="zero", ceiling=0.633),
+    # hERG in three more representations of the SAME molecules (graph / 13C-NMR shifts / 3D coords).
+    # The property is Morgan-predictable (ceiling ~0.89) but these representation->hERG mappings are
+    # web-undocumented, so the LLM is expected at chance. The point: the REPRESENTATION's web-exposure
+    # governs verbalization, not the property's (hERG verbalizes from SMILES, not from these). align.
+    "herg/graph":    dict(kind="twocol", data="graph/herg_graph.csv", col="graph",
+                          prompt=_herg("molecular graph"), orient="align", web="zero", ceiling=0.892),
+    "herg/nmr":      dict(kind="twocol", data="nmr/herg_nmr.csv", col="nmr",
+                          prompt=_herg("carbon-13 NMR chemical shifts"), orient="align", web="zero", ceiling=0.892),
+    "herg/struct3d": dict(kind="twocol", data="structure3d/herg_xyz.csv", col="xyz",
+                          prompt=_herg("3D atomic coordinates (element x y z)"), orient="align", web="zero", ceiling=0.868),
+    # RNA coding-vs-noncoding from the nucleotide sequence. web=mixed: ORF/codon structure is a
+    # partially documented heuristic the model may use. label 1 = coding. ceiling = 3-mer LR.
+    "rna/coding":    dict(kind="twocol", data="rna/coding.csv", col="smiles",
+                          prompt=_RNA, orient="align", web="mixed", ceiling=0.856),
 }
 
 # Default benchmark set (the empirical output arm). Computable / reasoning-mode tasks are excluded.

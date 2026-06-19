@@ -1,7 +1,7 @@
-# grounding-atlas-eval: benchmark spec
+# GroundBench: benchmark spec
 
-*Working name "GroundBench"; final name TBD. Draft 2026-06-19. The contract for adding tasks and
-models, so the benchmark is extensible by others, not a one-off. No em dashes.*
+*GroundBench evaluates the grounding-atlas dataset. Draft 2026-06-19. The contract for adding tasks
+and models, so the benchmark is extensible by others, not a one-off. No em dashes.*
 
 ## What it measures
 
@@ -79,18 +79,22 @@ cleanest control: equal information, equal specialist ceiling, only the names di
 
 ## Versioning, scope, naming
 
-Prompts are versioned constants; the data version is the git commit. Current coverage: **17 tasks across
-7 modalities x 3 models** (n=100/task): 6 ADMET (SMILES); 4 single-cell (CD8-T/NK and CD14+/CD16+
+Prompts are versioned constants; the data version is the git commit. Current coverage: **21 tasks across
+8 modalities x 3 models** (n=100/task): 6 ADMET (SMILES); 4 single-cell (CD8-T/NK and CD14+/CD16+
 monocyte, each web-rich NAME and web-zero ANON); variant effect (web-rich HGVS text + web-poor protein
 sequence); DNA methylation -> age (web-zero numeric) and MSA-column -> conserved (web-rich), a controlled
 pair; materials metal-vs-not (web-rich formula + web-zero anonymized elements, generality beyond
 biology); and the **SFM leg**: an ESM-2 protein embedding -> thermostability, the LLM x SFM interface,
 where every model reads the raw embedding at chance (0.50-0.53) while a read-out head on the same
-embedding reaches 0.633 (the orchestrate-via-a-trained-head baseline, not prompt-pasting). Three
-controlled web-exposure pairs span the leaderboard. One caveat measured here: the materials anonymized
+embedding reaches 0.633 (the orchestrate-via-a-trained-head baseline, not prompt-pasting); a hERG
+representation sweep (the SAME molecules as SMILES, molecular graph, 13C-NMR shifts, and 3D
+coordinates: the property is Morgan-predictable to ~0.89, but only the SMILES form verbalizes while
+the graph / NMR / 3D forms are web-zero, so the representation's web-exposure governs verbalization,
+not the property's); and RNA coding-vs-noncoding from the nucleotide sequence (web-mixed: ORF/codon
+structure is a partially documented heuristic). Three controlled web-exposure pairs span the leaderboard. One caveat measured here: the materials anonymized
 form preserves stoichiometry (`elem_X: count`), so it is a leakier web-zero control than single-cell
-anon (one model, gpt-4o, reads composition statistics from it: 0.60 vs chance). Roadmap:
-hERG-as-{graph,NMR,3D} (same property, other representations); more SFMs (scGPT cell, Evo2 genomic);
-image / histopathology via a VLM arm; Croissant metadata + a public leaderboard. The activation arm
+anon (one model, gpt-4o, reads composition statistics from it: 0.60 vs chance). Roadmap: more SFMs
+(scGPT cell, Evo2 genomic); image / histopathology via a VLM arm; Croissant metadata + a public
+leaderboard. The activation arm
 (open-weight probe) is an optional GPU plug-in. Honest scope: pilot n per task; the specialist ceiling
 is a cheap or cited model; the encoding arm is open-weight-only.

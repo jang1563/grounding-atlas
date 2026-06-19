@@ -270,5 +270,69 @@
     "memo_delta": null,
     "orientation": "align",
     "web_exposure": "zero"
+  },
+  "herg/graph": {
+    "n": 100,
+    "output_auroc": 0.5,
+    "output_auroc_ci": [
+      0.5,
+      0.5
+    ],
+    "ece": 0.0,
+    "aurc": 0.213,
+    "sel_acc_50": 0.96,
+    "ceiling": 0.892,
+    "gap": 0.392,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
+  },
+  "herg/nmr": {
+    "n": 100,
+    "output_auroc": 0.58,
+    "output_auroc_ci": [
+      0.473,
+      0.692
+    ],
+    "ece": 0.216,
+    "aurc": 0.419,
+    "sel_acc_50": 0.56,
+    "ceiling": 0.892,
+    "gap": 0.312,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
+  },
+  "herg/struct3d": {
+    "n": 100,
+    "output_auroc": 0.524,
+    "output_auroc_ci": [
+      0.437,
+      0.61
+    ],
+    "ece": 0.091,
+    "aurc": 0.391,
+    "sel_acc_50": 0.74,
+    "ceiling": 0.868,
+    "gap": 0.344,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
+  },
+  "rna/coding": {
+    "n": 100,
+    "output_auroc": 0.889,
+    "output_auroc_ci": [
+      0.829,
+      0.943
+    ],
+    "ece": 0.118,
+    "aurc": 0.124,
+    "sel_acc_50": 0.84,
+    "ceiling": 0.856,
+    "gap": -0.033,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "mixed"
   }
 }
