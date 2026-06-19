@@ -163,15 +163,17 @@ def update_leaderboard():
         out.append("_No models scored yet. Run `python eval/run_grounding_eval.py --model <id>`._")
     else:
         tasks = sorted({t for _, sc in models for t in sc})
-        out += ["| task | web | " + " | ".join(f"{m} AUROC [CI]" for m, _ in models) + " |",
-                "|" + "---|" * (len(models) + 2)]
+        out += ["| task | web | ceiling | " + " | ".join(f"{m} AUROC [CI]" for m, _ in models) + " |",
+                "|" + "---|" * (len(models) + 3)]
         for t in tasks:
             web = next((sc[t].get("web_exposure", "") for _, sc in models if t in sc), "")
+            ceil = next((sc[t]["ceiling"] for _, sc in models
+                         if t in sc and sc[t].get("ceiling") is not None), None)
             cells = []
             for _, sc in models:
                 r = sc.get(t)
                 cells.append(f"{r['output_auroc']} {tuple(r['output_auroc_ci'])}" if r else "-")
-            out.append(f"| `{t}` | {web} | " + " | ".join(cells) + " |")
+            out.append(f"| `{t}` | {web} | {ceil if ceil is not None else '-'} | " + " | ".join(cells) + " |")
     open(os.path.join(OUT, "LEADERBOARD.md"), "w").write("\n".join(out) + "\n")
 
 

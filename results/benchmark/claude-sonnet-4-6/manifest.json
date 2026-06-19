@@ -24,16 +24,12 @@
     "methyl/age",
     "msa/conservation",
     "materials/metal:formula",
-    "materials/metal:anon"
+    "materials/metal:anon",
+    "protein/esm2_emb"
   ],
   "last_run": [
-    "variant/text",
-    "variant/seq",
-    "methyl/age",
-    "msa/conservation",
-    "materials/metal:formula",
-    "materials/metal:anon"
+    "protein/esm2_emb"
   ],
-  "data_commit": "22c90e0",
-  "date_utc": "2026-06-19T14:56Z"
+  "data_commit": "e63a021",
+  "date_utc": "2026-06-19T15:15Z"
 }

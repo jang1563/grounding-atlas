@@ -254,5 +254,21 @@
     "memo_delta": null,
     "orientation": "align",
     "web_exposure": "zero"
+  },
+  "protein/esm2_emb": {
+    "n": 100,
+    "output_auroc": 0.5,
+    "output_auroc_ci": [
+      0.5,
+      0.5
+    ],
+    "ece": 0.07,
+    "aurc": 0.213,
+    "sel_acc_50": 0.96,
+    "ceiling": 0.633,
+    "gap": 0.133,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
   }
 }

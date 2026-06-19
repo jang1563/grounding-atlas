@@ -17,6 +17,8 @@ import csv
 import json
 import os
 
+import numpy as np
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 SIGNAL = os.path.join(os.path.dirname(HERE), "signal")
 
@@ -42,6 +44,10 @@ _MSA = ("Estimate the probability (a single number between 0 and 1) that this co
         "below.\ncolumn: {rep}\nProbability:")
 _METAL = ("Estimate the probability (a single number between 0 and 1) that this chemical compound is "
           "a metal. Judge only from the composition below.\ncomposition: {rep}\nProbability:")
+_ESM = ("Below is a 640-dimensional protein embedding from the ESM-2 protein language model (a "
+        "scientific foundation model). Estimate the probability (a single number between 0 and 1) "
+        "that this protein is thermostable (melting temperature above the dataset median). Judge "
+        "only from the embedding.\nembedding: {rep}\nProbability:")
 
 
 TASKS = {
@@ -97,6 +103,13 @@ TASKS = {
                                     prompt=_METAL, orient="align", web="rich", ceiling=0.927),
     "materials/metal:anon":    dict(kind="twocol", data="materials/metal.csv", col="anon",
                                     prompt=_METAL, orient="align", web="zero", ceiling=0.927),
+    # SFM leg (the LLM x SFM interface): can the LLM read a scientific foundation model's OUTPUT
+    # embedding? ESM-2 (150M, 640-dim) embedding -> thermostability. The ultimate web-zero form (an
+    # abstract float vector). ceiling = a read-out HEAD on the same embedding (LogReg, cluster
+    # GroupKFold, leakage-controlled) = the "orchestrate via a trained head" baseline; the LLM
+    # reading the embedding-as-text is expected at chance (prompt-pasting an SFM output fails).
+    "protein/esm2_emb": dict(kind="emb", data="sfm_embedding/meltome_esm2.npz",
+                             prompt=_ESM, orient="align", web="zero", ceiling=0.633),
 }
 
 # Default benchmark set (the empirical output arm). Computable / reasoning-mode tasks are excluded.
@@ -131,6 +144,16 @@ def task_items(task_id, n, rng):
         scrm = [{"id": r.get("id"), "rep": r["representation"], "label": int(r["label"])}
                 for r in scr[:2 * k]]
         return items, scrm
+    if t["kind"] == "emb":
+        d = np.load(os.path.join(SIGNAL, t["data"]))
+        emb, y = d["emb"], d["y"]
+        pos = [i for i in range(len(y)) if y[i] == 1]
+        neg = [i for i in range(len(y)) if y[i] == 0]
+        k = min(n // 2, len(pos), len(neg))
+        rng.shuffle(pos); rng.shuffle(neg)
+        items = [{"id": f"{task_id}:{i}", "rep": " ".join(f"{v:.3f}" for v in emb[i]),
+                  "label": int(y[i])} for i in pos[:k] + neg[:k]]
+        return items, []
     rows = list(csv.DictReader(open(os.path.join(SIGNAL, t["data"]))))
     pos = [r for r in rows if r["label"] == "1"]
     neg = [r for r in rows if r["label"] == "0"]
