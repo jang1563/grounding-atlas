@@ -20,7 +20,8 @@ import os
 import numpy as np
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SIGNAL = os.path.join(os.path.dirname(HERE), "signal")
+ROOT = os.path.dirname(HERE)
+SIGNAL = os.path.join(ROOT, "signal")
 
 
 def _mol(clause):
@@ -58,6 +59,8 @@ def _herg(repline):
 
 _RNA = ("Estimate the probability (a single number between 0 and 1) that this nucleotide sequence is "
         "protein-coding (vs non-coding). Judge only from the sequence below.\nsequence: {rep}\nProbability:")
+_HISTO = ("This is an H&E-stained histopathology image patch. Estimate the probability (a single "
+          "number between 0 and 1) that it contains tumor tissue (vs normal).\nProbability:")
 
 
 TASKS = {
@@ -134,6 +137,13 @@ TASKS = {
     # partially documented heuristic the model may use. label 1 = coding. ceiling = 3-mer LR.
     "rna/coding":    dict(kind="twocol", data="rna/coding.csv", col="smiles",
                           prompt=_RNA, orient="align", web="mixed", ceiling=0.856),
+    # Image / VLM arm: H&E histopathology patch -> tumor (PatchCamelyon, 96x96). The flagship
+    # expression gap: an open VLM ENCODES tumor (activation probe 0.827) but verbalizes near chance
+    # (0.463). web=rich (tumor morphology is heavily documented/imaged online) so by the law it
+    # "should" verbalize -- the revealing exception that surfaces a SECOND gate (medical refusal /
+    # hedging). ceiling = CONCH pathology FM ~0.90 (cheap color classifier 0.746, VLM activation 0.827).
+    "histo/pcam_tumor": dict(kind="image", data="histo/pcam.csv", col="img",
+                             prompt=_HISTO, orient="align", web="rich", ceiling=0.90),
 }
 
 # Default benchmark set (the empirical output arm). Computable / reasoning-mode tasks are excluded.
@@ -177,6 +187,16 @@ def task_items(task_id, n, rng):
         rng.shuffle(pos); rng.shuffle(neg)
         items = [{"id": f"{task_id}:{i}", "rep": " ".join(f"{v:.3f}" for v in emb[i]),
                   "label": int(y[i])} for i in pos[:k] + neg[:k]]
+        return items, []
+    if t["kind"] == "image":
+        rows = list(csv.DictReader(open(os.path.join(SIGNAL, t["data"]))))
+        pos = [r for r in rows if r["label"] == "1"]
+        neg = [r for r in rows if r["label"] == "0"]
+        k = min(n // 2, len(pos), len(neg))
+        rng.shuffle(pos); rng.shuffle(neg)
+        sel = pos[:k] + neg[:k]
+        items = [{"id": f"{task_id}:{i}", "rep": "", "image": os.path.join(ROOT, r[t["col"]]),
+                  "label": int(r["label"])} for i, r in enumerate(sel)]
         return items, []
     rows = list(csv.DictReader(open(os.path.join(SIGNAL, t["data"]))))
     pos = [r for r in rows if r["label"] == "1"]

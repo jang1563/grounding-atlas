@@ -334,5 +334,21 @@
     "memo_delta": null,
     "orientation": "align",
     "web_exposure": "mixed"
+  },
+  "histo/pcam_tumor": {
+    "n": 100,
+    "output_auroc": 0.559,
+    "output_auroc_ci": [
+      0.451,
+      0.659
+    ],
+    "ece": 0.317,
+    "aurc": 0.427,
+    "sel_acc_50": 0.5,
+    "ceiling": 0.9,
+    "gap": 0.341,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "rich"
   }
 }

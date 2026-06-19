@@ -44,12 +44,21 @@ SYSTEM = (
 
 # ---------- Solver (model-agnostic) ----------
 
-def complete(model, prompt):
+def _b64(path):
+    import base64
+    with open(path, "rb") as f:
+        return base64.standard_b64encode(f.read()).decode()
+
+
+def complete(model, prompt, image=None):
     if model.startswith(("claude", "anthropic")):
         import anthropic
         client = anthropic.Anthropic()
+        content = prompt if image is None else [
+            {"type": "image", "source": {"type": "base64", "media_type": "image/png", "data": _b64(image)}},
+            {"type": "text", "text": prompt}]
         kw = dict(model=model, max_tokens=DECODE["max_tokens"], system=SYSTEM,
-                  messages=[{"role": "user", "content": prompt}])
+                  messages=[{"role": "user", "content": content}])
         try:
             m = client.messages.create(temperature=DECODE["temperature"], **kw)
         except anthropic.BadRequestError as e:
@@ -59,9 +68,12 @@ def complete(model, prompt):
         return "".join(b.text for b in m.content if b.type == "text")
     if model.startswith(("gpt", "o1", "o3")):
         import openai
+        user = prompt if image is None else [
+            {"type": "text", "text": prompt},
+            {"type": "image_url", "image_url": {"url": f"data:image/png;base64,{_b64(image)}"}}]
         r = openai.OpenAI().chat.completions.create(
             model=model, max_tokens=DECODE["max_tokens"], temperature=DECODE["temperature"],
-            messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": prompt}])
+            messages=[{"role": "system", "content": SYSTEM}, {"role": "user", "content": user}])
         return r.choices[0].message.content
     raise SystemExit(f"unknown model provider for {model}")
 
@@ -88,7 +100,7 @@ def solve(model, items, prompt_tmpl, dry, rng):
             p = min(1.0, max(0.0, 0.30 + 0.40 * int(it["label"]) + rng.normal(0, 0.18)))
             probs.append(p); texts.append(f"{p:.3f} (dry)")
         else:
-            t = complete(model, prompt_tmpl.format(rep=it["rep"]))
+            t = complete(model, prompt_tmpl.format(rep=it.get("rep", "")), image=it.get("image"))
             texts.append(t); probs.append(parse_prob(t))
     return np.array(probs), texts
 

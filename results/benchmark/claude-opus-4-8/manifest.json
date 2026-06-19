@@ -29,14 +29,12 @@
     "herg/graph",
     "herg/nmr",
     "herg/struct3d",
-    "rna/coding"
+    "rna/coding",
+    "histo/pcam_tumor"
   ],
   "last_run": [
-    "herg/graph",
-    "herg/nmr",
-    "herg/struct3d",
-    "rna/coding"
+    "histo/pcam_tumor"
   ],
-  "data_commit": "e9598e9",
-  "date_utc": "2026-06-19T15:44Z"
+  "data_commit": "69414c7",
+  "date_utc": "2026-06-19T16:00Z"
 }

@@ -32,7 +32,9 @@ A task is one entry in the `TASKS` registry, decoupled from data format:
 ```
 
 - `kind`: `pairs` (a `signal/.../pairs.jsonl` with matched + scrambled conditions, enabling
-  memo_delta) or `twocol` (a CSV with two representation columns, a web-rich vs web-zero contrast).
+  memo_delta), `twocol` (a CSV with two representation columns, a web-rich vs web-zero contrast),
+  `emb` (an .npz of foundation-model embeddings, the float vector as the representation), or `image`
+  (a CSV of image paths + labels, sent to a vision model).
 - `prompt`: a versioned template with a `{rep}` slot, ending in a numeric anchor (`Probability:`).
 - `orient`: `align` (positive = label 1) or `oppose` (positive = label 0). Anchors AUROC direction;
   must be set a priori from the assay/label semantics, never tuned to the model.
@@ -79,8 +81,8 @@ cleanest control: equal information, equal specialist ceiling, only the names di
 
 ## Versioning, scope, naming
 
-Prompts are versioned constants; the data version is the git commit. Current coverage: **21 tasks across
-8 modalities x 3 models** (n=100/task): 6 ADMET (SMILES); 4 single-cell (CD8-T/NK and CD14+/CD16+
+Prompts are versioned constants; the data version is the git commit. Current coverage: **22 tasks across
+9 modalities x 3 models** (n=100/task): 6 ADMET (SMILES); 4 single-cell (CD8-T/NK and CD14+/CD16+
 monocyte, each web-rich NAME and web-zero ANON); variant effect (web-rich HGVS text + web-poor protein
 sequence); DNA methylation -> age (web-zero numeric) and MSA-column -> conserved (web-rich), a controlled
 pair; materials metal-vs-not (web-rich formula + web-zero anonymized elements, generality beyond
@@ -91,10 +93,16 @@ representation sweep (the SAME molecules as SMILES, molecular graph, 13C-NMR shi
 coordinates: the property is Morgan-predictable to ~0.89, but only the SMILES form verbalizes while
 the graph / NMR / 3D forms are web-zero, so the representation's web-exposure governs verbalization,
 not the property's); and RNA coding-vs-noncoding from the nucleotide sequence (web-mixed: ORF/codon
-structure is a partially documented heuristic). Three controlled web-exposure pairs span the leaderboard. One caveat measured here: the materials anonymized
+structure is a partially documented heuristic); and a VLM arm, an H&E histopathology patch -> tumor
+(PatchCamelyon), web=rich because tumor morphology is heavily documented, yet all three frontier VLMs
+verbalize it at chance (opus 0.44, sonnet 0.56, gpt-4o 0.57) while an open VLM's hidden states encode it
+at 0.827. This is the revealing exception: web-exposure is necessary but not sufficient, and for medical
+images a second gate (refusal/hedging, or a vision-to-verbalization expression gap) blocks output even at
+the frontier, where capability closed the text web-rich gaps. Three controlled web-exposure pairs span
+the leaderboard. One caveat measured here: the materials anonymized
 form preserves stoichiometry (`elem_X: count`), so it is a leakier web-zero control than single-cell
 anon (one model, gpt-4o, reads composition statistics from it: 0.60 vs chance). Roadmap: more SFMs
-(scGPT cell, Evo2 genomic); image / histopathology via a VLM arm; Croissant metadata + a public
-leaderboard. The activation arm
+(scGPT cell, Evo2 genomic); a frontier-VLM activation probe (to confirm the histopath gap is
+verbalization, not encoding); Croissant metadata + a public leaderboard. The activation arm
 (open-weight probe) is an optional GPU plug-in. Honest scope: pilot n per task; the specialist ceiling
 is a cheap or cited model; the encoding arm is open-weight-only.
