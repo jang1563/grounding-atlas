@@ -1,0 +1,56 @@
+{
+  "claude-opus-4-8": {
+    "n": 600,
+    "self_acc": 0.605,
+    "spec_acc": 0.753,
+    "oracle_acc": 0.91,
+    "model_uniquely_right_frac": 0.157,
+    "implicit": {
+      "routed_acc": 0.765,
+      "coverage": 0.073,
+      "aurc": 0.38
+    },
+    "explicit": {
+      "routed_acc": 0.755,
+      "coverage": 0.102,
+      "aurc": 0.403,
+      "conf_vs_correct_corr": -0.068
+    }
+  },
+  "claude-sonnet-4-6": {
+    "n": 600,
+    "self_acc": 0.545,
+    "spec_acc": 0.753,
+    "oracle_acc": 0.925,
+    "model_uniquely_right_frac": 0.172,
+    "implicit": {
+      "routed_acc": 0.763,
+      "coverage": 0.067,
+      "aurc": 0.417
+    },
+    "explicit": {
+      "routed_acc": 0.763,
+      "coverage": 0.067,
+      "aurc": 0.445,
+      "conf_vs_correct_corr": 0.032
+    }
+  },
+  "gpt-4o": {
+    "n": 600,
+    "self_acc": 0.523,
+    "spec_acc": 0.753,
+    "oracle_acc": 0.955,
+    "model_uniquely_right_frac": 0.202,
+    "implicit": {
+      "routed_acc": 0.777,
+      "coverage": 0.143,
+      "aurc": 0.405
+    },
+    "explicit": {
+      "routed_acc": 0.767,
+      "coverage": 0.053,
+      "aurc": 0.453,
+      "conf_vs_correct_corr": 0.05
+    }
+  }
+}

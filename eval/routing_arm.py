@@ -63,42 +63,62 @@ def aurc(conf, correct):
     return float(risk.mean())
 
 
+def route(conf, mcorr, scorr):
+    """Best confidence-routing accuracy (keep model on most-confident items, route rest to
+    specialist) and the coverage that achieves it, plus the model-alone AURC on this signal."""
+    order = np.argsort(-conf)
+    n = len(conf)
+    best_acc, best_cov = max(
+        ((mcorr[order[:k]].sum() + scorr[order[k:]].sum()) / n, k / n) for k in range(n + 1))
+    return best_acc, best_cov, aurc(conf, mcorr)
+
+
+def load_conf(model):
+    """id -> explicit self-reported confidence, or None if not elicited yet."""
+    p = os.path.join(OUT, model, "confidence.jsonl")
+    if not os.path.exists(p):
+        return None
+    return {r["id"]: r["confidence"] for r in (json.loads(line) for line in open(p))}
+
+
 def main():
     spec = {rung: specialist_oof(rung) for rung in RUNGS}
     report = {}
-    print(f"{'model':20s} {'self':>5} {'spec':>5} {'oracle':>6} {'routed':>6} {'@cov':>5} "
-          f"{'AURC':>5} {'uniq%':>6}")
+    print(f"{'model':20s} {'self':>5} {'spec':>5} {'oracle':>6} | {'imp_rt':>6} {'impAURC':>7} | "
+          f"{'exp_rt':>6} {'expAURC':>7} {'exp_r':>6}   (rt=best routed acc)")
     for model in MODELS:
         items = model_items(model)
-        mp, sp, y = [], [], []
+        mp, sp, y, ids = [], [], [], []
         for rung, lst in items.items():
             for iid, prob, lab in lst:
                 if iid in spec[rung]:
-                    mp.append(prob); sp.append(spec[rung][iid]); y.append(lab)
+                    mp.append(prob); sp.append(spec[rung][iid]); y.append(lab); ids.append(iid)
         mp, sp, y = np.array(mp), np.array(sp), np.array(y)
         mcorr = ((mp > 0.5).astype(int) == y).astype(float)
         scorr = ((sp > 0.5).astype(int) == y).astype(float)
-        self_acc, spec_acc = mcorr.mean(), scorr.mean()
-        oracle = np.maximum(mcorr, scorr).mean()
-        conf = np.abs(mp - 0.5)
-        order = np.argsort(-conf)   # most-confident first keep the model's answer
-        n = len(y)
-        curve = [(k / n, (mcorr[order[:k]].sum() + scorr[order[k:]].sum()) / n) for k in range(n + 1)]
-        best_cov, best_acc = max(curve, key=lambda t: t[1])
-        uniq = float((mcorr.astype(bool) & ~scorr.astype(bool)).mean())   # model right, specialist wrong
-        report[model] = {"n": n, "self_acc": round(self_acc, 3), "spec_acc": round(spec_acc, 3),
-                         "oracle_acc": round(oracle, 3), "routed_acc": round(best_acc, 3),
-                         "routed_coverage": round(best_cov, 3), "model_alone_aurc": round(aurc(conf, mcorr), 3),
-                         "model_uniquely_right_frac": round(uniq, 3),
-                         "routing_beats_specialist": bool(best_acc > spec_acc + 1e-9)}
-        r = report[model]
-        print(f"{model:20s} {r['self_acc']:5.3f} {r['spec_acc']:5.3f} {r['oracle_acc']:6.3f} "
-              f"{r['routed_acc']:6.3f} {r['routed_coverage']:5.2f} {r['model_alone_aurc']:5.3f} "
-              f"{100 * r['model_uniquely_right_frac']:5.1f}%")
-    json.dump(report, open(os.path.join(OUT, "routing_implicit.json"), "w"), indent=2)
-    print(f"\nself=always-model  spec=always-specialist  oracle=route-by-truth  "
-          f"routed=best confidence-routing (@cov = model coverage)")
-    print(f"wrote {OUT}/routing_implicit.json")
+        self_acc, spec_acc, oracle = mcorr.mean(), scorr.mean(), np.maximum(mcorr, scorr).mean()
+        imp_acc, imp_cov, imp_aurc = route(np.abs(mp - 0.5), mcorr, scorr)
+        rec = {"n": len(y), "self_acc": round(self_acc, 3), "spec_acc": round(spec_acc, 3),
+               "oracle_acc": round(oracle, 3),
+               "model_uniquely_right_frac": round(float((mcorr.astype(bool) & ~scorr.astype(bool)).mean()), 3),
+               "implicit": {"routed_acc": round(imp_acc, 3), "coverage": round(imp_cov, 3),
+                            "aurc": round(imp_aurc, 3)}}
+        cmap = load_conf(model)
+        exp_str = f"{'-':>6} {'-':>7} {'-':>6}"
+        if cmap is not None:
+            econf = np.array([cmap.get(i, 0.5) for i in ids])
+            exp_acc, exp_cov, exp_aurc = route(econf, mcorr, scorr)
+            r_corr = float(np.corrcoef(econf, mcorr)[0, 1]) if econf.std() > 0 else float("nan")
+            rec["explicit"] = {"routed_acc": round(exp_acc, 3), "coverage": round(exp_cov, 3),
+                               "aurc": round(exp_aurc, 3), "conf_vs_correct_corr": round(r_corr, 3)}
+            exp_str = f"{exp_acc:6.3f} {exp_aurc:7.3f} {r_corr:6.3f}"
+        report[model] = rec
+        print(f"{model:20s} {self_acc:5.3f} {spec_acc:5.3f} {oracle:6.3f} | "
+              f"{imp_acc:6.3f} {imp_aurc:7.3f} | {exp_str}")
+    json.dump(report, open(os.path.join(OUT, "routing.json"), "w"), indent=2)
+    print("\nself=always-model  spec=always-specialist  oracle=route-by-truth | imp=implicit |P-0.5| "
+          "routing, exp=explicit self-confidence routing (exp_r = corr of stated confidence with being right)")
+    print(f"wrote {OUT}/routing.json")
 
 
 if __name__ == "__main__":
