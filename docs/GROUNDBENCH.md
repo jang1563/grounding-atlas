@@ -83,7 +83,9 @@ Each run writes `results/benchmark/<model>/`:
 Read a model as a **row of per-task scores**, not one number: grounding (AUROC, gap to ceiling),
 calibration (ECE / AURC), and memorization-transparency (`memo_delta`) together, alongside the web tag.
 The leaderboard (`results/benchmark/LEADERBOARD.md`) sorts by the web tag: `web=zero` rows tend to sit at
-chance (the representation-to-property mapping is undocumented), `web=rich` rows tend to ground.
+chance (the representation-to-property mapping is undocumented), `web=rich` rows tend to ground. A
+self-contained, sortable, web-filterable HTML view is `python eval/render_leaderboard.py` ->
+`docs/leaderboard.html` (open it locally, or host on GitHub Pages / a Hugging Face Space).
 
 ## The cheap-head baseline (the orchestration reference)
 
