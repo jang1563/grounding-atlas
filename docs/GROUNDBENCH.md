@@ -56,6 +56,21 @@ A text-only `complete_fn` simply skips the image task. The decode contract is fi
 (`temperature=0`, `max_tokens=16`); the system prompt forces a bare number and the parser takes the
 last number in the reply, so a model that emits `Probability: 0.42` or `42%` both parse correctly.
 
+## Run from Inspect (inspect_ai)
+
+GroundBench is also an Inspect eval (`eval/groundbench_inspect.py`), reusing the same tasks, prompts,
+and parser, so you can run it with Inspect's model providers, logging, and viewer:
+
+```bash
+pip install -e ".[inspect]"
+inspect eval eval/groundbench_inspect.py@groundbench -T task_id=msa/conservation --model anthropic/claude-opus-4-8
+inspect eval eval/groundbench_inspect.py@groundbench_all --model openai/gpt-4o   # all CORE, AUROC per task
+```
+
+The reported metric is per-task grounding AUROC (with the registry's a-priori orientation). For the full
+scorecard (calibration, gap-to-ceiling, memo_delta, bootstrap CIs) and the leaderboard, use the
+standalone harness above.
+
 ## What you get, and how to read it
 
 Each run writes `results/benchmark/<model>/`:

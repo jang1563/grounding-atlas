@@ -57,3 +57,6 @@ signal/regulatory/eqtl_ceiling_gate.csv
 
 # Synthetic --dry-run benchmark artifacts (pipeline check only, not a real model run)
 results/benchmark/dry/
+
+# Inspect (inspect_ai) eval logs
+logs/
