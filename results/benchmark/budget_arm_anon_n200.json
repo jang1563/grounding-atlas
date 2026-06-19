@@ -1,0 +1,13 @@
+{
+  "single_cell/cd8t_nk:anon": {
+    "web": "zero",
+    "n": 200,
+    "claude-opus-4-8": {
+      "budget_auroc": 0.545,
+      "ci": [
+        0.476,
+        0.619
+      ]
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "methyl/age": {
+    "web": "zero",
+    "n": 40,
+    "claude-opus-4-8": {
+      "budget_auroc": 0.535,
+      "ci": [
+        0.369,
+        0.696
+      ]
+    },
+    "gpt-4o": {
+      "budget_auroc": 0.415,
+      "ci": [
+        0.234,
+        0.583
+      ]
+    }
+  },
+  "single_cell/cd8t_nk:anon": {
+    "web": "zero",
+    "n": 40,
+    "claude-opus-4-8": {
+      "budget_auroc": 0.628,
+      "ci": [
+        0.465,
+        0.79
+      ]
+    },
+    "gpt-4o": {
+      "budget_auroc": 0.425,
+      "ci": [
+        0.333,
+        0.5
+      ]
+    }
+  },
+  "msa/conservation": {
+    "web": "rich",
+    "n": 40,
+    "claude-opus-4-8": {
+      "budget_auroc": 0.994,
+      "ci": [
+        0.974,
+        1.0
+      ]
+    },
+    "gpt-4o": {
+      "budget_auroc": 0.945,
+      "ci": [
+        0.868,
+        1.0
+      ]
+    }
+  }
+}
