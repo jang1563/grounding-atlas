@@ -15,7 +15,7 @@ whether the over-call is asymmetric (inactive->active >> active->inactive).
               FN(active->inactive) + asymmetry(FP-FN), per endpoint (web-exposure varies) and
               per model (haiku vs opus = scale curve)
 
-Data: NegBioDB admet.db, compound-level (any fail -> active=1, else inactive=0), best tier per
+Data: NegResultDB admet.db, compound-level (any fail -> active=1, else inactive=0), best tier per
 compound. set ANTHROPIC_API_KEY in the environment. No em dashes.
 """
 import json
@@ -33,7 +33,7 @@ from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
+DB = os.environ.get("NEGRES_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "NegResultDB", "data", "negres_admet.db"))
 
 # endpoint -> (named target phrasing, anonymized generic phrasing)
 ENDPOINTS = {

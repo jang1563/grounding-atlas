@@ -1,6 +1,6 @@
 # Probe vs LLM: encoding vs expression in hERG grounding
 
-*Results section. 2026-06. Instruments: `eval/activation_arm.py` (open-weight 3-arm), `eval/head_to_head.py` (Claude output + content-sensitivity). Data: hERG and CYP3A4 from ChEMBL 36 via NegBioDB. No em dashes.*
+*Results section. 2026-06. Instruments: `eval/activation_arm.py` (open-weight 3-arm), `eval/head_to_head.py` (Claude output + content-sensitivity). Data: hERG and CYP3A4 from ChEMBL 36 via NegResultDB. No em dashes.*
 
 ## Setup
 

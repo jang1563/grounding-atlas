@@ -22,7 +22,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
 
-DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
+DB = os.environ.get("NEGRES_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "NegResultDB", "data", "negres_admet.db"))
 ENDPOINT = sys.argv[1] if len(sys.argv) > 1 else "herg"
 
 

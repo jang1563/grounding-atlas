@@ -60,18 +60,18 @@ The prior separability probe is the one asset with a confirmed high probe ceilin
 
 ## Phase 2: a built content-property task (the real B-axis measurement)
 
-The capability-neutral measurement runs on a **content-property task that has to be built**, not on any existing memorization benchmark. NegBioDB raw data is **one source** for it, not the only one, and the head-to-head gap must not depend on NegBioDB specifically; any established property-prediction dataset of the same shape (content -> deterministic property) is an equally valid source. This is WS2-style work (generating (representation, verifiable-property) pairs).
+The capability-neutral measurement runs on a **content-property task that has to be built**, not on any existing memorization benchmark. NegResultDB raw data is **one source** for it, not the only one, and the head-to-head gap must not depend on NegResultDB specifically; any established property-prediction dataset of the same shape (content -> deterministic property) is an equally valid source. This is WS2-style work (generating (representation, verifiable-property) pairs).
 
-- **Candidate sources** (property depends causally on content): NegBioDB ADMET (SMILES -> hERG/AMES/CYP endpoint), EPI (promoter sequence -> TF binding), ClinGen/CLNV (sequence + variant -> pathogenicity); plus external content-property benchmarks of the same shape. These expose real content and are mechanistically content-dependent.
+- **Candidate sources** (property depends causally on content): NegResultDB ADMET (SMILES -> hERG/AMES/CYP endpoint), EPI (promoter sequence -> TF binding), ClinGen/CLNV (sequence + variant -> pathogenicity); plus external content-property benchmarks of the same shape. These expose real content and are mechanistically content-dependent.
 - **Widest-open variant:** feed an SFM embedding (ESM / scELMo / BioVERSE-style) as the LLM's input and run the same three arms. The 2026-06 scan flags this as the most open case (no behavioral baseline exists yet); consider prioritizing it once the protein/chem head-to-head works.
 - **Gate first, then build.** None of these has a measured supervised ceiling yet. Step 1 is a content-feature probe per candidate (SMILES fingerprint/encoder; DNA/protein embedding) to confirm the ceiling is high (signal exists). Only domains that pass the ceiling gate become head-to-head tasks. This avoids the DTI trap (apparent ceiling from leakage, collapses on cold splits). Caveat: gating on a high probe ceiling conditions the headline gap on SFM-favorable domains, so the reported gap is an upper-bound estimate, not representative across biology; a domain that fails the gate means "no measurable signal under this encoder," not "no signal."
-- **Then:** an LLM arm that shows the raw content (SMILES / DNA sequence / variant context), the four content-sensitivity conditions, deterministic scoring, stratified by the NegBioDB PBS difficulty gradient.
+- **Then:** an LLM arm that shows the raw content (SMILES / DNA sequence / variant context), the four content-sensitivity conditions, deterministic scoring, stratified by the NegResultDB PBS difficulty gradient.
 - **Modalities added:** chemical, DNA, variant (protein already covered by Phase 1). RNA / metabolite as the roadmap opens (WS4).
 - **Output:** the capability-neutral probe-minus-LLM gap and content-sensitivity across modalities and difficulty.
 
-## Why axis B needs a built task (not NegBioDB's results)
+## Why axis B needs a built task (not NegResultDB's results)
 
-Axis B needs a content-grounded property task, and no existing asset provides one off the shelf (the prior separability probe is small and hazard-labeled; NegBioDB's measured tasks are memorization, not content grounding). So the real B-axis measurement needs a **task to be built** (WS2-style generation of (representation, verifiable-property) pairs), which partially inverts the original "WS1 first" sequence (WS4 doc pass). The dependency is on *building a task*, not on *importing NegBioDB's L4/PBS results*: NegBioDB is one raw-data source, not the measurement, and the instrument stands on axes A/B/E without it.
+Axis B needs a content-grounded property task, and no existing asset provides one off the shelf (the prior separability probe is small and hazard-labeled; NegResultDB's measured tasks are memorization, not content grounding). So the real B-axis measurement needs a **task to be built** (WS2-style generation of (representation, verifiable-property) pairs), which partially inverts the original "WS1 first" sequence (WS4 doc pass). The dependency is on *building a task*, not on *importing NegResultDB's L4/PBS results*: NegResultDB is one raw-data source, not the measurement, and the instrument stands on axes A/B/E without it.
 
 ## Adjacent: negative-evidence coverage (NullAtlas, WS2)
 
@@ -94,8 +94,8 @@ The capability test the project rests on: **does higher T1 grounding predict hig
 
 - Capability-neutral property for the headline (Phase 2); Phase 1 uses the prior probe's hazard label only as a method check, flagged as such.
 - Aggregate behavioral numbers only; excluded source artifacts stay out of git.
-- No em dashes; verified facts; substrate is NegBioDB/NullAtlas.
-- The core contribution is the axis-B grounding instrument (with A and E). NullAtlas/NegBioDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
+- No em dashes; verified facts; substrate is NegResultDB/NullAtlas.
+- The core contribution is the axis-B grounding instrument (with A and E). NullAtlas/NegResultDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
 
 ## Compute
 Heavy or GPU work (ESM-2 / Evo2 embeddings, LLM hidden-state extraction for the activation arm, any model fine-tune) runs on a GPU cluster, not locally. Local is only for light CPU probes. `eval/ceiling_gate.py` (rdkit + sklearn) is the local reference; the probe-vs-LLM head-to-head and the LLM-activation arm move to the GPU workflow.

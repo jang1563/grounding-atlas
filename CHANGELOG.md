@@ -62,7 +62,7 @@ Initial versioned release of the research repository.
 
 ### Changed
 - Reproducibility: removed hardcoded personal paths from scripts and output JSONs;
-  the ADMET DB path is now the `NEGBIODB_ADMET` environment variable with a
+  the ADMET DB path is now the `NEGRES_ADMET` environment variable with a
   repo-relative default.
 - README reframed as a research front door (a "Scope and claims" section replaces
   the internal authoring rules).

@@ -1,6 +1,6 @@
 """T2-SOLVE solo arm, generalized over the 7 WS2 ADMET endpoints.
 
-head_to_head.py is hERG-hardcoded (one prompt, the NegBioDB sqlite). This reads the
+head_to_head.py is hERG-hardcoded (one prompt, the NegResultDB sqlite). This reads the
 modality-general WS2 output instead (signal/admet/<ep>/pairs.jsonl, condition=matched)
 and runs the LLM-output arm per endpoint, so the SOLVE-mode coverage in
 results/t2_apply.md extends from 2 of 7 endpoints to all 7 at a near-fixed ceiling.
@@ -30,8 +30,8 @@ ROOT = os.path.dirname(HERE)
 ADMET = os.path.join(ROOT, "signal", "admet")
 
 # endpoint -> (property clause for the prompt, clause_matches_label1)
-# label-1 = NegBioDB FAIL (generate_signal.py). Direction RESOLVED against assay-value
-# medians in negbiodb_admet.db (outcome vs standard_value): a hERG/CYP fail is the
+# label-1 = NegResultDB FAIL (generate_signal.py). Direction RESOLVED against assay-value
+# medians in negres_admet.db (outcome vs standard_value): a hERG/CYP fail is the
 # active/positive outcome (clause aligned), but a solubility/permeability fail is the
 # LOW-value compound (insoluble fail 1.1 vs pass 313 ug/mL; impermeable fail 71 vs pass
 # 579), so the "soluble/permeable" clause OPPOSES label-1 there -> oriented AUROC = 1-raw

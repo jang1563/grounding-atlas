@@ -1,7 +1,7 @@
 # Computable-property row: the execution axis of property knowledge
 
 *2026-06-13. WS1 add-on. No em dashes. Reuses the axis-B 3-arm instrument (`eval/`), the
-verifiable-signal schema (`signal/generate_signal.py`), and the NegBioDB / Meltome / promoter
+verifiable-signal schema (`signal/generate_signal.py`), and the NegResultDB / Meltome / promoter
 sources. Companion code: `signal/generate_computable.py`, `eval/output_arm_computable.py`,
 `eval/bridge_test_pi.py`, and the `ACT_PROMPT` / `ACT_PARSE` hooks in `eval/activation_arm.py`.*
 
@@ -32,7 +32,7 @@ switched by the token budget (`CMP_MAXTOK`):
   COMPLETION RATE (finished / total) and ACCURACY-AMONG-COMPLETED (exact-match, MAE, AUROC).
 
 Each computable property is also binarized at its median so AUROC lands on the same 0.5-to-ceiling
-axis as every other rung. Sources: NegBioDB SMILES (1500 cpds), Meltome proteins (1500),
+axis as every other rung. Sources: NegResultDB SMILES (1500 cpds), Meltome proteins (1500),
 promoter DNA (1500, 251 bp). Model: claude-sonnet-4-6.
 
 ### Methodology trap (the reason this row almost reported the opposite result)

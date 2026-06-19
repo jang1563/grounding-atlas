@@ -14,7 +14,7 @@ Each emitted record (`admet/<endpoint>/pairs.jsonl`):
 
 ```json
 {"id": "herg_1589", "modality": "smiles", "property": "herg",
- "condition": "matched", "representation": "<SMILES>", "label": 0, "source": "negbiodb_admet"}
+ "condition": "matched", "representation": "<SMILES>", "label": 0, "source": "negres_admet"}
 ```
 
 Content-sensitivity `condition` values (the conditions the B-axis instrument cross-runs, `../eval/README.md`):
@@ -47,8 +47,8 @@ A Source supplies `(content, label, modality)` + a featurizer + a leakage-contro
 
 | modality | source | featurizer (ceiling) | cold split | gate runs on |
 |---|---|---|---|---|
-| SMILES (done) | NegBioDB ADMET (7 endpoints) | Morgan r2/2048 | Murcko scaffold | local (CPU) |
-| protein | FLIP / meltome, NegBioDB | ESM2-650M embedding | MMseqs2 cluster | GPU |
+| SMILES (done) | NegResultDB ADMET (7 endpoints) | Morgan r2/2048 | Murcko scaffold | local (CPU) |
+| protein | FLIP / meltome, NegResultDB | ESM2-650M embedding | MMseqs2 cluster | GPU |
 | variant | ClinVar + AlphaMissense / DMS | ESM-1v / AM score | gene GroupKFold | GPU |
 | DNA/RNA | promoter / motif sets | NT / Evo2 embedding | chromosome / cluster | GPU |
 | metabolite | HMDB | fingerprint / spectrum | scaffold | local / GPU |
@@ -57,7 +57,7 @@ The sequence rungs reuse the activation-arm GPU container environment; adding on
 
 ## Provenance
 
-Borrows NullAtlas's verifiable-signal method (`Negative_result_DB/`, the WS2 substrate). NullAtlas's negative-evidence-coverage result (tested-and-failed vs never-tested, rho = -0.70 across models) is **cited, not re-measured** here; that is a knowledge-coverage capability, distinct from the content-grounding signal WS2 generates (see `../eval/README.md` "Adjacent"). Raw ADMET source: NegBioDB `admet_*` tables (ChEMBL-derived).
+Borrows NullAtlas's verifiable-signal method (`NegResultDB/`, the WS2 substrate). NullAtlas's negative-evidence-coverage result (tested-and-failed vs never-tested, rho = -0.70 across models) is **cited, not re-measured** here; that is a knowledge-coverage capability, distinct from the content-grounding signal WS2 generates (see `../eval/README.md` "Adjacent"). Raw ADMET source: NegResultDB `admet_*` tables (ChEMBL-derived).
 
 ## Deliverable status
 

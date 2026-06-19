@@ -119,6 +119,6 @@ Listed because it is easy to conflate with grounding and because the draft taxon
 ## Implications for the workstreams
 
 - **WS1 (instrument):** the core contribution is the **B-axis** (probe-vs-LLM head-to-head + LLM-activation probe + content-sensitivity), with **A** and **E** as measured supporting findings from the prior recognition study. This is what stands on its own. Axes reframed recognition -> capability.
-- **WS2 (signal):** NullAtlas is the load-bearing substrate here (negative-evidence coverage, the verifiable-signal engine). The B-axis Phase 2 also draws raw data from NegBioDB, but as **one source among options**, and the head-to-head gap must not depend on it.
+- **WS2 (signal):** NullAtlas is the load-bearing substrate here (negative-evidence coverage, the verifiable-signal engine). The B-axis Phase 2 also draws raw data from NegResultDB, but as **one source among options**, and the head-to-head gap must not depend on it.
 - **Do not import** NullAtlas's L4/PBS results as instrument findings. Cite them as NullAtlas's; this instrument measures grounding (A/B/E/D).
 - **WS3 / D:** D needs a human-rater pass before it can carry weight; treat as exploratory.

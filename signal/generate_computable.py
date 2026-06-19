@@ -27,7 +27,7 @@ AND AUROC on the binarized label (comparable to every other rung).
 Local CPU only (rdkit + sklearn; Biopython for sequences). No API, no GPU. No em dashes.
 
 Usage:
-  python generate_computable.py                      # SMILES from NegBioDB, all RDKit descriptors
+  python generate_computable.py                      # SMILES from NegResultDB, all RDKit descriptors
   python generate_computable.py --props n_carbon,n_rings
   python generate_computable.py --modality protein --source path/to/seqs.fasta
   python generate_computable.py --modality dna --source path/to/seqs.csv   # column 'sequence'
@@ -42,7 +42,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold, cross_val_predict
 
-ADMET_DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
+ADMET_DB = os.environ.get("NEGRES_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "NegResultDB", "data", "negres_admet.db"))
 OUTROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), "computable")
 MAX_MOL = 1500          # cap molecules featurized (CPU budget)
 VARIANT_SUBSET = 250    # how many also get re_notation + scrambled variants
@@ -244,7 +244,7 @@ def emit(modality, prop, kind, items, values, threshold, labels, outdir):
             rec = {"id": _id, "modality": modality, "property": prop, "condition": "matched",
                    "representation": rep, "label": int(labels[i]),
                    "value": round(float(values[i]), 4), "threshold": round(float(threshold), 4),
-                   "kind": kind, "source": "negbiodb_admet" if is_smiles else "sequence_file"}
+                   "kind": kind, "source": "negres_admet" if is_smiles else "sequence_file"}
             f.write(json.dumps(rec) + "\n")
             if i in vset and is_smiles:
                 rn = renotate_smiles(rep)

@@ -4,7 +4,7 @@
 
 **Question:** is the property predictable from the representation CONTENT (SMILES)? A high supervised ceiling means the signal is in the representation, so a probe-vs-LLM head-to-head is meaningful there. A low ceiling means there is nothing for the LLM to fail to surface.
 
-**Data:** NegBioDB ADMET (`negbiodb_admet.db`, from ChEMBL 36). Compound-level, any-fail -> fail. Morgan fingerprint (radius 2, 2048 bits). Probes: logistic regression + random forest, both class-weight balanced. 5-fold CV, two splits: random and scaffold (Murcko, the leakage control).
+**Data:** NegResultDB ADMET (`negres_admet.db`, from ChEMBL 36). Compound-level, any-fail -> fail. Morgan fingerprint (radius 2, 2048 bits). Probes: logistic regression + random forest, both class-weight balanced. 5-fold CV, two splits: random and scaffold (Murcko, the leakage control).
 
 | endpoint | n_cpd | %fail | random AUROC (lr/rf) | scaffold AUROC (lr/rf) | scaffold AUPRC (lr/rf) | baseline AUPRC | verdict |
 |---|---|---|---|---|---|---|---|

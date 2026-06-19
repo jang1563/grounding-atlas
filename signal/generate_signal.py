@@ -13,7 +13,7 @@ ceiling scripts) into ONE reusable tool, the WS2 deliverable PROJECT_DESIGN asks
 
 The gate is the point: it tells the B-axis instrument which (representation, property) tasks
 are real signal (probe ceiling high, leakage-free) versus the DTI trap (high on a random
-split, collapses cold). Borrows NullAtlas's verifiable-signal method (Negative_result_DB);
+split, collapses cold). Borrows NullAtlas's verifiable-signal method (NegResultDB);
 NullAtlas's negative-evidence-coverage result (rho=-0.70) is CITED, not re-measured here.
 
 Modality-general by design: a Source supplies (content, label, modality) + a featurizer + a
@@ -38,7 +38,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
 
-ADMET_DB = os.environ.get("NEGBIODB_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "Negative_result_DB", "data", "negbiodb_admet.db"))
+ADMET_DB = os.environ.get("NEGRES_ADMET", os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "..", "NegResultDB", "data", "negres_admet.db"))
 OUTDIR = os.path.join(os.path.dirname(__file__), "admet")
 ALL_ENDPOINTS = ["herg", "cyp3a4", "cyp2d6", "ames", "solubility", "permeability", "clearance"]
 
@@ -49,7 +49,7 @@ GATE_SELECTIVITY = 0.10      # probe reads real signal, not label noise
 MAX_PAIRS = 4000             # cap emitted pairs per endpoint
 
 
-# ---- source: NegBioDB ADMET (SMILES -> binary outcome) -----------------------------
+# ---- source: NegResultDB ADMET (SMILES -> binary outcome) -----------------------------
 def load_admet(endpoint):
     con = sqlite3.connect(ADMET_DB)
     rows = con.execute(
@@ -144,7 +144,7 @@ def emit_pairs(endpoint, kept, path, n_variants=200):
             smi, label = kept[i]
             rec = {"id": f"{endpoint}_{i}", "modality": "smiles", "property": endpoint,
                    "condition": "matched", "representation": smi, "label": int(label),
-                   "source": "negbiodb_admet"}
+                   "source": "negres_admet"}
             f.write(json.dumps(rec) + "\n")
             if i in vset:
                 rn = randomized_smiles(smi)

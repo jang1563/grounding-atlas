@@ -150,7 +150,7 @@ pip install -e ".[full]"    # everything: regenerate signal, ceilings, activatio
 
 LLM clients read provider credentials from environment variables such as `ANTHROPIC_API_KEY` and `OPENAI_API_KEY`; keys are never committed. The activation/probe sweeps use GPU job templates under `eval/`.
 
-Some ADMET scripts read a SQLite DB from the sibling `Negative_result_DB` project; the path defaults to `../../Negative_result_DB/data/negbiodb_admet.db` and can be overridden with `NEGBIODB_ADMET`.
+Some ADMET scripts read labels from a local SQLite database (an internal negative-results ADMET source); set its path with the `NEGRES_ADMET` environment variable.
 
 ## Cite
 
