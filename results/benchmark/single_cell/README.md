@@ -1,32 +1,36 @@
 # Single-cell: the capability × web-exposure interaction
 
-Classify **CD8-T vs NK** from a cell-sentence (top-50 genes by log-norm abundance within HVGs,
-housekeeping filtered, so markers surface), in two conditions across a model capability ladder:
+Classify a single cell from a cell-sentence (top-50 genes by log-norm abundance within HVGs,
+housekeeping filtered, so markers surface), in two conditions across a model capability ladder, on
+**two substrates** (so it is not cherry-picked): **CD8-T vs NK** and **CD14+ vs CD16+ monocyte** —
+both pairs share lineage genes, so each needs the gene-symbol → cell-type prior, not one marker
+(specialist CV-AUROC 0.992 / 0.989).
 
 - **gene NAMES** — real symbols (`GZMB NKG7 GNLY PRF1 …` for NK), web-documented.
 - **ANON** — global-consistent arbitrary ids (`feat_12 feat_88 …`); the expression vector is
-  intact (a specialist still separates the classes, CV-AUROC **0.992**), only the human-readable
-  name is removed.
+  intact (the specialist still separates the classes), only the human-readable name is removed.
 
-Data `signal/single_cell/cd8t_nk.csv` (470 cells: 316 CD8-T, 154 NK), n=200 balanced/model.
-Code: [`build_cd8t_nk.py`](../../../signal/single_cell/build_cd8t_nk.py),
+Data `signal/single_cell/{cd8t_nk,mono_cd14_fcgr3a}.csv`, n=200 balanced/model. Code:
+[`build_cd8t_nk.py`](../../../signal/single_cell/build_cd8t_nk.py) (pair-parameterized),
 [`single_cell_arm.py`](../../../eval/single_cell_arm.py), [`single_cell_figure.py`](../../../eval/single_cell_figure.py).
 
 ![interaction](interaction.png)
 
-| model | name AUROC | anon AUROC | gap |
-|---|---|---|---|
-| Haiku 4.5 | 0.826 | 0.500 | 0.33 |
-| Sonnet 4.6 | 0.871 | 0.504 | 0.37 |
-| **Opus 4.8** | **0.978** | 0.495 | **0.48** |
-| GPT-4o (cross-provider) | 0.826 | 0.460 | 0.37 |
+| CD8-T vs NK | name AUROC | anon AUROC | gap | | CD14+ vs CD16+ mono | name | anon | gap |
+|---|---|---|---|---|---|---|---|---|
+| Haiku 4.5 | 0.826 | 0.500 | 0.33 | | Haiku 4.5 | 0.763 | 0.505 | 0.26 |
+| Sonnet 4.6 | 0.871 | 0.504 | 0.37 | | Sonnet 4.6 | 0.929 | 0.516 | 0.41 |
+| **Opus 4.8** | **0.978** | 0.495 | **0.48** | | **Opus 4.8** | **0.983** | 0.500 | **0.48** |
+| GPT-4o | 0.826 | 0.460 | 0.37 | | GPT-4o | 0.748 | 0.480 | 0.27 |
 
 ## What it shows
 
-- **Engine × fuel, measured.** On the within-Claude-4 capacity ladder, the gene-name line rises
-  monotonically (0.826 → 0.871 → 0.978, Opus near the 0.992 specialist ceiling), while the anon
-  line stays **pinned at chance at every tier** (0.50 / 0.50 / 0.50) — even Opus. Capability lifts
-  grounding **only where the gene-symbol → cell-type mapping is web-documented**.
+- **Engine × fuel, measured — and it generalizes.** On the within-Claude-4 capacity ladder the
+  gene-name line rises monotonically on **both** substrates (CD8-T/NK 0.826 → 0.871 → 0.978;
+  monocyte 0.763 → 0.929 → 0.983, Opus near the 0.992 / 0.989 specialist ceilings), while the anon
+  line stays **pinned at chance at every tier** (CIs straddle 0.5) — even Opus. Capability lifts
+  grounding **only where the gene-symbol → cell-type mapping is web-documented**, on two
+  independent cell-type pairs.
 - **The gap widens with capability** (0.33 → 0.48): web-exposure and capability *multiply*, they
   are not independent main effects.
 - **The anon arm is the confound control.** If Opus's name gain were just "a bigger / more recent

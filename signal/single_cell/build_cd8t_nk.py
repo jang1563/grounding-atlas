@@ -10,6 +10,7 @@ Writes signal/single_cell/cd8t_nk.csv (label, cell_sentence, anon) with label 1 
 Prints diagnostics: class counts, a specialist-ceiling AUROC (is the task separable but non-trivial?),
 and sample sentences. Run: python signal/single_cell/build_cd8t_nk.py
 """
+import argparse
 import os
 import re
 
@@ -27,24 +28,28 @@ from sklearn.preprocessing import StandardScaler
 HOUSEKEEPING = re.compile(r"^(RP[LS]|MRP[LS]|MT-|MALAT1)")
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OUT = os.path.join(HERE, "cd8t_nk.csv")
 TOPK = 50
-CLASSES = {"CD8 T cells": 1, "NK cells": 0}
 
 
 def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--pos", default="CD8 T cells")
+    ap.add_argument("--neg", default="NK cells")
+    ap.add_argument("--out", default=os.path.join(HERE, "cd8t_nk.csv"))
+    args = ap.parse_args()
+    classes = {args.pos: 1, args.neg: 0}
     a = sc.datasets.pbmc3k_processed()
     raw = a.raw.to_adata() if a.raw is not None else a   # log-normalized abundance, full genes
     hvg = set(map(str, a.var_names))                     # the 1838 highly-variable genes
     genes_all = np.array([str(g) for g in raw.var_names], dtype=object)
     mask = np.array([(g in hvg) and HOUSEKEEPING.match(g) is None for g in genes_all])
     genes = genes_all[mask].astype(str)
-    keep = a.obs["louvain"].isin(CLASSES).values
+    keep = a.obs["louvain"].isin(classes).values
     X = raw.X[keep]
     X = X.toarray() if hasattr(X, "toarray") else np.asarray(X)
     X = X[:, mask]
-    y = np.array([CLASSES[c] for c in a.obs["louvain"].values[keep]])
-    print(f"cells: CD8 T={int((y == 1).sum())}  NK={int((y == 0).sum())}  "
+    y = np.array([classes[c] for c in a.obs["louvain"].values[keep]])
+    print(f"cells: pos({args.pos})={int((y == 1).sum())}  neg({args.neg})={int((y == 0).sum())}  "
           f"informative HVGs={len(genes)} (HVG and non-housekeeping)")
 
     # specialist ceiling: how separable are the two classes from the full expression vector?
@@ -64,14 +69,14 @@ def main():
         rows.append((int(y[i]),
                      " ".join(genes[j] for j in idx),
                      " ".join(anon[int(j)] for j in idx)))
-    with open(OUT, "w") as f:
+    with open(args.out, "w") as f:
         f.write("label,cell_sentence,anon\n")
         for lab, cs, an in rows:
             f.write(f"{lab},{cs},{an}\n")
-    print(f"wrote {OUT}  ({len(rows)} cells, top-{TOPK} genes, global-consistent anon)")
+    print(f"wrote {args.out}  ({len(rows)} cells, top-{TOPK} genes, global-consistent anon)")
     for lab in (1, 0):
         ex = next(r for r in rows if r[0] == lab)
-        print(f"  {'CD8T' if lab else 'NK  '} sample: {ex[1][:90]}")
+        print(f"  {(args.pos if lab else args.neg):16s} sample: {ex[1][:90]}")
 
 
 if __name__ == "__main__":

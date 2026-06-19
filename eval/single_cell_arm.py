@@ -18,14 +18,14 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
 from run_grounding_eval import OUT, complete, parse_prob  # noqa: E402
 
-DATA = os.path.join(os.path.dirname(HERE), "signal", "single_cell", "cd8t_nk.csv")
+SC = os.path.join(os.path.dirname(HERE), "signal", "single_cell")
 PROMPT = ("These are the most distinctively expressed genes of one human immune cell (PBMC), "
-          "highest first:\n{s}\nIs it a CD8+ T cell or an NK cell? Reply with ONLY a number "
-          "between 0 and 1 = the probability that it is a CD8+ T cell.")
+          "highest first:\n{s}\nIs it a {pos} or a {neg}? Reply with ONLY a number between 0 "
+          "and 1 = the probability that it is a {pos}.")
 
 
-def load(n, rng):
-    rows = list(csv.DictReader(open(DATA)))
+def load(data, n, rng):
+    rows = list(csv.DictReader(open(data)))
     pos = [r for r in rows if r["label"] == "1"]
     neg = [r for r in rows if r["label"] == "0"]
     k = min(n // 2, len(pos), len(neg))
@@ -38,9 +38,13 @@ def main():
     ap.add_argument("--model", default="claude-sonnet-4-6")
     ap.add_argument("--n", type=int, default=60)
     ap.add_argument("--conditions", default="name,anon")
+    ap.add_argument("--data", default=os.path.join(SC, "cd8t_nk.csv"))
+    ap.add_argument("--sub", default="")
+    ap.add_argument("--pos", default="CD8+ T cell")
+    ap.add_argument("--neg", default="NK cell")
     args = ap.parse_args()
     rng = np.random.default_rng(0)
-    items = load(args.n, rng)
+    items = load(args.data, args.n, rng)
     y = np.array([int(r["label"]) for r in items])
     out = {"model": args.model, "n": len(y)}
     raw = []
@@ -48,14 +52,14 @@ def main():
         col = "cell_sentence" if cond == "name" else "anon"
         probs = []
         for i, r in enumerate(items):
-            p = parse_prob(complete(args.model, PROMPT.format(s=r[col])))
+            p = parse_prob(complete(args.model, PROMPT.format(s=r[col], pos=args.pos, neg=args.neg)))
             probs.append(p)
             raw.append({"cell": i, "condition": cond, "label": int(r["label"]), "prob": round(float(p), 4)})
         prob = np.array(probs)
         auroc = roc_auc_score(y, prob) if len(set(y.tolist())) > 1 else float("nan")
         out[cond] = round(float(auroc), 3)
         print(f"{args.model:20s} {cond:5s} AUROC={auroc:.3f}  n={len(y)}", flush=True)
-    d = os.path.join(OUT, "single_cell")
+    d = os.path.join(OUT, "single_cell", args.sub)
     os.makedirs(d, exist_ok=True)
     tag = args.model.replace("/", "_")
     json.dump(out, open(os.path.join(d, tag + ".json"), "w"), indent=2)
