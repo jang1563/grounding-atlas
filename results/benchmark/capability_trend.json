@@ -1,0 +1,32 @@
+{
+  "claude-opus-4-8": {
+    "name": 0.978,
+    "obscure": 0.88,
+    "anon": 0.495,
+    "familiarity_share": 0.8
+  },
+  "claude-sonnet-4-6": {
+    "name": 0.871,
+    "obscure": 0.684,
+    "anon": 0.504,
+    "familiarity_share": 0.49
+  },
+  "gpt-4o": {
+    "name": 0.826,
+    "obscure": 0.582,
+    "anon": 0.46,
+    "familiarity_share": 0.33
+  },
+  "claude-haiku-4-5-20251001": {
+    "name": 0.851,
+    "obscure": 0.613,
+    "anon": 0.5,
+    "familiarity_share": 0.32
+  },
+  "gpt-4o-mini": {
+    "name": 0.715,
+    "obscure": 0.519,
+    "anon": 0.565,
+    "familiarity_share": -0.31
+  }
+}
