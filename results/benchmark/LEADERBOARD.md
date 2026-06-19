@@ -4,6 +4,8 @@ Per-task output-arm AUROC (95% bootstrap CI), with the a-priori web-exposure tag
 
 The `baseline-cheap-head` column is not an LLM: it is a reproducible cheap-featurizer logistic-regression head on the same representation (`eval/head_baseline.py`), the orchestrate-via-a-trained-head reference. Where it grounds but the models are at chance (the web-zero rows), the information is present in the representation and should be orchestrated with a head, not prompt-pasted.
 
+Read the `web` tag as the snap-verbalization floor (budget-robust), but necessary-not-sufficient: the web=zero rows span several mechanisms (symbol web-exposure for the name/anon pairs; needs-a-trained-read-out for the ESM/NT embeddings; representation-parsing for hERG-as-graph/3D/sequence), and histopath is web-rich yet ungrounded (a second gate). Only the controlled name/anon pairs isolate web-exposure; see docs/GROUNDBENCH_SPEC.md.
+
 | task | web | ceiling | baseline-cheap-head AUROC [CI] | claude-opus-4-8 AUROC [CI] | claude-sonnet-4-6 AUROC [CI] | gpt-4o AUROC [CI] |
 |---|---|---|---|---|---|---|
 | `admet/ames` | rich | 0.896 | 0.848 (0.792, 0.903) | 0.675 (0.558, 0.774) | 0.679 (0.578, 0.788) | 0.686 (0.586, 0.775) |

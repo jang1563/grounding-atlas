@@ -210,7 +210,12 @@ def update_leaderboard():
            "logistic-regression head on the same representation (`eval/head_baseline.py`), the "
            "orchestrate-via-a-trained-head reference. Where it grounds but the models are at chance "
            "(the web-zero rows), the information is present in the representation and should be "
-           "orchestrated with a head, not prompt-pasted.", ""]
+           "orchestrated with a head, not prompt-pasted.", "",
+           "Read the `web` tag as the snap-verbalization floor (budget-robust), but necessary-not-"
+           "sufficient: the web=zero rows span several mechanisms (symbol web-exposure for the "
+           "name/anon pairs; needs-a-trained-read-out for the ESM/NT embeddings; representation-parsing "
+           "for hERG-as-graph/3D/sequence), and histopath is web-rich yet ungrounded (a second gate). "
+           "Only the controlled name/anon pairs isolate web-exposure; see docs/GROUNDBENCH_SPEC.md.", ""]
     if not models:
         out.append("_No models scored yet. Run `python eval/run_grounding_eval.py --model <id>`._")
     else:

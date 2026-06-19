@@ -79,6 +79,27 @@ web-documented item is recall, not grounding, so `memo_delta` and the web tag ar
 accuracy. The same-data web-rich vs web-zero contrast (single-cell gene-names vs anonymized ids) is the
 cleanest control: equal information, equal specialist ceiling, only the names differ.
 
+## What the web-exposure tag does and does not explain
+
+The `web` tag predicts the snap-verbalization floor: web-zero rows sit near chance, web-rich rows tend to
+ground, and this is robust to a reasoning budget (the compute-budget confound is refuted, see
+[`../results/benchmark/budget_arm.md`](../results/benchmark/budget_arm.md)). But it is
+necessary-not-sufficient, and the `web=zero` column conflates several distinct failure mechanisms, only
+one of which is web-exposure proper:
+
+- The **symbolic controlled pairs** (single-cell gene names vs anon ids, materials formula vs anon
+  elements) are the clean web-exposure evidence: identical data, identical probe/specialist ceiling, only
+  the symbol's web-documentation differs, and the gap is budget-invariant. This is where the claim holds.
+- The **embedding rows** (ESM, Nucleotide Transformer) fail because reading them needs a trained read-out,
+  not because the mapping is undocumented: an orchestrate result, not web-exposure.
+- The **structural rows** (hERG as graph / 3D / sequence) are representation-parsing limits.
+- The **histopath row** is web-rich yet fails: a second gate (medical refusal/hedging, or a
+  vision-to-verbalization expression gap) that capability does not close.
+
+Untested: token-familiarity vs mapping-documentation (whether familiar symbols ground even when the
+mapping is undocumented). So cite web-exposure as established on the symbolic controlled pairs, not as a
+blanket explanation of the whole web=zero column.
+
 ## Versioning, scope, naming
 
 Prompts are versioned constants; the data version is the git commit. Current coverage: **23 tasks across
