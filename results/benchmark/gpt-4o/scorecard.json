@@ -350,5 +350,21 @@
     "memo_delta": null,
     "orientation": "align",
     "web_exposure": "rich"
+  },
+  "rna/nt_emb": {
+    "n": 100,
+    "output_auroc": 0.392,
+    "output_auroc_ci": [
+      0.291,
+      0.508
+    ],
+    "ece": 0.269,
+    "aurc": 0.556,
+    "sel_acc_50": 0.44,
+    "ceiling": 0.918,
+    "gap": 0.526,
+    "memo_delta": null,
+    "orientation": "align",
+    "web_exposure": "zero"
   }
 }

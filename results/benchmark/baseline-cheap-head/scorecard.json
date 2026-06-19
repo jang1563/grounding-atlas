@@ -262,5 +262,17 @@
     "web_exposure": "rich",
     "orientation": "align",
     "method": "cheap-head: char3-5 hashing / value-vector / color"
+  },
+  "rna/nt_emb": {
+    "n": 600,
+    "output_auroc": 0.931,
+    "output_auroc_ci": [
+      0.912,
+      0.949
+    ],
+    "ceiling": null,
+    "web_exposure": "zero",
+    "orientation": "align",
+    "method": "cheap-head: char3-5 hashing / value-vector / color"
   }
 }

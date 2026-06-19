@@ -61,6 +61,10 @@ _RNA = ("Estimate the probability (a single number between 0 and 1) that this nu
         "protein-coding (vs non-coding). Judge only from the sequence below.\nsequence: {rep}\nProbability:")
 _HISTO = ("This is an H&E-stained histopathology image patch. Estimate the probability (a single "
           "number between 0 and 1) that it contains tumor tissue (vs normal).\nProbability:")
+_NT = ("Below is a 512-dimensional nucleotide-sequence embedding from the Nucleotide Transformer (a "
+       "genomic foundation model). Estimate the probability (a single number between 0 and 1) that the "
+       "underlying sequence is protein-coding (vs non-coding). Judge only from the embedding.\n"
+       "embedding: {rep}\nProbability:")
 
 
 TASKS = {
@@ -144,6 +148,12 @@ TASKS = {
     # hedging). ceiling = CONCH pathology FM ~0.90 (cheap color classifier 0.746, VLM activation 0.827).
     "histo/pcam_tumor": dict(kind="image", data="histo/pcam.csv", col="img",
                              prompt=_HISTO, orient="align", web="rich", ceiling=0.90),
+    # 2nd SFM leg (genomic): Nucleotide Transformer (v2-50m) embedding of the RNA coding sequences ->
+    # coding-vs-noncoding. Generalizes the ESM/protein finding to a genomic FM, and gives a within-RNA
+    # contrast: the raw sequence-as-text verbalizes (rna/coding 0.84-0.96, ORF heuristic) but the SFM
+    # embedding should not. ceiling = a read-out head on the NT embedding (0.918, the info IS encoded).
+    "rna/nt_emb": dict(kind="emb", data="sfm_embedding/rna_nt.npz",
+                       prompt=_NT, orient="align", web="zero", ceiling=0.918),
 }
 
 # Default benchmark set (the empirical output arm). Computable / reasoning-mode tasks are excluded.

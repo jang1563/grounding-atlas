@@ -30,11 +30,12 @@
     "herg/nmr",
     "herg/struct3d",
     "rna/coding",
-    "histo/pcam_tumor"
+    "histo/pcam_tumor",
+    "rna/nt_emb"
   ],
   "last_run": [
-    "histo/pcam_tumor"
+    "rna/nt_emb"
   ],
-  "data_commit": "69414c7",
-  "date_utc": "2026-06-19T15:58Z"
+  "data_commit": "50373b7",
+  "date_utc": "2026-06-19T16:54Z"
 }
