@@ -17,7 +17,7 @@ from collections import Counter
 
 import numpy as np
 import torch
-from probe_common import dump_layerloc, nested_layer_auroc, results_path
+from probe_common import control_curve, dump_layerloc, nested_layer_auroc, results_path
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
@@ -239,6 +239,10 @@ def main():
         clf_factory=lambda: make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)))
     ho_auc, ho_layers = nb["auroc"], nb["picked"]
     print(f"HELD-OUT-LAYER ACTIVATION: AUROC={ho_auc:.3f} (nested GroupKFold, layers picked {ho_layers}) | selection bias = {best - ho_auc:+.3f}", flush=True)
+    cc = control_curve(H, y, groups=groups,
+                       clf_factory=lambda: make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)))
+    sel_curve = [a - c for a, c in zip(aucs, cc)]
+    peak_sel = int(np.argmax(sel_curve))
 
     print(f"SUMMARY (same {len(y)} molecules, scaffold split):  structure-probe={sp_auc:.3f} | activation(max)={best:.3f} | activation(held-out-layer)={ho_auc:.3f} | output={o_auc:.3f}", flush=True)
     print("gaps: encoding = probe - activation | expression = activation - output  (all one set, one split)", flush=True)
@@ -251,11 +255,37 @@ def main():
     ac_ctrl_auc = roc_auc_score(y_shuf, ac_ctrl)
     print(f"CONTROL (shuffled labels): structure-probe={sp_ctrl_auc:.3f} | activation@L{best_L}={ac_ctrl_auc:.3f}", flush=True)
     print(f"SELECTIVITY: structure-probe={sp_auc - sp_ctrl_auc:.3f} | activation={best - ac_ctrl_auc:.3f}  (high = probe reads real signal, near-0 = probe just fits)", flush=True)
+    print(f"PEAK-SELECTIVITY layer {peak_sel} (sel={sel_curve[peak_sel]:.3f}, depth {peak_sel / (layers - 1):.2f}) = H1 endpoint (where COMPUTED, not the raw-AUROC peak)", flush=True)
 
-    # task-tagged layer-loc JSON (per-layer curve, nested headline + OOF for H3, output for H2/H3)
-    tag = MODEL.split("/")[-1]
-    dump_layerloc(results_path(f"layer_loc_herg_{tag}.json"), "admet/herg", MODEL, y, aucs, nb,
-                  best - ac_ctrl_auc, output=outp, ceiling=sp_auc)
+    # low-familiarity control (prereg 4.4 ctrl 3b): does encoding survive OFF the web-famous blockers?
+    # herg.csv carries no approval annotation, so supply one via ACT_FAMOUS=<path> (a text file with
+    # one approved/named-blocker SMILES per line). Canonicalize both sides and split. Without the file
+    # this is reported NOT RUN rather than faked (it needs the annotation; a data-build follow-up).
+    lowfam_extra = {}
+    fam_path = os.environ.get("ACT_FAMOUS")
+    if fam_path and os.path.exists(fam_path):
+        def _canon(s):
+            mm = Chem.MolFromSmiles(s)
+            return Chem.MolToSmiles(mm) if mm is not None else None
+        fam_canon = {c for c in (_canon(line.strip()) for line in open(fam_path) if line.strip()) if c}
+        is_fam = np.array([_canon(s) in fam_canon for s in smis])
+        n_fam, n_low = int(is_fam.sum()), int((~is_fam).sum())
+        if n_fam >= 1 and n_low > 50 and len(np.unique(y[~is_fam])) > 1:
+            lf = roc_auc_score(y[~is_fam], nb["oof"][~is_fam])
+            lowfam_extra = {"n_famous": n_fam, "lowfam_auroc": round(float(lf), 4)}
+            print(f"LOW-FAMILIARITY: {n_fam} famous flagged; nested-probe on the {n_low} non-famous = {lf:.3f} (vs all {nb['auroc']:.3f}); holds => not just memorized famous drugs", flush=True)
+        else:
+            print(f"LOW-FAMILIARITY: only {n_fam} famous matched here; too few to split", flush=True)
+    else:
+        print("LOW-FAMILIARITY: control NOT RUN (set ACT_FAMOUS=<smiles-list> with an approved/named-drug annotation)", flush=True)
+
+    # task-tagged layer-loc JSON (per-layer curve, nested headline + OOF for H3, output for H2/H3).
+    # RANDOMIZE (re-notation control) writes a SEPARATE file so it does not clobber the canonical run.
+    suf = "_renote" if RANDOMIZE else ""
+    tag = MODEL.split("/")[-1] + suf
+    dump_layerloc(results_path(f"layer_loc_herg_{tag}.json"), "admet/herg" + suf, MODEL, y, aucs, nb,
+                  best - ac_ctrl_auc, output=outp, ceiling=sp_auc,
+                  sel_curve=sel_curve, control_curve=cc, peak_sel_layer=peak_sel, extra=lowfam_extra or None)
     print(f"  [layer-loc] wrote results/layer_loc_herg_{tag}.json", flush=True)
 
 

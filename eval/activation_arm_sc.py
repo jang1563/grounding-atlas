@@ -16,7 +16,7 @@ import re
 
 import numpy as np
 import torch
-from probe_common import dump_layerloc, layer_curve, nested_layer_auroc, results_path, selectivity_at
+from probe_common import control_curve, dump_layerloc, layer_curve, nested_layer_auroc, results_path
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
@@ -102,16 +102,20 @@ def main():
             print(f"    layer {L:2d}: ACT AUROC={a:.3f}", flush=True)
         naive = max(aucs)
         nb = nested_layer_auroc(H, y)
-        ctrl, sel = selectivity_at(H, y, bestL)
+        cc = control_curve(H, y)
+        sel_curve = [a - c for a, c in zip(aucs, cc)]
+        peak_sel = int(np.argmax(sel_curve))
+        ctrl, sel = cc[bestL], sel_curve[bestL]
         o_auc = roc_auc_score(y, outp)
         print(f"\n== {field} ==", flush=True)
         print(f"  ceiling_surface(bag-of-tokens)={surf:.3f} | ACTIVATION(max)={naive:.3f} | ACTIVATION(held-out)={nb['auroc']:.3f} | OUTPUT={o_auc:.3f}", flush=True)
-        print(f"  selection bias {naive - nb['auroc']:+.3f} | selectivity@L{bestL} {sel:.3f} (control {ctrl:.3f})", flush=True)
+        print(f"  selection bias {naive - nb['auroc']:+.3f} | selectivity@L{bestL} {sel:.3f} (control {ctrl:.3f}) | PEAK-SEL layer {peak_sel} depth {peak_sel / (layers - 1):.2f}", flush=True)
         print(f"  vs supervised ceiling {CEILING_SUPERVISED}: enc gap {CEILING_SUPERVISED - nb['auroc']:.3f} | exp gap {nb['auroc'] - o_auc:.3f}", flush=True)
         tag = MODEL.split("/")[-1]
         dump_layerloc(results_path(f"layer_loc_single_cell_{field}_{tag}.json"),
                       f"single_cell/cd8t_nk:{field}", MODEL, y, aucs, nb, sel,
-                      output=outp, ceiling=CEILING_SUPERVISED)
+                      output=outp, ceiling=CEILING_SUPERVISED,
+                      sel_curve=sel_curve, control_curve=cc, peak_sel_layer=peak_sel)
         print(f"  [layer-loc] wrote results/layer_loc_single_cell_{field}_{tag}.json", flush=True)
 
 

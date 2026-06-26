@@ -18,7 +18,15 @@ from collections import Counter
 
 import numpy as np
 import torch
-from probe_common import cluster_boot, dump_layerloc, layer_curve, nested_layer_auroc, results_path, selectivity_at
+from probe_common import (
+    cluster_boot,
+    control_curve,
+    dump_layerloc,
+    layer_curve,
+    nested_layer_auroc,
+    residualized_cv_auroc,
+    results_path,
+)
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
@@ -142,17 +150,40 @@ def main():
     naive = max(aucs)
     a_lo, a_hi = cluster_boot(y, bestp)
     nb = nested_layer_auroc(H, y)
-    ctrl, sel = selectivity_at(H, y, bestL)
+    cc = control_curve(H, y)
+    sel_curve = [a - c for a, c in zip(aucs, cc)]
+    peak_sel = int(np.argmax(sel_curve))
+    ctrl, sel = cc[bestL], sel_curve[bestL]
     print(f"\nbest ACTIVATION layer {bestL}: AUROC={naive:.3f} [{a_lo:.3f},{a_hi:.3f}] (MAX over {layers}, selection-biased)", flush=True)
     print(f"HELD-OUT-LAYER (nested CV, UNBIASED): AUROC={nb['auroc']:.3f} (fold-mean {nb['auroc_fold']:.3f}, picked {nb['picked']}) | selection bias = {naive - nb['auroc']:+.3f}", flush=True)
     print(f"SELECTIVITY: activation@L{bestL} = {sel:.3f} (control {ctrl:.3f}; high = reads real signal)", flush=True)
+    print(f"PEAK-SELECTIVITY layer {peak_sel} (sel={sel_curve[peak_sel]:.3f}, depth {peak_sel / (layers - 1):.2f}) = H1 endpoint (where COMPUTED, not the raw-AUROC peak)", flush=True)
 
     print(f"\nSUMMARY (DNA promoter, n={len(y)}):  ceiling(6-mer)={sp_auc:.3f} | activation(max)={naive:.3f} | activation(held-out)={nb['auroc']:.3f} | output={o_auc:.3f}", flush=True)
     print(f"gaps: encoding = ceiling - act(held-out) = {sp_auc - nb['auroc']:.3f} | expression = act(held-out) - output = {nb['auroc'] - o_auc:.3f}", flush=True)
 
+    # GC-residualization control (prereg 4.4 control 2): is L* reading promoter SEMANTICS or just GC%?
+    # The DNA promoter task is strongly GC-separable (a surface confound), so a layer that only encodes
+    # composition would score high BY CONSTRUCTION. H2-DNA is KILLED if the residualized probe does not
+    # beat the strongest pure-surface predictor (GC-alone or 6-mer LR) by >= +0.10.
+    gc = np.array([(s.count("G") + s.count("C")) / max(1, len(s)) for s in seqs])
+    slen = np.array([len(s) for s in seqs], dtype=float)
+    Z = np.column_stack([gc, slen, np.ones(len(y))])
+    gc_floor = roc_auc_score(y, cross_val_predict(
+        make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)),
+        gc[:, None], y, cv=cvk, method="predict_proba", n_jobs=5)[:, 1])
+    surface_floor = max(gc_floor, sp_auc)
+    res_auroc = residualized_cv_auroc(np.asarray(H[bestL]), y, Z)
+    gc_margin = res_auroc - surface_floor
+    gc_verdict = "PASS" if gc_margin >= 0.10 else "KILL H2-DNA (reads composition, not semantics)"
+    print(f"GC-CONTROL: gc%-floor={gc_floor:.3f} 6mer-ceiling={sp_auc:.3f} surface-floor={surface_floor:.3f} | residualized-probe@L{bestL}={res_auroc:.3f} | margin={gc_margin:+.3f} -> {gc_verdict}", flush=True)
+
     tag = MODEL.split("/")[-1]
     dump_layerloc(results_path(f"layer_loc_dna_promoter_{tag}.json"), "dna/promoter", MODEL,
-                  y, aucs, nb, sel, output=outp, ceiling=sp_auc)
+                  y, aucs, nb, sel, output=outp, ceiling=sp_auc,
+                  sel_curve=sel_curve, control_curve=cc, peak_sel_layer=peak_sel,
+                  extra={"gc_floor": round(float(gc_floor), 4), "surface_floor": round(float(surface_floor), 4),
+                         "residualized_auroc": round(float(res_auroc), 4), "gc_margin": round(float(gc_margin), 4)})
     print(f"  [layer-loc] wrote results/layer_loc_dna_promoter_{tag}.json", flush=True)
 
 

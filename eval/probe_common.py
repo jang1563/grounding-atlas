@@ -70,6 +70,18 @@ def layer_curve(H, y, groups=None, clf_factory=balanced_lr, n_splits=5):
     return aucs, best_L, best_oof
 
 
+def control_curve(H, y, groups=None, clf_factory=balanced_lr, n_splits=5, seed=123):
+    """Per-layer SHUFFLED-LABEL control AUROC (the denominator of the selectivity curve). Pair with
+    layer_curve's real AUROC: selectivity[L] = real[L] - control[L], and the PEAK-SELECTIVITY layer
+    (not the peak raw-AUROC layer) is the prereg's H1 endpoint = where the property is COMPUTED. A
+    layer can have high raw AUROC yet near-zero selectivity if it is only reading the surface-readable
+    tokenized input; selectivity strips that off (Hewitt-Liang 1909.03368)."""
+    ys = np.random.RandomState(seed).permutation(np.asarray(y))
+    cv = _kfold(n_splits, groups)
+    return [float(roc_auc_score(ys, _cvp(clf_factory(), np.asarray(H[L]), ys, cv, groups)))
+            for L in range(len(H))]
+
+
 def nested_layer_auroc(H, y, groups=None, clf_factory=balanced_lr, n_splits=5):
     """UNBIASED best-layer AUROC by nested CV (Cawley-Talbot JMLR 2010): pick the layer on the inner
     folds of the outer-TRAIN rows only, score the untouched outer-test fold at that layer. Removes
@@ -133,6 +145,26 @@ def selectivity_at(H, y, L, groups=None, clf_factory=balanced_lr, n_splits=5, se
     ys = np.random.RandomState(seed).permutation(y)
     ctrl = roc_auc_score(ys, _cvp(clf_factory(), Xl, ys, _kfold(n_splits, groups), groups))
     return float(ctrl), float(real - ctrl)
+
+
+def residualized_cv_auroc(X, y, Z, groups=None, clf_factory=balanced_lr, n_splits=5):
+    """CV AUROC of a probe on X with the linear component of Z partialled OUT, fit PER-FOLD (no
+    leakage): regress X on Z on the train rows, subtract that prediction from train AND test X, then
+    probe the residuals. For the DNA GC control (prereg 4.4 control 2): X = selected-layer activations,
+    Z = [GC%, length, intercept], so the probe AUROC reflects promoter signal ORTHOGONAL to GC and
+    length composition. If this collapses toward the surface floor the layer was reading composition,
+    not promoter semantics."""
+    y = np.asarray(y)
+    X = np.asarray(X, dtype=float)
+    Z = np.asarray(Z, dtype=float)
+    cv = _kfold(n_splits, groups)
+    splits = cv.split(X, y, groups) if groups is not None else cv.split(X, y)
+    oof = np.zeros(len(y), dtype=float)
+    for tr, te in splits:
+        beta = np.linalg.lstsq(Z[tr], X[tr], rcond=None)[0]   # Z_tr @ beta ~= X_tr
+        clf = clf_factory().fit(X[tr] - Z[tr] @ beta, y[tr])
+        oof[te] = clf.predict_proba(X[te] - Z[te] @ beta)[:, 1]
+    return float(roc_auc_score(y, oof))
 
 
 def cluster_boot(y, p, groups=None, n_boot=1000, seed=0):
@@ -202,7 +234,7 @@ def sel_acc(y, p, cov=0.5):
 
 
 def dump_layerloc(path, task, model, y, layer_aucs, nested, sel, *, output=None, ceiling=None,
-                  groups=None, extra=None):
+                  groups=None, sel_curve=None, control_curve=None, peak_sel_layer=None, extra=None):
     """Task-tagged JSON for an arm: per-layer curve, the naive-minus-nested optimism, the nested
     headline (auroc, picked, band, OOF vector), selectivity, and (if given) the verbalize vector +
     H3 calibration (probe ECE/AURC vs output AURC) so the analysis in Section 5 reads one schema."""
@@ -234,6 +266,12 @@ def dump_layerloc(path, task, model, y, layer_aucs, nested, sel, *, output=None,
         rec["output_aurc"] = round(aurc(y, output), 4)
     if ceiling is not None:
         rec["ceiling"] = round(float(ceiling), 4)
+    if sel_curve is not None:
+        # the prereg H1 endpoint: peak-SELECTIVITY layer (real - shuffled-control per layer), the
+        # depth where the property is COMPUTED rather than just surface-readable
+        rec["sel_curve"] = [round(float(s), 4) for s in sel_curve]
+        rec["control_curve"] = [round(float(c), 4) for c in control_curve]
+        rec["peak_sel_layer"] = int(peak_sel_layer)
     if extra:
         rec.update(extra)
     with open(path, "w") as f:

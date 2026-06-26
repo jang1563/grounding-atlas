@@ -15,7 +15,7 @@ import re
 
 import numpy as np
 import torch
-from probe_common import dump_layerloc, layer_curve, nested_layer_auroc, results_path, selectivity_at
+from probe_common import control_curve, dump_layerloc, layer_curve, nested_layer_auroc, results_path
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
@@ -105,15 +105,20 @@ def main():
         print(f"  layer {L:2d}: ACT AUROC={a:.3f}", flush=True)
     naive = max(aucs)
     nb = nested_layer_auroc(H, y)
-    ctrl, sel = selectivity_at(H, y, bestL)
+    cc = control_curve(H, y)
+    sel_curve = [a - c for a, c in zip(aucs, cc)]
+    peak_sel = int(np.argmax(sel_curve))
+    ctrl, sel = cc[bestL], sel_curve[bestL]
     print(f"MODEL={MODEL}  n={len(y)}", flush=True)
     print(f"best ACTIVATION layer {bestL}: AUROC={naive:.3f} (MAX, selection-biased) | HELD-OUT (nested CV) AUROC={nb['auroc']:.3f} | bias {naive - nb['auroc']:+.3f}", flush=True)
     print(f"SELECTIVITY: activation@L{bestL} = {sel:.3f} (control {ctrl:.3f})", flush=True)
+    print(f"PEAK-SELECTIVITY layer {peak_sel} (sel={sel_curve[peak_sel]:.3f}, depth {peak_sel / (layers - 1):.2f}) = H1 endpoint", flush=True)
     print(f"SUMMARY (MSA conservation):  ceiling={c_auc:.3f} | ACTIVATION(held-out)={nb['auroc']:.3f} | OUTPUT={o_auc:.3f}", flush=True)
     print(f"gaps: encoding = ceiling - act = {c_auc - nb['auroc']:.3f} | expression = act - output = {nb['auroc'] - o_auc:.3f}", flush=True)
     tag = MODEL.split("/")[-1]
     dump_layerloc(results_path(f"layer_loc_msa_conservation_{tag}.json"), "msa/conservation", MODEL,
-                  y, aucs, nb, sel, output=outp, ceiling=c_auc)
+                  y, aucs, nb, sel, output=outp, ceiling=c_auc,
+                  sel_curve=sel_curve, control_curve=cc, peak_sel_layer=peak_sel)
     print(f"  [layer-loc] wrote results/layer_loc_msa_conservation_{tag}.json", flush=True)
 
 

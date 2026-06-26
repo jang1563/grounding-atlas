@@ -21,10 +21,14 @@ HEADLINE = ("dna/promoter", "admet/herg")
 
 
 def depth_stats(d):
+    """H1 endpoint depth. Prefer the PEAK-SELECTIVITY layer (where the property is COMPUTED); fall
+    back to the mean nested-CV raw pick when the selectivity curve is absent (older runs). Also return
+    the across-fold raw-pick range as the jumpiness proxy."""
     nl = len(d["layer_auroc"]) - 1
     pk = d["picked_layers"]
-    dep = [p / nl for p in pk]
-    return sum(dep) / len(dep), min(pk), max(pk), max(pk) - min(pk), nl
+    if "peak_sel_layer" in d:
+        return d["peak_sel_layer"] / nl, min(pk), max(pk), max(pk) - min(pk), nl, "sel"
+    return (sum(pk) / len(pk)) / nl, min(pk), max(pk), max(pk) - min(pk), nl, "raw"
 
 
 def load(folder):
@@ -44,7 +48,7 @@ def analyze(by_model):
         out.append(f"{'task':30s} {'nest':>5s} {'out':>5s} {'gap':>6s} {'excess':>6s} "
                    f"{'depth':>5s} {'range':>5s} {'pECE':>5s} {'dAURC':>6s} {'sel':>5s} {'bias':>5s} verdicts")
         for task, d in sorted(tasks.items()):
-            mdep, lo, hi, rng, nl = depth_stats(d)
+            mdep, lo, hi, rng, nl, src = depth_stats(d)
             gap = d["raw_gap"]
             excess = (gap - floor) if floor is not None else float("nan")
             daurc = d.get("probe_aurc", float("nan")) - d.get("output_aurc", float("nan"))
@@ -64,7 +68,7 @@ def analyze(by_model):
             # H3
             v.append("H3+" if (daurc < 0 and ece <= H3_ECE) else "H3-")
             out.append(f"{task:30s} {d['nested_auroc']:.3f} {d['output_auroc']:.3f} {gap:+.3f} "
-                       f"{excess:+.3f} {mdep:.2f} [{lo:2d}-{hi:2d}] {ece:.3f} {daurc:+.3f} {sel:+.3f} "
+                       f"{excess:+.3f} {mdep:.2f}{src[0]} [{lo:2d}-{hi:2d}] {ece:.3f} {daurc:+.3f} {sel:+.3f} "
                        f"{d['selection_bias']:+.3f}  {' '.join(v)}")
 
     # cross-architecture H1 (do the headline tasks share a band across models?)
