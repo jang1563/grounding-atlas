@@ -16,12 +16,11 @@ import re
 
 import numpy as np
 import torch
+from probe_common import dump_layerloc, layer_curve, nested_layer_auroc, results_path, selectivity_at
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
-from sklearn.pipeline import make_pipeline
-from sklearn.preprocessing import StandardScaler
 from transformers import AutoModelForCausalLM, AutoTokenizer
 
 MODEL = os.environ.get("ACT_MODEL", "Qwen/Qwen3-8B")
@@ -95,13 +94,25 @@ def main():
                 g = model.generate(**inp, max_new_tokens=GEN, do_sample=False, pad_token_id=tok.eos_token_id)
             outp.append(parse_prob(tok.decode(g[0][inp["input_ids"].shape[1]:], skip_special_tokens=True))[0])
         outp = np.array(outp)
-        clf = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
-        best = max(roc_auc_score(y, cross_val_predict(clf, np.asarray(H[L]), y, cv=cv, method="predict_proba", n_jobs=5)[:, 1])
-                   for L in range(layers))
+        # per-layer curve + UNBIASED nested-CV + selectivity (probe_common). Single-cell is
+        # DESCRIPTIVE-only per the prereg power floor (n<=470): the OUTPUT web-rich-vs-web-zero
+        # contrast across the two fields is the result, NOT a layer peak-shift claim.
+        aucs, bestL, bestp = layer_curve(H, y)
+        for L, a in enumerate(aucs):
+            print(f"    layer {L:2d}: ACT AUROC={a:.3f}", flush=True)
+        naive = max(aucs)
+        nb = nested_layer_auroc(H, y)
+        ctrl, sel = selectivity_at(H, y, bestL)
         o_auc = roc_auc_score(y, outp)
         print(f"\n== {field} ==", flush=True)
-        print(f"  ceiling_surface(bag-of-tokens)={surf:.3f} | ACTIVATION(max)={best:.3f} | OUTPUT={o_auc:.3f}", flush=True)
-        print(f"  vs supervised ceiling {CEILING_SUPERVISED}: enc gap {CEILING_SUPERVISED-best:.3f} | exp gap {best-o_auc:.3f}", flush=True)
+        print(f"  ceiling_surface(bag-of-tokens)={surf:.3f} | ACTIVATION(max)={naive:.3f} | ACTIVATION(held-out)={nb['auroc']:.3f} | OUTPUT={o_auc:.3f}", flush=True)
+        print(f"  selection bias {naive - nb['auroc']:+.3f} | selectivity@L{bestL} {sel:.3f} (control {ctrl:.3f})", flush=True)
+        print(f"  vs supervised ceiling {CEILING_SUPERVISED}: enc gap {CEILING_SUPERVISED - nb['auroc']:.3f} | exp gap {nb['auroc'] - o_auc:.3f}", flush=True)
+        tag = MODEL.split("/")[-1]
+        dump_layerloc(results_path(f"layer_loc_single_cell_{field}_{tag}.json"),
+                      f"single_cell/cd8t_nk:{field}", MODEL, y, aucs, nb, sel,
+                      output=outp, ceiling=CEILING_SUPERVISED)
+        print(f"  [layer-loc] wrote results/layer_loc_single_cell_{field}_{tag}.json", flush=True)
 
 
 if __name__ == "__main__":

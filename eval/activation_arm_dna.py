@@ -18,6 +18,7 @@ from collections import Counter
 
 import numpy as np
 import torch
+from probe_common import cluster_boot, dump_layerloc, layer_curve, nested_layer_auroc, results_path, selectivity_at
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
@@ -132,33 +133,27 @@ def main():
     pc = Counter(ptypes)
     print(f"OUTPUT  AUROC={o_auc:.3f} [{o_lo:.3f},{o_hi:.3f}]  parse={dict(pc)}", flush=True)
 
-    clf = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
-    best, bestL, bestp = 0.0, -1, None
-    for L in range(layers):
-        pr = cross_val_predict(clf, np.asarray(H[L]), y, cv=cvk, method="predict_proba", n_jobs=5)[:, 1]
-        a = roc_auc_score(y, pr)
-        if a > best:
-            best, bestL, bestp = a, L, pr
+    # per-layer curve (biased max) + UNBIASED nested-CV best-layer + selectivity (probe_common).
+    # DNA has no group structure here (StratifiedKFold, shuffle handles the class-block order);
+    # the prereg's sequence-cluster GroupKFold + GC-residualization are control-2 follow-ups.
+    aucs, bestL, bestp = layer_curve(H, y)
+    for L, a in enumerate(aucs):
         print(f"  layer {L:2d}: ACT AUROC={a:.3f}", flush=True)
-    a_lo, a_hi = boot(y, bestp)
-    print(f"\nbest ACTIVATION layer {bestL}: AUROC={best:.3f} [{a_lo:.3f},{a_hi:.3f}] (max over {layers})", flush=True)
+    naive = max(aucs)
+    a_lo, a_hi = cluster_boot(y, bestp)
+    nb = nested_layer_auroc(H, y)
+    ctrl, sel = selectivity_at(H, y, bestL)
+    print(f"\nbest ACTIVATION layer {bestL}: AUROC={naive:.3f} [{a_lo:.3f},{a_hi:.3f}] (MAX over {layers}, selection-biased)", flush=True)
+    print(f"HELD-OUT-LAYER (nested CV, UNBIASED): AUROC={nb['auroc']:.3f} (fold-mean {nb['auroc_fold']:.3f}, picked {nb['picked']}) | selection bias = {naive - nb['auroc']:+.3f}", flush=True)
+    print(f"SELECTIVITY: activation@L{bestL} = {sel:.3f} (control {ctrl:.3f}; high = reads real signal)", flush=True)
 
-    # selectivity control (Hewitt-Liang): shuffled labels
-    ys = np.random.RandomState(123).permutation(y)
-    ac = cross_val_predict(clf, np.asarray(H[bestL]), ys, cv=cvk, method="predict_proba", n_jobs=5)[:, 1]
-    print(f"SELECTIVITY: activation {best - roc_auc_score(ys, ac):.3f}  (high = reads real signal)", flush=True)
+    print(f"\nSUMMARY (DNA promoter, n={len(y)}):  ceiling(6-mer)={sp_auc:.3f} | activation(max)={naive:.3f} | activation(held-out)={nb['auroc']:.3f} | output={o_auc:.3f}", flush=True)
+    print(f"gaps: encoding = ceiling - act(held-out) = {sp_auc - nb['auroc']:.3f} | expression = act(held-out) - output = {nb['auroc'] - o_auc:.3f}", flush=True)
 
-    print(f"\nSUMMARY (DNA promoter, n={len(y)}):  ceiling(6-mer)={sp_auc:.3f} | activation={best:.3f} | output={o_auc:.3f}", flush=True)
-    print(f"gaps: encoding = ceiling - activation = {sp_auc - best:.3f} | expression = activation - output = {best - o_auc:.3f}", flush=True)
-
-    if os.environ.get("ACT_DUMP"):
-        import json
-        json.dump({"best_layer": int(bestL), "model": MODEL, "n": len(y),
-                   "summary": {"ceiling": round(sp_auc, 3), "activation": round(best, 3), "output": round(o_auc, 3)},
-                   "items": [{"seq": seqs[i], "label": int(y[i]), "act": round(float(bestp[i]), 4),
-                              "ceiling": round(float(sp[i]), 4), "output": round(float(outp[i]), 4)} for i in range(len(y))]},
-                  open(os.environ["ACT_DUMP"], "w"))
-        print(f"  [ACT_DUMP] wrote per-item to {os.environ['ACT_DUMP']}", flush=True)
+    tag = MODEL.split("/")[-1]
+    dump_layerloc(results_path(f"layer_loc_dna_promoter_{tag}.json"), "dna/promoter", MODEL,
+                  y, aucs, nb, sel, output=outp, ceiling=sp_auc)
+    print(f"  [layer-loc] wrote results/layer_loc_dna_promoter_{tag}.json", flush=True)
 
 
 if __name__ == "__main__":

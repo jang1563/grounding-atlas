@@ -16,6 +16,7 @@ import os
 
 import numpy as np
 import torch
+from probe_common import nested_layer_auroc
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupKFold, cross_val_predict
@@ -38,26 +39,6 @@ def prompt(v):
     return ("A protein is represented by its 640-dimensional ESM-2 embedding (a protein language "
             f"model representation).\nEmbedding: {vec_str(v)}\n"
             "Does it have high thermostability? Answer:")
-
-
-def heldout_layer_auroc(H, y, groups, clf_factory, n_splits=5):
-    """Unbiased best-layer AUROC: pick the layer on TRAIN folds only, score the held-out fold
-    (Cawley-Talbot JMLR 2010). best-layer minus held-out-layer = the selection bias."""
-    oof = np.zeros(len(y)); picked = []
-    for tr, te in GroupKFold(n_splits).split(H[0], y, groups):
-        g_tr = groups[tr]
-        inner = GroupKFold(min(n_splits, len(np.unique(g_tr))))
-        bL, ba = 0, -1.0
-        for L in range(len(H)):
-            p = cross_val_predict(clf_factory(), H[L][tr], y[tr], cv=inner, groups=g_tr,
-                                  method="predict_proba", n_jobs=-1)[:, 1]
-            a = roc_auc_score(y[tr], p)
-            if a > ba:
-                ba, bL = a, L
-        c = clf_factory().fit(H[bL][tr], y[tr])
-        oof[te] = c.predict_proba(H[bL][te])[:, 1]
-        picked.append(bL)
-    return roc_auc_score(y, oof), picked
 
 
 def main():
@@ -102,7 +83,8 @@ def main():
     ys = np.random.RandomState(123).permutation(y)
     pc = cross_val_predict(clf(), H[bestL], ys, cv=cv, groups=grp, method="predict_proba", n_jobs=-1)[:, 1]
     ctrl = roc_auc_score(ys, pc)
-    ho, picked = heldout_layer_auroc(H, y, grp, clf)   # selection-bias-corrected (nested CV)
+    nb = nested_layer_auroc(H, y, groups=grp, clf_factory=clf)   # shared single source (probe_common)
+    ho, picked = nb["auroc"], nb["picked"]
     print(f"\nACTIVATION best-layer (max over {len(H)} layers): AUROC={best:.3f} (layer {bestL}, "
           f"shuffled-label control={ctrl:.3f}, selectivity={best - ctrl:+.3f})", flush=True)
     print(f"ACTIVATION held-out-layer (nested GroupKFold, UNBIASED): AUROC={ho:.3f} "
@@ -122,8 +104,10 @@ def main():
     tag = MODEL.split("/")[-1]
     json.dump({"model": MODEL, "n": int(len(y)), "best_layer_auroc": round(float(best), 3),
                "best_layer": int(bestL), "heldout_layer_auroc": round(float(ho), 3),
+               "nested_auroc_fold": round(float(nb["auroc_fold"]), 3),
                "selection_bias": round(float(best - ho), 3), "control": round(float(ctrl), 3),
                "selectivity": round(float(best - ctrl), 3), "layers_picked": [int(x) for x in picked],
+               "oof": [round(float(v), 4) for v in nb["oof"]], "label": [int(v) for v in y],
                "ceiling": 0.83, "output_zeroshot": 0.47, "output_icl": 0.56},
               open(os.path.join(ROOT, "results", f"sfm_embedding_activation_{tag}.json"), "w"), indent=2)
     print(f"saved -> results/sfm_embedding_activation_{tag}.json", flush=True)

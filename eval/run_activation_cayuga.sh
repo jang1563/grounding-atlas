@@ -11,7 +11,11 @@
 
 set -euo pipefail
 module load anaconda3/2023.09-3 cuda/12.1
+cd "$HOME/bge"                # arms + probe_common.py are staged FLAT here; run from this dir
 source venv/bin/activate
+export PYTHONNOUSERSITE=1     # guard the ~/.local numpy2-vs-sklearn break (else sklearn import fails)
+# NOTE: activation_arm.py imports rdkit at top level -> the venv MUST have it (pip install rdkit-pypi).
+# The DNA / single-cell / MSA arms do NOT import rdkit (probe_common pulls only sklearn).
 
 export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen2.5-7B-Instruct}"   # open-weight default
 export ACT_N="${ACT_N:-2000}"

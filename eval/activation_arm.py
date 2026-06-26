@@ -17,6 +17,7 @@ from collections import Counter
 
 import numpy as np
 import torch
+from probe_common import dump_layerloc, nested_layer_auroc, results_path
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
@@ -131,35 +132,6 @@ def bootstrap_ci(y, proba, n_boot=1000):
     return float(np.percentile(aucs, 2.5)), float(np.percentile(aucs, 97.5))
 
 
-def heldout_layer_auroc(H, y, groups, clf_factory, n_splits=5):
-    """Unbiased best-layer AUROC by nested GroupKFold (defends the encoding claim
-    against max-over-layers selection bias, Cawley-Talbot JMLR 2010).
-
-    Inner folds pick the layer using TRAIN rows only; the held-out outer fold is
-    scored at that layer. Report this next to the max-over-layers number: their
-    difference IS the selection bias. See `results/selection_bias.md`.
-    """
-    Harr = [np.asarray(h) for h in H]
-    layers = len(Harr)
-    outer = GroupKFold(n_splits)
-    oof = np.zeros(len(y), dtype=float)
-    picked = []
-    for tr, te in outer.split(Harr[0], y, groups):
-        g_tr = groups[tr]
-        inner = GroupKFold(min(n_splits, len(np.unique(g_tr))))
-        best_L, best_a = -1, -1.0
-        for L in range(layers):
-            p = cross_val_predict(clf_factory(), Harr[L][tr], y[tr], cv=inner,
-                                  groups=g_tr, method="predict_proba", n_jobs=5)[:, 1]
-            a = roc_auc_score(y[tr], p)
-            if a > best_a:
-                best_a, best_L = a, L
-        clf = clf_factory().fit(Harr[best_L][tr], y[tr])
-        oof[te] = clf.predict_proba(Harr[best_L][te])[:, 1]
-        picked.append(best_L)
-    return roc_auc_score(y, oof), picked
-
-
 def load_model():
     tok = AutoTokenizer.from_pretrained(MODEL)
     quant = None
@@ -238,10 +210,11 @@ def main():
 
     # activation (hidden states), same scaffold split, per layer
     clf = make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000))
-    best, best_L, best_proba = 0.0, -1, None
+    best, best_L, best_proba, aucs = 0.0, -1, None, []
     for L in range(layers):
         proba = cross_val_predict(clf, np.asarray(H[L]), y, cv=cv, groups=groups, method="predict_proba", n_jobs=5)[:, 1]
         a = roc_auc_score(y, proba)
+        aucs.append(float(a))
         if a > best:
             best, best_L, best_proba = a, L, proba
         print(f"  layer {L:2d}: ACT AUROC={a:.3f}", flush=True)
@@ -260,9 +233,11 @@ def main():
                    open(os.environ["ACT_DUMP"], "w"))
         print(f"  [ACT_DUMP] wrote {len(rows)} per-item predictions to {os.environ['ACT_DUMP']}", flush=True)
 
-    # unbiased best-layer estimate (nested CV); best - heldout = the selection bias
-    ho_auc, ho_layers = heldout_layer_auroc(
-        H, y, groups, lambda: make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)))
+    # unbiased best-layer estimate (nested CV, shared probe_common); best - heldout = selection bias
+    nb = nested_layer_auroc(
+        H, y, groups=groups,
+        clf_factory=lambda: make_pipeline(StandardScaler(), LogisticRegression(max_iter=1000)))
+    ho_auc, ho_layers = nb["auroc"], nb["picked"]
     print(f"HELD-OUT-LAYER ACTIVATION: AUROC={ho_auc:.3f} (nested GroupKFold, layers picked {ho_layers}) | selection bias = {best - ho_auc:+.3f}", flush=True)
 
     print(f"SUMMARY (same {len(y)} molecules, scaffold split):  structure-probe={sp_auc:.3f} | activation(max)={best:.3f} | activation(held-out-layer)={ho_auc:.3f} | output={o_auc:.3f}", flush=True)
@@ -276,6 +251,12 @@ def main():
     ac_ctrl_auc = roc_auc_score(y_shuf, ac_ctrl)
     print(f"CONTROL (shuffled labels): structure-probe={sp_ctrl_auc:.3f} | activation@L{best_L}={ac_ctrl_auc:.3f}", flush=True)
     print(f"SELECTIVITY: structure-probe={sp_auc - sp_ctrl_auc:.3f} | activation={best - ac_ctrl_auc:.3f}  (high = probe reads real signal, near-0 = probe just fits)", flush=True)
+
+    # task-tagged layer-loc JSON (per-layer curve, nested headline + OOF for H3, output for H2/H3)
+    tag = MODEL.split("/")[-1]
+    dump_layerloc(results_path(f"layer_loc_herg_{tag}.json"), "admet/herg", MODEL, y, aucs, nb,
+                  best - ac_ctrl_auc, output=outp, ceiling=sp_auc)
+    print(f"  [layer-loc] wrote results/layer_loc_herg_{tag}.json", flush=True)
 
 
 if __name__ == "__main__":

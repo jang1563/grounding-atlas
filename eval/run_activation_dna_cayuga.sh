@@ -18,8 +18,9 @@ set -eo pipefail
 export MODULEPATH=/opt/ohpc/pub/modulefiles
 source /opt/ohpc/admin/lmod/lmod/init/bash
 module load anaconda3/2023.09-3 cuda/12.1
-cd "$HOME/bge"
+cd "$HOME/bge"               # arms + probe_common.py staged FLAT here
 source venv/bin/activate
+export PYTHONNOUSERSITE=1     # guard the ~/.local numpy2-vs-sklearn break (else sklearn import fails)
 
 export ACT_MODEL="${ACT_MODEL:-Qwen/Qwen3-8B}"
 export ACT_N="${ACT_N:-1500}"

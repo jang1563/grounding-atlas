@@ -442,6 +442,21 @@ GC residualization, layer-0 floor), never from the bare peak.
 
 ## 7. Compute plan (Cayuga)
 
+IMPLEMENTATION STATUS (2026-06-26): the BLOCKING port is DONE. The nested-CV machinery now lives in a
+single source, `eval/probe_common.py` (`nested_layer_auroc` returns the OOF vector + per-fold layer +
+fold AUROCs, fixing the discarded-OOF bug; plus `layer_curve`, `selectivity_at`, `cluster_boot`,
+`ece`/`aurc`/`sel_acc`, `dump_layerloc`), and is wired into all five arms (`activation_arm.py`,
+`activation_arm_dna.py`, `activation_arm_sc.py`, `activation_arm_msa.py`, `sfm_embedding_activation.py`);
+each now emits a task-tagged `results/layer_loc_<task>_<model>.json` with the per-layer curve, the
+naive-minus-nested optimism, the nested headline + OOF, selectivity, and the verbalize vector for H2/H3.
+The four launchers now export `PYTHONNOUSERSITE=1`. An end-to-end smoke (DNA arm, Qwen2.5-0.5B, n=48,
+local MPS) ran clean: nested-CV picked mid-layers [5,18,5,17,5], naive 0.924 vs unbiased 0.882 (the
++0.042 optimism the design targets), expression gap 0.455, full JSON schema written. STILL PENDING (not
+blocking the first run, tracked in Known limitations): the DNA sequence-cluster GroupKFold + GC
+residualization (control 2), mean-pool readout, and the tuned-lens break-layer arm. Staging must copy
+`eval/probe_common.py` FLAT to `~/bge/` alongside the arms (the launchers run flat). The SFM launcher is
+`cayuga_sfm_activation.sbatch` (not `run_activation_sfm_cayuga.sh`).
+
 Infra: open-weight on Cayuga `scu-gpu` via the per-arm `run_activation_*_cayuga.sh` launchers.
 GPU type: request `gpu:a40:1` for the DNA/single-cell/MSA/SFM runs (an 8B in fp16 is ~16 GB weights,
 fits the a40's 48 GB; the A100 partition has historically sat PENDING for days, so a40 is the
