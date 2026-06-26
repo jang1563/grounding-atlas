@@ -10,6 +10,8 @@
 #SBATCH --output=activation_%j.log
 
 set -euo pipefail
+export MODULEPATH=/opt/ohpc/pub/modulefiles            # lmod NOOPs under SLURM; init it manually
+source /opt/ohpc/admin/lmod/lmod/init/bash             # (same gotcha the dna/sc/msa launchers fix)
 module load anaconda3/2023.09-3 cuda/12.1
 cd "$HOME/bge"                # arms + probe_common.py are staged FLAT here; run from this dir
 source venv/bin/activate
