@@ -4,7 +4,7 @@
 #SBATCH --gres=gpu:a40:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=48G
-#SBATCH --time=01:30:00
+#SBATCH --time=00:40:00
 #SBATCH --output=act_msa_%j.log
 set -eo pipefail
 export MODULEPATH=/opt/ohpc/pub/modulefiles
