@@ -3,10 +3,10 @@
 # Override model: ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct sbatch run_activation_cayuga.sh
 #SBATCH --job-name=bge-activation
 #SBATCH --partition=scu-gpu
-#SBATCH --gres=gpu:a100:1
+#SBATCH --gres=gpu:a40:1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=32G
-#SBATCH --time=01:00:00
+#SBATCH --time=01:30:00
 #SBATCH --output=activation_%j.log
 
 set -euo pipefail
