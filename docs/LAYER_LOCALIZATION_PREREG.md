@@ -1,4 +1,4 @@
-# Pre-registered design: layer-localization of the encode-vs-express gap (Qwen3-8B)
+# Pre-registered design: layer-localization of the encode-vs-express gap (Qwen3-8B + Llama-3.1-8B)
 
 Status: PRE-REGISTERED. Hypotheses, thresholds, and decision rules below are fixed BEFORE
 running the outer-fold scoring. Naive (selection-biased) numbers may be inspected during the
@@ -12,8 +12,14 @@ the H2 gap is re-baselined against the positive control so "supervision helps" i
 and the launch path is reconciled with the scripts that actually submit.
 
 Repo: `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval`
-Primary model: `Qwen/Qwen3-8B` (36 transformer blocks, hidden 4096, so 37 hidden-state tensors
-including the layer-0 embedding output). Open-weight, already cached on Cayuga.
+Primary models (CO-PRIMARY): `Qwen/Qwen3-8B` (36 blocks, hidden 4096, so 37 hidden-state tensors incl
+the layer-0 embedding; Apache, already cached, the continuity anchor for the prior 0.5B/8B bias result)
+AND `meta-llama/Llama-3.1-8B-Instruct` (32 blocks, so 33 tensors; the field-standard substrate for the
+bio LLM-SFM bridges this feeds, e.g. STELLA / MutaPLM / ProteinGPT; gated download). Because the two
+have different depths, H1 is adjudicated on the depth FRACTION (Section 2), not raw layer index, and the
+band generalizing across both architectures is itself a robustness result. Open-weight is REQUIRED: the
+frontier Claude models expose no hidden states, so layer-localization is necessarily done on open models
+and is NOT a claim about whether scale recovers the OUTPUT.
 
 ---
 
@@ -131,11 +137,17 @@ fold structure (5 outer folds):
 
 ## 3. Models and tasks
 
-Primary model: `Qwen/Qwen3-8B` (open-weight hidden states; the frontier Claude models have no
-exposed hidden states, so layer-localization is necessarily done on the open 8B and is NOT a
-claim about whether scale recovers the OUTPUT). Optional cross-architecture replication on
-`meta-llama/Llama-3.1-8B-Instruct` and `allenai/OLMo-2-1124-7B-Instruct` for the H1 layer-band
-generalization only (same sbatch, `ACT_MODEL=` override), reported as secondary.
+CO-PRIMARY models: `Qwen/Qwen3-8B` (36 blocks) and `meta-llama/Llama-3.1-8B-Instruct` (32 blocks). Both
+are run through every arm via the `ACT_MODEL=` override; H1 is adjudicated per model on the depth
+FRACTION (Section 2) and CONFIRMED only if the mid-band peak holds in BOTH (cross-architecture
+robustness; a peak in one architecture only is reported as architecture-specific, not a general
+localization). Qwen3-8B is the continuity anchor (re-measures the prior 0.5B/8B +0.11 selection bias on
+the same family, Apache, cached); Llama-3.1-8B is the field-standard substrate for the bio LLM-SFM
+bridges this feeds, so its located layer is the one the forward bridge will attach to (gated download:
+accept the Meta license + set HF_TOKEN on Cayuga once). `allenai/OLMo-2-1124-7B-Instruct` (fully open
+incl training data, so pretraining contamination is verifiable) is OPTIONAL, for a contamination-clean
+replication of the web-exposure-sensitive rows. Open-weight is required because the frontier Claude
+models expose no hidden states, so this is NOT a claim about whether scale recovers the OUTPUT.
 
 Tasks (ranked from Grounding 2; n is the balanced sample available). Each is run through the
 existing per-modality activation arm so the probe, the verbalize arm, and the selectivity control
@@ -519,9 +531,15 @@ ACT_MODEL=Qwen/Qwen3-8B ACT_N=384 sbatch run_activation_sc_cayuga.sh
 # POSITIVE CONTROL + H2 FLOOR  MSA conservation
 ACT_MODEL=Qwen/Qwen3-8B sbatch run_activation_msa_cayuga.sh
 # METHOD REPLICATION  SFM ESM-2 embedding (naive-vs-nested at 8B)
-ACT_MODEL=Qwen/Qwen3-8B sbatch run_activation_sfm_cayuga.sh
-# OPTIONAL cross-arch H1 generalization (DNA + hERG only)
-ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct ... ; ACT_MODEL=allenai/OLMo-2-1124-7B-Instruct ...
+ACT_MODEL=Qwen/Qwen3-8B sbatch cayuga_sfm_activation.sbatch
+# CO-PRIMARY: rerun ALL of the above with the second architecture (H1 must hold in BOTH). Llama-3.1
+# is gated -> accept the Meta license + `export HF_TOKEN=...` once before the first download.
+ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct ACT_N=1250 ACT_CSV=herg.csv sbatch run_activation_cayuga.sh
+ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct ACT_N=1500 sbatch run_activation_dna_cayuga.sh
+ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct ACT_N=384 sbatch run_activation_sc_cayuga.sh
+ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct sbatch run_activation_msa_cayuga.sh
+ACT_MODEL=meta-llama/Llama-3.1-8B-Instruct sbatch cayuga_sfm_activation.sbatch
+# OPTIONAL contamination-clean replication: ACT_MODEL=allenai/OLMo-2-1124-7B-Instruct (web-sensitive rows)
 # OPTIONAL secondary VLM histopath (only if Qwen2.5-VL-7B hosts)
 ACT_MODEL=Qwen/Qwen2.5-VL-7B-Instruct ACT_N=400 ACT_SCRIPT=activation_arm_histo.py sbatch run_activation_cayuga.sh
 ```
@@ -530,9 +548,10 @@ Data staging: repo is NOT checked out on Cayuga; rsync a structure-preserving su
 (`rsync -aR eval/ data/herg.csv signal/{dna_promoter.csv,single_cell,msa,sfm_embedding}/ cayuga-login1:~/bge/`),
 matching the launchers' `cd "$HOME/bge"`. Run with `python -u` (the sbatch already does) and watch
 via Monitor / an until-loop on the `activation_%j.log` tail (foreground `sleep` is blocked). Total
-compute: ~6-9 GPU-hours including the optional cross-arch and VLM runs; the headline (hERG + DNA +
-single-cell + MSA + SFM) is ~5 a40-hours. The tuned-lens corroboration (express half, NEW code) is
-one extra ~1 h GPU step per model on a disjoint text split; gate it behind a confirmed H1/H2.
+compute: the headline 5-arm set (hERG + DNA + single-cell + MSA + SFM) is ~5 a40-hours PER model, so
+~10 a40-hours for the two co-primaries (Qwen3-8B + Llama-3.1-8B); the optional OLMo replication and the
+VLM run add a few more. The tuned-lens corroboration (express half, NEW code) is one extra ~1 h GPU step
+per model on a disjoint text split; gate it behind a confirmed H1/H2.
 
 Outputs land in `results/` as TASK-TAGGED JSON per arm (e.g. `layer_loc_herg_Qwen3-8B.json`),
 including the per-layer curves, the per-layer selectivity, the nested-CV headline, the OOF vector
