@@ -17,6 +17,7 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 ## Rung and experiment designs
 | File | What |
 |---|---|
+| [`LAYER_LOCALIZATION_PREREG.md`](LAYER_LOCALIZATION_PREREG.md) | **pre-registered**: where the encode-vs-express gap sits by LAYER in Qwen3-8B (nested-CV unbiased best-layer + selectivity + cluster bootstrap; fixes the prior +0.11 selection bias). The cheap GPU warm-up that tells the calibrated LLM x SFM bridge where to attach the read-out and the calibration |
 | [`SINGLE_CELL_RUNG_DESIGN.md`](SINGLE_CELL_RUNG_DESIGN.md) | the descriptive rung with a built-in web-exposure contrast (gene-name vs anon) |
 | [`WS3_NONFP_ENDPOINT_DESIGN.md`](WS3_NONFP_ENDPOINT_DESIGN.md) | a non-fingerprint-local endpoint to break the decision-map circularity |
 | [`UQ_ROUTING_POC_DESIGN.md`](UQ_ROUTING_POC_DESIGN.md) | inject specialist self-uncertainty into the per-item router to close the measured 0.81 to 0.91 ceiling; the position's first-lever experiment |
