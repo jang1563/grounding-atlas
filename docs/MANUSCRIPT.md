@@ -1,3 +1,8 @@
+> **Shelved 2026-06-23.** This heavier journal-style draft is no longer the active write-up, and it
+> predates the two-factor correction to the central claim (the gap is a capability-dependent mix of
+> token-familiarity/reasoning and mapping-documentation, not a single web-exposure law). The current,
+> accurate, brief HF-report / blog-style version is [`REPORT.md`](REPORT.md). Kept for reference only.
+
 # Encoded, not verbalized: web-exposure governs biological grounding in language models, and tells you when to trust it
 
 *JangKeun Kim. Draft, 2026-06-19. Status: working manuscript. No em dashes. All numbers are pilot-scale; treat individual AUROCs as estimates and read the regimes and orderings, which are stable.*
