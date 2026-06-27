@@ -105,15 +105,38 @@ What survives is therefore trustworthy:
   control" gap measure only works when the model verbalizes the control - Qwen does (MSA conservation
   0.80), Llama does not (0.56), so weak verbalizers need a different yardstick.
 
+## What the 3-way bridge experiment found (v1)
+
+We then ran the forward experiment. On one shared frozen molecular-FM embedding (ChemBERTa over 7 ADMET
+endpoints) and one held-out test set, we put all three placements side by side - a learned LLM x SFM
+BRIDGE (the embedding enters the frozen LLM as a soft-prompt and it verbalizes the answer), EXTERNAL
+ORCHESTRATION (a trained read-out head, LLM untouched), and IN-WEIGHT LoRA - with refutation paths
+pre-committed to overturn "route, don't train" ([docs/BRIDGE_3WAY_PREREG.md](BRIDGE_3WAY_PREREG.md)). v1
+(Qwen3-8B, hERG):
+
+- **Within-property: orchestrate (head) 0.89 > bridge 0.85 > in-weight LoRA 0.73.** The decisive control:
+  the bridge never beats its own LLM-bypass (the same projection feeding a bare head, no transformer;
+  0.85 vs 0.87). Routing the embedding through the frozen LLM in-language adds NOTHING over a head on the
+  same projection - the frozen LLM is dead weight in the read. In-weight LoRA lifts the model's output a
+  lot (0.48 -> 0.73) but lands well below the head.
+- **Held-out-property transfer: no placement transfers.** A read trained on five ADMET properties and
+  applied to held-out hERG sits at or below chance for all three (0.44-0.49), at or under the
+  cross-property floor. Reading the SFM is a property-specific skill, not a general one - for every
+  placement.
+
+So the fair test we built to overturn "route, don't train" came down on confirm: the closed-weight-
+friendly thin head on the open SFM is the best placement, the in-language bridge and in-weight
+fine-tuning do not earn their extra machinery, and no placement generalizes the read across properties.
+(v1 caveats: paired-difference CIs and a pretraining-naive embedding control are the v2 pass; one model,
+one endpoint, one fold.)
+
 ## What we'd do next
 
-The layer-localization above is done; the forward step is the **calibrated LLM x SFM bridge with a
-held-out-property transfer eval**, compared head-to-head against (i) external orchestration of the frozen
-SFM and (ii) in-weight LoRA. The attach layer is now known to be model-specific (locate it per model, not
-at an assumed mid-band), and the read-out's routing edge is the calibration signal the router would use.
-Lit-grounded hypothesis: external guidance wins in low-data, the bridge wins with enough data, in-weight
-fine-tuning is a strong second - and the new result is the calibration: a frontier router that knows when
-its read of the specialist is trustworthy.
+Both experiments are run. The open threads are v2 rigor on the bridge result (paired-difference CIs, a
+pretraining-naive embedding control to rule out the molecular FM having already seen the property, and
+the cross-architecture / cross-endpoint matrix) and, if the bridge's dead-weight finding holds, leaning
+the whole program toward the measurement and routing layer it implies: a calibrated router over a frozen
+specialist, since training the read into the model (bridge or LoRA) buys nothing here.
 
 ## Reading list
 
