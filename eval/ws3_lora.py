@@ -21,7 +21,6 @@ from collections import defaultdict
 
 import numpy as np
 import torch
-from peft import LoraConfig, get_peft_model
 from sklearn.metrics import roc_auc_score
 from sklearn.model_selection import GroupShuffleSplit
 from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -32,9 +31,25 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # carries an explicit "group" field (scaffold for MS, gene for variant) for the cold split.
 PAIRS = os.environ.get("LORA_PAIRS", os.path.join(ROOT, "signal", "admet", "herg", "pairs.jsonl"))
 MODEL = os.environ.get("LORA_MODEL", "Qwen/Qwen3-8B")
-PROMPT = os.environ.get("LORA_PROMPT", "SMILES: {rep}\nDoes this molecule block the hERG potassium "
-                        "channel (cardiotoxicity)? Answer yes or no.\nAnswer:")
 DEV = "cuda" if torch.cuda.is_available() else "cpu"
+
+# Experiment-2 (3-way bridge) parity: when LORA_FOLD is set, Arm C reads the SHARED held-out item list
+# (signal/admet/folds/<fold>.json) instead of its own GroupShuffleSplit, and uses the SAME
+# {property}-templated prompt skeleton as the bridge (only the soft-prompt injection differs).
+FOLD = os.environ.get("LORA_FOLD", "")
+ENDPOINT = os.environ.get("LORA_ENDPOINT", "")
+MODE = os.environ.get("LORA_MODE", "within")              # within | transfer
+TRAIN_EP = ["ames", "cyp3a4", "cyp2d6", "solubility", "permeability"]
+QUESTION = {"herg": "block the hERG potassium channel (cardiotoxicity risk)",
+            "clearance": "have high metabolic clearance", "ames": "test positive for Ames mutagenicity",
+            "cyp3a4": "inhibit CYP3A4", "cyp2d6": "inhibit CYP2D6",
+            "solubility": "have high aqueous solubility", "permeability": "have high membrane permeability"}
+if ENDPOINT in QUESTION:
+    PROMPT = os.environ.get("LORA_PROMPT", f"SMILES: {{rep}}\nDoes this molecule {QUESTION[ENDPOINT]}? "
+                            "Answer yes or no.\nAnswer:")
+else:
+    PROMPT = os.environ.get("LORA_PROMPT", "SMILES: {rep}\nDoes this molecule block the hERG potassium "
+                            "channel (cardiotoxicity)? Answer yes or no.\nAnswer:")
 
 
 def scaffold_of(smi):
@@ -65,6 +80,39 @@ def load(n):
     tr, te = next(GroupShuffleSplit(1, test_size=0.3, random_state=42).split(smis, ys, groups))
     return ([smis[i] for i in tr], [ys[i] for i in tr],
             [smis[i] for i in te], [ys[i] for i in te])
+
+
+def _matched(endpoint):
+    rows = []
+    for line in open(os.path.join(ROOT, "signal", "admet", endpoint, "pairs.jsonl")):
+        r = json.loads(line)
+        if r.get("condition") == "matched":
+            rows.append((r["representation"], int(r["label"]), r["id"]))
+    return rows
+
+
+def load_fold(n):
+    """Experiment-2 parity: test = the held-out endpoint's FROZEN shared test_ids; train = within: the
+    same endpoint's non-test rows; transfer: the pooled 5 train-endpoints. Balanced + capped to n."""
+    fold = json.load(open(os.path.join(ROOT, "signal", "admet", "folds", f"{FOLD}.json")))
+    test_ids = set(fold["held_out"][ENDPOINT]["test_ids"])
+    ep_rows = _matched(ENDPOINT)
+    te = [(s, y) for s, y, i in ep_rows if i in test_ids]
+    if MODE == "within":
+        train_rows = [(s, y) for s, y, i in ep_rows if i not in test_ids]
+    else:
+        train_rows = [(s, y) for ep in TRAIN_EP for s, y, i in _matched(ep)]
+    rng = np.random.RandomState(42)
+    by = defaultdict(list)
+    for s, y in train_rows:
+        by[y].append(s)
+    k = min(n // 2, len(by[0]), len(by[1]))
+    smis, ys = [], []
+    for lab in (0, 1):
+        rng.shuffle(by[lab])
+        smis += by[lab][:k]
+        ys += [lab] * k
+    return smis, ys, [s for s, _ in te], [y for _, y in te]
 
 
 def yn_ids(tok):
@@ -101,7 +149,9 @@ def main():
     epochs = int(os.environ.get("LORA_EPOCHS", "3"))
     R = int(os.environ.get("LORA_R", "16"))
     shuffle = os.environ.get("LORA_SHUFFLE", "0") == "1"  # negative control: train on shuffled labels
-    tr_s, tr_y, te_s, te_y = load(n)
+    tr_s, tr_y, te_s, te_y = load_fold(n) if FOLD else load(n)
+    if FOLD:
+        print(f"PARITY fold={FOLD} endpoint={ENDPOINT} mode={MODE} (shared test_ids, prompt={PROMPT[:40]}...)", flush=True)
     if shuffle:
         tr_y = list(np.random.RandomState(1).permutation(tr_y))
         print("NEGATIVE CONTROL: train labels SHUFFLED (output should stay at chance)", flush=True)
@@ -116,6 +166,7 @@ def main():
     base_auc = eval_output_auroc(model, tok, te_s, te_y, yes_ids, no_ids)
     print(f"BASE output AUROC = {base_auc}  (output-arm ref 0.453, activation 0.787, ceiling 0.825)", flush=True)
 
+    from peft import LoraConfig, get_peft_model  # lazy: keeps load_fold/load importable without peft
     model = get_peft_model(model, LoraConfig(
         r=R, lora_alpha=2 * R, lora_dropout=0.05, bias="none", task_type="CAUSAL_LM",
         target_modules=["q_proj", "k_proj", "v_proj", "o_proj"]))
@@ -144,8 +195,11 @@ def main():
 
     ft_auc = eval_output_auroc(model, tok, te_s, te_y, yes_ids, no_ids)
     print(f"FINETUNED output AUROC = {ft_auc}", flush=True)
-    cell = os.environ.get("LORA_CELL", "herg")
-    tag = f"{cell}_shuffled" if shuffle else f"{cell}_n{n}_r{R}_e{epochs}"
+    cell = os.environ.get("LORA_CELL", ENDPOINT or "herg")
+    if FOLD:
+        tag = f"{ENDPOINT}_{MODE}_r{R}" + ("_shuffled" if shuffle else "")
+    else:
+        tag = f"{cell}_shuffled" if shuffle else f"{cell}_n{n}_r{R}_e{epochs}"
     out = {"tag": tag, "model": MODEL, "n_train": len(tr_s), "n_test": len(te_s),
            "epochs": epochs, "lora_r": R, "shuffled_control": shuffle,
            "base_output_auroc": base_auc, "finetuned_output_auroc": ft_auc,

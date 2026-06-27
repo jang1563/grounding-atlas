@@ -233,6 +233,63 @@ def sel_acc(y, p, cov=0.5):
     return float((((p >= 0.5).astype(int) == y)[keep]).mean())
 
 
+def paired_cluster_boot(y, p_a, p_b, groups=None, n_boot=1000, seed=0):
+    """Paired cluster bootstrap of (AUROC_A - AUROC_B): resample scaffold groups ONCE per iteration and
+    recompute BOTH AUROCs on the same resample, so the CI is on the paired difference (Experiment-2
+    Section 5: the missing piece that makes 'A - B CI excludes 0' a real paired test, not two marginal
+    CIs). iid when no groups."""
+    y, p_a, p_b = np.asarray(y), np.asarray(p_a), np.asarray(p_b)
+    rng = np.random.RandomState(seed)
+    if groups is not None:
+        groups = np.asarray(groups)
+        uniq = np.unique(groups)
+        idx_by = {g: np.where(groups == g)[0] for g in uniq}
+    diffs = []
+    for _ in range(n_boot):
+        if groups is not None:
+            b = np.concatenate([idx_by[g] for g in rng.choice(uniq, len(uniq), replace=True)])
+        else:
+            b = rng.choice(len(y), len(y), replace=True)
+        if len(np.unique(y[b])) < 2:
+            continue
+        diffs.append(roc_auc_score(y[b], p_a[b]) - roc_auc_score(y[b], p_b[b]))
+    lo, hi = np.percentile(diffs, [2.5, 97.5])
+    return {"diff": float(np.mean(diffs)), "ci": [float(lo), float(hi)], "excludes_zero": bool(lo > 0 or hi < 0)}
+
+
+def fit_temperature(p, y):
+    """Single temperature T on the logits derived from p, minimizing NLL (Guo 2017). For H3, fit on a
+    held-out calibration split, then apply to the test scores so ECE is not rigged toward any arm."""
+    p = np.clip(np.asarray(p, dtype=float), 1e-6, 1 - 1e-6)
+    y = np.asarray(y)
+    logit = np.log(p / (1 - p))
+    best_t, best_nll = 1.0, np.inf
+    for t in np.linspace(0.2, 5.0, 60):
+        q = np.clip(1 / (1 + np.exp(-logit / t)), 1e-6, 1 - 1e-6)
+        nll = -np.mean(y * np.log(q) + (1 - y) * np.log(1 - q))
+        if nll < best_nll:
+            best_nll, best_t = nll, t
+    return float(best_t)
+
+
+def apply_temperature(p, t):
+    p = np.clip(np.asarray(p, dtype=float), 1e-6, 1 - 1e-6)
+    return 1 / (1 + np.exp(-np.log(p / (1 - p)) / t))
+
+
+def score_arm(y, p, groups=None, calib=None):
+    """Shared scorer for all 3 arms (Experiment-2 Section 5). AUROC + AURC (rank-based, raw p, T-invariant)
+    + ECE(10/5-bin on the per-arm TEMPERATURE-SCALED p) + sel_acc@0.5 + the fitted T. calib = (p_cal,
+    y_cal) fits T on a held-out split; if None, T is fit in-sample (flagged via in_sample_T)."""
+    y, p = np.asarray(y), np.asarray(p)
+    t = fit_temperature(calib[0], calib[1]) if calib is not None else fit_temperature(p, y)
+    pt = apply_temperature(p, t)
+    return {"auroc": round(float(roc_auc_score(y, p)), 4), "aurc": round(aurc(y, p), 4),
+            "ece10": round(ece(y, pt, 10), 4), "ece5": round(ece(y, pt, 5), 4),
+            "sel_acc50": round(sel_acc(y, pt, 0.5), 4), "T": round(t, 3),
+            "in_sample_T": calib is None, "n": int(len(y)), "pos": int(np.sum(y))}
+
+
 def dump_layerloc(path, task, model, y, layer_aucs, nested, sel, *, output=None, ceiling=None,
                   groups=None, sel_curve=None, control_curve=None, peak_sel_layer=None, extra=None):
     """Task-tagged JSON for an arm: per-layer curve, the naive-minus-nested optimism, the nested
