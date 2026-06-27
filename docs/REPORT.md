@@ -76,15 +76,44 @@ The first two are method hygiene. The third is exactly our strength: GroundBench
 a-priori, input-derived signal beats the model's self-confidence for deciding when to trust. So our
 contribution is **not a new bridge — it is the measurement / routing / calibration layer on top of one.**
 
+## What the layer-localization found
+
+We ran the cheap warm-up: where, by layer, do two open-weight 8B co-primaries (Qwen3-8B, Llama-3.1-8B)
+encode these properties, and is the read-out calibrated? Pre-registered, with shuffled-label
+selectivity, a positive control, nested cross-validation, and a GC-residualization control
+([docs/LAYER_LOCALIZATION_PREREG.md](LAYER_LOCALIZATION_PREREG.md)). The controls did the heavy lifting
+by **killing two tempting over-claims**:
+
+- **A large "DNA promoter" encode-vs-express gap (encoded 0.85-0.87 vs verbalized ~0.50) was reading GC
+  composition, not promoter semantics.** The GC-residualized probe fails to beat the surface floor in
+  both models (margin -0.19 / -0.21). Promoters are GC-rich; the probe found the GC.
+- **A dramatic single-cell "familiar tokens encoded late, alien tokens early" shift (+0.68 on the raw
+  AUROC peak) shrank to +0.17 once measured at the peak-SELECTIVITY layer.** The anonymized form's early
+  raw peak was surface readability, not computation; its computed peak is mid-network. Llama shows no
+  clear shift.
+
+What survives is therefore trustworthy:
+
+- **The encoded read-out is a far better router than the model's own output**, robustly across both
+  models and every task (it ranks its own errors much better than the model's verbalized confidence
+  does). This is the firmest result, and the one a calibration layer would rest on.
+- **A clean encode-vs-express gap remains on single-cell type** (Qwen encodes the cell type at 0.96-0.98
+  and verbalizes it near chance) - the cleanest surviving case once DNA fell.
+- **Encoding depth is architecture-specific, not universal**: Qwen computes these properties deep
+  (selectivity-peak depth 0.6-1.0), Llama shallow (0.0-0.4). There is no shared "mid-band," so a bridge's
+  attach layer must be found per model, not assumed. A methodological note: the "excess over a positive
+  control" gap measure only works when the model verbalizes the control - Qwen does (MSA conservation
+  0.80), Llama does not (0.56), so weak verbalizers need a different yardstick.
+
 ## What we'd do next
 
-A **calibrated LLM ↔ SFM bridge with a held-out-property transfer eval**, compared head-to-head against
-(i) external orchestration of the frozen SFM and (ii) in-weight LoRA — preceded by a cheap
-**layer-localization** pass (a tuned lens to find where the capability is encoded and where verbalization
-breaks, so we know where to attach the read-out and the calibration). Lit-grounded hypothesis: external
-guidance wins in low-data, the bridge wins with enough data, in-weight fine-tuning is a strong second —
-and the *new* result is the calibration: a frontier router that knows when its read of the specialist is
-trustworthy.
+The layer-localization above is done; the forward step is the **calibrated LLM x SFM bridge with a
+held-out-property transfer eval**, compared head-to-head against (i) external orchestration of the frozen
+SFM and (ii) in-weight LoRA. The attach layer is now known to be model-specific (locate it per model, not
+at an assumed mid-band), and the read-out's routing edge is the calibration signal the router would use.
+Lit-grounded hypothesis: external guidance wins in low-data, the bridge wins with enough data, in-weight
+fine-tuning is a strong second - and the new result is the calibration: a frontier router that knows when
+its read of the specialist is trustworthy.
 
 ## Reading list
 
