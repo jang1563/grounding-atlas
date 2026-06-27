@@ -1,0 +1,15 @@
+{
+  "arm": "bridge",
+  "model": "Qwen/Qwen3-8B",
+  "endpoint": "herg",
+  "mode": "within",
+  "k": 4,
+  "bridge_auroc": 0.8528,
+  "bypass_auroc": 0.8728,
+  "bridge_minus_bypass": -0.02,
+  "param_count": 8602112,
+  "n_train": 3170,
+  "n_test": 793,
+  "lr": 0.0005,
+  "epochs": 10
+}
