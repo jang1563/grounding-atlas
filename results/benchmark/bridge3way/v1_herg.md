@@ -42,14 +42,23 @@ within-property; the in-language bridge and in-weight LoRA do not earn their ext
 read does not generalize across properties for any of them. This is the fair test the prereg set up to
 be able to overturn "route, don't train", and it came down on confirm.
 
+## The pre-registered paired test (formal, `eval/analyze_bridge3way.py`)
+Per-item dumps + `paired_cluster_boot` (resample the 355 scaffold groups, CI on the paired AUROC
+difference) + `score_arm`. WITHIN hERG (n=793, re-run; AUROCs orchestrate 0.893 / bridge 0.831 /
+bypass 0.872):
+- **H1b  bridge - bypass = -0.041, CI [-0.077, -0.016], EXCLUDES 0** -> the bridge is significantly WORSE
+  than its own equal-budget bypass head: the frozen LLM is dead weight, not noise. H1b formally refuted.
+- **H1   bridge - orchestrate = -0.063, CI [-0.141, -0.014], EXCLUDES 0** -> the head significantly beats
+  the in-language bridge.
+TRANSFER hERG: orchestrate 0.435 / bridge 0.474 / bypass 0.496, all at or under the Morgan floor 0.510;
+every paired difference CI includes 0 -> no placement transfers, no significant separation. The formal
+paired test confirms the point-estimate verdict.
+
 ## Honest caveats (v1)
-- **Paired CIs not yet computed.** The arms dumped AUROCs but not per-item scores, so the prereg's
-  `paired_cluster_boot` (AUROC_A - AUROC_B CI) and `score_arm` (AURC / temperature-scaled ECE) are a
-  cheap v2 re-run (add a per-item dump to `bridge_arm.py` / `ws3_lora.py`). The point estimates already
-  decide the direction (bridge < orchestrate AND < bypass; all transfers at/below the floor), but the
-  formal H1/H2 thresholds ride on the paired test.
-- **MTR pretraining leakage (the #1 deferred caveat).** ChemBERTa-MTR is pretrained on ~200 computed
-  descriptors, so even the failed transfer is on a property-pretrained substrate; the ChemBERTa-MLM /
-  Morgan pretraining-naive control is v2.
+- **MTR pretraining leakage (the #1 deferred caveat) is largely self-resolved by the data.** ChemBERTa-MTR
+  is pretrained on ~200 computed descriptors, but its cross-property transfer (0.435) lands BELOW the
+  plain-Morgan floor (0.510): the property-pretraining created no false cross-property transfer (it
+  transfers worse than a fingerprint), so the transfer-fail is not an artifact of the substrate having
+  seen the property. The dedicated ChemBERTa-MLM control remains a v2 confirmation.
 - **Single model / endpoint / fold.** Llama-3.1-8B, the additive-at-peak injection, the clearance
   held-out endpoint, folds 2-3, and MoLFormer are the v2 matrix.
