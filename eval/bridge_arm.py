@@ -81,7 +81,7 @@ def train_test():
     if NCAP and len(ytr) > NCAP:
         rng = np.random.RandomState(42); idx = rng.permutation(len(ytr))[:NCAP]
         Xtr, ytr = Xtr[idx], ytr[idx]
-    return Xtr, ytr, emb[te], y[te], g[te]
+    return Xtr, ytr, emb[te], y[te], g[te], np.array([str(x) for x in ids[te]])
 
 
 def main():
@@ -101,7 +101,7 @@ def main():
         pre_e = emb_layer(pre)                                  # (1, Tpre, d)
         post_e = emb_layer(post)                                # (1, Tpost, d)
 
-    Xtr, ytr, Xte, yte, gte = train_test()
+    Xtr, ytr, Xte, yte, gte, ids_te = train_test()
     print(f"MODEL={MODEL} endpoint={ENDPOINT} mode={MODE} d_model={d_model} k={K} | "
           f"train n={len(ytr)} pos={int(ytr.sum())} | test n={len(yte)} pos={int(yte.sum())} dev={dev}", flush=True)
 
@@ -169,7 +169,11 @@ def main():
            "bridge_auroc": round(float(bridge_auc), 4), "bypass_auroc": round(float(bypass_auc), 4),
            "bridge_minus_bypass": round(float(bridge_auc - bypass_auc), 4),
            "param_count": int(pcount), "n_train": int(len(ytr)), "n_test": int(len(yte)),
-           "lr": LR, "epochs": EPOCHS}
+           "lr": LR, "epochs": EPOCHS,
+           # per-item scores for the shared score_arm + paired_cluster_boot (parity comparison)
+           "test_ids": [str(x) for x in ids_te], "test_groups": [str(x) for x in gte],
+           "test_y": [int(v) for v in yte], "test_p": [round(float(v), 5) for v in p_test],
+           "bypass_p": [round(float(v), 5) for v in bp]}
     tag = MODEL.split("/")[-1]
     os.makedirs(os.path.join(ROOT, "results"), exist_ok=True)
     json.dump(res, open(os.path.join(ROOT, "results", f"bridge_arm_{tag}_{ENDPOINT}_{MODE}.json"), "w"), indent=2)

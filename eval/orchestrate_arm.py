@@ -98,7 +98,8 @@ def main():
         yte = y[te]
         # in-property: head on this endpoint's OWN train split -> test split
         inp = balanced_lr().fit(emb[tr], y[tr])
-        a_in = roc_auc_score(yte, inp.predict_proba(emb[te])[:, 1])
+        p_in = inp.predict_proba(emb[te])[:, 1]
+        a_in = roc_auc_score(yte, p_in)
         # transfer: ChemBERTa head on the pooled train endpoints -> this endpoint's test split
         trf = balanced_lr().fit(Xemb_tr, Yemb_tr)
         p_tr = trf.predict_proba(emb[te])[:, 1]
@@ -110,7 +111,11 @@ def main():
         lo, hi = cluster_boot(yte, p_tr, groups=g[te])
         out["transfer"][e] = {"in_property": round(float(a_in), 4), "transfer": round(float(a_tr), 4),
                               "floor_morgan": round(float(a_fl), 4), "NT": round(float(nt), 4),
-                              "transfer_ci": [round(lo, 4), round(hi, 4)], "n_test": int(len(te))}
+                              "transfer_ci": [round(lo, 4), round(hi, 4)], "n_test": int(len(te)),
+                              # per-item for the shared score_arm + paired_cluster_boot (vs bridge/LoRA)
+                              "test_ids": [str(x) for x in ids[te]], "test_groups": [str(x) for x in g[te]],
+                              "test_y": [int(v) for v in yte], "in_property_p": [round(float(v), 5) for v in p_in],
+                              "transfer_p": [round(float(v), 5) for v in p_tr]}
         fold["held_out"][e] = {"test_ids": [str(x) for x in ids[te]], "n_test": int(len(te))}
         band = "SKILL" if nt >= 0.90 else ("PARTIAL" if nt >= 0.60 else "MEMORIZES")
         print(f"  {e:12s} in-prop={a_in:.3f} transfer={a_tr:.3f} [floor(Morgan)={a_fl:.3f}] "
