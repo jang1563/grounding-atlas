@@ -1,0 +1,83 @@
+{
+  "arm": "orchestrate",
+  "fm": "ChemBERTa-77M-MTR",
+  "within": {
+    "herg": {
+      "auroc": 0.8667,
+      "selectivity": 0.341,
+      "n": 3963,
+      "pos": 625
+    },
+    "cyp3a4": {
+      "auroc": 0.7842,
+      "selectivity": 0.2804,
+      "n": 4000,
+      "pos": 589
+    },
+    "cyp2d6": {
+      "auroc": 0.8013,
+      "selectivity": 0.3005,
+      "n": 4000,
+      "pos": 444
+    },
+    "ames": {
+      "auroc": 0.8812,
+      "selectivity": 0.3478,
+      "n": 517,
+      "pos": 414
+    },
+    "solubility": {
+      "auroc": 0.7235,
+      "selectivity": 0.2545,
+      "n": 866,
+      "pos": 184
+    },
+    "permeability": {
+      "auroc": 0.8159,
+      "selectivity": 0.3598,
+      "n": 2057,
+      "pos": 1882
+    },
+    "clearance": {
+      "auroc": 0.6424,
+      "selectivity": 0.172,
+      "n": 4000,
+      "pos": 745
+    }
+  },
+  "transfer": {
+    "herg": {
+      "in_property": 0.8933,
+      "transfer": 0.4346,
+      "floor_morgan": 0.5102,
+      "NT": -0.1973,
+      "transfer_ci": [
+        0.37,
+        0.5073
+      ],
+      "n_test": 793
+    },
+    "clearance": {
+      "in_property": 0.6065,
+      "transfer": 0.5368,
+      "floor_morgan": 0.5449,
+      "NT": -0.1321,
+      "transfer_ci": [
+        0.4832,
+        0.5957
+      ],
+      "n_test": 800
+    }
+  },
+  "held_out": [
+    "herg",
+    "clearance"
+  ],
+  "train_endpoints": [
+    "cyp3a4",
+    "cyp2d6",
+    "ames",
+    "solubility",
+    "permeability"
+  ]
+}

@@ -60,3 +60,7 @@ results/benchmark/dry/
 
 # Inspect (inspect_ai) eval logs
 logs/
+
+# Experiment-2 molecular-FM embeddings (28MB, regenerable in ~2min via eval/sfm_embed_chemberta.py)
+signal/sfm_embedding/chemberta_*.npz
+signal/sfm_embedding/MoLFormer*.npz
