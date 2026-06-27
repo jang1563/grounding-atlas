@@ -17,6 +17,7 @@ consolidated design see [`../PROJECT_DESIGN.md`](../PROJECT_DESIGN.md).
 ## Rung and experiment designs
 | File | What |
 |---|---|
+| [`BRIDGE_3WAY_PREREG.md`](BRIDGE_3WAY_PREREG.md) | **pre-registered** (experiment 2): the 3-way calibrated LLM x SFM bridge - learned bridge vs external-orchestration vs in-weight LoRA, on one shared frozen embedding (molecular FM x 7 ADMET endpoints) with a held-out-PROPERTY transfer eval + per-arm-calibrated permissioning. Refutation paths (H1b/H2b) carry the prior's thresholds, so it fairly tests "route, don't train". Staged v1 (Qwen / 1 fold / ChemBERTa) -> v2 (full matrix) |
 | [`LAYER_LOCALIZATION_PREREG.md`](LAYER_LOCALIZATION_PREREG.md) | **pre-registered**: where the encode-vs-express gap sits by LAYER in two co-primary open 8B LLMs (Qwen3-8B continuity anchor + Llama-3.1-8B bridge substrate; nested-CV unbiased best-layer + selectivity + cluster bootstrap; fixes the prior +0.11 selection bias). The cheap GPU warm-up that tells the calibrated LLM x SFM bridge where to attach the read-out and the calibration |
 | [`SINGLE_CELL_RUNG_DESIGN.md`](SINGLE_CELL_RUNG_DESIGN.md) | the descriptive rung with a built-in web-exposure contrast (gene-name vs anon) |
 | [`WS3_NONFP_ENDPOINT_DESIGN.md`](WS3_NONFP_ENDPOINT_DESIGN.md) | a non-fingerprint-local endpoint to break the decision-map circularity |
