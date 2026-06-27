@@ -2,16 +2,27 @@
 
 ```
 
+## meta-llama/Llama-3.1-8B-Instruct   (msa positive-control floor raw_gap = +0.436)
+task                            nest   out    gap excess depth range  pECE  dAURC   sel  bias verdicts
+admet/herg                     0.760 0.514 +0.246 -0.190 0.03s [ 1-15] 0.207 -0.181 +0.299 +0.040  H1- H2- H3-
+dna/promoter                   0.845 0.500 +0.344 -0.091 0.06s [ 5-12] 0.172 -0.735 +0.354 +0.018  H1- GC-0.21 H2- H3-
+msa/conservation               1.000 0.564 +0.436 +0.000 0.44s [ 6-17] 0.007 -0.444 +0.531 +0.000  H3+
+single_cell/cd8t_nk:anon       0.976 0.495 +0.481 +0.045 0.22s [ 3- 4] 0.056 -0.771 +0.480 +0.004  H2- H3+
+single_cell/cd8t_nk:cell_sentence 0.980 0.687 +0.293 -0.142 0.28s [ 9- 9] 0.055 -0.403 +0.437 -0.000  H2- H3+
+
 ## Qwen/Qwen3-8B   (msa positive-control floor raw_gap = +0.204)
 task                            nest   out    gap excess depth range  pECE  dAURC   sel  bias verdicts
-dna/promoter                   0.865 0.396 +0.469 +0.264 0.74 [22-33] 0.155 -0.495 +0.348 +0.015  H1+ H2+ H3-
-msa/conservation               1.000 0.795 +0.204 +0.000 0.26 [ 6-15] 0.009 -0.258 +0.511 +0.000  H3+
-single_cell/cd8t_nk:anon       0.957 0.497 +0.460 +0.255 0.31 [10-13] 0.079 -0.409 +0.423 +0.008  H2+ H3+
-single_cell/cd8t_nk:cell_sentence 0.982 0.497 +0.485 +0.280 0.98 [34-36] 0.053 -0.727 +0.506 +0.001  H2+ H3+
+admet/herg                     0.760 0.453 +0.307 +0.102 0.97s [ 2-24] 0.223 -0.549 +0.258 +0.027  H1- H2- H3-
+dna/promoter                   0.865 0.396 +0.469 +0.264 0.69s [22-33] 0.155 -0.495 +0.348 +0.015  H1+ GC-0.19 H2- H3-
+msa/conservation               1.000 0.795 +0.204 +0.000 0.61s [ 6-15] 0.009 -0.258 +0.511 +0.000  H3+
+single_cell/cd8t_nk:anon       0.957 0.497 +0.460 +0.255 0.64s [10-13] 0.079 -0.409 +0.423 +0.008  H2+ H3+
+single_cell/cd8t_nk:cell_sentence 0.982 0.497 +0.485 +0.280 0.81s [34-36] 0.053 -0.727 +0.506 +0.001  H2+ H3+
 
 ## Cross-architecture H1 (headline tasks: is the peak-depth band shared?)
-  dna/promoter       Qwen3-8B=0.74  (one model so far)
+  dna/promoter       Llama-3.1-8B-Instruct=0.06 | Qwen3-8B=0.69  -> divergent
+  admet/herg         Llama-3.1-8B-Instruct=0.03 | Qwen3-8B=0.97  -> divergent
 
 ## Single-cell web-exposure layer-shift (DESCRIPTIVE, power-limited n<=470)
-  Qwen3-8B             name(web-rich) depth=0.98 vs anon(web-zero) depth=0.31  shift=+0.68 (familiar=late, alien=early)
+  Llama-3.1-8B-Instruct name(web-rich) depth=0.28 vs anon(web-zero) depth=0.22  shift=+0.06 (no clear shift)
+  Qwen3-8B             name(web-rich) depth=0.81 vs anon(web-zero) depth=0.64  shift=+0.17 (familiar=late, alien=early)
 ```
