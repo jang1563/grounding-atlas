@@ -46,6 +46,24 @@ architecture (Llama, the bridge-standard substrate) the in-language bridge still
 the same projection (the frozen LLM is dead weight) and nothing transfers across properties. The result
 generalizes beyond the single v1 cell.
 
-Remaining v2: clearance-Llama, MoLFormer-XL substrate, the additive-at-peak injection (inject at the
-per-model selectivity-peak layer, hERG-Qwen L35, vs layer-0), and the dedicated ChemBERTa-MLM
-pretraining-naive control.
+## The full 2x2 matrix (endpoint x architecture), WITHIN-property
+The 4th cell (clearance-Llama) ran: orchestrate 0.607 (LLM-independent) ~ bridge 0.598 (bypass 0.615) >
+LoRA 0.507 (no lift, base 0.513) - all below the cheap specialist 0.746, same as clearance-Qwen.
+
+| within-property AUROC | orchestrate (head) | bridge (-> LLM) | bypass (head) | LoRA | cheap specialist |
+|---|---|---|---|---|---|
+| hERG  / Qwen   | 0.893 | 0.83-0.85 | 0.87 | 0.73 | 0.895 |
+| hERG  / Llama  | 0.893 | 0.81 | 0.87 | 0.73 | 0.895 |
+| clear / Qwen   | 0.61  | 0.62 | 0.62 | 0.58 | 0.746 |
+| clear / Llama  | 0.61  | 0.60 | 0.62 | 0.51 | 0.746 |
+
+In every cell: (i) no LLM placement beats the cheap specialist; (ii) the bridge never beats its own
+bypass head (significantly so on hERG, CI excludes 0 in both architectures; indistinguishable on the
+noisier clearance); (iii) LoRA is the weakest; (iv) nothing transfers across properties (a separate row,
+all at the cross-property floor). "Route, don't train" holds across 2 endpoints x 2 architectures.
+
+Remaining (extra-dimension, not run; the verdict is robust without them): MoLFormer-XL substrate (needs
+trust_remote_code), the additive-at-peak injection (inject at the per-model selectivity-peak layer,
+hERG-Qwen L35, vs layer-0; unlikely to overturn a head that does not use the LLM at all), and the
+dedicated ChemBERTa-MLM pretraining-naive control (already largely self-resolved: ChemBERTa-MTR transfers
+below the plain-Morgan floor).
