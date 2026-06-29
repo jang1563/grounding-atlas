@@ -49,6 +49,8 @@ BETA = float(os.environ.get("RL_BETA", "0.1"))           # (legacy; recorded in 
 SIGMA = float(os.environ.get("RL_SIGMA", "20"))          # REINVENT reward scaling in the augmented likelihood
 M = int(os.environ.get("RL_M", "500"))
 SHUFFLE = bool(os.environ.get("RL_SHUFFLE", ""))
+SEED = int(os.environ.get("RL_SEED", "0"))
+NPOS = os.environ.get("REWARD_NPOS", "")              # low-data degraded reward (block-R subsample)
 
 
 @torch.no_grad()
@@ -98,7 +100,8 @@ def main():
     opt = torch.optim.Adam(policy.parameters(), lr=LR)
     print(f"[armA] endpoint={ENDPOINT} budgetQ={STEPS * BATCH} (steps={STEPS} x batch={BATCH}) "
           f"sigma={SIGMA} shuffle={SHUFFLE} temp={temp} dev={DEV}", flush=True)
-    rng = np.random.RandomState(0)
+    torch.manual_seed(SEED)
+    rng = np.random.RandomState(SEED)
     hist = []
     for step in range(STEPS):
         toks, mask, smis = rollout(policy, vocab, BATCH, temp)
@@ -138,13 +141,15 @@ def main():
           f"meanReward={rew.mean():.3f} finalKL={kl_val:+.3f}", flush=True)
 
     tag = "A_ppo_shuffle" if SHUFFLE else "A_ppo"
-    dump = {"arm": tag, "endpoint": ENDPOINT, "budget_Q": STEPS * BATCH, "sigma": SIGMA, "temp": temp,
+    dump = {"arm": tag, "endpoint": ENDPOINT, "budget_Q": STEPS * BATCH, "sigma": SIGMA, "seed": SEED,
+            "npos": NPOS, "temp": temp,
             "bar": bar, "M": len(out_smis), "oracle_pass": int(opass.sum()),
             "oracle_pass_rate": round(float(opass.mean()), 4), "final_kl": round(kl_val, 4),
             "designs": out_smis, "reward": [round(float(x), 4) for x in rew],
             "oracle": [round(float(x), 4) for x in orac], "oracle_pass_vec": opass.tolist(),
             "train_history": hist}
-    out = os.path.join(OUT, f"{ENDPOINT}_arm{tag}.json")
+    suffix = f"_s{SEED}" + (f"_np{NPOS}" if NPOS else "")
+    out = os.path.join(OUT, f"{ENDPOINT}_arm{tag}{suffix}.json")
     json.dump(dump, open(out, "w"))
     print(f"[armA] saved -> {os.path.relpath(out, ROOT)}", flush=True)
 

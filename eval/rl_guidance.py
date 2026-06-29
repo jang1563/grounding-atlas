@@ -68,7 +68,8 @@ def main():
             "budgets": rows, "delivered_idx": delivered, "designs": pool,
             "reward": [round(float(x), 4) for x in rew], "oracle": [round(float(x), 4) for x in orac],
             "oracle_pass": opass.tolist()}
-    out = os.path.join(OUT, f"{ENDPOINT}_armB_guidance.json")
+    npos = os.environ.get("REWARD_NPOS", "")
+    out = os.path.join(OUT, f"{ENDPOINT}_armB_guidance{('_np' + npos) if npos else ''}.json")
     json.dump(dump, open(out, "w"))
     print(f"[armB] saved -> {os.path.relpath(out, ROOT)}", flush=True)
 

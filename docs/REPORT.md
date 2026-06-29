@@ -130,6 +130,42 @@ fine-tuning do not earn their extra machinery, and no placement generalizes the 
 (v1 caveats: paired-difference CIs and a pretraining-naive embedding control are the v2 pass; one model,
 one endpoint, one fold.)
 
+## What the generative RL experiment found (experiment 3)
+
+The bridge was the discriminative read-out lever; experiment 3 asks the same route-vs-train question in
+the GENERATIVE / RL regime - the post-training RL environment the literature leaves as an explicitly
+open head-to-head ([docs/RL_ENV_PREREG.md](RL_ENV_PREREG.md), grounded in
+[docs/RL_ENV_DEEPRESEARCH.md](RL_ENV_DEEPRESEARCH.md)). We built the whole environment: a FROZEN in-repo
+SMILES generator (a 4.18M char-RNN self-trained on disclosed in-corpus molecules with the held-out
+scaffolds excluded), our hERG ADMET read-out head as the REWARD, and a scaffold-disjoint RF-on-Morgan
+ORACLE as the independent judge (held-out AUROC 0.882). On generated molecules the reward enriches
+oracle-actives 14.8x in its top 5% (reward->oracle-pass AUROC 0.953), so guidance and RL both have real
+signal to exploit; the contest is genuine, not a foregone negative.
+
+Three arms, judged only on the held-out oracle, at MATCHED reward-query budget (Q=5000), each
+delivering 500 designs:
+
+- **Internalized RL (arm A) ties external guidance (arm B): 21 vs 20 oracle-passes; (A-B) = +0.002,
+  scaffold-clustered two-sample 95% CI [-0.047, +0.046].** The CI includes 0 and the point sits far
+  inside the 0.03 tie band: tuning the generator's weights toward the reward buys nothing over selecting
+  top-reward samples from the frozen model at the same budget.
+- **The reward drives the gain (drift guard):** the same RL on SHUFFLED rewards collapses to base
+  (0/500), so the 21 is reward-driven, not optimization noise. The arm is genuinely reward-internalizing
+  (REINVENT augmented likelihood; a first PPO-clipped attempt diverged on the char-RNN and was replaced),
+  stable (training reward 0.06 -> 0.62, KL-to-base bounded), and the headline is generative-design
+  oracle-success, not a discriminator AUROC.
+
+So the post-training RL environment is buildable and the reward produces real oracle-confirmed design
+gains - but internalizing the reward into the weights ties externally selecting it from the frozen
+model. "Route, don't train" EXTENDS from the discriminative read-out to the generative/RL lever.
+
+The tie is robust (v2): it holds across three RL seeds (arm A 0.024-0.038, pooled (A-B) = -0.007, 95%
+CI [-0.054, +0.031]) and in a degraded low-data-reward cell (arm A 0.048 vs guidance 0.028, (A-B) =
++0.020, CI [-0.020, +0.064]). The one hint of structure: when the reward weakens, external guidance
+degrades more than RL (guidance 20 -> 14 passes, RL holds), so the point estimate tips toward RL in
+the low-data regime - the lit's predicted crossover - but it stays inside the tie band. No cell
+separates train from route.
+
 ## What we'd do next
 
 Both experiments are run. The open threads are v2 rigor on the bridge result (paired-difference CIs, a

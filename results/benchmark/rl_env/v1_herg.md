@@ -41,9 +41,24 @@ nothing over EXTERNALLY selecting top-reward samples from the frozen model at th
 ([REPORT.md](../../../docs/REPORT.md)), EXTENDS to the generative/RL lever.
 
 ## v1 caveats / v2
-- One cell (hERG), one budget (Q=5000), one seed. The CI is wide (small pass counts, ~20/500). The
-  prereg's budget sweep, the clearance (degraded-reward) and low-data cells, and multiple seeds would
-  tighten it. The tie point estimate + CI-includes-0 + the clean drift guard make the v1 verdict solid.
-- OVERTURN was the only outcome that needed the docking co-primary; since it CONFIRMED, docking is moot.
-- sigma=20 (REINVENT reward scale) was not swept; it sets arm A's reward level but the matched-budget
-  contrast vs guidance is the controlled comparison either way.
+- One cell (hERG), one budget (Q=5000), one seed. The CI is wide (small pass counts, ~20/500). v2
+  (below) adds seeds + a degraded-reward cell.
+
+## v2: seed robustness + degraded-reward cell (done)
+
+The tie is robust. arm A across three seeds: 0.038 / 0.024 / 0.036 (KL 4.6 / 3.8 / 5.7), pooled
+49/1500; **(A-B) = -0.007, scaffold-clustered 95% CI [-0.054, +0.031] -> CONFIRM.** A degraded
+LOW-DATA reward (block-R subsampled to 150 positives): arm A 24/500 (0.048) vs guidance 14/500
+(0.028); **(A-B) = +0.020, CI [-0.020, +0.064] -> CONFIRM.** When the reward weakens, external
+guidance degrades MORE than RL (guidance 20 -> 14 passes, RL holds), so the point estimate tips
+toward RL in the low-data regime (the literature's predicted crossover) but stays inside the 0.03
+tie band. No cell separates train from route. (`eval/compare_rl_orchestrate.py`, result
+`signal/reward/herg_H1_compare.json`.)
+
+## Remaining caveats
+- The CIs are still wide (pass counts ~12-24 / 500); a larger M or more budgets would tighten further.
+- A clean clearance-endpoint cell needs a clearance-specific generator (the hERG generator excludes only
+  hERG block-O/E); the low-data cell is the degraded-reward stand-in run here.
+- OVERTURN was the only outcome needing the docking co-primary; since it CONFIRMED, docking is moot.
+- sigma=20 (REINVENT reward scale) was not swept; the matched-budget contrast vs guidance is the
+  controlled comparison regardless.

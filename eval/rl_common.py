@@ -42,10 +42,18 @@ def load_blocks(endpoint):
 
 
 def build_reward(endpoint, n_ensemble=5):
-    """Block-R reward ensemble (the steering signal). Fit fresh."""
+    """Block-R reward ensemble (the steering signal). Fit fresh. REWARD_NPOS subsamples block-R to
+    that many positives (+ proportional negatives) = the low-data DEGRADED-reward regime."""
     emb, y, g, smi, blk = load_blocks(endpoint)
-    members = fit_reward_ensemble(emb, y, train_idx=np.where(blk == "R")[0], n_ensemble=n_ensemble)
-    return members
+    ridx = np.where(blk == "R")[0]
+    npos = int(os.environ.get("REWARD_NPOS", "0"))
+    if npos:
+        rng = np.random.RandomState(0)
+        pos, neg = ridx[y[ridx] == 1], ridx[y[ridx] == 0]
+        kneg = min(len(neg), int(round(npos * len(neg) / max(1, len(pos)))))
+        ridx = np.concatenate([rng.choice(pos, min(npos, len(pos)), replace=False),
+                               rng.choice(neg, kneg, replace=False)])
+    return fit_reward_ensemble(emb, y, train_idx=ridx, n_ensemble=n_ensemble)
 
 
 def build_oracle(endpoint, bar_pct=90):

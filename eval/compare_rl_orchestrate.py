@@ -12,6 +12,7 @@ Decision rule (RL_ENV_PREREG Section 7):
 Light analysis (rdkit scaffolds + bootstrap), runs local. No em dashes.
 Usage: python eval/compare_rl_orchestrate.py    (RL_ENDPOINT=herg RL_Q=5000)
 """
+import glob
 import json
 import os
 
@@ -55,47 +56,73 @@ def two_sample_cluster_boot(pass_a, scaf_a, pass_b, scaf_b, nboot=4000):
     return point, (float(np.percentile(diffs, 2.5)), float(np.percentile(diffs, 97.5))), len(ga), len(gb)
 
 
-def main():
-    a = json.load(open(os.path.join(OUT, f"{ENDPOINT}_armA_ppo.json")))
-    b = json.load(open(os.path.join(OUT, f"{ENDPOINT}_armB_guidance.json")))
-    a_smis, a_pass = a["designs"], np.array(a["oracle_pass_vec"])
-    idx = b["delivered_idx"][str(Q)]
-    b_smis = [b["designs"][i] for i in idx]
-    b_pass = np.array([b["oracle_pass"][i] for i in idx])
-    a_scaf = [murcko(s) for s in a_smis]
-    b_scaf = [murcko(s) for s in b_smis]
+def _load_armA(pattern):
+    """Pool arm-A files matching the glob (seeds), reporting per-seed rates; skip shuffle files."""
+    keep_np = "_np" in pattern                                   # low-data files only when asked
+    files = [f for f in sorted(glob.glob(os.path.join(OUT, pattern)))
+             if "_shuffle" not in f and (keep_np or "_np" not in f)]
+    smis, passv, per_seed = [], [], []
+    for f in files:
+        j = json.load(open(f))
+        smis += j["designs"]
+        passv += j["oracle_pass_vec"]
+        per_seed.append({"seed": j.get("seed"), "rate": round(float(np.mean(j["oracle_pass_vec"])), 4),
+                         "kl": j.get("final_kl")})
+    return smis, np.array(passv), per_seed, files
 
-    point, ci, na, nb = two_sample_cluster_boot(a_pass, a_scaf, b_pass, b_scaf)
-    rate_a, rate_b = float(a_pass.mean()), float(b_pass.mean())
-    print(f"=== H1: route-vs-train in the generative regime ({ENDPOINT}, matched budget Q={Q}) ===", flush=True)
-    print(f"  arm A internalized RL : oracle-pass {int(a_pass.sum())}/{len(a_pass)} = {rate_a:.4f} "
-          f"({na} scaffold clusters)", flush=True)
-    print(f"  arm B external guidance: oracle-pass {int(b_pass.sum())}/{len(b_pass)} = {rate_b:.4f} "
-          f"({nb} scaffold clusters)", flush=True)
-    print(f"  (A - B) = {point:+.4f}  95% CI [{ci[0]:+.4f}, {ci[1]:+.4f}]  (tie band |Δ|<{TIE})", flush=True)
 
-    # drift-guard + base context
-    extra = {}
-    sp = os.path.join(OUT, f"{ENDPOINT}_armA_ppo_shuffle.json")
-    if os.path.isfile(sp):
-        s = json.load(open(sp))
-        extra["shuffle_oracle_pass_rate"] = s["oracle_pass_rate"]
-        print(f"  drift guard: arm A SHUFFLE oracle-pass rate = {s['oracle_pass_rate']:.4f} "
-              f"(must be ~base, not {rate_a:.3f})", flush=True)
+def _load_armB(name):
+    j = json.load(open(os.path.join(OUT, name)))
+    idx = j["delivered_idx"][str(Q)]
+    return [j["designs"][i] for i in idx], np.array([j["oracle_pass"][i] for i in idx])
 
+
+def _cell(a_smis, a_pass, b_smis, b_pass, label):
+    point, ci, na, nb = two_sample_cluster_boot(a_pass, [murcko(s) for s in a_smis],
+                                                b_pass, [murcko(s) for s in b_smis])
+    ra, rb = float(a_pass.mean()), float(b_pass.mean())
     overturn = ci[0] > TIE
     confirm = (ci[0] <= 0 <= ci[1]) or point <= 0 or abs(point) < TIE
-    verdict = ("OVERTURN: internalized RL beats guidance (pending docking + no-collapse)" if overturn
-               else "CONFIRM: route-don't-train EXTENDS to generation (train ties/loses to route)"
-               if confirm else "INDETERMINATE")
-    print(f"  -> {verdict}", flush=True)
+    verdict = ("OVERTURN (pending docking + no-collapse)" if overturn
+               else "CONFIRM route-don't-train extends" if confirm else "INDETERMINATE")
+    print(f"\n[{label}] arm A RL {int(a_pass.sum())}/{len(a_pass)}={ra:.4f} ({na} clusters)  vs  "
+          f"arm B guidance {int(b_pass.sum())}/{len(b_pass)}={rb:.4f} ({nb} clusters)", flush=True)
+    print(f"  (A-B) = {point:+.4f}  95% CI [{ci[0]:+.4f}, {ci[1]:+.4f}]  -> {verdict}", flush=True)
+    return {"label": label, "rate_A_rl": round(ra, 4), "rate_B_guidance": round(rb, 4),
+            "diff_A_minus_B": round(point, 4), "ci95": [round(ci[0], 4), round(ci[1], 4)],
+            "n_A": len(a_pass), "n_B": len(b_pass), "verdict": verdict}
 
-    res = {"endpoint": ENDPOINT, "budget_Q": Q, "rate_A_rl": round(rate_a, 4),
-           "rate_B_guidance": round(rate_b, 4), "diff_A_minus_B": round(point, 4),
-           "ci95": [round(ci[0], 4), round(ci[1], 4)], "n_clusters_A": na, "n_clusters_B": nb,
-           "tie_band": TIE, "verdict": verdict, **extra}
-    json.dump(res, open(os.path.join(OUT, f"{ENDPOINT}_H1_compare.json"), "w"), indent=1)
-    print(f"  saved -> {os.path.relpath(os.path.join(OUT, f'{ENDPOINT}_H1_compare.json'), ROOT)}", flush=True)
+
+def main():
+    print(f"=== H1: route-vs-train in the GENERATIVE regime ({ENDPOINT}, matched budget Q={Q}) ===", flush=True)
+    cells = []
+
+    a_smis, a_pass, per_seed, files = _load_armA(f"{ENDPOINT}_armA_ppo_s*.json")
+    if not files:                                                # v1 fallback (no-seed single file)
+        a_smis, a_pass, per_seed, files = _load_armA(f"{ENDPOINT}_armA_ppo.json")
+    b_smis, b_pass = _load_armB(f"{ENDPOINT}_armB_guidance.json")
+    if per_seed:
+        print("  arm A per-seed oracle-pass rate: "
+              + ", ".join(f"s{p['seed']}={p['rate']}(KL{p['kl']})" for p in per_seed), flush=True)
+    full = _cell(a_smis, a_pass, b_smis, b_pass, "full reward (seeds pooled)")
+    full["per_seed"] = per_seed
+    cells.append(full)
+
+    sp = os.path.join(OUT, f"{ENDPOINT}_armA_ppo_shuffle.json")
+    if os.path.isfile(sp):
+        sr = json.load(open(sp))["oracle_pass_rate"]
+        print(f"  drift guard: arm A SHUFFLE oracle-pass rate = {sr:.4f} (must be ~base)", flush=True)
+        full["shuffle_rate"] = sr
+
+    la, lb = f"{ENDPOINT}_armA_ppo_s0_np150.json", f"{ENDPOINT}_armB_guidance_np150.json"
+    if os.path.isfile(os.path.join(OUT, la)) and os.path.isfile(os.path.join(OUT, lb)):
+        la_smis, la_pass, _, _ = _load_armA(la)
+        lb_smis, lb_pass = _load_armB(lb)
+        cells.append(_cell(la_smis, la_pass, lb_smis, lb_pass, "low-data degraded reward (npos=150)"))
+
+    out = os.path.join(OUT, f"{ENDPOINT}_H1_compare.json")
+    json.dump({"endpoint": ENDPOINT, "budget_Q": Q, "tie_band": TIE, "cells": cells}, open(out, "w"), indent=1)
+    print(f"\n  saved -> {os.path.relpath(out, ROOT)}", flush=True)
 
 
 if __name__ == "__main__":
