@@ -82,6 +82,56 @@ def feasibility(endpoint, blocks=("R", "O", "E")):
             "pass": all(ok.values()), "assign": assign}
 
 
+def _load_smiles(endpoint):
+    d = np.load(os.path.join(EMB_DIR, f"chemberta_{endpoint}.npz"), allow_pickle=True)
+    return d["y"].astype(int), d["groups"].astype(str), d["smiles"].astype(str)
+
+
+def _morgan(smiles):
+    """Morgan-2 2048-bit ECFP4 (rdkit). DIFFERENT featurization than the ChemBERTa reward."""
+    from rdkit import Chem, DataStructs
+    from rdkit.Chem import AllChem
+    X = np.zeros((len(smiles), 2048), dtype=np.int8)
+    for i, s in enumerate(smiles):
+        m = Chem.MolFromSmiles(str(s))
+        if m is None:
+            continue
+        DataStructs.ConvertToNumpyArray(AllChem.GetMorganFingerprintAsBitVect(m, 2, 2048), X[i])
+    return X
+
+
+def train_oracle(endpoint=ENDPOINT, bar_pct=90):
+    """The held-out JUDGE (RL_ENV_PREREG Section 6): RF-on-Morgan trained on block-O. Different
+    model class (RF vs LR) AND featurization (Morgan vs ChemBERTa embedding) than the reward, and
+    scaffold-disjoint from it = reduced-leakage. Evaluated on block-E (novel scaffolds). The
+    fitness bar is a PERCENTILE of the oracle's score distribution on block-E, not an absolute P,
+    so success-rate is non-degenerate. Docking (QuickVina2) is the deferred orthogonal co-primary
+    required only if arm A appears to win (overturn credibility)."""
+    import joblib
+    from sklearn.ensemble import RandomForestClassifier
+    from sklearn.metrics import roc_auc_score
+    y, g, smi = _load_smiles(endpoint)
+    s2b = json.load(open(os.path.join(OUT_DIR, f"{endpoint}_partition.json")))["scaffold_to_block"]
+    blk = np.array([s2b.get(s, "?") for s in g])
+    Xo, yo = _morgan(smi[blk == "O"]), y[blk == "O"]
+    Xe, ye = _morgan(smi[blk == "E"]), y[blk == "E"]
+    rf = RandomForestClassifier(n_estimators=400, class_weight="balanced", n_jobs=-1, random_state=0)
+    rf.fit(Xo, yo)
+    pe = rf.predict_proba(Xe)[:, 1]
+    auc_e = float(roc_auc_score(ye, pe))
+    bar = float(np.percentile(pe, bar_pct))
+    print(f"\n[oracle] RF-on-Morgan trained on block-O (n={len(yo)} pos={int(yo.sum())}); "
+          f"held-out block-E AUROC={auc_e:.3f} (n={len(ye)} pos={int(ye.sum())})", flush=True)
+    print(f"[oracle] fitness bar = oracle-P > {bar:.3f} ({bar_pct}th pct of block-E); "
+          f"block-E fraction clearing = {float((pe > bar).mean()):.3f}", flush=True)
+    out = os.path.join(OUT_DIR, f"{endpoint}_oracle_rf.pkl")
+    joblib.dump({"rf": rf, "bar": bar, "bar_pct": bar_pct, "endpoint": endpoint,
+                 "block_e_auroc": auc_e}, out)
+    print(f"[oracle] saved -> {os.path.relpath(out, ROOT)}", flush=True)
+    return {"block_e_auroc": auc_e, "bar": bar, "bar_pct": bar_pct,
+            "block_o_n": len(yo), "block_o_pos": int(yo.sum())}
+
+
 def report(f):
     print(f"\n=== {f['endpoint']}: n={f['n']} pos={f['pos']} scaffolds={f['scaffold']} ===", flush=True)
     for b in ("R", "O", "E"):
@@ -124,6 +174,9 @@ def main():
     print(f"\n[oracle] partition + counts -> {os.path.relpath(out, ROOT)}", flush=True)
     print(f"[oracle] VERDICT: {'PROCEED on ' + ENDPOINT if primary['pass'] else 'TRIGGER FALLBACK (ames/2-way)'}",
           flush=True)
+
+    if os.environ.get("ORACLE_TRAIN") and primary["pass"]:
+        train_oracle(ENDPOINT)
 
 
 if __name__ == "__main__":
