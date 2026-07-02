@@ -50,12 +50,31 @@ budget arm A pushes hard into the reward-preferred region; if the reward and ora
 in-silico pair, not genuine hERG activity. The physics-based **docking co-primary (QuickVina2, no ML
 bias)** is exactly the pre-committed test to separate these, and it has NOT been run.
 
+## Seed replication + property check (refinement)
+
+**Seed replication (Q=10000, seeds 0/1/2):** oracle-pass rates 0.170 / 0.063 / 0.047 - seed 0's 0.170
+was a HIGH OUTLIER; the typical is ~0.05-0.06. All three still beat guidance (0.029). Pooled (3000
+designs): arm A 280/3000 = 0.0933 vs arm B 0.0290; **(A-B) = +0.064, scaffold-cluster 95% CI [+0.026,
++0.104].** The CI EXCLUDES 0 (A really does beat B at high budget) but its lower bound (0.026) sits
+JUST UNDER the pre-registered 0.03 OVERTURN margin - so by the prereg rule the high-budget cell is
+INDETERMINATE: a real, modest, seed-variable RL edge that is neither a clean tie nor a clean overturn.
+
+**Property-bounds check (is it gaming a shared reward-oracle bias?):** arm A's FULL Q=10000 output stays
+drug-like (QED 0.46, MW 436, ~4.5 rings - nearly identical to the real hERG molecules QED 0.57 / MW 438 /
+4.3 rings). Its oracle-passers are larger, more-ring, lower-QED (QED 0.31 / MW 508 / 5.1 rings) - but
+guidance's passers have the SAME profile (QED 0.37 / MW 500 / 5.1 rings), which is the known hERG-blocker
+chemotype (large, lipophilic, polycyclic). So arm A did NOT invent weird oracle-fooling molecules; it
+produced MORE of the legitimate blocker type. This ARGUES AGAINST simple gaming, though a shared bias
+in what both ML models call "active" for that chemotype is still only fully ruled out by docking.
+
 ## Status
 
-- Route-don't-train HOLDS at moderate budget (Q <= 5000; confirmed across 3 reward-quality cells x 3
-  seeds elsewhere).
-- The HIGH-budget regime (Q=10000) is a **flagged potential overturn**: internalized RL significantly
-  beats guidance on the in-silico oracle, diversely, but pending (a) the docking co-primary to rule out
-  shared reward-oracle-bias reward-hacking, (b) seed replication, (c) resolving the KL~8.9 drift.
-- The budget sweep is why rigor passes matter: a run expected to confirm the tie instead surfaced a
-  budget-dependent deviation. Reported, not buried.
+- Route-don't-train HOLDS at moderate budget (Q <= 5000; confirmed across 3 reward-quality cells x 3 seeds).
+- The HIGH-budget regime (Q=10000) is a **real but MODEST, seed-variable, INDETERMINATE deviation**: arm A
+  significantly beats guidance (pooled CI [+0.026, +0.104] excludes 0) by shifting the distribution beyond
+  guidance's frozen-model ceiling, with drug-like legit-chemotype designs (not gaming), but the effect is
+  seed-variable and its lower bound just misses the pre-registered 0.03 overturn margin. The remaining
+  arbiter is the docking co-primary (does the physics agree the extra passers truly bind, or do the two
+  correlated ML models share a bias for that chemotype).
+- The budget sweep is why rigor passes matter: a run expected to confirm the tie instead surfaced a real,
+  budget-dependent, sub-threshold RL edge at high budget. Reported, not buried.

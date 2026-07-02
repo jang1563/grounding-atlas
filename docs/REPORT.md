@@ -169,16 +169,17 @@ every CI includes 0. And on the weak endpoint the reward barely enriches oracle-
 enrichment 14.8x for hERG vs 1.1x for clearance), so the binding constraint there is reward reliability,
 not the lever. No cell separates train from route.
 
-**But the budget sweep flags a high-budget deviation (not yet resolved).** Varying the reward-query
-budget with a larger delivery M (seed 0, hERG), the (A-B) gap grows monotonically and at Q=10000
-internalized RL SIGNIFICANTLY beats guidance (0.170 vs 0.029, 95% CI [+0.075, +0.216], excludes 0) - by
-shifting the distribution beyond guidance's frozen-model ceiling, diversely (170 passers across 89
-scaffolds, internal diversity intact, so not mode-collapse) but at high drift (KL 8.9). Whether that is
-a genuine capability gain or arm A reward-hacking a shared reward-oracle bias (reward and oracle are
-both ML models on hERG data) needs the pre-registered docking co-primary, which has not been run. So
-route-don't-train holds at moderate budget (Q <= 5000) but the HIGH-budget regime is a flagged potential
-overturn ([../results/benchmark/rl_env/budget_sweep.md](../results/benchmark/rl_env/budget_sweep.md)) -
-the one place in the whole program where training the weights may actually pull ahead, pending confirmation.
+**But the budget sweep flags a real high-budget deviation.** Varying the reward-query budget (M=1000,
+hERG), the (A-B) gap grows monotonically and at Q=10000 internalized RL beats guidance - pooled over 3
+seeds, arm A 0.093 vs guidance 0.029, 95% CI [+0.026, +0.104] (excludes 0) - by shifting the distribution
+beyond guidance's frozen-model ceiling, with drug-like, legit-hERG-blocker-chemotype designs (not mode-
+collapse or obvious gaming: arm A's output stays as drug-like as real hERG molecules, and its passers
+match guidance's passers' profile). But the effect is seed-VARIABLE (0.047-0.170; seed 0's 0.170 was a
+high outlier) and its CI lower bound (0.026) just misses the pre-registered 0.03 overturn margin - so it
+is INDETERMINATE by the prereg rule, at high drift (KL ~8). So route-don't-train holds at moderate budget
+(Q <= 5000, confirmed 6 ways), while the HIGH-budget regime shows a real but modest, sub-threshold RL edge
+- the one place in the program where training the weights may pull ahead - with the docking co-primary the
+remaining arbiter ([../results/benchmark/rl_env/budget_sweep.md](../results/benchmark/rl_env/budget_sweep.md)).
 
 ## What we'd do next
 
