@@ -148,7 +148,7 @@ def main():
             "designs": out_smis, "reward": [round(float(x), 4) for x in rew],
             "oracle": [round(float(x), 4) for x in orac], "oracle_pass_vec": opass.tolist(),
             "train_history": hist}
-    suffix = f"_s{SEED}" + (f"_np{NPOS}" if NPOS else "")
+    suffix = f"_s{SEED}_Q{STEPS * BATCH}" + (f"_np{NPOS}" if NPOS else "")
     out = os.path.join(OUT, f"{ENDPOINT}_arm{tag}{suffix}.json")
     json.dump(dump, open(out, "w"))
     print(f"[armA] saved -> {os.path.relpath(out, ROOT)}", flush=True)

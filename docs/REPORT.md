@@ -169,6 +169,17 @@ every CI includes 0. And on the weak endpoint the reward barely enriches oracle-
 enrichment 14.8x for hERG vs 1.1x for clearance), so the binding constraint there is reward reliability,
 not the lever. No cell separates train from route.
 
+**But the budget sweep flags a high-budget deviation (not yet resolved).** Varying the reward-query
+budget with a larger delivery M (seed 0, hERG), the (A-B) gap grows monotonically and at Q=10000
+internalized RL SIGNIFICANTLY beats guidance (0.170 vs 0.029, 95% CI [+0.075, +0.216], excludes 0) - by
+shifting the distribution beyond guidance's frozen-model ceiling, diversely (170 passers across 89
+scaffolds, internal diversity intact, so not mode-collapse) but at high drift (KL 8.9). Whether that is
+a genuine capability gain or arm A reward-hacking a shared reward-oracle bias (reward and oracle are
+both ML models on hERG data) needs the pre-registered docking co-primary, which has not been run. So
+route-don't-train holds at moderate budget (Q <= 5000) but the HIGH-budget regime is a flagged potential
+overturn ([../results/benchmark/rl_env/budget_sweep.md](../results/benchmark/rl_env/budget_sweep.md)) -
+the one place in the whole program where training the weights may actually pull ahead, pending confirmation.
+
 ## What we'd do next
 
 Both experiments are run. The open threads are v2 rigor on the bridge result (paired-difference CIs, a

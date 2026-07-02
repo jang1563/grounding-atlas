@@ -32,7 +32,8 @@ from rl_common import (  # noqa: E402
 
 ENDPOINT = os.environ.get("RL_ENDPOINT", "herg")
 M = int(os.environ.get("RL_M", "500"))                 # designs delivered per budget
-BUDGETS = [M, 2 * M, 5 * M, 10 * M]                     # Q = reward-query budget sweep (one decade)
+BUDGETS = ([int(x) for x in os.environ["RL_BUDGETS"].split(",")]   # explicit Q sweep, else default
+           if os.environ.get("RL_BUDGETS") else [M, 2 * M, 5 * M, 10 * M])
 
 
 def main():
