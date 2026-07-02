@@ -38,6 +38,7 @@ N_SAMPLE = int(os.environ.get("GEN_SAMPLE", "2000"))
 HIDDEN = int(os.environ.get("GEN_HIDDEN", "512"))
 LAYERS = int(os.environ.get("GEN_LAYERS", "3"))
 GEN_LOAD = os.environ.get("GEN_LOAD", "")    # if set, load the saved .pt instead of retraining
+GEN_ENDPOINT = os.environ.get("GEN_ENDPOINT", "herg")  # which endpoint's block-O/E to exclude
 MAX_LEN = 120
 TEMPS = [0.7, 0.8, 0.85, 0.9, 1.0]           # sampling-temperature sweep for the power gate
 
@@ -54,7 +55,7 @@ BOS, EOS, PAD = "^", "$", " "
 def build_corpus():
     """In-repo SMILES pool minus any molecule whose hERG-style Murcko scaffold is in block-O/E.
     block-R / block-G molecules and all non-hERG molecules are allowed (RL_ENV_PREREG Section 6)."""
-    part = json.load(open(os.path.join(OUT_DIR, "herg_partition.json")))
+    part = json.load(open(os.path.join(OUT_DIR, f"{GEN_ENDPOINT}_partition.json")))
     oe = {s for s, b in part["scaffold_to_block"].items() if b in ("O", "E")}
     pool = {}
     for p in sorted(glob.glob(os.path.join(EMB_DIR, "chemberta_*.npz"))):
@@ -196,7 +197,7 @@ def main():
     seqs = [vocab.encode(s) for s in corpus if len(vocab.encode(s)) <= MAX_LEN]
     print(f"[gen] vocab={len(vocab)} usable_seqs={len(seqs)}", flush=True)
 
-    pt_path = os.path.join(OUT_DIR, "generator_charrnn.pt")
+    pt_path = os.path.join(OUT_DIR, f"generator_{GEN_ENDPOINT}_charrnn.pt")
     torch.manual_seed(0)
     model = CharRNN(len(vocab)).to(DEV)
     nparam = sum(p.numel() for p in model.parameters())

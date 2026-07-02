@@ -159,12 +159,15 @@ So the post-training RL environment is buildable and the reward produces real or
 gains - but internalizing the reward into the weights ties externally selecting it from the frozen
 model. "Route, don't train" EXTENDS from the discriminative read-out to the generative/RL lever.
 
-The tie is robust (v2): it holds across three RL seeds (arm A 0.024-0.038, pooled (A-B) = -0.007, 95%
-CI [-0.054, +0.031]) and in a degraded low-data-reward cell (arm A 0.048 vs guidance 0.028, (A-B) =
-+0.020, CI [-0.020, +0.064]). The one hint of structure: when the reward weakens, external guidance
-degrades more than RL (guidance 20 -> 14 passes, RL holds), so the point estimate tips toward RL in
-the low-data regime - the lit's predicted crossover - but it stays inside the tie band. No cell
-separates train from route.
+The tie is robust (v2): it holds across three RL seeds (arm A 0.024-0.038, pooled (A-B) = -0.007, CI
+[-0.054, +0.031]), in a degraded low-data-reward cell (arm A 0.048 vs guidance 0.028, (A-B) = +0.020,
+CI [-0.020, +0.064]), and on a genuinely WEAK endpoint (clearance, run on SDSC Expanse: arm A 0.114 vs
+guidance 0.088, (A-B) = +0.026, CI [-0.015, +0.067]). Across all three the point estimate tips toward
+RL MORE as the reward weakens (A-B: -0.007 strong -> +0.020 low-data -> +0.026 weak-endpoint) - the
+literature's predicted low-data crossover, directionally consistent - but it never reaches significance;
+every CI includes 0. And on the weak endpoint the reward barely enriches oracle-actives at all (top-5%
+enrichment 14.8x for hERG vs 1.1x for clearance), so the binding constraint there is reward reliability,
+not the lever. No cell separates train from route.
 
 ## What we'd do next
 

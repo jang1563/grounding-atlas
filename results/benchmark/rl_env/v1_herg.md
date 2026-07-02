@@ -55,10 +55,24 @@ toward RL in the low-data regime (the literature's predicted crossover) but stay
 tie band. No cell separates train from route. (`eval/compare_rl_orchestrate.py`, result
 `signal/reward/herg_H1_compare.json`.)
 
+## Clearance: the genuinely weak endpoint (run on SDSC Expanse H100)
+
+The reward-quality axis, completed on a real weak endpoint (clearance-specific generator excluding
+clearance block-O/E; Cayuga scu-gpu was contended so this ran on Expanse `nairr-gpu-shared`).
+Clearance's reward barely enriches oracle-actives on generated molecules (top-5% enrichment **1.1x**
+vs hERG's 14.8x), so guidance has little to select on. Result (matched budget Q=5000, M=500;
+`signal/reward/clearance_H1_compare.json`):
+- **arm A RL 57/500 (0.114) vs arm B guidance 44/500 (0.088); (A-B) = +0.026, 95% CI [-0.015, +0.067]
+  -> CONFIRM.** Drift guard: shuffle drops to 0.044 (< arm A, so the reward drives the 0.114).
+- RL extracts a bit more from the weak reward than top-selection does, so the A-B point estimate tips
+  toward RL and grows as the reward weakens across the three cells (-0.007 strong -> +0.020 low-data
+  -> +0.026 weak-endpoint) - the literature's predicted low-data crossover, directionally consistent -
+  but every CI includes 0. On clearance the binding constraint is reward reliability, not the lever.
+
 ## Remaining caveats
-- The CIs are still wide (pass counts ~12-24 / 500); a larger M or more budgets would tighten further.
-- A clean clearance-endpoint cell needs a clearance-specific generator (the hERG generator excludes only
-  hERG block-O/E); the low-data cell is the degraded-reward stand-in run here.
+- The CIs are still wide (pass counts ~20-57 / 500); a larger M or more budgets would tighten further.
+- The clearance cell used its own generator + reward + oracle (all endpoint-parameterized), confirming
+  route-don't-train on a genuinely weak endpoint; the low-data cell is the within-hERG degraded stand-in.
 - OVERTURN was the only outcome needing the docking co-primary; since it CONFIRMED, docking is moot.
 - sigma=20 (REINVENT reward scale) was not swept; the matched-budget contrast vs guidance is the
   controlled comparison regardless.

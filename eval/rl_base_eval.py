@@ -23,8 +23,7 @@ import numpy as np
 import torch
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from build_holdout_oracle import _morgan  # noqa: E402
-from reward_head_load import ChemBertaEmbedder, load_reward, reward_from_emb  # noqa: E402
+from rl_common import build_oracle, build_reward, oracle_scores, reward_scores  # noqa: E402
 from smiles_generator_init import CharRNN, build_corpus, canon  # noqa: E402
 from smiles_generator_init import sample as gen_sample  # noqa: E402
 
@@ -51,7 +50,9 @@ def spearman(a, b):
 
 
 def load_generator(dev):
-    ck = torch.load(os.path.join(OUT, "generator_charrnn.pt"), map_location=dev)
+    cand = os.path.join(OUT, f"generator_{ENDPOINT}_charrnn.pt")   # endpoint-specific, hERG fallback
+    path = cand if os.path.isfile(cand) else os.path.join(OUT, "generator_charrnn.pt")
+    ck = torch.load(path, map_location=dev)
     vocab = V(ck["vocab"])
     model = CharRNN(len(vocab), hidden=ck["hidden"], layers=ck["layers"]).to(dev).eval()
     model.load_state_dict(ck["state_dict"])
@@ -74,11 +75,9 @@ def main():
             uniq.append(c)
     print(f"[baseC] sampled={N} valid+novel+unique={len(uniq)}", flush=True)
 
-    rew = load_reward(os.path.join(OUT, f"{ENDPOINT}_reward_blockR.pkl"))
-    rscore = reward_from_emb(rew["members"], ChemBertaEmbedder()(uniq), lam=rew.get("lambda", 1.0))
-    orc = load_reward(os.path.join(OUT, f"{ENDPOINT}_oracle_rf.pkl"))
-    oscore = orc["rf"].predict_proba(_morgan(uniq))[:, 1]
-    bar = orc["bar"]
+    rscore = reward_scores(build_reward(ENDPOINT), uniq)        # block-R reward, fit fresh (rl_common)
+    rf, bar = build_oracle(ENDPOINT)                            # block-O oracle, fit fresh
+    oscore = oracle_scores(rf, uniq)
     opass = (oscore > bar).astype(int)
 
     sp = spearman(rscore, oscore)

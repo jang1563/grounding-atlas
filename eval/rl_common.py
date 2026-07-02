@@ -67,7 +67,11 @@ def build_oracle(endpoint, bar_pct=90):
 
 
 def load_generator(path=None):
-    ck = torch.load(path or os.path.join(OUT, "generator_charrnn.pt"), map_location=DEV)
+    if path is None:                                             # endpoint-specific generator, hERG fallback
+        ep = os.environ.get("RL_ENDPOINT", "herg")
+        cand = os.path.join(OUT, f"generator_{ep}_charrnn.pt")
+        path = cand if os.path.isfile(cand) else os.path.join(OUT, "generator_charrnn.pt")
+    ck = torch.load(path, map_location=DEV)
     vocab = V(ck["vocab"])
     model = CharRNN(len(vocab), hidden=ck["hidden"], layers=ck["layers"]).to(DEV).eval()
     model.load_state_dict(ck["state_dict"])
