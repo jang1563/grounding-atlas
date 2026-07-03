@@ -67,6 +67,24 @@ chemotype (large, lipophilic, polycyclic). So arm A did NOT invent weird oracle-
 produced MORE of the legitimate blocker type. This ARGUES AGAINST simple gaming, though a shared bias
 in what both ML models call "active" for that chemotype is still only fully ruled out by docking.
 
+## Bias-arbiter leg 2a (independent featurization): the edge SURVIVES
+
+Per the arbiter protocol ([../../../docs/DOCKING_PROTOCOL.md](../../../docs/DOCKING_PROTOCOL.md);
+`eval/bias_arbiter.py`). The reward (ChemBERTa-LR) and oracle (Morgan-RF) share a 2D-substructure feature
+surface; leg 2a re-judges the +0.064 edge with an oracle that shares NEITHER surface - an RDKit
+physicochemical-descriptor + MACCS-keys RF (block-R trained). It BREAKS the Morgan surface (but not the
+internal label lineage - that is leg 2b, deferred).
+- **Self-validation GATE A: PASS** - the arbiter separates block-E known actives from inactives at AUROC
+  0.789, EF1% 6.35x (floors 0.70 / 3x). So it is competent to judge.
+- **Discrimination-loss calibration:** a weaker arbiter shrinks gaps; this one measures a true +0.064 as
+  +0.019 (retention 0.30x). So a genuine edge should appear as ~+0.019 through it.
+- **Full-draw re-judge: (A-B)_arbiter = +0.021** (arm A 0.340 vs guidance 0.319), essentially EXACTLY the
+  discrimination-loss-expected +0.019. **The edge survives breaking the Morgan feature surface** -> the
+  shared-2D-Morgan-feature bias is NOT the explanation for the high-budget RL edge.
+- Caveat: 50% of arm A's designs fall outside the physchem+MACCS arbiter's applicability domain (5-NN),
+  so this arbiter extrapolates on half of them; and leg 2a shares the internal hERG LABEL lineage, so it
+  is necessary-not-sufficient (rules out feature-surface gaming, cannot alone license "genuine binding").
+
 ## Status
 
 - Route-don't-train HOLDS at moderate budget (Q <= 5000; confirmed across 3 reward-quality cells x 3 seeds).
