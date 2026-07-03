@@ -11,7 +11,7 @@ arm only); the PRIMARY task's surface confound is controlled by an explicit resi
 the H2 gap is re-baselined against the positive control so "supervision helps" is subtracted out;
 and the launch path is reconciled with the scripts that actually submit.
 
-Repo: `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval`
+Repo: `the repo root`
 Primary models (CO-PRIMARY): `Qwen/Qwen3-8B` (36 blocks, hidden 4096, so 37 hidden-state tensors incl
 the layer-0 embedding; Apache, already cached, the continuity anchor for the prior 0.5B/8B bias result)
 AND `meta-llama/Llama-3.1-8B-Instruct` (32 blocks, so 33 tensors; the field-standard substrate for the
@@ -545,7 +545,7 @@ ACT_MODEL=Qwen/Qwen2.5-VL-7B-Instruct ACT_N=400 ACT_SCRIPT=activation_arm_histo.
 ```
 
 Data staging: repo is NOT checked out on Cayuga; rsync a structure-preserving subset to `~/bge`
-(`rsync -aR eval/ data/herg.csv signal/{dna_promoter.csv,single_cell,msa,sfm_embedding}/ cayuga-login1:~/bge/`),
+(`rsync -aR eval/ data/herg.csv signal/{dna_promoter.csv,single_cell,msa,sfm_embedding}/ <login-node>:~/bge/`),
 matching the launchers' `cd "$HOME/bge"`. Run with `python -u` (the sbatch already does) and watch
 via Monitor / an until-loop on the `activation_%j.log` tail (foreground `sleep` is blocked). Total
 compute: the headline 5-arm set (hERG + DNA + single-cell + MSA + SFM) is ~5 a40-hours PER model, so

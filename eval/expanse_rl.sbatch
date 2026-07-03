@@ -4,7 +4,7 @@
 #   sbatch --export=ALL,E3_SCRIPT=smiles_generator_init.py,GEN_ENDPOINT=clearance eval/expanse_rl.sbatch
 #SBATCH -p nairr-gpu-shared
 #SBATCH --qos=nairr-gpu-shared-normal
-#SBATCH -A crl195
+#SBATCH -A <your-ACCESS-allocation>
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --gpus=1

@@ -694,24 +694,24 @@ chance.
 
 ## Key file paths (all absolute)
 - LoRA arm (Arm C; needs the `{property}` + external-`test_ids` patches, see Section 2/5):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/ws3_lora.py`
+  `eval/ws3_lora.py`
 - Orchestrate head + calibration metrics (Arm B; ADD `paired_cluster_boot` + tau to `aurc`/`sel_acc`):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/probe_common.py`
+  `eval/probe_common.py`
   (`balanced_lr`, `control_curve`, `ece`, `aurc`, `sel_acc`, `cluster_boot`)
 - Embed pipeline to fork (ADD `trust_remote_code=True`):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/sfm_embed_meltome.py`
+  `eval/sfm_embed_meltome.py`
   -> new `eval/sfm_embed_admet.py`
 - Per-endpoint ceilings/selectivity (the H1 specialist bar + P1 gate; clearance re-measured at capped n):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/admet/verifiability_report.json`
+  `signal/admet/verifiability_report.json`
 - ADMET SMILES (the 7 endpoints; each record carries `"property"`):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/admet/<endpoint>/pairs.jsonl`
+  `signal/admet/<endpoint>/pairs.jsonl`
 - Per-model attach layer (peak-selectivity, hERG-only today):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/layer_profiles.json`
+  `results/layer_profiles.json`
   and `results/benchmark/layerloc/SUMMARY.md`
 - Cayuga launcher template:
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/cayuga_ws3_lora_cells.sbatch`
+  `eval/cayuga_ws3_lora_cells.sbatch`
 - Meltome (Tm-only, ceiling 0.633; protein robustness + entity control only):
-  `/Users/jak4013/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/sfm_embedding/meltome_esm2.npz`
+  `signal/sfm_embedding/meltome_esm2.npz`
 - NEW to write: `eval/bridge_arm.py` (projection + layer-0 prepend + additive-at-peak hook + bypass
   control + Stage-B), `eval/sfm_embed_admet.py`, `eval/cayuga_bridge_arm.sbatch`, the shared
   `score_arm` + `paired_cluster_boot` (in `probe_common.py`), `signal/admet/folds/<fold>.json`,
