@@ -177,9 +177,15 @@ collapse or obvious gaming: arm A's output stays as drug-like as real hERG molec
 match guidance's passers' profile). But the effect is seed-VARIABLE (0.047-0.170; seed 0's 0.170 was a
 high outlier) and its CI lower bound (0.026) just misses the pre-registered 0.03 overturn margin - so it
 is INDETERMINATE by the prereg rule, at high drift (KL ~8). So route-don't-train holds at moderate budget
-(Q <= 5000, confirmed 6 ways), while the HIGH-budget regime shows a real but modest, sub-threshold RL edge
-- the one place in the program where training the weights may pull ahead - with the docking co-primary the
-remaining arbiter ([../results/benchmark/rl_env/budget_sweep.md](../results/benchmark/rl_env/budget_sweep.md)).
+(Q <= 5000, confirmed 6 ways), while the HIGH-budget regime shows a real but modest, sub-threshold RL edge -
+the one place in the program where training the weights may pull ahead. A bias arbitration
+([../results/benchmark/rl_env/budget_sweep.md](../results/benchmark/rl_env/budget_sweep.md)) then RULES OUT
+the shared-2D-Morgan-feature mechanism (the edge survives an independent physchem+MACCS oracle at the
+expected magnitude) and gaming (drug-like, legit hERG-blocker chemotype, in-domain), leaving only the
+shared-LABEL-lineage residual un-testable (no independent external hERG labels - TDC hERG_Karim overlaps
+8.5% - and docking blocked + weak for hERG). So the high-budget edge is most consistent with a real, modest
+advantage that survived every feasible independence check - a genuine, honestly-bounded caveat to
+"route, don't train", not an artifact.
 
 ## What we'd do next
 

@@ -85,14 +85,32 @@ internal label lineage - that is leg 2b, deferred).
   so this arbiter extrapolates on half of them; and leg 2a shares the internal hERG LABEL lineage, so it
   is necessary-not-sufficient (rules out feature-surface gaming, cannot alone license "genuine binding").
 
-## Status
+## Bias-arbiter leg 2b (external labels): INCONCLUSIVE (no independent set available)
+
+leg 2b would break the shared LABEL lineage by training the arbiter on an EXTERNAL hERG assay. The external
+candidate (TDC hERG_Karim, n=13445 patch-clamp) FAILS the pre-registered independence gate: InChIKey overlap
+with the internal set is 8.5% (> the 5% floor), so it re-imports the same label lineage (the internal ADMET
+hERG data and Karim both trace to overlapping ChEMBL assays - the exact "ChEMBL blind-spot" the protocol
+critic predicted, correctly caught by the gate). So there is no readily-available truly-independent hERG
+label set; the shared-label-lineage residual cannot be cleanly closed with available data.
+(`eval/bias_arbiter_2b.py`.) Docking (the physics arbiter that would sidestep ALL label lineage) is the
+one remaining lever, but its arm64 engine install failed and hERG's promiscuous cavity makes it weak - the
+protocol pre-committed it as a secondary, likely-uninformative tie-breaker.
+
+## Status (final)
 
 - Route-don't-train HOLDS at moderate budget (Q <= 5000; confirmed across 3 reward-quality cells x 3 seeds).
-- The HIGH-budget regime (Q=10000) is a **real but MODEST, seed-variable, INDETERMINATE deviation**: arm A
-  significantly beats guidance (pooled CI [+0.026, +0.104] excludes 0) by shifting the distribution beyond
-  guidance's frozen-model ceiling, with drug-like legit-chemotype designs (not gaming), but the effect is
-  seed-variable and its lower bound just misses the pre-registered 0.03 overturn margin. The remaining
-  arbiter is the docking co-primary (does the physics agree the extra passers truly bind, or do the two
-  correlated ML models share a bias for that chemotype).
-- The budget sweep is why rigor passes matter: a run expected to confirm the tie instead surfaced a real,
-  budget-dependent, sub-threshold RL edge at high budget. Reported, not buried.
+- The HIGH-budget regime (Q=10000) is a **real-but-MODEST, seed-variable, sub-threshold RL edge** (pooled
+  (A-B)=+0.064, CI [+0.026, +0.104] excludes 0 but its lower bound just misses the pre-registered 0.03
+  overturn margin, so INDETERMINATE by the prereg rule). Arm A pulls ahead by shifting the distribution
+  beyond guidance's frozen-model ceiling.
+- **Bias arbitration (is it genuine or a shared reward-oracle bias?):** the shared-2D-Morgan-FEATURE
+  mechanism is RULED OUT (leg 2a: the edge survives an independent physchem+MACCS arbiter at the expected
+  magnitude); gaming-by-weird-molecules is RULED OUT (property + applicability-domain: drug-like, legit
+  hERG-blocker chemotype, in-domain for Morgan-Tanimoto). The shared-LABEL-lineage residual is NOT closable
+  (no independent external labels; docking blocked+weak). So the high-budget edge is **most consistent with
+  a REAL, modest, sub-threshold advantage**, with one un-testable residual (shared label lineage).
+- Net for the program: "route, don't train" holds everywhere tested EXCEPT a modest, sub-threshold, high-
+  budget corner where internalized RL pulls ahead - a corner that survived every feasible independence check.
+  The budget sweep is why rigor passes matter: the run expected to confirm the tie surfaced this real,
+  budget-dependent deviation. Reported and arbitrated as far as the available data allows, not buried.
