@@ -75,7 +75,7 @@ def main():
     auc = float(roc_auc_score(yeo, pe))
     ef1 = ef(yeo, pe, 0.01)
     bar = float(np.percentile(pe, BAR_PCT))
-    print(f"[arbiter] independent-featurization (physchem+MACCS) RF on block-R, scored block-E:")
+    print("[arbiter] independent-featurization (physchem+MACCS) RF on block-R, scored block-E:")
     print(f"  GATE A competence: AUROC={auc:.3f} (floor 0.70)  EF1%={ef1:.2f}x (floor 3x)  "
           f"-> {'PASS' if auc >= 0.70 and ef1 >= 3 else 'FAIL (arbiter uninformative)'}", flush=True)
 
