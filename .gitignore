@@ -67,3 +67,4 @@ signal/sfm_embedding/MoLFormer*.npz
 
 # Experiment-3 reward-head ensembles (regenerable via eval/reward_head_load.py)
 signal/reward/
+data/herg_karim.tab

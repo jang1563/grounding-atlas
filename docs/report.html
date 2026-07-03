@@ -1,0 +1,278 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>grounding-atlas &mdash; language models encode more biology than they verbalize</title><meta name="description" content="A measurement-first map of biological content-grounding in language models: the encode-vs-verbalize law, the route-dont-train decision map, and its extension into the generative RL regime."><meta property="og:title" content="grounding-atlas"><meta property="og:description" content="Language models encode far more biology than they can say. Measure the gap, close it, map where each capability should live."></head><body>
+<style>
+  :root{
+    --paper:#F2F4F1; --ink:#15191A; --signal:#0B6E63; --signal-soft:rgba(11,110,99,.16);
+    --gap:#B4551F; --gap-soft:rgba(180,85,31,.14); --hair:rgba(21,25,26,.14);
+    --muted:#59635E; --panel:#FAFBF9; --recess:#E7EAE5;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    --mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+  .col{max-width:660px}
+  a{color:var(--signal);text-decoration:none;border-bottom:1px solid var(--signal-soft)}
+  a:hover{border-bottom-color:var(--signal)}
+  h1,h2,h3{text-wrap:balance;font-weight:600}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--muted);margin:0 0 18px}
+  .mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  hr.rule{border:0;border-top:1px solid var(--hair);margin:0}
+
+  /* ---- hero ---- */
+  header{padding:92px 0 8px}
+  h1{font-family:var(--serif);font-size:clamp(38px,6vw,66px);line-height:1.02;letter-spacing:-.015em;
+    margin:0 0 26px;font-weight:600}
+  h1 em{font-style:italic;color:var(--signal)}
+  .lede{font-size:clamp(19px,2.4vw,23px);line-height:1.5;color:#242A2B;max-width:640px;margin:0 0 30px}
+  .byline{font-family:var(--mono);font-size:13px;color:var(--muted);line-height:1.9}
+  .byline b{color:var(--ink);font-weight:600}
+
+  /* ---- section scaffold ---- */
+  section{padding:66px 0}
+  .sec-head{display:flex;gap:20px;align-items:baseline;margin:0 0 30px}
+  .sec-idx{font-family:var(--mono);font-size:13px;color:var(--gap);letter-spacing:.05em;
+    padding-top:6px;min-width:34px}
+  h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,36px);line-height:1.1;margin:0;letter-spacing:-.01em}
+  .sec-head p{margin:8px 0 0;color:var(--muted);font-size:15.5px;max-width:560px}
+  p{margin:0 0 18px}
+  p.tight{max-width:660px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--signal);margin:0 0 10px}
+
+  /* ---- the encode/verbalize gap bar (the recurring motif) ---- */
+  .gaprow{display:grid;grid-template-columns:minmax(180px,1.1fr) 3fr;gap:16px 22px;align-items:center;
+    padding:13px 0;border-top:1px solid var(--hair)}
+  .gaprow:last-child{border-bottom:1px solid var(--hair)}
+  .gaprow .label{font-size:14.5px;line-height:1.35}
+  .gaprow .label small{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);
+    letter-spacing:.02em;margin-top:2px}
+  .track{position:relative;height:26px;background:var(--recess);border-radius:3px;overflow:hidden}
+  .track .enc{position:absolute;top:0;left:0;height:100%;background:var(--signal-soft);
+    border-right:2px dashed rgba(11,110,99,.55);transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .track .ver{position:absolute;top:0;left:0;height:100%;background:var(--signal);
+    transition:width 1.1s cubic-bezier(.2,.7,.2,1)}
+  .track .gaplab{position:absolute;top:50%;transform:translateY(-50%);font-family:var(--mono);
+    font-size:11px;color:var(--gap);white-space:nowrap;padding-left:7px}
+  .legend{display:flex;gap:22px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;color:var(--muted);
+    margin:22px 0 4px}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:22px;height:11px;border-radius:2px;display:inline-block}
+  .sw.enc{background:var(--signal-soft);border:1px dashed rgba(11,110,99,.6)}
+  .sw.ver{background:var(--signal)}
+
+  /* ---- the controlled pair ---- */
+  .pair{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--hair);border-radius:6px;
+    overflow:hidden;background:var(--panel)}
+  .pair>div{padding:26px 24px}
+  .pair>div:first-child{border-right:1px solid var(--hair)}
+  .pair h3{font-family:var(--mono);font-size:13px;letter-spacing:.06em;text-transform:uppercase;
+    margin:0 0 4px;color:var(--muted);font-weight:600}
+  .pair .big{font-family:var(--serif);font-size:30px;margin:2px 0 14px}
+  .pair .enc-v{color:var(--signal)} .pair .ver-v{color:var(--gap)}
+  .verdict{margin-top:20px;padding:16px 20px;background:var(--gap-soft);border-left:3px solid var(--gap);
+    border-radius:0 4px 4px 0;font-size:15.5px}
+
+  /* ---- decision map matrix ---- */
+  .map{width:100%;border-collapse:collapse;font-size:14.5px}
+  .map th,.map td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--hair)}
+  .map th{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--muted);font-weight:600}
+  .map td.v{font-family:var(--mono);text-align:center;font-variant-numeric:tabular-nums}
+  .chip{font-family:var(--mono);font-size:11px;padding:2px 8px;border-radius:20px;letter-spacing:.03em}
+  .chip.win{background:var(--signal-soft);color:var(--signal)}
+  .chip.no{background:var(--recess);color:var(--muted)}
+
+  /* ---- head to head (generative) ---- */
+  .h2h{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:6px 0 8px}
+  .h2h .card{border:1px solid var(--hair);border-radius:6px;padding:20px 22px;background:var(--panel)}
+  .h2h .card .role{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .h2h .card .num{font-family:var(--serif);font-size:34px;margin:6px 0 2px}
+  .h2h .card .sub{font-size:13.5px;color:var(--muted)}
+  .h2h .card.tie{border-color:rgba(11,110,99,.4)}
+  .tieband{text-align:center;font-family:var(--mono);font-size:13px;color:var(--signal);margin:2px 0 0}
+
+  .cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:6px}
+  .cards3 .c{border-top:2px solid var(--ink);padding:16px 2px 4px}
+  .cards3 .c .t{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:0 0 8px}
+  .cards3 .c p{font-size:14px;color:#2b3130;margin:0}
+  .cards3 .c.route{border-top-color:var(--signal)}
+
+  .callout{background:var(--panel);border:1px solid var(--hair);border-radius:6px;padding:22px 24px;margin:8px 0}
+  .callout .kicker{margin-bottom:6px}
+  blockquote{margin:0;font-family:var(--serif);font-size:20px;line-height:1.4;color:var(--ink)}
+
+  footer{padding:56px 0 80px;border-top:1px solid var(--hair);margin-top:20px}
+  .flinks{display:flex;gap:26px;flex-wrap:wrap;font-family:var(--mono);font-size:13.5px}
+  .fnote{color:var(--muted);font-size:13px;margin-top:20px;max-width:640px;line-height:1.7}
+
+  @media(max-width:720px){
+    .gaprow{grid-template-columns:1fr;gap:8px} .pair,.h2h,.cards3{grid-template-columns:1fr}
+    .pair>div:first-child{border-right:0;border-bottom:1px solid var(--hair)}
+    .sec-head{flex-direction:column;gap:4px} .sec-idx{padding-top:0}
+    header{padding:60px 0 0}
+  }
+  @media(prefers-reduced-motion:reduce){.track .enc,.track .ver{transition:none}}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">grounding-atlas &nbsp;/&nbsp; a measurement-first map</p>
+    <h1>Language models encode far more biology than they can <em>say.</em></h1>
+    <p class="lede">A specialist emits a sequence, a structure, an embedding, a number. Does the language model read its <em>content</em> &mdash; or only recognize its <em>name</em>? This project measures the gap, manufactures verifiable signal to close it, and maps where each capability should live.</p>
+    <p class="byline"><b>JangKeun Kim</b> &nbsp;&middot;&nbsp; computational biology, Weill Cornell Medicine (Mason Lab)<br>single-cell &amp; spatial genomics &middot; space biology &middot; AI evaluation for biology &nbsp;&middot;&nbsp; updated 2026&#8209;07&#8209;02</p>
+  </header>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+<section>
+  <div class="sec-head"><div class="sec-idx">01</div>
+    <div><h2>The law: encoded high, verbalized low</h2>
+    <p>A linear probe on an open model's hidden states recovers the property near a specialist ceiling. The verbalized answer lags far behind &mdash; and what sets the gap is how web&#8209;documented the representation&#8209;to&#8209;property mapping is, not the modality.</p></div>
+  </div>
+  <div class="col"><p class="tight">Across 17 representations the <em>encoding</em> gap is under 0.10 for 13 of them, while the <em>verbalization</em> gap runs 0.12 to 0.49. The model holds the answer; it just doesn't state it.</p></div>
+
+  <div class="legend">
+    <span><i class="sw ver"></i> verbalized (what it says)</span>
+    <span><i class="sw enc"></i> encoded (what a probe reads) &mdash; the dashed edge is the ceiling</span>
+  </div>
+  <div id="bars">
+    <div class="gaprow" data-enc=".983" data-ver=".50">
+      <div class="label">single-cell &rarr; T&nbsp;cell <small>gene names &middot; web-rich</small></div>
+      <div class="track"><div class="enc" style="width:0"></div><div class="ver" style="width:0"></div><span class="gaplab"></span></div>
+    </div>
+    <div class="gaprow" data-enc=".964" data-ver=".497">
+      <div class="label">single-cell &rarr; T&nbsp;cell <small>anonymized ids &middot; web-zero</small></div>
+      <div class="track"><div class="enc" style="width:0"></div><div class="ver" style="width:0"></div><span class="gaplab"></span></div>
+    </div>
+    <div class="gaprow" data-enc="1.0" data-ver=".795">
+      <div class="label">MSA column &rarr; conserved <small>web-rich</small></div>
+      <div class="track"><div class="enc" style="width:0"></div><div class="ver" style="width:0"></div><span class="gaplab"></span></div>
+    </div>
+    <div class="gaprow" data-enc=".685" data-ver=".487">
+      <div class="label">methylation &rarr; age <small>web-zero numbers</small></div>
+      <div class="track"><div class="enc" style="width:0"></div><div class="ver" style="width:0"></div><span class="gaplab"></span></div>
+    </div>
+    <div class="gaprow" data-enc=".827" data-ver=".463">
+      <div class="label">histopathology H&amp;E &rarr; tumor <small>encoding-limited</small></div>
+      <div class="track"><div class="enc" style="width:0"></div><div class="ver" style="width:0"></div><span class="gaplab"></span></div>
+    </div>
+  </div>
+  <p style="font-family:var(--mono);font-size:12px;color:var(--muted);margin-top:14px">bars scaled 0&ndash;1 &middot; AUROC / accuracy &middot; pilot n~80&ndash;1500 per rung</p>
+</section>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+<section>
+  <div class="sec-head"><div class="sec-idx">02</div>
+    <div><h2>The sharpest result is a controlled pair</h2>
+    <p>Two representations with identical task shape, both encoded to the specialist ceiling &mdash; yet opposite output. The only thing that differs is web&#8209;exposure, which isolates it as the cause.</p></div>
+  </div>
+  <div class="pair">
+    <div>
+      <h3>MSA column &rarr; conserved</h3>
+      <div class="big">encode <span class="enc-v">1.00</span> &nbsp;&rarr;&nbsp; say <span class="enc-v">0.795</span></div>
+      <p style="margin:0;color:var(--muted);font-size:14.5px">Web-documented mapping. The model verbalizes it.</p>
+    </div>
+    <div>
+      <h3>methylation &rarr; age</h3>
+      <div class="big">encode <span class="enc-v">0.685</span> &nbsp;&rarr;&nbsp; say <span class="ver-v">0.487</span></div>
+      <p style="margin:0;color:var(--muted);font-size:14.5px">Same task shape, encoded to ceiling &mdash; but stays at chance.</p>
+    </div>
+  </div>
+  <div class="verdict col">Identical shape, both encoded, opposite verbalization. The lone difference is whether the mapping is web&#8209;documented &mdash; <b>web-exposure is the cause of the verbalization gap</b>, not the modality.</div>
+</section>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+<section>
+  <div class="sec-head"><div class="sec-idx">03</div>
+    <div><h2>Where each capability should live</h2>
+    <p>If the model already encodes it, don't train it in &mdash; read it out. Per capability we measure <span class="mono">train</span> (weights) vs <span class="mono">retrieve</span> (RAG/MCP) vs <span class="mono">orchestrate</span> (call the specialist). The weights lever wins nowhere.</p></div>
+  </div>
+  <div class="cards3">
+    <div class="c"><p class="t">Train the skill</p><p>Only where a cheap specialist doesn't already exist. Across every measured cell, a trained read-out is a strong second at best.</p></div>
+    <div class="c"><p class="t">Retrieve the knowledge</p><p>Closes in-data-pattern and web-anchored cells &mdash; few-shot retrieval recovers methylation from 0.40 to 0.93, anchor-invariant.</p></div>
+    <div class="c route"><p class="t">Orchestrate the specialist</p><p>Call the frozen model and route on its output. A thin head on an open SFM beats a learned LLM&nbsp;bridge and in-weight LoRA, and never transfers &mdash; reading it out is the win.</p></div>
+  </div>
+  <div class="callout col" style="margin-top:28px">
+    <p class="kicker">The prescription</p>
+    <blockquote>Because the frontier is <em>calibrated</em> about where it grounds, the same map is a routing policy.</blockquote>
+    <p style="margin:14px 0 0;font-size:15px;color:#2b3130">Routing on continuous self-confidence reaches <span class="mono" style="color:var(--signal)">0.893</span> mean AUROC &mdash; matching the oracle's <span class="mono">0.894</span> &mdash; versus <span class="mono">0.700</span> answering everything itself. The web-exposure tag, known before any model call, is itself a competitive deferral prior.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+<section>
+  <div class="sec-head"><div class="sec-idx">04</div>
+    <div><h2>&ldquo;Route, don't train&rdquo; holds when the model <em>generates</em></h2>
+    <p>The train-vs-orchestrate line was measured on discriminative read-out. A pre-registered post-training RL environment carries it into the generative regime &mdash; and the verdict survives.</p></div>
+  </div>
+  <div class="col"><p class="tight">A frozen molecular generator, a property reward, a scaffold-disjoint held-out oracle. Two arms at matched reward-query budget: <b>internalized RL</b> (fine-tune the generator toward the reward) versus <b>external guidance</b> (steer the same frozen generator at inference). Which produces more genuine, oracle-confirmed designs?</p></div>
+
+  <div class="h2h">
+    <div class="card tie"><div class="role">Train &middot; internalized RL</div><div class="num enc-v">9.3%</div><div class="sub">oracle-pass, 3 seeds pooled</div></div>
+    <div class="card tie"><div class="role">Route &middot; external guidance</div><div class="num">8.8%</div><div class="sub">oracle-pass, matched budget</div></div>
+  </div>
+  <p class="tieband">a tie &mdash; CI [&minus;0.015, +0.067] includes 0 &middot; and a shuffled-reward control collapses to baseline, so the reward drives the gain</p>
+  <div class="col"><p class="tight" style="margin-top:24px">Across three reward-quality regimes, internalized RL ties external guidance on formal scaffold-clustered CIs. Training the weights buys nothing over routing a frozen prior through the reward &mdash; <b>&ldquo;route, don't train&rdquo; spans discriminative read-out <em>and</em> generation.</b></p></div>
+  <div class="callout col" style="margin-top:14px;border-left:3px solid var(--gap);border-radius:0 6px 6px 0">
+    <p class="kicker" style="color:var(--gap)">One honest exception, held to its evidence</p>
+    <p style="margin:0;font-size:15px;color:#2b3130">At <em>high</em> training budget, RL pulls <b>modestly, sub-threshold-ly</b> ahead &mdash; it shifts the distribution past the frozen model's guidance ceiling. That edge survived every feasible independence check (an independent-featurization oracle, property and applicability-domain analysis), so it is a genuine, bounded caveat, not an artifact.</p>
+  </div>
+</section>
+</div>
+
+<div class="wrap"><hr class="rule"></div>
+
+<div class="wrap">
+<section style="padding-bottom:20px">
+  <div class="sec-head"><div class="sec-idx">05</div>
+    <div><h2>The line for an AI scientist</h2></div>
+  </div>
+  <div class="col">
+    <blockquote style="font-size:23px;line-height:1.42">A frontier model's job in biology is to <em>ground</em> and <em>route</em> the content a specialist emits &mdash; not to know it. Today that grounding is decided by assertion. This project makes it measured.</blockquote>
+  </div>
+</section>
+</div>
+
+<div class="wrap">
+<footer>
+  <div class="flinks">
+    <a href="https://github.com/jang1563/grounding-atlas">GitHub &middot; source &amp; instrument</a>
+    <a href="https://huggingface.co/datasets/jang1563/grounding-atlas">Hugging Face &middot; dataset</a>
+  </div>
+  <p class="fnote">GroundBench: 23 tasks / 9 modalities / 3 models on one GPU-free harness &middot; WS2 verifiable-signal generators across ~18 modality families &middot; the generative RL environment ran on Cayuga and SDSC Expanse. Code Apache-2.0; datasets CC&nbsp;BY-SA&nbsp;4.0 (some ADMET labels derive from ChEMBL). A measurement-first project toward a grounded biology orchestrator &mdash; capability-focused, not safety.</p>
+</footer>
+</div>
+
+<script>
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion:reduce)").matches;
+    function fill(row){
+      var enc=parseFloat(row.dataset.enc), ver=parseFloat(row.dataset.ver);
+      var e=row.querySelector(".enc"), v=row.querySelector(".ver"), g=row.querySelector(".gaplab");
+      e.style.width=(enc*100)+"%"; v.style.width=(ver*100)+"%";
+      g.style.left=(enc*100)+"%"; g.textContent="gap "+(enc-ver).toFixed(2);
+    }
+    var rows=[].slice.call(document.querySelectorAll("#bars .gaprow"));
+    if(reduce || !("IntersectionObserver" in window)){ rows.forEach(fill); return; }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(en){ if(en.isIntersecting){ setTimeout(function(){fill(en.target);}, rows.indexOf(en.target)*90); io.unobserve(en.target);} });
+    },{threshold:.4});
+    rows.forEach(function(r){io.observe(r);});
+  })();
+</script>
+
+</body></html>
