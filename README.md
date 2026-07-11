@@ -10,7 +10,7 @@
 
 **Does a language model do biology by the *content* of a specialist model's output (sequence, structure, identifier, numeric prediction), or just by its *name*? Measure it, manufacture verifiable signal to close it, and map where each capability should live.**
 
-**Bottom line:** today's language models internally represent far more biology than they can put into words, and *where* they fall silent is predictable from how often the representation-to-property mapping appears in web text. That tells an AI agent when to trust the model and when to call a specialist tool.
+**Bottom line:** today's language models internally represent far more biology than they can put into words, and *where* they fall silent is largely predictable a priori — from how familiar the representation's tokens are and how well-documented its representation-to-property mapping is (a capability-dependent mix, not a single web-exposure law). That tells an AI agent when to trust the model and when to call a specialist tool.
 
 ![Two-axis decomposition of the grounding gap: encoding (does the model represent the property internally) vs verbalization (does it state it), across 17 representations.](results/synthesis_figure.png)
 
@@ -49,7 +49,7 @@ Status: **active execution** (updated 2026-07-02; the benchmark surface is Groun
 The benchmark surface of this project is **GroundBench**: 23 tasks across 9 modalities x 3 models, plus a
 reproducible cheap-head baseline, on one GPU-free output-arm harness. The leaderboard
 ([`results/benchmark/LEADERBOARD.md`](results/benchmark/LEADERBOARD.md)) is organized by the a-priori
-web-exposure tag, so it reads as evidence of the law itself: `web=zero` rows sit near chance, `web=rich`
+web-exposure tag, which predicts the verbalization floor: `web=zero` rows sit near chance, `web=rich`
 rows ground, and the cheap-head column grounds even where the models are at chance.
 
 ```bash
@@ -63,7 +63,7 @@ schema, adding a task, and the mandatory orientation audit: [`docs/GROUNDBENCH_S
 Putting your model on the leaderboard: [`SUBMITTING.md`](SUBMITTING.md).
 
 ## Why this project exists
-The grounding gap is real: a measured name-vs-content recognition gap (name ~100% vs accession ~2-28%), plus the question of whether the model surfaces what a probe reads from a representation (encoding vs expression). Closing it is a genuine path to a better science model.
+The grounding gap is real: models recognize a biological entity by name far more reliably than they resolve or ground its concrete content — sequence, database accession, numeric representation — a name-vs-content recognition gap established in a prior recognition study, plus the question of whether the model surfaces what a probe reads from a representation (encoding vs expression). Closing it is a genuine path to a better science model.
 
 It is also a distinct layer in the agentic-bio stack. Adjacent evals measure other things: BioMysteryBench measures task solve-rate through tools, and gget virus / VirBench (2026-06-08) measures agent retrieval accuracy against deterministic ground truth. Neither measures whether the model grounds the *content* of what a specialist emits, nor whether it calibrates trust on that output. The complementary chain is **retrieval -> content-grounding (this project) -> downstream**.
 
@@ -81,7 +81,7 @@ Full design: `PROJECT_DESIGN.md`.
 
 *Pilot-scale; see [`results/SYNTHESIS.md`](results/SYNTHESIS.md) for the full 17-representation master table and caveats, and [`results/`](results/README.md) for every writeup.*
 
-**The law.** LLMs encode far more biology than they verbalize. A linear probe on an open model's hidden states recovers the property near a specialist ceiling (the *encoding* gap is under 0.10 for 13 of 17 representations), but the verbalized output lags far behind (the *verbalization* gap runs 0.12 to 0.49). What sets that gap is how web-documented the representation-to-property mapping is, not the modality.
+**Encode ≫ verbalize.** LLMs encode far more biology than they verbalize. A linear probe on an open model's hidden states recovers the property near a specialist ceiling (the *encoding* gap is under 0.10 for 13 of 17 representations), but the verbalized output lags far behind (the *verbalization* gap runs 0.12 to 0.49). What sets that gap is not the modality but a **capability-dependent mix of two factors** — how familiar the representation's tokens are (reasoning) and how well-documented the representation-to-property mapping is — with the a-priori web-exposure tag a strong predictor of the floor, not a single law.
 
 | representation → property | ceiling | probe (encode) | output (verbalize) | reads out? |
 |---|---|---|---|---|
@@ -92,9 +92,9 @@ Full design: `PROJECT_DESIGN.md`.
 | histopathology H&E → tumor | ~0.90 | 0.827 | 0.463 | partial, plateau ~0.65 |
 | 3D coords → hERG | 0.826 | 0.669 | 0.490 | encoding-limited |
 
-> **The sharpest result (a controlled pair).** methylation and MSA have identical task shape and are both encoded to the specialist ceiling, yet opposite output: MSA verbalizes at 0.795 while methylation stays at chance (0.487). The only thing that differs is whether the representation-to-property mapping is web-documented, isolating web-exposure as the cause of the verbalization gap.
+> **The sharpest result (a controlled pair).** methylation and MSA have identical task shape and are both encoded to the specialist ceiling, yet opposite output: MSA verbalizes at 0.795 while methylation stays at chance (0.487). The main thing that differs is whether the representation-to-property mapping is web-documented — clean evidence for the **mapping-documentation** factor of the gap (the other factor, token-familiarity / reasoning, is isolated separately by the single-cell name-vs-anon control).
 
-**The prescription.** Because the frontier is *calibrated* about where it grounds (opus self-confidence tracks actual grounding at corr +0.90), the same map is a routing policy: routing on continuous self-confidence reaches 0.893 mean AUROC, matching the oracle (0.894), versus 0.700 answering everything itself. The web-exposure tag, known a priori before any model call, is itself a competitive deferral prior. Details in [`results/calibration_routing.md`](results/calibration_routing.md) and [`results/decision_map_placement.md`](results/decision_map_placement.md).
+**The prescription.** Because the frontier is *calibrated* about where it grounds (opus self-confidence tracks actual grounding at corr +0.90), the same map is a routing policy. Confidence is good at *knowing when it cannot* — it defers the web-zero tasks — but against **real per-item specialists** it does **not** reach the per-item oracle: routed 0.81 vs oracle 0.91, because self-confidence cannot flag the ~10% of items where the LLM beats the specialist. (An earlier per-rung figure — routing 0.893 ≈ oracle 0.894 — was a ceiling-as-specialist upper bound, corrected in [`calibration_discovery/`](calibration_discovery/results/RESULTS.md).) The durable, model-free win is the **a-priori web-exposure tag**: known before any model call, it is a competitive deferral prior in its own right. Details in [`results/calibration_routing.md`](results/calibration_routing.md) and [`results/decision_map_placement.md`](results/decision_map_placement.md).
 
 **The generative regime.** The train-vs-orchestrate line holds when the model *generates*, not just scores. A pre-registered post-training RL environment puts internalized RL (fine-tune a frozen molecular generator toward a property reward) head-to-head against external inference-time guidance of the same frozen generator — at matched reward-query budget, judged only on a scaffold-disjoint held-out oracle. Internalized RL **ties** external guidance across three reward-quality regimes (formal scaffold-clustered two-sample CIs; the reward drives the gain — a shuffled-reward control collapses to baseline). Training the weights buys nothing over routing a frozen prior through the reward, so **"route, don't train" spans discriminative read-out *and* generation.** (One honest exception, held to its evidence: at high training budget RL pulls *modestly, sub-threshold-ly* ahead by shifting the distribution past the frozen model's guidance ceiling — a caveat that survived every feasible independence check, not an artifact.) Design and result: [`docs/RL_ENV_PREREG.md`](docs/RL_ENV_PREREG.md), [`results/benchmark/rl_env/v1_herg.md`](results/benchmark/rl_env/v1_herg.md).
 

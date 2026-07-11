@@ -1,15 +1,18 @@
 # Capability x web-exposure, and the a-priori permissioning lever
 
-*2026-06-19. A short synthesis binding three measured results: the web-exposure law, how model
+*2026-06-19. A short synthesis binding three measured results: the web-exposure effect, how model
 capability interacts with it, and the deferral rule that follows. Figures in
 [`results/benchmark/single_cell/`](../results/benchmark/single_cell/).*
+
+> **Framing note (see [`REPORT.md`](REPORT.md)).** This doc uses "law" as working shorthand and its recap below states the mapping-documentation factor alone. The corrected mechanism is a **two-factor, capability-dependent mix** (token-familiarity/reasoning + mapping-documentation). The capability x web-exposure interaction measured here IS that correction from one angle: capability sets how much the web-documentation of the mapping matters.
 
 ## The law (recap)
 
 Across 17+ representations, LLMs encode far more biology than they verbalize: a linear probe on an
 open model's hidden states recovers a property near a specialist ceiling, but the verbalized answer
-lags. The size of that verbalization gap is governed by how web-documented the representation ->
-property mapping is, not by the modality. The controlled proofs are within-pair: methylation vs MSA
+lags. The size of that verbalization gap is governed not by the modality but by a capability-dependent
+mix of token-familiarity/reasoning and how web-documented the representation -> property mapping is.
+The controlled proofs are within-pair: methylation vs MSA
 (identical task shape, both encoded to ceiling, opposite output), and single-cell with gene names vs
 anonymized ids. See [`results/SYNTHESIS.md`](../results/SYNTHESIS.md).
 

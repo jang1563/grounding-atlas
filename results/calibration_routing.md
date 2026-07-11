@@ -2,6 +2,8 @@
 
 *Results. 2026-06-12. `eval/calibration_routing.py`, n=80 balanced per rung, 7 rungs spanning the web-exposure spectrum, claude opus-4.8 + sonnet-4.6 + haiku-4.5 (same run, max_tokens 96, strict one-line format). Per item Claude returns PRED (probability the property holds), CONF (self-rated reliability of PRED given it can or cannot read the representation), and ROUTE (SELF vs DEFER to a specialist). The orchestrator question: does Claude KNOW when it cannot ground, so its own confidence can drive tool routing. Raw `results/calibration_routing.json`. No em dashes.*
 
+> **Correction — read the per-item result first ([`../calibration_discovery/results/RESULTS.md`](../calibration_discovery/results/RESULTS.md)).** The per-rung figures below (routed 0.893 vs "oracle" 0.894) are an **upper bound**: the routing target here is each rung's specialist *ceiling*, not a real per-item specialist. With real per-item specialists, confidence-routing does **not** reach the per-item oracle: routed **0.81 vs 0.91**, because self-confidence cannot flag the ~10% of items where the LLM beats the specialist. Read "reaches the oracle" below as "reaches the per-rung ceiling," superseded by the per-item result. The durable claim is the a-priori web-exposure **tag** as a model-free routing prior, not a single "law."
+
 ## Per-rung result (opus-4.8, representative)
 
 | rung | tag | Claude AUROC | mean CONF | defer % | specialist ceiling |
@@ -26,11 +28,11 @@ opus lowers CONF to 0.02 to 0.13 on exactly the web-zero rungs it cannot read (s
 
 Calibration rises monotonically with scale (+0.25 to +0.64 to +0.90). Two thresholds matter for an orchestrator:
 - **Over-confidence disappears at sonnet.** Only haiku is over-confident, and on exactly SMILES strings and decimal numbers: forms that LOOK familiar (ubiquitous in pretraining) but whose property mapping it cannot ground. It rates CONF 0.62 while scoring at chance and would self-answer them. sonnet and opus never do this. So the safe MINIMUM router scale is sonnet; a small model confidently self-answers cases it gets wrong, the SMILES char-n-gram trap surfacing as a calibration failure.
-- **Precision peaks at opus.** Confidence ranks grounding cleanly only at opus (+0.90 vs sonnet +0.64), and opus routing recovers 0.893 mean AUROC, essentially the oracle (0.894) and far above answering everything itself (0.700). So the BEST router is opus: confidence-thresholded routing reaches specialist-only accuracy while keeping the web-rich rungs in-model.
+- **Precision peaks at opus.** Confidence ranks grounding cleanly only at opus (+0.90 vs sonnet +0.64), and opus routing recovers 0.893 mean AUROC, near the per-rung ceiling (0.894) and far above answering everything itself (0.700). (Per-rung upper bound; with real per-item specialists the honest figure is routed 0.81 vs a per-item oracle 0.91 — see the correction above.) So opus is the best router: confidence-thresholded routing keeps the web-rich rungs in-model while deferring the web-zero ones.
 
 ## Three findings for the orchestrator
 
-**1. Frontier Claude is a calibrated router.** At opus, self-reported confidence tracks actual grounding at +0.90 with zero over-confident rungs, and routing on its own confidence reaches the oracle (0.893 vs 0.894), far above always-self (0.700). An orchestrator can use frontier-Claude confidence as its tool-call signal: it hits specialist-only accuracy while keeping web-rich rungs in-model. This is the web-exposure law turned into a routing rule: low representation-to-property web-exposure -> low Claude confidence -> defer to specialist.
+**1. Frontier Claude is a calibrated router.** At opus, self-reported confidence tracks actual grounding at +0.90 with zero over-confident rungs, and routing on its own confidence reaches the per-rung ceiling (0.893 vs 0.894), far above always-self (0.700). (This is a per-rung upper bound: with real per-item specialists, routing does not reach the per-item oracle — 0.81 vs 0.91 — see the correction at the top.) An orchestrator can still use frontier-Claude confidence as a tool-call signal: it is good at knowing when it cannot ground. This turns the a-priori web-exposure tag into a routing rule: low representation-to-property web-exposure -> low Claude confidence -> defer to specialist.
 
 **2. Calibration is scale-dependent; small models are over-confident on web-familiar surface forms.** haiku is over-confident on precisely SMILES and methylation numbers (CONF 0.62, chance accuracy), the forms whose tokens are web-common but whose mapping is web-absent, and it would route them to SELF and be silently wrong. The router must therefore be at least sonnet (where over-confidence vanishes), ideally opus (where ranking is sharp). The danger scales inversely with model size and is worst exactly where silent errors cost most.
 
@@ -38,10 +40,10 @@ Calibration rises monotonically with scale (+0.25 to +0.64 to +0.90). Two thresh
 
 ## Orchestrator design implications
 
-- A grounded orchestrator is feasible with a frontier model as the router: confidence-thresholded routing recovers oracle-level accuracy (0.893 vs 0.894) at a fraction of the specialist calls (web-rich rungs stay in-model).
+- A grounded orchestrator is feasible with a frontier model as the router: confidence-thresholded routing recovers per-rung-ceiling accuracy (0.893 vs 0.894) at a fraction of the specialist calls (web-rich rungs stay in-model). Per item against real specialists the honest bound is 0.81 vs a 0.91 oracle (see the correction at the top); the value of confidence-routing is deferring what the model cannot ground, not matching a per-item oracle.
 - The router must be frontier-scale, sonnet at the very least and opus for precision. Small-model confidence is uncalibrated on web-familiar-surface / web-absent-mapping inputs, the exact cells where silent errors are most costly.
 - Route on continuous confidence with a tuned threshold, not the model's binary defer (over-cautious at opus, under-cautious at sonnet, and framing-sensitive throughout).
-- The web-exposure law is the a-priori prior: it predicts which cells draw low confidence (web-zero or computation-bound mappings) before any item is seen, so it can seed the routing policy.
+- The a-priori web-exposure tag is the routing prior: it predicts which cells draw low confidence (web-zero or computation-bound mappings) before any item is seen, so it can seed the routing policy.
 
 ## Caveats
 

@@ -4,7 +4,7 @@
 
 ## 1. The gap (measured, not asserted)
 Language models ground scientific entities by NAME but poorly from their concrete REPRESENTATIONS (protein/DNA sequence, chemical SMILES/identifier, numeric SFM output). Two measured consequences:
-- **Recognition gap:** name recognition ~100% vs accession resolution ~2%; rare protein accessions resolve to benign family-level identities (stable but wrong).
+- **Recognition gap** (from a prior identity-recognition study, not measured here): name recognition ~100% vs accession resolution ~2%; rare protein accessions resolve to benign family-level identities (stable but wrong).
 - **Over-trust dissociation (exploratory):** shown a specialist model's output, the model reflects source-flagged reliability, but its rejection of a relevance-orthogonal signal is statistically identical for a hazard-flagged and a benign protein. It hedges on the number's magnitude, not on its relevance. Reported across 8-9 of 10 open-weight models, but several scores fall below the inter-rater threshold (kappa ~0.36), so treat as exploratory pending a human-rater pass.
 - **Separability exists in the SFM representation:** a classifier on frozen ESM-2 650M embeddings separates a held protein label from a benign class at AUROC 0.9807 (ESM-3 0.942). This is evidence about ESM-2's representation, not the LLM's: there is no LLM-side measurement on the same panel. Whether the LLM has the signal internally and cannot surface it (expression gap) or never encodes it (encoding gap) is **the central open question, not a settled finding**. Call it a probe-LLM gap until measured.
 
@@ -58,9 +58,16 @@ Implication: if it proves an expression gap it is closable by training the read-
 The same instrument flags where a grounded model is unsafe, so capability and responsible deployment are measured on one ruler. (One line only; this is a capability project.)
 
 ## 7. Modality roadmap (instrument extension, theory-anchored)
-Framing: extend the *measurement instrument* to new representations. The novelty is the measurement and a testable LAW, not a multimodal model build (NatureLM etc.).
+Framing: extend the *measurement instrument* to new representations. The novelty is the measurement and a testable hypothesis about grounding (the web-exposure hypothesis in 7.1, since corrected to a two-factor account), not a multimodal model build (NatureLM etc.).
 
-### 7.1 The web-exposure law (theoretical backbone)
+### 7.1 The web-exposure hypothesis (theoretical backbone)
+> **Correction (see [`docs/REPORT.md`](docs/REPORT.md)).** This applies to all of section 7: the
+> "web-exposure law" language throughout (7.1-7.5) is the original single-factor framing.
+> A later controlled experiment (drop the textbook markers, keep the real gene names)
+> decomposed the verbalization gap into a **capability-dependent mix of token-familiarity/reasoning and
+> mapping-documentation**, not a single law. The effect is real; the mechanism is the correction. Read the
+> "law" language below as the working hypothesis it began as, superseded by the two-factor account.
+
 Hypothesis: a modality's internal ENCODING strength (activation-arm AUROC relative to the specialist ceiling) is set by how often that modality's "content -> property" mapping appears in web text. This is a direct generalization of the frequency-encoding result in 2504.12459 (linear representations of a fact form once subject-object co-occurrence crosses ~1-2k in pretraining, and representation quality predicts pretraining frequency). We extend it from text triples to scientific modalities. The expression gap (encoding - output) tracks the same axis, as in the numbers analog 2602.07812 (linear probe >90% vs verbalized 50-70%, "worse where the probe is weaker").
 
 The law also operates WITHIN a single entity, across notations: the same molecule, variant, or protein in a web-frequent notation (canonical SMILES, gene+HGVS, name) is grounded while a web-rare notation of the SAME content (randomized SMILES, raw sequence, accession) is not. The variant branch shows this directly (text 0.79 vs seq 0.58 on the same variants), and it is the capability-context generalization of the prior study's recognition gap (docs/FAILURE_MODES.md axis A: name ~100% vs accession ~2-28%). So the law is cross-modality AND cross-notation, with the re-notation content-sensitivity condition (eval/README.md) as its clean within-entity test. One nuance the anchor adds: SMILES canonical 0.573 vs randomized 0.553 shows NO notation effect, a floor case because hERG carries no surfaced output signal to bind, so notation-sensitivity is measurable only where the output already grounds (as in variant text), not where it sits at chance.

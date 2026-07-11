@@ -3,13 +3,14 @@
 Measured outputs of the grounding-atlas program. Each `.md` is a writeup; the
 sibling `.json` / `.jsonl` are the machine-readable data behind it, and `.png`
 are figures. **Start with [`SYNTHESIS.md`](SYNTHESIS.md)** — it ties all 17
-representation rungs and the calibration axis into one law and one figure.
+representation rungs and the calibration axis into one map and one figure.
 
 The one-line result: *LLMs **encode** far more biology than they **verbalize**;
-the gap between the two is set by how web-documented the representation-to-property
-mapping is, not by the modality; and because frontier models are calibrated about
-this, the same web-exposure law that explains the failure also tells an
-orchestrator when to trust the model and when to reach for a tool.*
+what sets the gap between the two is not the modality but a capability-dependent mix
+of token-familiarity/reasoning and mapping-documentation (the a-priori web-exposure
+tag is a strong predictor of the floor, not a single law); and because frontier
+models are calibrated about this, the same a-priori map that predicts the failure
+also tells an orchestrator when to trust the model and when to reach for a tool.*
 
 ![Two-axis decomposition of the grounding gap](synthesis_figure.png)
 

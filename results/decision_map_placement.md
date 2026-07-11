@@ -47,7 +47,7 @@
 
 The placement map says the two placements that do NOT require touching model weights, retrieve and orchestrate, cover the capability space:
 - **Retrieve (in-context / few-shot)** turns out to be unexpectedly strong: it closed methylation's 0.52 expression gap entirely (0.40 -> 0.93) with 12 examples, anchor-invariant, no training. The 0-shot expression gap was a 0-shot artifact, not a fundamental limit.
-- **Orchestrate (calibrated tool-routing)** covers what retrieve cannot, and we already showed the frontier model is a calibrated router for exactly this decision (`results/calibration_routing.md`: opus confidence-AUROC corr +0.90, routed ~ oracle).
+- **Orchestrate (calibrated tool-routing)** covers what retrieve cannot, and we already showed the frontier model is a calibrated router for exactly this decision (`results/calibration_routing.md`: opus confidence-AUROC corr +0.90). Its value is reliably deferring what it cannot ground; with real per-item specialists it does not reach the per-item oracle (routed 0.81 vs 0.91 — the per-rung "routed ~ oracle" was a ceiling-as-specialist upper bound, corrected in `calibration_discovery/results/RESULTS.md`).
 
 So a grounded biology orchestrator does not need to train the frontier model. It elicits capability by in-context retrieval where the property is encoded-and-learnable, and routes to a specialist tool where it is not, using calibrated confidence to decide which. This is why a closed-weight model (Claude) is not at a disadvantage here: the winning placements are retrieve and orchestrate, both available without weight access. Weight training is the one placement a closed-weight model cannot do, and it is also the one that wins nowhere in the measured map.
 

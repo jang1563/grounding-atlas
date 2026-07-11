@@ -28,10 +28,12 @@ One three-arm instrument across 17 representations decomposes grounding into enc
 probe on hidden states), expression (verbalized output), and a specialist ceiling.
 
 - **LLMs encode far more biology than they verbalize.** The encoding gap is under 0.10
-  for 13 of 17 representations; the verbalization gap runs 0.12 to 0.49 and is set by how
-  web-documented the representation-to-property mapping is, not by the modality. The
-  controlled proof: methylation and MSA are both encoded to ceiling, but MSA verbalizes
-  (0.795) and methylation does not (0.487), differing only in web documentation.
+  for 13 of 17 representations; the verbalization gap runs 0.12 to 0.49 and is set not by
+  the modality but by a capability-dependent mix of token-familiarity/reasoning and
+  mapping-documentation. The controlled proof of the mapping-documentation factor:
+  methylation and MSA are both encoded to ceiling, but MSA verbalizes
+  (0.795) and methylation does not (0.487), differing mainly in web documentation
+  (the mapping-documentation factor).
 - **High numbers are recognition, not grounding.** Variant 0.98 and gene-name 0.99 are
   memorization; anonymize the entity and it collapses (PPI 0.95 to 0.50). In this work,
   cell-identity marker recall saturates at the frontier even for rare and disease cell
@@ -40,8 +42,10 @@ probe on hidden states), expression (verbalized output), and a specialist ceilin
   orchestrate cover the space and train wins nowhere for descriptive prediction; the one
   cell where training weakly wins is causal, and it is bounded by its verifier.
 - **The frontier is calibrated about all this.** Opus self-confidence tracks actual
-  grounding at corr +0.90; routing on it reaches the oracle (0.893 vs 0.894) against
-  0.700 answering everything itself. The web-exposure law is a free a-priori risk map.
+  grounding at corr +0.90 and is good at knowing when it cannot; but against real
+  per-item specialists it does not reach the per-item oracle (routed 0.81 vs 0.91 — the
+  per-rung 0.893 vs 0.894 was a ceiling-as-specialist upper bound). The a-priori
+  web-exposure tag is a free, competitive risk map.
 
 ## The first lever: reading per-input competence (a UQ problem, not a wall)
 
@@ -50,9 +54,10 @@ for THIS input, whether the model or the specialist is right. That is an
 uncertainty-quantification problem, tractable engineering, not a wall. The evidence: the
 per-item confidence frontier sharpens with scale (AURC 0.290 to 0.155; selective accuracy
 at 50% coverage 0.67 to 0.85, haiku to opus), and the model uses a good continuous signal
-near-optimally (rung-level routing reaches the oracle, 0.893 vs 0.894). So the bottleneck
-is signal quality, not the model's use of it: a better per-input competence signal in,
-better routing out.
+well (rung-level routing approaches the rung ceiling, 0.893 vs 0.894; with real per-item
+specialists the honest figure is routed 0.81 vs a per-item oracle 0.91, because confidence
+cannot flag where the LLM uniquely beats the specialist). So the near-term bottleneck is
+per-input signal quality: a better per-input competence signal in, better routing out.
 
 It has a measured ceiling, and the ceiling names the missing piece. With real per-item
 specialists, routing on the model's own confidence reduces to almost-always-call-the-
@@ -96,7 +101,7 @@ wrong target: it is memorization that breaks exactly in the discovery regime.
   closed-weight models are fully viable because no training is required.
 - **Autonomous-science safety**: calibration is load-bearing. Knowing when to trust
   itself versus call a tool is the safety mechanism for an autonomous agent; the
-  web-exposure law predicts where it will quietly mis-ground before any item is seen.
+  a-priori web-exposure tag predicts where it will quietly mis-ground before any item is seen.
 - **Discovery tasks**: improving the model yields diminishing returns. The bottleneck is
   data production in disease cell states and the experiments themselves (the post-
   AlphaGenome data war). The model-side leverage is to make Claude a calibrated active
