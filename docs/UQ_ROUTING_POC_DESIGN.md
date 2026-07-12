@@ -119,7 +119,7 @@ grounding of the specialist output, and calibration for safe deferral, not per-i
 
 ## Why it matters
 
-This is the cheapest decisive test of the position's first lever. It uses existing per-item
+This is the cheapest decisive test of the routing lever. It uses existing per-item
 data and existing specialists, adds one feature, and either closes part of the routing
 ceiling (the orchestrator gets safer and more accurate at no training cost, closed-weight
 friendly) or pins the residual to confident specialist errors. Both outcomes are publishable
