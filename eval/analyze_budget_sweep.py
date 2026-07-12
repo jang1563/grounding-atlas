@@ -1,8 +1,8 @@
 """Experiment-3 budget sweep: arm A (internalized RL) vs arm B (external guidance) at MATCHED
-reward-query budget Q, across a Q sweep, to show route-don't-train holds across budgets (and to
-tighten via a larger M). Reads {endpoint}_armA_ppo_s0_Q{Q}.json (one per budget) + the single
+reward-query budget Q, testing whether placement changes across budgets and tightening estimates via
+a larger M. Reads {endpoint}_armA_ppo_s0_Q{Q}.json (one per budget) + the single
 {endpoint}_armB_guidance.json (its delivered_idx has the top-M set per budget). Reuses the Murcko
-clustering + two-sample cluster bootstrap from compare_rl_orchestrate. No em dashes.
+clustering + two-sample cluster bootstrap from compare_rl_orchestrate.
 Usage: RL_ENDPOINT=herg RL_BUDGETS=2500,5000,10000 python eval/analyze_budget_sweep.py
 """
 import json

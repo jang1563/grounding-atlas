@@ -1,6 +1,8 @@
 # Field message: what the placement results say to agentic AI, AI scientists, and AI for science
 
-*2026-06-12 (updated 2026-06-13 with the negative-class expression gap and the multimodal verifiability gate). The framing layer of Bio_Grounding_Eval, distilled. Anchored to the measured results (`results/decision_map_placement.md`, `results/SYNTHESIS.md`, `results/calibration_routing.md`). The empirical claims are measured; the philosophical framing is the interpretation. No em dashes.*
+*2026-06-12 (updated 2026-07). A model-agnostic framing note anchored to measured results in
+`results/decision_map_placement.md`, `results/SYNTHESIS.md`, and `results/calibration_routing.md`.
+Empirical claims and interpretation are separated.*
 
 ## One-line message
 
@@ -41,7 +43,9 @@ Acceleration and discovery are different. Acceleration (doing existing science f
 
 - **Agentic AI:** the orchestrator architecture is right, and we have the quantitative evidence: retrieve + orchestrate replace train across 17+ cells. Calibration (corr +0.90 at frontier, and a per-item selective-prediction frontier that sharpens with scale) is the load-bearing part that makes routing safe; without it (small-model over-confidence on SMILES and numbers) the agent is confidently wrong. But the model's native binary abstain decision should not be trusted as-is: it loses only a small framing-robust margin to the graded confidence (~0.04 to 0.07 AUROC) yet is extremely framing-sensitive (the same model defers 86% or 47% of items on system-prompt wording alone, a single-variable control), so the orchestrator must route on a tuned threshold over the continuous confidence and set the deferral framing deliberately, not trust the model's yes/no defer (`calibration_discovery/`). Principle: do not train the reasoner, ground it, and route it on its confidence (not its say-so).
 - **AI scientist:** "the model says X about a sequence" is not "the model grounds X from the sequence." Grounding must be measured, not assumed. The AI scientist is an orchestrator, not an oracle: descriptive property to retrieve/tool, novel discovery (causal, design, structure) to specialist plus experiment. Knowing its own limits (calibration) is the safety mechanism for autonomous science.
-- **AI for science:** the bottleneck is not capability but grounding plus calibration. Specialist FMs (Boltz-2, ESM, AlphaFold) are already strong; the LLM's strength is reasoning and orchestration; the answer is to combine them with the LLM as a calibrated router. Closed-weight models are fully viable here (no training needed). The web-exposure law is an a-priori risk map: it predicts, before seeing an item, where to trust the model and where to call a tool.
+- **AI for science:** grounding and calibration are important alongside capability. Specialist models
+  can complement a reasoning model through explicit routing. The `web` tag is one a-priori risk prior,
+  not a universal decision rule; deployment requires per-model and per-task validation.
 
 ## The honest boundary (the hype check, which may be the most important part)
 

@@ -1,7 +1,7 @@
 # WS3: is there a cell where TRAIN (weights) wins? The "no cheap specialist" hypothesis
 
 *2026-06-13. Tests the PROJECT_DESIGN section 3 open hypothesis: "for capabilities LACKING a cheap
-specialist the weights lever would be the placement that delivers." Resolves it. No em dashes.*
+specialist the weights lever would be the placement that delivers." Resolves it.*
 
 ## The test
 
@@ -40,7 +40,7 @@ no gap that only a trained LLM read-out fills.
 
 ## Conclusion: the weights-lever niche is EMPTY for property prediction
 
-Train wins NOWHERE among the property-prediction cells, and the hypothesized "no cheap specialist"
+In-weight training does not lead among the tested property-prediction cells, and the hypothesized "no cheap specialist"
 escape does not exist: the weak-cheap cells retain a heavy structure-recovery specialist
 (orchestrate), and the no-structure cells are read just as well by a cheap surface featurizer. A
 trained LLM read-out is structurally a STRONG SECOND, never the exclusive winner, because it reads
@@ -67,7 +67,7 @@ reasons, both orchestrate:
 The "train the invariance skill" framing wins only if you FORBID tool-use and demand the LLM ground
 content intrinsically, a constraint the orchestrator architecture rejects.
 
-## Final verdict: train wins nowhere; route, don't train
+## Result within the tested cells: retrieval or orchestration leads
 
 Across property prediction AND notation-invariance, the weights lever is empty: every
 representation-grounding capability is covered at least as well by a non-train placement, a cheap
@@ -110,7 +110,7 @@ orchestrate ceiling (structure Morgan on the true SMILES) is 0.824 [0.787, 0.861
 read-out is statistically indistinguishable from the cheap featurizer and dominated by the elucidation
 ceiling.
 
-Net: TRAIN WINS NOWHERE, now fully confirmed with no surviving borderline. variant_seq loses decisively
+Net: in-weight training does not lead in this measured panel. `variant_seq` loses decisively
 to AlphaMissense; spectra_ms, once firmed, is indistinguishable from the cheap m/z probe and below the
 elucidation ceiling. The weights-lever niche is empty; the live placements are RETRIEVE and ORCHESTRATE.
 (Honest-process note: the strong-second prediction was registered before the run; spectra_ms first

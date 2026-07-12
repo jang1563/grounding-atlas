@@ -1,7 +1,7 @@
 # GroundBench: benchmark spec
 
 *GroundBench evaluates the grounding-atlas dataset. Draft 2026-06-19. The contract for adding tasks
-and models, so the benchmark is extensible by others, not a one-off. No em dashes.*
+and models, so the benchmark is extensible by others, not a one-off.*
 
 ## What it measures
 
@@ -107,9 +107,10 @@ token-familiarity/reasoning and documentation, not a single web-exposure axis.
 
 ## Versioning, scope, naming
 
-Prompts are versioned constants; the data version is the git commit. Current coverage: **23 tasks across
-9 modalities x 3 models** (n=100/task): 6 ADMET (SMILES); 4 single-cell (CD8-T/NK and CD14+/CD16+
-monocyte, each web-rich NAME and web-zero ANON); variant effect (web-rich HGVS text + web-poor protein
+Prompts are versioned constants; the data version is the git commit. Current coverage: **24 tasks across
+9 modalities x 3 models** (n=100/task): 6 ADMET (SMILES); 5 single-cell tasks (CD8-T/NK and
+CD14+/CD16+ monocyte, each NAME and ANON, plus a marker-depleted CD8-T/NK task); variant effect
+(web-rich HGVS text + web-poor protein
 sequence); DNA methylation -> age (web-zero numeric) and MSA-column -> conserved (web-rich), a controlled
 pair; materials metal-vs-not (web-rich formula + web-zero anonymized elements, generality beyond
 biology); and the **SFM leg**: an ESM-2 protein embedding -> thermostability, the LLM x SFM interface,
@@ -120,18 +121,20 @@ head reaches 0.93 while every model is at chance), with a within-RNA contrast wh
 sequence-as-text verbalizes (0.84-0.96) but the SFM embedding does not; a hERG
 representation sweep (the SAME molecules as SMILES, molecular graph, 13C-NMR shifts, and 3D
 coordinates: the property is Morgan-predictable to ~0.89, but only the SMILES form verbalizes while
-the graph / NMR / 3D forms are web-zero, so the representation's web-exposure governs verbalization,
-not the property's); and RNA coding-vs-noncoding from the nucleotide sequence (web-mixed: ORF/codon
+the graph / NMR / 3D forms are web-zero, consistent with a representation-dependent verbalization
+effect); and RNA coding-vs-noncoding from the nucleotide sequence (web-mixed: ORF/codon
 structure is a partially documented heuristic); and a VLM arm, an H&E histopathology patch -> tumor
 (PatchCamelyon), web=rich because tumor morphology is heavily documented, yet all three frontier VLMs
 verbalize it at chance (opus 0.44, sonnet 0.56, gpt-4o 0.57) while an open VLM's hidden states encode it
 at 0.827. This is the revealing exception: web-exposure is necessary but not sufficient, and for medical
 images a second gate (refusal/hedging, or a vision-to-verbalization expression gap) blocks output even at
-the frontier, where capability closed the text web-rich gaps. Three controlled web-exposure pairs span
+the frontier, where capability closed the text web-rich gaps. Three matched web-exposure contrasts span
 the leaderboard. One caveat measured here: the materials anonymized
 form preserves stoichiometry (`elem_X: count`), so it is a leakier web-zero control than single-cell
 anon (one model, gpt-4o, reads composition statistics from it: 0.60 vs chance). Roadmap: more SFMs
 (scGPT cell, larger genomic models); a frontier-VLM activation probe (to confirm the histopath gap is
 verbalization, not encoding); Croissant metadata + a public leaderboard. The activation arm
 (open-weight probe) is an optional GPU plug-in. Honest scope: pilot n per task; the specialist ceiling
-is a cheap or cited model; the encoding arm is open-weight-only.
+is a cheap or cited model; the encoding arm is open-weight-only. Frontier models are evaluated on
+output and routing, so GroundBench does not establish a same-model frontier encode-plus-verbalize
+result.

@@ -60,7 +60,8 @@ LoRA 0.507 (no lift, base 0.513) - all below the cheap specialist 0.746, same as
 In every cell: (i) no LLM placement beats the cheap specialist; (ii) the bridge never beats its own
 bypass head (significantly so on hERG, CI excludes 0 in both architectures; indistinguishable on the
 noisier clearance); (iii) LoRA is the weakest; (iv) nothing transfers across properties (a separate row,
-all at the cross-property floor). "Route, don't train" holds across 2 endpoints x 2 architectures.
+all at the cross-property floor). The specialist-head ordering is consistent across these 2 endpoints
+x 2 architectures; it is not a universal placement result.
 
 Remaining (extra-dimension, not run; the verdict is robust without them): MoLFormer-XL substrate (needs
 trust_remote_code), the additive-at-peak injection (inject at the per-model selectivity-peak layer,

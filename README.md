@@ -10,7 +10,10 @@
 
 **Does a language model do biology by the *content* of a specialist model's output (sequence, structure, identifier, numeric prediction), or just by its *name*? Measure it, manufacture verifiable signal to close it, and map where each capability should live.**
 
-**Bottom line:** today's language models internally represent far more biology than they can put into words, and *where* they fall silent is largely predictable a priori — from how familiar the representation's tokens are and how well-documented its representation-to-property mapping is (a capability-dependent mix, not a single web-exposure law). That tells an AI agent when to trust the model and when to call a specialist tool.
+**Bottom line:** open-weight probes often recover linearly decodable biological signal that the same
+open model does not verbalize, while frontier-model output varies with token familiarity, reasoning
+capacity, and mapping documentation. The a-priori `web` tag is a useful routing prior, not a universal
+law or a substitute for model- and task-specific validation.
 
 ![Two-axis decomposition of the grounding gap: encoding (does the model represent the property internally) vs verbalization (does it state it), across 17 representations.](results/synthesis_figure.png)
 
@@ -18,7 +21,13 @@ A measurement-first research project toward a **grounded biology orchestrator**.
 
 *Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563)*
 
-Status: **active execution** (updated 2026-07-02; the benchmark surface is GroundBench, 23 tasks / 9 modalities / 3 models + a cheap-head baseline, see [`docs/GROUNDBENCH.md`](docs/GROUNDBENCH.md)). Thesis, failure-mode taxonomy, and the WS1 spec are settled (`docs/FAILURE_MODES.md`, `eval/README.md`). The instrument is built and has produced results across the modality ladder (small molecules, proteins, variants, methylation, histopathology, single-cell, and more) — see `results/SYNTHESIS.md` and `docs/field_message.md`. WS2 signal generators span ~18 modality families under `signal/`; the WS3 placement map is measured (`results/decision_map_placement.md`), with the per-item calibration extension in `calibration_discovery/`. Most recently, WS3's train-vs-orchestrate question was carried from discriminative read-out into the **generative / RL regime** — a pre-registered post-training RL environment on a molecular generator — and **"route, don't train" holds there too** ([`docs/REPORT.md`](docs/REPORT.md), [`results/benchmark/rl_env/`](results/benchmark/rl_env/)).
+Status: **active execution** (updated 2026-07-02; the tracked GroundBench registry, exported Parquet,
+and leaderboard contain 24 tasks / 9 modalities / 3 models plus a cheap-head baseline; see
+[`docs/GROUNDBENCH.md`](docs/GROUNDBENCH.md)). The instrument has produced pilot results across small
+molecules, proteins, variants, methylation, histopathology, single-cell data, and other representations.
+The generative train-vs-guidance study found no separation at moderate query budgets, while a
+high-budget cell produced a modest, seed-variable RL edge that remained below the pre-registered
+overturn threshold. These are measured regimes, not a universal train-vs-route rule.
 
 | Component | State |
 |---|---|
@@ -34,7 +43,7 @@ Status: **active execution** (updated 2026-07-02; the benchmark surface is Groun
 
 | Surface | Human entry point | Machine-readable entry point |
 |---|---|---|
-| **Visual report** | [`docs/report.html`](docs/report.html) — the one-page map: the law, the decision, the generative extension | self-contained HTML (no external assets) |
+| **Visual report** | [`docs/report.html`](docs/report.html) — the one-page map: measured effects, routing results, and the generative extension | self-contained HTML (no external assets) |
 | GitHub source | [`github.com/jang1563/grounding-atlas`](https://github.com/jang1563/grounding-atlas) | [`pyproject.toml`](pyproject.toml), [`codemeta.json`](codemeta.json), [`CITATION.cff`](CITATION.cff) |
 | Hugging Face dataset | [`datasets/jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) | Parquet configs with dataset-card YAML front matter |
 | Results | [`results/SYNTHESIS.md`](results/SYNTHESIS.md), [`results/README.md`](results/README.md) | sibling `.json` / `.jsonl` files under [`results/`](results/) |
@@ -46,11 +55,12 @@ Status: **active execution** (updated 2026-07-02; the benchmark surface is Groun
 
 ## GroundBench: run it on your model
 
-The benchmark surface of this project is **GroundBench**: 23 tasks across 9 modalities x 3 models, plus a
+The benchmark surface of this project is **GroundBench**: 24 tasks across 9 modalities x 3 models, plus a
 reproducible cheap-head baseline, on one GPU-free output-arm harness. The leaderboard
 ([`results/benchmark/LEADERBOARD.md`](results/benchmark/LEADERBOARD.md)) is organized by the a-priori
-web-exposure tag, which predicts the verbalization floor: `web=zero` rows sit near chance, `web=rich`
-rows ground, and the cheap-head column grounds even where the models are at chance.
+web-exposure tag. It is a useful prior: many `web=zero` rows sit near chance and many `web=rich` rows
+ground, but documented exceptions show that it is necessary-not-sufficient. The cheap-head column
+tests whether a lightweight specialist can recover signal when model output is weak.
 
 ```bash
 pip install -e .
@@ -73,7 +83,7 @@ A science model is only as good as it grounds the *content* of a specialist mode
 ## Three workstreams
 - **WS1 - the instrument (MEASURE).** Does the model ground a representation by content or by name? The core is the content-grounding axis (probe-vs-LLM + LLM-activation probe + content-sensitivity), with identity-resolution and channel/action-policy as measured supporting axes. Deterministic, non-LLM-judge, matched controls. Negative-evidence coverage is NullAtlas's (WS2), cited not absorbed.
 - **WS2 - the engine (MAKE SIGNAL).** Extend the negative-evidence approach to grounding: generate matched (representation, verifiable-property) pairs where the representation itself is the ground truth, so grounding becomes trainable/evaluable where positive-only literature gives no signal. The ADMET and computable pairs (55,703 rows) are packaged as a public dataset, [`jang1563/grounding-atlas`](https://huggingface.co/datasets/jang1563/grounding-atlas) (CC BY-SA 4.0).
-- **WS3 - the decision map (MAP THE LINE).** Per capability, measure train (weights) vs retrieve (MCP/RAG) vs orchestrate (call the SFM). Principle: train the skill, retrieve the knowledge, orchestrate the heavy specialist. Local open-weight PoCs for the first data points, now carried into the **generative / RL regime** by a pre-registered post-training RL environment (internalized RL vs external guidance on a frozen molecular generator) — where the same *route, don't train* verdict holds. See [`docs/REPORT.md`](docs/REPORT.md).
+- **WS3 - the decision map (MAP THE LINE).** Per capability, compare train (weights), retrieve (MCP/RAG), and orchestrate (call the SFM). In the measured discriminative cells, retrieval or specialist orchestration matched or exceeded in-weight adaptation. In the generative study, train and guidance tied at moderate budget, while a high-budget cell showed a modest, seed-variable RL edge. See [`docs/REPORT.md`](docs/REPORT.md).
 
 Full design: `PROJECT_DESIGN.md`.
 
@@ -81,9 +91,15 @@ Full design: `PROJECT_DESIGN.md`.
 
 *Pilot-scale; see [`results/SYNTHESIS.md`](results/SYNTHESIS.md) for the full 17-representation master table and caveats, and [`results/`](results/README.md) for every writeup.*
 
-**Encode ≫ verbalize.** LLMs encode far more biology than they verbalize. A linear probe on an open model's hidden states recovers the property near a specialist ceiling (the *encoding* gap is under 0.10 for 13 of 17 representations), but the verbalized output lags far behind (the *verbalization* gap runs 0.12 to 0.49). What sets that gap is not the modality but a **capability-dependent mix of two factors** — how familiar the representation's tokens are (reasoning) and how well-documented the representation-to-property mapping is — with the a-priori web-exposure tag a strong predictor of the floor, not a single law.
+**Open-model encoding probes and model output are distinct evidence streams.** In the 17-representation
+research sweep, open-weight linear probes often approach a specialist ceiling while the corresponding
+open-model output is weaker. Frontier systems are evaluated on output and routing because their hidden
+states are unavailable. The repository therefore does **not** establish a same-model
+encode-plus-verbalize result for the frontier models on the GroundBench leaderboard. Across the output
+studies, token familiarity/reasoning and mapping documentation contribute in a capability-dependent
+mix; the `web` tag predicts part of the floor but is not a single causal axis.
 
-| representation → property | ceiling | probe (encode) | output (verbalize) | reads out? |
+| representation → property | ceiling | open-model probe | reported output | reads out? |
 |---|---|---|---|---|
 | MSA column → conserved | 0.999 | 1.000 | 0.795 | grounds (web-rich) |
 | single-cell → T cell (gene names) | 0.989 | 0.983 | 0.50 → opus 0.99 | closes with scale |
@@ -92,11 +108,22 @@ Full design: `PROJECT_DESIGN.md`.
 | histopathology H&E → tumor | ~0.90 | 0.827 | 0.463 | partial, plateau ~0.65 |
 | 3D coords → hERG | 0.826 | 0.669 | 0.490 | encoding-limited |
 
-> **The sharpest result (a controlled pair).** methylation and MSA have identical task shape and are both encoded to the specialist ceiling, yet opposite output: MSA verbalizes at 0.795 while methylation stays at chance (0.487). The main thing that differs is whether the representation-to-property mapping is web-documented — clean evidence for the **mapping-documentation** factor of the gap (the other factor, token-familiarity / reasoning, is isolated separately by the single-cell name-vs-anon control).
+> **A useful matched comparison.** Methylation and MSA use similar binary task shapes and both have
+> strong open-model probe results, while their reported outputs differ (MSA 0.795; methylation 0.487).
+> This comparison is consistent with a mapping-documentation contribution, but it is not a controlled
+> proof that documentation is the only cause. The single-cell name/anon studies further show that token
+> familiarity and reasoning contribute differently as model capability changes.
 
 **The prescription.** Because the frontier is *calibrated* about where it grounds (opus self-confidence tracks actual grounding at corr +0.90), the same map is a routing policy. Confidence is good at *knowing when it cannot* — it defers the web-zero tasks — but against **real per-item specialists** it does **not** reach the per-item oracle: routed 0.81 vs oracle 0.91, because self-confidence cannot flag the ~10% of items where the LLM beats the specialist. (An earlier per-rung figure — routing 0.893 ≈ oracle 0.894 — was a ceiling-as-specialist upper bound, corrected in [`calibration_discovery/`](calibration_discovery/results/RESULTS.md).) The durable, model-free win is the **a-priori web-exposure tag**: known before any model call, it is a competitive deferral prior in its own right. Details in [`results/calibration_routing.md`](results/calibration_routing.md) and [`results/decision_map_placement.md`](results/decision_map_placement.md).
 
-**The generative regime.** The train-vs-orchestrate line holds when the model *generates*, not just scores. A pre-registered post-training RL environment puts internalized RL (fine-tune a frozen molecular generator toward a property reward) head-to-head against external inference-time guidance of the same frozen generator — at matched reward-query budget, judged only on a scaffold-disjoint held-out oracle. Internalized RL **ties** external guidance across three reward-quality regimes (formal scaffold-clustered two-sample CIs; the reward drives the gain — a shuffled-reward control collapses to baseline). Training the weights buys nothing over routing a frozen prior through the reward, so **"route, don't train" spans discriminative read-out *and* generation.** (One honest exception, held to its evidence: at high training budget RL pulls *modestly, sub-threshold-ly* ahead by shifting the distribution past the frozen model's guidance ceiling — a caveat that survived every feasible independence check, not an artifact.) Design and result: [`docs/RL_ENV_PREREG.md`](docs/RL_ENV_PREREG.md), [`results/benchmark/rl_env/v1_herg.md`](results/benchmark/rl_env/v1_herg.md).
+**The generative regime.** A pre-registered molecular-generator study compared internalized RL with
+external inference-time guidance at matched reward-query budgets. The arms were statistically tied in
+the moderate-budget and reward-quality cells. At high budget, pooled RL exceeded guidance, but the
+effect was seed-variable and its confidence-interval lower bound missed the pre-registered overturn
+margin. The result is budget-dependent and does not license a universal train-vs-route conclusion.
+Design and result: [`docs/RL_ENV_PREREG.md`](docs/RL_ENV_PREREG.md),
+[`results/benchmark/rl_env/v1_herg.md`](results/benchmark/rl_env/v1_herg.md), and
+[`results/benchmark/rl_env/budget_sweep.md`](results/benchmark/rl_env/budget_sweep.md).
 
 **The negative class too.** The same encode-but-cannot-verbalize gap holds for confirmed NEGATIVES (this compound is inactive / safe): an open 8B encodes confirmed-inactive near the Morgan ceiling yet verbalizes it at chance, replicated cross-family (Qwen3-8B + OLMo-2-7B), so the known "no negative data leads to excessive false positives" failure is itself an *expression* gap. See [`results/negative_expression_gap.md`](results/negative_expression_gap.md). The verifiability gate that certifies signal also generalizes to 19 modality cells (17/19 PASS) and doubles as a signal-side memorization detector that flags PPI-by-name as recall, not grounding ([`signal/verifiability_multimodal.md`](signal/verifiability_multimodal.md)).
 
@@ -134,7 +161,7 @@ cells = load_dataset("jang1563/grounding-atlas", "single_cell", split="train")
 Use the GitHub repository for the measurement instrument and result writeups; use the Hugging Face dataset for training/evaluation rows, schema inspection, and downstream loaders.
 
 ## Where to start (reading order)
-1. [`results/SYNTHESIS.md`](results/SYNTHESIS.md) - the law, the 17-representation master table, and the orchestrator it prescribes.
+1. [`results/SYNTHESIS.md`](results/SYNTHESIS.md) - the 17-representation research sweep, its caveats, and the routing implications.
 2. [`docs/field_message.md`](docs/field_message.md) - the framing: a frontier model's job is to ground and route, not to know.
 3. [`PROJECT_DESIGN.md`](PROJECT_DESIGN.md) - the full design and the three workstreams.
 4. [`eval/README.md`](eval/README.md) and [`signal/README.md`](signal/README.md) - the instrument and the signal generators; [`results/`](results/README.md) and [`docs/`](docs/README.md) index everything else.
@@ -154,8 +181,6 @@ pip install -e ".[full]"    # everything: regenerate signal, ceilings, activatio
 
 LLM clients read provider credentials from environment variables such as `ANTHROPIC_API_KEY` and `OPENAI_API_KEY`; keys are never committed. The activation/probe sweeps use GPU job templates under `eval/`.
 
-Some ADMET scripts read labels from a local SQLite database (an internal negative-results ADMET source); set its path with the `NEGRES_ADMET` environment variable.
-
 ## Cite
 
 Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) (GitHub renders a "Cite this repository" button). In short:
@@ -166,6 +191,9 @@ Machine-readable metadata is in [`CITATION.cff`](CITATION.cff) (GitHub renders a
 - **Capability-first, measurement-first.** The contribution is the instrument and the verifiable-signal substrate, not a multimodal model build; the same instrument also flags where a grounded model is unsafe.
 - **What is novel vs cited.** The cross-representation grounding measurement and the signal engineering are the contribution; the train-vs-retrieve-vs-orchestrate framing and the encoding-vs-expression decomposition build on prior work (Ovadia 2312.05934; In-Tool Learning 2508.20755; NatureLM 2502.07527; Mozi 2603.03655; Inside-Out 2503.15299).
 - **Numeric over-trust is a verbalization/calibration gap**, not an inability to represent numbers (the signal is in the activations). This is not extended to the ESM-2 probe result, which is an encoding question measured on the specialist, not the LLM.
+- **Evidence streams are separated.** Hidden-state encoding claims come from open-weight probes;
+  frontier models contribute output and routing results. Same-model frontier encode-plus-verbalize
+  evidence is not established here.
 - **Public-safe release.** The committed tree contains evaluation code, derived benchmark rows, and aggregate outputs; secrets, large re-fetchable databases, and excluded generated scores stay out of git (see [`SECURITY.md`](SECURITY.md)).
 
 ## License
