@@ -16,7 +16,7 @@ Drift guards (RL_ENV_PREREG Section 5):
 
 Needs a GPU for the policy training. Usage:
   sbatch --export=ALL,E3_SCRIPT=rl_ppo.py,RL_ENDPOINT=herg,RL_BATCH=50,RL_STEPS=100,RL_BETA=0.1 eval/cayuga_rl.sbatch
-No em dashes.
+
 """
 import copy
 import json

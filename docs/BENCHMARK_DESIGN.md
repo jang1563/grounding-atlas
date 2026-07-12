@@ -2,7 +2,7 @@
 
 *2026-06-15. A model-agnostic benchmark that scores a model's grounding, calibration, and
 memorization-transparency on the verifiable-signal pairs. Design is grounded in published
-eval best practice. No em dashes.*
+eval best practice.*
 
 ## Why this benchmark is different
 

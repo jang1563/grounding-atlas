@@ -1,6 +1,6 @@
 # Generality panel: the web-exposure law across seven science domains
 
-*Results. 2026-06-12. `eval/frontier_output_panel.py` (GEN_CONFIGS), data under `signal/generality/` and `signal/materials/`. Frontier output (opus-4.8 / sonnet-4.6 / haiku-4.5); activation is open-weight-only. Tests whether the web-exposure law is biology-specific or a general property of LLM grounding, with the same web-rich-vs-anonymized design as the single-cell rung. No em dashes.*
+*Results. 2026-06-12. `eval/frontier_output_panel.py` (GEN_CONFIGS), data under `signal/generality/` and `signal/materials/`. Frontier output (opus-4.8 / sonnet-4.6 / haiku-4.5); activation is open-weight-only. Tests whether the web-exposure law is biology-specific or a general property of LLM grounding, with the same web-rich-vs-anonymized design as the single-cell rung.*
 
 ## The design (one per domain)
 

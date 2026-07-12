@@ -9,7 +9,7 @@ per-design (SMILES + reward + oracle) so compare_rl_orchestrate.py can run the s
 two-sample bootstrap. Generator is never updated (drift guard: this is route, not train).
 
 Usage: sbatch --export=ALL,E3_SCRIPT=rl_guidance.py,RL_ENDPOINT=herg,RL_M=500 eval/cayuga_rl.sbatch
-No em dashes.
+
 """
 import json
 import os

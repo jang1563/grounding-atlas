@@ -1,6 +1,6 @@
 # Two local controls on the "encodes chemistry" soft bedrock
 
-*Results section. 2026-06-11. Instrument: `eval/lipophilicity_control.py` (rdkit + sklearn, CPU, no GPU/API). Answers two of the deep review's foundational objections that do NOT need the LLM hidden states. The third (the LLM ACTIVATION probe on randomized SMILES) needs GPU and is queued. No em dashes.*
+*Results section. 2026-06-11. Instrument: `eval/lipophilicity_control.py` (rdkit + sklearn, CPU, no GPU/API). Answers two of the deep review's foundational objections that do NOT need the LLM hidden states. The third (the LLM ACTIVATION probe on randomized SMILES) needs GPU and is queued.*
 
 ## What the deep review worried about
 

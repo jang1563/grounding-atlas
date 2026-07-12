@@ -6,7 +6,7 @@ the cheap specialist is weakest, so the cleanest tests of whether TRAIN (LoRA) c
 - variant_seq: raw protein-sequence window -> pathogenic. Notation-invariance / the "ready train
   target". Bar to beat: seq-form 0-shot 0.58; orchestrate AlphaMissense 0.96 (novel 0.985).
 - spectra_ms: BRICS-fragment m/z peak list -> hERG block. Bar: cheap binned-m/z 0.667, retrieve 0.586.
-Local CPU (rdkit). No em dashes.
+Local CPU (rdkit).
 """
 import csv
 import json

@@ -14,7 +14,7 @@ build_holdout_oracle.py trains the RF on block-O.
 
 Usage: python eval/smiles_generator_init.py             # build corpus, train, sample, power gate, save
 Env: GEN_EPOCHS (default 40), GEN_SAMPLE (default 2000), GEN_HIDDEN (512), GEN_LAYERS (3).
-No em dashes.
+
 """
 import glob
 import json

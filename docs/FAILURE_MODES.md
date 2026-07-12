@@ -1,6 +1,6 @@
 # Grounding Failure Modes (diagnosis)
 
-*Shared reference for WS1-3. 2026-06-08. Capability-first framing. No em dashes.*
+*Shared reference for WS1-3. 2026-06-08. Capability-first framing.*
 
 This document fixes the grounding failure taxonomy from the **actual measured results** of prior work (a protein identity-recognition study and a frozen-embedding separability study), not from planning docs. Every figure carries its source. Only aggregate behavioral numbers enter this project (see `SECURITY.md`).
 

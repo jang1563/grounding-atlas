@@ -17,7 +17,7 @@ contract). Date 2026-06-27.
 (bridge param count 8.6M ~ LoRA-r16 scale; the bypass = the SAME projection -> a fixed linear read-out,
 no transformer, the equal-budget head control.)
 
-## Verdict: "route, don't train" confirmed, fairly (the pre-committed "prior holds" outcome)
+## Verdict in this v1 cell: the specialist head leads
 
 **H1 (within-property ordering): orchestrate > bridge > LoRA, and the bridge never beats its own
 LLM-bypass.**
@@ -40,7 +40,7 @@ LLM-bypass.**
 **Net:** the closed-weight-friendly placement (a thin head on the open SFM, LLM untouched) wins
 within-property; the in-language bridge and in-weight LoRA do not earn their extra machinery; and the
 read does not generalize across properties for any of them. This is the fair test the prereg set up to
-be able to overturn "route, don't train", and it came down on confirm.
+test the orchestrate-first prior, and the specialist head led in this cell.
 
 ## The pre-registered paired test (formal, `eval/analyze_bridge3way.py`)
 Per-item dumps + `paired_cluster_boot` (resample the 355 scaffold groups, CI on the paired AUROC

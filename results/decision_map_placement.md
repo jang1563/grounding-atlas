@@ -1,6 +1,6 @@
 # Decision map: where each biology capability should live (train / retrieve / orchestrate)
 
-*Results, 2026-06-12. The WS3 deliverable: for each capability, measure which placement WINS, rather than asserting it. Placement is read off four measured arms: encode (open-weight probe), 0-shot output, RETRIEVE (k-shot in-context, `eval/icl_placement.py` + `eval/icl_methyl.py`), and ORCHESTRATE (specialist-tool ceiling). No em dashes.*
+*Results, 2026-06-12. The WS3 deliverable: for each capability, measure which placement WINS, rather than asserting it. Placement is read off four measured arms: encode (open-weight probe), 0-shot output, RETRIEVE (k-shot in-context, `eval/icl_placement.py` + `eval/icl_methyl.py`), and ORCHESTRATE (specialist-tool ceiling).*
 
 ## The measured placement table
 
@@ -53,7 +53,11 @@ So a grounded biology orchestrator does not need to train the frontier model. It
 
 ## Honest scoping
 
-Four capabilities, one specialist ceiling each, frontier = opus, k=12 to 16 shots. The placement labels are robust to the exact AUROC, but the retrieve-vs-orchestrate margin on SMILES (0.70 vs 0.825) is modest; a larger k or better example selection could move it. "Train wins nowhere" is a claim about THIS set at THIS scale; a capability requiring a genuinely new, non-in-context-learnable skill could still favor training, and finding such a case is the natural next probe. Retrieve closing methylation is an in-context-regression result (the model fits a 60-dim map from examples); whether it holds for cohorts far from the example distribution (easy-to-hard) is untested. The decision-map framing itself is fast-moving and partly anticipated; the durable contribution is the measured placement on a cross-representation set with matched encode/retrieve/orchestrate arms.
+Four capabilities, one specialist ceiling each, frontier = opus, k=12 to 16 shots. The placement labels
+are robust to the exact AUROC, but the retrieve-vs-orchestrate margin on SMILES (0.70 vs 0.825) is
+modest. In-weight training did not lead in THIS set at THIS scale; a capability requiring a genuinely
+new, non-in-context-learnable skill could still favor training. Retrieve closing methylation is an
+in-context-regression result, and transfer to shifted cohorts is untested.
 
 ## Connection
 

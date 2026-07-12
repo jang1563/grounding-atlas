@@ -9,7 +9,7 @@ or an ENCODING gap (the LLM does not even carry the embedding-text signal)?
 The comparable run is Qwen3-8B on Cayuga (ACT_MODEL=Qwen/Qwen3-8B, GPU); 26GB-RAM local can only
 host a small proxy (Qwen2.5-0.5B), which is directional: if even 0.5B encodes it, 8B almost
 certainly does; if 0.5B is at chance, it is inconclusive (run the 8B). Same tercile-extreme Tm
-label, cluster GroupKFold, shuffled-label selectivity as the other arms. No em dashes.
+label, cluster GroupKFold, shuffled-label selectivity as the other arms.
 Env: ACT_MODEL (Qwen/Qwen2.5-0.5B-Instruct), SFM_BATCH (4).
 """
 import os

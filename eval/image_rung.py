@@ -9,7 +9,7 @@ the same rendered hERG molecules (ws3_image_items.jsonl, fields true_smiles, ocs
                    to chance while the ceiling is high, the VLM cannot ENCODE the structure
                    from pixels = ENCODING-LIMITED (the perception floor gates everything)
   output         = the VLM solo-image P(hERG) directly (prop)
-Run after re-running ws3_image.py (which saves the transcribed SMILES). No em dashes.
+Run after re-running ws3_image.py (which saves the transcribed SMILES).
 """
 import json
 import os

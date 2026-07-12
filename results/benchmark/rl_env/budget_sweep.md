@@ -1,7 +1,7 @@
 # Experiment-3 budget sweep (hERG): a FLAGGED high-budget potential overturn
 
-Per [docs/RL_ENV_PREREG.md](../../../docs/RL_ENV_PREREG.md). The v1/v2 result (route-don't-train
-EXTENDS to generation) was established at a single budget (Q=5000). This sweep varies the
+Per [docs/RL_ENV_PREREG.md](../../../docs/RL_ENV_PREREG.md). The v1/v2 tie was measured at a single
+budget (Q=5000). This sweep varies the
 reward-query budget Q with a larger delivery M=1000 (tighter CIs), seed 0, on hERG. It was expected
 to confirm the tie across budgets. It did NOT. Date 2026-07-02. Analysis `eval/analyze_budget_sweep.py`
 (scaffold-clustered two-sample bootstrap per Q); jobs on Cayuga scu-cpu (both GPU clusters contended).
@@ -17,7 +17,7 @@ to confirm the tie across budgets. It did NOT. Date 2026-07-02. Analysis `eval/a
 
 The (A-B) gap grows monotonically with budget, and at **Q=10000 the CI EXCLUDES 0**: internalized RL
 significantly beats external guidance. This contradicts the single-budget (Q=5000, M=500) tie and the
-"route-don't-train extends" headline - at HIGH budget the tie breaks in favor of TRAIN.
+moderate-budget tie - at HIGH budget the point estimate shifts in favor of TRAIN.
 
 ## Adversarial check (is it mode-collapse / drift, or real?)
 
@@ -89,7 +89,7 @@ internal label lineage - that is leg 2b, deferred).
 
 leg 2b would break the shared LABEL lineage by training the arbiter on an EXTERNAL hERG assay. The external
 candidate (TDC hERG_Karim, n=13445 patch-clamp) FAILS the pre-registered independence gate: InChIKey overlap
-with the internal set is 8.5% (> the 5% floor), so it re-imports the same label lineage (the internal ADMET
+with the in-repo hERG set is 8.5% (> the 5% floor), so it re-imports the same label lineage (the in-repo
 hERG data and Karim both trace to overlapping ChEMBL assays - the exact "ChEMBL blind-spot" the protocol
 critic predicted, correctly caught by the gate). So there is no readily-available truly-independent hERG
 label set; the shared-label-lineage residual cannot be cleanly closed with available data.
@@ -99,7 +99,8 @@ protocol pre-committed it as a secondary, likely-uninformative tie-breaker.
 
 ## Status (final)
 
-- Route-don't-train HOLDS at moderate budget (Q <= 5000; confirmed across 3 reward-quality cells x 3 seeds).
+- Moderate-budget cells do not separate internalized RL from guidance (Q <= 5000; 3 reward-quality
+  cells x 3 seeds).
 - The HIGH-budget regime (Q=10000) is a **real-but-MODEST, seed-variable, sub-threshold RL edge** (pooled
   (A-B)=+0.064, CI [+0.026, +0.104] excludes 0 but its lower bound just misses the pre-registered 0.03
   overturn margin, so INDETERMINATE by the prereg rule). Arm A pulls ahead by shifting the distribution
@@ -110,7 +111,8 @@ protocol pre-committed it as a secondary, likely-uninformative tie-breaker.
   hERG-blocker chemotype, in-domain for Morgan-Tanimoto). The shared-LABEL-lineage residual is NOT closable
   (no independent external labels; docking blocked+weak). So the high-budget edge is **most consistent with
   a REAL, modest, sub-threshold advantage**, with one un-testable residual (shared label lineage).
-- Net for the program: "route, don't train" holds everywhere tested EXCEPT a modest, sub-threshold, high-
-  budget corner where internalized RL pulls ahead - a corner that survived every feasible independence check.
+- Net for the program: placement is budget-dependent. Moderate-budget cells do not separate the arms;
+  at high budget internalized RL shows a modest, seed-variable edge that remains below the
+  pre-registered overturn threshold.
   The budget sweep is why rigor passes matter: the run expected to confirm the tie surfaced this real,
   budget-dependent deviation. Reported and arbitrated as far as the available data allows, not buried.

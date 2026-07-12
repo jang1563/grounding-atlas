@@ -56,19 +56,18 @@ Initial versioned release of the research repository.
   so orchestration needs a trained head on the embedding, not the prompt.
 - Analysis - WS3 train-placement (`eval/ws3_lora.py` cell-parameterized, `eval/prep_lora_cells.py`,
   `eval/firm_spectra_ms.py`; `results/ws3_train_placement.md`): LoRA on the weak-cheap-specialist
-  cells (variant-sequence, MS spectra) confirms TRAIN wins nowhere; the live placements are
-  retrieve and orchestrate.
+  cells (variant-sequence, MS spectra) found that LoRA did not beat retrieval or orchestration in
+  those release cells.
 - GPU job templates (`eval/cayuga_sfm_activation.sbatch`, `eval/cayuga_ws3_lora_cells.sbatch`).
 
 ### Changed
-- Reproducibility: removed hardcoded personal paths from scripts and output JSONs;
-  the ADMET DB path is now the `NEGRES_ADMET` environment variable with a
-  repo-relative default.
+- Reproducibility: removed hardcoded personal paths from scripts and output JSONs; public benchmark
+  rows and their provenance are repository-relative.
 - README reframed as a research front door (a "Scope and claims" section replaces
   the internal authoring rules).
 
 ### Security
-- Internal working notes (strategy, application framing, session checkpoints) moved
+- Private working notes and session checkpoints moved
   to a gitignored `internal/` directory; sensitive infra details (API-key commands,
   SSH host, personal interpreter paths, private external paths) scrubbed from
   tracked files.

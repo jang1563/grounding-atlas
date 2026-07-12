@@ -18,7 +18,7 @@ The actual RF-on-Morgan oracle TRAINING on block-O is a later step (needs rdkit/
 
 Usage: python eval/build_holdout_oracle.py        # feasibility gate on herg (+ ames fallback)
        FEAS_ENDPOINT=ames python eval/build_holdout_oracle.py
-No em dashes.
+
 """
 import json
 import os

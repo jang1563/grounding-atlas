@@ -18,7 +18,7 @@ canonical drops on randomized -> canonical-string memorization. Bootstrap CI on 
 and on the paired drops, because run-to-run sampling noise is ~0.03 at this n.
 
 Run: python eval/notation_control.py
-Env: NOTE_EP (default 'cyp3a4'), NOTE_N (balanced total, default 200), NOTE_MODEL. No em dashes.
+Env: NOTE_EP (default 'cyp3a4'), NOTE_N (balanced total, default 200), NOTE_MODEL.
 """
 import json
 import os

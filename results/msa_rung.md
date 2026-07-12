@@ -1,6 +1,6 @@
 # MSA rung: the positive control for the two-factor law
 
-*Results. 2026-06-12. `eval/activation_arm_msa.py`, data `signal/msa/msa_conservation.csv` (658 alignment columns from 8 Pfam seed alignments: protein kinase, globin, homeobox, RRM, cNMP-binding, 7tm GPCR, Ig I-set, SH3; depth ~40; conserved vs variable by within-family column entropy). Qwen3-8B 3-arm. ceiling = logistic regression on transparent column statistics (gap fraction, number of distinct residues, depth); activation = hidden-state probe on the column text; output = verbalized P(conserved). No em dashes.*
+*Results. 2026-06-12. `eval/activation_arm_msa.py`, data `signal/msa/msa_conservation.csv` (658 alignment columns from 8 Pfam seed alignments: protein kinase, globin, homeobox, RRM, cNMP-binding, 7tm GPCR, Ig I-set, SH3; depth ~40; conserved vs variable by within-family column entropy). Qwen3-8B 3-arm. ceiling = logistic regression on transparent column statistics (gap fraction, number of distinct residues, depth); activation = hidden-state probe on the column text; output = verbalized P(conserved).*
 
 ## Result
 

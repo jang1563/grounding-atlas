@@ -9,7 +9,7 @@ Decision rule (RL_ENV_PREREG Section 7):
   CONFIRM route-don't-train  if the (A-B) CI includes 0, or favors B, or |point| < 0.03 (tie band);
   OVERTURN                   only if the CI LOWER bound > 0.03 in A's favor (and no novelty/validity
                              collapse, and docking co-primary agrees).
-Light analysis (rdkit scaffolds + bootstrap), runs local. No em dashes.
+Light analysis (rdkit scaffolds + bootstrap), runs local.
 Usage: python eval/compare_rl_orchestrate.py    (RL_ENDPOINT=herg RL_Q=5000)
 """
 import glob

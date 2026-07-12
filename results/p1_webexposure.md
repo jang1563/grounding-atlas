@@ -1,6 +1,6 @@
 # P1 web-exposure covariate: the cross-modality regression is mis-specified; the within-entity contrast is the valid test
 
-*Robustness note for the web-exposure law (P1). 2026-06-09. Companion to `../PROJECT_DESIGN.md` section 7, `../docs/WS1_BACKLOG.md` item D. Instrument: `../eval/p1_webexposure.py`. No em dashes.*
+*Robustness note for the web-exposure law (P1). 2026-06-09. Companion to `../PROJECT_DESIGN.md` section 7, `../docs/WS1_BACKLOG.md` item D. Instrument: `../eval/p1_webexposure.py`.*
 
 ## The objection (and the backlog status it resolves)
 

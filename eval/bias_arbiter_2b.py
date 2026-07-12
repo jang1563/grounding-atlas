@@ -4,7 +4,7 @@ feature surface (physchem+MACCS, not Morgan/ChemBERTa) AND the internal hERG LAB
 not the block-R/O labels that co-trained the reward + oracle). This is the only arbiter independent of the
 full shared failure mode. InChIKey-dedup vs the internal set is a hard INDEPENDENCE GATE (>5% overlap = the
 external set is not independent -> leg 2b inconclusive). One-directional: can rule out shared-bias gaming,
-cannot alone license "genuine binding". Local CPU. No em dashes.
+cannot alone license "genuine binding". Local CPU.
 Usage: python eval/bias_arbiter_2b.py
 """
 import glob

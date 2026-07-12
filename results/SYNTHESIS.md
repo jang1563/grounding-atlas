@@ -1,12 +1,24 @@
 # Synthesis: a descriptive account of grounding, and the orchestrator it prescribes
 
-*2026-06-12. Synthesis across the full grounding-atlas sweep: 17 representations measured on one 3-arm instrument, plus the calibration/routing axis. Ties the descriptive finding (where LLMs encode but cannot verbalize) to its prescriptive consequence (a grounded orchestrator). All numbers from `PROJECT_DESIGN.md` 7.2 and `results/*_rung.md` / `results/calibration_routing.md`. No em dashes.*
+*2026-06-12. Synthesis across the grounding-atlas sweep: 17 representations studied with ceiling,
+open-model probe, and output arms, plus the calibration/routing axis. All numbers come from
+`PROJECT_DESIGN.md` 7.2 and `results/*_rung.md` / `results/calibration_routing.md`.*
 
-> **Framing note (2026-07; see [`../docs/REPORT.md`](../docs/REPORT.md) and [`../calibration_discovery/results/RESULTS.md`](../calibration_discovery/results/RESULTS.md)).** This synthesis calls the web-exposure effect a "law" as working shorthand. The corrected mechanism is **two-factor and capability-dependent** (token-familiarity/reasoning + mapping-documentation), not a single law: the effect is real, the mechanism is the correction. And the routing figures below (per-rung routed 0.893 vs "oracle" 0.894) are an **upper bound** — with real per-item specialists, routing does not reach the per-item oracle (0.81 vs 0.91). Read "law" below as "effect," and "reaches the oracle" as "reaches the per-rung ceiling."
+> **Evidence scope (2026-07; see [`../docs/REPORT.md`](../docs/REPORT.md) and
+> [`../calibration_discovery/results/RESULTS.md`](../calibration_discovery/results/RESULTS.md)).**
+> Hidden-state encoding probes use open-weight models; frontier systems contribute output and routing
+> results. The frontier leaderboard therefore does not establish a same-model encode-plus-verbalize
+> result. The `web` effect is two-factor and capability-dependent (token-familiarity/reasoning plus
+> mapping documentation), not a single law. With real per-item specialists, routing reaches 0.81 versus
+> a per-item oracle of 0.91; the earlier 0.893 versus 0.894 figure is only a per-rung-ceiling upper bound.
 
 ## 1. One instrument, three arms
 
-Every representation is measured the same way. CEILING = a cheap specialist (Morgan fingerprint, 6-mer LR, ESM, color features, an epigenetic clock) = is the property decodable from the raw representation at all. ACTIVATION = a linear probe on an open-weight model's hidden states (Qwen3-8B, or Qwen2.5-VL for images) = does the model ENCODE the property. OUTPUT = the model's verbalized probability, at the 8B and at frontier scale (claude haiku/sonnet/opus) = does the model SAY it. Two gaps fall out:
+The sweep uses three related arms. CEILING is a cheap specialist; ACTIVATION is a linear probe on an
+open-weight model's hidden states (Qwen3-8B, or Qwen2.5-VL for images); OUTPUT is a model's verbalized
+probability, measured on open and frontier models depending on the study. The frontier output rows are
+not hidden-state probes on those same frontier models. Two descriptive gaps are reported where the arms
+are comparable:
 
 - **encoding gap = ceiling - activation** (the property is decodable but the model does not encode it)
 - **verbalization gap = activation - output** (the model encodes it but does not say it; the "expression gap")
@@ -33,7 +45,8 @@ Every representation is measured the same way. CEILING = a cheap specialist (Mor
 | single-cell -> T cell (anon ids) | expr vector | 0.989 | 0.964 | 0.497 | 0.025 | 0.467 | INVARIANT (web-zero ids) |
 | histopathology H&E -> tumor | image | ~0.90 | 0.827 | 0.463 | ~0.073 | 0.364 | PARTIAL then plateau (~0.65) |
 
-(All 17 rungs above measure EMPIRICAL properties. The orthogonal COMPUTABLE property-type axis, which bounds the web-exposure law, is section 6.)
+(All 17 rungs above measure EMPIRICAL properties. The orthogonal COMPUTABLE property-type axis, which
+bounds the observed web-exposure effect, is section 6.)
 
 ## 3. The two-axis decomposition (the core figure)
 
@@ -41,32 +54,46 @@ Every representation is measured the same way. CEILING = a cheap specialist (Mor
 
 Plot every rung at (encoding gap, verbalization gap). Three regions appear, and they are the whole story.
 
-**Encoding is near-universal (the x-axis stays small).** For 13 of 17 rungs the encoding gap is under 0.10: the linear probe recovers the property almost to the ceiling, because the model's hidden states preserve whatever is linearly present in the tokenized input, and a probe then does the same job the cheap specialist does. This holds even for a web-ZERO numeric vector (methylation, enc gap 0.017) and anonymized ids (single-cell-anon, 0.025): encoding does not require the model to "know" anything, only to carry the input forward. The four exceptions are the structure-heavy representations, 3D coordinates (0.156) and molecular graph (0.157), where the property needs geometry or bond topology the model cannot extract from text and gets only a composition surface, plus the two variant rungs whose ceiling is so high (0.962) that even a strong probe leaves a gap. So the encoding axis is governed by ONE thing: whether the discriminative features sit on the surface of the representation. When they do (strings, sequences, numeric vectors, pixels) the model encodes them; when they are latent in 3D structure or graph topology, it does not.
+**Open-model probes recover substantial signal in this panel.** For 13 of 17 rungs the probe-to-ceiling
+gap is under 0.10. This can reflect linearly accessible surface features, not deep biological
+understanding. The larger gaps on 3D coordinates, molecular graph text, and variant rungs are also
+confounded by representation rendering and ceiling choice, so the sweep does not support a universal
+rule about what all language models encode.
 
 Caveat on the encoding-limited label (2026-06-15, from re-reading the existing numbers): for hERG the two structure-heavy rungs do NOT cleanly establish a geometry-encoding limit, because hERG is a topological / surface property, not a geometric one. A no-chemistry char-n-gram reads it at 0.81 and Morgan at 0.866, but a 3D-shape-only featurizer (asphericity, NPR, radius of gyration) manages just 0.612, below the LLM's 0.669 from the XYZ text. So the 0.156 gap is measured against a Morgan (2D-topology) ceiling while the 3D-text input carries little of that topology, and the graph-text reading (0.708) is below even the surface char-n-gram (0.81), a poor-rendering effect. These rungs are therefore confounded (non-geometric property plus a weak structure-as-text input); they do not prove an intrinsic inability to encode geometry. A clean test needs a property whose 3D-native ceiling is high (binding from 3D, a stereochemistry-dependent endpoint), where the structure actually carries the signal.
 
 **Verbalization is the large, variable gap (the y-axis spreads).** The verbalization gap ranges from 0.12 to 0.49 and is where the action is. What most governs it is not the representation type but the web-documentation of the representation-to-property MAPPING (one factor of the capability-dependent mix; see the framing note above), and scale closes it in proportion:
 - web-RICH mappings (DNA promoter, gene-symbol cell sentences, variant text) start with a huge 8B gap and CLOSE with scale: frontier models verbalize them to near the ceiling (DNA opus 0.82, single-cell opus 0.99). The signal was always encoded; capacity learns to read it out because text teaches the mapping.
 - web-ZERO mappings (single-cell-anon, MS, methylation, NMR, SMILES-output) stay at chance at EVERY scale. The signal is encoded just as well (anon activation 0.96), but no text binds the representation to the property, so no amount of capacity verbalizes it.
-- the methylation / MSA pair is the controlled proof of the mapping-documentation factor: identical task shape, both encoded to ceiling, opposite output (MSA 0.795 grounds, methylation 0.487 chance), the main difference being whether the mapping is web-documented. **Web-exposure governs VERBALIZATION, not encoding.**
+- the methylation / MSA comparison has a similar binary task shape, strong probe results, and opposite
+  reported output (MSA 0.795, methylation 0.487). It is consistent with a mapping-documentation
+  contribution, but does not isolate documentation as the only cause.
 
-**Two genuinely distinct failure modes, now separated.** A model fails to put a property in its output for two unrelated reasons: it never ENCODED it (structure-heavy, the x-axis: 3D, graph) or it encoded but cannot VERBALIZE it (web-zero mapping, the y-axis: methylation, anon, MS, histopath). The web-exposure effect governs the second axis only. Most of biology-LLM grounding failure is the second kind: the information is in the activations, web-absent from the output.
+**Two candidate failure modes are separated in the instrument.** Weak output may coincide with a weak
+open-model probe, or with a strong open-model probe and weak verbalization. The current cross-model
+evidence does not establish how prevalent either mechanism is across frontier biology systems.
 
 ## 4. The prescriptive turn: the same map is a routing policy
 
 A descriptive map of where the model fails to verbalize becomes USEFUL the moment the model knows where it is on the map. It does. The calibration/routing result (`results/calibration_routing.md`):
 
 - **Frontier Claude is a calibrated router.** opus self-reported confidence tracks actual grounding at corr +0.90 with zero over-confident rungs: it sets CONF to ~0.05 on exactly the web-zero rungs (anon, NMR, methyl) and high on what it grounds. At the rung level, routing on its own confidence reaches 0.893 mean AUROC against a 0.894 rung ceiling; but that is an upper bound. With **real per-item specialists**, routed accuracy is 0.81 vs a per-item oracle 0.91 (`calibration_discovery/results/RESULTS.md`), because confidence cannot flag the ~10% of items where the LLM beats the specialist. Report the per-item numbers, not the per-rung ceiling.
-- **Calibration grows with scale** (corr haiku +0.25, sonnet +0.64, opus +0.90). Over-confidence appears only at haiku and only on web-FAMILIAR surface forms (SMILES, decimal numbers) whose mapping is web-absent, the calibration shadow of the same web-exposure law. Safe router minimum is sonnet; precision peaks at opus.
+- **Calibration grows with scale in this three-model run** (corr haiku +0.25, sonnet +0.64, opus
+  +0.90). This is a pilot, prompt-dependent result, not a universal minimum-model rule.
 - **Route on continuous confidence, not the binary defer**, which is over-cautious and framing-sensitive.
 
 **Per-item, the frontier is real but the model does not act on it (`calibration_discovery/`, `results/RESULTS.md` there).** Promoting the rung-level result to a per-item selective-prediction benchmark (risk-coverage over 640 pooled items per model) confirms both halves and sharpens the routing rule. The confidence frontier improves monotonically with scale (AURC 0.290 -> 0.191 -> 0.155 haiku to opus, lower better; selective accuracy at 50% coverage 0.67 -> 0.76 -> 0.85; ECE 0.151 -> 0.038), so a model thresholding its OWN continuous confidence is a strong, scale-improving selective predictor. But its native binary abstain DECISION should not be trusted as-is. It ranks per-item correctness a bit worse than the graded confidence (a small framing-robust residual, ~0.04 to 0.07 AUROC, the cost of binarizing a graded signal), and it is extremely framing-sensitive: a "specialist available" system prompt makes opus defer 86% of items and decline even rungs it grounds at 0.88, while a neutral prompt (a single-variable control) halves deferral to 47% and makes the binary decision competence-aligned again. So an apparent large action-gap at the frontier under the specialist framing collapses once the defer nudge is removed; the durable claim is the small residual. The orchestrator must therefore route on a tuned threshold over the continuous confidence (the stable, framing-robust signal), set the prompt framing deliberately (a ~2x deferral lever), and never read the model's raw yes/no defer. And the web-exposure tag alone, decided a priori before any model call, is a competitive deferral prior: within a model it nearly matches the model's own confidence (sonnet AURC_webexp 0.201 vs its own confidence 0.191; opus 0.198 vs 0.155) and is far above random (0.31), the law as a model-free routing policy.
 
-So the project's descriptive finding is also prescriptive. The a-priori web-exposure tag predicts, before any item is seen, which cells the model will fail to verbalize (web-zero or computation-bound mappings) and therefore where an orchestrator must call a specialist. A grounded orchestrator is then: a frontier model as the reasoning core and router, routing on a thresholded continuous self-confidence, with the a-priori web-exposure tag as the prior that seeds the policy, calling a specialist tool exactly on the web-zero and structure-heavy cells and answering the web-rich ones itself, recovering specialist-level accuracy at a fraction of the tool calls.
+The descriptive results motivate, but do not uniquely determine, a routing policy. In the measured
+per-item panel, thresholded confidence reaches 0.81 versus 0.91 for the oracle and routes 84 to 100% of
+items to the specialist. The value of routing is therefore panel-dependent: the `web` tag can seed a
+policy, but deployment still requires per-model calibration and real specialist predictions.
 
 ## 5. The one-line result
 
-LLMs ENCODE far more biology than they VERBALIZE; what sets the gap between the two is not the modality but a capability-dependent mix of token-familiarity/reasoning and mapping-documentation (the a-priori web-exposure tag is a strong predictor of the floor, not a single law); and because frontier models are calibrated about this, the same a-priori map that predicts the failure also tells an orchestrator when to trust the model and when to reach for a tool.
+Open-model probes and model output reveal representation-dependent grounding gaps; token familiarity,
+reasoning, and mapping documentation all contribute, and calibrated routing helps but remains below the
+per-item oracle.
 
 ## 6. The property-type boundary: computable vs empirical (2026-06-13)
 
@@ -78,17 +105,27 @@ The 17 rungs above all measure EMPIRICAL properties: the label needs an experime
 
 Across the scale ladder (haiku/sonnet/opus, `computable_scale_sweep.json`) the two computable kinds split like 7.3's scale axis: counting is scale-closable (n_carbon rank AUROC 0.98/1.00/1.00, exact-precision climbing 0.30/0.80/0.90), while the pI seam rises then SATURATES below 1.0 (0.50/0.80/0.84), bottlenecked mainly by reasoning reliability: scale reaches only 0.84 and a supplied-constants tool only 0.83 (N=40), neither lever closing it.
 
-This BOUNDS the web-exposure law. The law (section 5) governs the verbalization of EMPIRICAL properties; it does not govern computable ones, whose gap is set by reasoning-token budget and, at the seam, constant recall. The property-type axis is orthogonal to the modality axis and the two meet only at pI / logP. For the orchestrator (section 4) this is a distinct routing lever: empirical web-zero cells call a specialist or retrieve, computable cells need reasoning tokens or a deterministic tool (RDKit), and sending a computable cell to a specialist when the model could compute it with scratch space is a different error.
+This bounds the observed web-exposure effect: it does not explain the computable-property cells, whose
+performance depends on reasoning-token budget and, at the seam, constant recall. Computable cells may
+benefit from sufficient scratch space or a deterministic tool such as RDKit.
 
 Methodology note. A first pass capped the budget at 400 tokens for speed; every hard computable property truncated mid-enumeration and the parser took a partial count, manufacturing a spurious collapse (n_carbon AUROC 0.41, below chance). Raw-output inspection caught it; a truncation guard plus a larger budget reversed it (0.41 to 1.0). The lesson: measuring a computable property without enough reasoning budget produces a fake model failure, the honest-hype-check theme applied to the instrument itself.
 
 ## 7. Open refinements
 
-- Per-item router (`calibration_discovery/`): DONE. The selective-prediction half (per-item risk-coverage, the frontier scales, the abstain ACTION underuses the signal, web-exposure a free prior) plus the real per-item specialist arm (`per_item_router.py`: cheap CV classifiers on every rung + AlphaMissense for the variant). The correction it forces: with REAL per-item specialists, confidence-routing reduces to almost-always-call-the-specialist (cheap specialists dominate the solo LLM, 0.81 vs 0.65 accuracy) and does NOT reach the per-item oracle (0.81 vs 0.91), because the model's confidence cannot flag the ~10% of items where it beats the specialist. The earlier per-rung "routed ~ oracle" was a ceiling-as-specialist upper bound.
+- Per-item router (`calibration_discovery/`): DONE. With real per-item specialists,
+  confidence-routing reduces to almost-always-call-the-specialist (cheap specialists dominate the solo
+  LLM, 0.81 vs 0.65 accuracy) and remains below the per-item oracle (0.81 vs 0.91). The earlier
+  per-rung near-equality was a ceiling-as-specialist upper bound.
 - Vision-arm calibration: does Claude vision KNOW it is only at 0.65 on histopath, so the router extends to images.
 - A pathology-tuned or omics-tuned model on the partial / web-zero rungs: does targeted instruction tuning close what general scale does not (the histopath plateau, the methylation floor).
 - The structure-heavy encoding limit (3D, graph): does a structure-native encoder (Boltz-2, a GNN) lift the activation arm, separating "the LLM cannot encode geometry" from "geometry is not in this text".
 
 ## 8. Scope and caveats
 
-Pilot scale throughout (n typically 300 to 1500 for sequence/string rungs, 400 to 720 for image/vector rungs, 80 per rung for the routing panel). Ceilings are cheap specialists or cited foundation models, not exhaustive; activation is open-weight-only by necessity (Claude exposes no hidden states), so the encoding axis is an open-model property and the frontier enters only on the output and routing axes. The web-exposure law is read from a coherent gradient across 17 rungs plus 7 generality domains, not from a single controlled manipulation, except the within-pair controls (methylation/MSA, single-cell gene-name/anon, variant text/seq, SMILES canonical/randomized) which ARE controlled and all point the same way. Numbers are stable in regime and ordering; treat individual AUROCs as pilot.
+Pilot scale throughout (n typically 300 to 1500 for sequence/string rungs, 400 to 720 for image/vector
+rungs, 80 per rung for the routing panel). Ceilings are cheap specialists or cited foundation models,
+not exhaustive. Activation is open-weight-only, so the encoding axis is an open-model property and the
+frontier enters only on the output and routing axes. The matched contrasts support a multi-factor
+web-exposure effect but do not isolate a single causal law. Treat individual AUROCs and routing
+thresholds as pilot estimates.

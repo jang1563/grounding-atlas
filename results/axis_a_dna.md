@@ -1,6 +1,6 @@
 # Axis A (identity resolution), gene/DNA: the within-entity recognition gap
 
-*Results section. 2026-06-10. Instrument: `eval/axis_a_dna.py`. Data: 40 most-studied ClinVar genes (`variant_grounding/data/variant_clinvar_full.csv`), trusted, no curation. claude-sonnet-4-6. No em dashes.*
+*Results section. 2026-06-10. Instrument: `eval/axis_a_dna.py`. Data: 40 most-studied ClinVar genes (`variant_grounding/data/variant_clinvar_full.csv`), trusted, no curation. claude-sonnet-4-6.*
 
 ## What this measures
 

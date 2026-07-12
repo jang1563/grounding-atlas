@@ -12,7 +12,7 @@ The LLM arms read the peak-list TEXT:
 Reading: activation near ceiling_surface (0.64) but far below ceiling_structure (0.82) = a
 genuine ENCODING gap (the LLM reads surface peak stats but cannot elucidate the structure in
 a forward pass), the first encoding-limited anchor; activation near chance = even the surface
-is unreadable. Env: ACT_MODEL, ACT_N, ACT_CSV (smiles,label). No em dashes.
+is unreadable. Env: ACT_MODEL, ACT_N, ACT_CSV (smiles,label).
 """
 import csv
 import os

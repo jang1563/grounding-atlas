@@ -12,7 +12,7 @@ and reports whether the reward even AGREES with the oracle on GENERATED molecule
                        and the binding constraint is reward reliability, not train-vs-route.
 Also emits arm C's base oracle-pass rate = the floor every other arm must beat.
 
-Runs on Cayuga (generator sampling + ChemBERTa embedding = GPU). No em dashes.
+Runs on Cayuga (generator sampling + ChemBERTa embedding = GPU).
 Usage: sbatch --export=ALL,E3_SCRIPT=rl_base_eval.py,RL_N=4000 eval/cayuga_rl.sbatch
 """
 import json

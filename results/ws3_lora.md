@@ -1,6 +1,6 @@
 # WS3 weights PoC: does LoRA finetuning close the hERG expression gap in OUTPUT?
 
-*Results section. 2026-06-11. Instrument: `eval/ws3_lora.py`, run on a GPU worker. The "train the read-out into weights" placement, tested at the OUTPUT level (not just a frozen probe). No em dashes.*
+*Results section. 2026-06-11. Instrument: `eval/ws3_lora.py`, run on a GPU worker. The "train the read-out into weights" placement, tested at the OUTPUT level (not just a frozen probe).*
 
 ## The test
 

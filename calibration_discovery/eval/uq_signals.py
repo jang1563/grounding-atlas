@@ -3,7 +3,7 @@
 
 uq_competence.py showed specialist self-uncertainty does not beat always-call-the-specialist.
 Here we test the indicated next signals: model-specialist disagreement, a per-item
-web-exposure flag, and per-context (per-rung) specialist reliability. No API calls. No em dashes.
+web-exposure flag, and per-context (per-rung) specialist reliability. No API calls.
 
 Run:  PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/uq_signals.py
 """

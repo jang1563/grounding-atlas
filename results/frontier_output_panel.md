@@ -1,6 +1,6 @@
 # Frontier output panel: scale closes the expression gap in proportion to web-exposure
 
-*Results. 2026-06-12. `eval/frontier_output_panel.py`, n=300 balanced per rung, output arm only (activation is open-weight-only; Claude exposes no hidden states). Tests the two new hard-representation rungs (DNA, spectra) across the three latest Claude models, completing the frontier comparison they lacked. No em dashes.*
+*Results. 2026-06-12. `eval/frontier_output_panel.py`, n=300 balanced per rung, output arm only (activation is open-weight-only; Claude exposes no hidden states). Tests the two new hard-representation rungs (DNA, spectra) across the three latest Claude models, completing the frontier comparison they lacked.*
 
 ## The panel
 

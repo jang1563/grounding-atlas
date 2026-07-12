@@ -10,7 +10,7 @@ concentrate in deep layers (recognition lives there); for hERG it should be smal
 
 Input: /tmp/layer_profiles.txt (4 blocks, '### name' then 'layer auroc' lines), extracted
 from activation-profile cluster logs. Outputs results/layer_profiles.json +
-results/layer_profiles.png. No em dashes.
+results/layer_profiles.png.
 """
 import json
 import os

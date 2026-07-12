@@ -18,7 +18,7 @@ The reward budget Q = 5000 reward-queries for BOTH A (100 steps x 50 batch) and 
 top 500). The oracle is the block-O Morgan-RF (held-out block-E AUROC 0.882), bar = 90th pct of
 block-E (0.627), scaffold-disjoint from the reward.
 
-## H1: route-don't-train EXTENDS to generation
+## H1 at Q=5000: internalized RL and guidance are not separated
 
 **(A - B) = +0.0020; scaffold-clustered two-sample bootstrap 95% CI [-0.047, +0.046]** (479 vs 476
 Murcko-scaffold clusters, n_boot 4000; `eval/compare_rl_orchestrate.py`). The CI includes 0 and the
@@ -36,9 +36,8 @@ at matched budget. CONFIRM.
 
 **Reading:** building a post-training RL environment for a generative bio FM is feasible and the
 reward produces real (oracle-confirmed) gains, but INTERNALIZING the reward into the weights buys
-nothing over EXTERNALLY selecting top-reward samples from the frozen model at the same budget. The
-"route, don't train" verdict, established on the discriminative read-out
-([REPORT.md](../../../docs/REPORT.md)), EXTENDS to the generative/RL lever.
+nothing over EXTERNALLY selecting top-reward samples from the frozen model at the same budget. This
+supports a tie in the measured regime, not a universal generative placement rule.
 
 ## v1 caveats / v2
 - One cell (hERG), one budget (Q=5000), one seed. The CI is wide (small pass counts, ~20/500). v2
@@ -72,7 +71,7 @@ vs hERG's 14.8x), so guidance has little to select on. Result (matched budget Q=
 ## Remaining caveats
 - The CIs are still wide (pass counts ~20-57 / 500); a larger M or more budgets would tighten further.
 - The clearance cell used its own generator + reward + oracle (all endpoint-parameterized), confirming
-  route-don't-train on a genuinely weak endpoint; the low-data cell is the within-hERG degraded stand-in.
+  the comparison on a genuinely weak endpoint; the low-data cell is the within-hERG degraded stand-in.
 - OVERTURN was the only outcome needing the docking co-primary; since it CONFIRMED, docking is moot.
 - sigma=20 (REINVENT reward scale) was not swept; the matched-budget contrast vs guidance is the
   controlled comparison regardless.

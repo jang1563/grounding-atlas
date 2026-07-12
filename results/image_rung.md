@@ -1,6 +1,6 @@
 # Molecular-image rung: the encoding-limited prediction FAILS for coarse hERG
 
-*Results. 2026-06-11. `eval/ws3_image.py` (Claude VLM, n=120 rendered hERG molecules) + `eval/image_rung.py` (the perception proxy). Adds image as the 5th modality probed, and REVISES the plan's P2 prediction. No em dashes.*
+*Results. 2026-06-11. `eval/ws3_image.py` (Claude VLM, n=120 rendered hERG molecules) + `eval/image_rung.py` (the perception proxy). Adds image as the 5th modality probed, and REVISES the plan's P2 prediction.*
 
 ## What was predicted vs measured
 

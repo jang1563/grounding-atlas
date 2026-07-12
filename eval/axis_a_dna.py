@@ -12,7 +12,7 @@ the symbol ceiling is high and a low accession rate is a notation gap, not ignor
 Deterministic scoring: a response is recognized if the correct gene symbol is present.
 
 Run: python3 eval/axis_a_dna.py   Env: AXISA_MODEL, AXISA_N (default 40), AXISA_DRY.
-No em dashes.
+
 """
 import csv
 import json

@@ -1,6 +1,6 @@
 # Single-cell rung design: the descriptive grounding rung with a built-in web-exposure contrast
 
-*Design doc. 2026-06-12. The 7th modality rung, a priority modality. Single-cell DESCRIPTIVE grounding (cell-type from an expression vector); the CAUSAL/perturbation question is the sibling CausalAtlas project, OUT OF SCOPE. No em dashes.*
+*Design doc. 2026-06-12. The 7th modality rung, a priority modality. Single-cell DESCRIPTIVE grounding (cell-type from an expression vector); the CAUSAL/perturbation question is the sibling CausalAtlas project, OUT OF SCOPE.*
 
 ## Why this rung
 

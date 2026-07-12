@@ -4,7 +4,7 @@ One script for the molecular-representation rungs (graph, NMR, 3D coords) that s
 hERG molecules and the Morgan ceiling, differing only in how the molecule is rendered as text.
 ceiling = Morgan FP on the SMILES; activation = LLM hidden-state probe on the text field;
 output = LLM verbalized P(hERG). Env: ACT_CSV, ACT_TEXT_FIELD (graph|nmr|xyz), ACT_MODEL, ACT_N.
-No em dashes.
+
 """
 import csv
 import os

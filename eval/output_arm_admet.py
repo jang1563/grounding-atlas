@@ -15,7 +15,7 @@ the model call. Real runs need ANTHROPIC_API_KEY in the environment.
 
 Env: ADMET_EP (comma list or 'all', default the 5 unmeasured), ADMET_N (balanced total,
 default 200 = 100/100), ADMET_MODEL (default claude-sonnet-4-6), ADMET_DRY.
-No em dashes.
+
 """
 import json
 import os

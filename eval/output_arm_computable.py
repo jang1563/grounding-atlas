@@ -27,7 +27,7 @@ sample prompt per property, no API spend. Real runs need ANTHROPIC_API_KEY in th
 
 Env: CMP_MODALITY (smiles|protein|dna, default smiles), CMP_PROP (comma list or 'all'),
 CMP_N (balanced total, default 200), CMP_MODEL (default claude-sonnet-4-6), CMP_CONDITION,
-CMP_PAIRED, CMP_DRY. No em dashes.
+CMP_PAIRED, CMP_DRY.
 """
 import json
 import os

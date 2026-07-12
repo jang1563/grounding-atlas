@@ -3,7 +3,7 @@
 computes the formal H1/H2 paired-difference CIs on scaffold groups:
   H1b  bridge vs its LLM-bypass head (does routing through the frozen LLM add anything),
   H1   bridge vs orchestrate (placement ordering),
-plus score_arm (AUROC / AURC / temperature-scaled ECE) per arm. No em dashes.
+plus score_arm (AUROC / AURC / temperature-scaled ECE) per arm.
 Usage: python analyze_bridge3way.py   (reads results/benchmark/bridge3way + results/orchestrate_arm.json)
 """
 import json

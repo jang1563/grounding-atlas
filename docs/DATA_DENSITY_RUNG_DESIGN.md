@@ -1,6 +1,6 @@
 # Data-density rung: making the web-exposure law a measured within-modality regression
 
-*Design doc, 2026-06-14. Turns the web-exposure law from a qualitative cross-modality gradient (which `results/p1_webexposure.md` showed is mis-specified) into a MEASURED regression inside one modality (single-cell / regulatory genomics), using a quantifiable external covariate: the volume of public functional-genomics data per cell state. Motivated by the "AlphaGenome-era data war" framing (public data concentrates on K562/ENCODE/GTEx; disease and developmental cell states are under-measured). No em dashes.*
+*Design doc, 2026-06-14. Turns the web-exposure law from a qualitative cross-modality gradient (which `results/p1_webexposure.md` showed is mis-specified) into a MEASURED regression inside one modality (single-cell / regulatory genomics), using a quantifiable external covariate: the volume of public functional-genomics data per cell state. Motivated by the "AlphaGenome-era data war" framing (public data concentrates on K562/ENCODE/GTEx; disease and developmental cell states are under-measured).*
 
 ## The question
 

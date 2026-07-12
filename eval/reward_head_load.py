@@ -17,7 +17,7 @@ Usage:
   python eval/reward_head_load.py                 # herg: reproduce AUROC, fit ensemble, save, self-test
   REWARD_ENDPOINT=clearance python eval/reward_head_load.py
 Importable: load_emb, fit_reward_ensemble, reward_from_emb, ChemBertaEmbedder, reward_fn,
-            save_reward, load_reward.  No em dashes.
+            save_reward, load_reward.
 """
 import os
 import sys

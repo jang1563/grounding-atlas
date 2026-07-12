@@ -1,6 +1,6 @@
 # 3D-structure rung: hERG from raw XYZ coordinates (the encoding-limited candidate)
 
-*Results. 2026-06-12. `eval/frontier_output_panel.py` (structure3d) + `eval/activation_arm_3d.py` (8B, pending). Same hERG molecules as the SMILES rung, presented as raw 3D atomic coordinates. The 8th rung, and the candidate for the genuine encoding-limited anchor the modality ladder lacked. No em dashes.*
+*Results. 2026-06-12. `eval/frontier_output_panel.py` (structure3d) + `eval/activation_arm_3d.py` (8B, pending). Same hERG molecules as the SMILES rung, presented as raw 3D atomic coordinates. The 8th rung, and the candidate for the genuine encoding-limited anchor the modality ladder lacked.*
 
 ## The rung and the within-entity contrast
 

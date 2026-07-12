@@ -1,6 +1,6 @@
 # WS3 #4: the decision-map circularity-breaker (drug market-withdrawal)
 
-*Results. 2026-06-11. Instrument: `eval/withdrawn_endpoint.py` (structure arms local CPU; LLM arms claude-sonnet-4-6, 500 calls each). The first decision-map cell where the LLM is the right tool. No em dashes.*
+*Results. 2026-06-11. Instrument: `eval/withdrawn_endpoint.py` (structure arms local CPU; LLM arms claude-sonnet-4-6, 500 calls each). The first decision-map cell where the LLM is the right tool.*
 
 ## Why this endpoint
 

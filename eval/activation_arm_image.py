@@ -5,7 +5,7 @@ hERG from the image? ceiling = Morgan on the true structure; activation = a line
 the VLM's last-token hidden states given the image; output = the VLM's verbalized P(hERG).
 Predicted from the OCSR proxy (image_rung.md, 0.759): activation ~0.75 = EXPRESSION-limited
 (the VLM encodes hERG from the image but cannot verbalize it), NOT encoding-limited.
-Env: VL_MODEL, VL_N (balanced total, default 400), VL_CSV (smiles,label). No em dashes.
+Env: VL_MODEL, VL_N (balanced total, default 400), VL_CSV (smiles,label).
 """
 import csv
 import io

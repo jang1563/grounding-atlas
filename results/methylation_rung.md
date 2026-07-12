@@ -1,6 +1,6 @@
 # Methylation rung: a web-zero numeric vector is ENCODED but not verbalized
 
-*Results. 2026-06-12. `eval/activation_arm_methyl.py`, data `signal/methyl/methyl_age.csv` (GEO GSE41037, Illumina 27K blood methylation, 720 samples, age 16-88; 100 top-variance CpG probes shown as `cgXXXX:0.NN` text; label = age above the cohort median 33). Qwen3-8B 3-arm. ceiling = logistic regression on the numeric beta vector (the cheap epigenetic clock); activation = hidden-state probe on the beta-TEXT; output = verbalized age estimate, scored as AUROC of predicted-age vs the binary label. No em dashes.*
+*Results. 2026-06-12. `eval/activation_arm_methyl.py`, data `signal/methyl/methyl_age.csv` (GEO GSE41037, Illumina 27K blood methylation, 720 samples, age 16-88; 100 top-variance CpG probes shown as `cgXXXX:0.NN` text; label = age above the cohort median 33). Qwen3-8B 3-arm. ceiling = logistic regression on the numeric beta vector (the cheap epigenetic clock); activation = hidden-state probe on the beta-TEXT; output = verbalized age estimate, scored as AUROC of predicted-age vs the binary label.*
 
 ## Result
 

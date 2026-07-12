@@ -13,7 +13,7 @@ includes local-SAR generalization, and the shuffle-label control rules out only 
 Verbalized score (both base and finetuned, identical eval): logP(" yes") vs logP(" no")
 continuation of the prompt -> P(yes), AUROC vs the label. Manual LoRA loop (no trl).
 Runs on a Cayuga GPU. Env: LORA_MODEL, LORA_N (balanced, default 1000), LORA_EPOCHS (3).
-No em dashes.
+
 """
 import json
 import os

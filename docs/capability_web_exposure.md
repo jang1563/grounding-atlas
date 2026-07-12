@@ -4,21 +4,24 @@
 capability interacts with it, and the deferral rule that follows. Figures in
 [`results/benchmark/single_cell/`](../results/benchmark/single_cell/).*
 
-> **Framing note (see [`REPORT.md`](REPORT.md)).** This doc uses "law" as working shorthand and its recap below states the mapping-documentation factor alone. The corrected mechanism is a **two-factor, capability-dependent mix** (token-familiarity/reasoning + mapping-documentation). The capability x web-exposure interaction measured here IS that correction from one angle: capability sets how much the web-documentation of the mapping matters.
+> **Evidence scope (see [`REPORT.md`](REPORT.md)).** Hidden-state probes here use open-weight models;
+> the frontier ladder is output-only. The corrected mechanism is a capability-dependent mix of token
+> familiarity/reasoning and mapping documentation, not a single factor.
 
-## The law (recap)
+## Observed grounding gaps
 
-Across 17+ representations, LLMs encode far more biology than they verbalize: a linear probe on an
-open model's hidden states recovers a property near a specialist ceiling, but the verbalized answer
-lags. The size of that verbalization gap is governed not by the modality but by a capability-dependent
-mix of token-familiarity/reasoning and how web-documented the representation -> property mapping is.
-The controlled proofs are within-pair: methylation vs MSA
-(identical task shape, both encoded to ceiling, opposite output), and single-cell with gene names vs
-anonymized ids. See [`results/SYNTHESIS.md`](../results/SYNTHESIS.md).
+Across the 17-representation pilot sweep, open-model probes often recover linearly decodable signal
+that open-model output does not surface. Frontier output is measured separately, so this is not a
+same-model frontier encoding claim. The output differences are associated with a capability-dependent
+mix of token familiarity/reasoning and mapping documentation.
+The strongest matched comparisons are methylation vs MSA
+(similar task shape, strong probe results, opposite output), and single-cell with gene names vs
+anonymized ids. These comparisons support the multi-factor account but do not isolate one cause. See
+[`results/SYNTHESIS.md`](../results/SYNTHESIS.md).
 
 ## Capability x web-exposure: the interaction
 
-The web-exposure law leaves a question: does a bigger or newer model close the gap? We measured it
+The observed web-exposure effect leaves a question: does a bigger or newer model close the gap? We measured it
 cleanly on single-cell classification. Each cell becomes a cell-sentence (its top genes), presented
 two ways: real **gene names** (web-documented) or **global-consistent anonymized ids** (the same
 expression vector, only the human-readable name removed, so a specialist still separates the classes
@@ -26,24 +29,20 @@ at CV-AUROC ~0.99). We ran a within-family capacity ladder (Haiku 4.5 -> Sonnet 
 GPT-4o, on two substrates chosen to need the symbol -> cell-type prior rather than one marker:
 CD8-T vs NK and CD14+ vs CD16+ monocyte.
 
-The result (figure `interaction.png`, n=200/model, 95% bootstrap CI) is a clean interaction on both
+The result (figure `interaction.png`, n=200/model, 95% bootstrap CI) is an interaction on both
 substrates:
 
 - The **gene-name** AUROC rises monotonically with capability: CD8-T/NK 0.826 -> 0.871 -> 0.978;
   monocyte 0.763 -> 0.929 -> 0.983, Opus near the specialist ceiling.
 - The **anon** AUROC stays pinned at chance at every tier, even Opus (CIs straddle 0.5).
-- The gap widens with capability. Web-exposure and capability **multiply**: capability is the engine,
-  web-exposure is the fuel. A bigger engine goes further only where there is fuel; with the names
-  removed, no capability tier moves off chance.
+- The gap widens with capability in this panel; with the names removed, no tested tier moves off
+  chance.
 
-The anon arm is also the confound control. If Opus's name gain were just "a bigger or more recent
-training corpus," a more capable model would also do better on anon (it is a better pattern-finder).
-But Opus is at chance on anon. So the gain is specifically reading web-documented symbols, not generic
-capacity, and the specialist's ~0.99 shows the discriminative information is in the vector the whole
-time. A direct three-arm probe on an open model (Qwen2.5-0.5B) confirms this on the model's own
-activations: it encodes the cell type near the ceiling (activation 0.947 on names) while verbalizing
-at chance (output 0.461), the encode-greater-than-verbalize gap on the same substrate. Provider-
-invariant: GPT-4o sits on the same curve.
+The anon arm shows that readable gene symbols matter, but it does not separate documentation from
+token familiarity and reasoning. A later marker-depleted control found that the relative contribution
+changes with capability: stronger models retained more performance from familiar but less canonical
+gene sets. A direct three-arm open-model probe (Qwen2.5-0.5B) supplies same-model pilot evidence on its
+own activations and output; the frontier ladder remains output-only.
 
 ## The permissioning lever
 
@@ -56,17 +55,16 @@ Self-confidence is **capability-dependent, and that is the problem**. The well-c
 their confidence on anon (Opus 0.25 -> 0.03, Sonnet 0.22 -> 0.07): they know they are guessing, so
 confidence routing works for them. But Haiku is equally confident on anon (0.35 -> 0.35) and GPT-4o is
 more confident (0.16 -> 0.22): confidently wrong, so confidence routing collapses to ~chance
-(accuracy at 50% coverage 0.54 / 0.56). The **a-priori tag is uniformly safe** (accuracy at 50%
-coverage 0.75 to 0.82; AURC wins or ties for every model), because deferring a web-zero input needs no
-model call and never depends on the model knowing its own limits.
+(accuracy at 50% coverage 0.54 / 0.56). In this panel, the **a-priori tag is competitive** (accuracy
+at 50% coverage 0.75 to 0.82; AURC wins or ties for the tested models). This is a pilot result, not a
+model-invariant guarantee.
 
 ## Why it matters
 
-The conclusion is a calibrated-permissioning rule for biological AI: you can decide, before any model
-call, whether to trust a frontier model on a given representation, from how web-documented that
-representation -> property mapping is. It is computable a priori and model-invariant, whereas the
-model's self-report is unreliable in a way that is itself unpredictable across models. The one-line
-prescription: **do not ask the model, look at web-exposure.**
+The practical conclusion is to use input-derived tags as one prior in a calibrated routing policy.
+They do not replace model confidence, real specialist predictions, or deployment-specific validation.
+The per-item study remains the binding result: routed accuracy is 0.81 versus a 0.91 oracle, and the
+best thresholds call specialists on most items.
 
 ## Scope and relation to prior work
 
@@ -75,6 +73,5 @@ capacity axis; the open-weight 8B foot of the curve is in `SYNTHESIS.md`. The in
 biology-domain, encoded-equal-by-construction version of a known natural-language phenomenon: accuracy
 tracks pretraining frequency and scale helps the head but not the tail (Kandpal et al. 2023; Mallen et
 al. 2023). The gene-name-vs-anonymized control has an encoder-side precedent (Mahbub et al. 2025); the
-a-priori-tag-vs-self-confidence comparison, framed as biosafety permissioning, is the piece this adds,
-and it refines the finding that confidence can beat input-difficulty for abstention (true here only for
-the well-calibrated models, while the a-priori signal is robust by construction).
+a-priori-tag-vs-self-confidence comparison is the piece this adds, and it refines the finding that
+confidence can beat input difficulty for abstention in some models.

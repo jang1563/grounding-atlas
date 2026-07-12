@@ -5,19 +5,16 @@ sibling `.json` / `.jsonl` are the machine-readable data behind it, and `.png`
 are figures. **Start with [`SYNTHESIS.md`](SYNTHESIS.md)** — it ties all 17
 representation rungs and the calibration axis into one map and one figure.
 
-The one-line result: *LLMs **encode** far more biology than they **verbalize**;
-what sets the gap between the two is not the modality but a capability-dependent mix
-of token-familiarity/reasoning and mapping-documentation (the a-priori web-exposure
-tag is a strong predictor of the floor, not a single law); and because frontier
-models are calibrated about this, the same a-priori map that predicts the failure
-also tells an orchestrator when to trust the model and when to reach for a tool.*
+The one-line result: *open-model probes and model output reveal representation-dependent
+grounding gaps; token familiarity, reasoning, and mapping documentation contribute differently by
+model and task; and calibrated routing helps but remains below the measured per-item oracle.*
 
 ![Two-axis decomposition of the grounding gap](synthesis_figure.png)
 
 ## Start here
 | File | What it shows |
 |---|---|
-| [`SYNTHESIS.md`](SYNTHESIS.md) | the descriptive law of grounding and the orchestrator it prescribes (master table, 17 representations) |
+| [`SYNTHESIS.md`](SYNTHESIS.md) | the 17-representation research sweep, evidence scope, and routing implications |
 | `synthesis_figure.png` / `synthesis_figure_hires.png` | the two-axis (encoding gap vs verbalization gap) core figure |
 
 ## WS1 — the instrument (encode vs verbalize)
@@ -32,7 +29,7 @@ also tells an orchestrator when to trust the model and when to reach for a tool.
 ## Per-modality rungs (the representation ladder)
 | File | What it shows |
 |---|---|
-| [`msa_rung.md`](msa_rung.md) | MSA column conservation: positive control for the two-factor law |
+| [`msa_rung.md`](msa_rung.md) | MSA column conservation: positive control for the multi-factor account |
 | [`dna_promoter.md`](dna_promoter.md) | DNA/RNA promoter 3-arm |
 | [`methylation_rung.md`](methylation_rung.md) | a web-zero numeric vector is encoded but not verbalized |
 | [`single_cell_rung.md`](single_cell_rung.md) | the cleanest web-exposure result (gene-name vs anonymized ids) |
@@ -57,17 +54,17 @@ also tells an orchestrator when to trust the model and when to reach for a tool.
 | [`computable_property_row.md`](computable_property_row.md) | the execution axis: computable properties are snap-impossible but reasoning-solvable |
 | `computable_scale_sweep.json`, `output_arm_computable_*.json` | scale sweep and per-property computable output-arm data |
 
-## Web-exposure law and generality
+## Web-exposure effects and generality
 | File | What it shows |
 |---|---|
 | [`p1_webexposure.md`](p1_webexposure.md) | the cross-modality regression is mis-specified; the within-entity contrast is the valid test |
-| [`generality_panel.md`](generality_panel.md) | the web-exposure law across seven science domains |
-| [`generality_materials.md`](generality_materials.md) | the law holds outside biology (materials science) |
+| [`generality_panel.md`](generality_panel.md) | web-exposure-associated output differences across seven science domains |
+| [`generality_materials.md`](generality_materials.md) | one matched materials-science comparison outside biology |
 
 ## WS3 — calibration, routing, and the placement map
 | File | What it shows |
 |---|---|
-| [`calibration_routing.md`](calibration_routing.md) | frontier Claude is a calibrated router; calibration grows with scale |
+| [`calibration_routing.md`](calibration_routing.md) | pilot task-level calibration and routing results across three model scales |
 | [`decision_map_placement.md`](decision_map_placement.md) | where each capability should live: train / retrieve / orchestrate |
 | [`ws3_lora.md`](ws3_lora.md) | weights PoC: does LoRA close the hERG expression gap in output |
 | [`withdrawn_endpoint.md`](withdrawn_endpoint.md) | the decision-map circularity-breaker (drug market-withdrawal) |

@@ -1,6 +1,6 @@
 # Histopathology rung: the largest expression gap, in a vision model
 
-*Results. 2026-06-12. `eval/activation_arm_histo.py`, data `signal/histo/pcam.csv` (PatchCamelyon, 400 balanced 96x96 H&E patches, tumor vs normal). Open-VLM 3-arm: Qwen2.5-VL-7B. ceiling = cheap color-feature classifier (per-channel statistics), with the real pathology FM CONCH ~0.9 as reference; activation = VLM hidden-state probe on the patch; output = VLM verbalized P(tumor). No em dashes.*
+*Results. 2026-06-12. `eval/activation_arm_histo.py`, data `signal/histo/pcam.csv` (PatchCamelyon, 400 balanced 96x96 H&E patches, tumor vs normal). Open-VLM 3-arm: Qwen2.5-VL-7B. ceiling = cheap color-feature classifier (per-channel statistics), with the real pathology FM CONCH ~0.9 as reference; activation = VLM hidden-state probe on the patch; output = VLM verbalized P(tumor).*
 
 ## Result
 

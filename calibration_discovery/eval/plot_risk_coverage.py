@@ -11,7 +11,7 @@ coordinates. Pools the 8 rungs for opus and plots:
   - the selective-accuracy point at 50% coverage
 
 Outputs results/risk_coverage.png (+ _hires) and results/risk_coverage.svg. Mirrors the
-eval/make_synthesis_figure.py convention. No API calls. No em dashes.
+eval/make_synthesis_figure.py convention. No API calls.
 
 Run: PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/plot_risk_coverage.py
 """

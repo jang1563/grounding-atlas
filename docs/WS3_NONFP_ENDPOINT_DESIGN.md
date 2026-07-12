@@ -1,6 +1,6 @@
 # WS3 experiment #4 design: a non-fingerprint-local endpoint (break the decision-map circularity)
 
-*Design doc. 2026-06-11. Status: ENDPOINT RESOLVED to drug market-WITHDRAWAL (done); step-3 generalization gating sweep showed fingerprint-weak knowledge endpoints are RARE. Addresses the deep review's sharpest structural objection to the decision map. No em dashes.*
+*Design doc. 2026-06-11. Status: ENDPOINT RESOLVED to drug market-WITHDRAWAL (done); step-3 generalization gating sweep showed fingerprint-weak knowledge endpoints are RARE. Addresses the deep review's sharpest structural objection to the decision map.*
 
 ## Gating sweep for a SECOND knowledge endpoint (step 3): fingerprint-weak knowledge endpoints are rare
 

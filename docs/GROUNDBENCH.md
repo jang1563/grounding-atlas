@@ -1,10 +1,11 @@
 # GroundBench: evaluate your model
 
 GroundBench measures whether a language (or vision-language) model can **verbalize a property from a
-specialist representation** it is shown, across 23 tasks in 9 modalities. It is a GPU-free output-arm
+specialist representation** it is shown, across 24 tasks in 9 modalities. It is a GPU-free output-arm
 benchmark: one versioned prompt per task, fixed decode, raw outputs saved, every metric with a bootstrap
 CI, and **no single-number reduction**. Each task carries an a-priori `web-exposure` tag (`rich` / `zero`
-/ `mixed`) that predicts, before any model call, whether the model should ground or defer to a specialist.
+/ `mixed`) that can seed a routing policy. It is a measured prior, not a guarantee that a model should
+answer or defer on an individual item.
 
 The contract for the task schema, adding a task, and the mandatory orientation audit is
 [`GROUNDBENCH_SPEC.md`](GROUNDBENCH_SPEC.md). This file is the how-to-run.
@@ -22,7 +23,7 @@ export OPENAI_API_KEY=...           # for --model gpt-* / o1-* / o3-*
 export OPENAI_BASE_URL=http://localhost:8000/v1   # then --model oai:<served-name>
 
 # 3. Run (writes results/benchmark/<model>/ and updates LEADERBOARD.md)
-python eval/run_grounding_eval.py --model claude-opus-4-8            # full CORE set (23 tasks)
+python eval/run_grounding_eval.py --model claude-opus-4-8            # full CORE set (24 tasks)
 python eval/run_grounding_eval.py --model gpt-4o --tasks admet/herg,single_cell/cd8t_nk:name --n 100
 python eval/run_grounding_eval.py --dry-run                          # validate the pipeline, no API
 ```

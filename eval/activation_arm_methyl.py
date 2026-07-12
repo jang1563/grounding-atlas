@@ -8,7 +8,7 @@ beta vector (the cheap clock); activation = Qwen3-8B hidden-state probe on the b
 output = 8B verbalized age estimate. Prediction: ceiling high, activation + output at chance
 (encoding-limited), mirroring single-cell-anon. Contrast: single-cell with gene NAMES grounds,
 methylation probe values do not. Data: signal/methyl/methyl_age.csv. Env: ACT_MODEL, ACT_N,
-ACT_K (probes shown to the LLM). No em dashes.
+ACT_K (probes shown to the LLM).
 """
 import csv
 import os

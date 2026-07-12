@@ -13,19 +13,24 @@ specialist — and *when does post-training actually earn its place?*
 
 ## What we measured (GroundBench)
 
-Across 23 tasks / 9 modalities / 3 frontier models, with a cheap-specialist ceiling, an open-weight
-probe, and the model's verbalized output:
+Across 24 tasks / 9 modalities / 3 frontier models in GroundBench, plus related open-weight probing
+studies and cheap-specialist baselines:
 
-- **The verbalization gap is real and large** — open models encode a property near the specialist
-  ceiling while verbalizing it near chance.
-- **But its mechanism is not a single "web-exposure law."** A controlled experiment (drop the textbook
+- **The open-model probe/output gap is real in the tested cells** — a property can be linearly
+  decodable from an open model's hidden states while its own output remains weak.
+- **Its mechanism is not a single-factor web-exposure account.** A matched experiment (drop the textbook
   cell-type markers but keep real gene names) decomposes the gap into **token-familiarity / reasoning**
   and **mapping-documentation**, in a **capability-dependent mix**: the token-familiarity share rises
   monotonically with capability (Haiku 0.32 < Sonnet 0.49 < Opus 0.80). Weaker models recall documented
   markers; the frontier reasons over any familiar tokens. The effect is real; the mechanism is the
   correction.
-- **An LLM cannot read a raw SFM embedding in-context** (prompt-pasted ESM-2 → chance, even few-shot),
+- **Models in this panel did not read a raw SFM embedding in-context** (prompt-pasted ESM-2 → chance,
+  even few-shot),
   while a **trained read-out head** reads it. The interface, not the information, is the bottleneck.
+
+The evidence streams must not be merged: hidden-state encoding probes use open-weight models, whereas
+frontier models contribute output and routing measurements. This project does not yet establish a
+same-model encode-plus-verbalize result for the frontier models on the leaderboard.
 
 ## The landscape (what the literature shows)
 
@@ -56,10 +61,10 @@ avoid them: probes are **not** truer than the model's output (the probing-classi
 universal best elicitation.
 
 Two clean distinctions fall out:
-- **Train a thin interface vs retrain the model.** Training a *bridge / read-out head* (a small
-  projection) **wins** for cross-modal access — this is our "orchestrate via a trained head." Fine-tuning
-  the *model's weights* (DPO / full FT) **loses** to external steering in low-data. "Train wins nowhere"
-  is precise *for in-weight* training; a learned *interface* is a different, winning lever.
+- **Train a thin interface vs retrain the model.** A *bridge / read-out head* can recover cross-modal
+  signal. In the measured low-data and discriminative cells, external steering or a specialist head
+  matched or exceeded in-weight adaptation. This finding is scoped to those cells; it is not a universal
+  claim that weight updates never win.
 - **The effect is settled; the mechanism and the trust are not.**
 
 ## The white space (our angle)
@@ -72,8 +77,8 @@ Nobody has, in one place:
 3. added **calibrated permissioning** to the interface — *when should we trust the bridge's read versus
    defer to the specialist?*
 
-The first two are method hygiene. The third is exactly our strength: GroundBench already shows the
-a-priori, input-derived signal beats the model's self-confidence for deciding when to trust. So our
+The first two are method hygiene. The third is exactly our strength: GroundBench shows that the
+a-priori, input-derived tag is a competitive routing prior alongside model confidence. So our
 contribution is **not a new bridge — it is the measurement / routing / calibration layer on top of one.**
 
 ## What the layer-localization found
@@ -111,7 +116,7 @@ We then ran the forward experiment. On one shared frozen molecular-FM embedding 
 endpoints) and one held-out test set, we put all three placements side by side - a learned LLM x SFM
 BRIDGE (the embedding enters the frozen LLM as a soft-prompt and it verbalizes the answer), EXTERNAL
 ORCHESTRATION (a trained read-out head, LLM untouched), and IN-WEIGHT LoRA - with refutation paths
-pre-committed to overturn "route, don't train" ([docs/BRIDGE_3WAY_PREREG.md](BRIDGE_3WAY_PREREG.md)). v1
+pre-committed to test the orchestrate-first prior ([docs/BRIDGE_3WAY_PREREG.md](BRIDGE_3WAY_PREREG.md)). v1
 (Qwen3-8B, hERG):
 
 - **Within-property: orchestrate (head) 0.89 > bridge 0.85 > in-weight LoRA 0.73.** The decisive control:
@@ -124,9 +129,9 @@ pre-committed to overturn "route, don't train" ([docs/BRIDGE_3WAY_PREREG.md](BRI
   cross-property floor. Reading the SFM is a property-specific skill, not a general one - for every
   placement.
 
-So the fair test we built to overturn "route, don't train" came down on confirm: the closed-weight-
-friendly thin head on the open SFM is the best placement, the in-language bridge and in-weight
-fine-tuning do not earn their extra machinery, and no placement generalizes the read across properties.
+In this v1 cell, the closed-weight-friendly thin head on the open SFM is the best placement; the
+in-language bridge and in-weight fine-tuning do not earn their extra machinery, and no placement
+generalizes the read across properties.
 (v1 caveats: paired-difference CIs and a pretraining-naive embedding control are the v2 pass; one model,
 one endpoint, one fold.)
 
@@ -155,9 +160,9 @@ delivering 500 designs:
   stable (training reward 0.06 -> 0.62, KL-to-base bounded), and the headline is generative-design
   oracle-success, not a discriminator AUROC.
 
-So the post-training RL environment is buildable and the reward produces real oracle-confirmed design
-gains - but internalizing the reward into the weights ties externally selecting it from the frozen
-model. "Route, don't train" EXTENDS from the discriminative read-out to the generative/RL lever.
+The post-training RL environment is buildable and the reward produces oracle-confirmed design gains.
+At this matched moderate budget, internalizing the reward into the weights ties externally selecting
+from the frozen model. The result is specific to this regime.
 
 The tie is robust (v2): it holds across three RL seeds (arm A 0.024-0.038, pooled (A-B) = -0.007, CI
 [-0.054, +0.031]), in a degraded low-data-reward cell (arm A 0.048 vs guidance 0.028, (A-B) = +0.020,
@@ -176,16 +181,15 @@ beyond guidance's frozen-model ceiling, with drug-like, legit-hERG-blocker-chemo
 collapse or obvious gaming: arm A's output stays as drug-like as real hERG molecules, and its passers
 match guidance's passers' profile). But the effect is seed-VARIABLE (0.047-0.170; seed 0's 0.170 was a
 high outlier) and its CI lower bound (0.026) just misses the pre-registered 0.03 overturn margin - so it
-is INDETERMINATE by the prereg rule, at high drift (KL ~8). So route-don't-train holds at moderate budget
-(Q <= 5000, confirmed 6 ways), while the HIGH-budget regime shows a real but modest, sub-threshold RL edge -
-the one place in the program where training the weights may pull ahead. A bias arbitration
+is INDETERMINATE by the prereg rule, at high drift (KL ~8). Moderate-budget cells do not separate the
+arms (Q <= 5000), while the HIGH-budget regime shows a modest, sub-threshold RL edge. A bias arbitration
 ([../results/benchmark/rl_env/budget_sweep.md](../results/benchmark/rl_env/budget_sweep.md)) then RULES OUT
 the shared-2D-Morgan-feature mechanism (the edge survives an independent physchem+MACCS oracle at the
 expected magnitude) and gaming (drug-like, legit hERG-blocker chemotype, in-domain), leaving only the
 shared-LABEL-lineage residual un-testable (no independent external hERG labels - TDC hERG_Karim overlaps
 8.5% - and docking blocked + weak for hERG). So the high-budget edge is most consistent with a real, modest
-advantage that survived every feasible independence check - a genuine, honestly-bounded caveat to
-"route, don't train", not an artifact.
+advantage after the feasible checks, with shared-label-lineage dependence still unresolved. It is a
+bounded, budget-dependent result rather than a universal placement verdict.
 
 ## What we'd do next
 
@@ -193,7 +197,7 @@ Both experiments are run. The open threads are v2 rigor on the bridge result (pa
 pretraining-naive embedding control to rule out the molecular FM having already seen the property, and
 the cross-architecture / cross-endpoint matrix) and, if the bridge's dead-weight finding holds, leaning
 the whole program toward the measurement and routing layer it implies: a calibrated router over a frozen
-specialist, since training the read into the model (bridge or LoRA) buys nothing here.
+specialist, while continuing to test the regimes where in-weight adaptation may add value.
 
 ## Reading list
 

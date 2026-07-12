@@ -372,7 +372,8 @@ CONFIRMS_GAMING (shared reward-oracle bias; stand the sub-threshold edge down to
     those same scaffolds dock significantly WORSE than known actives (two ML models agree, physics
     disagrees).
 
-INCONCLUSIVE / INDETERMINATE (route-don't-train HOLDS; effect stays "real but modest, sub-threshold").
+INCONCLUSIVE / INDETERMINATE (moderate-budget tie remains; high-budget effect stays modest and
+sub-threshold).
 Any of:
   - The primary arbiter fails ANY self-validation gate: AUROC < 0.70, OR EF1%/BEDROC below floor, OR
     effect-scaled MDE > 0.064 (under-powered by construction), OR the independence probe fails

@@ -1,6 +1,6 @@
 # T2 (apply): does T1 grounding transfer downstream, solo vs orchestrate
 
-*Results section. 2026-06-10. Instrument: `eval/t2_apply.py` (reproducible, no GPU/API) over `signal/admet/*/verifiability.json` (WS2 ceilings) and the measured 3-arm anchors (`head_to_head.md` R2, `../PROJECT_DESIGN.md` 7.2). No em dashes.*
+*Results section. 2026-06-10. Instrument: `eval/t2_apply.py` (reproducible, no GPU/API) over `signal/admet/*/verifiability.json` (WS2 ceilings) and the measured 3-arm anchors (`head_to_head.md` R2, `../PROJECT_DESIGN.md` 7.2).*
 
 ## What this is
 

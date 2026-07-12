@@ -1,6 +1,6 @@
 # Generality probe: the web-exposure law holds outside biology (materials science)
 
-*Results. 2026-06-12. `eval/frontier_output_panel.py` (mat_formula / mat_anon), data `signal/materials/metal.csv` (matminer matbench_expt_is_metal, 4921 compounds, metal vs non-metal). A single non-bio control rung testing whether the web-exposure law is biology-specific or general. No em dashes.*
+*Results. 2026-06-12. `eval/frontier_output_panel.py` (mat_formula / mat_anon), data `signal/materials/metal.csv` (matminer matbench_expt_is_metal, 4921 compounds, metal vs non-metal). A single non-bio control rung testing whether the web-exposure law is biology-specific or general.*
 
 ## The test
 

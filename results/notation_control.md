@@ -1,6 +1,6 @@
 # T2-solve grounding control: canonical vs randomized vs scrambled SMILES
 
-*Results section. 2026-06-11. Instrument: `eval/notation_control.py` (balanced signal-bearing set, self-generated notations, bootstrap CIs). Addresses the reviewer objection that the R3 "reads it" could be canonical-string memorization rather than structure reading. No em dashes.*
+*Results section. 2026-06-11. Instrument: `eval/notation_control.py` (balanced signal-bearing set, self-generated notations, bootstrap CIs). Addresses the reviewer objection that the R3 "reads it" could be canonical-string memorization rather than structure reading.*
 
 ## The test
 

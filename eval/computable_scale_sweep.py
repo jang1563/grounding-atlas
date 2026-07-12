@@ -10,7 +10,7 @@ This is the computable analog of the DNA-closes / spectra-invariant split in 7.3
 Baseline prompt (NO pKa supplied): we already know constants help pI (bridge_test_pi.py); here we
 ask whether SCALE ALONE helps. Uniform N + token budget + truncation guard across models, so the
 curve is clean. Reuses output_arm_computable helpers. Writes results/computable_scale_sweep.json.
-No em dashes. Env: CSW_N (10), CSW_MAXTOK (4000), CSW_MODELS, CSW_PROPS, CSW_DRY.
+ Env: CSW_N (10), CSW_MAXTOK (4000), CSW_MODELS, CSW_PROPS, CSW_DRY.
 """
 import json
 import os

@@ -14,7 +14,7 @@ Two arms on rendered hERG molecules:
 
 Run: python eval/ws3_image.py
 Env: IMG_N (balanced total, default 120), IMG_MODEL (default claude-sonnet-4-6), IMG_DRY.
-No em dashes.
+
 """
 import base64
 import json

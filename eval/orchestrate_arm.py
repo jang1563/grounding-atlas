@@ -11,7 +11,7 @@ Per docs/BRIDGE_3WAY_PREREG.md Section 5 (Arm B) + Section 3 (H2):
   (transfer - floor) / (in_property - floor); in_property = a head trained on the held-out endpoint's
   OWN train split, scored on the SAME test items (no estimator mismatch).
 Writes results/orchestrate_arm.json and the shared signal/admet/folds/lpo_herg_clearance.json (test_ids
-all GPU arms must reuse). CPU only. No em dashes.
+all GPU arms must reuse). CPU only.
 """
 import json
 import os

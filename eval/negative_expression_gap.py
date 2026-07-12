@@ -16,7 +16,7 @@ whether the over-call is asymmetric (inactive->active >> active->inactive).
               per model (haiku vs opus = scale curve)
 
 Data: NegResultDB admet.db, compound-level (any fail -> active=1, else inactive=0), best tier per
-compound. set ANTHROPIC_API_KEY in the environment. No em dashes.
+compound. set ANTHROPIC_API_KEY in the environment.
 """
 import json
 import os
