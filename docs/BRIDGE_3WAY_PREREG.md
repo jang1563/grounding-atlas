@@ -10,7 +10,7 @@ the order of execution.
 
 Companion docs: `docs/LAYER_LOCALIZATION_PREREG.md` (the warm-up that fixes the per-model attach
 layer + the H3 routing edge), `decision_map/DECISION_MAP.md` (the "route, don't train" prior this
-experiment must fairly test), `internal/PRELIMINARY_DATA.md` (the killed lit over-claims).
+experiment must fairly test), and `docs/RESEARCH_PERSPECTIVE.md` (the evidence-scoped interpretation).
 
 ---
 
