@@ -7,7 +7,7 @@ closes it). A named that the cheap featurizer cannot even read (best_cold < 0.6)
 blind: the signal is not in the text, it lives only in the LLM's pretrained web-memory of that
 name (so the LLM-output arm can be high while the gate is at chance, e.g. PPI 0.95 vs 0.50).
 
-Reuses featurizers + gate() from gate_multimodal. No em dashes.
+Reuses featurizers + gate() from gate_multimodal.
 """
 import csv
 import os

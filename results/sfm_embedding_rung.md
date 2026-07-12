@@ -3,7 +3,7 @@
 *2026-06-13. The orchestrate-condition input (PROJECT_DESIGN 7.3 confound 2, 7.4 "widest-open, no
 behavioral baseline"). Capability-neutral: ESM-2 embeddings of Meltome proteins -> thermostability.
 Code: `eval/sfm_embed_meltome.py` (stage 1, embeddings + ceiling), `eval/sfm_embedding_output.py`
-(stage 2, LLM arms). No em dashes.*
+(stage 2, LLM arms).*
 
 ## Question
 

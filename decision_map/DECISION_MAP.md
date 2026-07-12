@@ -1,6 +1,6 @@
 # WS3 decision map: first point (hERG)
 
-*2026-06-10, revised 2026-06-11 after an adversarial review added the mandatory no-LLM baseline. The WS3 deliverable (`../PROJECT_DESIGN.md` WS3): per capability, which placement gives the answer, weights vs retrieve vs orchestrate, and whether the LLM is even the right tool. PoC scripts: `../eval/ws3_retrieve.py` (retrieve arm + baseline), `../eval/activation_arm.py` (read-out/weights arm), `../eval/ws3_image.py` (image corner), `../signal/admet/herg` (specialist ceiling). All AUROC at n=120 to 200, so 95 percent CIs are roughly +/-0.08 to +/-0.10; treat sub-0.08 differences as ties. No em dashes.*
+*2026-06-10, revised 2026-06-11 after an adversarial review added the mandatory no-LLM baseline. The WS3 deliverable (`../PROJECT_DESIGN.md` WS3): per capability, which placement gives the answer, weights vs retrieve vs orchestrate, and whether the LLM is even the right tool. PoC scripts: `../eval/ws3_retrieve.py` (retrieve arm + baseline), `../eval/activation_arm.py` (read-out/weights arm), `../eval/ws3_image.py` (image corner), `../signal/admet/herg` (specialist ceiling). All AUROC at n=120 to 200, so 95 percent CIs are roughly +/-0.08 to +/-0.10; treat sub-0.08 differences as ties.*
 
 ## The question
 

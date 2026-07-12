@@ -19,7 +19,7 @@ strong-negative corr, which is the generic-axis hypothesis, NOT its refutation. 
 discriminator is |ctrl-0.5| small, not self-ctrl large. The observed 0.60 / 0.38 / -0.48 is
 CONFOUNDED, so property-specificity is NOT established; a control orthogonal to lipophilicity
 is needed. Same SYSTEM bare-number protocol as output_arm_admet.py;
-3 conditions concurrent; bootstrap CI on the AUROCs. No em dashes.
+3 conditions concurrent; bootstrap CI on the AUROCs.
 Run on Cayuga: NOTE_N (default 300), PS_MODEL. Needs anthropic + sklearn + scipy(optional).
 """
 import json

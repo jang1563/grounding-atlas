@@ -7,7 +7,7 @@ cross-architecture H1 check, and the single-cell web-exposure layer-shift. Pre-r
   H2  EXCESS gap (raw_gap - msa positive-control floor) >= +0.15 AND selectivity >= +0.15
       AND (dna) GC-residualized margin >= +0.10
   H3  probe AURC < output AURC (better routing) AND probe ECE <= 0.15
-No em dashes. Usage: python analyze_layerloc.py [results/benchmark/layerloc]
+Usage: python analyze_layerloc.py [results/benchmark/layerloc]
 """
 import glob
 import json

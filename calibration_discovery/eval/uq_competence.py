@@ -4,7 +4,7 @@
 Reuses per_item_router.py (aligned per-item model pred/conf + real specialist proba) and
 adds the specialist's per-input uncertainty U = 1 - 2|p - 0.5| (ambiguity). Tests, honestly,
 whether routing on {model conf, U} beats always-call-the-specialist toward the per-item
-oracle. No API calls. No em dashes.
+oracle. No API calls.
 
 Run:  PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/uq_competence.py
 """

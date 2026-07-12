@@ -1,6 +1,6 @@
 # Negative-class expression gap (B, the non-overlapping cell)
 
-*2026-06-13. The one piece of "B" (verifiable-negative signal) that does NOT overlap NullAtlas: apply the 3-arm grounding instrument to the NEGATIVE class. NullAtlas owns the data (32.8M confirmed negatives), the ML/JEPA/RL signal, the L4 LLM-discrimination benchmark, and even the negative web-exposure gradient. The only thing it does not do is decompose the LLM's negative-handling into encode-vs-verbalize. That is this cell. No em dashes.*
+*2026-06-13. The one piece of "B" (verifiable-negative signal) that does NOT overlap NullAtlas: apply the 3-arm grounding instrument to the NEGATIVE class. NullAtlas owns the data (32.8M confirmed negatives), the ML/JEPA/RL signal, the L4 LLM-discrimination benchmark, and even the negative web-exposure gradient. The only thing it does not do is decompose the LLM's negative-handling into encode-vs-verbalize. That is this cell.*
 
 ## Question
 

@@ -1,6 +1,6 @@
 # AlphaGenome ceiling: a regulatory rung with a strong specialist, and a new orchestrate target
 
-*Design doc, 2026-06-14. Replaces the weak 6-mer ceiling of the DNA-promoter rung with AlphaGenome (Cheng et al, Nature 2025), a unified regulatory-variant-effect predictor, and adds AlphaGenome to the orchestrate arm of the decision map. Tests whether the LLM ENCODES regulatory grammar or only NAMES web-documented eQTLs. No em dashes.*
+*Design doc, 2026-06-14. Replaces the weak 6-mer ceiling of the DNA-promoter rung with AlphaGenome (Cheng et al, Nature 2025), a unified regulatory-variant-effect predictor, and adds AlphaGenome to the orchestrate arm of the decision map. Tests whether the LLM ENCODES regulatory grammar or only NAMES web-documented eQTLs.*
 
 ## The question
 

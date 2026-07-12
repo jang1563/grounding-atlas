@@ -1,6 +1,6 @@
 # Modality landscape for the next grounding rung (deep-research synthesis)
 
-*2026-06-12. Synthesized from a 5-angle deep-research sweep (25 primary sources, 121 extracted claims). NOTE: the workflow's adversarial verifier was rate-limited mid-run, so only 1 claim was 3-vote-confirmed and the rest are SOURCE-EXTRACTED (primary source + quote) but not adversarially re-verified; treat the unstarred claims as well-sourced-but-unverified and re-check before external use. 2026 arXiv IDs flagged. Scoping: Perturb-seq CAUSAL grounding is the sibling CausalAtlas project, EXCLUDED; single-cell DESCRIPTIVE grounding is in scope. No em dashes.*
+*2026-06-12. Synthesized from a 5-angle deep-research sweep (25 primary sources, 121 extracted claims). NOTE: the workflow's adversarial verifier was rate-limited mid-run, so only 1 claim was 3-vote-confirmed and the rest are SOURCE-EXTRACTED (primary source + quote) but not adversarially re-verified; treat the unstarred claims as well-sourced-but-unverified and re-check before external use. 2026 arXiv IDs flagged. Scoping: Perturb-seq CAUSAL grounding is the sibling CausalAtlas project, EXCLUDED; single-cell DESCRIPTIVE grounding is in scope.*
 
 ## TL;DR ranked shortlist (next rungs)
 

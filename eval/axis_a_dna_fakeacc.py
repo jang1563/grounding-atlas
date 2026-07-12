@@ -12,7 +12,7 @@ Result (claude-sonnet-4-6, n=40): 0/40 confabulation = the 0.60 is genuine recog
 real accession-to-gene mappings, not blind famous-gene guessing. (It remains "memorization
 of famous accessions," which IS recognition; this does not by itself test a frequency LAW.)
 
-Run: python3 eval/axis_a_dna_fakeacc.py   Env: AXISA_MODEL. No em dashes.
+Run: python3 eval/axis_a_dna_fakeacc.py   Env: AXISA_MODEL.
 """
 import json
 import os

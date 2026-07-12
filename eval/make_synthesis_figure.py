@@ -1,7 +1,7 @@
 """Core synthesis figure (premium, intuitive). Every rung on (encoding gap, verbalization gap),
 colored by what CLOSES the gap. Auto-placed labels (adjustText) remove overlap; leader lines stop
 before the text. Legend sits in the empty upper-right. Plain-language axes and regions for a
-non-specialist reader. ASCII arrows (font-safe). Standard + hi-res PNG. No em dashes."""
+non-specialist reader. ASCII arrows (font-safe). Standard + hi-res PNG."""
 import os
 
 import matplotlib

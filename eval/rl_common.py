@@ -1,7 +1,7 @@
 """Experiment-3 (RL_ENV_PREREG) shared arm machinery. Builds the block-R REWARD and the block-O
 ORACLE FRESH (so every arm uses one sklearn version, no cross-version pickle), loads the frozen
 generator, and scores designs. Imported by rl_guidance.py (arm B), rl_ppo.py (arm A),
-rl_arm_d_sft.py (arm D), compare_rl_orchestrate.py. No em dashes.
+rl_arm_d_sft.py (arm D), compare_rl_orchestrate.py.
 """
 import json
 import os

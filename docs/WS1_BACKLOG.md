@@ -1,6 +1,6 @@
 # WS1 Backlog: maturity and what more to do
 
-*2026-06-09. Companion to `FAILURE_MODES.md` and `../PROJECT_DESIGN.md` section 7. No em dashes.*
+*2026-06-09. Companion to `FAILURE_MODES.md` and `../PROJECT_DESIGN.md` section 7.*
 
 ## Maturity read: findings solid, eval coverage uneven
 

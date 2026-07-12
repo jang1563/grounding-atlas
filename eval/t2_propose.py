@@ -16,7 +16,7 @@ proposal P(inhibitor). Reference points: the probe's mean P on the WS2 actives (
 and inactives (label-0), so the proposals' active-rate is read against the base rates.
 
 Run: python eval/t2_propose.py  (rdkit+sklearn+anthropic)
-Env: PROP_MODEL (default claude-sonnet-4-6), PROP_K (default 15), PROP_DRY. No em dashes.
+Env: PROP_MODEL (default claude-sonnet-4-6), PROP_K (default 15), PROP_DRY.
 """
 import json
 import os

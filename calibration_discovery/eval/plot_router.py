@@ -5,7 +5,7 @@ always-model (floor) to the per-item oracle (ceiling), with the policies marked 
 the model's own binary DEFER, CONF-route (recommended), and always-specialist. The story: cheap
 specialists dominate the solo LLM, CONF-routing reduces to almost-always-call-the-specialist, and a
 real gap to the oracle remains because confidence cannot flag the items where the LLM beats the
-specialist. Lollipop/dot layout (non-zero x-axis is honest here, no bars-from-zero). No em dashes.
+specialist. Lollipop/dot layout (non-zero x-axis is honest here, no bars-from-zero).
 
 Run: PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/plot_router.py
 """

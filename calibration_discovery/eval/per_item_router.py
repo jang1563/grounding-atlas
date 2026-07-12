@@ -10,7 +10,7 @@ variant) and ask the per-item question: does routing on the model's own continuo
 binary DEFER.
 
 No API calls: the model's per-item PRED/CONF/ROUTE are read from results/per_item.csv (v1 run),
-the specialist is computed here, and the two are aligned by load() order (same seed/N). No em dashes.
+the specialist is computed here, and the two are aligned by load() order (same seed/N).
 """
 import csv
 import json

@@ -1,6 +1,6 @@
 # Axis A (identity resolution), chemistry: the within-entity recognition gap
 
-*Results section. 2026-06-10. Instrument: `eval/axis_a_chem.py` (rdkit + anthropic, run under Python 3.13). Set: 35 famous drugs, hand-curated and RDKit formula-validated. No em dashes.*
+*Results section. 2026-06-10. Instrument: `eval/axis_a_chem.py` (rdkit + anthropic, run under Python 3.13). Set: 35 famous drugs, hand-curated and RDKit formula-validated.*
 
 ## What this measures
 

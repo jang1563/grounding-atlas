@@ -7,7 +7,7 @@ property (conservation) is web-documented, so the two-factor law predicts the mo
 (small or no gap), whereas methylation's web-zero numeric vector does not. ceiling = logistic
 regression on transparent column statistics (gap fraction, number of distinct residues);
 activation = Qwen3-8B hidden-state probe on the column text; output = 8B verbalized P(conserved).
-Data: signal/msa/msa_conservation.csv (Pfam seed alignments). Env: ACT_MODEL, ACT_N. No em dashes.
+Data: signal/msa/msa_conservation.csv (Pfam seed alignments). Env: ACT_MODEL, ACT_N.
 """
 import csv
 import os

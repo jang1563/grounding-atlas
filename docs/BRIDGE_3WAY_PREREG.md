@@ -2,7 +2,6 @@
 
 Status: PRE-REGISTERED (hypotheses + decision rules fixed BEFORE results). Date 2026-06-27.
 Substrate, transfer split, n, thresholds, parity plumbing, and falsification rules below are committed.
-No em dashes (repo style).
 
 This design folds three adversarial reviews (3-arm fairness/parity, transfer-eval validity,
 executability) into a single committable plan. Where the reviews converged on a smaller first cut

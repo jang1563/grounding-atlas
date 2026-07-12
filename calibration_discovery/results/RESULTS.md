@@ -1,6 +1,6 @@
 # Calibration inside discovery: per-item selective prediction (Move 2 result)
 
-*2026-06-13. `calibration_discovery/eval/selective_eval.py`, n=80 balanced per rung, 8 rungs (3 in / 4 out / 1 novel) spanning the web-exposure spectrum, pooled n=640 per model. opus-4.8 + sonnet-4.6 + haiku-4.5, one run, same PRED/CONF/ROUTE elicitation as `results/calibration_routing.md` so the two are comparable. Raw `selective_eval.json` + `per_item.csv`. The per-item promotion of the rung-level +0.90 router. No em dashes.*
+*2026-06-13. `calibration_discovery/eval/selective_eval.py`, n=80 balanced per rung, 8 rungs (3 in / 4 out / 1 novel) spanning the web-exposure spectrum, pooled n=640 per model. opus-4.8 + sonnet-4.6 + haiku-4.5, one run, same PRED/CONF/ROUTE elicitation as `results/calibration_routing.md` so the two are comparable. Raw `selective_eval.json` + `per_item.csv`. The per-item promotion of the rung-level +0.90 router.*
 
 **Figures** (all data-driven from the saved runs, reproducible; each also `_hires.png` 300dpi + `.svg`):
 - `results/risk_coverage.png` (`eval/plot_risk_coverage.py`): the opus risk-coverage curve + oracle/random baselines + AURC area + the two framing operating points (v3) on one curve.

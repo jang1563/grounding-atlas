@@ -8,7 +8,7 @@ so the contrast isolates GENE IDENTITY = web exposure. Specialist ceiling (super
 the full expression vector) = 0.989, precomputed locally. For each form: ceiling_surface (bag of
 tokens), activation (LLM hidden-state probe), output (LLM verbalized P(T cell)). Prediction:
 cell_sentence output >> anon output (only gene names let the model verbalize the cell type), and
-cell_sentence activation > anon activation. Env: ACT_MODEL, ACT_N. No em dashes.
+cell_sentence activation > anon activation. Env: ACT_MODEL, ACT_N.
 """
 import csv
 import os

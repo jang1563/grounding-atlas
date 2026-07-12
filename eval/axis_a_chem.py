@@ -19,7 +19,7 @@ count); a connectivity error that preserves formula would survive, so this is a
 validated-but-not-authoritative set. Rows that fail the formula check are dropped.
 
 DRY (ADMET_DRY=1 or no key): validate the set and print prompts, no API.
-Env: AXISA_MODEL (default claude-sonnet-4-6), AXISA_DRY. No em dashes.
+Env: AXISA_MODEL (default claude-sonnet-4-6), AXISA_DRY.
 """
 import json
 import os

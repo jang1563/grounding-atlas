@@ -1,6 +1,6 @@
 # WS1 - Grounding and Comprehension Instrument
 
-*Design spec. 2026-06-08. Capability-first. No em dashes. Reference: `../docs/FAILURE_MODES.md`.*
+*Design spec. 2026-06-08. Capability-first. Reference: `../docs/FAILURE_MODES.md`.*
 
 ## What this measures
 
@@ -94,7 +94,7 @@ The capability test the project rests on: **does higher T1 grounding predict hig
 
 - Capability-neutral property for the headline (Phase 2); Phase 1 uses the prior probe's hazard label only as a method check, flagged as such.
 - Aggregate behavioral numbers only; excluded source artifacts stay out of git.
-- No em dashes; verified facts; substrate is NegResultDB/NullAtlas.
+- Verified claims only; see `../DATA_SOURCES.md` for substrate provenance.
 - The core contribution is the axis-B grounding instrument (with A and E). NullAtlas/NegResultDB is cited and reused (WS2 substrate, one raw-data source), not absorbed as an instrument result.
 
 ## Compute

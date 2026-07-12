@@ -1,6 +1,6 @@
 # T2 (apply) PROPOSE: generate a molecule with a property, probe-judged
 
-*Results section. 2026-06-10. Instrument: `eval/t2_propose.py` (rdkit + sklearn + anthropic, Python 3.13). No em dashes.*
+*Results section. 2026-06-10. Instrument: `eval/t2_propose.py` (rdkit + sklearn + anthropic, Python 3.13).*
 
 ## What this is
 

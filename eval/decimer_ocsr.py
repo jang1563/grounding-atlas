@@ -9,7 +9,7 @@ justified); if DECIMER is also ~0.5, the renders are the limit (a rendering stat
 
 Runs on Cayuga in the `decimer` conda env (needs decimer + rdkit). Same 120-molecule
 balanced hERG set, seed 42, same RDKit MolDraw2DCairo 320px render as ws3_image.py.
-No em dashes.
+
 """
 import json
 import os

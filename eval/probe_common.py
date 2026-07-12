@@ -4,7 +4,7 @@ Single source of truth so the DNA / single-cell / MSA / hERG / SFM activation ar
 SAME nested-CV unbiased best-layer, the SAME per-layer curve + selectivity, the SAME bootstrap CI,
 and dump the SAME task-tagged JSON. The nested-CV here RETURNS the out-of-fold probe vector and the
 per-fold picked layer (the prior arms computed the OOF vector then discarded it at
-activation_arm.py:160; H3 calibration needs it). No em dashes.
+activation_arm.py:160; H3 calibration needs it).
 
 The locked probe (Section 4.2) is balanced_lr: standardized features, L2 C=1.0, class_weight
 balanced, used identically in the per-layer curve AND the nested-CV factory. Splitter is GroupKFold

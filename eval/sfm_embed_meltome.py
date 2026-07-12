@@ -8,7 +8,7 @@ stage 2 (eval/sfm_embedding_output.py), gated on a high ceiling here.
 
 Local: transformers ESM-2 on MPS/CPU (no fair-esm, no HPC). esm2_t30_150M (640-dim) by default.
 Ceiling = logistic probe under a CLUSTER GroupKFold (Meltome's homology cluster column = leakage
-control) + shuffled-label selectivity. No em dashes.
+control) + shuffled-label selectivity.
 Env: SFM_N (320), SFM_MODEL (facebook/esm2_t30_150M_UR50D), SFM_BATCH (16).
 """
 import csv

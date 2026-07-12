@@ -9,7 +9,7 @@ the 8B nonetheless ENCODES promoter-ness (expression gap) or never forms it (enc
 
 Env: ACT_MODEL (Qwen/Qwen3-8B), ACT_N (balanced total, default 1500), ACT_CSV (smiles col =
 DNA sequence), ACT_DUMP (per-item json). Data: dna_promoter.csv (genomic-benchmarks
-human_nontata_promoters, 6-mer gating 0.898). No em dashes.
+human_nontata_promoters, 6-mer gating 0.898).
 """
 import csv
 import os

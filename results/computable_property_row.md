@@ -1,6 +1,6 @@
 # Computable-property row: the execution axis of property knowledge
 
-*2026-06-13. WS1 add-on. No em dashes. Reuses the axis-B 3-arm instrument (`eval/`), the
+*2026-06-13. WS1 add-on. Reuses the axis-B 3-arm instrument (`eval/`), the
 verifiable-signal schema (`signal/generate_signal.py`), and the NegResultDB / Meltome / promoter
 sources. Companion code: `signal/generate_computable.py`, `eval/output_arm_computable.py`,
 `eval/bridge_test_pi.py`, and the `ACT_PROMPT` / `ACT_PARSE` hooks in `eval/activation_arm.py`.*

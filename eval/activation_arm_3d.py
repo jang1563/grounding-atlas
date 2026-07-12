@@ -8,7 +8,7 @@ geometry parsing a forward pass cannot do. ceiling = Morgan FP on the SMILES (th
 coords encode); activation = LLM hidden-state probe on the XYZ text; output = LLM verbalized.
 Reading: activation LOW (near chance) = encoding-limited (the model cannot form the structure
 from coordinates); activation MODERATE (surface) = expression-limited like the others.
-Frontier output already measured at chance (0.49 to 0.54). Env: ACT_MODEL, ACT_N. No em dashes.
+Frontier output already measured at chance (0.49 to 0.54). Env: ACT_MODEL, ACT_N.
 """
 import csv
 import os

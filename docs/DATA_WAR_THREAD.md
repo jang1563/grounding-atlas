@@ -3,7 +3,7 @@
 *2026-06-14. Synthesis of the data-production-side reading (AlphaGenome, Perturb-seq,
 MPRA/STARR-seq, long-read pangenomes) and two rung extensions it motivated. The
 framing is the durable contribution; the two explorations are recorded honestly,
-including their negative outcomes. No em dashes.*
+including their negative outcomes.*
 
 ## The field shift
 

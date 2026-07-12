@@ -13,7 +13,7 @@ limited capability cannot be retrieved into place, so it routes to weights or or
 
 Run: python eval/ws3_retrieve.py  (rdkit + anthropic)
 Env: WS3_K (neighbors, default 10), WS3_N (balanced test size, default 150), WS3_MODEL,
-WS3_DRY. No em dashes.
+WS3_DRY.
 """
 import json
 import os

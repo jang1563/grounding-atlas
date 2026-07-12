@@ -1,6 +1,6 @@
 # WS2 - Verifiable signal: the content-property substrate the B-axis needs [MAKE SIGNAL]
 
-*Spec + generator. 2026-06-09. Companion to `../PROJECT_DESIGN.md` (WS2), `../eval/README.md` (the B-axis instrument that consumes this), `../docs/WS1_BACKLOG.md`. No em dashes.*
+*Spec + generator. 2026-06-09. Companion to `../PROJECT_DESIGN.md` (WS2), `../eval/README.md` (the B-axis instrument that consumes this), `../docs/WS1_BACKLOG.md`.*
 
 ## What WS2 produces and why it is separate from WS1
 

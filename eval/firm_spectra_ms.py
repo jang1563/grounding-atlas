@@ -8,7 +8,7 @@ and compares both to the fixed LoRA-8B finetuned 0.706 (results/ws3_lora_cells.j
 Read: if 0.706 sits inside the cheap probe's 95% CI, the +0.04 edge is not real (near-miss = noise).
 If the structure ceiling is clearly above 0.706, orchestrate-via-elucidation beats train WHEN
 elucidation works (real MS elucidation, SpecTUS ~65% / GPT-4o exact 1.4%, sits between cheap and the
-structure ceiling). Local (rdkit + sklearn), no GPU. No em dashes.
+structure ceiling). Local (rdkit + sklearn), no GPU.
 """
 import csv
 import os

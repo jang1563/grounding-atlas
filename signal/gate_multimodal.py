@@ -16,7 +16,7 @@ already carry a content-readable, leakage-controlled signal under a CHEAP local 
 (Morgan / k-mer / char-ngram / composition / pixel-stat), i.e. without the SFM embedding the
 3-arm sweep used. A PASS = the signal is real even under a cheap encoder. A FAIL = "no
 measurable signal under THIS cheap encoder", not "no signal" (an SFM featurizer may still
-find it; flagged per row). No em dashes.
+find it; flagged per row).
 
 Usage: python gate_multimodal.py
 """

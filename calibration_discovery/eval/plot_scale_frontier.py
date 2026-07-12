@@ -4,7 +4,7 @@ Overlays the three models' risk-coverage curves (haiku, sonnet, opus) from resul
 As scale grows the curve moves toward the lower-left (lower risk at every coverage = better
 selective prediction); the legend reports AURC and E-AURC (AURC minus the model's own oracle, which
 removes its base-accuracy advantage so only calibration QUALITY is compared). Mirrors the
-make_synthesis_figure.py convention. No API calls. No em dashes.
+make_synthesis_figure.py convention. No API calls.
 
 Run: PYTHONPATH=calibration_discovery/eval python calibration_discovery/eval/plot_scale_frontier.py
 """

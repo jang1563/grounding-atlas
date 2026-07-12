@@ -101,5 +101,5 @@ content vs echoing ClinVar" is directly actionable for novel-variant triage.
 - The activation arm (if run) measures **linear decodability** of the property from hidden
   states, not "knowledge". Best-layer activation is max-over-layers (selection-biased), with a
   bootstrap CI; a random-label control task bounds selectivity.
-- One or a small panel of models to start, zero-shot. No em dashes; verified numbers only;
+- One or a small panel of models to start, zero-shot. verified numbers only;
   capability framing.

@@ -25,7 +25,7 @@ Pipeline:
 
 Env: VG_RAW (dir of downloads), VG_N (balanced total, default 2000), VG_WIN (window radius,
      default 32 -> 65aa), VG_MINSTAR (default 1), VG_SEED (42), VG_OUT (dir).
-No em dashes. Capability framing. See ../README.md, eval/README.md.
+ Capability framing. See ../README.md, eval/README.md.
 """
 import csv
 import gzip

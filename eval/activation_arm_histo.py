@@ -5,7 +5,7 @@ image-feature classifier (per-channel color statistics, the cheap-specialist ana
 pathology FM like CONCH reaches ~0.9); activation = VLM hidden-state probe on the patch;
 output = VLM verbalized P(tumor). Tests whether a general VLM grounds histopathology (like the
 molecular-image rung but on tissue). Data: signal/histo/pcam.csv (img path, label). Env:
-VL_MODEL, VL_N. No em dashes.
+VL_MODEL, VL_N.
 """
 import csv
 import os

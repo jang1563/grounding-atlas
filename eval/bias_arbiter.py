@@ -10,7 +10,7 @@ Gates (block-E controls, held-out from block-R/O): (A) competence AUROC>=0.70 + 
 to the power note; (C) independence is the 2b leg. Guards: discrimination-loss calibration (a weaker
 arbiter regresses any gap toward 0) and arbiter-native applicability-domain (k-NN in feature space).
 Primary estimand = FULL-DRAW success-rate over draws (arm A 3000 pooled seeds vs guidance 1000), the
-same scale as +0.064. Local CPU. No em dashes.
+same scale as +0.064. Local CPU.
 Usage: python eval/bias_arbiter.py
 """
 import glob

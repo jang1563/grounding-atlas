@@ -15,7 +15,7 @@ projection trains. Per docs/BRIDGE_3WAY_PREREG.md Section 5 (Arm A).
 Reuses the shared fold signal/admet/folds/<fold>.json for test_ids (parity with orchestrate/LoRA).
 Env: BRIDGE_MODEL (Qwen/Qwen3-8B), BRIDGE_ENDPOINT (herg), BRIDGE_MODE (within|transfer),
 BRIDGE_K (4), BRIDGE_LR (5e-4), BRIDGE_EPOCHS (10), BRIDGE_BATCH (16), BRIDGE_N (cap train, 0=all),
-BRIDGE_FOLD (lpo_herg_clearance). GPU (Cayuga a40); local 0.5B smoke is directional. No em dashes.
+BRIDGE_FOLD (lpo_herg_clearance). GPU (Cayuga a40); local 0.5B smoke is directional.
 """
 import json
 import os

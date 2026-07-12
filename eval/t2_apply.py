@@ -14,7 +14,7 @@ T2 has three modes (eval/README); only SOLVE is assembled here because its arm
 (LLM-output scored vs ground truth) is already measured. PROPOSE and EVALUATE need
 fresh runs and are specified, not scored (see results/t2_apply.md).
 
-No em dashes. Deterministic. Run: python eval/t2_apply.py
+ Deterministic. Run: python eval/t2_apply.py
 """
 import json
 import os

@@ -24,7 +24,7 @@ the empirical rungs do not need: "value" (the exact descriptor value) and "thres
 median used to binarize), so the output arm can score BOTH exact-match / MAE on the raw value
 AND AUROC on the binarized label (comparable to every other rung).
 
-Local CPU only (rdkit + sklearn; Biopython for sequences). No API, no GPU. No em dashes.
+Local CPU only (rdkit + sklearn; Biopython for sequences). No API, no GPU.
 
 Usage:
   python generate_computable.py                      # SMILES from NegResultDB, all RDKit descriptors

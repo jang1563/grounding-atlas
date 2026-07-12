@@ -5,7 +5,7 @@ Per docs/BRIDGE_3WAY_PREREG.md Section 5: ChemBERTa-77M-MTR (384-dim, mean-poole
 ('matched') molecule of each signal/admet/<endpoint>/pairs.jsonl, with Murcko-scaffold groups for the
 leakage-controlled GroupKFold (P4). Writes signal/sfm_embedding/chemberta_<endpoint>.npz with
 emb / y / groups (scaffold) / smiles / ids. MoLFormer-XL is the v2 robustness substrate (CHEM_MODEL
-override + trust_remote_code). Local Mac MPS, no GPU needed. No em dashes.
+override + trust_remote_code). Local Mac MPS, no GPU needed.
 Env: CHEM_MODEL (default DeepChem/ChemBERTa-77M-MTR), CHEM_ENDPOINTS (comma list, default all 7),
 CHEM_BATCH (64).
 """

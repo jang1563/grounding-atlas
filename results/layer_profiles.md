@@ -1,6 +1,6 @@
 # Layer-resolved contrast of the two expression gaps
 
-*Results. 2026-06-11. `eval/layer_profiles.py` (parses the activation logs, no new compute), figure `results/layer_profiles.png`, raw `results/layer_profiles.json`. Supports the content-grounding-vs-recognition separation from `withdrawn_endpoint.md` (axis B vs axis A). No em dashes.*
+*Results. 2026-06-11. `eval/layer_profiles.py` (parses the activation logs, no new compute), figure `results/layer_profiles.png`, raw `results/layer_profiles.json`. Supports the content-grounding-vs-recognition separation from `withdrawn_endpoint.md` (axis B vs axis A).*
 
 ## The question
 

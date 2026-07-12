@@ -9,7 +9,7 @@ it cannot itself verbalize. That ties the encoded-knowledge-unspoken claim down 
 Inputs (matched by exact SMILES, both read from the same withdrawn.csv):
   results/withdrawn_peritem.json   frontier: name, label, llm_name, llm_smiles, llm_fake, morgan, knn
   results/wd_act_peritem.json      8B: act (best-layer OOF probe), struct, output  (scp from cluster)
-Outputs results/peritem_agreement.json. No em dashes.
+Outputs results/peritem_agreement.json.
 """
 import json
 import os

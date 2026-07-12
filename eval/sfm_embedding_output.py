@@ -12,7 +12,7 @@ baseline" (PROJECT_DESIGN 7.4):
   IN-CONTEXT (orchestrate-via-ICL) rather than needing a trained head. The open question.
 
 Compared against: the PCA-D probe ceiling (what ICL could reach) and the raw-sequence output arm
-(existing protein rung, 8B 0.486 / opus 0.585). Deterministic AUROC scoring. No em dashes.
+(existing protein rung, 8B 0.486 / opus 0.585). Deterministic AUROC scoring.
 Env: SFM_COND (both), SFM_NQ (50), SFM_K (24), SFM_PCA (16), SFM_MODEL_LLM (claude-sonnet-4-6),
 SFM_DRY.
 """

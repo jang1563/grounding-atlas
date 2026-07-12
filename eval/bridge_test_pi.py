@@ -10,7 +10,7 @@ closes toward AUROC ~1.0, the bottleneck was constant-recall, and the bridge cla
 (decision-map: pI -> orchestrate lane). If it does not move, the bottleneck is execution.
 
 Reuses output_arm_computable helpers (same seed-42 balanced sample, parse, truncation guard,
-scoring), so the +pKa number is directly comparable to the baseline reason-regime pI. No em dashes.
+scoring), so the +pKa number is directly comparable to the baseline reason-regime pI.
 Env: BPI_N (default 12), BPI_MODEL (default claude-sonnet-4-6), BPI_MAXTOK (default 4000), BPI_DRY.
 """
 import json
