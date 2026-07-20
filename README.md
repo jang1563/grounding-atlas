@@ -20,7 +20,7 @@ law or a substitute for model- and task-specific validation.
 
 A measurement-first research project toward a **grounded biology orchestrator**. Capability-focused (make a model better at biology), not safety. Builds on and unifies several of my own prior projects (a frozen-embedding separability study, an LLM over-trust instrument, NullAtlas/NegBioRL, LabCraft).
 
-*Author: **JangKeun Kim** — postdoctoral researcher, computational biology, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563)*
+*Author: **JangKeun Kim** — Senior Research Associate and Director of Spaceflight Research, Weill Cornell Medicine (Mason Lab). Single-cell and spatial genomics, space biology, and AI evaluation for biology. [github.com/jang1563](https://github.com/jang1563)*
 
 Status: **active execution** (updated 2026-07-02; the tracked GroundBench registry, exported Parquet,
 and leaderboard contain 24 tasks / 9 modalities / 3 models plus a cheap-head baseline; see
