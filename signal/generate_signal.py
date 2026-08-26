@@ -1,19 +1,19 @@
-"""WS2 verifiable-signal generator + verifiability gate.
+"""WS2 signal generator + representation-label predictability gate.
 
 Generalizes the per-branch ceiling pipelines (eval/ceiling_gate.py, the protein/variant
 ceiling scripts) into ONE reusable tool, the WS2 deliverable PROJECT_DESIGN asks for:
 
   ingest a (content, property) source
-    -> emit standardized (representation, verifiable-property) pairs + content-sensitivity
+    -> emit standardized (representation, operational-target) pairs + content-sensitivity
        condition variants (matched / scrambled / re-notation; mismatched + content-only are
        LLM-arm prompt variants, see ../eval/README.md)
-    -> run the VERIFIABILITY GATE: a content-feature probe under a leakage-controlled
-       (cold) split + a shuffled-label selectivity control
-    -> PASS only if the property is genuinely in the content and survives the cold split.
+    -> run a PREDICTABILITY GATE: a predeclared content-feature probe under a grouped
+       (cold) split + repeated shuffled-label controls
+    -> PASS only if this representation/label association clears the declared thresholds.
 
-The gate is the point: it tells the B-axis instrument which (representation, property) tasks
-are real signal (probe ceiling high, leakage-free) versus the DTI trap (high on a random
-split, collapses cold). Borrows NullAtlas's verifiable-signal method (NegResultDB);
+The gate measures supervised representation-label predictability under one split contract.
+It does not validate label truth, exclude every leakage path, establish causality, or prove
+that an LLM computed the endpoint. Borrows the NegResultDB source construction;
 NullAtlas's negative-evidence-coverage result (rho=-0.70) is CITED, not re-measured here.
 
 Modality-general by design: a Source supplies (content, label, modality) + a featurizer + a
@@ -33,7 +33,6 @@ import numpy as np
 from rdkit import Chem
 from rdkit.Chem import rdFingerprintGenerator
 from rdkit.Chem.Scaffolds import MurckoScaffold
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import GroupKFold, StratifiedKFold, cross_val_predict
@@ -45,7 +44,9 @@ ALL_ENDPOINTS = ["herg", "cyp3a4", "cyp2d6", "ames", "solubility", "permeability
 # Gate thresholds: the property must be readable from CONTENT under the COLD split (not just
 # the random split), and the probe must be selective (beat a shuffled-label control).
 GATE_COLD_AUROC = 0.65       # signal survives a scaffold (cold-compound) split
-GATE_SELECTIVITY = 0.10      # probe reads real signal, not label noise
+GATE_SELECTIVITY = 0.10      # real-label AUROC exceeds the repeated permutation mean
+GATE_PERMUTATION_P = 0.05
+N_PERMUTATIONS = 20
 MAX_PAIRS = 4000             # cap emitted pairs per endpoint
 
 
@@ -107,28 +108,46 @@ def scramble_smiles(smi, seed=0):
     return "".join(chars)
 
 
-# ---- the verifiability gate --------------------------------------------------------
+# ---- representation-label predictability gate -------------------------------------
 def gate(X, y, groups):
     out = {"n": int(len(y)), "pos": int(y.sum()), "baseline": round(float(y.mean()), 3),
            "n_groups": int(len(set(groups)))}
     rand = list(StratifiedKFold(5, shuffle=True, random_state=42).split(X, y))
     cold = list(GroupKFold(5).split(X, y, groups=groups))
     clf = LogisticRegression(max_iter=2000, class_weight="balanced")
-    rf = RandomForestClassifier(n_estimators=300, class_weight="balanced", n_jobs=-1, random_state=42)
     pr = cross_val_predict(clf, X, y, cv=rand, method="predict_proba", n_jobs=-1)[:, 1]
     pc = cross_val_predict(clf, X, y, cv=cold, method="predict_proba", n_jobs=-1)[:, 1]
-    pc_rf = cross_val_predict(rf, X, y, cv=cold, method="predict_proba", n_jobs=-1)[:, 1]
-    # shuffled-label selectivity (Hewitt-Liang) on the cold split
-    ys = np.random.RandomState(123).permutation(y)
-    ps = cross_val_predict(clf, X, ys, cv=cold, method="predict_proba", n_jobs=-1)[:, 1]
+    cold_auroc = float(roc_auc_score(y, pc))
+    control_aurocs = []
+    for permutation in range(N_PERMUTATIONS):
+        shuffled = np.random.RandomState(123 + permutation).permutation(y)
+        shuffled_prob = cross_val_predict(
+            clf,
+            X,
+            shuffled,
+            cv=cold,
+            method="predict_proba",
+            n_jobs=-1,
+        )[:, 1]
+        control_aurocs.append(float(roc_auc_score(shuffled, shuffled_prob)))
+    control_mean = float(np.mean(control_aurocs))
+    permutation_p = (1 + sum(value >= cold_auroc for value in control_aurocs)) / (
+        N_PERMUTATIONS + 1
+    )
     out["random_auroc"] = round(float(roc_auc_score(y, pr)), 3)
-    out["cold_auroc"] = round(float(roc_auc_score(y, pc)), 3)
-    out["cold_auroc_rf"] = round(float(roc_auc_score(y, pc_rf)), 3)
+    out["cold_auroc"] = round(cold_auroc, 3)
     out["cold_auprc"] = round(float(average_precision_score(y, pc)), 3)
-    out["control_auroc"] = round(float(roc_auc_score(ys, ps)), 3)
-    out["selectivity"] = round(out["cold_auroc"] - out["control_auroc"], 3)
-    out["leakage_drop"] = round(out["random_auroc"] - out["cold_auroc"], 3)  # big -> DTI trap
-    out["passed"] = bool(out["cold_auroc"] >= GATE_COLD_AUROC and out["selectivity"] >= GATE_SELECTIVITY)
+    out["control_auroc_mean"] = round(control_mean, 3)
+    out["control_aurocs"] = [round(value, 3) for value in control_aurocs]
+    out["n_permutations"] = N_PERMUTATIONS
+    out["permutation_p"] = round(permutation_p, 4)
+    out["selectivity"] = round(cold_auroc - control_mean, 3)
+    out["leakage_drop"] = round(out["random_auroc"] - out["cold_auroc"], 3)
+    out["passed"] = bool(
+        out["cold_auroc"] >= GATE_COLD_AUROC
+        and out["selectivity"] >= GATE_SELECTIVITY
+        and permutation_p <= GATE_PERMUTATION_P
+    )
     return out
 
 
@@ -183,8 +202,9 @@ def main():
     with open(os.path.join(OUTDIR, "verifiability_report.json"), "w") as f:
         json.dump(report, f, indent=2)
     n_pass = sum(r["passed"] for r in report)
-    print(f"\n{n_pass}/{len(report)} endpoints PASS the verifiability gate "
-          f"(cold AUROC >= {GATE_COLD_AUROC} AND selectivity >= {GATE_SELECTIVITY}).")
+    print(f"\n{n_pass}/{len(report)} endpoints PASS the representation-label predictability gate "
+          f"(cold AUROC >= {GATE_COLD_AUROC}, selectivity >= {GATE_SELECTIVITY}, "
+          f"permutation p <= {GATE_PERMUTATION_P}).")
 
 
 if __name__ == "__main__":

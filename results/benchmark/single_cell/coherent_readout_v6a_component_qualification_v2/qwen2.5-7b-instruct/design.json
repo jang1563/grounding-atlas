@@ -1,0 +1,41 @@
+{
+  "analysis_id": "coherent-readout-v6a-component-qualification-v1",
+  "call_plan_sha256": "61fd6c4a7c34d8efccca54d4d4091a7d2fac16023aa8257f64eb3afb62cd1f7d",
+  "claim_scope": "direct_component_model_qualification_only",
+  "composition_calls": 0,
+  "execution_revision": "v2_mps_allocator_warmup_bypass",
+  "expected_calls": 384,
+  "locks": {
+    "dependency_lock_file_sha256": "8b52bb32ce972a36d316ae5b6f63810956d0b9cba955f11e8fd2b15b01a8a73e",
+    "fixture_canonical_sha256": "6b27741825bdce268427d53c076f528405c9967f615b0fb63ba8162d90b422aa",
+    "fixture_file_sha256": "084ba96dc785f26ca99387ea758bb542ce974e8bd86fa97ff4b6abc6b7a13cd6",
+    "fixture_manifest_file_sha256": "bec8d61a1b0c845198daf2e8677e5c50421435de88273a1dd6acb0dfa25594da",
+    "loader_smoke_receipt_file_sha256": "1489e46fab9ad3a082bafdefd1fd785b4e01f62bdb4759873e4eb17bb60e7f2d",
+    "tokenization_receipt_file_sha256": "b8eda62d4bca9bc7cdebda721f617a6f3f103d663333ec83ec8dbf4a22eb48e5",
+    "v1_analysis_file_sha256": "34f1a622862b54c66e99882b014706ba117390153b358361953ab6293c60bec8",
+    "v1_attempt_file_sha256": "fb13237f77995932b3fb9fced04ddc1395d123a7e56f3592b1bd0657e911af3b",
+    "v1_plan_manifest_file_sha256": "0be35c0d6635924658985b5ea47b6f02b09c4245e10ba00bd28735e00eedaaf9"
+  },
+  "mode": "disposable_component_only_no_composition",
+  "model": {
+    "attention_implementation": "sdpa",
+    "device": "mps",
+    "hidden_size": 3584,
+    "model_dtype": "bfloat16",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "model_loading_device_map": "mps",
+    "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+    "num_hidden_layers": 28,
+    "snapshot_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "vocab_size": 152064
+  },
+  "model_calls": 0,
+  "prohibited_selection_inputs": [
+    "composition_accuracy",
+    "composition_margin",
+    "target_order_gap",
+    "topology_interaction"
+  ],
+  "schema_version": "coherent-readout-v6a-qualification-design-v2",
+  "scientific_registry_sha256": "b766fa49a66b0c3f5b8d87cbbcddb1e44708f15c337dd09e297dca8b11e54676"
+}

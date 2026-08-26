@@ -1,0 +1,10 @@
+{
+  "biological_model_calls": 0,
+  "call_plan_sha256": "cf8b795ed1bf931b6811eb28ea0bd0629692d55cbf3059eaae489c6bf77672d0",
+  "environment_sha256": "08e2e4e6f753b58f9a31cae66640ce80ede1f3d7feeb8e41c92cc3dcec76dddc",
+  "model_calls_recorded_before_attempt": 0,
+  "phase": "holdout_patch",
+  "runner_sha256": "62dd3d27f46fad5ad3988bed0f65ecdcbcae27b440e5a2626e1720326f5dba40",
+  "schema_version": "coherent-readout-v2-causal-binding-attempt-v1",
+  "status": "EXECUTION_ARMED_NO_FORWARD_RECORDED"
+}

@@ -48,12 +48,12 @@
   "@type": "sc:Dataset",
   "conformsTo": "http://mlcommons.org/croissant/1.0",
   "name": "GroundBench",
-  "description": "GroundBench: 24 tasks across 9 modalities measuring whether a language model can verbalize a property from a specialist representation it is shown. Each row is a (representation, verifiable binary property) item with an a-priori web-exposure tag (rich/zero/mixed). The web tag predicts the snap-verbalization floor; its mechanism is a capability-dependent mix of token-familiarity and mapping-documentation. Data git commit: 3d395d1.",
+  "description": "GroundBench: 24 registered renderings across 9 modalities measuring native model output on operational representation-label targets. The companion hidden-state analysis measures a supervised decodability-native-output gap; it does not establish latent knowledge or a causal expression bottleneck. Biological-question and task-family IDs group related interfaces. Entity IDs are deterministic within their declared scope; snapshot-local row IDs are not upstream-resolvable records. Split-group scope distinguishes a real protein-family group from exact-entity proxies and unavailable biological grouping; proxy or null groups are not confirmatory dependency units. Current intervention-pair IDs are null, and factor levels are descriptive interface metadata only. Truth-level codes classify targets under the exact T0-T5 enum; target-source kind separately preserves descriptive provenance, and the legacy truth_level field is a deprecated code alias. No current task is T5. The web tag is descriptive metadata, not a law. Data git commit: 9424d05; working tree clean at export: false.",
   "license": "https://creativecommons.org/licenses/by-sa/4.0/",
   "url": "https://github.com/jang1563/grounding-atlas",
-  "version": "1.0.0",
-  "datePublished": "2026-06-19",
-  "citeAs": "JangKeun Kim. grounding-atlas / GroundBench: a measurement-first map of biological content-grounding in language models. 2026.",
+  "version": "2.1.0",
+  "datePublished": "2026-07-11",
+  "citeAs": "JangKeun Kim. grounding-atlas / GroundBench: a pilot benchmark of supervised biological decodability and native model output. 2026.",
   "distribution": [
     {
       "@type": "cr:FileObject",
@@ -61,7 +61,14 @@
       "name": "groundbench.parquet",
       "contentUrl": "groundbench.parquet",
       "encodingFormat": "application/x-parquet",
-      "sha256": "bb6f33d4cefc3517abd197a42dd13df378ac0ffbe185a2d27e88d9e5aca2784e"
+      "sha256": "dcf17ebab8533517437c700d2893b9bb6df35b89abffcb02277ccfc680078613"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "images",
+      "name": "Packaged histopathology images",
+      "includes": "images/**/*.png",
+      "encodingFormat": "image/png"
     }
   ],
   "recordSet": [
@@ -82,6 +89,34 @@
             },
             "extract": {
               "column": "task"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/biological_question_id",
+          "name": "biological_question_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "biological_question_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/task_family_id",
+          "name": "task_family_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "task_family_id"
             }
           }
         },
@@ -115,6 +150,65 @@
         },
         {
           "@type": "cr:Field",
+          "@id": "items/status",
+          "name": "status",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "status"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/truth_level_code",
+          "name": "truth_level_code",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "truth_level_code"
+            }
+          },
+          "description": "Machine-facing target truth level; exact enum T0, T1, T2, T3, T4, or T5."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/target_source_kind",
+          "name": "target_source_kind",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "target_source_kind"
+            }
+          },
+          "description": "Descriptive provenance category for the target source."
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/truth_level",
+          "name": "truth_level",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "truth_level"
+            }
+          },
+          "description": "Deprecated compatibility alias, exactly equal to truth_level_code."
+        },
+        {
+          "@type": "cr:Field",
           "@id": "items/web",
           "name": "web",
           "dataType": "sc:Text",
@@ -138,6 +232,118 @@
             },
             "extract": {
               "column": "orientation"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/condition",
+          "name": "condition",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "condition"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/pair_group",
+          "name": "pair_group",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "pair_group"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/split_group_id",
+          "name": "split_group_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "split_group_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/split_group_scope",
+          "name": "split_group_scope",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "split_group_scope"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/intervention_pair_id",
+          "name": "intervention_pair_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "intervention_pair_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/factor_levels",
+          "name": "factor_levels",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "factor_levels"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/reference_score",
+          "name": "reference_score",
+          "dataType": "sc:Float",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "reference_score"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/reference_comparability",
+          "name": "reference_comparability",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "reference_comparability"
             }
           }
         },
@@ -185,6 +391,34 @@
         },
         {
           "@type": "cr:Field",
+          "@id": "items/source_label",
+          "name": "source_label",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "source_label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/target_label",
+          "name": "target_label",
+          "dataType": "sc:Integer",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "target_label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
           "@id": "items/label",
           "name": "label",
           "dataType": "sc:Integer",
@@ -194,6 +428,48 @@
             },
             "extract": {
               "column": "label"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/source_id",
+          "name": "source_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "source_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/entity_id",
+          "name": "entity_id",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "entity_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "items/entity_id_scope",
+          "name": "entity_id_scope",
+          "dataType": "sc:Text",
+          "source": {
+            "fileObject": {
+              "@id": "groundbench.parquet"
+            },
+            "extract": {
+              "column": "entity_id_scope"
             }
           }
         },

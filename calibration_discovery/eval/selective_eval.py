@@ -16,6 +16,7 @@ NOT shrink (AbstentionBench); web-exposure ~ conf on in/out strata but FAILS on 
 Set ANTHROPIC_API_KEY in the environment for real API runs.
 """
 import csv
+import hashlib
 import json
 import os
 import re
@@ -96,16 +97,27 @@ def parse(t):
     return pred, conf, route
 
 
-def load(rung, n):
+def sample_rows(rung, n):
+    """Return the deterministic balanced sample with explicit snapshot-local item IDs."""
     spec = RUNGS[rung]
-    rows = list(csv.DictReader(open(os.path.join(ROOT, spec["csv"]))))
+    rows = []
+    for snapshot_row, row in enumerate(csv.DictReader(open(os.path.join(ROOT, spec["csv"])))):
+        row = dict(row)
+        key = f"{spec['csv']}\0{snapshot_row}".encode()
+        row["_item_id"] = f"snapshot:{hashlib.sha256(key).hexdigest()[:20]}"
+        rows.append(row)
     pos = [r for r in rows if int(r["label"]) == 1]
     neg = [r for r in rows if int(r["label"]) == 0]
     rng = np.random.RandomState(0)
     rng.shuffle(pos)
     rng.shuffle(neg)
     k = min(n // 2, len(pos), len(neg))
-    data = pos[:k] + neg[:k]
+    return pos[:k] + neg[:k]
+
+
+def load(rung, n):
+    spec = RUNGS[rung]
+    data = sample_rows(rung, n)
     if spec.get("build") == "variant":
         items = [(f"{r['gene']} {r['hgvs_p']}", int(r["label"])) for r in data]
     elif spec.get("build") == "variant_seq":
@@ -219,14 +231,18 @@ def main():
         print(f"\n########## {model} [{FRAMING}] ##########", flush=True)
         recs = []  # per item: rung, tag, comp, label, pred, conf, route, kind, err
         for rung in [r for r in RUNGS if not RUNG_FILTER or r in RUNG_FILTER]:
+            sampled = sample_rows(rung, N)
             items, q = load(rung, N)
             res = run_model(client, model, items, q)
             spec = RUNGS[rung]
-            for (rt, lab), (pred, conf, route, kind) in zip(items, res):
+            if [int(row["label"]) for row in sampled] != [label for _, label in items]:
+                raise ValueError(f"{rung}: sampled labels drifted between ID and prompt loaders")
+            for row, (rt, lab), (pred, conf, route, kind) in zip(sampled, items, res):
                 p = pred if pred is not None else 0.5
                 c = conf if conf is not None else 0.0
                 err = int((p > 0.5) != (lab == 1))
-                rec = dict(model=model, rung=rung, tag=spec["tag"], comp=spec["comp"],
+                rec = dict(item_id=row["_item_id"], model=model, rung=rung,
+                           tag=spec["tag"], comp=spec["comp"],
                            label=lab, pred=p, conf=c, route=route, kind=kind, err=err)
                 recs.append(rec)
                 peritem.append(rec)
@@ -293,7 +309,13 @@ def main():
 
     json.dump(out, open(os.path.join(RESDIR, f"selective_eval{TAG}.json"), "w"), indent=2)
     with open(os.path.join(RESDIR, f"per_item{TAG}.csv"), "w", newline="") as f:
-        w = csv.DictWriter(f, fieldnames=["model", "rung", "tag", "comp", "label", "pred", "conf", "route", "kind", "err"])
+        w = csv.DictWriter(
+            f,
+            fieldnames=[
+                "item_id", "model", "rung", "tag", "comp", "label", "pred",
+                "conf", "route", "kind", "err",
+            ],
+        )
         w.writeheader()
         w.writerows(peritem)
 

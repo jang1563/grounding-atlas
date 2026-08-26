@@ -1,0 +1,26 @@
+{
+  "analysis_id": "coherent-readout-v5-positional-activation-v1",
+  "biological_model_calls": 0,
+  "builder_file_sha256": "9356b383daf0eb4bdf501eb201a2834b4acb41c05638fa76c4cbece6d9948150",
+  "builder_path": "signal/syntax/build_coherent_readout_v5_positional_activation_bank.py",
+  "cell_count": 1792,
+  "family_counts": {
+    "codebook_lookup": 512,
+    "composition": 1024,
+    "property_retrieval": 256
+  },
+  "fixture_canonical_sha256": "0ac414c77ea6a84f4003b42ca9ca2a356d3a61f3c0e92abfb5a0aa4868abb75c",
+  "fixture_file_sha256": "defa5ed2c0ab1f0f6c7ac7cf5eaa4abe453daac682676b9d783770ffae6da903",
+  "fixture_path": "signal/syntax/coherent_readout_v5_positional_activation_bank.json",
+  "freeze_date": "2026-08-03",
+  "intervention_pair_count": 256,
+  "model_calls": 0,
+  "role_world_counts": {
+    "fit": 8,
+    "holdout": 16,
+    "localization": 8
+  },
+  "schema_version": "coherent-readout-v5-positional-activation-manifest-v1",
+  "tokenizer_calls": 0,
+  "world_count": 32
+}

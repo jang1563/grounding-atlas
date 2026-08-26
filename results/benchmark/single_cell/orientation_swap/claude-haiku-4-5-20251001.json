@@ -1,0 +1,137 @@
+{
+  "analysis_id": "single-cell-orientation-swap-v1",
+  "claim_scope": "same_cell_output_level_answer_order_intervention_no_hidden_state_causality_latent_knowledge_or_training_exposure_claim",
+  "model": "claude-haiku-4-5-20251001",
+  "records": [
+    {
+      "biological_class_asymmetry": -0.12565000000000004,
+      "biological_class_asymmetry_ci95_lower": -0.18140125000000012,
+      "biological_class_asymmetry_ci95_upper": -0.06969875000000013,
+      "forward": {
+        "anon_auroc": 0.5,
+        "class_asymmetry_first_minus_comparator": -0.56,
+        "class_prior_shift_toward_a": -0.28,
+        "class_separation_gain": 0.4138000000000001,
+        "comparator_class_correct_shift": 0.4869000000000001,
+        "first_class_correct_shift": -0.07309999999999998,
+        "name_auroc": 0.82575
+      },
+      "forward_anon_queried_first_probability": {
+        "mean": 0.8506999999999998,
+        "modal_fraction": 0.99,
+        "modal_probability": 0.85,
+        "unique_values": 2
+      },
+      "forward_class_asymmetry_ci95_lower": -0.6371,
+      "forward_class_asymmetry_ci95_upper": -0.4834000000000001,
+      "forward_reverse_within_class_delta_rank_correlation": 0.4716722205595776,
+      "input_sha256": {
+        "results/benchmark/single_cell/claude-haiku-4-5-20251001_raw.jsonl": "c9394cbdb8f54abf15051e8d865a6e2c1a164c397d8376bb3a23cc2ff285c412",
+        "results/benchmark/single_cell/orientation_swap/cd8t_nk/claude-haiku-4-5-20251001_raw.jsonl": "96fa1a17fa3f7d507c9b92abe38d1a7d2ed02542cb707700efa3a0e9ef8a6bd9",
+        "signal/single_cell/cd8t_nk.csv": "e2c7db3d5e28b7e3d77f5fb48ce31cdc40bca8fc1478e9bbe6dd0ec3044256c2"
+      },
+      "model": "claude-haiku-4-5-20251001",
+      "n": 200,
+      "order_averaged_correct_grounding": 0.18977500000000003,
+      "order_averaged_correct_grounding_ci95_lower": 0.16160000000000008,
+      "order_averaged_correct_grounding_ci95_upper": 0.21765062500000001,
+      "orientation_effect_on_class_asymmetry": 0.8687,
+      "orientation_effect_on_class_asymmetry_ci95_lower": 0.7801000000000001,
+      "orientation_effect_on_class_asymmetry_ci95_upper": 0.9558000000000001,
+      "orientation_effect_on_prior_shift": 0.43435,
+      "orientation_effect_on_prior_shift_ci95_lower": 0.39005000000000006,
+      "orientation_effect_on_prior_shift_ci95_upper": 0.47790000000000005,
+      "orientation_guardrail": 0.03425000000000003,
+      "orientation_guardrail_ci95_lower": -0.009051249999999999,
+      "orientation_guardrail_ci95_upper": 0.07765000000000008,
+      "prompt_role_asymmetry": -0.43435,
+      "prompt_role_asymmetry_ci95_lower": -0.47790000000000005,
+      "prompt_role_asymmetry_ci95_upper": -0.39005000000000006,
+      "reverse_aligned_to_original_class_a": {
+        "anon_auroc": 0.495,
+        "class_asymmetry_first_minus_comparator": 0.3087,
+        "class_prior_shift_toward_a": 0.15435,
+        "class_separation_gain": 0.34530000000000005,
+        "comparator_class_correct_shift": 0.018300000000000018,
+        "first_class_correct_shift": 0.327,
+        "name_auroc": 0.83585
+      },
+      "reverse_anon_queried_first_probability": {
+        "mean": 0.8494999999999999,
+        "modal_fraction": 0.995,
+        "modal_probability": 0.85,
+        "unique_values": 2
+      },
+      "reverse_class_asymmetry_ci95_lower": 0.243,
+      "reverse_class_asymmetry_ci95_upper": 0.374,
+      "reverse_parse_rate": 1.0,
+      "task": "cd8t_nk",
+      "task_label": "CD8+ T vs NK"
+    },
+    {
+      "biological_class_asymmetry": 0.24215000000000014,
+      "biological_class_asymmetry_ci95_lower": 0.1905000000000002,
+      "biological_class_asymmetry_ci95_upper": 0.2937500000000001,
+      "forward": {
+        "anon_auroc": 0.505,
+        "class_asymmetry_first_minus_comparator": -0.16139999999999988,
+        "class_prior_shift_toward_a": -0.08069999999999994,
+        "class_separation_gain": 0.281,
+        "comparator_class_correct_shift": 0.22119999999999995,
+        "first_class_correct_shift": 0.05980000000000007,
+        "name_auroc": 0.7632
+      },
+      "forward_anon_queried_first_probability": {
+        "mean": 0.8517499999999998,
+        "modal_fraction": 0.975,
+        "modal_probability": 0.85,
+        "unique_values": 2
+      },
+      "forward_class_asymmetry_ci95_lower": -0.23450249999999986,
+      "forward_class_asymmetry_ci95_upper": -0.09029999999999987,
+      "forward_reverse_within_class_delta_rank_correlation": 0.3583341502091519,
+      "input_sha256": {
+        "results/benchmark/single_cell/mono/claude-haiku-4-5-20251001_raw.jsonl": "8c67c692d98a1257caa565a4ac1867c036914536d8274bea6b8348f86ca1c54f",
+        "results/benchmark/single_cell/orientation_swap/mono/claude-haiku-4-5-20251001_raw.jsonl": "861d3471907eedeeca031b79636e8b8fc207c825b0d3e863e35113cc975e5e37",
+        "signal/single_cell/mono_cd14_fcgr3a.csv": "d1dd14db564ff4ac2ecfe83dab8564cdf56e18ce474760513854e254a65a022c"
+      },
+      "model": "claude-haiku-4-5-20251001",
+      "n": 200,
+      "order_averaged_correct_grounding": 0.20632500000000006,
+      "order_averaged_correct_grounding_ci95_lower": 0.18015000000000006,
+      "order_averaged_correct_grounding_ci95_upper": 0.231475625,
+      "orientation_effect_on_class_asymmetry": 0.8071,
+      "orientation_effect_on_class_asymmetry_ci95_lower": 0.7226,
+      "orientation_effect_on_class_asymmetry_ci95_upper": 0.8896999999999999,
+      "orientation_effect_on_prior_shift": 0.40355,
+      "orientation_effect_on_prior_shift_ci95_lower": 0.3613,
+      "orientation_effect_on_prior_shift_ci95_upper": 0.44484999999999997,
+      "orientation_guardrail": -0.1316500000000001,
+      "orientation_guardrail_ci95_lower": -0.1727512500000001,
+      "orientation_guardrail_ci95_upper": -0.08980000000000005,
+      "prompt_role_asymmetry": -0.40355,
+      "prompt_role_asymmetry_ci95_lower": -0.44484999999999997,
+      "prompt_role_asymmetry_ci95_upper": -0.3613,
+      "reverse_aligned_to_original_class_a": {
+        "anon_auroc": 0.5,
+        "class_asymmetry_first_minus_comparator": 0.6457000000000002,
+        "class_prior_shift_toward_a": 0.3228500000000001,
+        "class_separation_gain": 0.5443000000000002,
+        "comparator_class_correct_shift": -0.050699999999999995,
+        "first_class_correct_shift": 0.5950000000000002,
+        "name_auroc": 0.9057499999999999
+      },
+      "reverse_anon_queried_first_probability": {
+        "mean": 0.8499999999999998,
+        "modal_fraction": 1.0,
+        "modal_probability": 0.85,
+        "unique_values": 1
+      },
+      "reverse_class_asymmetry_ci95_lower": 0.5844000000000001,
+      "reverse_class_asymmetry_ci95_upper": 0.7058000000000001,
+      "reverse_parse_rate": 1.0,
+      "task": "mono",
+      "task_label": "CD14+ vs CD16+ monocyte"
+    }
+  ]
+}

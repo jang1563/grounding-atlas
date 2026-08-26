@@ -1,0 +1,347 @@
+{
+  "analysis_id": "gse96583-cd8-nk-context-module-donor-replication-v1:posthoc-target-localization",
+  "boundary": "Target identity was selected from expression rank and inspected after the primary run. These strata motivate prospective single-token hypotheses but do not isolate biological gene effects, homogeneous pathways, latent knowledge, hidden-state activation, or a physical law.",
+  "components": [
+    {
+      "component_donor_mean": 0.11421875,
+      "module": "T_TCR_CD8",
+      "n_cells": 32,
+      "n_donors": 8,
+      "sampling_context": "T_plus_cytotoxic",
+      "target_strata": [
+        {
+          "cell_mean_effect_on_p_cd8": 0.0967,
+          "cell_sign_counts": {
+            "negative": 2,
+            "positive": 19,
+            "zero": 4
+          },
+          "contribution_to_component_donor_mean": 0.075546875,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.09330729166666668,
+          "n_cells": 25,
+          "n_donors": 8,
+          "signed_share_of_component_mean": 0.6614227086183311,
+          "target_gene": "CD3D"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.3475,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 3,
+            "zero": 0
+          },
+          "contribution_to_component_donor_mean": 0.032578125,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.3475,
+          "n_cells": 3,
+          "n_donors": 3,
+          "signed_share_of_component_mean": 0.28522571819425446,
+          "target_gene": "CD8A"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.04250000000000001,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 3,
+            "zero": 0
+          },
+          "contribution_to_component_donor_mean": 0.003984375000000001,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.04250000000000001,
+          "n_cells": 3,
+          "n_donors": 3,
+          "signed_share_of_component_mean": 0.03488372093023257,
+          "target_gene": "CD8B"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.0675,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 1,
+            "zero": 0
+          },
+          "contribution_to_component_donor_mean": 0.002109375,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.0675,
+          "n_cells": 1,
+          "n_donors": 1,
+          "signed_share_of_component_mean": 0.018467852257181946,
+          "target_gene": "CD3E"
+        }
+      ]
+    },
+    {
+      "component_donor_mean": -0.06484374999999999,
+      "module": "cytotoxic_effector",
+      "n_cells": 32,
+      "n_donors": 8,
+      "sampling_context": "T_plus_cytotoxic",
+      "target_strata": [
+        {
+          "cell_mean_effect_on_p_cd8": 0.001842105263157895,
+          "cell_sign_counts": {
+            "negative": 5,
+            "positive": 5,
+            "zero": 9
+          },
+          "contribution_to_component_donor_mean": 0.0010937500000000018,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.00546875,
+          "n_cells": 19,
+          "n_donors": 8,
+          "signed_share_of_component_mean": -0.016867469879518104,
+          "target_gene": "CCL5"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": -0.22892857142857143,
+          "cell_sign_counts": {
+            "negative": 7,
+            "positive": 0,
+            "zero": 0
+          },
+          "contribution_to_component_donor_mean": -0.050078125,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.23166666666666666,
+          "n_cells": 7,
+          "n_donors": 4,
+          "signed_share_of_component_mean": 0.7722891566265061,
+          "target_gene": "GNLY"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": -0.126875,
+          "cell_sign_counts": {
+            "negative": 3,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": -0.015859375,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.13583333333333333,
+          "n_cells": 4,
+          "n_donors": 3,
+          "signed_share_of_component_mean": 0.24457831325301205,
+          "target_gene": "GZMB"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.0,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": 0.0,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.0,
+          "n_cells": 1,
+          "n_donors": 1,
+          "signed_share_of_component_mean": -0.0,
+          "target_gene": "GZMA"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.0,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": 0.0,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.0,
+          "n_cells": 1,
+          "n_donors": 1,
+          "signed_share_of_component_mean": -0.0,
+          "target_gene": "GZMK"
+        }
+      ]
+    },
+    {
+      "component_donor_mean": -0.0528125,
+      "module": "NK_receptor_identity",
+      "n_cells": 24,
+      "n_donors": 8,
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "target_strata": [
+        {
+          "cell_mean_effect_on_p_cd8": -0.05825,
+          "cell_sign_counts": {
+            "negative": 4,
+            "positive": 1,
+            "zero": 5
+          },
+          "contribution_to_component_donor_mean": -0.024270833333333332,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.059083333333333335,
+          "n_cells": 10,
+          "n_donors": 5,
+          "signed_share_of_component_mean": 0.4595660749506903,
+          "target_gene": "KLRD1"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": -0.10166666666666667,
+          "cell_sign_counts": {
+            "negative": 5,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": -0.025416666666666664,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.10200000000000001,
+          "n_cells": 6,
+          "n_donors": 5,
+          "signed_share_of_component_mean": 0.48126232741617353,
+          "target_gene": "FCGR3A"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": -0.008333333333333337,
+          "cell_sign_counts": {
+            "negative": 1,
+            "positive": 2,
+            "zero": 3
+          },
+          "contribution_to_component_donor_mean": -0.0020833333333333337,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.010000000000000004,
+          "n_cells": 6,
+          "n_donors": 5,
+          "signed_share_of_component_mean": 0.03944773175542407,
+          "target_gene": "KLRC1"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": -0.024999999999999994,
+          "cell_sign_counts": {
+            "negative": 1,
+            "positive": 0,
+            "zero": 0
+          },
+          "contribution_to_component_donor_mean": -0.0010416666666666664,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.024999999999999994,
+          "n_cells": 1,
+          "n_donors": 1,
+          "signed_share_of_component_mean": 0.019723865877712028,
+          "target_gene": "KLRC2"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.0,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": 0.0,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.0,
+          "n_cells": 1,
+          "n_donors": 1,
+          "signed_share_of_component_mean": -0.0,
+          "target_gene": "KLRF1"
+        }
+      ]
+    },
+    {
+      "component_donor_mean": -0.11635416666666665,
+      "module": "cytotoxic_effector",
+      "n_cells": 24,
+      "n_donors": 8,
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "target_strata": [
+        {
+          "cell_mean_effect_on_p_cd8": -0.16421875,
+          "cell_sign_counts": {
+            "negative": 14,
+            "positive": 0,
+            "zero": 2
+          },
+          "contribution_to_component_donor_mean": -0.10947916666666666,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.1570238095238095,
+          "n_cells": 16,
+          "n_donors": 7,
+          "signed_share_of_component_mean": 0.9409131602506715,
+          "target_gene": "GNLY"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.04000000000000001,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 3,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": 0.006666666666666668,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.04000000000000001,
+          "n_cells": 4,
+          "n_donors": 2,
+          "signed_share_of_component_mean": -0.05729632945389438,
+          "target_gene": "CCL5"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": -0.10833333333333332,
+          "cell_sign_counts": {
+            "negative": 2,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": -0.013541666666666665,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": -0.10833333333333332,
+          "n_cells": 3,
+          "n_donors": 3,
+          "signed_share_of_component_mean": 0.11638316920322293,
+          "target_gene": "NKG7"
+        },
+        {
+          "cell_mean_effect_on_p_cd8": 0.0,
+          "cell_sign_counts": {
+            "negative": 0,
+            "positive": 0,
+            "zero": 1
+          },
+          "contribution_to_component_donor_mean": 0.0,
+          "donor_equal_within_stratum_mean_effect_on_p_cd8": 0.0,
+          "n_cells": 1,
+          "n_donors": 1,
+          "signed_share_of_component_mean": -0.0,
+          "target_gene": "GZMB"
+        }
+      ]
+    }
+  ],
+  "prospective_sentinel_factorial_feasibility": {
+    "eligible_selected_receptor_context_cells_by_donor": {
+      "101": 1,
+      "1015": 2,
+      "1016": 1,
+      "1039": 2,
+      "107": 2,
+      "1244": 2,
+      "1256": 2,
+      "1488": 3
+    },
+    "feasible_for_one_cell_per_donor": true,
+    "minimum_per_donor": 1,
+    "required_top50_tokens": [
+      "CCL5",
+      "GNLY",
+      "NKG7"
+    ]
+  },
+  "provenance": {
+    "base_cells": 56,
+    "execution_runner_sha256": "782ceb97226a97cee4acf9dab19e8c6f4166876d41d088dead34cb5ca45f24f2",
+    "input_csv_sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321",
+    "input_manifest_sha256": "3e59808e09675f98be5e88fa8266f56c43aeea3592f023b6f91750ffdd0cb53f",
+    "interventions": 112,
+    "preregistration_sha256": "6096d8ca84f0eb72327bf6f44773e62baa909d8dd6715268f5fd099dce42d62e",
+    "primary_result": "results/benchmark/single_cell/donor_context_factorial/claude-haiku-4-5-20251001.json",
+    "primary_result_sha256": "f2d68cdf11615f616df3f7be3089caf569e8ee1e7d967309ca02bcbe43c40e4b",
+    "raw_checkpoint": "results/benchmark/single_cell/donor_context_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+    "raw_checkpoint_sha256": "aaf048375f4fa8f5b972a406185bfe15618323b8eacdff1b25db938ea2e63aea",
+    "raw_records": 1120
+  },
+  "raw_output_quantization": {
+    "distinct_raw_outputs": 7,
+    "frequency": {
+      "0.05": 1,
+      "0.15": 225,
+      "0.25": 100,
+      "0.72": 1,
+      "0.75": 194,
+      "0.85": 525,
+      "0.92": 74
+    },
+    "top_four_count": 1044,
+    "top_four_fraction": 0.9321428571428572,
+    "top_four_values": [
+      "0.15",
+      "0.25",
+      "0.75",
+      "0.85"
+    ]
+  },
+  "status": "post_hoc_descriptive"
+}

@@ -1,0 +1,1114 @@
+{
+  "analysis_id": "gse96583-cd8-nk-context-module-donor-replication-v1",
+  "artifacts": {
+    "builder_sha256": "b089e91231042db7c8a7e17fd6dbe1e32169bf1f05361cd6e5e8041c395f00bf",
+    "csv_path": "signal/single_cell/gse96583_cd8_nk_module_replication.csv",
+    "csv_sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321"
+  },
+  "claim_scope": "multi_donor_sle_control_mixed_marker_text_input_module_sensitivity_not_gene_pathway_hidden_state_or_physical_law",
+  "context_selection_audit": [
+    {
+      "donor_id": "101",
+      "eligible_after_prior_context_exclusion": 32,
+      "eligible_before_prior_context_exclusion": 32,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "101",
+      "eligible_after_prior_context_exclusion": 20,
+      "eligible_before_prior_context_exclusion": 20,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "107",
+      "eligible_after_prior_context_exclusion": 7,
+      "eligible_before_prior_context_exclusion": 7,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "107",
+      "eligible_after_prior_context_exclusion": 8,
+      "eligible_before_prior_context_exclusion": 8,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "1015",
+      "eligible_after_prior_context_exclusion": 81,
+      "eligible_before_prior_context_exclusion": 81,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "1015",
+      "eligible_after_prior_context_exclusion": 59,
+      "eligible_before_prior_context_exclusion": 59,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "1016",
+      "eligible_after_prior_context_exclusion": 320,
+      "eligible_before_prior_context_exclusion": 320,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "1016",
+      "eligible_after_prior_context_exclusion": 58,
+      "eligible_before_prior_context_exclusion": 58,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "1039",
+      "eligible_after_prior_context_exclusion": 10,
+      "eligible_before_prior_context_exclusion": 10,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "1039",
+      "eligible_after_prior_context_exclusion": 4,
+      "eligible_before_prior_context_exclusion": 5,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "1244",
+      "eligible_after_prior_context_exclusion": 26,
+      "eligible_before_prior_context_exclusion": 26,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "1244",
+      "eligible_after_prior_context_exclusion": 25,
+      "eligible_before_prior_context_exclusion": 25,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "1256",
+      "eligible_after_prior_context_exclusion": 84,
+      "eligible_before_prior_context_exclusion": 84,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "1256",
+      "eligible_after_prior_context_exclusion": 65,
+      "eligible_before_prior_context_exclusion": 65,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    },
+    {
+      "donor_id": "1488",
+      "eligible_after_prior_context_exclusion": 29,
+      "eligible_before_prior_context_exclusion": 29,
+      "requested": 4,
+      "required_modules": [
+        "T_TCR_CD8",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "T_plus_cytotoxic",
+      "selected": 4
+    },
+    {
+      "donor_id": "1488",
+      "eligible_after_prior_context_exclusion": 26,
+      "eligible_before_prior_context_exclusion": 26,
+      "requested": 3,
+      "required_modules": [
+        "NK_receptor_identity",
+        "cytotoxic_effector"
+      ],
+      "sampling_context": "NK_receptor_plus_cytotoxic",
+      "selected": 3
+    }
+  ],
+  "context_selection_order": [
+    "T_plus_cytotoxic",
+    "NK_receptor_plus_cytotoxic"
+  ],
+  "control_matching": {
+    "distinct_neutral_inputs_per_cell": {
+      "2": 56
+    },
+    "matched_gene_pairs": 112,
+    "max_expression_distance": 1.153613362146329,
+    "max_prevalence_distance": 0.3980971457185779,
+    "max_rank_distance": 6.0,
+    "median_expression_distance": 0.0,
+    "median_prevalence_distance": 0.10565848773159736,
+    "median_rank_distance": 2.0,
+    "method": "separate within-cell match for each module on expression rank, log-normalized expression, framed-cell top-50 prevalence, and token length",
+    "source_neutral_control_gene_count": 13436,
+    "source_neutrality_rule": "PBMC3k absolute CD8-vs-NK top-50 prevalence gap <= 0.10; all 30 frozen parent markers excluded",
+    "source_prevalence_gap_sha256": "b4e8b3a1b26e1a9b8a13f47334fc1747d0d3c8fd0db076fd91f118ae156e2606"
+  },
+  "execution_budget": {
+    "logical_condition_form_observations": 1120,
+    "prompt_forms_per_input": 4,
+    "unique_api_calls_after_input_deduplication": 1120
+  },
+  "expression_contexts": {
+    "NK_receptor_plus_cytotoxic": [
+      "NK_receptor_identity",
+      "cytotoxic_effector"
+    ],
+    "T_plus_cytotoxic": [
+      "T_TCR_CD8",
+      "cytotoxic_effector"
+    ]
+  },
+  "freeze_date": "2026-07-27",
+  "minimum_context_support_after_prior_context_exclusion": {
+    "NK_receptor_plus_cytotoxic": 4,
+    "T_plus_cytotoxic": 7
+  },
+  "modules": {
+    "NK_receptor_identity": [
+      "FCGR3A",
+      "KLRC1",
+      "KLRC2",
+      "KLRD1",
+      "KLRF1",
+      "NCAM1",
+      "NCR1"
+    ],
+    "T_TCR_CD8": [
+      "CD3D",
+      "CD3E",
+      "CD3G",
+      "CD8A",
+      "CD8B"
+    ],
+    "cytotoxic_effector": [
+      "CCL5",
+      "CTSW",
+      "FGFBP2",
+      "GNLY",
+      "GZMA",
+      "GZMB",
+      "GZMH",
+      "GZMK",
+      "NKG7",
+      "PRF1",
+      "XCL1",
+      "XCL2"
+    ]
+  },
+  "preprocessing": {
+    "counts": "deposited integer UMI matrix",
+    "duplicate_gene_symbols": "sum Ensembl rows sharing a symbol before normalization",
+    "normalization": "per-cell total-count normalization to 10000 followed by log1p",
+    "ranking": "top 50 positive values; descending log-normalized expression with gene-symbol lexical tie break",
+    "universe": "intersection with frozen PBMC3k symbols, excluding RP[LS]/MRP[LS]/MT-/MALAT1 housekeeping patterns"
+  },
+  "requested_cells_per_donor": {
+    "NK_receptor_plus_cytotoxic": 3,
+    "T_plus_cytotoxic": 4
+  },
+  "requested_context_sample_feasible": true,
+  "sampled_cells": 56,
+  "sampled_class_counts_descriptive_only": {
+    "CD8 T cells": 33,
+    "NK cells": 23
+  },
+  "sampled_context_by_class_descriptive_only": [
+    {
+      "n": 28,
+      "reference_annotation": "CD8 T cells",
+      "sampling_context": "T_plus_cytotoxic"
+    },
+    {
+      "n": 4,
+      "reference_annotation": "NK cells",
+      "sampling_context": "T_plus_cytotoxic"
+    },
+    {
+      "n": 5,
+      "reference_annotation": "CD8 T cells",
+      "sampling_context": "NK_receptor_plus_cytotoxic"
+    },
+    {
+      "n": 19,
+      "reference_annotation": "NK cells",
+      "sampling_context": "NK_receptor_plus_cytotoxic"
+    }
+  ],
+  "sampled_context_counts": {
+    "NK_receptor_plus_cytotoxic": 24,
+    "T_plus_cytotoxic": 32
+  },
+  "sampled_donor_counts": {
+    "101": 7,
+    "1015": 7,
+    "1016": 7,
+    "1039": 7,
+    "107": 7,
+    "1244": 7,
+    "1256": 7,
+    "1488": 7
+  },
+  "sampling": {
+    "label_boundary": "reference labels define only the upstream CD8/NK task frame; labels do not enter the sampling hash or select context, cell, module pair, target token, or mask",
+    "policy": "for each donor, assign T-plus-cytotoxic first and then NK-receptor-plus-cytotoxic; within each expression-support set take the lowest SHA-256 hashes, excluding cells already assigned to the prior context",
+    "sampling_hash_payload": "gse96583-cd8-nk-context-module-donor-replication-v1|<donor_id>|<barcode>"
+  },
+  "selected_module_targets": {
+    "NK_receptor_identity": [
+      {
+        "cells": 10,
+        "gene": "KLRD1"
+      },
+      {
+        "cells": 6,
+        "gene": "FCGR3A"
+      },
+      {
+        "cells": 6,
+        "gene": "KLRC1"
+      },
+      {
+        "cells": 1,
+        "gene": "KLRC2"
+      },
+      {
+        "cells": 1,
+        "gene": "KLRF1"
+      }
+    ],
+    "T_TCR_CD8": [
+      {
+        "cells": 25,
+        "gene": "CD3D"
+      },
+      {
+        "cells": 3,
+        "gene": "CD8A"
+      },
+      {
+        "cells": 3,
+        "gene": "CD8B"
+      },
+      {
+        "cells": 1,
+        "gene": "CD3E"
+      }
+    ],
+    "cytotoxic_effector": [
+      {
+        "cells": 23,
+        "gene": "CCL5"
+      },
+      {
+        "cells": 23,
+        "gene": "GNLY"
+      },
+      {
+        "cells": 5,
+        "gene": "GZMB"
+      },
+      {
+        "cells": 3,
+        "gene": "NKG7"
+      },
+      {
+        "cells": 1,
+        "gene": "GZMA"
+      },
+      {
+        "cells": 1,
+        "gene": "GZMK"
+      }
+    ]
+  },
+  "source": {
+    "annotation_boundary": "the paper derived deposited cell labels from the same expression matrix by reference-marker prediction; labels are therefore not orthogonal biological ground truth and are used only to define the upstream task frame and for descriptive or secondary summaries",
+    "arm": "batch 2 control; 6-hour culture without IFN-beta",
+    "deposited_metadata_header_note": "seven header tokens for eight row fields; first positional field is the unlabeled barcode",
+    "geo_accession": "GSE96583",
+    "geo_url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE96583",
+    "inclusion": "demuxlet singlets in the deposited CD8 T-cell or NK-cell task frame with at least 50 renderable common-universe genes; expression support, not the deposited label, assigns the T-plus-cytotoxic or NK-receptor-plus-cytotoxic context",
+    "paper_doi": "10.1038/nbt.4042",
+    "population": "eight SLE donors",
+    "redistribution": "no_NCBI_restriction; submitter_rights_caveat; distribute derived tables and the fetch/hash manifest without relicensing upstream GEO bytes",
+    "stimulated_secondary_boundary": "the stimulated files are locked as archive members but not ingested; activating that secondary requires direct extraction and validation, and it remains the same eight donors rather than eight additional replicates",
+    "transitively_locked_not_ingested": {
+      "GSM2560249_2.2.mtx.gz": {
+        "bytes": 29050932,
+        "sha256": "8aecc98a7ac4957bbc2570f87ebe8ce97332a5bcdbf557d40bd5aabfd287bdc5",
+        "status": "transitively_locked_not_ingested"
+      },
+      "GSM2560249_barcodes.tsv.gz": {
+        "bytes": 52366,
+        "sha256": "9bb38e080dfae81036fbcd9902c6c6254a4466aa85f70705479be3b2d6679d55",
+        "status": "transitively_locked_not_ingested"
+      }
+    }
+  },
+  "source_hashes": {
+    "archive": "e5d41a3248a813f99d68fd5c9eb9773de7f46a83680a67f4a02d683b8955fe80",
+    "archive_members_transitively_locked_not_ingested": {
+      "GSM2560249_2.2.mtx.gz": {
+        "bytes": 29050932,
+        "sha256": "8aecc98a7ac4957bbc2570f87ebe8ce97332a5bcdbf557d40bd5aabfd287bdc5",
+        "status": "transitively_locked_not_ingested"
+      },
+      "GSM2560249_barcodes.tsv.gz": {
+        "bytes": 52366,
+        "sha256": "9bb38e080dfae81036fbcd9902c6c6254a4466aa85f70705479be3b2d6679d55",
+        "status": "transitively_locked_not_ingested"
+      }
+    },
+    "barcodes": "d58d8d55cbe4a12757207784b3bc9227bf200c9100ca15131176e9f8159c955e",
+    "genes": "93aa4e9b530ef9d6411ca129b416324c5cc1cc5a01a1fa6ed4f4a845480ed3ca",
+    "matrix": "32add28a0b3397d9ef3f220b7a6a55e98e60fe7b66fe48d0986d634df8ca0013",
+    "metadata": "1d57e72e92ca8695250e88cc0f1c3fa8c0be1175d974f8b427c58f1274dc6c09",
+    "pbmc3k": "0db367b991dd95809732b218539ede489bea99113807f62ebd7ccc970025fe38"
+  },
+  "status": "built_not_executed",
+  "support": {
+    "by_module_donor_class": {
+      "NK_receptor_identity": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 18
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 0
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 8
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 14
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 47
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 35
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 24
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 3
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 4
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 22
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 7
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 58
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 5
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 22
+        }
+      ],
+      "T_TCR_CD8": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 36
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 5
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 9
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 1
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 94
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 3
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 312
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 16
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 13
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 21
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 8
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 76
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 16
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 27
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 4
+        }
+      ],
+      "cytotoxic_effector": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 54
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 70
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 13
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 39
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 146
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 177
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 514
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 127
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 19
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 18
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 44
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 104
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 117
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 260
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 52
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 116
+        }
+      ]
+    },
+    "by_support_set_donor_class": {
+      "NK_receptor_plus_cytotoxic": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 18
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 0
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 8
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 12
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 47
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 34
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 24
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 3
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 3
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 22
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 7
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 58
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 4
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 22
+        }
+      ],
+      "T_plus_NK_receptor": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 1
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 1
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 0
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 5
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 25
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 5
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 1
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 1
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 6
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 2
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 3
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 0
+        }
+      ],
+      "T_plus_cytotoxic": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 27
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 5
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 6
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 1
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 78
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 3
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 304
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 16
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 10
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 18
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 8
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 68
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 16
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 25
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 4
+        }
+      ],
+      "all_three": [
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "101",
+          "n": 1
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "101",
+          "n": 1
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "107",
+          "n": 0
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "107",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1015",
+          "n": 5
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1015",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1016",
+          "n": 24
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1016",
+          "n": 5
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1039",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1039",
+          "n": 0
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1244",
+          "n": 1
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1244",
+          "n": 1
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1256",
+          "n": 6
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1256",
+          "n": 2
+        },
+        {
+          "cell_type": "CD8 T cells",
+          "donor_id": "1488",
+          "n": 2
+        },
+        {
+          "cell_type": "NK cells",
+          "donor_id": "1488",
+          "n": 0
+        }
+      ]
+    },
+    "duplicate_symbol_rows_aggregated": 1445,
+    "framed_cells_before_renderability_qc": 1998,
+    "renderability_qc": "at least 50 positive genes in the frozen common non-housekeeping universe",
+    "renderability_qc_excluded_by_donor_class": [
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "101",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "101",
+        "n": 0
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "107",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "107",
+        "n": 0
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "1015",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "1015",
+        "n": 0
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "1016",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "1016",
+        "n": 0
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "1039",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "1039",
+        "n": 1
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "1244",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "1244",
+        "n": 0
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "1256",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "1256",
+        "n": 0
+      },
+      {
+        "cell_type": "CD8 T cells",
+        "donor_id": "1488",
+        "n": 0
+      },
+      {
+        "cell_type": "NK cells",
+        "donor_id": "1488",
+        "n": 0
+      }
+    ],
+    "renderable_cells": 1997,
+    "universe_genes": 13503,
+    "universe_sha256": "145e849b9860115d455226de456935ba3b29366915e659dd2a58637916cb5506"
+  }
+}

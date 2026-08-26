@@ -1,0 +1,157 @@
+{
+  "alpha": 0.05,
+  "call_plan_sha256": "0263c0b9be1e025e7836fea077e7559f9914d961b3f7d80ad9f992641561553b",
+  "coherence_tolerance": 1e-06,
+  "equivalence_margin": 0.06,
+  "expected_chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+  "expected_confirmatory_donors": null,
+  "expected_donor_ids": [
+    "101",
+    "1015",
+    "1016",
+    "1039",
+    "107",
+    "1244",
+    "1256",
+    "1488"
+  ],
+  "expected_dtype": "float32",
+  "expected_model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "expected_model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "expected_record_ids": [
+    "0f6f9035d56d92a1176bcee122252183f6d8996161ec8392cff53408eac64217",
+    "18c11b62328fcfefa4cf365fc90316beaae7333e931163cc202c8d96ba924067",
+    "1ae72468b17caef09194e41b193bf7bbec3a2488a31a3d00a84879bd3ac7333b",
+    "1c46e105653bcf6d287259e730b24308b02af4020f3fb68de94ff573de458400",
+    "1e120cd4c7c883cf7b27a480598c078a3d235458722dfdffbc17aedb32319a1c",
+    "24b10faf0716f20e6bf9825cbee9088a895f8102d6c598d153565ad26ddee0d5",
+    "2bf30aec41db57e24a76635afd01db67abf9f302d0026519cfbc51273caa3c3b",
+    "31000660f75f36f4bbd5224455dff73f98b9b920d6ba05d564539af1b6d541d0",
+    "35248b20b0f568cb901766b2ce1d3ba2d8df9eee9c694fa91293d764703dce85",
+    "355d138e59219ddd4666dbc12ebf4f3997d459e62a547d293dcdfc1897d4b438",
+    "358596c161c259a8529c048e18b7e769c4dc3ae3eadf3fab31b717b5f3237ca3",
+    "3d13aae3a02493b005bf8ec4e6cd55781e88fa572bc210ce8c5c7cec93696496",
+    "42418e900e54638a7ca2cbad9a78e2234bedfff92c074ed6e269b20ea5319bb0",
+    "42bc6be86eca873556e7500d8ab66519537452390cafecb682ace100b1a17ee8",
+    "467682d923453df3ca02a1234c3bb3bf59bb367e3a667834a5610fdeb09ea5a5",
+    "46b13e323c9df827ca62d0f45bc0b219219b1a1cd540c4c5b62d936f109c1066",
+    "494a0362a33d9f8f620fbe4c617dbc4c0d40e0d50592debe2ed77e518930bbad",
+    "496f679af53584fc70ce389215e07b1846ee63d000a0f16f7a6331ade43b6095",
+    "4be6bc9795ea5023601e737472f4cc90545e8f83dfb5b92243b4adcb5aabd613",
+    "538bc9f1ad02b29d92e4c3f1e9ef9baac5bab89182fcf09ec8e142a3946df8b3",
+    "58134a574b1b806f359ac56dea2caf2a9165e898ca6de373ef7d75f75ce86eec",
+    "5a6a42bfcad9a113d2d11a6b01d7b7e257e1d01ead255f02c7ee83f1ed24c757",
+    "65e5f8615cea3b7d5475284242d0dab19c4a0663c443a4cb659f3ef7628bf27d",
+    "662a378792636365983cdfe8f0a8c61195689ae5e549b6e204a6928ec9b85100",
+    "69608a468f48daee3368a1bef8979c2da711b11205858012326ebf1ccd6ae54a",
+    "749fcf450428d644e464130c977c7f8b7e50ef594ccaa13c3cb100b4eb8850dc",
+    "77dc53e3f072b2d7f710987f84abc9cb15ec54b6fe6b50394abe4fff6e0fde2b",
+    "7ccc4656a782d2164c90574049a21b01d9a57f58b3a04cade71870c4d06460ef",
+    "7e5305a600d6cebc8ff8b7160de4b376105c2999f1f03049a83f1cdb21b15afa",
+    "7f9d5c2e93c45189ece79f94bedd486fc57d340fbe68b0f7e7b4d665a4810446",
+    "83f179b4db569f486e792c3e7ea4d08501cc22a822e025eae746f835cf254826",
+    "8715f39d70778280cb2e720dd721559f577ffe57a9dccdf065ab52512f105c4f",
+    "87cb0842b45375e278b9e63fd6314e3abda6554cfa908919046ae17b389e9586",
+    "8948550bfdd9c551fbe17047cd3a06e7b2435eea0f310c1f41c3985f7315ef20",
+    "8b7cc68f21ac9c223d68b7f673778183a3436bde3180cafb7f258a5d97eeb42e",
+    "8f6bf8cf1cdec4078a15ff721b9f1d434ef2d0ed5e9aea87cf75cdd12954ec4f",
+    "90cb01bc1f74d8670d3de400ec5d16392b18d8a44bd2d1c4c51cfe516088d92f",
+    "90e811f5d84d6e4610967b9054ad767f22b5c9b7bef291e3378876a5b835aaf2",
+    "952b0410b12e0936d5d24b07d4b71f5a8a3092b6c6f249029eb9ea5798e0de3a",
+    "9804c064e42bead64814700b60dec6f507092bce0d187f3f58277e082999fed2",
+    "a72347d6a062ed884f59250f0c6dda6775385a2bf1cea1f72d5b6a429a620359",
+    "a7649c6db41455e93ffd286d4958827d66f385ff2f0e02648d9e3101f800769c",
+    "aa21f8785c486fdf7f1888a682e0e1b980e768d4e5eef1b3b5b884f18aaa889c",
+    "accfdb1b270a2de8580e216500830c211a9195b8fcf07397b125843f80544da7",
+    "b0663d8bb19a11549623170b33e3152e90ba9e29c9d5aca69ddf94aca9bc3c96",
+    "b8db7e149bb01ad22abe4787e598f23a7af76a23f1e9c3d97da72e9e02434041",
+    "bb06d0f18dba03f6e44af9ab2323fa5e8ff90e9c39be56a4395411944f3514f1",
+    "bc0ecdd7936bcd3e9591dfa51270c78284f04f218f8f5c7edde9590ab06afc00",
+    "c19c129ad6001264b22014dbc8dd2c7a9a86db83ddd469a00a5831e0b1ac42ca",
+    "c410d6017142f24c7e6642fdfc4a39089274603568a3e95f02645a00e6734157",
+    "d22743360cb9e72a78641317de64ca1dcce201d10d458ce2b37f2c6e2e3d6921",
+    "d7bfb9593a0b7435de7d6adf8973e5a09ae9665163f98f2e240fd1a67caf20fe",
+    "db9475bfb83b9a4e1ae86010e77439f0e64da9a4d188d64fdc78c170332df5f3",
+    "dbeabf0d2e529dbae86c68c40b4fb7278d6d13edc364077af12ce84cf380d8c0",
+    "de0fda1692d4a5c2d4e4363bfa98d3a16dbadaff65a9c4e12ba9bd0e93ee2d4e",
+    "ded9515b69271b6a84f8d9d03427abcde1bee358605488cff7396a984d87b1f0",
+    "e7a4113142f8edfda0634325fb25de82a92b825848ed3d2deaa640e6bf874073",
+    "ebda37ab842cbbdd4ca9792c4e424de47f31b3cd3c91313bad0fdd0e2ec5f178",
+    "f0fed75ce35b5b860b76121a9866cff834736e42dd8183397a582f09fb955688",
+    "f10cfd76b8143bb1bd25e844ed1f465f28972c63822b3d191393cf86c3727624",
+    "f280e52003a1a63e8cbca0e42ef0aa0df34571677c97fa24e7723a066b6170ce",
+    "f37c75b3eb8986f46a9c253c5239239d6b4873651c2b63fdfbd1837c112ff2ed",
+    "f49dd3e853bc73f58230770957fde5e57db3a55e3a5c6d3c99362ea1706e6ea0",
+    "f4f26ede10ce645296e4f9246bbc6b3a89f65aac0b07bcbd378dcdd97597ab5c"
+  ],
+  "expected_source_items": [
+    {
+      "donor_id": "1015",
+      "source_item_id": "gse96583:ctrl:1015:AAGATTACCAAGCT-1"
+    },
+    {
+      "donor_id": "1016",
+      "source_item_id": "gse96583:ctrl:1016:CTTTAGACAGCCAT-1"
+    },
+    {
+      "donor_id": "101",
+      "source_item_id": "gse96583:ctrl:101:AGGACTTGCTATGG-1"
+    },
+    {
+      "donor_id": "1039",
+      "source_item_id": "gse96583:ctrl:1039:AGTCACGAGCTTCC-1"
+    },
+    {
+      "donor_id": "107",
+      "source_item_id": "gse96583:ctrl:107:GTTAACCTCGCAAT-1"
+    },
+    {
+      "donor_id": "1244",
+      "source_item_id": "gse96583:ctrl:1244:TTTCCAGAGCTGAT-1"
+    },
+    {
+      "donor_id": "1256",
+      "source_item_id": "gse96583:ctrl:1256:AGAGATGAGTATGC-1"
+    },
+    {
+      "donor_id": "1488",
+      "source_item_id": "gse96583:ctrl:1488:AGTCTACTTGCTAG-1"
+    }
+  ],
+  "expected_tokenizer_id": "Qwen/Qwen2.5-1.5B-Instruct",
+  "expected_tokenizer_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+  "expected_vocab_size": 151936,
+  "expected_x_token_id": 55,
+  "expected_y_token_id": 56,
+  "format_overall_min": 0.95,
+  "format_per_donor_min": 0.9,
+  "format_per_group_min": 0.95,
+  "item_range_margin": 0.2,
+  "item_range_pass_min": 0.95,
+  "margin_lock_sha256": "68b7f0a5354654d5c5027af00c00dad1c8608ab039f82f4e68b879525b3b6625",
+  "margin_lock_status": "candidate_unqualified",
+  "mode": "development",
+  "preregistration_sha256": "2f297578a9e9352b29348337000d11759159d4dac7927c271f63195b6325dc07",
+  "readout_classes": {
+    "cytotoxic_state": {
+      "negative_class": "cytotoxic-low",
+      "positive_class": "cytotoxic-high"
+    },
+    "lineage": {
+      "negative_class": "CD8 T cell",
+      "positive_class": "NK cell"
+    }
+  },
+  "required_input_families": [
+    "unmodified"
+  ],
+  "required_readouts": [
+    "cytotoxic_state",
+    "lineage"
+  ],
+  "runner_code_sha256": "09f78e090a7a4f4d0440502991d7a011b74543b662691710e6382b441f67e64b",
+  "schema_version": "coherent-binary-readout-design-v1",
+  "source_fixture_sha256": "047be03ee29691506710cf9483cfe20a45c5d28e859818db9f612632d8d05367",
+  "source_manifest_sha256": "3ef29d500f85883063ceb842532b1b865ea8bee1b28222b02daabbd05a2b477e",
+  "strong_score_threshold": 0.2
+}

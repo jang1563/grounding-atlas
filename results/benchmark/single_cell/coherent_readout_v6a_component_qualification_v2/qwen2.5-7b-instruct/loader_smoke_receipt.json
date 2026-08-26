@@ -1,0 +1,13 @@
+{
+  "composition_calls": 0,
+  "dependency_canonical_sha256": "714b9fe33145105b6006a584a179c5aa49f112e73ebe7dcae40bba953f7ea6ac",
+  "execution_revision": "v2_mps_allocator_warmup_bypass",
+  "fixture_prompt_records_consumed": 0,
+  "generation_used": false,
+  "model_calls": 0,
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+  "status": "V2_LOADER_SMOKE_PASS_ZERO_FORWARD",
+  "warmup_bypass_calls": 1
+}

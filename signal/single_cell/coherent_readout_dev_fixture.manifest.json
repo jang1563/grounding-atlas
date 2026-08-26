@@ -1,0 +1,90 @@
+{
+  "analysis_id": "gse96583-coherent-readout-development-fixture-v1",
+  "artifacts": {
+    "builder_path": "signal/single_cell/build_coherent_readout_dev_fixture.py",
+    "builder_sha256": "6a5d5cf95ecb5d99859c4f0ca5be65c992a3420f22e205f9e2838ff67fa2d400",
+    "fixture_path": "signal/single_cell/coherent_readout_dev_fixture.json",
+    "fixture_sha256": "047be03ee29691506710cf9483cfe20a45c5d28e859818db9f612632d8d05367"
+  },
+  "claim_scope": "outcome_exposed_level0_readout_engineering_only_not_biology_knowledge_activation_gap_or_confirmation",
+  "contract": {
+    "donor_ids": [
+      "101",
+      "107",
+      "1015",
+      "1016",
+      "1039",
+      "1244",
+      "1256",
+      "1488"
+    ],
+    "explicit_donor_count": 8,
+    "input_families": [
+      "unmodified"
+    ],
+    "items": 16,
+    "model_calls_made_by_builder": 0,
+    "readouts": {
+      "cytotoxic_state": {
+        "negative_class": "cytotoxic-low",
+        "positive_class": "cytotoxic-high"
+      },
+      "lineage": {
+        "negative_class": "CD8 T cell",
+        "positive_class": "NK cell"
+      }
+    },
+    "unique_items": 8
+  },
+  "firewall": {
+    "biological_effect_inference": "forbidden",
+    "confirmatory_eligibility": "prohibited",
+    "partition": "development_only_outcome_exposed",
+    "promotion_to_confirmation": "forbidden",
+    "purpose": "level0_readout_engineering_only",
+    "source_outcome_exposure": "prior_model_outputs_exist_for_every_source_item"
+  },
+  "freeze_date": "2026-08-02",
+  "label_boundary": {
+    "deposited_cell_type_label_copied": false,
+    "ground_truth_label_in_fixture": false,
+    "orthogonal_cytotoxic_state_label_present": false,
+    "permitted_interpretation": "prompt_form_and_readout_coherence_only"
+  },
+  "mode": "development",
+  "outcome_exposure": {
+    "interpretation": "all source cells were previously evaluated; no record may be re-labeled as held-out or promoted into confirmation",
+    "prior_model": "claude-haiku-4-5-20251001",
+    "prior_model_calls": 480,
+    "prior_raw_path": "results/benchmark/single_cell/sentinel_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+    "prior_raw_sha256": "b625d8cf8f65e15863d19f8eb3b8300c8d0f84be6709eaac7edd94339dfede33",
+    "prior_result_path": "results/benchmark/single_cell/sentinel_factorial/claude-haiku-4-5-20251001.json",
+    "prior_result_sha256": "14d0f0c04b98c9e94650c6f966feb0f80ccf6877c612fee8c0d65110180e8df2",
+    "status": "outcome_exposed"
+  },
+  "schema_version": "coherent-readout-development-fixture-manifest-v1",
+  "source": {
+    "geo_accession": "GSE96583",
+    "source_analysis_id": "gse96583-sentinel-factorial-holdout-v1",
+    "source_builder_path": "signal/single_cell/build_gse96583_sentinel_factorial.py",
+    "source_builder_sha256": "9336e633763b91c8d0c983d75b67004da9ee6f681c1b4f7dd2d4ba92b07f8992",
+    "source_csv_path": "signal/single_cell/gse96583_sentinel_factorial.csv",
+    "source_csv_sha256": "673db8c8bcd6ba923e62891de6cd5f04f97967706ac3ade8a6e44ad2d14a4b95",
+    "source_field_used_for_model_input": "original_sentence",
+    "source_fields_forbidden_from_model_input": [
+      "control_mask_sentence",
+      "module_mask_sentence"
+    ],
+    "source_manifest_path": "signal/single_cell/gse96583_sentinel_factorial.manifest.json",
+    "source_manifest_sha256": "9f0035469c81852b11e2a36651b7892bf2dad4d30f8049b37cd1f655ca9bf0c4",
+    "source_projection_fields_used": [
+      "row_type",
+      "entity_id",
+      "cell_barcode",
+      "donor_id",
+      "original_sentence"
+    ],
+    "source_rows": "eight base rows; exactly one per explicit donor"
+  },
+  "status": "built_not_executed"
+}

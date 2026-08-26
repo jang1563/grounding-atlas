@@ -1,0 +1,72 @@
+{
+  "activations": null,
+  "attempt_receipt": {
+    "file_sha256": "879ef9a140fafc8029ca1d1acc47aad387a695aa9d060721774add16cab93922",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v2_causal_binding/qwen2.5-1.5b-instruct/holdout_patch_attempt.json"
+  },
+  "biological_model_calls": 0,
+  "call_plan_sha256": "cf8b795ed1bf931b6811eb28ea0bd0629692d55cbf3059eaae489c6bf77672d0",
+  "claim_scope": "model_prompt_site_bank_specific_causal_state_transfer_only_no_biology_latent_knowledge_activation_gap_bottleneck_or_physical_law",
+  "design_file_sha256": "e81fc4ddc47b1ef7df4d1e4560f274034bef3a66b39f1feb1429ada3faf6d050",
+  "environment": {
+    "device": "mps",
+    "dtype": "float32",
+    "environment_sha256": "08e2e4e6f753b58f9a31cae66640ce80ede1f3d7feeb8e41c92cc3dcec76dddc",
+    "helper_file_sha256": {
+      "analyzer": "ec2e897bfe00e3c8a834f412b19b981c349e3f39b2d4439903d302d3d992e471",
+      "causal_intervention": "ea3178186dd17ef2a64343671f24279452102baa23cc88030f4bc2d378a61b9c",
+      "model_hooks": "62495bd77adc40d7fd5e5643df334eb98aba363f5b81b4b7925314e877bad0c4",
+      "run_coherent_binary_readout": "09f78e090a7a4f4d0440502991d7a011b74543b662691710e6382b441f67e64b",
+      "run_coherent_readout_v2_syntax": "6387eec115f1a8ee64149334d9a7934bcc3229ea1c81952b2a2fa0db86ae6c34",
+      "runner": "62dd3d27f46fad5ad3988bed0f65ecdcbcae27b440e5a2626e1720326f5dba40"
+    },
+    "machine": "arm64",
+    "packages": {
+      "huggingface-hub": "1.5.0",
+      "numpy": "2.4.2",
+      "safetensors": "0.7.0",
+      "tokenizers": "0.22.2",
+      "torch": "2.10.0",
+      "transformers": "5.3.0"
+    },
+    "platform": "macOS-26.2-arm64-arm-64bit",
+    "python": "3.11.14",
+    "torch_runtime": {
+      "attention_implementation": "sdpa",
+      "default_dtype": "torch.float32",
+      "deterministic_algorithms_enabled": false,
+      "float32_matmul_precision": "highest",
+      "mps_is_available": true,
+      "mps_is_built": true
+    }
+  },
+  "generation_used": false,
+  "locks": {
+    "analyzer_sha256": "ec2e897bfe00e3c8a834f412b19b981c349e3f39b2d4439903d302d3d992e471",
+    "discovery_analysis_sha256": "dda99af4f3dfe4dda808e39b37f2e491cfd75af7766f1dc666c5fb577135415f",
+    "discovery_fixture_sha256": "d00e27d9e4130ff7d0d4ab32b1e26d31f40482cb1f4654204fd8a748ed06f4f8",
+    "discovery_raw_records_sha256": "f085506de6bc1501cabfc43e25520f5397f4b97e486d2c5a31cbefd7e26ac453",
+    "holdout_fixture_sha256": "2c40ba0c796202059056aec4535fd7656eab2b446d8895816bbae2034ebcbcdb",
+    "holdout_manifest_sha256": "fadc7eda8edc92e2b355a23db33898660265c2d2949cf1c7724172398b0dd8ac",
+    "model_hooks_sha256": "62495bd77adc40d7fd5e5643df334eb98aba363f5b81b4b7925314e877bad0c4",
+    "preregistration_sha256": "7cc0a11ee43490426de2338840cc2dfa9f62e0aecf259c16b9defb3da165eab0",
+    "runner_sha256": "62dd3d27f46fad5ad3988bed0f65ecdcbcae27b440e5a2626e1720326f5dba40"
+  },
+  "mode": "development",
+  "model_calls": 768,
+  "patch_records": {
+    "count": 768,
+    "file_sha256": "946b256cee0db434f8130ca0129077752a88ec66977e52ca3b7c96cab511dc0c",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v2_causal_binding/qwen2.5-1.5b-instruct/holdout_patches.jsonl"
+  },
+  "phase": "holdout_patch",
+  "plan_manifest_file_sha256": "f22b5659ca527e39b451157bf3f9ce7994d9a0c29e8401cd76c9a47fec5b282a",
+  "records": {
+    "count": 192,
+    "file_sha256": "b951156102111c017a6bd5e6a9d5e41cd533e720b6e5e041632cd2cf3660825b",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v2_causal_binding/qwen2.5-1.5b-instruct/holdout_baselines.jsonl"
+  },
+  "schema_version": "coherent-readout-v2-causal-binding-execution-v1",
+  "selected_layer": 24,
+  "status": "EXECUTION_COMPLETE_NOT_ANALYZED"
+}

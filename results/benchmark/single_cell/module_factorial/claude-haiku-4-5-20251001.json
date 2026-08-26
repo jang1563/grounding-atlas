@@ -1,0 +1,331 @@
+{
+  "analysis_id": "pbmc68k-cd8-nk-module-factorial-v1",
+  "claim_scope": "single_model_single_external_cohort_label_blind_text_input_module_ablation_not_hidden_state_or_biological_causality",
+  "class_counts": {
+    "CD8": 55,
+    "NK": 10
+  },
+  "class_direction_consistency_pass": true,
+  "condition_metrics": {
+    "T_TCR_CD8:module_mask": {
+      "mean_aligned_probability_a": 0.5668846153846153,
+      "orientation_averaged_auroc": 0.8336363636363637,
+      "orientation_averaged_brier": 0.1943160576923077
+    },
+    "T_TCR_CD8:neutral_mask": {
+      "mean_aligned_probability_a": 0.633653846153846,
+      "orientation_averaged_auroc": 0.8181818181818181,
+      "orientation_averaged_brier": 0.1692158653846154
+    },
+    "cytotoxic_effector:module_mask": {
+      "mean_aligned_probability_a": 0.7643076923076924,
+      "orientation_averaged_auroc": 0.6963636363636364,
+      "orientation_averaged_brier": 0.14204884615384616
+    },
+    "cytotoxic_effector:neutral_mask": {
+      "mean_aligned_probability_a": 0.6231923076923077,
+      "orientation_averaged_auroc": 0.81,
+      "orientation_averaged_brier": 0.17132028846153846
+    },
+    "unmasked": {
+      "mean_aligned_probability_a": 0.6313846153846153,
+      "orientation_averaged_auroc": 0.8272727272727273,
+      "orientation_averaged_brier": 0.16427961538461539
+    }
+  },
+  "equivalence_margin": 0.03,
+  "exploratory_localization": {
+    "boundary": "post-hoc descriptions; co-occurrence and cell-state selection prevent individual-gene causal attribution",
+    "masked_target_genes": {
+      "T_TCR_CD8": [
+        {
+          "gene": "CD3D",
+          "mean_effect_on_p_cd8": 0.06012195121951219,
+          "n": 41
+        },
+        {
+          "gene": "CD3E",
+          "mean_effect_on_p_cd8": 0.06441176470588235,
+          "n": 17
+        },
+        {
+          "gene": "CD3G",
+          "mean_effect_on_p_cd8": 0.11166666666666668,
+          "n": 3
+        },
+        {
+          "gene": "CD8B",
+          "mean_effect_on_p_cd8": 0.12583333333333332,
+          "n": 3
+        },
+        {
+          "gene": "CD8A",
+          "mean_effect_on_p_cd8": 0.0675,
+          "n": 1
+        }
+      ],
+      "cytotoxic_effector": [
+        {
+          "gene": "CCL5",
+          "mean_effect_on_p_cd8": 0.016346153846153847,
+          "n": 26
+        },
+        {
+          "gene": "GNLY",
+          "mean_effect_on_p_cd8": -0.36187499999999995,
+          "n": 24
+        },
+        {
+          "gene": "NKG7",
+          "mean_effect_on_p_cd8": -0.12277777777777778,
+          "n": 9
+        },
+        {
+          "gene": "GZMK",
+          "mean_effect_on_p_cd8": 0.042,
+          "n": 5
+        },
+        {
+          "gene": "CTSW",
+          "mean_effect_on_p_cd8": -0.017500000000000016,
+          "n": 1
+        }
+      ]
+    },
+    "reference_annotations": [
+      {
+        "module_effects_on_p_cd8": {
+          "T_TCR_CD8": 0.081,
+          "cytotoxic_effector": -0.31975
+        },
+        "n": 10,
+        "reference_annotation": "CD56+ NK"
+      },
+      {
+        "module_effects_on_p_cd8": {
+          "T_TCR_CD8": 0.07445945945945946,
+          "cytotoxic_effector": -0.16885135135135135
+        },
+        "n": 37,
+        "reference_annotation": "CD8+ Cytotoxic T"
+      },
+      {
+        "module_effects_on_p_cd8": {
+          "T_TCR_CD8": 0.04305555555555557,
+          "cytotoxic_effector": 0.015138888888888884
+        },
+        "n": 18,
+        "reference_annotation": "CD8+/CD45RA+ Naive Cytotoxic"
+      }
+    ]
+  },
+  "logical_condition_form_observations": 1300,
+  "model": "claude-haiku-4-5-20251001",
+  "model_calls": 1256,
+  "module_effects": {
+    "T_TCR_CD8": {
+      "ci95_lower": 0.03287471590909091,
+      "ci95_upper": 0.11810227272727272,
+      "class_direction_consistent": true,
+      "class_effects": {
+        "CD8": {
+          "ci95_lower": 0.03754545454545456,
+          "ci95_upper": 0.0929090909090909,
+          "effect_on_p_cd8": 0.06418181818181817,
+          "n": 55
+        },
+        "NK": {
+          "ci95_lower": 0.006000000000000004,
+          "ci95_upper": 0.16725,
+          "effect_on_p_cd8": 0.081,
+          "n": 10
+        }
+      },
+      "effect_on_p_cd8": 0.0725909090909091,
+      "expected_direction": "greater",
+      "form_effects": {
+        "ab_pa": {
+          "ci95_lower": 0.005090909090909096,
+          "ci95_upper": 0.12127272727272725,
+          "effect_on_p_cd8": 0.04709090909090909
+        },
+        "ab_pb": {
+          "ci95_lower": 0.03050000000000001,
+          "ci95_upper": 0.21018522727272695,
+          "effect_on_p_cd8": 0.10972727272727273
+        },
+        "ba_pa": {
+          "ci95_lower": 0.013727272727272734,
+          "ci95_upper": 0.14900227272727254,
+          "effect_on_p_cd8": 0.07536363636363635
+        },
+        "ba_pb": {
+          "ci95_lower": 0.025727272727272717,
+          "ci95_upper": 0.09377613636363605,
+          "effect_on_p_cd8": 0.058181818181818175
+        }
+      },
+      "one_sided_welch_p_value": 0.004442666517960544,
+      "prompt_factor_interactions": {
+        "all_forms_expected_direction": true,
+        "interactions_equivalent": false,
+        "order_ab_minus_ba": {
+          "ci95_lower": -0.026364204545454527,
+          "ci95_upper": 0.05597897727272714,
+          "effect": 0.011636363636363653
+        },
+        "queried_target_a_minus_b": {
+          "ci95_lower": -0.08702272727272725,
+          "ci95_upper": 0.05025056818181812,
+          "effect": -0.02272727272727272
+        }
+      },
+      "unmasked_minus_module_mask": {
+        "ci95_lower": 0.03273806818181818,
+        "ci95_upper": 0.11134232954545442,
+        "effect_on_p_cd8": 0.06920454545454545
+      },
+      "unmasked_minus_neutral_mask": {
+        "ci95_lower": -0.030136363636363635,
+        "ci95_upper": 0.024636647727272698,
+        "effect_on_p_cd8": -0.0033863636363636374
+      },
+      "welch_satterthwaite": {
+        "degrees_freedom": 11.010328327137033,
+        "standard_error": 0.022888634244841326,
+        "statistic": 3.1714827680148607
+      }
+    },
+    "cytotoxic_effector": {
+      "ci95_lower": -0.28850085227272726,
+      "ci95_upper": -0.13154517045454545,
+      "class_direction_consistent": true,
+      "class_effects": {
+        "CD8": {
+          "ci95_lower": -0.16472727272727275,
+          "ci95_upper": -0.05554545454545455,
+          "effect_on_p_cd8": -0.10863636363636364,
+          "n": 55
+        },
+        "NK": {
+          "ci95_lower": -0.45824999999999994,
+          "ci95_upper": -0.16299999999999998,
+          "effect_on_p_cd8": -0.31975,
+          "n": 10
+        }
+      },
+      "effect_on_p_cd8": -0.2141931818181818,
+      "expected_direction": "less",
+      "form_effects": {
+        "ab_pa": {
+          "ci95_lower": -0.24127386363636366,
+          "ci95_upper": -0.03327272727272729,
+          "effect_on_p_cd8": -0.13086363636363638
+        },
+        "ab_pb": {
+          "ci95_lower": -0.3894590909090909,
+          "ci95_upper": -0.0855,
+          "effect_on_p_cd8": -0.25095454545454543
+        },
+        "ba_pa": {
+          "ci95_lower": -0.3413659090909091,
+          "ci95_upper": -0.15999999999999998,
+          "effect_on_p_cd8": -0.25481818181818183
+        },
+        "ba_pb": {
+          "ci95_lower": -0.33409090909090905,
+          "ci95_upper": -0.11045454545454544,
+          "effect_on_p_cd8": -0.22013636363636363
+        }
+      },
+      "one_sided_welch_p_value": 0.00017630779379381833,
+      "prompt_factor_interactions": {
+        "all_forms_expected_direction": true,
+        "interactions_equivalent": false,
+        "order_ab_minus_ba": {
+          "ci95_lower": -0.025704545454545452,
+          "ci95_upper": 0.11338693181818178,
+          "effect": 0.046568181818181786
+        },
+        "queried_target_a_minus_b": {
+          "ci95_lower": -0.09284204545454547,
+          "ci95_upper": 0.17684147727272728,
+          "effect": 0.04270454545454547
+        }
+      },
+      "unmasked_minus_module_mask": {
+        "ci95_lower": -0.27512727272727266,
+        "ci95_upper": -0.12454460227272734,
+        "effect_on_p_cd8": -0.20454545454545456
+      },
+      "unmasked_minus_neutral_mask": {
+        "ci95_lower": -0.01871590909090909,
+        "ci95_upper": 0.038364488636363554,
+        "effect_on_p_cd8": 0.009647727272727273
+      },
+      "welch_satterthwaite": {
+        "degrees_freedom": 11.310463979793505,
+        "standard_error": 0.04258370480799518,
+        "statistic": -5.029932993945764
+      }
+    }
+  },
+  "module_separation": {
+    "ci95_lower": 0.1936122159090909,
+    "ci95_upper": 0.37445539772727265,
+    "effect": 0.2867840909090909
+  },
+  "n_cells": 65,
+  "parse_policy": "abort_confirmatory_analysis_unless_all_unique_responses_parse",
+  "parse_rate": 1.0,
+  "primary_estimand": "intersection-union gate: equal-class matched-neutral-adjusted T_TCR_CD8 effect on P(CD8) > 0 and cytotoxic_effector effect on P(CD8) < 0, averaged over four prompt forms; both class-specific means must also have the expected sign",
+  "primary_gate_pass": true,
+  "primary_iut_p_value": 0.004442666517960544,
+  "primary_iut_pass": true,
+  "prompt_robust": false,
+  "provenance": {
+    "bootstrap_replicates": 20000,
+    "call_plan_sha256": "25d083894f54b17ee0dca72a04b19a30f03e076403dde7f9ae05d05c7c42ae96",
+    "component_test": "one-sided Welch-Satterthwaite test of the equal-class linear contrast",
+    "decode": {
+      "max_tokens": 16,
+      "temperature": 0.0
+    },
+    "execution_code_sha256": "6168ea801d0f77a1c9216468aa00d0119ca6a09b3bc4f53ae99797bc85d15141",
+    "input_csv": "signal/single_cell/pbmc68k_cd8_nk_module_factorial.csv",
+    "input_csv_sha256": "fadd90b9aa1249c2691943287962a381329bcba8f91f0b392636ba80ce9f1d9b",
+    "input_manifest": "signal/single_cell/pbmc68k_cd8_nk_module_factorial.manifest.json",
+    "input_manifest_sha256": "b849e34b94f0004568ca289f1997f39b15f25eb991200b8b3d0f0c3e62869f79",
+    "preregistration": "docs/PBMC68K_MODULE_FACTORIAL_PREREG.md",
+    "preregistration_sha256": "a7f38447ceaae932b87492b15d667af02c21b006fedb7beb7469d7448b17e605",
+    "prompt_template_sha256": "8da04371ae26646b51f22aaead0815b3625b62be6c537a1788b298f67064433a",
+    "raw_checkpoint": "results/benchmark/single_cell/module_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+    "raw_checkpoint_sha256": "2a68e04ead9a55b28f348e7790e06b24cf273b8ddc9ae53c7263f919c9fdb0d7",
+    "system_prompt_sha256": "37aa5ee3d2b27cd4ae670f3a064e89de1d25013f939951d3993a6732acd5dacb"
+  },
+  "run_finished_at_utc": "2026-07-27T16:07:45.624023+00:00",
+  "run_started_at_utc": "2026-07-27T16:00:16.695266+00:00",
+  "shared_neutral_response_reuses": 44,
+  "strict_matching_sensitivity": {
+    "class_counts": {
+      "CD8": 53,
+      "NK": 8
+    },
+    "modules": {
+      "T_TCR_CD8": {
+        "ci95_lower": 0.036913178066037736,
+        "ci95_upper": 0.1354813531839622,
+        "effect_on_p_cd8": 0.08392688679245283
+      },
+      "cytotoxic_effector": {
+        "ci95_lower": -0.31132959905660373,
+        "ci95_upper": -0.16044302771226435,
+        "effect_on_p_cd8": -0.2384375
+      }
+    },
+    "n": 61,
+    "separation": 0.32236438679245283,
+    "separation_ci95_lower": 0.2377553066037736,
+    "separation_ci95_upper": 0.405380896226415
+  }
+}

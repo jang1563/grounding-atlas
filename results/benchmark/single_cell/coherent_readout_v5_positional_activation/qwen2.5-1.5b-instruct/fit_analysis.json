@@ -1,0 +1,195 @@
+{
+  "behavior": {
+    "G": {
+      "bootstrap_95": {
+        "interpretation": "finite_registered_world_panel_stability_not_population_generalization",
+        "lower_95": -2.2736722826957703,
+        "upper_95": -1.4134229436516763
+      },
+      "bootstrap_G_95": {
+        "interpretation": "finite_registered_world_panel_stability_not_population_generalization",
+        "lower_95": -2.2736722826957703,
+        "upper_95": -1.4134229436516763
+      },
+      "bootstrap_ratio_95": null,
+      "bootstrap_ratio_valid": false,
+      "gap_mean": -1.8500365316867828,
+      "gap_world_values": {
+        "activation_world_001": -2.281813621520996,
+        "activation_world_002": -2.15413761138916,
+        "activation_world_003": -1.2215611934661865,
+        "activation_world_004": -1.4327967166900635,
+        "activation_world_005": -2.3883020877838135,
+        "activation_world_006": -2.7481884956359863,
+        "activation_world_007": -1.8041517734527588,
+        "activation_world_008": -0.7693407535552979
+      },
+      "mean": -1.8500365316867828,
+      "mean_over_G": null,
+      "n_worlds": 8,
+      "positive_world_count": 0,
+      "positive_world_fraction": 0.0,
+      "ratio_defined": false,
+      "world_values": {
+        "activation_world_001": -2.281813621520996,
+        "activation_world_002": -2.15413761138916,
+        "activation_world_003": -1.2215611934661865,
+        "activation_world_004": -1.4327967166900635,
+        "activation_world_005": -2.3883020877838135,
+        "activation_world_006": -2.7481884956359863,
+        "activation_world_007": -1.8041517734527588,
+        "activation_world_008": -0.7693407535552979
+      }
+    },
+    "G_full": {
+      "bootstrap_95": {
+        "interpretation": "finite_registered_world_panel_stability_not_population_generalization",
+        "lower_95": -2.2266922295093536,
+        "upper_95": -1.4133896827697754
+      },
+      "bootstrap_G_95": {
+        "interpretation": "finite_registered_world_panel_stability_not_population_generalization",
+        "lower_95": -2.2266922295093536,
+        "upper_95": -1.4133896827697754
+      },
+      "bootstrap_ratio_95": null,
+      "bootstrap_ratio_valid": false,
+      "gap_mean": -1.8431536555290222,
+      "gap_world_values": {
+        "activation_world_001": -2.27197802066803,
+        "activation_world_002": -2.1578909158706665,
+        "activation_world_003": -1.3378924131393433,
+        "activation_world_004": -1.5157369375228882,
+        "activation_world_005": -2.4525758028030396,
+        "activation_world_006": -2.5303027629852295,
+        "activation_world_007": -1.7880877256393433,
+        "activation_world_008": -0.6907646656036377
+      },
+      "mean": -1.8431536555290222,
+      "mean_over_G": null,
+      "n_worlds": 8,
+      "positive_world_count": 0,
+      "positive_world_fraction": 0.0,
+      "ratio_defined": false,
+      "world_values": {
+        "activation_world_001": -2.27197802066803,
+        "activation_world_002": -2.1578909158706665,
+        "activation_world_003": -1.3378924131393433,
+        "activation_world_004": -1.5157369375228882,
+        "activation_world_005": -2.4525758028030396,
+        "activation_world_006": -2.5303027629852295,
+        "activation_world_007": -1.7880877256393433,
+        "activation_world_008": -0.6907646656036377
+      }
+    },
+    "G_panel": {
+      "bootstrap_95": {
+        "interpretation": "finite_registered_world_panel_stability_not_population_generalization",
+        "lower_95": -2.2736722826957703,
+        "upper_95": -1.4134229436516763
+      },
+      "bootstrap_G_95": {
+        "interpretation": "finite_registered_world_panel_stability_not_population_generalization",
+        "lower_95": -2.2736722826957703,
+        "upper_95": -1.4134229436516763
+      },
+      "bootstrap_ratio_95": null,
+      "bootstrap_ratio_valid": false,
+      "gap_mean": -1.8500365316867828,
+      "gap_world_values": {
+        "activation_world_001": -2.281813621520996,
+        "activation_world_002": -2.15413761138916,
+        "activation_world_003": -1.2215611934661865,
+        "activation_world_004": -1.4327967166900635,
+        "activation_world_005": -2.3883020877838135,
+        "activation_world_006": -2.7481884956359863,
+        "activation_world_007": -1.8041517734527588,
+        "activation_world_008": -0.7693407535552979
+      },
+      "mean": -1.8500365316867828,
+      "mean_over_G": null,
+      "n_worlds": 8,
+      "positive_world_count": 0,
+      "positive_world_fraction": 0.0,
+      "ratio_defined": false,
+      "world_values": {
+        "activation_world_001": -2.281813621520996,
+        "activation_world_002": -2.15413761138916,
+        "activation_world_003": -1.2215611934661865,
+        "activation_world_004": -1.4327967166900635,
+        "activation_world_005": -2.3883020877838135,
+        "activation_world_006": -2.7481884956359863,
+        "activation_world_007": -1.8041517734527588,
+        "activation_world_008": -0.7693407535552979
+      }
+    },
+    "component_stratum_accuracy": {
+      "lookup__m=+1": 0.515625,
+      "lookup__m=-1": 0.5,
+      "lookup__p=+1": 0.546875,
+      "lookup__p=-1": 0.46875,
+      "lookup__r=+1": 0.515625,
+      "lookup__r=-1": 0.5,
+      "lookup__v=+1": 0.515625,
+      "lookup__v=-1": 0.5,
+      "retrieval__o=+1": 0.59375,
+      "retrieval__o=-1": 0.59375,
+      "retrieval__p=+1": 0.625,
+      "retrieval__p=-1": 0.5625,
+      "retrieval__v=+1": 0.625,
+      "retrieval__v=-1": 0.5625
+    },
+    "component_world_accuracy": {
+      "activation_world_001__lookup": 0.5,
+      "activation_world_001__retrieval": 0.75,
+      "activation_world_002__lookup": 0.5,
+      "activation_world_002__retrieval": 0.5,
+      "activation_world_003__lookup": 0.5625,
+      "activation_world_003__retrieval": 0.5,
+      "activation_world_004__lookup": 0.5,
+      "activation_world_004__retrieval": 0.5,
+      "activation_world_005__lookup": 0.5,
+      "activation_world_005__retrieval": 0.5,
+      "activation_world_006__lookup": 0.5,
+      "activation_world_006__retrieval": 0.5,
+      "activation_world_007__lookup": 0.5,
+      "activation_world_007__retrieval": 0.75,
+      "activation_world_008__lookup": 0.5,
+      "activation_world_008__retrieval": 0.75
+    },
+    "composition_accuracy_gap": -0.2578125,
+    "family_accuracy": {
+      "lookup": 0.5078125,
+      "retrieval": 0.59375
+    },
+    "gates": {
+      "G_bootstrap_lower_positive": false,
+      "composition_accuracy_gap": false,
+      "fixed_panel_direct_prerequisites": false,
+      "pass": false,
+      "retrieval_lookup_each_stratum": false,
+      "retrieval_lookup_each_world": false,
+      "retrieval_lookup_overall": false,
+      "target_first_composition": false,
+      "target_second_error": false
+    },
+    "n_records": 448,
+    "n_worlds": 8,
+    "target_first_composition_accuracy": 0.5390625,
+    "target_second_composition_accuracy": 0.796875,
+    "target_second_error_rate": 0.203125
+  },
+  "claim_boundaries": {
+    "absolute_position_vs_preceding_other_interference": "not_separated",
+    "biology_inference": "forbidden",
+    "general_activation_gap_inference": "forbidden",
+    "intervention_is_selective_rank_one_coordinate_replacement": true,
+    "latent_biological_knowledge_inference": "forbidden",
+    "model_family_generalization": "forbidden",
+    "natural_gap_is_behaviorally_preexisting": true,
+    "physical_law_inference": "forbidden",
+    "supported_scope": "synthetic_model_prompt_target_property_token_and_selected_layer_specific_causal_target_order_context_state_mediation"
+  },
+  "schema_version": "coherent-readout-v5-positional-fit-analysis-v1",
+  "status": "V5_FIT_COMPONENT_ADMISSION_FAIL"
+}

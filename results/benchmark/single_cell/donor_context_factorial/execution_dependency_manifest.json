@@ -1,0 +1,69 @@
+{
+  "analysis_id": "gse96583-cd8-nk-context-module-donor-replication-v1",
+  "attestation_type": "post_run_execution_dependency_attestation",
+  "captured_after_complete_continuous_run": true,
+  "run_window_utc": {
+    "first_started_at": "2026-07-30T20:44:48.398385+00:00",
+    "last_finished_at": "2026-07-30T20:52:02.252560+00:00"
+  },
+  "model": "claude-haiku-4-5-20251001",
+  "decode": {
+    "max_tokens": 16,
+    "temperature": 0.0
+  },
+  "runtime": {
+    "anthropic": "0.102.0",
+    "httpx": "0.28.1",
+    "numpy": "2.3.5",
+    "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+    "pydantic": "2.13.4",
+    "python": "3.13.11",
+    "scikit-learn": "1.8.0",
+    "scipy": "1.17.1"
+  },
+  "dependencies": {
+    "eval/benchmark_tasks.py": {
+      "sha256": "1d3409867ac523fd2d2639395ddaa552e159fcf95d97a7ba5e0ee7b1375869fb"
+    },
+    "eval/run_grounding_eval.py": {
+      "imported_symbols": [
+        "DECODE",
+        "complete",
+        "parse_prob_with_status"
+      ],
+      "sha256": "2acce057c05646297c9d3576288ec9496d5f1dd9c2fcdaf65a840d437498c430"
+    },
+    "eval/single_cell_donor_context_factorial.py": {
+      "sha256": "782ceb97226a97cee4acf9dab19e8c6f4166876d41d088dead34cb5ca45f24f2"
+    },
+    "pyproject.toml": {
+      "sha256": "e6113c066f5492f5c97435a526435331d714acf759c59eda3c237f734a76210c"
+    },
+    "requirements.txt": {
+      "sha256": "3aada9b15250e762230e1ad75eefdff256df37789a9649c39841954d2f070763"
+    }
+  },
+  "artifacts": {
+    "claude-haiku-4-5-20251001.json": {
+      "bytes": 45885,
+      "sha256": "f2d68cdf11615f616df3f7be3089caf569e8ee1e7d967309ca02bcbe43c40e4b"
+    },
+    "claude-haiku-4-5-20251001.md": {
+      "bytes": 1585,
+      "sha256": "2e32b7e09a2a25e91aa04e4fe1a02b59891e7c5820717e30d32e216de5bc9db7"
+    },
+    "claude-haiku-4-5-20251001_raw.jsonl": {
+      "bytes": 1677407,
+      "records": 1120,
+      "sha256": "aaf048375f4fa8f5b972a406185bfe15618323b8eacdff1b25db938ea2e63aea"
+    }
+  },
+  "record_invariants": {
+    "execution_code_sha256": "782ceb97226a97cee4acf9dab19e8c6f4166876d41d088dead34cb5ca45f24f2",
+    "plan_sha256": "bb046113f08eac0e69a12dbcca63ecbbd26fdbea1d70aa1d42db5d6ebd801615",
+    "unique_execution_code_hashes": 1,
+    "unique_models": 1,
+    "unique_plan_hashes": 1
+  },
+  "boundary": "The imported helper SHA-256 and runtime versions were not embedded in each raw checkpoint record. Anthropic response IDs, server-reported model revision, retry count, and use of the helper's temperature-fallback path were not retained. This post-run attestation documents the dependencies observed after the uninterrupted completed run but does not retroactively create per-record dependency binding. Future runners must bind the helper hash, decode payload, provider/runtime versions, retry/fallback state, and provider response metadata in every checkpoint record."
+}

@@ -1,0 +1,18 @@
+{
+  "analysis_id": "coherent-readout-v4-behavioral-deconfounding-v1",
+  "biological_model_calls": 0,
+  "builder_file_sha256": "2af597f4031db819c94a5b4ec6d6845a513e0484eaa9a6da8ab61ce9c6e178da",
+  "builder_path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/build_coherent_readout_v4_behavioral_deconfounding_bank.py",
+  "cell_count": 448,
+  "family_counts": {
+    "codebook_lookup": 128,
+    "composition": 256,
+    "property_retrieval": 64
+  },
+  "fixture_canonical_sha256": "dd46347c62f1f3823a9813b5d1a302e0e26d86d90c1a4d5d0e28f523dfa73f39",
+  "fixture_file_sha256": "8d988b36d99677e798628b932fea86efd68317cd4a8653bbcd2f12a3294021c2",
+  "fixture_path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/coherent_readout_v4_behavioral_deconfounding_bank.json",
+  "model_calls": 0,
+  "schema_version": "coherent-readout-v4-behavioral-deconfounding-bank-manifest-v1",
+  "world_count": 8
+}

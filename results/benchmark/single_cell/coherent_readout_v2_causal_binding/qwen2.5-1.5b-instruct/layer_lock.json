@@ -1,0 +1,40 @@
+{
+  "analyzer_sha256": "ec2e897bfe00e3c8a834f412b19b981c349e3f39b2d4439903d302d3d992e471",
+  "biological_execution_allowed": false,
+  "call_plan_sha256": "cf8b795ed1bf931b6811eb28ea0bd0629692d55cbf3059eaae489c6bf77672d0",
+  "discovery_analysis_file_sha256": "e7a149a9098472792a2e230b1f4b90e564fa970b052220cc099726081338db62",
+  "discovery_analysis_path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v2_causal_binding/qwen2.5-1.5b-instruct/discovery_analysis.json",
+  "holdout_baseline_authorized": true,
+  "holdout_patch_authorized": false,
+  "layer_grid": [
+    0,
+    4,
+    8,
+    12,
+    16,
+    20,
+    24,
+    27
+  ],
+  "schema_version": "coherent-readout-v2-causal-binding-layer-lock-v1",
+  "selected_layer": 24,
+  "selection_class": "transfer_only_earliest_nonfinal_grid_layer",
+  "selection_rule": {
+    "engineering_only_layer": 27,
+    "minimum_positive_discovery_pairs": 7,
+    "selectable_layers": [
+      0,
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ],
+    "specificity_used_for_layer_selection": false,
+    "tie_break": "earliest_layer_in_frozen_grid",
+    "transfer_fraction_floor": 0.3,
+    "transfer_lodo_fraction_floor": 0.2
+  },
+  "status": "LOCALIZATION_COMPLETE_HOLDOUT_BASELINE_AUTHORIZED"
+}

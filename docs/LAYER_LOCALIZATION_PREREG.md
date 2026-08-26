@@ -1,5 +1,11 @@
 # Pre-registered design: layer-localization of the encode-vs-express gap (Qwen3-8B + Llama-3.1-8B)
 
+> **POST-RUN CONSTRUCT NOTE (2026-07-24; preregistration text below is preserved).**
+> Layerwise probe AUROC measures supervised label predictability after the specified
+> selection procedure. It does not localize latent "knowledge" or identify an
+> encoding-versus-expression mechanism. The analyzer now enforces preregistered
+> gates; downstream H2/H3 claims are halted when a co-primary gate fails.
+
 Status: PRE-REGISTERED. Hypotheses, thresholds, and decision rules below are fixed BEFORE
 running the outer-fold scoring. Naive (selection-biased) numbers may be inspected during the
 pipeline dry-run; the unbiased nested-CV outer-fold AUROCs and the verbalize curves are the

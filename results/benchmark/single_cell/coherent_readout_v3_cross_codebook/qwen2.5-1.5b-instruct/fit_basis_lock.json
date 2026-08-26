@@ -1,0 +1,44 @@
+{
+  "basis_calculations": {
+    "dtype": "<f8",
+    "file_sha256": "bf14dedcebfb3823ea1e6d7d5781bbf73b33db3c7e3437e7adcfee386bc16de3",
+    "logical_sha256": "cd220e14404a77cab4330aaf1c7d98f5f8f65a1d880aec0c9408e7848a707819",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v3_cross_codebook/qwen2.5-1.5b-instruct/fit_basis_calculations.npy",
+    "shape": [
+      5,
+      62,
+      1536
+    ]
+  },
+  "basis_details": {
+    "canonical_sha256": "3c946d7e5591ecab7c951d2aa34ef04049016d7c0e8d71a03a9b132a6d5c0368",
+    "file_sha256": "a0fd72b2fa1b4a07fbaa243a5fb40076778f2e57c5eb60b5e084326fada3aeb2",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v3_cross_codebook/qwen2.5-1.5b-instruct/fit_basis_details.json"
+  },
+  "basis_sidecar": {
+    "dtype": "<f4",
+    "file_sha256": "f36447ed6a346fa7caf641f94ff9906f1cccc32d1d9b9aec9302440fca4a7228",
+    "logical_sha256": "5f23cb332611cd66527f8d33b1462a3a6d57f0715d7fc0263a8f4db971df38a8",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v3_cross_codebook/qwen2.5-1.5b-instruct/fit_basis.npy",
+    "shape": [
+      5,
+      43,
+      1536
+    ]
+  },
+  "behavioral_admission_pass": false,
+  "biological_execution_allowed": false,
+  "biological_model_calls": 0,
+  "call_plan_sha256": "fb95a8e5314b806a3aa3e35b33e13ff164e550726721c2305098fa07f1cbb0dd",
+  "engineering_pass": true,
+  "fit_analysis": {
+    "canonical_sha256": "66dc9957241bb0d9fe5b225e4e7cad09b49c0fb702def7a2dca9004e8589921c",
+    "file_sha256": "e85b7a1bd7d5cab9947c85db9ded379ead1dddd7d41a5caf6de94634925572ef",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v3_cross_codebook/qwen2.5-1.5b-instruct/fit_basis_analysis.json"
+  },
+  "fit_execution_manifest_file_sha256": "0808dda2fefc1b13e605fc3f5666306d0f33ebb3822b743bc5cb1663e8318e30",
+  "holdout_data_used": false,
+  "localization_baseline_authorized": false,
+  "schema_version": "coherent-readout-v3-cross-codebook-basis-lock-v1",
+  "status": "FIT_STOP_BASIS_LOCK_INVALID"
+}

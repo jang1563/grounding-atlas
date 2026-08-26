@@ -1,0 +1,1234 @@
+{
+  "analysis_id": "gse96583-cd8-nk-context-module-donor-replication-v1",
+  "claim_scope": "multi_donor_sle_control_mixed_marker_text_input_module_sensitivity_not_gene_pathway_hidden_state_or_physical_law",
+  "component_effect_definition": "matched-neutral mask P(CD8) minus module mask P(CD8), averaged forms then cells then unweighted donors",
+  "components": {
+    "NK_receptor_plus_cytotoxic:NK_receptor_identity": {
+      "context": "NK_receptor_plus_cytotoxic",
+      "form_effects": {
+        "ab_pa": {
+          "ci95_lower": -0.20318831148560776,
+          "ci95_upper": 0.06985497815227446,
+          "degrees_freedom": 7,
+          "mean": -0.06666666666666665,
+          "standard_error": 0.05773502691896257,
+          "statistic": -1.1547005383792515,
+          "two_sided_p_value": 0.286105101908313
+        },
+        "ab_pb": {
+          "ci95_lower": -0.1503002915576187,
+          "ci95_upper": 0.02780029155761872,
+          "degrees_freedom": 7,
+          "mean": -0.06125,
+          "standard_error": 0.03765938351416106,
+          "statistic": -1.6264206761899902,
+          "two_sided_p_value": 0.14788647836969335
+        },
+        "ba_pa": {
+          "ci95_lower": -0.10616708108959663,
+          "ci95_upper": 0.022833747756263297,
+          "degrees_freedom": 7,
+          "mean": -0.041666666666666664,
+          "standard_error": 0.027277236279499045,
+          "statistic": -1.5275252316519468,
+          "two_sided_p_value": 0.1704706607870538
+        },
+        "ba_pb": {
+          "ci95_lower": -0.1157720009427039,
+          "ci95_upper": 0.03243866760937058,
+          "degrees_freedom": 7,
+          "mean": -0.041666666666666664,
+          "standard_error": 0.031339158526400436,
+          "statistic": -1.329540058695776,
+          "two_sided_p_value": 0.2253594220415529
+        }
+      },
+      "matched_neutral_minus_module_mask": {
+        "ci95_lower": -0.08628429491266691,
+        "ci95_upper": -0.019340705087333085,
+        "ci_direction_pass": true,
+        "component_pass": false,
+        "degrees_freedom": 7,
+        "donor_effects": {
+          "101": 0.008333333333333331,
+          "1015": -0.05833333333333333,
+          "1016": -0.09999999999999999,
+          "1039": -0.09999999999999999,
+          "107": 0.0,
+          "1244": -0.06666666666666667,
+          "1256": -0.05583333333333333,
+          "1488": -0.049999999999999996
+        },
+        "donor_sign_pass": false,
+        "donors_with_expected_sign": 6,
+        "exact_one_sided_rademacher_p_value": 0.015625,
+        "exact_sign_flip_pass": true,
+        "expected_direction": "less",
+        "leave_one_donor_out_means": {
+          "101": -0.06154761904761904,
+          "1015": -0.05202380952380952,
+          "1016": -0.046071428571428576,
+          "1039": -0.046071428571428576,
+          "107": -0.06035714285714285,
+          "1244": -0.050833333333333335,
+          "1256": -0.052380952380952375,
+          "1488": -0.053214285714285714
+        },
+        "lodo_direction_pass": true,
+        "mean": -0.0528125,
+        "one_sided_student_t_p_value": 0.00367475935438161,
+        "standard_error": 0.014155227787298847,
+        "statistic": -3.7309537362152105,
+        "student_p_pass": true,
+        "two_sided_p_value": 0.00734951870876322
+      },
+      "module": "NK_receptor_identity",
+      "n_cells": 24,
+      "prompt_factor_interactions": {
+        "all_forms_expected_direction": true,
+        "interactions_equivalent": false,
+        "order_ab_minus_ba": {
+          "ci95_lower": -0.1158178236163176,
+          "ci95_upper": 0.07123449028298426,
+          "degrees_freedom": 7,
+          "mean": -0.022291666666666664,
+          "standard_error": 0.03955222775316322,
+          "statistic": -0.563600786428114,
+          "two_sided_p_value": 0.5906154172158629
+        },
+        "prompt_robust": false,
+        "queried_target_a_minus_b": {
+          "ci95_lower": -0.12543763988705928,
+          "ci95_upper": 0.12002097322039262,
+          "degrees_freedom": 7,
+          "mean": -0.0027083333333333317,
+          "standard_error": 0.051902244710150834,
+          "statistic": -0.0521814296945744,
+          "two_sided_p_value": 0.9598420178543298
+        }
+      },
+      "unmasked_minus_module_mask": {
+        "ci95_lower": -0.11640325073537271,
+        "ci95_upper": -0.021096749264627276,
+        "degrees_freedom": 7,
+        "mean": -0.06874999999999999,
+        "standard_error": 0.020152567877654994,
+        "statistic": -3.4114759179761625,
+        "two_sided_p_value": 0.011265188604750717
+      },
+      "unmasked_minus_neutral_mask": {
+        "ci95_lower": -0.05154234707980753,
+        "ci95_upper": 0.01966734707980753,
+        "degrees_freedom": 7,
+        "equivalent_within_margin": false,
+        "mean": -0.0159375,
+        "standard_error": 0.015057295913219408,
+        "statistic": -1.0584569827048311,
+        "two_sided_p_value": 0.324999135949531
+      }
+    },
+    "NK_receptor_plus_cytotoxic:cytotoxic_effector": {
+      "context": "NK_receptor_plus_cytotoxic",
+      "form_effects": {
+        "ab_pa": {
+          "ci95_lower": -0.2530088231537867,
+          "ci95_upper": -0.0444911768462133,
+          "degrees_freedom": 7,
+          "mean": -0.14875,
+          "standard_error": 0.04409107412459258,
+          "statistic": -3.373698712343958,
+          "two_sided_p_value": 0.01186025936232161
+        },
+        "ab_pb": {
+          "ci95_lower": -0.23910792309004314,
+          "ci95_upper": 0.06160792309004315,
+          "degrees_freedom": 7,
+          "mean": -0.08875,
+          "standard_error": 0.06358639136377112,
+          "statistic": -1.3957389009901584,
+          "two_sided_p_value": 0.20546655080478116
+        },
+        "ba_pa": {
+          "ci95_lower": -0.32451487304720217,
+          "ci95_upper": -0.025485126952797782,
+          "degrees_freedom": 7,
+          "mean": -0.175,
+          "standard_error": 0.06322986535661668,
+          "statistic": -2.767679466230069,
+          "two_sided_p_value": 0.02778682001806147
+        },
+        "ba_pb": {
+          "ci95_lower": -0.1276397773797877,
+          "ci95_upper": 0.021806444046454376,
+          "degrees_freedom": 7,
+          "mean": -0.05291666666666667,
+          "standard_error": 0.03160041628719168,
+          "statistic": -1.6745559990649528,
+          "two_sided_p_value": 0.13793243579089012
+        }
+      },
+      "matched_neutral_minus_module_mask": {
+        "ci95_lower": -0.19246642077193687,
+        "ci95_upper": -0.040241912561396434,
+        "ci_direction_pass": true,
+        "component_pass": true,
+        "degrees_freedom": 7,
+        "donor_effects": {
+          "101": -0.049999999999999996,
+          "1015": -0.05833333333333333,
+          "1016": -0.016666666666666663,
+          "1039": -0.16666666666666666,
+          "107": -0.2891666666666667,
+          "1244": -0.05833333333333333,
+          "1256": -0.18333333333333332,
+          "1488": -0.10833333333333334
+        },
+        "donor_sign_pass": true,
+        "donors_with_expected_sign": 8,
+        "exact_one_sided_rademacher_p_value": 0.00390625,
+        "exact_sign_flip_pass": true,
+        "expected_direction": "less",
+        "leave_one_donor_out_means": {
+          "101": -0.12583333333333332,
+          "1015": -0.12464285714285715,
+          "1016": -0.13059523809523813,
+          "1039": -0.10916666666666666,
+          "107": -0.09166666666666666,
+          "1244": -0.12464285714285715,
+          "1256": -0.10678571428571429,
+          "1488": -0.11750000000000001
+        },
+        "lodo_direction_pass": true,
+        "mean": -0.11635416666666666,
+        "one_sided_student_t_p_value": 0.0042843835346074895,
+        "standard_error": 0.03218788526506986,
+        "statistic": -3.6148434638834024,
+        "student_p_pass": true,
+        "two_sided_p_value": 0.008568767069214979
+      },
+      "module": "cytotoxic_effector",
+      "n_cells": 24,
+      "prompt_factor_interactions": {
+        "all_forms_expected_direction": true,
+        "interactions_equivalent": false,
+        "order_ab_minus_ba": {
+          "ci95_lower": -0.0879261287947922,
+          "ci95_upper": 0.07834279546145889,
+          "degrees_freedom": 7,
+          "mean": -0.004791666666666659,
+          "standard_error": 0.03515757823769553,
+          "statistic": -0.13629114708273882,
+          "two_sided_p_value": 0.8954279745550998
+        },
+        "prompt_robust": false,
+        "queried_target_a_minus_b": {
+          "ci95_lower": -0.22422929589786772,
+          "ci95_upper": 0.0421459625645344,
+          "degrees_freedom": 7,
+          "mean": -0.09104166666666666,
+          "standard_error": 0.05632507115728319,
+          "statistic": -1.616361325357942,
+          "two_sided_p_value": 0.1500498819263733
+        }
+      },
+      "unmasked_minus_module_mask": {
+        "ci95_lower": -0.18289182557845313,
+        "ci95_upper": -0.012108174421546838,
+        "degrees_freedom": 7,
+        "mean": -0.09749999999999999,
+        "standard_error": 0.03611221762651474,
+        "statistic": -2.6999172692294695,
+        "two_sided_p_value": 0.030642695242098717
+      },
+      "unmasked_minus_neutral_mask": {
+        "ci95_lower": -0.018095315761786787,
+        "ci95_upper": 0.05580364909512012,
+        "degrees_freedom": 7,
+        "equivalent_within_margin": false,
+        "mean": 0.018854166666666665,
+        "standard_error": 0.015625942431895766,
+        "statistic": 1.2065938901823565,
+        "two_sided_p_value": 0.26677853518035255
+      }
+    },
+    "T_plus_cytotoxic:T_TCR_CD8": {
+      "context": "T_plus_cytotoxic",
+      "form_effects": {
+        "ab_pa": {
+          "ci95_lower": 0.009815459952157529,
+          "ci95_upper": 0.07018454004784251,
+          "degrees_freedom": 7,
+          "mean": 0.04000000000000002,
+          "standard_error": 0.012765047143329655,
+          "statistic": 3.133556778198185,
+          "two_sided_p_value": 0.0165273265010417
+        },
+        "ab_pb": {
+          "ci95_lower": 0.10020615395245575,
+          "ci95_upper": 0.20604384604754422,
+          "degrees_freedom": 7,
+          "mean": 0.15312499999999998,
+          "standard_error": 0.022379389034811216,
+          "statistic": 6.842233260336711,
+          "two_sided_p_value": 0.00024369497679355384
+        },
+        "ba_pa": {
+          "ci95_lower": 0.023776353623413682,
+          "ci95_upper": 0.1349736463765863,
+          "degrees_freedom": 7,
+          "mean": 0.07937499999999999,
+          "standard_error": 0.02351267705181307,
+          "statistic": 3.3758384817299802,
+          "two_sided_p_value": 0.011825665266210587
+        },
+        "ba_pb": {
+          "ci95_lower": 0.12858586999640148,
+          "ci95_upper": 0.24016413000359854,
+          "degrees_freedom": 7,
+          "mean": 0.184375,
+          "standard_error": 0.02359323261022109,
+          "statistic": 7.81474090668376,
+          "two_sided_p_value": 0.00010582570414908673
+        }
+      },
+      "matched_neutral_minus_module_mask": {
+        "ci95_lower": 0.09285724760840035,
+        "ci95_upper": 0.13558025239159965,
+        "ci_direction_pass": true,
+        "component_pass": true,
+        "degrees_freedom": 7,
+        "donor_effects": {
+          "101": 0.14375,
+          "1015": 0.144375,
+          "1016": 0.07125000000000001,
+          "1039": 0.110625,
+          "107": 0.10875,
+          "1244": 0.09000000000000001,
+          "1256": 0.13187500000000002,
+          "1488": 0.113125
+        },
+        "donor_sign_pass": true,
+        "donors_with_expected_sign": 8,
+        "exact_one_sided_rademacher_p_value": 0.00390625,
+        "exact_sign_flip_pass": true,
+        "expected_direction": "greater",
+        "leave_one_donor_out_means": {
+          "101": 0.10999999999999999,
+          "1015": 0.10991071428571429,
+          "1016": 0.12035714285714284,
+          "1039": 0.11473214285714285,
+          "107": 0.115,
+          "1244": 0.11767857142857144,
+          "1256": 0.11169642857142857,
+          "1488": 0.11437499999999999
+        },
+        "lodo_direction_pass": true,
+        "mean": 0.11421875000000001,
+        "one_sided_student_t_p_value": 2.2373807197529983e-06,
+        "standard_error": 0.009033783011068584,
+        "statistic": 12.643512674596481,
+        "student_p_pass": true,
+        "two_sided_p_value": 4.474761439505997e-06
+      },
+      "module": "T_TCR_CD8",
+      "n_cells": 32,
+      "prompt_factor_interactions": {
+        "all_forms_expected_direction": true,
+        "interactions_equivalent": false,
+        "order_ab_minus_ba": {
+          "ci95_lower": -0.09498954560270875,
+          "ci95_upper": 0.024364545602708787,
+          "degrees_freedom": 7,
+          "mean": -0.03531249999999998,
+          "standard_error": 0.025237432781344007,
+          "statistic": -1.399211255199604,
+          "two_sided_p_value": 0.20446738984370133
+        },
+        "prompt_robust": false,
+        "queried_target_a_minus_b": {
+          "ci95_lower": -0.15119718281803618,
+          "ci95_upper": -0.06692781718196376,
+          "degrees_freedom": 7,
+          "mean": -0.10906249999999998,
+          "standard_error": 0.017818764562553553,
+          "statistic": -6.120654415581467,
+          "two_sided_p_value": 0.0004811990415556888
+        }
+      },
+      "unmasked_minus_module_mask": {
+        "ci95_lower": 0.06580690948534451,
+        "ci95_upper": 0.1313805905146555,
+        "degrees_freedom": 7,
+        "mean": 0.09859375000000001,
+        "standard_error": 0.013865560455353811,
+        "statistic": 7.110693456457485,
+        "two_sided_p_value": 0.00019185241264167233
+      },
+      "unmasked_minus_neutral_mask": {
+        "ci95_lower": -0.03337287242940681,
+        "ci95_upper": 0.0021228724294068066,
+        "degrees_freedom": 7,
+        "equivalent_within_margin": false,
+        "mean": -0.015625,
+        "standard_error": 0.00750557828266036,
+        "statistic": -2.081784962005846,
+        "two_sided_p_value": 0.07588489121903073
+      }
+    },
+    "T_plus_cytotoxic:cytotoxic_effector": {
+      "context": "T_plus_cytotoxic",
+      "form_effects": {
+        "ab_pa": {
+          "ci95_lower": -0.007858685042130885,
+          "ci95_upper": 0.022858685042130893,
+          "degrees_freedom": 7,
+          "mean": 0.007500000000000003,
+          "standard_error": 0.006495190528383295,
+          "statistic": 1.154700538379251,
+          "two_sided_p_value": 0.28610510190831295
+        },
+        "ab_pb": {
+          "ci95_lower": -0.23530378299970198,
+          "ci95_upper": -0.02719621700029798,
+          "degrees_freedom": 7,
+          "mean": -0.13124999999999998,
+          "standard_error": 0.04400436260839859,
+          "statistic": -2.98265881426379,
+          "two_sided_p_value": 0.02043772931390876
+        },
+        "ba_pa": {
+          "ci95_lower": -0.08553204791760016,
+          "ci95_upper": 0.026782047917600155,
+          "degrees_freedom": 7,
+          "mean": -0.029375000000000002,
+          "standard_error": 0.023748825158911996,
+          "statistic": -1.2369032911498246,
+          "two_sided_p_value": 0.2560068032035674
+        },
+        "ba_pb": {
+          "ci95_lower": -0.23831843778552583,
+          "ci95_upper": 0.025818437785525866,
+          "degrees_freedom": 7,
+          "mean": -0.10624999999999998,
+          "standard_error": 0.055851764903690745,
+          "statistic": -1.9023570729271415,
+          "two_sided_p_value": 0.09886273703466605
+        }
+      },
+      "matched_neutral_minus_module_mask": {
+        "ci95_lower": -0.12738135286840535,
+        "ci95_upper": -0.0023061471315946325,
+        "ci_direction_pass": true,
+        "component_pass": true,
+        "degrees_freedom": 7,
+        "donor_effects": {
+          "101": -0.04124999999999999,
+          "1015": -0.104375,
+          "1016": -0.06875,
+          "1039": -0.07125000000000001,
+          "107": -0.20437499999999997,
+          "1244": -0.049999999999999996,
+          "1256": 0.065,
+          "1488": -0.04375
+        },
+        "donor_sign_pass": true,
+        "donors_with_expected_sign": 7,
+        "exact_one_sided_rademacher_p_value": 0.01953125,
+        "exact_sign_flip_pass": true,
+        "expected_direction": "less",
+        "leave_one_donor_out_means": {
+          "101": -0.06821428571428571,
+          "1015": -0.05919642857142857,
+          "1016": -0.0642857142857143,
+          "1039": -0.06392857142857142,
+          "107": -0.04491071428571429,
+          "1244": -0.06696428571428571,
+          "1256": -0.08339285714285714,
+          "1488": -0.06785714285714287
+        },
+        "lodo_direction_pass": true,
+        "mean": -0.06484374999999999,
+        "one_sided_student_t_p_value": 0.021994772753956036,
+        "standard_error": 0.026447162937739785,
+        "statistic": -2.4518225320670877,
+        "student_p_pass": true,
+        "two_sided_p_value": 0.04398954550791207
+      },
+      "module": "cytotoxic_effector",
+      "n_cells": 32,
+      "prompt_factor_interactions": {
+        "all_forms_expected_direction": false,
+        "interactions_equivalent": false,
+        "order_ab_minus_ba": {
+          "ci95_lower": -0.06119736989693331,
+          "ci95_upper": 0.0730723698969333,
+          "degrees_freedom": 7,
+          "mean": 0.005937500000000002,
+          "standard_error": 0.028391347949557746,
+          "statistic": 0.20913061297931404,
+          "two_sided_p_value": 0.8403019934643338
+        },
+        "prompt_robust": false,
+        "queried_target_a_minus_b": {
+          "ci95_lower": 0.020814465120876674,
+          "ci95_upper": 0.1948105348791233,
+          "degrees_freedom": 7,
+          "mean": 0.10781249999999999,
+          "standard_error": 0.03679148381419265,
+          "statistic": 2.9303656396269164,
+          "two_sided_p_value": 0.022012826598850024
+        }
+      },
+      "unmasked_minus_module_mask": {
+        "ci95_lower": -0.09725494609961499,
+        "ci95_upper": -0.01399505390038499,
+        "degrees_freedom": 7,
+        "mean": -0.05562499999999999,
+        "standard_error": 0.017605311318097807,
+        "statistic": -3.1595578740387804,
+        "two_sided_p_value": 0.015938128029817172
+      },
+      "unmasked_minus_neutral_mask": {
+        "ci95_lower": -0.028650962266941603,
+        "ci95_upper": 0.04708846226694161,
+        "degrees_freedom": 7,
+        "equivalent_within_margin": false,
+        "mean": 0.009218750000000003,
+        "standard_error": 0.01601510778781576,
+        "statistic": 0.5756283455684011,
+        "two_sided_p_value": 0.5828895627210547
+      }
+    }
+  },
+  "context_counts": {
+    "NK_receptor_plus_cytotoxic": 24,
+    "T_plus_cytotoxic": 32
+  },
+  "deposited_label_counts_descriptive_only": {
+    "CD8": 33,
+    "NK": 23
+  },
+  "donors": [
+    "101",
+    "107",
+    "1015",
+    "1016",
+    "1039",
+    "1244",
+    "1256",
+    "1488"
+  ],
+  "equivalence_margin": 0.03,
+  "exploratory": {
+    "cross_context_cytotoxic_difference": {
+      "boundary": "exploratory between-cohort contrast; context and sampled cells change together",
+      "ci95_lower": -0.029597986231810994,
+      "ci95_upper": 0.13261881956514432,
+      "contrast": "cytotoxic effect in T_plus_cytotoxic minus cytotoxic effect in NK_receptor_plus_cytotoxic",
+      "degrees_freedom": 7,
+      "mean": 0.05151041666666667,
+      "standard_error": 0.03430075744332063,
+      "statistic": 1.5017282563448833,
+      "two_sided_p_value": 0.17686254609870097
+    },
+    "deposited_label_summaries": [
+      {
+        "context": "T_plus_cytotoxic",
+        "labels": {
+          "CD8 T cells": {
+            "mean_effect_on_p_cd8": 0.11892857142857141,
+            "n_cells": 28
+          },
+          "NK cells": {
+            "mean_effect_on_p_cd8": 0.08124999999999999,
+            "n_cells": 4
+          }
+        },
+        "module": "T_TCR_CD8"
+      },
+      {
+        "context": "T_plus_cytotoxic",
+        "labels": {
+          "CD8 T cells": {
+            "mean_effect_on_p_cd8": -0.06758928571428571,
+            "n_cells": 28
+          },
+          "NK cells": {
+            "mean_effect_on_p_cd8": -0.04562499999999999,
+            "n_cells": 4
+          }
+        },
+        "module": "cytotoxic_effector"
+      },
+      {
+        "context": "NK_receptor_plus_cytotoxic",
+        "labels": {
+          "CD8 T cells": {
+            "mean_effect_on_p_cd8": -0.06,
+            "n_cells": 5
+          },
+          "NK cells": {
+            "mean_effect_on_p_cd8": -0.05092105263157895,
+            "n_cells": 19
+          }
+        },
+        "module": "NK_receptor_identity"
+      },
+      {
+        "context": "NK_receptor_plus_cytotoxic",
+        "labels": {
+          "CD8 T cells": {
+            "mean_effect_on_p_cd8": -0.039999999999999994,
+            "n_cells": 5
+          },
+          "NK cells": {
+            "mean_effect_on_p_cd8": -0.13644736842105262,
+            "n_cells": 19
+          }
+        },
+        "module": "cytotoxic_effector"
+      }
+    ],
+    "target_genes_with_at_least_six_donors": [
+      {
+        "boundary": "expression-selected descriptive localization; not individual-gene causal attribution",
+        "context": "T_plus_cytotoxic",
+        "expected_direction": "greater",
+        "gene": "CD3D",
+        "mean_effect_on_p_cd8": 0.09330729166666668,
+        "module": "T_TCR_CD8",
+        "n_cells": 25,
+        "n_donors": 8
+      },
+      {
+        "boundary": "expression-selected descriptive localization; not individual-gene causal attribution",
+        "context": "T_plus_cytotoxic",
+        "expected_direction": "less",
+        "gene": "CCL5",
+        "mean_effect_on_p_cd8": -0.00546875,
+        "module": "cytotoxic_effector",
+        "n_cells": 19,
+        "n_donors": 8
+      },
+      {
+        "boundary": "expression-selected descriptive localization; not individual-gene causal attribution",
+        "context": "NK_receptor_plus_cytotoxic",
+        "expected_direction": "less",
+        "gene": "GNLY",
+        "mean_effect_on_p_cd8": -0.1570238095238095,
+        "module": "cytotoxic_effector",
+        "n_cells": 16,
+        "n_donors": 7
+      }
+    ]
+  },
+  "hierarchical_gates": {
+    "full_hierarchical_gate_pass": false,
+    "gate_a_T_plus_cytotoxic": {
+      "exact_iut_p_value": 0.01953125,
+      "pass": true
+    },
+    "gate_b_receptor_plus_cytotoxic": {
+      "confirmatory_pass_after_gate_a": false,
+      "exact_iut_p_value": 0.015625,
+      "raw_component_gate_pass": false,
+      "status": "tested_confirmatorily"
+    }
+  },
+  "inference_unit": "donor",
+  "interpretation_boundary": "causal sensitivity to rendered marker-name deletion in one model and one eight-donor SLE control cohort; not annotation truth, a gene perturbation, pathway causality, a hidden-state activation route, latent-knowledge proof, or a physical law",
+  "logical_condition_form_observations": 1120,
+  "model": "claude-haiku-4-5-20251001",
+  "model_calls": 1120,
+  "n_cells": 56,
+  "n_donors": 8,
+  "neutral_sham_equivalent_all_components": false,
+  "parse_policy": "abort confirmatory analysis unless all 1120 responses parse exactly",
+  "parse_rate": 1.0,
+  "prompt_robust": false,
+  "provenance": {
+    "call_plan_sha256": "bb046113f08eac0e69a12dbcca63ecbbd26fdbea1d70aa1d42db5d6ebd801615",
+    "component_test": "unweighted donor mean, two-sided Student-t7 95% CI, one-sided Student-t7 p, and exact 2^8 Rademacher sign-flip p",
+    "decode": {
+      "max_tokens": 16,
+      "temperature": 0.0
+    },
+    "execution_code_sha256": "782ceb97226a97cee4acf9dab19e8c6f4166876d41d088dead34cb5ca45f24f2",
+    "input_csv": "signal/single_cell/gse96583_cd8_nk_module_replication.csv",
+    "input_csv_sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321",
+    "input_manifest": "signal/single_cell/gse96583_cd8_nk_module_replication.manifest.json",
+    "input_manifest_sha256": "3e59808e09675f98be5e88fa8266f56c43aeea3592f023b6f91750ffdd0cb53f",
+    "preregistration": "docs/GSE96583_CONTEXT_MODULE_PREREG.md",
+    "preregistration_sha256": "6096d8ca84f0eb72327bf6f44773e62baa909d8dd6715268f5fd099dce42d62e",
+    "prompt_template_sha256": "8da04371ae26646b51f22aaead0815b3625b62be6c537a1788b298f67064433a",
+    "raw_checkpoint": "results/benchmark/single_cell/donor_context_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+    "raw_checkpoint_sha256": "aaf048375f4fa8f5b972a406185bfe15618323b8eacdff1b25db938ea2e63aea",
+    "system_prompt_sha256": "37aa5ee3d2b27cd4ae670f3a064e89de1d25013f939951d3993a6732acd5dacb"
+  },
+  "run_finished_at_utc": "2026-07-30T20:52:02.252560+00:00",
+  "run_started_at_utc": "2026-07-30T20:44:48.398385+00:00",
+  "strict_matching_sensitivity": {
+    "boundary": "sensitivity only; cannot rescue a primary gate",
+    "cells_by_donor_context": {
+      "1015:NK_receptor_plus_cytotoxic": 3,
+      "1015:T_plus_cytotoxic": 3,
+      "1016:NK_receptor_plus_cytotoxic": 3,
+      "1016:T_plus_cytotoxic": 4,
+      "101:NK_receptor_plus_cytotoxic": 3,
+      "101:T_plus_cytotoxic": 4,
+      "1039:NK_receptor_plus_cytotoxic": 3,
+      "1039:T_plus_cytotoxic": 4,
+      "107:NK_receptor_plus_cytotoxic": 3,
+      "107:T_plus_cytotoxic": 4,
+      "1244:NK_receptor_plus_cytotoxic": 3,
+      "1244:T_plus_cytotoxic": 4,
+      "1256:NK_receptor_plus_cytotoxic": 3,
+      "1256:T_plus_cytotoxic": 4,
+      "1488:NK_receptor_plus_cytotoxic": 2,
+      "1488:T_plus_cytotoxic": 4
+    },
+    "components": {
+      "NK_receptor_plus_cytotoxic:NK_receptor_identity": {
+        "context": "NK_receptor_plus_cytotoxic",
+        "form_effects": {
+          "ab_pa": {
+            "ci95_lower": -0.20495384177879822,
+            "ci95_upper": 0.06745384177879825,
+            "degrees_freedom": 7,
+            "mean": -0.06874999999999999,
+            "standard_error": 0.057600627958988786,
+            "statistic": -1.1935633765824476,
+            "two_sided_p_value": 0.2715256332214959
+          },
+          "ab_pb": {
+            "ci95_lower": -0.1503002915576187,
+            "ci95_upper": 0.02780029155761872,
+            "degrees_freedom": 7,
+            "mean": -0.06125,
+            "standard_error": 0.03765938351416106,
+            "statistic": -1.6264206761899902,
+            "two_sided_p_value": 0.14788647836969335
+          },
+          "ba_pa": {
+            "ci95_lower": -0.07009633857484965,
+            "ci95_upper": 0.028429671908182987,
+            "degrees_freedom": 7,
+            "mean": -0.020833333333333332,
+            "standard_error": 0.02083333333333333,
+            "statistic": -1.0000000000000002,
+            "two_sided_p_value": 0.3506166628202074
+          },
+          "ba_pb": {
+            "ci95_lower": -0.1157720009427039,
+            "ci95_upper": 0.03243866760937058,
+            "degrees_freedom": 7,
+            "mean": -0.041666666666666664,
+            "standard_error": 0.031339158526400436,
+            "statistic": -1.329540058695776,
+            "two_sided_p_value": 0.2253594220415529
+          }
+        },
+        "matched_neutral_minus_module_mask": {
+          "ci95_lower": -0.08368173709046224,
+          "ci95_upper": -0.012568262909537761,
+          "ci_direction_pass": true,
+          "component_pass": false,
+          "degrees_freedom": 7,
+          "donor_effects": {
+            "101": 0.008333333333333331,
+            "1015": -0.05833333333333333,
+            "1016": -0.09999999999999999,
+            "1039": -0.09999999999999999,
+            "107": 0.0,
+            "1244": -0.06666666666666667,
+            "1256": -0.05583333333333333,
+            "1488": -0.012499999999999997
+          },
+          "donor_sign_pass": false,
+          "donors_with_expected_sign": 6,
+          "exact_one_sided_rademacher_p_value": 0.015625,
+          "exact_sign_flip_pass": true,
+          "expected_direction": "less",
+          "leave_one_donor_out_means": {
+            "101": -0.056190476190476187,
+            "1015": -0.04666666666666667,
+            "1016": -0.04071428571428572,
+            "1039": -0.04071428571428572,
+            "107": -0.055,
+            "1244": -0.04547619047619048,
+            "1256": -0.04702380952380952,
+            "1488": -0.053214285714285714
+          },
+          "lodo_direction_pass": true,
+          "mean": -0.048125,
+          "one_sided_student_t_p_value": 0.007528203515260529,
+          "standard_error": 0.015036950190505586,
+          "statistic": -3.2004495187053554,
+          "student_p_pass": true,
+          "two_sided_p_value": 0.015056407030521059
+        },
+        "module": "NK_receptor_identity",
+        "n_cells": 23,
+        "prompt_factor_interactions": {
+          "all_forms_expected_direction": true,
+          "interactions_equivalent": false,
+          "order_ab_minus_ba": {
+            "ci95_lower": -0.12236630851988466,
+            "ci95_upper": 0.05486630851988465,
+            "degrees_freedom": 7,
+            "mean": -0.03375,
+            "standard_error": 0.037475852013356334,
+            "statistic": -0.9005799251200894,
+            "two_sided_p_value": 0.3977354311429191
+          },
+          "prompt_robust": false,
+          "queried_target_a_minus_b": {
+            "ci95_lower": -0.11206316213105608,
+            "ci95_upper": 0.1253964954643894,
+            "degrees_freedom": 7,
+            "mean": 0.006666666666666666,
+            "standard_error": 0.05021086488381724,
+            "statistic": 0.1327733884308236,
+            "two_sided_p_value": 0.8981087540231294
+          }
+        },
+        "unmasked_minus_module_mask": {
+          "ci95_lower": -0.11416065841510062,
+          "ci95_upper": -0.020214341584899376,
+          "degrees_freedom": 7,
+          "mean": -0.0671875,
+          "standard_error": 0.01986495671921661,
+          "statistic": -3.3822122519403903,
+          "two_sided_p_value": 0.011723260747511002
+        },
+        "unmasked_minus_neutral_mask": {
+          "ci95_lower": -0.05769359527900915,
+          "ci95_upper": 0.019568595279009154,
+          "degrees_freedom": 7,
+          "equivalent_within_margin": false,
+          "mean": -0.0190625,
+          "standard_error": 0.016337096793703137,
+          "statistic": -1.1668229821192786,
+          "two_sided_p_value": 0.2814890915842431
+        }
+      },
+      "NK_receptor_plus_cytotoxic:cytotoxic_effector": {
+        "context": "NK_receptor_plus_cytotoxic",
+        "form_effects": {
+          "ab_pa": {
+            "ci95_lower": -0.27509289144955673,
+            "ci95_upper": -0.043240441883776556,
+            "degrees_freedom": 7,
+            "mean": -0.15916666666666665,
+            "standard_error": 0.049025220266942414,
+            "statistic": -3.24662828234129,
+            "two_sided_p_value": 0.014122969310425892
+          },
+          "ab_pb": {
+            "ci95_lower": -0.23910792309004314,
+            "ci95_upper": 0.06160792309004315,
+            "degrees_freedom": 7,
+            "mean": -0.08875,
+            "standard_error": 0.06358639136377112,
+            "statistic": -1.3957389009901584,
+            "two_sided_p_value": 0.20546655080478116
+          },
+          "ba_pa": {
+            "ci95_lower": -0.33648860781277456,
+            "ci95_upper": -0.03434472552055878,
+            "degrees_freedom": 7,
+            "mean": -0.18541666666666667,
+            "standard_error": 0.0638883497216725,
+            "statistic": -2.9021984050993384,
+            "two_sided_p_value": 0.02291397665229962
+          },
+          "ba_pb": {
+            "ci95_lower": -0.1276397773797877,
+            "ci95_upper": 0.021806444046454376,
+            "degrees_freedom": 7,
+            "mean": -0.05291666666666667,
+            "standard_error": 0.03160041628719168,
+            "statistic": -1.6745559990649528,
+            "two_sided_p_value": 0.13793243579089012
+          }
+        },
+        "matched_neutral_minus_module_mask": {
+          "ci95_lower": -0.19823071214802862,
+          "ci95_upper": -0.04489428785197139,
+          "ci_direction_pass": true,
+          "component_pass": true,
+          "degrees_freedom": 7,
+          "donor_effects": {
+            "101": -0.049999999999999996,
+            "1015": -0.05833333333333333,
+            "1016": -0.016666666666666663,
+            "1039": -0.16666666666666666,
+            "107": -0.2891666666666667,
+            "1244": -0.05833333333333333,
+            "1256": -0.18333333333333332,
+            "1488": -0.15
+          },
+          "donor_sign_pass": true,
+          "donors_with_expected_sign": 8,
+          "exact_one_sided_rademacher_p_value": 0.00390625,
+          "exact_sign_flip_pass": true,
+          "expected_direction": "less",
+          "leave_one_donor_out_means": {
+            "101": -0.1317857142857143,
+            "1015": -0.1305952380952381,
+            "1016": -0.13654761904761906,
+            "1039": -0.11511904761904763,
+            "107": -0.09761904761904762,
+            "1244": -0.1305952380952381,
+            "1256": -0.11273809523809523,
+            "1488": -0.11750000000000001
+          },
+          "lodo_direction_pass": true,
+          "mean": -0.1215625,
+          "one_sided_student_t_p_value": 0.003587519646321784,
+          "standard_error": 0.032423000016339076,
+          "statistic": -3.749267493407163,
+          "student_p_pass": true,
+          "two_sided_p_value": 0.007175039292643568
+        },
+        "module": "cytotoxic_effector",
+        "n_cells": 23,
+        "prompt_factor_interactions": {
+          "all_forms_expected_direction": true,
+          "interactions_equivalent": false,
+          "order_ab_minus_ba": {
+            "ci95_lower": -0.0879261287947922,
+            "ci95_upper": 0.07834279546145889,
+            "degrees_freedom": 7,
+            "mean": -0.004791666666666658,
+            "standard_error": 0.03515757823769553,
+            "statistic": -0.13629114708273876,
+            "two_sided_p_value": 0.8954279745550999
+          },
+          "prompt_robust": false,
+          "queried_target_a_minus_b": {
+            "ci95_lower": -0.244413599030687,
+            "ci95_upper": 0.04149693236402034,
+            "degrees_freedom": 7,
+            "mean": -0.10145833333333333,
+            "standard_error": 0.060455806287641946,
+            "statistic": -1.6782231445331481,
+            "two_sided_p_value": 0.13720049528164818
+          }
+        },
+        "unmasked_minus_module_mask": {
+          "ci95_lower": -0.1905551935547272,
+          "ci95_upper": -0.016944806445272798,
+          "degrees_freedom": 7,
+          "mean": -0.10375,
+          "standard_error": 0.036709931185158154,
+          "statistic": -2.826210691507539,
+          "two_sided_p_value": 0.025544637083479302
+        },
+        "unmasked_minus_neutral_mask": {
+          "ci95_lower": -0.01945463437701812,
+          "ci95_upper": 0.055079634377018113,
+          "degrees_freedom": 7,
+          "equivalent_within_margin": false,
+          "mean": 0.0178125,
+          "standard_error": 0.01576027749521532,
+          "statistic": 1.1302148712424458,
+          "two_sided_p_value": 0.2956196631216372
+        }
+      },
+      "T_plus_cytotoxic:T_TCR_CD8": {
+        "context": "T_plus_cytotoxic",
+        "form_effects": {
+          "ab_pa": {
+            "ci95_lower": 0.011269773542108643,
+            "ci95_upper": 0.07164689312455808,
+            "degrees_freedom": 7,
+            "mean": 0.04145833333333336,
+            "standard_error": 0.012766747093492781,
+            "statistic": 3.2473685763278493,
+            "two_sided_p_value": 0.014108519499950008
+          },
+          "ab_pb": {
+            "ci95_lower": 0.09971090605266639,
+            "ci95_upper": 0.22320576061400024,
+            "degrees_freedom": 7,
+            "mean": 0.16145833333333331,
+            "standard_error": 0.026112997546681917,
+            "statistic": 6.183063933763101,
+            "two_sided_p_value": 0.00045266606326022064
+          },
+          "ba_pa": {
+            "ci95_lower": 0.025409352694196308,
+            "ci95_upper": 0.10771564730580369,
+            "degrees_freedom": 7,
+            "mean": 0.0665625,
+            "standard_error": 0.01740367302673285,
+            "statistic": 3.824623681320426,
+            "two_sided_p_value": 0.006503058401501712
+          },
+          "ba_pb": {
+            "ci95_lower": 0.13596589350587107,
+            "ci95_upper": 0.2452841064941289,
+            "degrees_freedom": 7,
+            "mean": 0.190625,
+            "standard_error": 0.02311534547499932,
+            "statistic": 8.2466861767726,
+            "two_sided_p_value": 7.50440216941323e-05
+          }
+        },
+        "matched_neutral_minus_module_mask": {
+          "ci95_lower": 0.0926910874741598,
+          "ci95_upper": 0.13736099585917355,
+          "ci_direction_pass": true,
+          "component_pass": true,
+          "degrees_freedom": 7,
+          "donor_effects": {
+            "101": 0.14375,
+            "1015": 0.15083333333333335,
+            "1016": 0.07125000000000001,
+            "1039": 0.110625,
+            "107": 0.10875,
+            "1244": 0.09000000000000001,
+            "1256": 0.13187500000000002,
+            "1488": 0.113125
+          },
+          "donor_sign_pass": true,
+          "donors_with_expected_sign": 8,
+          "exact_one_sided_rademacher_p_value": 0.00390625,
+          "exact_sign_flip_pass": true,
+          "expected_direction": "greater",
+          "leave_one_donor_out_means": {
+            "101": 0.11092261904761905,
+            "1015": 0.10991071428571429,
+            "1016": 0.1212797619047619,
+            "1039": 0.11565476190476191,
+            "107": 0.11592261904761904,
+            "1244": 0.11860119047619047,
+            "1256": 0.11261904761904762,
+            "1488": 0.11529761904761905
+          },
+          "lodo_direction_pass": true,
+          "mean": 0.11502604166666668,
+          "one_sided_student_t_p_value": 2.8799672601968867e-06,
+          "standard_error": 0.009445455943988695,
+          "statistic": 12.177923686137342,
+          "student_p_pass": true,
+          "two_sided_p_value": 5.759934520393773e-06
+        },
+        "module": "T_TCR_CD8",
+        "n_cells": 31,
+        "prompt_factor_interactions": {
+          "all_forms_expected_direction": true,
+          "interactions_equivalent": false,
+          "order_ab_minus_ba": {
+            "ci95_lower": -0.08791670195170334,
+            "ci95_upper": 0.03364586861837005,
+            "degrees_freedom": 7,
+            "mean": -0.027135416666666648,
+            "standard_error": 0.025704415931662342,
+            "statistic": -1.0556713966506284,
+            "two_sided_p_value": 0.3261852470172814
+          },
+          "prompt_robust": false,
+          "queried_target_a_minus_b": {
+            "ci95_lower": -0.16356622726200917,
+            "ci95_upper": -0.08049627273799079,
+            "degrees_freedom": 7,
+            "mean": -0.12203124999999998,
+            "standard_error": 0.017565148980448673,
+            "statistic": -6.947350696303795,
+            "two_sided_p_value": 0.00022171776954113962
+          }
+        },
+        "unmasked_minus_module_mask": {
+          "ci95_lower": 0.06583687692502033,
+          "ci95_upper": 0.131558956408313,
+          "degrees_freedom": 7,
+          "mean": 0.09869791666666666,
+          "standard_error": 0.01389693932112534,
+          "statistic": 7.102133382465856,
+          "two_sided_p_value": 0.00019330000816430266
+        },
+        "unmasked_minus_neutral_mask": {
+          "ci95_lower": -0.03419304606962482,
+          "ci95_upper": 0.0015367960696248198,
+          "degrees_freedom": 7,
+          "equivalent_within_margin": false,
+          "mean": -0.016328125,
+          "standard_error": 0.0075550781726065825,
+          "statistic": -2.1612119195805253,
+          "two_sided_p_value": 0.06748706347374593
+        }
+      },
+      "T_plus_cytotoxic:cytotoxic_effector": {
+        "context": "T_plus_cytotoxic",
+        "form_effects": {
+          "ab_pa": {
+            "ci95_lower": -0.009599390060473162,
+            "ci95_upper": 0.023141056727139835,
+            "degrees_freedom": 7,
+            "mean": 0.006770833333333335,
+            "standard_error": 0.0069229702701305304,
+            "statistic": 0.9780243261402412,
+            "two_sided_p_value": 0.3606445562369487
+          },
+          "ab_pb": {
+            "ci95_lower": -0.24210263989954472,
+            "ci95_upper": -0.028730693433788604,
+            "degrees_freedom": 7,
+            "mean": -0.13541666666666666,
+            "standard_error": 0.045117516307724405,
+            "statistic": -3.0014211275074656,
+            "two_sided_p_value": 0.0199020797249829
+          },
+          "ba_pa": {
+            "ci95_lower": -0.08553204791760016,
+            "ci95_upper": 0.026782047917600155,
+            "degrees_freedom": 7,
+            "mean": -0.029375000000000002,
+            "standard_error": 0.023748825158911996,
+            "statistic": -1.2369032911498246,
+            "two_sided_p_value": 0.2560068032035674
+          },
+          "ba_pb": {
+            "ci95_lower": -0.24518755197071068,
+            "ci95_upper": 0.024354218637377398,
+            "degrees_freedom": 7,
+            "mean": -0.11041666666666665,
+            "standard_error": 0.05699463042099138,
+            "statistic": -1.9373170042699268,
+            "two_sided_p_value": 0.09390526374397956
+          }
+        },
+        "matched_neutral_minus_module_mask": {
+          "ci95_lower": -0.1310056575814469,
+          "ci95_upper": -0.0032130924185531096,
+          "ci_direction_pass": true,
+          "component_pass": true,
+          "degrees_freedom": 7,
+          "donor_effects": {
+            "101": -0.04124999999999999,
+            "1015": -0.1225,
+            "1016": -0.06875,
+            "1039": -0.07125000000000001,
+            "107": -0.20437499999999997,
+            "1244": -0.049999999999999996,
+            "1256": 0.065,
+            "1488": -0.04375
+          },
+          "donor_sign_pass": true,
+          "donors_with_expected_sign": 7,
+          "exact_one_sided_rademacher_p_value": 0.01953125,
+          "exact_sign_flip_pass": true,
+          "expected_direction": "less",
+          "leave_one_donor_out_means": {
+            "101": -0.07080357142857144,
+            "1015": -0.05919642857142857,
+            "1016": -0.06687499999999999,
+            "1039": -0.06651785714285713,
+            "107": -0.047499999999999994,
+            "1244": -0.06955357142857142,
+            "1256": -0.08598214285714285,
+            "1488": -0.07044642857142856
+          },
+          "lodo_direction_pass": true,
+          "mean": -0.067109375,
+          "one_sided_student_t_p_value": 0.02099618025900811,
+          "standard_error": 0.027021748820518558,
+          "statistic": -2.4835318929854573,
+          "student_p_pass": true,
+          "two_sided_p_value": 0.04199236051801622
+        },
+        "module": "cytotoxic_effector",
+        "n_cells": 31,
+        "prompt_factor_interactions": {
+          "all_forms_expected_direction": false,
+          "interactions_equivalent": false,
+          "order_ab_minus_ba": {
+            "ci95_lower": -0.06163116506166253,
+            "ci95_upper": 0.07277699839499588,
+            "degrees_freedom": 7,
+            "mean": 0.0055729166666666705,
+            "standard_error": 0.028420617644880065,
+            "statistic": 0.1960871060685982,
+            "two_sided_p_value": 0.8501130215787833
+          },
+          "prompt_robust": false,
+          "queried_target_a_minus_b": {
+            "ci95_lower": 0.021302401970387422,
+            "ci95_upper": 0.20192676469627924,
+            "degrees_freedom": 7,
+            "mean": 0.11161458333333332,
+            "standard_error": 0.03819303692843066,
+            "statistic": 2.9223804208732123,
+            "two_sided_p_value": 0.02226442964213422
+          }
+        },
+        "unmasked_minus_module_mask": {
+          "ci95_lower": -0.09814263995179928,
+          "ci95_upper": -0.014513610048200697,
+          "degrees_freedom": 7,
+          "mean": -0.05632812499999999,
+          "standard_error": 0.017683365517220554,
+          "statistic": -3.1853735616755814,
+          "two_sided_p_value": 0.015375260214527037
+        },
+        "unmasked_minus_neutral_mask": {
+          "ci95_lower": -0.028184905215272706,
+          "ci95_upper": 0.049747405215272704,
+          "degrees_freedom": 7,
+          "equivalent_within_margin": false,
+          "mean": 0.010781250000000001,
+          "standard_error": 0.016478793697994744,
+          "statistic": 0.6542499528537662,
+          "two_sided_p_value": 0.5338478000003218
+        }
+      }
+    },
+    "criteria": {
+      "maximum_expression_distance": 1.0,
+      "maximum_rank_distance": 10.0
+    },
+    "n_cells": 54
+  },
+  "within_context_module_differences": {
+    "NK_receptor_minus_cytotoxic_within_receptor_plus_cytotoxic": {
+      "ci95_lower": -0.029035903458357534,
+      "ci95_upper": 0.15611923679169087,
+      "degrees_freedom": 7,
+      "donor_effects": {
+        "101": 0.05833333333333333,
+        "1015": 0.0,
+        "1016": -0.08333333333333333,
+        "1039": 0.06666666666666667,
+        "107": 0.2891666666666667,
+        "1244": -0.008333333333333338,
+        "1256": 0.1275,
+        "1488": 0.05833333333333334
+      },
+      "mean": 0.06354166666666668,
+      "standard_error": 0.039151070222960375,
+      "statistic": 1.622986710319921,
+      "two_sided_p_value": 0.14862170678263587
+    },
+    "T_minus_cytotoxic_within_T_plus_cytotoxic": {
+      "ci95_lower": 0.11665834904581526,
+      "ci95_upper": 0.24146665095418476,
+      "degrees_freedom": 7,
+      "donor_effects": {
+        "101": 0.18499999999999997,
+        "1015": 0.24875,
+        "1016": 0.14,
+        "1039": 0.181875,
+        "107": 0.313125,
+        "1244": 0.14,
+        "1256": 0.06687500000000002,
+        "1488": 0.156875
+      },
+      "mean": 0.1790625,
+      "standard_error": 0.02639072610041533,
+      "statistic": 6.7850539359423685,
+      "two_sided_p_value": 0.00025667209406977145
+    }
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "attempt": {
+    "file_sha256": "7e4102626f9983b2976d1a869fb38fc5b542ae690830152557a89c502f84b1c1",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/discovery_components_attempt.json",
+    "size_bytes": 3610
+  },
+  "block_counts": {
+    "discovery-components": 640
+  },
+  "block_order": [
+    "discovery-components"
+  ],
+  "call_plan_sha256": "1a8e9cb5c1c0ea94e43c4b890da39249c85117b733236f83f77611a82766c83c",
+  "cumulative_model_calls": 640,
+  "execution_revision": "coherent-readout-v6a-r2-natural-token-topology-exec-v1",
+  "execution_stage": "discovery-components",
+  "generation_used": false,
+  "global_start_row": 0,
+  "global_stop_row": 640,
+  "partial_resume_allowed": false,
+  "phase_model_calls": 640,
+  "raw_logits_shards": [
+    {
+      "block_shard_index": 0,
+      "block_start_row": 0,
+      "block_stop_row": 64,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "4b0391dc0ecf496f57defbda6587acb49e1c1c5d813f156650f6237f1a261e48",
+      "global_start_row": 0,
+      "global_stop_row": 64,
+      "index": 0,
+      "logical_sha256": "1449a2b539b3f62a1fe43ad8869e8de08d5c9c5a0fea174a5b062c23aa797f68",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_000.npy",
+      "phase_start_row": 0,
+      "phase_stop_row": 64,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 1,
+      "block_start_row": 64,
+      "block_stop_row": 128,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "76a84062e8bc1a2e7347801cca6b8cfeb3a9b84de9a97b3bf76c839fe4194beb",
+      "global_start_row": 64,
+      "global_stop_row": 128,
+      "index": 1,
+      "logical_sha256": "2267329f334bc267a7d47d9e32e4220f997c6066e77c985e87727d6d333305aa",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_001.npy",
+      "phase_start_row": 64,
+      "phase_stop_row": 128,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 2,
+      "block_start_row": 128,
+      "block_stop_row": 192,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "584a3ef70c2379c98a89f5a6c0b40c672e2ec85f196470329e812bd1318dc873",
+      "global_start_row": 128,
+      "global_stop_row": 192,
+      "index": 2,
+      "logical_sha256": "bd23c2b9af90c34dabe2d8deebbd8bad8e5e28dbdc3a44c8ad3ee54f091ce77a",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_002.npy",
+      "phase_start_row": 128,
+      "phase_stop_row": 192,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 3,
+      "block_start_row": 192,
+      "block_stop_row": 256,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "5d092c58a76d1018e48663bac767ff4cb14b56875775edf79d5e920006115bce",
+      "global_start_row": 192,
+      "global_stop_row": 256,
+      "index": 3,
+      "logical_sha256": "e34fc35192ba1addc947b177fa3d839824b625df64c4d3f00b9e3e01fad0ded7",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_003.npy",
+      "phase_start_row": 192,
+      "phase_stop_row": 256,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 4,
+      "block_start_row": 256,
+      "block_stop_row": 320,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "1d391f3994055948c63123269f3438cec4c9d2f686cb0f28c04865f70217e17f",
+      "global_start_row": 256,
+      "global_stop_row": 320,
+      "index": 4,
+      "logical_sha256": "bfedbd196dec22bf8f76e831100b23ac305ef1a9d4f88f33af33a1e325d20f6a",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_004.npy",
+      "phase_start_row": 256,
+      "phase_stop_row": 320,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 5,
+      "block_start_row": 320,
+      "block_stop_row": 384,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "6f65dcae03830a2cb151c009cb964bc3c0a0b0bcb1fb27ab57b353fddd75dd4e",
+      "global_start_row": 320,
+      "global_stop_row": 384,
+      "index": 5,
+      "logical_sha256": "5ede2f3a0739042ee0fed3c23f429712a8b2efa7ac483ac382f5ce384de282e9",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_005.npy",
+      "phase_start_row": 320,
+      "phase_stop_row": 384,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 6,
+      "block_start_row": 384,
+      "block_stop_row": 448,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "d08f5c6258a61c037afb56195d1cf0e8bc03df77d58fb02e6fa066da091d3eb0",
+      "global_start_row": 384,
+      "global_stop_row": 448,
+      "index": 6,
+      "logical_sha256": "874fd3e9f836245e03a0bd3d352523d57e1a4c426104f08a77f82faa9e3e72a2",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_006.npy",
+      "phase_start_row": 384,
+      "phase_stop_row": 448,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 7,
+      "block_start_row": 448,
+      "block_stop_row": 512,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "989304f439d6b9a7a4e9458ea23856aa2f19bf34fc0f7d7a401ca2fa3e3c0697",
+      "global_start_row": 448,
+      "global_stop_row": 512,
+      "index": 7,
+      "logical_sha256": "55dd3caef62a4abaf1b8956c376ee39246222660a47f0def5ec41337caccb9a6",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_007.npy",
+      "phase_start_row": 448,
+      "phase_stop_row": 512,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 8,
+      "block_start_row": 512,
+      "block_stop_row": 576,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "e1ac66378867b16770149aa5901c3eb3b97a53b82dec9c0ba535e6618a951d0f",
+      "global_start_row": 512,
+      "global_stop_row": 576,
+      "index": 8,
+      "logical_sha256": "0db5659b189420da4e2b7c575351e0d15380813f7aac0700340f4ae31371655f",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_008.npy",
+      "phase_start_row": 512,
+      "phase_stop_row": 576,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    },
+    {
+      "block_shard_index": 9,
+      "block_start_row": 576,
+      "block_stop_row": 640,
+      "dtype": "<f4",
+      "execution_block": "discovery-components",
+      "execution_stage": "discovery-components",
+      "file_sha256": "7c2ceaf3510b09c64634b9b289a964db7735c70ff75d529425468b4a220926ee",
+      "global_start_row": 576,
+      "global_stop_row": 640,
+      "index": 9,
+      "logical_sha256": "8904b609e8fa76e345039a367f038951a986e977e00e6a569837ce0ea351ef2d",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/raw_logits/discovery-components/shard_009.npy",
+      "phase_start_row": 576,
+      "phase_stop_row": 640,
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512
+    }
+  ],
+  "records": {
+    "canonical_sha256": "116b0d4cc6dfebaa5b3263696603f39d47d0392a88800a966f7861c23d501f78",
+    "count": 640,
+    "file_sha256": "c153cb370dfcd08456bc1119cd27ac76e75063fc25845d197d4e7901f9b88e55",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct/discovery_components_records.jsonl",
+    "size_bytes": 1266957
+  },
+  "registration_state": "FROZEN_BEFORE_ANY_R2_MODEL_FORWARD",
+  "schema_version": "coherent-readout-v6a-r2-topology-execution-v1",
+  "scientific_registry_sha256": "21ddd5bf0e7ab3dde05c4bfab4fa5811053ef11b4d77ab7625e5457d7944f98e",
+  "source_locks": {
+    "analyzer_file_sha256": "d07550ed0df7c691d63ac71fe26fc691fe5564c9626bbed16204f02400cba10a",
+    "dependency_lock_file_sha256": "88e270e4269c91db06f106d80d254f06a4d6d4cdb4682041a3526b02f782649e",
+    "design_document_file_sha256": "ec15caf9c263b8399bc4734c764e2443bf484c0e6829ff163fd8d5d871e5d8d8",
+    "design_file_sha256": "7a928911fde631a7e7f1b42cc9654c2fd09bce401dd873a91ed692e7ece31bfe",
+    "fixture_file_sha256": "7e4782c20b39972779df76e1a443f4026d55f8903f2ad1fe89614d907baf7a4e",
+    "fixture_manifest_file_sha256": "ca703fc116b5ac20754c057f9d771779b5d18834562996dc2cb6763d0d9cf4f9",
+    "plan_manifest_file_sha256": "a4bfa6561c4d387d6ea28cd9e2e29fd35550e8a04d5ee8ee4105edeae15907e9",
+    "runner_file_sha256": "b6fc22ba105835d189624a8ad34189bb635a1c3bce82181423c26d502cef4449",
+    "sealed_v2_runner_file_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+    "tokenization_receipt_file_sha256": "b53a87141eeaeafc56e39821ea6a38a0e9ff68780a7cae9e0b9865c312ccc175"
+  },
+  "stage_plan_sha256": "c584d1def8256ee5f2132885f7400ab36b2283e0b5c25620ff564fc80989f5b8",
+  "status": "V6A_R2_DISCOVERY_COMPONENTS_EXECUTION_COMPLETE_NOT_ANALYZED"
+}

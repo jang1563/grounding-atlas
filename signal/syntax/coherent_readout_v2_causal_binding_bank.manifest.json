@@ -1,0 +1,75 @@
+{
+  "analysis_id": "coherent-readout-v2-causal-binding-bank-v1",
+  "artifacts": {
+    "builder_path": "signal/syntax/build_coherent_readout_v2_causal_binding_bank.py",
+    "builder_sha256": "b2526ce87ddcba51ea6af951fe8bbec724c41924fb6288373ce4c96cb4100359",
+    "fixture_canonical_sha256": "b2fad50672456a725274bc91df38e82f265ff969f0e7b0f15cfd81657c6b12f9",
+    "fixture_path": "signal/syntax/coherent_readout_v2_causal_binding_bank.json",
+    "fixture_sha256": "2c40ba0c796202059056aec4535fd7656eab2b446d8895816bbae2034ebcbcdb"
+  },
+  "claim_scope": "prompt_protocol_causal_transfer_only_no_biology_latent_knowledge_activation_gap_physical_law_or_model_family_claim",
+  "contract": {
+    "fixed_unrelated_control": "reciprocal_pair_dyad_same_truth_polarity",
+    "holdout_items": 96,
+    "holdout_pairs": 48,
+    "inferential_unit": "lexical_pair",
+    "items_per_pair": 2,
+    "model_calls_made_by_builder": 0,
+    "unrelated_control_inferential_units": 24
+  },
+  "firewall": {
+    "activation_gap_inference": "forbidden",
+    "biology_inference": "forbidden",
+    "latent_knowledge_inference": "forbidden",
+    "model_family_generalization": "forbidden",
+    "physical_law_inference": "forbidden",
+    "scope": "causal_syntax_binding_holdout"
+  },
+  "freeze_date": "2026-08-02",
+  "mode": "development",
+  "provenance": {
+    "control_derangement_canonical_sha256": "2ccd153b7588800144e165cb7405b3e09031ed52c529f875ca764095ae406cb9",
+    "discovery_reference": {
+      "canonical_sha256": "1476a30b8c9f34c1b885f1adf7ae0ab3161250a88d1bbd0622508dcef8747d03",
+      "class_words": [
+        "amber",
+        "cedar",
+        "circle",
+        "cobalt",
+        "copper",
+        "maple",
+        "mountain",
+        "north",
+        "river",
+        "silver",
+        "south",
+        "square",
+        "summer",
+        "trumpet",
+        "violin",
+        "winter"
+      ],
+      "file_sha256": "d00e27d9e4130ff7d0d4ab32b1e26d31f40482cb1f4654204fd8a748ed06f4f8",
+      "item_count": 16,
+      "pair_count": 8,
+      "pair_ids": [
+        "pair_01_amber_cobalt",
+        "pair_02_cedar_maple",
+        "pair_03_north_south",
+        "pair_04_circle_square",
+        "pair_05_copper_silver",
+        "pair_06_violin_trumpet",
+        "pair_07_river_mountain",
+        "pair_08_winter_summer"
+      ],
+      "path": "signal/syntax/coherent_readout_v2_syntax_bank.json",
+      "role": "layer_localization_only_no_holdout_inference"
+    },
+    "external_data_sources": [],
+    "pair_registry_canonical_sha256": "853b8ef9bc6df784d0765ed94442fc6bd7fb065ddec7c916ea02931b1d283155",
+    "source_type": "deterministic_in_code_direct_declarations"
+  },
+  "purpose": "causal_syntax_binding_holdout",
+  "schema_version": "coherent-readout-v2-causal-binding-bank-manifest-v1",
+  "status": "FROZEN_NO_HOLDOUT_FORWARD"
+}

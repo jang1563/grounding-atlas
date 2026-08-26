@@ -1,0 +1,15 @@
+{
+  "analyzer_sha256": "5c55b5ed17007e4f6db8c67b312b066046c98b38236f44b74315649047f384c0",
+  "biological_model_calls": 0,
+  "call_plan_sha256": "fb95a8e5314b806a3aa3e35b33e13ff164e550726721c2305098fa07f1cbb0dd",
+  "design_file_sha256": "d1e1f68c8b65993360b6e8c402ee4ebbe4d3ece362c09e4e39c726ff2a38b974",
+  "generation_used": false,
+  "model_calls_before_attempt": 0,
+  "phase": "fit-baseline",
+  "plan_manifest_file_sha256": "0a94ef0c5cfc42a82d2b98218db42e3595dd4051d34f2a251b05d359ec0f2741",
+  "preregistration_sha256": "98a31bd903744fa054e696ecb421c07da78557d8f8a51ab00fb471514776f949",
+  "prerequisite_bindings": {},
+  "runner_sha256": "407364fb492fe6cbfd4dc927944a3062eb174e28d4819ebadbb308cb6bbfd21e",
+  "schema_version": "coherent-readout-v3-cross-codebook-attempt-v1",
+  "status": "EXECUTION_ATTEMPT_STARTED_IMMUTABLE"
+}

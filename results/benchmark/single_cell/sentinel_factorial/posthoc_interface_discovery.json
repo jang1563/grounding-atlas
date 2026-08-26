@@ -1,0 +1,1799 @@
+{
+  "analysis_code": {
+    "path": "eval/analyze_gse96583_sentinel_posthoc.py",
+    "sha256": "4d41552419142ff84cd7797a2db8a20179c57efbcba76a31ee85d2355273b46c"
+  },
+  "analysis_id": "gse96583-sentinel-posthoc-interface-discovery-v1",
+  "canonical_ab_pa_surface": {
+    "CCL5": {
+      "a": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "GNLY": {
+      "a": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": 0.0,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "GNLY+CCL5": {
+      "a": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "GNLY+NKG7": {
+      "a": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "GNLY+NKG7+CCL5": {
+      "a": {
+        "mean": 0.075,
+        "values": [
+          0.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": 0.075,
+        "values": [
+          0.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "NKG7": {
+      "a": {
+        "mean": 0.075,
+        "values": [
+          0.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": -0.0125,
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": 0.0875,
+        "values": [
+          0.0,
+          0.7,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "NKG7+CCL5": {
+      "a": {
+        "mean": 0.0875,
+        "values": [
+          0.1,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "h": {
+        "mean": 0.0,
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "r": {
+        "mean": 0.0875,
+        "values": [
+          0.1,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "canonical_driver_localization": {
+    "1039": {
+      "canonical_aligned_p_cd8_states": {
+        "GNLY": {
+          "control_mask": 0.75,
+          "target_mask": 0.85
+        },
+        "GNLY+NKG7+CCL5": {
+          "control_mask": 0.85,
+          "target_mask": 0.85
+        },
+        "NKG7": {
+          "control_mask": 0.85,
+          "target_mask": 0.85
+        },
+        "NKG7+CCL5": {
+          "control_mask": 0.85,
+          "target_mask": 0.85
+        },
+        "unmasked": 0.85
+      },
+      "entity_id": "gse96583:ctrl:1039:AGTCACGAGCTTCC-1",
+      "nonzero_registered_vector_values": {
+        "r:A_GNLY": -0.1,
+        "r:J_increment_NKG7_CCL5_after_GNLY": 0.1,
+        "r:K_nonadditivity": 0.1
+      }
+    },
+    "107": {
+      "canonical_aligned_p_cd8_states": {
+        "GNLY": {
+          "control_mask": 0.85,
+          "target_mask": 0.85
+        },
+        "GNLY+NKG7+CCL5": {
+          "control_mask": 0.75,
+          "target_mask": 0.15
+        },
+        "NKG7": {
+          "control_mask": 0.85,
+          "target_mask": 0.15
+        },
+        "NKG7+CCL5": {
+          "control_mask": 0.75,
+          "target_mask": 0.15
+        },
+        "unmasked": 0.75
+      },
+      "entity_id": "gse96583:ctrl:107:GTTAACCTCGCAAT-1",
+      "nonzero_registered_vector_values": {
+        "a:A_GNLY": -0.1,
+        "a:J_increment_NKG7_CCL5_after_GNLY": 0.7,
+        "a:K_nonadditivity": 0.1,
+        "a:T_full_triple": 0.6,
+        "a:U_NKG7_CCL5_without_GNLY": 0.6,
+        "r:J_increment_NKG7_CCL5_after_GNLY": 0.6,
+        "r:T_full_triple": 0.6,
+        "r:U_NKG7_CCL5_without_GNLY": 0.6
+      }
+    },
+    "mean_contribution_facts": {
+      "a_A_GNLY": {
+        "donor_107_contribution": -0.0125,
+        "other_donors_combined_contribution": 0.0,
+        "total_mean": -0.0125
+      },
+      "r_A_GNLY": {
+        "donor_1039_contribution": -0.0125,
+        "other_donors_combined_contribution": 0.0,
+        "total_mean": -0.0125
+      },
+      "r_J_increment": {
+        "donor_1039_contribution": 0.0125,
+        "donor_107_contribution": 0.075,
+        "other_donors_combined_contribution": 0.0,
+        "total_mean": 0.0875
+      },
+      "r_T_full_triple": {
+        "donor_107_contribution": 0.075,
+        "other_donors_combined_contribution": 0.0,
+        "total_mean": 0.075
+      }
+    }
+  },
+  "canonical_gate": {
+    "anchor_components": {
+      "a:A_GNLY": {
+        "all_lodo_means_below_minus_delta": false,
+        "at_least_7_of_8_below_minus_delta": false,
+        "ci95_upper_below_minus_delta": false,
+        "donors_below_minus_delta": 1,
+        "pass": false,
+        "shifted_exact_p_below_0_05": false,
+        "shifted_exact_sign_flip_p_negative": 0.88671875
+      },
+      "a:T_full_triple": {
+        "all_lodo_means_below_minus_delta": false,
+        "at_least_7_of_8_below_minus_delta": false,
+        "ci95_upper_below_minus_delta": false,
+        "donors_below_minus_delta": 0,
+        "pass": false,
+        "shifted_exact_p_below_0_05": false,
+        "shifted_exact_sign_flip_p_negative": 1.0
+      },
+      "r:A_GNLY": {
+        "all_lodo_means_below_minus_delta": false,
+        "at_least_7_of_8_below_minus_delta": false,
+        "ci95_upper_below_minus_delta": false,
+        "donors_below_minus_delta": 1,
+        "pass": false,
+        "shifted_exact_p_below_0_05": false,
+        "shifted_exact_sign_flip_p_negative": 0.88671875
+      },
+      "r:T_full_triple": {
+        "all_lodo_means_below_minus_delta": false,
+        "at_least_7_of_8_below_minus_delta": false,
+        "ci95_upper_below_minus_delta": false,
+        "donors_below_minus_delta": 0,
+        "pass": false,
+        "shifted_exact_p_below_0_05": false,
+        "shifted_exact_sign_flip_p_negative": 1.0
+      }
+    },
+    "anchor_exact_intersection_union_p": 1.0,
+    "anchor_pass": false,
+    "canonical_form": "ab_pa",
+    "endpoint": "anchor_gate_failed",
+    "endpoint_checks": {
+      "aJ_equivalent": false,
+      "aJ_material": false,
+      "rJ_equivalent": false,
+      "rJ_material": false
+    },
+    "equivalence_rule": "95% t7 CI strictly inside +/-delta; both shifted exact one-sided sign-flip p<0.05; all LODO means strictly inside the margin",
+    "margin": 0.03,
+    "material_rule": "95% t7 CI below -delta; exact shifted one-sided sign-flip p<0.05; at least 7/8 donors below -delta; all LODO means below -delta",
+    "strong_sparse_gate_pass": false,
+    "strong_sparse_gate_reason": "not reachable because the preregistered anchor gate failed"
+  },
+  "estimand_definitions": {
+    "a": "p_cd8(unmasked) - p_cd8(target_mask)",
+    "canonical_form": "ab_pa",
+    "donor_order": [
+      "101",
+      "107",
+      "1015",
+      "1016",
+      "1039",
+      "1244",
+      "1256",
+      "1488"
+    ],
+    "h": "p_cd8(unmasked) - p_cd8(matched_control_mask)",
+    "r": "p_cd8(matched_control_mask) - p_cd8(target_mask) = a - h"
+  },
+  "frozen_input_provenance": {
+    "parent_csv": {
+      "path": "signal/single_cell/gse96583_cd8_nk_module_replication.csv",
+      "sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321"
+    },
+    "parent_manifest": {
+      "path": "signal/single_cell/gse96583_cd8_nk_module_replication.manifest.json",
+      "sha256": "3e59808e09675f98be5e88fa8266f56c43aeea3592f023b6f91750ffdd0cb53f"
+    },
+    "parent_raw": {
+      "path": "results/benchmark/single_cell/donor_context_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+      "sha256": "aaf048375f4fa8f5b972a406185bfe15618323b8eacdff1b25db938ea2e63aea"
+    },
+    "sentinel_csv": {
+      "path": "signal/single_cell/gse96583_sentinel_factorial.csv",
+      "sha256": "673db8c8bcd6ba923e62891de6cd5f04f97967706ac3ade8a6e44ad2d14a4b95"
+    },
+    "sentinel_manifest": {
+      "path": "signal/single_cell/gse96583_sentinel_factorial.manifest.json",
+      "sha256": "9f0035469c81852b11e2a36651b7892bf2dad4d30f8049b37cd1f655ca9bf0c4"
+    },
+    "sentinel_raw": {
+      "path": "results/benchmark/single_cell/sentinel_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+      "sha256": "b625d8cf8f65e15863d19f8eb3b8300c8d0f84be6709eaac7edd94339dfede33"
+    }
+  },
+  "mathematical_candidate": {
+    "Q": "coarse output quantizer; 0.15, 0.25, 0.75, and 0.85 contain 479/480 held-out replies",
+    "descriptive_equation": "y = Q(alpha_answer_order,queried_target + b_donor + beta_mask + interactions)",
+    "fit_status": "not fitted and not a variance decomposition; a falsifiable next model, not a law or invariant",
+    "route_scale_observation": "held-out mean same-state complement residuals are 0.565 (AB) and 0.36475 (BA), and the paired answer-order shift is 0.151791666667; these exceed the absolute canonical GNLY mean (0.0125) and full-triple mean (0.075)"
+  },
+  "parent_gnly_comparison": {
+    "comparison_boundary": "post-hoc, same model/cohort/donors, different expression-selected cells and donor support; not an independent replication",
+    "heldout_matched_gnly_effect": {
+      "ab_pa": {
+        "donor_equal_mean": -0.0125,
+        "donor_equal_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1016",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "ab_pb": {
+        "donor_equal_mean": -0.2625,
+        "donor_equal_values": [
+          -0.7,
+          -0.7,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.7,
+          0.0
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1016",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "ba_pa": {
+        "donor_equal_mean": -0.1875,
+        "donor_equal_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.5,
+          -0.5,
+          0.0,
+          -0.5
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1016",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "ba_pb": {
+        "donor_equal_mean": -0.1,
+        "donor_equal_values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          -0.7,
+          0.0
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1016",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "four_form_mean": {
+        "donor_equal_mean": -0.140625,
+        "donor_equal_values": [
+          -0.175,
+          -0.175,
+          0.0,
+          0.0,
+          -0.175,
+          -0.125,
+          -0.35,
+          -0.125
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1016",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      }
+    },
+    "heldout_scope": "one frozen triple-positive held-out cell in each of 8 donors",
+    "mean_differences_heldout_minus_parent": {
+      "ab_pa": 0.243214285714,
+      "ab_pb": -0.147738095238,
+      "ba_pa": 0.010119047619,
+      "ba_pb": -0.04,
+      "four_form_mean": 0.016398809524
+    },
+    "parent_matched_gnly_effect": {
+      "ab_pa": {
+        "donor_equal_mean": -0.255714285714,
+        "donor_equal_values": [
+          0.05,
+          -0.256666666667,
+          -0.35,
+          0.0,
+          -0.6,
+          -0.233333333333,
+          -0.4
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "ab_pb": {
+        "donor_equal_mean": -0.114761904762,
+        "donor_equal_values": [
+          0.0,
+          -0.266666666667,
+          0.0,
+          -0.466666666667,
+          -0.07,
+          0.0,
+          0.0
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "ba_pa": {
+        "donor_equal_mean": -0.197619047619,
+        "donor_equal_values": [
+          0.0,
+          -0.366666666667,
+          0.0,
+          -0.166666666667,
+          -0.1,
+          -0.5,
+          -0.25
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "ba_pb": {
+        "donor_equal_mean": -0.06,
+        "donor_equal_values": [
+          -0.05,
+          -0.266666666667,
+          0.0,
+          -0.033333333333,
+          -0.07,
+          0.0,
+          0.0
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      },
+      "four_form_mean": {
+        "donor_equal_mean": -0.157023809524,
+        "donor_equal_values": [
+          0.0,
+          -0.289166666667,
+          -0.0875,
+          -0.166666666667,
+          -0.21,
+          -0.183333333333,
+          -0.1625
+        ],
+        "donor_order": [
+          "101",
+          "107",
+          "1015",
+          "1039",
+          "1244",
+          "1256",
+          "1488"
+        ]
+      }
+    },
+    "parent_scope": "16 expression-selected GNLY-target cells in the parent NK-receptor-plus-cytotoxic context; 7 supported donors"
+  },
+  "posthoc_boundary": "Selected after confirmatory responses; one model revision, one template family, and the same eight-donor SLE control cohort; expression-selected cells and text-token interventions; no biological perturbation, label-truth validation, gene/pathway causality, latent-knowledge proof, hidden-state activation-gap test, mathematical invariant, or physical law.",
+  "readout_interface": {
+    "parent": {
+      "raw_quantization": {
+        "by_form": {
+          "ab_pa": {
+            "aligned_p_cd8_range": [
+              0.15,
+              0.92
+            ],
+            "n": 280,
+            "raw_output_counts": {
+              "0.15": 21,
+              "0.25": 2,
+              "0.75": 23,
+              "0.85": 172,
+              "0.92": 62
+            },
+            "raw_range": [
+              0.15,
+              0.92
+            ]
+          },
+          "ab_pb": {
+            "aligned_p_cd8_range": [
+              0.08,
+              0.95
+            ],
+            "n": 280,
+            "raw_output_counts": {
+              "0.05": 1,
+              "0.15": 122,
+              "0.25": 1,
+              "0.75": 4,
+              "0.85": 148,
+              "0.92": 4
+            },
+            "raw_range": [
+              0.05,
+              0.92
+            ]
+          },
+          "ba_pa": {
+            "aligned_p_cd8_range": [
+              0.15,
+              0.92
+            ],
+            "n": 280,
+            "raw_output_counts": {
+              "0.15": 1,
+              "0.25": 77,
+              "0.72": 1,
+              "0.75": 131,
+              "0.85": 63,
+              "0.92": 7
+            },
+            "raw_range": [
+              0.15,
+              0.92
+            ]
+          },
+          "ba_pb": {
+            "aligned_p_cd8_range": [
+              0.08,
+              0.85
+            ],
+            "n": 280,
+            "raw_output_counts": {
+              "0.15": 81,
+              "0.25": 20,
+              "0.75": 36,
+              "0.85": 142,
+              "0.92": 1
+            },
+            "raw_range": [
+              0.15,
+              0.92
+            ]
+          }
+        },
+        "distinct_raw_output_count": 7,
+        "four_dominant_level_count": 1044,
+        "four_dominant_level_fraction": 0.932142857143,
+        "four_dominant_levels": [
+          0.15,
+          0.25,
+          0.75,
+          0.85
+        ],
+        "n_calls": 1120,
+        "queried_target_probability_at_least_0_75_count": 793,
+        "queried_target_probability_at_least_0_75_fraction": 0.708035714286,
+        "raw_output_counts": {
+          "0.05": 1,
+          "0.15": 225,
+          "0.25": 100,
+          "0.72": 1,
+          "0.75": 194,
+          "0.85": 525,
+          "0.92": 74
+        }
+      },
+      "same_state_coherence": {
+        "answer_order_difference": {
+          "form_pair_mean": {
+            "absolute_value_above_0_03_count": 237,
+            "absolute_value_within_or_equal_0_03_count": 43,
+            "max": 0.435,
+            "mean": 0.107982142857,
+            "mean_absolute": 0.126946428571,
+            "median": 0.05,
+            "min": -0.35,
+            "n_same_states": 280,
+            "nonzero_count": 237,
+            "value_counts": {
+              "-0.05": 16,
+              "-0.085": 2,
+              "-0.3": 1,
+              "-0.335": 1,
+              "-0.35": 3,
+              "0": 43,
+              "0.035": 40,
+              "0.05": 69,
+              "0.085": 4,
+              "0.1": 13,
+              "0.135": 5,
+              "0.2": 2,
+              "0.25": 16,
+              "0.265": 1,
+              "0.3": 39,
+              "0.35": 15,
+              "0.385": 2,
+              "0.4": 4,
+              "0.435": 4
+            }
+          },
+          "pa": {
+            "absolute_value_above_0_03_count": 238,
+            "absolute_value_within_or_equal_0_03_count": 42,
+            "max": 0.6,
+            "mean": 0.1635,
+            "mean_absolute": 0.184928571429,
+            "median": 0.1,
+            "min": -0.6,
+            "n_same_states": 280,
+            "nonzero_count": 239,
+            "value_counts": {
+              "-0.1": 18,
+              "-0.6": 2,
+              "0": 41,
+              "0.03": 1,
+              "0.07": 39,
+              "0.1": 106,
+              "0.17": 16,
+              "0.5": 15,
+              "0.6": 42
+            }
+          },
+          "pb": {
+            "absolute_value_above_0_03_count": 68,
+            "absolute_value_within_or_equal_0_03_count": 212,
+            "max": 0.7,
+            "mean": 0.052464285714,
+            "mean_absolute": 0.079678571429,
+            "median": 0.0,
+            "min": -0.7,
+            "n_same_states": 280,
+            "nonzero_count": 68,
+            "value_counts": {
+              "-0.07": 3,
+              "-0.1": 15,
+              "-0.7": 3,
+              "0": 212,
+              "0.1": 21,
+              "0.5": 1,
+              "0.6": 16,
+              "0.7": 9
+            }
+          }
+        },
+        "cross_form_range": {
+          "absolute_value_above_0_03_count": 262,
+          "absolute_value_within_or_equal_0_03_count": 18,
+          "max": 0.77,
+          "mean": 0.423035714286,
+          "mean_absolute": 0.423035714286,
+          "median": 0.6,
+          "min": 0.0,
+          "n_same_states": 280,
+          "nonzero_count": 262,
+          "value_counts": {
+            "0": 18,
+            "0.07": 44,
+            "0.1": 48,
+            "0.17": 9,
+            "0.5": 1,
+            "0.6": 41,
+            "0.67": 2,
+            "0.7": 107,
+            "0.77": 10
+          }
+        },
+        "definitions": {
+          "answer_order_difference": "aligned P(CD8) under AB order minus aligned P(CD8) under BA order for the same input state",
+          "same_order_complement_residual": "aligned P(CD8) from direct P(A) minus aligned P(CD8) from 1-P(B), equivalently reported P(A)+reported P(B)-1"
+        },
+        "same_order_complement_residual": {
+          "ab": {
+            "absolute_value_above_0_03_count": 196,
+            "absolute_value_within_or_equal_0_03_count": 84,
+            "max": 0.77,
+            "mean": 0.340071428571,
+            "mean_absolute": 0.341,
+            "median": 0.07,
+            "min": -0.1,
+            "n_same_states": 280,
+            "nonzero_count": 197,
+            "value_counts": {
+              "-0.03": 1,
+              "-0.1": 1,
+              "0": 83,
+              "0.07": 60,
+              "0.1": 2,
+              "0.6": 25,
+              "0.7": 103,
+              "0.77": 5
+            }
+          },
+          "ba": {
+            "absolute_value_above_0_03_count": 198,
+            "absolute_value_within_or_equal_0_03_count": 82,
+            "max": 0.7,
+            "mean": 0.229035714286,
+            "mean_absolute": 0.240464285714,
+            "median": 0.1,
+            "min": -0.1,
+            "n_same_states": 280,
+            "nonzero_count": 198,
+            "value_counts": {
+              "-0.1": 16,
+              "0": 82,
+              "0.07": 8,
+              "0.1": 73,
+              "0.47": 1,
+              "0.5": 30,
+              "0.6": 66,
+              "0.7": 4
+            }
+          }
+        }
+      }
+    },
+    "sentinel": {
+      "raw_quantization": {
+        "by_form": {
+          "ab_pa": {
+            "aligned_p_cd8_range": [
+              0.15,
+              0.85
+            ],
+            "n": 120,
+            "raw_output_counts": {
+              "0.15": 3,
+              "0.75": 7,
+              "0.85": 110
+            },
+            "raw_range": [
+              0.15,
+              0.85
+            ]
+          },
+          "ab_pb": {
+            "aligned_p_cd8_range": [
+              0.15,
+              0.85
+            ],
+            "n": 120,
+            "raw_output_counts": {
+              "0.15": 19,
+              "0.75": 1,
+              "0.85": 100
+            },
+            "raw_range": [
+              0.15,
+              0.85
+            ]
+          },
+          "ba_pa": {
+            "aligned_p_cd8_range": [
+              0.25,
+              0.75
+            ],
+            "n": 120,
+            "raw_output_counts": {
+              "0.25": 42,
+              "0.72": 1,
+              "0.75": 77
+            },
+            "raw_range": [
+              0.25,
+              0.75
+            ]
+          },
+          "ba_pb": {
+            "aligned_p_cd8_range": [
+              0.15,
+              0.85
+            ],
+            "n": 120,
+            "raw_output_counts": {
+              "0.15": 7,
+              "0.25": 1,
+              "0.75": 17,
+              "0.85": 95
+            },
+            "raw_range": [
+              0.15,
+              0.85
+            ]
+          }
+        },
+        "distinct_raw_output_count": 5,
+        "four_dominant_level_count": 479,
+        "four_dominant_level_fraction": 0.997916666667,
+        "four_dominant_levels": [
+          0.15,
+          0.25,
+          0.75,
+          0.85
+        ],
+        "n_calls": 480,
+        "queried_target_probability_at_least_0_75_count": 407,
+        "queried_target_probability_at_least_0_75_fraction": 0.847916666667,
+        "raw_output_counts": {
+          "0.15": 29,
+          "0.25": 43,
+          "0.72": 1,
+          "0.75": 102,
+          "0.85": 305
+        }
+      },
+      "same_state_coherence": {
+        "answer_order_difference": {
+          "form_pair_mean": {
+            "absolute_value_above_0_03_count": 105,
+            "absolute_value_within_or_equal_0_03_count": 15,
+            "max": 0.4,
+            "mean": 0.151791666667,
+            "mean_absolute": 0.163458333333,
+            "median": 0.05,
+            "min": -0.3,
+            "n_same_states": 120,
+            "nonzero_count": 105,
+            "value_counts": {
+              "-0.05": 2,
+              "-0.3": 2,
+              "0": 15,
+              "0.05": 47,
+              "0.065": 1,
+              "0.1": 1,
+              "0.25": 3,
+              "0.3": 38,
+              "0.35": 3,
+              "0.4": 8
+            }
+          },
+          "pa": {
+            "absolute_value_above_0_03_count": 115,
+            "absolute_value_within_or_equal_0_03_count": 5,
+            "max": 0.6,
+            "mean": 0.251916666667,
+            "mean_absolute": 0.256916666667,
+            "median": 0.1,
+            "min": -0.1,
+            "n_same_states": 120,
+            "nonzero_count": 115,
+            "value_counts": {
+              "-0.1": 3,
+              "0": 5,
+              "0.1": 72,
+              "0.13": 1,
+              "0.5": 2,
+              "0.6": 37
+            }
+          },
+          "pb": {
+            "absolute_value_above_0_03_count": 28,
+            "absolute_value_within_or_equal_0_03_count": 92,
+            "max": 0.7,
+            "mean": 0.051666666667,
+            "mean_absolute": 0.095,
+            "median": 0.0,
+            "min": -0.7,
+            "n_same_states": 120,
+            "nonzero_count": 28,
+            "value_counts": {
+              "-0.1": 12,
+              "-0.7": 2,
+              "0": 92,
+              "0.1": 1,
+              "0.6": 4,
+              "0.7": 9
+            }
+          }
+        },
+        "cross_form_range": {
+          "absolute_value_above_0_03_count": 120,
+          "absolute_value_within_or_equal_0_03_count": 0,
+          "max": 0.7,
+          "mean": 0.665833333333,
+          "mean_absolute": 0.665833333333,
+          "median": 0.7,
+          "min": 0.1,
+          "n_same_states": 120,
+          "nonzero_count": 120,
+          "value_counts": {
+            "0.1": 5,
+            "0.6": 11,
+            "0.7": 104
+          }
+        },
+        "definitions": {
+          "answer_order_difference": "aligned P(CD8) under AB order minus aligned P(CD8) under BA order for the same input state",
+          "same_order_complement_residual": "aligned P(CD8) from direct P(A) minus aligned P(CD8) from 1-P(B), equivalently reported P(A)+reported P(B)-1"
+        },
+        "same_order_complement_residual": {
+          "ab": {
+            "absolute_value_above_0_03_count": 104,
+            "absolute_value_within_or_equal_0_03_count": 16,
+            "max": 0.7,
+            "mean": 0.565,
+            "mean_absolute": 0.6,
+            "median": 0.7,
+            "min": -0.7,
+            "n_same_states": 120,
+            "nonzero_count": 104,
+            "value_counts": {
+              "-0.7": 3,
+              "0": 16,
+              "0.6": 8,
+              "0.7": 93
+            }
+          },
+          "ba": {
+            "absolute_value_above_0_03_count": 118,
+            "absolute_value_within_or_equal_0_03_count": 2,
+            "max": 0.6,
+            "mean": 0.36475,
+            "mean_absolute": 0.38475,
+            "median": 0.5,
+            "min": -0.6,
+            "n_same_states": 120,
+            "nonzero_count": 118,
+            "value_counts": {
+              "-0.1": 6,
+              "-0.6": 1,
+              "0": 2,
+              "0.1": 40,
+              "0.47": 1,
+              "0.5": 15,
+              "0.6": 55
+            }
+          }
+        }
+      }
+    }
+  },
+  "registered_vectors": {
+    "a": {
+      "A_GNLY": {
+        "ci95_t7": [
+          -0.042057803145,
+          0.017057803145
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": true,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.1171875,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.00390625
+        },
+        "leave_one_donor_out_means": [
+          -0.014285714286,
+          0.0,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 1,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 0.88671875
+        },
+        "mean": -0.0125,
+        "sign_counts": {
+          "negative": 1,
+          "positive": 0,
+          "zero": 7
+        },
+        "values": [
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "J_increment_NKG7_CCL5_after_GNLY": {
+        "ci95_t7": [
+          -0.119404622014,
+          0.294404622014
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": false,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.00390625,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.50390625
+        },
+        "leave_one_donor_out_means": [
+          0.1,
+          0.0,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 0,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 1.0
+        },
+        "mean": 0.0875,
+        "sign_counts": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 7
+        },
+        "values": [
+          0.0,
+          0.7,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "K_nonadditivity": {
+        "ci95_t7": [
+          -0.044687197956,
+          0.044687197956
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": true,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.08984375,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.08984375
+        },
+        "leave_one_donor_out_means": [
+          0.014285714286,
+          -0.014285714286,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 1,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 0.9140625
+        },
+        "mean": 0.0,
+        "sign_counts": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 6
+        },
+        "values": [
+          -0.1,
+          0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Q_GNLY_on_NKG7_CCL5_background": {
+        "ci95_t7": [
+          -0.042057803145,
+          0.017057803145
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": true,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.1171875,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.00390625
+        },
+        "leave_one_donor_out_means": [
+          0.0,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 1,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 0.88671875
+        },
+        "mean": -0.0125,
+        "sign_counts": {
+          "negative": 1,
+          "positive": 0,
+          "zero": 7
+        },
+        "values": [
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "T_full_triple": {
+        "ci95_t7": [
+          -0.102346818869,
+          0.252346818869
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": false,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.00390625,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.50390625
+        },
+        "leave_one_donor_out_means": [
+          0.085714285714,
+          0.0,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 0,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 1.0
+        },
+        "mean": 0.075,
+        "sign_counts": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 7
+        },
+        "values": [
+          0.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "U_NKG7_CCL5_without_GNLY": {
+        "ci95_t7": [
+          -0.088078611009,
+          0.263078611009
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": false,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.00390625,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.58984375
+        },
+        "leave_one_donor_out_means": [
+          0.085714285714,
+          0.014285714286,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 0,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 1.0
+        },
+        "mean": 0.0875,
+        "sign_counts": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 6
+        },
+        "values": [
+          0.1,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    },
+    "r": {
+      "A_GNLY": {
+        "ci95_t7": [
+          -0.042057803145,
+          0.017057803145
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": true,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.1171875,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.00390625
+        },
+        "leave_one_donor_out_means": [
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          0.0,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 1,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 0.88671875
+        },
+        "mean": -0.0125,
+        "sign_counts": {
+          "negative": 1,
+          "positive": 0,
+          "zero": 7
+        },
+        "values": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          -0.1,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "J_increment_NKG7_CCL5_after_GNLY": {
+        "ci95_t7": [
+          -0.088078611009,
+          0.263078611009
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": false,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.00390625,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.58984375
+        },
+        "leave_one_donor_out_means": [
+          0.1,
+          0.014285714286,
+          0.1,
+          0.1,
+          0.085714285714,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 0,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 1.0
+        },
+        "mean": 0.0875,
+        "sign_counts": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 6
+        },
+        "values": [
+          0.0,
+          0.6,
+          0.0,
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "K_nonadditivity": {
+        "ci95_t7": [
+          -0.044687197956,
+          0.044687197956
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": true,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.08984375,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.08984375
+        },
+        "leave_one_donor_out_means": [
+          0.014285714286,
+          0.0,
+          0.0,
+          0.0,
+          -0.014285714286,
+          0.0,
+          0.0,
+          0.0
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 1,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 0.9140625
+        },
+        "mean": 0.0,
+        "sign_counts": {
+          "negative": 1,
+          "positive": 1,
+          "zero": 6
+        },
+        "values": [
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.1,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "Q_GNLY_on_NKG7_CCL5_background": {
+        "ci95_t7": [
+          -0.042057803145,
+          0.017057803145
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": true,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.1171875,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.00390625
+        },
+        "leave_one_donor_out_means": [
+          0.0,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286,
+          -0.014285714286
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 1,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 0.88671875
+        },
+        "mean": -0.0125,
+        "sign_counts": {
+          "negative": 1,
+          "positive": 0,
+          "zero": 7
+        },
+        "values": [
+          -0.1,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "T_full_triple": {
+        "ci95_t7": [
+          -0.102346818869,
+          0.252346818869
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": false,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.00390625,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.50390625
+        },
+        "leave_one_donor_out_means": [
+          0.085714285714,
+          0.0,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714,
+          0.085714285714
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 0,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 1.0
+        },
+        "mean": 0.075,
+        "sign_counts": {
+          "negative": 0,
+          "positive": 1,
+          "zero": 7
+        },
+        "values": [
+          0.0,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "U_NKG7_CCL5_without_GNLY": {
+        "ci95_t7": [
+          -0.088078611009,
+          0.263078611009
+        ],
+        "equivalent_within_0_03": {
+          "all_lodo_means_strictly_inside_margin": false,
+          "both_exact_p_below_0_05": false,
+          "ci95_strictly_inside_margin": false,
+          "lower_shift_exact_sign_flip_p_positive": 0.00390625,
+          "pass": false,
+          "upper_shift_exact_sign_flip_p_negative": 0.58984375
+        },
+        "leave_one_donor_out_means": [
+          0.085714285714,
+          0.014285714286,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1,
+          0.1
+        ],
+        "material_negative_beyond_0_03": {
+          "all_lodo_means_below_minus_delta": false,
+          "at_least_7_of_8_below_minus_delta": false,
+          "ci95_upper_below_minus_delta": false,
+          "donors_below_minus_delta": 0,
+          "pass": false,
+          "shifted_exact_p_below_0_05": false,
+          "shifted_exact_sign_flip_p_negative": 1.0
+        },
+        "mean": 0.0875,
+        "sign_counts": {
+          "negative": 0,
+          "positive": 2,
+          "zero": 6
+        },
+        "values": [
+          0.1,
+          0.6,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      }
+    }
+  },
+  "status": "posthoc_descriptive",
+  "validated_contract": {
+    "all_raw_records_parsed": true,
+    "parent_model_validated": true,
+    "parent_raw_calls": 1120,
+    "parent_same_input_states": 280,
+    "primary_result_json_consumed": false,
+    "raw_outputs_reparsed_from_strings": true,
+    "runner_imported": false,
+    "sentinel_base_cells": 8,
+    "sentinel_csv_rows": 64,
+    "sentinel_exact_model_and_provider_validated": true,
+    "sentinel_interventions": 56,
+    "sentinel_no_retries_or_temperature_fallback": true,
+    "sentinel_r_equals_a_minus_h_for_all_56_donor_subset_rows": true,
+    "sentinel_raw_calls": 480,
+    "sentinel_response_and_provider_request_ids_unique": true,
+    "sentinel_same_input_states": 120
+  }
+}

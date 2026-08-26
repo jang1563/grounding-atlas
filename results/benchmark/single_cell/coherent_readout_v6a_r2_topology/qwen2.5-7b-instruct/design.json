@@ -1,0 +1,241 @@
+{
+  "analysis_id": "coherent-readout-v6a-r2-natural-token-topology-v1",
+  "artifact_scope": "registered_main",
+  "biological_model_calls": 0,
+  "block_counts": {
+    "confirmation-components": 640,
+    "confirmation-topology": 512,
+    "discovery-components": 640,
+    "discovery-topology": 512
+  },
+  "block_order": [
+    "discovery-components",
+    "discovery-topology",
+    "confirmation-components",
+    "confirmation-topology"
+  ],
+  "call_plan_sha256": "1a8e9cb5c1c0ea94e43c4b890da39249c85117b733236f83f77611a82766c83c",
+  "candidate_universe_sha256": "a62a94ca09759d9a70b3930081c627ac46e01a46c4ef2fd2fc5bfa99bbebf0bf",
+  "claim_scope": "behavior_only_synthetic_prompt_topology_if_replicated",
+  "component_gates": {
+    "applied_separately_to_splits": [
+      "discovery",
+      "confirmation"
+    ],
+    "global_outside_pair_rule": "strict_incorrect_row_no_universal_veto",
+    "inference_scope": "registered_fixed_panel_error_budgets_not_iid_intervals",
+    "overall": {
+      "pairwise_natural_token": {
+        "codebook_lookup": "at_least_126_of_128",
+        "property_retrieval": "at_least_251_of_256",
+        "single_target_composition": "at_least_251_of_256"
+      },
+      "strict_unique_global_correct": {
+        "codebook_lookup": "at_least_126_of_128",
+        "property_retrieval": "at_least_251_of_256",
+        "single_target_composition": "at_least_251_of_256"
+      }
+    },
+    "pairwise_joint_scaffolds": {
+      "property_retrieval_o_by_q_by_a": "at_least_29_of_32",
+      "property_retrieval_q_by_a": "at_least_58_of_64",
+      "single_target_composition_q_by_a": "at_least_58_of_64"
+    },
+    "pairwise_per_answer_label": {
+      "codebook_lookup": "at_least_7_of_8",
+      "property_retrieval": "at_least_15_of_16",
+      "single_target_composition": "at_least_15_of_16"
+    },
+    "pairwise_per_factor_level": {
+      "n_128": "at_least_116_of_128",
+      "n_64": "at_least_58_of_64"
+    },
+    "per_world": {
+      "pairwise_natural_token": {
+        "codebook_lookup": "at_least_15_of_16",
+        "property_retrieval": "at_least_29_of_32",
+        "single_target_composition": "at_least_29_of_32"
+      },
+      "strict_unique_global_correct": {
+        "codebook_lookup": "at_least_15_of_16",
+        "property_retrieval": "at_least_29_of_32",
+        "single_target_composition": "at_least_29_of_32"
+      }
+    },
+    "tie_rule": "ordinary_incorrect_row_no_universal_veto"
+  },
+  "execution_revision": "coherent-readout-v6a-r2-natural-token-topology-exec-v1",
+  "execution_stage_counts": {
+    "discovery-components": 640,
+    "remaining-main": 1664
+  },
+  "execution_stage_order": [
+    "discovery-components",
+    "remaining-main"
+  ],
+  "expected_calls": 2304,
+  "family_counts": {
+    "codebook_lookup": 256,
+    "property_retrieval": 512,
+    "single_target_composition": 512,
+    "two_fact_composition": 1024
+  },
+  "forbidden_claims": [
+    "activation_gap",
+    "latent_knowledge",
+    "biology",
+    "physical_law",
+    "universal_recency_mechanism",
+    "model_family_generality"
+  ],
+  "generation_used": false,
+  "historical_firewall_pool_counts": {
+    "answer_token_ids": 91,
+    "entity_strings": 2010,
+    "instance_keys": 40,
+    "rendered_text_hashes": 4304,
+    "single_codepoint_scalars": 65,
+    "user_prompt_hashes": 4752
+  },
+  "historical_firewall_source_registry_sha256": "3cb6b73bf009c678b31d667a8c4ae14eaca9fe0a3a29ce68d6bbc090ba858bc7",
+  "locks": {
+    "dependency_lock_file_sha256": "88e270e4269c91db06f106d80d254f06a4d6d4cdb4682041a3526b02f782649e",
+    "design_document_file_sha256": "ec15caf9c263b8399bc4734c764e2443bf484c0e6829ff163fd8d5d871e5d8d8",
+    "fixture_canonical_sha256": "685e101638a047f52ea2ae437599f7931f97a7697de79cb756d298144617f506",
+    "fixture_file_sha256": "7e4782c20b39972779df76e1a443f4026d55f8903f2ad1fe89614d907baf7a4e",
+    "fixture_manifest_file_sha256": "ca703fc116b5ac20754c057f9d771779b5d18834562996dc2cb6763d0d9cf4f9",
+    "sealed_v2_posthoc_output_file_sha256": "8b3ed9a43241286fb72e10edea0d27f2a2ead113c482422d5340ff51f6438ed8",
+    "sealed_v2_runner_file_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+    "sealed_v2_terminal_analysis_file_sha256": "595cff448a3f72011e119f37556c95e11ea0fe4c4daef7d79541f507f4987cb8",
+    "tokenization_receipt_file_sha256": "b53a87141eeaeafc56e39821ea6a38a0e9ff68780a7cae9e0b9865c312ccc175"
+  },
+  "mode": "fresh_behavioral_topology_components_first",
+  "model": {
+    "attention_implementation": "sdpa",
+    "device": "mps",
+    "hidden_size": 3584,
+    "model_dtype": "bfloat16",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "model_loader_source": "sealed_v2_runner._load_model",
+    "model_loader_source_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+    "model_loading_device_map": "mps",
+    "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+    "num_hidden_layers": 28,
+    "snapshot_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "vocab_size": 152064
+  },
+  "model_calls": 0,
+  "natural_answer_contract": {
+    "bare_variant_pooling_allowed": false,
+    "bare_variants_registered": false,
+    "colon_response_site_token_id": 25,
+    "one_token": true,
+    "prompt_occurrence_id_equals_continuation_id": true,
+    "surface": "one ASCII space followed by one registered glyph"
+  },
+  "registration_state": "FROZEN_BEFORE_ANY_R2_MODEL_FORWARD",
+  "remaining_output_blocks": {
+    "confirmation-components": {
+      "call_count": 640,
+      "global_start_row": 1152,
+      "global_stop_row": 1792,
+      "raw_shard_indices": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "record_artifact_key": "remaining_confirmation_components_records",
+      "stage_start_row": 512,
+      "stage_stop_row": 1152
+    },
+    "confirmation-topology": {
+      "call_count": 512,
+      "global_start_row": 1792,
+      "global_stop_row": 2304,
+      "raw_shard_indices": [
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "record_artifact_key": "remaining_confirmation_topology_records",
+      "stage_start_row": 1152,
+      "stage_stop_row": 1664
+    },
+    "discovery-topology": {
+      "call_count": 512,
+      "global_start_row": 640,
+      "global_stop_row": 1152,
+      "raw_shard_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "record_artifact_key": "remaining_discovery_topology_records",
+      "stage_start_row": 0,
+      "stage_stop_row": 512
+    }
+  },
+  "schema_version": "coherent-readout-v6a-r2-topology-design-v1",
+  "scientific_registry_sha256": "21ddd5bf0e7ab3dde05c4bfab4fa5811053ef11b4d77ab7625e5457d7944f98e",
+  "split_family_counts": {
+    "confirmation": {
+      "codebook_lookup": 128,
+      "property_retrieval": 256,
+      "single_target_composition": 256,
+      "two_fact_composition": 512
+    },
+    "discovery": {
+      "codebook_lookup": 128,
+      "property_retrieval": 256,
+      "single_target_composition": 256,
+      "two_fact_composition": 512
+    }
+  },
+  "staging_firewall": {
+    "confirmation_component_raw_shards": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17
+    ],
+    "discovery_component_calls": 640,
+    "discovery_components_first": true,
+    "effect_based_optional_stopping": false,
+    "partial_resume_allowed": false,
+    "remaining_main_calls": 1664,
+    "remaining_main_is_one_sealed_phase": true,
+    "remaining_record_streams_physically_separate": true,
+    "stop_on_discovery_component_fail": true,
+    "topology_files_opened_before_confirmation_pass": false,
+    "topology_records_store_diagnostics": false
+  },
+  "v2_provenance": {
+    "authorization_inherited": false,
+    "contextual_posthoc": "exploratory_engineering_evidence_only",
+    "qualification_reopened": false,
+    "terminal_status": "V6A_QUALIFICATION_COMPONENT_FAIL"
+  }
+}

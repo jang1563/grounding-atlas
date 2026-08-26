@@ -1,0 +1,203 @@
+{
+    "schema_version": 1,
+    "artifact_type": "groundbench.dms_cbs_b6_pair_registry",
+    "claim_scope": "exact_candidate_pair_source_expectations_only_no_ingestion_or_outcome_claim",
+    "access_date": "2026-07-26",
+    "gene": "CBS",
+    "target": {
+        "gene": "CBS",
+        "sequence_type": "dna",
+        "dna_sequence_length": 1656,
+        "dna_sequence_sha256": "0ed0d6e9099a2c31e49d9a00b1711a42be68816b798e3616fb072625d7d96f0f",
+        "uniprot_id": "P35520",
+        "protein_sequence_length": 551,
+        "protein_sequence_sha256": "1e7cf97e465052ebc9f35a7bc9c299a509c5a73495086332a256b67cca3e5f78"
+    },
+    "conditions": {
+        "low": {
+            "urn": "urn:mavedb:00000005-a-5",
+            "title": "CBS low-B6",
+            "dose_definition": "average_of_0_and_1_ng_per_mL_pyridoxine_conditions",
+            "row_count": 11478,
+            "score_columns": [
+                "score",
+                "sd",
+                "se"
+            ],
+            "count_columns": [
+                "nonselect1",
+                "nonselect2",
+                "nonselect3",
+                "nonselect4",
+                "nonselect5",
+                "nonselect6",
+                "nonselect7",
+                "nonselect8",
+                "select1",
+                "select2",
+                "select3",
+                "select4",
+                "select5",
+                "select6",
+                "select7",
+                "select8",
+                "controlNS1",
+                "controlNS2",
+                "controlNS3",
+                "controlNS4",
+                "controlNS5",
+                "controlNS6",
+                "controlNS7",
+                "controlNS8",
+                "controlS1",
+                "controlS2",
+                "controlS3",
+                "controlS4",
+                "controlS5",
+                "controlS6",
+                "controlS7",
+                "controlS8"
+            ],
+            "metadata": {
+                "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000005-a-5",
+                "body_bytes": 30355,
+                "body_sha256": "87e4f67a88175e6b6d3f3657d5737875d0bbaff599566a5fb301b70b2963ec03"
+            },
+            "scores": {
+                "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000005-a-5/scores",
+                "body_bytes": 1336001,
+                "body_sha256": "47d2da4bd1c1368b5664c5f854444ca579cadea8a716eb549cfb59c12853fde5"
+            },
+            "counts": {
+                "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000005-a-5/counts",
+                "body_bytes": 4616367,
+                "body_sha256": "b1bc332e11a2584cd199cbfcf2070b7cc7628d0d4d95a2e39938cd06851026c9"
+            },
+            "source_lock": {
+                "artifact_type": "groundbench.dms_mavedb_candidate_source_lock",
+                "artifact_bytes": 8058,
+                "artifact_sha256": "1028035c19b989dc9b5d2e0b4e66339e8a768effe7a0ca4db80c411c4f1c1f93",
+                "canonical_json_sha256": "f3463c28d06e9d75d19d36e075578545ec41930944a497df329e40a02f3b2413",
+                "source_bundle_sha256": "a2e3d05b342f5c08245fb0de3e46577cf6f83896409cab2a644616c28fed9407",
+                "readiness_state": "COUNT_LINEAGE_PARTIAL",
+                "mapping_contract_sha256": "de1e8ae271e94817559647a6f78f2ac7551aa90bf9d3a72924f4f6e85a3d10f3",
+                "current_mapping_error_count": 152,
+                "mapped_variants": {
+                    "decoded_byte_count": 67236243,
+                    "sha256": "0281defc8da4b9b2a3046c7642a1d69f9cc4e5ad3533de954019b6438edaffa6"
+                },
+                "openapi": {
+                    "version": "2026.2.7",
+                    "decoded_byte_count": 388236,
+                    "sha256": "cb51201fb966601f1dc7bb6297f0022fca6a4cfa5ba22299b6b22523c2efd408"
+                }
+            }
+        },
+        "high": {
+            "urn": "urn:mavedb:00000005-a-6",
+            "title": "CBS high-B6",
+            "dose_definition": "400_ng_per_mL_pyridoxine_condition",
+            "row_count": 10802,
+            "score_columns": [
+                "score",
+                "sd",
+                "se"
+            ],
+            "count_columns": [
+                "nonselect1",
+                "nonselect2",
+                "nonselect3",
+                "nonselect4",
+                "select1",
+                "select2",
+                "select3",
+                "select4",
+                "controlNS1",
+                "controlNS2",
+                "controlNS3",
+                "controlNS4",
+                "controlS1",
+                "controlS2",
+                "controlS3",
+                "controlS4"
+            ],
+            "metadata": {
+                "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000005-a-6",
+                "body_bytes": 29327,
+                "body_sha256": "153dda901c68a3e28a9aef02e41008e6ee8ed19d5f05c518190d5a304a33933d"
+            },
+            "scores": {
+                "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000005-a-6/scores",
+                "body_bytes": 1260675,
+                "body_sha256": "2fa0775fb5cd887102c786a8ecf89d3299e7d3e2eeae220b0d6572a03140adc8"
+            },
+            "counts": {
+                "url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000005-a-6/counts",
+                "body_bytes": 2568937,
+                "body_sha256": "247ed53735d626eb46fb1af162ee57e084ec596e6808438e51aef2b297da9f46"
+            },
+            "source_lock": {
+                "artifact_type": "groundbench.dms_mavedb_candidate_source_lock",
+                "artifact_bytes": 6970,
+                "artifact_sha256": "20e15da150d56279cc0893d9d0cba235e2cf1d6a8ac86b5c79b400a300c48846",
+                "canonical_json_sha256": "36a23a59b0c0b2b5599ebf4a760d51d06c8160bef3a8bb0a3701b989e00541c9",
+                "source_bundle_sha256": "c587b79111f612dcdbcf20964b77ef9129f59025e7560516ff8eec2ae9940cb0",
+                "readiness_state": "COUNT_LINEAGE_PARTIAL",
+                "mapping_contract_sha256": "cd5eef0fc44aa7ace92f5111dff3b82ecf5bb58ef60aaef9ca0d9277914611a3",
+                "current_mapping_error_count": 150,
+                "mapped_variants": {
+                    "decoded_byte_count": 63266281,
+                    "sha256": "d4a587c2f1b100d546c84f6212a3b392c476b55a30e5303b5ba6711d1da9429d"
+                },
+                "openapi": {
+                    "version": "2026.2.7",
+                    "decoded_byte_count": 388236,
+                    "sha256": "cb51201fb966601f1dc7bb6297f0022fca6a4cfa5ba22299b6b22523c2efd408"
+                }
+            }
+        }
+    },
+    "pair_contract": {
+        "contrast_unit": "variant_aligned_two_condition_contrast_not_paired_replicates",
+        "replicate_pairing_claim": false,
+        "delta_orientation": "high_b6_score_minus_low_b6_score_positive_indicates_higher_high_b6_fitness_not_sufficient_for_remediability",
+        "native_join_key": [
+            "hgvs_nt"
+        ],
+        "protein_group_key": "hgvs_pro",
+        "codon_duplicate_policy": "collapse_only_when_score_sd_se_missingness_and_nonmissing_values_are_exactly_equal_never_average_or_count_as_replicates",
+        "missingness_policy": "structural_pair_requires_nonmissing_score_sd_se_in_both_conditions_qc_admissibility_not_evaluated",
+        "imputation_allowed": false,
+        "primary_endpoint": "continuous_high_minus_low_fitness_difference",
+        "published_low_b6_functional_rule": {
+            "classification": "deleterious_if_upper_95_percent_ci_strictly_below_threshold",
+            "upper_95_percent_ci_threshold": 0.6,
+            "fdr": 0.05,
+            "complement_classification": "not_defined_as_neutral_or_retained_function"
+        },
+        "published_b6_remediability_rule": {
+            "eligibility": "classified_deleterious_under_low_b6_rule",
+            "classification": "remediable_if_lower_95_percent_ci_of_high_minus_low_strictly_above_threshold",
+            "lower_95_percent_ci_threshold": 0.22,
+            "fdr": 0.05
+        },
+        "expected_structural_overlap": {
+            "native_join_row_count": 10098,
+            "low_only_row_count": 1380,
+            "high_only_row_count": 704,
+            "native_join_unique_hgvs_pro_count": 7365,
+            "condition_set_intersection_unique_hgvs_pro_count": 7395
+        },
+        "uncertainty_rule": "variance_high_minus_low_equals_variance_high_plus_variance_low_minus_two_covariance_high_low",
+        "covariance_status": "required_not_authenticated",
+        "outcome_materialization": "forbidden_until_native_replay_qc_codon_collapse_covariance_ci_and_external_registration_are_authenticated"
+    },
+    "admission_status": "candidate_not_ingested",
+    "outcome_status": "not_derived",
+    "confirmatory_eligible": false,
+    "blockers": [
+        "The low- and high-B6 native TileSeq replay, sample map, QC, codon collapse, and functional anchors are not authenticated.",
+        "The low/high covariance or a joint-bootstrap artifact is absent, so delta confidence intervals cannot be reconstructed.",
+        "The paired target has not been externally registered and cannot be represented by the current scalar schema-2 replay."
+    ]
+}

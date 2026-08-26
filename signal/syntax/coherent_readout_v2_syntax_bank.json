@@ -1,0 +1,354 @@
+{
+  "analysis_id": "coherent-readout-v2-syntax-selection-bank-v1",
+  "firewall": {
+    "activation_inference": "forbidden",
+    "biology_inference": "forbidden",
+    "knowledge_inference": "forbidden",
+    "scope": "syntax_selection_only"
+  },
+  "inferential_unit": "pair_cluster",
+  "items": [
+    {
+      "cluster_id": "pair_01_amber_cobalt",
+      "declaration_sha256": "239bcfcb8342e4fb593710d69ee64f1998b2f1d4070a1a1feead9b39004815ed",
+      "declaration_text": "The declared class is amber.",
+      "declared_class": "amber",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_01_amber_cobalt:amber",
+      "negative_class": "cobalt",
+      "pair_id": "pair_01_amber_cobalt",
+      "positive_class": "amber",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_01_amber_cobalt",
+      "declaration_sha256": "ca55aed90db6cccb3480102b1677d4ec550d2d7fc20f28c8d47b82c73fc4c0ac",
+      "declaration_text": "The declared class is cobalt.",
+      "declared_class": "cobalt",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_01_amber_cobalt:cobalt",
+      "negative_class": "cobalt",
+      "pair_id": "pair_01_amber_cobalt",
+      "positive_class": "amber",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_02_cedar_maple",
+      "declaration_sha256": "a52f49da13f630ae4f3d7114b285c6dee18648daf971ff8a3c6b2221be40c4df",
+      "declaration_text": "The declared class is cedar.",
+      "declared_class": "cedar",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_02_cedar_maple:cedar",
+      "negative_class": "maple",
+      "pair_id": "pair_02_cedar_maple",
+      "positive_class": "cedar",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_02_cedar_maple",
+      "declaration_sha256": "dc7612d3096c540dc80fed6f8a81a2ce5afbb70fa9757235ac3288e676c26f2f",
+      "declaration_text": "The declared class is maple.",
+      "declared_class": "maple",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_02_cedar_maple:maple",
+      "negative_class": "maple",
+      "pair_id": "pair_02_cedar_maple",
+      "positive_class": "cedar",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_03_north_south",
+      "declaration_sha256": "965e890b2339ca93808c939a6b22c7442b86854d545d01f2ca4e9d0f544eb4ba",
+      "declaration_text": "The declared class is north.",
+      "declared_class": "north",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_03_north_south:north",
+      "negative_class": "south",
+      "pair_id": "pair_03_north_south",
+      "positive_class": "north",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_03_north_south",
+      "declaration_sha256": "8f8a5a015f4070cf6169e25834288b3b699b7b13043c23c069b52842ffaa8e86",
+      "declaration_text": "The declared class is south.",
+      "declared_class": "south",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_03_north_south:south",
+      "negative_class": "south",
+      "pair_id": "pair_03_north_south",
+      "positive_class": "north",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_04_circle_square",
+      "declaration_sha256": "61b1eb2dfaf2becd55c675cf2cfc897a32295f48cbc573b7e038167fea7be484",
+      "declaration_text": "The declared class is circle.",
+      "declared_class": "circle",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_04_circle_square:circle",
+      "negative_class": "square",
+      "pair_id": "pair_04_circle_square",
+      "positive_class": "circle",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_04_circle_square",
+      "declaration_sha256": "e7e6cbfde96e0f8366f5e37472d15bd02a62cc12034bb96d7c99ad4c263ea069",
+      "declaration_text": "The declared class is square.",
+      "declared_class": "square",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_04_circle_square:square",
+      "negative_class": "square",
+      "pair_id": "pair_04_circle_square",
+      "positive_class": "circle",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_05_copper_silver",
+      "declaration_sha256": "0e68dd85e609a89b5c9074894c96a0f5752e68f51340fa9bd00ff1c2318dade0",
+      "declaration_text": "The declared class is copper.",
+      "declared_class": "copper",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_05_copper_silver:copper",
+      "negative_class": "silver",
+      "pair_id": "pair_05_copper_silver",
+      "positive_class": "copper",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_05_copper_silver",
+      "declaration_sha256": "425daf1b28ef418d958fb4d17cfa55b8042909a83167af59b5d27ffff90a7e1c",
+      "declaration_text": "The declared class is silver.",
+      "declared_class": "silver",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_05_copper_silver:silver",
+      "negative_class": "silver",
+      "pair_id": "pair_05_copper_silver",
+      "positive_class": "copper",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_06_violin_trumpet",
+      "declaration_sha256": "4d6653b816c8a7ccd9c44c46f35b8df2e1db0c5f625fb0ba2021febc9a8f7890",
+      "declaration_text": "The declared class is trumpet.",
+      "declared_class": "trumpet",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_06_violin_trumpet:trumpet",
+      "negative_class": "trumpet",
+      "pair_id": "pair_06_violin_trumpet",
+      "positive_class": "violin",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_06_violin_trumpet",
+      "declaration_sha256": "b862e90bd5d8d48cb50e1b5f844794637af69c3ef8cfe649a57acbc84101e104",
+      "declaration_text": "The declared class is violin.",
+      "declared_class": "violin",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_06_violin_trumpet:violin",
+      "negative_class": "trumpet",
+      "pair_id": "pair_06_violin_trumpet",
+      "positive_class": "violin",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_07_river_mountain",
+      "declaration_sha256": "f9fdac453820cec99a66f4a06cf2b21834455cf31edb4f4144ea8a8688fd5866",
+      "declaration_text": "The declared class is mountain.",
+      "declared_class": "mountain",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_07_river_mountain:mountain",
+      "negative_class": "mountain",
+      "pair_id": "pair_07_river_mountain",
+      "positive_class": "river",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_07_river_mountain",
+      "declaration_sha256": "cd5ea529597fcdd1619988cd4ecb6b41f2e8e9b4230d6ea514a5a4ed6b6989ff",
+      "declaration_text": "The declared class is river.",
+      "declared_class": "river",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_07_river_mountain:river",
+      "negative_class": "mountain",
+      "pair_id": "pair_07_river_mountain",
+      "positive_class": "river",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    },
+    {
+      "cluster_id": "pair_08_winter_summer",
+      "declaration_sha256": "9f9d5c0d51da3e616e81803d847ae70a2c5c2ea42ab40e35c948d37d4270bca2",
+      "declaration_text": "The declared class is summer.",
+      "declared_class": "summer",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_08_winter_summer:summer",
+      "negative_class": "summer",
+      "pair_id": "pair_08_winter_summer",
+      "positive_class": "winter",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "negative"
+    },
+    {
+      "cluster_id": "pair_08_winter_summer",
+      "declaration_sha256": "a3b4684c282a81108ae7096b3507b852a70af7af2b252f484e22242f67bff760",
+      "declaration_text": "The declared class is winter.",
+      "declared_class": "winter",
+      "firewall": {
+        "activation_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "knowledge_inference": "forbidden",
+        "scope": "syntax_selection_only"
+      },
+      "item_id": "syntax:pair_08_winter_summer:winter",
+      "negative_class": "summer",
+      "pair_id": "pair_08_winter_summer",
+      "positive_class": "winter",
+      "schema_version": "coherent-readout-v2-syntax-item-v1",
+      "truth_polarity": "positive"
+    }
+  ],
+  "mode": "development",
+  "model_calls_made_by_builder": 0,
+  "pair_registry": [
+    {
+      "cluster_id": "pair_01_amber_cobalt",
+      "negative_class": "cobalt",
+      "pair_id": "pair_01_amber_cobalt",
+      "positive_class": "amber"
+    },
+    {
+      "cluster_id": "pair_02_cedar_maple",
+      "negative_class": "maple",
+      "pair_id": "pair_02_cedar_maple",
+      "positive_class": "cedar"
+    },
+    {
+      "cluster_id": "pair_03_north_south",
+      "negative_class": "south",
+      "pair_id": "pair_03_north_south",
+      "positive_class": "north"
+    },
+    {
+      "cluster_id": "pair_04_circle_square",
+      "negative_class": "square",
+      "pair_id": "pair_04_circle_square",
+      "positive_class": "circle"
+    },
+    {
+      "cluster_id": "pair_05_copper_silver",
+      "negative_class": "silver",
+      "pair_id": "pair_05_copper_silver",
+      "positive_class": "copper"
+    },
+    {
+      "cluster_id": "pair_06_violin_trumpet",
+      "negative_class": "trumpet",
+      "pair_id": "pair_06_violin_trumpet",
+      "positive_class": "violin"
+    },
+    {
+      "cluster_id": "pair_07_river_mountain",
+      "negative_class": "mountain",
+      "pair_id": "pair_07_river_mountain",
+      "positive_class": "river"
+    },
+    {
+      "cluster_id": "pair_08_winter_summer",
+      "negative_class": "summer",
+      "pair_id": "pair_08_winter_summer",
+      "positive_class": "winter"
+    }
+  ],
+  "purpose": "syntax_selection_only",
+  "schema_version": "coherent-readout-v2-syntax-bank-v1"
+}

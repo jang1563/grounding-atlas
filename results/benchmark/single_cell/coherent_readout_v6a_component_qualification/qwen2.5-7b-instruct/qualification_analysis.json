@@ -1,0 +1,20 @@
+{
+  "claim_boundaries": {
+    "activation_gap_inference": "forbidden",
+    "biology_inference": "forbidden",
+    "composition_inference": "forbidden",
+    "latent_knowledge_inference": "forbidden",
+    "model_family_generalization": "forbidden",
+    "physical_law_inference": "forbidden",
+    "supported_scope": "disposable_direct_component_model_qualification_only",
+    "target_order_gap_inference": "forbidden",
+    "topology_interaction_inference": "forbidden"
+  },
+  "component_qualified": false,
+  "composition_calls_analyzed": 0,
+  "engineering_valid": false,
+  "error": "cannot read JSON: <HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/qualification_baseline_execution_manifest.json",
+  "model_calls_issued_by_analyzer": 0,
+  "schema_version": "coherent-readout-v6a-qualification-analysis-v1",
+  "status": "V6A_QUALIFICATION_ENGINEERING_INVALID"
+}

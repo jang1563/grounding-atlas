@@ -1,0 +1,2800 @@
+{
+  "analysis_id": "coherent-readout-v2-causal-binding-bank-v1",
+  "control_derangement": [
+    {
+      "control_cluster_id": "control_dyad:holdout_02_oak_pine:holdout_03_east_west",
+      "source_pair_id": "holdout_02_oak_pine",
+      "unrelated_pair_id": "holdout_03_east_west"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_02_oak_pine:holdout_03_east_west",
+      "source_pair_id": "holdout_03_east_west",
+      "unrelated_pair_id": "holdout_02_oak_pine"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_05_brass_gold:holdout_07_ocean_forest",
+      "source_pair_id": "holdout_05_brass_gold",
+      "unrelated_pair_id": "holdout_07_ocean_forest"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_05_brass_gold:holdout_07_ocean_forest",
+      "source_pair_id": "holdout_07_ocean_forest",
+      "unrelated_pair_id": "holdout_05_brass_gold"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_08_autumn_spring:holdout_09_marble_granite",
+      "source_pair_id": "holdout_08_autumn_spring",
+      "unrelated_pair_id": "holdout_09_marble_granite"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_08_autumn_spring:holdout_09_marble_granite",
+      "source_pair_id": "holdout_09_marble_granite",
+      "unrelated_pair_id": "holdout_08_autumn_spring"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_10_comet_planet:holdout_12_linen_velvet",
+      "source_pair_id": "holdout_10_comet_planet",
+      "unrelated_pair_id": "holdout_12_linen_velvet"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_10_comet_planet:holdout_12_linen_velvet",
+      "source_pair_id": "holdout_12_linen_velvet",
+      "unrelated_pair_id": "holdout_10_comet_planet"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_15_dawn_dusk:holdout_16_oval_diamond",
+      "source_pair_id": "holdout_15_dawn_dusk",
+      "unrelated_pair_id": "holdout_16_oval_diamond"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_15_dawn_dusk:holdout_16_oval_diamond",
+      "source_pair_id": "holdout_16_oval_diamond",
+      "unrelated_pair_id": "holdout_15_dawn_dusk"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_17_bronze_platinum:holdout_24_cotton_silk",
+      "source_pair_id": "holdout_17_bronze_platinum",
+      "unrelated_pair_id": "holdout_24_cotton_silk"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_17_bronze_platinum:holdout_24_cotton_silk",
+      "source_pair_id": "holdout_24_cotton_silk",
+      "unrelated_pair_id": "holdout_17_bronze_platinum"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_29_iron_tin:holdout_31_canyon_valley",
+      "source_pair_id": "holdout_29_iron_tin",
+      "unrelated_pair_id": "holdout_31_canyon_valley"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_29_iron_tin:holdout_31_canyon_valley",
+      "source_pair_id": "holdout_31_canyon_valley",
+      "unrelated_pair_id": "holdout_29_iron_tin"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_32_frost_thunder:holdout_33_slate_limestone",
+      "source_pair_id": "holdout_32_frost_thunder",
+      "unrelated_pair_id": "holdout_33_slate_limestone"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_32_frost_thunder:holdout_33_slate_limestone",
+      "source_pair_id": "holdout_33_slate_limestone",
+      "unrelated_pair_id": "holdout_32_frost_thunder"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_36_wool_satin:holdout_39_sunrise_sunset",
+      "source_pair_id": "holdout_36_wool_satin",
+      "unrelated_pair_id": "holdout_39_sunrise_sunset"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_36_wool_satin:holdout_39_sunrise_sunset",
+      "source_pair_id": "holdout_39_sunrise_sunset",
+      "unrelated_pair_id": "holdout_36_wool_satin"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_40_sphere_cube:holdout_41_nickel_zinc",
+      "source_pair_id": "holdout_40_sphere_cube",
+      "unrelated_pair_id": "holdout_41_nickel_zinc"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_40_sphere_cube:holdout_41_nickel_zinc",
+      "source_pair_id": "holdout_41_nickel_zinc",
+      "unrelated_pair_id": "holdout_40_sphere_cube"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_44_breeze_storm:holdout_48_denim_suede",
+      "source_pair_id": "holdout_44_breeze_storm",
+      "unrelated_pair_id": "holdout_48_denim_suede"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_44_breeze_storm:holdout_48_denim_suede",
+      "source_pair_id": "holdout_48_denim_suede",
+      "unrelated_pair_id": "holdout_44_breeze_storm"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_01_coral_indigo:holdout_04_triangle_hexagon",
+      "source_pair_id": "holdout_01_coral_indigo",
+      "unrelated_pair_id": "holdout_04_triangle_hexagon"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_01_coral_indigo:holdout_04_triangle_hexagon",
+      "source_pair_id": "holdout_04_triangle_hexagon",
+      "unrelated_pair_id": "holdout_01_coral_indigo"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_13_ruby_sapphire:holdout_18_piano_clarinet",
+      "source_pair_id": "holdout_13_ruby_sapphire",
+      "unrelated_pair_id": "holdout_18_piano_clarinet"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_13_ruby_sapphire:holdout_18_piano_clarinet",
+      "source_pair_id": "holdout_18_piano_clarinet",
+      "unrelated_pair_id": "holdout_13_ruby_sapphire"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_19_desert_meadow:holdout_21_quartz_basalt",
+      "source_pair_id": "holdout_19_desert_meadow",
+      "unrelated_pair_id": "holdout_21_quartz_basalt"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_19_desert_meadow:holdout_21_quartz_basalt",
+      "source_pair_id": "holdout_21_quartz_basalt",
+      "unrelated_pair_id": "holdout_19_desert_meadow"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_22_asteroid_nebula:holdout_23_eagle_badger",
+      "source_pair_id": "holdout_22_asteroid_nebula",
+      "unrelated_pair_id": "holdout_23_eagle_badger"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_22_asteroid_nebula:holdout_23_eagle_badger",
+      "source_pair_id": "holdout_23_eagle_badger",
+      "unrelated_pair_id": "holdout_22_asteroid_nebula"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_27_zenith_nadir:holdout_34_galaxy_pulsar",
+      "source_pair_id": "holdout_27_zenith_nadir",
+      "unrelated_pair_id": "holdout_34_galaxy_pulsar"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_27_zenith_nadir:holdout_34_galaxy_pulsar",
+      "source_pair_id": "holdout_34_galaxy_pulsar",
+      "unrelated_pair_id": "holdout_27_zenith_nadir"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_11_falcon_otter:holdout_46_meteor_quasar",
+      "source_pair_id": "holdout_46_meteor_quasar",
+      "unrelated_pair_id": "holdout_11_falcon_otter"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_11_falcon_otter:holdout_46_meteor_quasar",
+      "source_pair_id": "holdout_11_falcon_otter",
+      "unrelated_pair_id": "holdout_46_meteor_quasar"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_14_birch_willow:holdout_28_pentagon_octagon",
+      "source_pair_id": "holdout_14_birch_willow",
+      "unrelated_pair_id": "holdout_28_pentagon_octagon"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_14_birch_willow:holdout_28_pentagon_octagon",
+      "source_pair_id": "holdout_28_pentagon_octagon",
+      "unrelated_pair_id": "holdout_14_birch_willow"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_35_raven_beaver:holdout_38_acacia_poplar",
+      "source_pair_id": "holdout_35_raven_beaver",
+      "unrelated_pair_id": "holdout_38_acacia_poplar"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_35_raven_beaver:holdout_38_acacia_poplar",
+      "source_pair_id": "holdout_38_acacia_poplar",
+      "unrelated_pair_id": "holdout_35_raven_beaver"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_42_banjo_bassoon:holdout_43_lagoon_tundra",
+      "source_pair_id": "holdout_42_banjo_bassoon",
+      "unrelated_pair_id": "holdout_43_lagoon_tundra"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_42_banjo_bassoon:holdout_43_lagoon_tundra",
+      "source_pair_id": "holdout_43_lagoon_tundra",
+      "unrelated_pair_id": "holdout_42_banjo_bassoon"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_45_obsidian_sandstone:holdout_47_heron_lynx",
+      "source_pair_id": "holdout_45_obsidian_sandstone",
+      "unrelated_pair_id": "holdout_47_heron_lynx"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_45_obsidian_sandstone:holdout_47_heron_lynx",
+      "source_pair_id": "holdout_47_heron_lynx",
+      "unrelated_pair_id": "holdout_45_obsidian_sandstone"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_06_cello_flute:holdout_20_monsoon_drought",
+      "source_pair_id": "holdout_06_cello_flute",
+      "unrelated_pair_id": "holdout_20_monsoon_drought"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_06_cello_flute:holdout_20_monsoon_drought",
+      "source_pair_id": "holdout_20_monsoon_drought",
+      "unrelated_pair_id": "holdout_06_cello_flute"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_25_scarlet_turquoise:holdout_26_spruce_elm",
+      "source_pair_id": "holdout_25_scarlet_turquoise",
+      "unrelated_pair_id": "holdout_26_spruce_elm"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_25_scarlet_turquoise:holdout_26_spruce_elm",
+      "source_pair_id": "holdout_26_spruce_elm",
+      "unrelated_pair_id": "holdout_25_scarlet_turquoise"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_30_harp_oboe:holdout_37_magenta_teal",
+      "source_pair_id": "holdout_37_magenta_teal",
+      "unrelated_pair_id": "holdout_30_harp_oboe"
+    },
+    {
+      "control_cluster_id": "control_dyad:holdout_30_harp_oboe:holdout_37_magenta_teal",
+      "source_pair_id": "holdout_30_harp_oboe",
+      "unrelated_pair_id": "holdout_37_magenta_teal"
+    }
+  ],
+  "discovery_reference": {
+    "canonical_sha256": "1476a30b8c9f34c1b885f1adf7ae0ab3161250a88d1bbd0622508dcef8747d03",
+    "class_words": [
+      "amber",
+      "cedar",
+      "circle",
+      "cobalt",
+      "copper",
+      "maple",
+      "mountain",
+      "north",
+      "river",
+      "silver",
+      "south",
+      "square",
+      "summer",
+      "trumpet",
+      "violin",
+      "winter"
+    ],
+    "file_sha256": "d00e27d9e4130ff7d0d4ab32b1e26d31f40482cb1f4654204fd8a748ed06f4f8",
+    "item_count": 16,
+    "pair_count": 8,
+    "pair_ids": [
+      "pair_01_amber_cobalt",
+      "pair_02_cedar_maple",
+      "pair_03_north_south",
+      "pair_04_circle_square",
+      "pair_05_copper_silver",
+      "pair_06_violin_trumpet",
+      "pair_07_river_mountain",
+      "pair_08_winter_summer"
+    ],
+    "path": "signal/syntax/coherent_readout_v2_syntax_bank.json",
+    "role": "layer_localization_only_no_holdout_inference"
+  },
+  "firewall": {
+    "activation_gap_inference": "forbidden",
+    "biology_inference": "forbidden",
+    "latent_knowledge_inference": "forbidden",
+    "model_family_generalization": "forbidden",
+    "physical_law_inference": "forbidden",
+    "scope": "causal_syntax_binding_holdout"
+  },
+  "freeze_date": "2026-08-02",
+  "inferential_unit": "lexical_pair",
+  "items": [
+    {
+      "cluster_id": "holdout_01_coral_indigo",
+      "declaration_sha256": "50df1f538c9c5abc61d2c9e9b823f29dd6422161f85e01300e399b5c94f2330d",
+      "declaration_text": "The declared class is coral.",
+      "declared_class": "coral",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_01_coral_indigo:coral",
+      "negative_class": "indigo",
+      "pair_id": "holdout_01_coral_indigo",
+      "positive_class": "coral",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_01_coral_indigo:indigo",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_01_coral_indigo:holdout_04_triangle_hexagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_04_triangle_hexagon:triangle"
+    },
+    {
+      "cluster_id": "holdout_01_coral_indigo",
+      "declaration_sha256": "82df7ab0cb913925dcf9c54c03343135701f990188e156bbed44d85bf0efb728",
+      "declaration_text": "The declared class is indigo.",
+      "declared_class": "indigo",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_01_coral_indigo:indigo",
+      "negative_class": "indigo",
+      "pair_id": "holdout_01_coral_indigo",
+      "positive_class": "coral",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_01_coral_indigo:coral",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_01_coral_indigo:holdout_04_triangle_hexagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_04_triangle_hexagon:hexagon"
+    },
+    {
+      "cluster_id": "holdout_02_oak_pine",
+      "declaration_sha256": "f747b0c7fae433b043d1ffc47fa443b30bd1fdbcd9ca885198e41a48f3cce9c7",
+      "declaration_text": "The declared class is oak.",
+      "declared_class": "oak",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_02_oak_pine:oak",
+      "negative_class": "pine",
+      "pair_id": "holdout_02_oak_pine",
+      "positive_class": "oak",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_02_oak_pine:pine",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_02_oak_pine:holdout_03_east_west",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_03_east_west:east"
+    },
+    {
+      "cluster_id": "holdout_02_oak_pine",
+      "declaration_sha256": "dfa7a8de8ce6acaed57064353c8c59323cc7371f37abdb0346dadd73ac9f6991",
+      "declaration_text": "The declared class is pine.",
+      "declared_class": "pine",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_02_oak_pine:pine",
+      "negative_class": "pine",
+      "pair_id": "holdout_02_oak_pine",
+      "positive_class": "oak",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_02_oak_pine:oak",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_02_oak_pine:holdout_03_east_west",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_03_east_west:west"
+    },
+    {
+      "cluster_id": "holdout_03_east_west",
+      "declaration_sha256": "f29335af49ec8a8ea901829a0bfe5feb6649501136037e16fc0ef51d8c466831",
+      "declaration_text": "The declared class is east.",
+      "declared_class": "east",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_03_east_west:east",
+      "negative_class": "west",
+      "pair_id": "holdout_03_east_west",
+      "positive_class": "east",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_03_east_west:west",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_02_oak_pine:holdout_03_east_west",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_02_oak_pine:oak"
+    },
+    {
+      "cluster_id": "holdout_03_east_west",
+      "declaration_sha256": "a2cf8de9d51bece3f4616f5bc3c19098e5d73759750d0954fb43d4994247dc3f",
+      "declaration_text": "The declared class is west.",
+      "declared_class": "west",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_03_east_west:west",
+      "negative_class": "west",
+      "pair_id": "holdout_03_east_west",
+      "positive_class": "east",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_03_east_west:east",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_02_oak_pine:holdout_03_east_west",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_02_oak_pine:pine"
+    },
+    {
+      "cluster_id": "holdout_04_triangle_hexagon",
+      "declaration_sha256": "a421573ec7ce0d2be90f165eb30fcbc664181c7b025dc173db1076c267e40c7a",
+      "declaration_text": "The declared class is hexagon.",
+      "declared_class": "hexagon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_04_triangle_hexagon:hexagon",
+      "negative_class": "hexagon",
+      "pair_id": "holdout_04_triangle_hexagon",
+      "positive_class": "triangle",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_04_triangle_hexagon:triangle",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_01_coral_indigo:holdout_04_triangle_hexagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_01_coral_indigo:indigo"
+    },
+    {
+      "cluster_id": "holdout_04_triangle_hexagon",
+      "declaration_sha256": "cb6cc24fd70b77cdfe90bcb6a632c4d39fb4d47f8556c8b6df73a965306c1128",
+      "declaration_text": "The declared class is triangle.",
+      "declared_class": "triangle",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_04_triangle_hexagon:triangle",
+      "negative_class": "hexagon",
+      "pair_id": "holdout_04_triangle_hexagon",
+      "positive_class": "triangle",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_04_triangle_hexagon:hexagon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_01_coral_indigo:holdout_04_triangle_hexagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_01_coral_indigo:coral"
+    },
+    {
+      "cluster_id": "holdout_05_brass_gold",
+      "declaration_sha256": "22f214966aacec86ab0ba9ec4510730c396bf9d91ffa424c0f42f2f1204e5ce7",
+      "declaration_text": "The declared class is brass.",
+      "declared_class": "brass",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_05_brass_gold:brass",
+      "negative_class": "gold",
+      "pair_id": "holdout_05_brass_gold",
+      "positive_class": "brass",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_05_brass_gold:gold",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_05_brass_gold:holdout_07_ocean_forest",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_07_ocean_forest:ocean"
+    },
+    {
+      "cluster_id": "holdout_05_brass_gold",
+      "declaration_sha256": "9cbee8764566177ee328eb9488b225dc6347d9cb39b94c14c393dec9abd86fa7",
+      "declaration_text": "The declared class is gold.",
+      "declared_class": "gold",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_05_brass_gold:gold",
+      "negative_class": "gold",
+      "pair_id": "holdout_05_brass_gold",
+      "positive_class": "brass",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_05_brass_gold:brass",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_05_brass_gold:holdout_07_ocean_forest",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_07_ocean_forest:forest"
+    },
+    {
+      "cluster_id": "holdout_06_cello_flute",
+      "declaration_sha256": "e2336052906e56bf8a25aa8a4d39c00ea2f48de1587fb9e841a3c73a89fb89da",
+      "declaration_text": "The declared class is cello.",
+      "declared_class": "cello",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_06_cello_flute:cello",
+      "negative_class": "flute",
+      "pair_id": "holdout_06_cello_flute",
+      "positive_class": "cello",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_06_cello_flute:flute",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_06_cello_flute:holdout_20_monsoon_drought",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_20_monsoon_drought:monsoon"
+    },
+    {
+      "cluster_id": "holdout_06_cello_flute",
+      "declaration_sha256": "0e755237ba646fd0c8b4e1d3b9a7b026246380468d03fe54167a30aba57a7ec9",
+      "declaration_text": "The declared class is flute.",
+      "declared_class": "flute",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_06_cello_flute:flute",
+      "negative_class": "flute",
+      "pair_id": "holdout_06_cello_flute",
+      "positive_class": "cello",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_06_cello_flute:cello",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_06_cello_flute:holdout_20_monsoon_drought",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_20_monsoon_drought:drought"
+    },
+    {
+      "cluster_id": "holdout_07_ocean_forest",
+      "declaration_sha256": "9af477b113609cafd2e577ed6f0adecadeef594fcd03aaebbdb2c783d53bd5c7",
+      "declaration_text": "The declared class is forest.",
+      "declared_class": "forest",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_07_ocean_forest:forest",
+      "negative_class": "forest",
+      "pair_id": "holdout_07_ocean_forest",
+      "positive_class": "ocean",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_07_ocean_forest:ocean",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_05_brass_gold:holdout_07_ocean_forest",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_05_brass_gold:gold"
+    },
+    {
+      "cluster_id": "holdout_07_ocean_forest",
+      "declaration_sha256": "299a25132c5e4b49685b28347234bed15e96226ef9f439064b17f51145b28f1b",
+      "declaration_text": "The declared class is ocean.",
+      "declared_class": "ocean",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_07_ocean_forest:ocean",
+      "negative_class": "forest",
+      "pair_id": "holdout_07_ocean_forest",
+      "positive_class": "ocean",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_07_ocean_forest:forest",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_05_brass_gold:holdout_07_ocean_forest",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_05_brass_gold:brass"
+    },
+    {
+      "cluster_id": "holdout_08_autumn_spring",
+      "declaration_sha256": "aa8055f0627a5465abcc05fb4dfb1e75886c56699eace56e588c087eecc3135c",
+      "declaration_text": "The declared class is autumn.",
+      "declared_class": "autumn",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_08_autumn_spring:autumn",
+      "negative_class": "spring",
+      "pair_id": "holdout_08_autumn_spring",
+      "positive_class": "autumn",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_08_autumn_spring:spring",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_08_autumn_spring:holdout_09_marble_granite",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_09_marble_granite:marble"
+    },
+    {
+      "cluster_id": "holdout_08_autumn_spring",
+      "declaration_sha256": "82a6796823c56dd14180769e6432cced4608ba5ea3ee53c064f7a7dae922ed81",
+      "declaration_text": "The declared class is spring.",
+      "declared_class": "spring",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_08_autumn_spring:spring",
+      "negative_class": "spring",
+      "pair_id": "holdout_08_autumn_spring",
+      "positive_class": "autumn",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_08_autumn_spring:autumn",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_08_autumn_spring:holdout_09_marble_granite",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_09_marble_granite:granite"
+    },
+    {
+      "cluster_id": "holdout_09_marble_granite",
+      "declaration_sha256": "7cf5b3bebb2fb1313a9939f6a19a6e86629869703f257d35c2835441a36cfa9c",
+      "declaration_text": "The declared class is granite.",
+      "declared_class": "granite",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_09_marble_granite:granite",
+      "negative_class": "granite",
+      "pair_id": "holdout_09_marble_granite",
+      "positive_class": "marble",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_09_marble_granite:marble",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_08_autumn_spring:holdout_09_marble_granite",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_08_autumn_spring:spring"
+    },
+    {
+      "cluster_id": "holdout_09_marble_granite",
+      "declaration_sha256": "375dd98be75760a58ebfd5d83a0061374ef9d9d65ab27cd6d242ef38cb177eb9",
+      "declaration_text": "The declared class is marble.",
+      "declared_class": "marble",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_09_marble_granite:marble",
+      "negative_class": "granite",
+      "pair_id": "holdout_09_marble_granite",
+      "positive_class": "marble",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_09_marble_granite:granite",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_08_autumn_spring:holdout_09_marble_granite",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_08_autumn_spring:autumn"
+    },
+    {
+      "cluster_id": "holdout_10_comet_planet",
+      "declaration_sha256": "ec0a5c45b0a5c9dd4a529a02dd023e8fcadd7dce351ba31d8dbae7b13c58fc35",
+      "declaration_text": "The declared class is comet.",
+      "declared_class": "comet",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_10_comet_planet:comet",
+      "negative_class": "planet",
+      "pair_id": "holdout_10_comet_planet",
+      "positive_class": "comet",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_10_comet_planet:planet",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_10_comet_planet:holdout_12_linen_velvet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_12_linen_velvet:linen"
+    },
+    {
+      "cluster_id": "holdout_10_comet_planet",
+      "declaration_sha256": "a0703bf94f5bbfaef4b230c322390522511148bd907eb2f2d014b544ae2628e2",
+      "declaration_text": "The declared class is planet.",
+      "declared_class": "planet",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_10_comet_planet:planet",
+      "negative_class": "planet",
+      "pair_id": "holdout_10_comet_planet",
+      "positive_class": "comet",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_10_comet_planet:comet",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_10_comet_planet:holdout_12_linen_velvet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_12_linen_velvet:velvet"
+    },
+    {
+      "cluster_id": "holdout_11_falcon_otter",
+      "declaration_sha256": "32a10e28e02d5588d855389fdce48b815de68f8b8a237103c44f214a9b1f4aa6",
+      "declaration_text": "The declared class is falcon.",
+      "declared_class": "falcon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_11_falcon_otter:falcon",
+      "negative_class": "otter",
+      "pair_id": "holdout_11_falcon_otter",
+      "positive_class": "falcon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_11_falcon_otter:otter",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_11_falcon_otter:holdout_46_meteor_quasar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_46_meteor_quasar:meteor"
+    },
+    {
+      "cluster_id": "holdout_11_falcon_otter",
+      "declaration_sha256": "7dcea9bdc222b67c5a4aedb47af9c17ef0bff363b54d07e3f46c7deda9dabb58",
+      "declaration_text": "The declared class is otter.",
+      "declared_class": "otter",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_11_falcon_otter:otter",
+      "negative_class": "otter",
+      "pair_id": "holdout_11_falcon_otter",
+      "positive_class": "falcon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_11_falcon_otter:falcon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_11_falcon_otter:holdout_46_meteor_quasar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_46_meteor_quasar:quasar"
+    },
+    {
+      "cluster_id": "holdout_12_linen_velvet",
+      "declaration_sha256": "9edf73c964c31320a9727e16a415f551563042ca30d9844b72ae4bddad59bef3",
+      "declaration_text": "The declared class is linen.",
+      "declared_class": "linen",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_12_linen_velvet:linen",
+      "negative_class": "velvet",
+      "pair_id": "holdout_12_linen_velvet",
+      "positive_class": "linen",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_12_linen_velvet:velvet",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_10_comet_planet:holdout_12_linen_velvet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_10_comet_planet:comet"
+    },
+    {
+      "cluster_id": "holdout_12_linen_velvet",
+      "declaration_sha256": "1275571c4c959dd57817eaa9379e4de5f8dbc0bd1fde46b2553bc5d006fadbdd",
+      "declaration_text": "The declared class is velvet.",
+      "declared_class": "velvet",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_12_linen_velvet:velvet",
+      "negative_class": "velvet",
+      "pair_id": "holdout_12_linen_velvet",
+      "positive_class": "linen",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_12_linen_velvet:linen",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_10_comet_planet:holdout_12_linen_velvet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_10_comet_planet:planet"
+    },
+    {
+      "cluster_id": "holdout_13_ruby_sapphire",
+      "declaration_sha256": "cfe9a06fe444c047ed2a08fd23bf6feadaf93c12144cbe1cf8d51cb6d87e1ed6",
+      "declaration_text": "The declared class is ruby.",
+      "declared_class": "ruby",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_13_ruby_sapphire:ruby",
+      "negative_class": "sapphire",
+      "pair_id": "holdout_13_ruby_sapphire",
+      "positive_class": "ruby",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_13_ruby_sapphire:sapphire",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_13_ruby_sapphire:holdout_18_piano_clarinet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_18_piano_clarinet:piano"
+    },
+    {
+      "cluster_id": "holdout_13_ruby_sapphire",
+      "declaration_sha256": "a7f280fc0030f0becec97a86fc4efc7abf362ed3433530ae3a5628a14fd52ad5",
+      "declaration_text": "The declared class is sapphire.",
+      "declared_class": "sapphire",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_13_ruby_sapphire:sapphire",
+      "negative_class": "sapphire",
+      "pair_id": "holdout_13_ruby_sapphire",
+      "positive_class": "ruby",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_13_ruby_sapphire:ruby",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_13_ruby_sapphire:holdout_18_piano_clarinet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_18_piano_clarinet:clarinet"
+    },
+    {
+      "cluster_id": "holdout_14_birch_willow",
+      "declaration_sha256": "7caf6ea9c8c3aeabfc8bc8f097cb69cfb89d950cb4071436f4b35c9c0519e9dd",
+      "declaration_text": "The declared class is birch.",
+      "declared_class": "birch",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_14_birch_willow:birch",
+      "negative_class": "willow",
+      "pair_id": "holdout_14_birch_willow",
+      "positive_class": "birch",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_14_birch_willow:willow",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_14_birch_willow:holdout_28_pentagon_octagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_28_pentagon_octagon:pentagon"
+    },
+    {
+      "cluster_id": "holdout_14_birch_willow",
+      "declaration_sha256": "0c82f4e67aea4116bf310a87c3c6b577de92088b1d8f2a74093ed659027bbf86",
+      "declaration_text": "The declared class is willow.",
+      "declared_class": "willow",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_14_birch_willow:willow",
+      "negative_class": "willow",
+      "pair_id": "holdout_14_birch_willow",
+      "positive_class": "birch",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_14_birch_willow:birch",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_14_birch_willow:holdout_28_pentagon_octagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_28_pentagon_octagon:octagon"
+    },
+    {
+      "cluster_id": "holdout_15_dawn_dusk",
+      "declaration_sha256": "fa54da7768efe939b9d7e5fc6d10ac274e42d79e27515a3a51c142556e1575b0",
+      "declaration_text": "The declared class is dawn.",
+      "declared_class": "dawn",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_15_dawn_dusk:dawn",
+      "negative_class": "dusk",
+      "pair_id": "holdout_15_dawn_dusk",
+      "positive_class": "dawn",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_15_dawn_dusk:dusk",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_15_dawn_dusk:holdout_16_oval_diamond",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_16_oval_diamond:oval"
+    },
+    {
+      "cluster_id": "holdout_15_dawn_dusk",
+      "declaration_sha256": "814ff43060fb9e29bc1ac05f8491acd548dda2ac69f7495fa615b9f2122b40cf",
+      "declaration_text": "The declared class is dusk.",
+      "declared_class": "dusk",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_15_dawn_dusk:dusk",
+      "negative_class": "dusk",
+      "pair_id": "holdout_15_dawn_dusk",
+      "positive_class": "dawn",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_15_dawn_dusk:dawn",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_15_dawn_dusk:holdout_16_oval_diamond",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_16_oval_diamond:diamond"
+    },
+    {
+      "cluster_id": "holdout_16_oval_diamond",
+      "declaration_sha256": "cbbb94d76722b25dd41678487ce748d84bdba511f591ec28dde62e7e2aa7dd69",
+      "declaration_text": "The declared class is diamond.",
+      "declared_class": "diamond",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_16_oval_diamond:diamond",
+      "negative_class": "diamond",
+      "pair_id": "holdout_16_oval_diamond",
+      "positive_class": "oval",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_16_oval_diamond:oval",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_15_dawn_dusk:holdout_16_oval_diamond",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_15_dawn_dusk:dusk"
+    },
+    {
+      "cluster_id": "holdout_16_oval_diamond",
+      "declaration_sha256": "a418a99c85ba66626e662a58d813836d21eaf1118642172209f15fa387914433",
+      "declaration_text": "The declared class is oval.",
+      "declared_class": "oval",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_16_oval_diamond:oval",
+      "negative_class": "diamond",
+      "pair_id": "holdout_16_oval_diamond",
+      "positive_class": "oval",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_16_oval_diamond:diamond",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_15_dawn_dusk:holdout_16_oval_diamond",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_15_dawn_dusk:dawn"
+    },
+    {
+      "cluster_id": "holdout_17_bronze_platinum",
+      "declaration_sha256": "02736e076920305b3782cb27e1cf6c0f823fc60f3480581ea08c904dbf37572f",
+      "declaration_text": "The declared class is bronze.",
+      "declared_class": "bronze",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_17_bronze_platinum:bronze",
+      "negative_class": "platinum",
+      "pair_id": "holdout_17_bronze_platinum",
+      "positive_class": "bronze",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_17_bronze_platinum:platinum",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_17_bronze_platinum:holdout_24_cotton_silk",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_24_cotton_silk:cotton"
+    },
+    {
+      "cluster_id": "holdout_17_bronze_platinum",
+      "declaration_sha256": "b46b6dbf9e80daca192c59e02fff5fb47f4e7dd4642732f2e90b5b5f928d9de6",
+      "declaration_text": "The declared class is platinum.",
+      "declared_class": "platinum",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_17_bronze_platinum:platinum",
+      "negative_class": "platinum",
+      "pair_id": "holdout_17_bronze_platinum",
+      "positive_class": "bronze",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_17_bronze_platinum:bronze",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_17_bronze_platinum:holdout_24_cotton_silk",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_24_cotton_silk:silk"
+    },
+    {
+      "cluster_id": "holdout_18_piano_clarinet",
+      "declaration_sha256": "afda5fe8820c4eddf3c663819a9dcb27cd87a22283190a160466f8824d6aec28",
+      "declaration_text": "The declared class is clarinet.",
+      "declared_class": "clarinet",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_18_piano_clarinet:clarinet",
+      "negative_class": "clarinet",
+      "pair_id": "holdout_18_piano_clarinet",
+      "positive_class": "piano",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_18_piano_clarinet:piano",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_13_ruby_sapphire:holdout_18_piano_clarinet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_13_ruby_sapphire:sapphire"
+    },
+    {
+      "cluster_id": "holdout_18_piano_clarinet",
+      "declaration_sha256": "d9493bfdb23a3ad1c5915aa150462f292aeb94a98fb2bd00dac98bec933dfaca",
+      "declaration_text": "The declared class is piano.",
+      "declared_class": "piano",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_18_piano_clarinet:piano",
+      "negative_class": "clarinet",
+      "pair_id": "holdout_18_piano_clarinet",
+      "positive_class": "piano",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_18_piano_clarinet:clarinet",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_13_ruby_sapphire:holdout_18_piano_clarinet",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_13_ruby_sapphire:ruby"
+    },
+    {
+      "cluster_id": "holdout_19_desert_meadow",
+      "declaration_sha256": "c8c0d67da2ea0672ed3ac2f9a79561808cf6ac39979a99c8ca5b6ea2c244d36c",
+      "declaration_text": "The declared class is desert.",
+      "declared_class": "desert",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_19_desert_meadow:desert",
+      "negative_class": "meadow",
+      "pair_id": "holdout_19_desert_meadow",
+      "positive_class": "desert",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_19_desert_meadow:meadow",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_19_desert_meadow:holdout_21_quartz_basalt",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_21_quartz_basalt:quartz"
+    },
+    {
+      "cluster_id": "holdout_19_desert_meadow",
+      "declaration_sha256": "798fa17e26c5215ea4116cf2a6349a6b8fa1c35007b5cb32d6ecd954f22433df",
+      "declaration_text": "The declared class is meadow.",
+      "declared_class": "meadow",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_19_desert_meadow:meadow",
+      "negative_class": "meadow",
+      "pair_id": "holdout_19_desert_meadow",
+      "positive_class": "desert",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_19_desert_meadow:desert",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_19_desert_meadow:holdout_21_quartz_basalt",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_21_quartz_basalt:basalt"
+    },
+    {
+      "cluster_id": "holdout_20_monsoon_drought",
+      "declaration_sha256": "14e4f9ace05fe7c8cd293e979820646ff1560074c95782836932b6d52aaa36a3",
+      "declaration_text": "The declared class is drought.",
+      "declared_class": "drought",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_20_monsoon_drought:drought",
+      "negative_class": "drought",
+      "pair_id": "holdout_20_monsoon_drought",
+      "positive_class": "monsoon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_20_monsoon_drought:monsoon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_06_cello_flute:holdout_20_monsoon_drought",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_06_cello_flute:flute"
+    },
+    {
+      "cluster_id": "holdout_20_monsoon_drought",
+      "declaration_sha256": "33393171860203332a977c97162f515d23322b1155db2124626571a64e8f768e",
+      "declaration_text": "The declared class is monsoon.",
+      "declared_class": "monsoon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_20_monsoon_drought:monsoon",
+      "negative_class": "drought",
+      "pair_id": "holdout_20_monsoon_drought",
+      "positive_class": "monsoon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_20_monsoon_drought:drought",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_06_cello_flute:holdout_20_monsoon_drought",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_06_cello_flute:cello"
+    },
+    {
+      "cluster_id": "holdout_21_quartz_basalt",
+      "declaration_sha256": "f68a1225e9e01c785807ce711bc52406fae80e43159efc509fa0a411ffecc4dc",
+      "declaration_text": "The declared class is basalt.",
+      "declared_class": "basalt",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_21_quartz_basalt:basalt",
+      "negative_class": "basalt",
+      "pair_id": "holdout_21_quartz_basalt",
+      "positive_class": "quartz",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_21_quartz_basalt:quartz",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_19_desert_meadow:holdout_21_quartz_basalt",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_19_desert_meadow:meadow"
+    },
+    {
+      "cluster_id": "holdout_21_quartz_basalt",
+      "declaration_sha256": "8badb13a84f34d8e41d8635a250e37d76a300dde8aee655c49dde6d3db5bc7de",
+      "declaration_text": "The declared class is quartz.",
+      "declared_class": "quartz",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_21_quartz_basalt:quartz",
+      "negative_class": "basalt",
+      "pair_id": "holdout_21_quartz_basalt",
+      "positive_class": "quartz",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_21_quartz_basalt:basalt",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_19_desert_meadow:holdout_21_quartz_basalt",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_19_desert_meadow:desert"
+    },
+    {
+      "cluster_id": "holdout_22_asteroid_nebula",
+      "declaration_sha256": "6223e8794872f1e05ffdc7503017f5efb7a179954fcb4b6c8e016599b3b8e42b",
+      "declaration_text": "The declared class is asteroid.",
+      "declared_class": "asteroid",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_22_asteroid_nebula:asteroid",
+      "negative_class": "nebula",
+      "pair_id": "holdout_22_asteroid_nebula",
+      "positive_class": "asteroid",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_22_asteroid_nebula:nebula",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_22_asteroid_nebula:holdout_23_eagle_badger",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_23_eagle_badger:eagle"
+    },
+    {
+      "cluster_id": "holdout_22_asteroid_nebula",
+      "declaration_sha256": "879cae794673189ae740fbc72e86bb080efc8ba506bf8b8d888a912ee68b9ace",
+      "declaration_text": "The declared class is nebula.",
+      "declared_class": "nebula",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_22_asteroid_nebula:nebula",
+      "negative_class": "nebula",
+      "pair_id": "holdout_22_asteroid_nebula",
+      "positive_class": "asteroid",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_22_asteroid_nebula:asteroid",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_22_asteroid_nebula:holdout_23_eagle_badger",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_23_eagle_badger:badger"
+    },
+    {
+      "cluster_id": "holdout_23_eagle_badger",
+      "declaration_sha256": "80052941c4be4344fcc79cf8dd344104921504964c68618188043e8728b47776",
+      "declaration_text": "The declared class is badger.",
+      "declared_class": "badger",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_23_eagle_badger:badger",
+      "negative_class": "badger",
+      "pair_id": "holdout_23_eagle_badger",
+      "positive_class": "eagle",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_23_eagle_badger:eagle",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_22_asteroid_nebula:holdout_23_eagle_badger",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_22_asteroid_nebula:nebula"
+    },
+    {
+      "cluster_id": "holdout_23_eagle_badger",
+      "declaration_sha256": "2cfab8717caa05dc908466c2dbb3921267ccb84592f3fcea683151ea7377bcb3",
+      "declaration_text": "The declared class is eagle.",
+      "declared_class": "eagle",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_23_eagle_badger:eagle",
+      "negative_class": "badger",
+      "pair_id": "holdout_23_eagle_badger",
+      "positive_class": "eagle",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_23_eagle_badger:badger",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_22_asteroid_nebula:holdout_23_eagle_badger",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_22_asteroid_nebula:asteroid"
+    },
+    {
+      "cluster_id": "holdout_24_cotton_silk",
+      "declaration_sha256": "57827517f938d968b5b78333d48d8676ead984ee7b789b3476a48374cfe132c1",
+      "declaration_text": "The declared class is cotton.",
+      "declared_class": "cotton",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_24_cotton_silk:cotton",
+      "negative_class": "silk",
+      "pair_id": "holdout_24_cotton_silk",
+      "positive_class": "cotton",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_24_cotton_silk:silk",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_17_bronze_platinum:holdout_24_cotton_silk",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_17_bronze_platinum:bronze"
+    },
+    {
+      "cluster_id": "holdout_24_cotton_silk",
+      "declaration_sha256": "0e6b5b4ceb772d45b33dfd33f555cfe5f7d7dda7af49c8e504b78ef3a76dd76b",
+      "declaration_text": "The declared class is silk.",
+      "declared_class": "silk",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_24_cotton_silk:silk",
+      "negative_class": "silk",
+      "pair_id": "holdout_24_cotton_silk",
+      "positive_class": "cotton",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_24_cotton_silk:cotton",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_17_bronze_platinum:holdout_24_cotton_silk",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_17_bronze_platinum:platinum"
+    },
+    {
+      "cluster_id": "holdout_25_scarlet_turquoise",
+      "declaration_sha256": "4651c620a2e77e531f8ce8e82ba8f210003ad991096070e05425599c56a5c855",
+      "declaration_text": "The declared class is scarlet.",
+      "declared_class": "scarlet",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_25_scarlet_turquoise:scarlet",
+      "negative_class": "turquoise",
+      "pair_id": "holdout_25_scarlet_turquoise",
+      "positive_class": "scarlet",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_25_scarlet_turquoise:turquoise",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_25_scarlet_turquoise:holdout_26_spruce_elm",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_26_spruce_elm:spruce"
+    },
+    {
+      "cluster_id": "holdout_25_scarlet_turquoise",
+      "declaration_sha256": "02ca1a2f84ae5dd1a99edbebe56a7062f55ad4222bcf46326a02f181306ec15c",
+      "declaration_text": "The declared class is turquoise.",
+      "declared_class": "turquoise",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_25_scarlet_turquoise:turquoise",
+      "negative_class": "turquoise",
+      "pair_id": "holdout_25_scarlet_turquoise",
+      "positive_class": "scarlet",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_25_scarlet_turquoise:scarlet",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_25_scarlet_turquoise:holdout_26_spruce_elm",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_26_spruce_elm:elm"
+    },
+    {
+      "cluster_id": "holdout_26_spruce_elm",
+      "declaration_sha256": "2a8de4cec1a9d03ecd2982b0c7ef006ac5d74620d5c250774377f9347586eb08",
+      "declaration_text": "The declared class is elm.",
+      "declared_class": "elm",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_26_spruce_elm:elm",
+      "negative_class": "elm",
+      "pair_id": "holdout_26_spruce_elm",
+      "positive_class": "spruce",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_26_spruce_elm:spruce",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_25_scarlet_turquoise:holdout_26_spruce_elm",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_25_scarlet_turquoise:turquoise"
+    },
+    {
+      "cluster_id": "holdout_26_spruce_elm",
+      "declaration_sha256": "b375124e8a6c8e157f167d21a3f4109bd2be5fe16c2e395952428e80351fee24",
+      "declaration_text": "The declared class is spruce.",
+      "declared_class": "spruce",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_26_spruce_elm:spruce",
+      "negative_class": "elm",
+      "pair_id": "holdout_26_spruce_elm",
+      "positive_class": "spruce",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_26_spruce_elm:elm",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_25_scarlet_turquoise:holdout_26_spruce_elm",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_25_scarlet_turquoise:scarlet"
+    },
+    {
+      "cluster_id": "holdout_27_zenith_nadir",
+      "declaration_sha256": "a254e18ef01eeae1733d2cf8d2fb0beb25d74a79bcd6d7181829b194b8438425",
+      "declaration_text": "The declared class is nadir.",
+      "declared_class": "nadir",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_27_zenith_nadir:nadir",
+      "negative_class": "nadir",
+      "pair_id": "holdout_27_zenith_nadir",
+      "positive_class": "zenith",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_27_zenith_nadir:zenith",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_27_zenith_nadir:holdout_34_galaxy_pulsar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_34_galaxy_pulsar:pulsar"
+    },
+    {
+      "cluster_id": "holdout_27_zenith_nadir",
+      "declaration_sha256": "37b3ee5e1e42098dde856d220744e585a855e8a9fefdc0c0b08eb46679ee76e1",
+      "declaration_text": "The declared class is zenith.",
+      "declared_class": "zenith",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_27_zenith_nadir:zenith",
+      "negative_class": "nadir",
+      "pair_id": "holdout_27_zenith_nadir",
+      "positive_class": "zenith",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_27_zenith_nadir:nadir",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_27_zenith_nadir:holdout_34_galaxy_pulsar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_34_galaxy_pulsar:galaxy"
+    },
+    {
+      "cluster_id": "holdout_28_pentagon_octagon",
+      "declaration_sha256": "2ce2d1636d912c4a53224f7316755faa46b4b91c2de979525556942dfb495e56",
+      "declaration_text": "The declared class is octagon.",
+      "declared_class": "octagon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_28_pentagon_octagon:octagon",
+      "negative_class": "octagon",
+      "pair_id": "holdout_28_pentagon_octagon",
+      "positive_class": "pentagon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_28_pentagon_octagon:pentagon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_14_birch_willow:holdout_28_pentagon_octagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_14_birch_willow:willow"
+    },
+    {
+      "cluster_id": "holdout_28_pentagon_octagon",
+      "declaration_sha256": "5001487a132caf6130f76a19fba72b87511a02d52f8ff3ef861bef605430e38f",
+      "declaration_text": "The declared class is pentagon.",
+      "declared_class": "pentagon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_28_pentagon_octagon:pentagon",
+      "negative_class": "octagon",
+      "pair_id": "holdout_28_pentagon_octagon",
+      "positive_class": "pentagon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_28_pentagon_octagon:octagon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_14_birch_willow:holdout_28_pentagon_octagon",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_14_birch_willow:birch"
+    },
+    {
+      "cluster_id": "holdout_29_iron_tin",
+      "declaration_sha256": "d42a9f1324691e810b0d4868a3a5885224df326af0b632ee3216b20ff856988f",
+      "declaration_text": "The declared class is iron.",
+      "declared_class": "iron",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_29_iron_tin:iron",
+      "negative_class": "tin",
+      "pair_id": "holdout_29_iron_tin",
+      "positive_class": "iron",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_29_iron_tin:tin",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_29_iron_tin:holdout_31_canyon_valley",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_31_canyon_valley:canyon"
+    },
+    {
+      "cluster_id": "holdout_29_iron_tin",
+      "declaration_sha256": "86aba01903ce26612b93500ee89489cc8daa75fabafdd8b3c6b6a5e85db8ac93",
+      "declaration_text": "The declared class is tin.",
+      "declared_class": "tin",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_29_iron_tin:tin",
+      "negative_class": "tin",
+      "pair_id": "holdout_29_iron_tin",
+      "positive_class": "iron",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_29_iron_tin:iron",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_29_iron_tin:holdout_31_canyon_valley",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_31_canyon_valley:valley"
+    },
+    {
+      "cluster_id": "holdout_30_harp_oboe",
+      "declaration_sha256": "4bc18dc0939854b03ac03dc58e20296453eff22a37ae0a19ee428c95a18395c2",
+      "declaration_text": "The declared class is harp.",
+      "declared_class": "harp",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_30_harp_oboe:harp",
+      "negative_class": "oboe",
+      "pair_id": "holdout_30_harp_oboe",
+      "positive_class": "harp",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_30_harp_oboe:oboe",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_30_harp_oboe:holdout_37_magenta_teal",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_37_magenta_teal:magenta"
+    },
+    {
+      "cluster_id": "holdout_30_harp_oboe",
+      "declaration_sha256": "fd1f1ad1a1cc29686743b7f16a464402d5e66b918410d3e1b74125b8de0f87f8",
+      "declaration_text": "The declared class is oboe.",
+      "declared_class": "oboe",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_30_harp_oboe:oboe",
+      "negative_class": "oboe",
+      "pair_id": "holdout_30_harp_oboe",
+      "positive_class": "harp",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_30_harp_oboe:harp",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_30_harp_oboe:holdout_37_magenta_teal",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_37_magenta_teal:teal"
+    },
+    {
+      "cluster_id": "holdout_31_canyon_valley",
+      "declaration_sha256": "368382122eb22428999d1532c927d75793b42d2a1de0ce3b5f8e39acb8bd2081",
+      "declaration_text": "The declared class is canyon.",
+      "declared_class": "canyon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_31_canyon_valley:canyon",
+      "negative_class": "valley",
+      "pair_id": "holdout_31_canyon_valley",
+      "positive_class": "canyon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_31_canyon_valley:valley",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_29_iron_tin:holdout_31_canyon_valley",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_29_iron_tin:iron"
+    },
+    {
+      "cluster_id": "holdout_31_canyon_valley",
+      "declaration_sha256": "1fac3d10c9bda79f9452404a562de443c16f92fb76691e45f98882047267e7c0",
+      "declaration_text": "The declared class is valley.",
+      "declared_class": "valley",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_31_canyon_valley:valley",
+      "negative_class": "valley",
+      "pair_id": "holdout_31_canyon_valley",
+      "positive_class": "canyon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_31_canyon_valley:canyon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_29_iron_tin:holdout_31_canyon_valley",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_29_iron_tin:tin"
+    },
+    {
+      "cluster_id": "holdout_32_frost_thunder",
+      "declaration_sha256": "936839a1301c494e027d6ca5729be8bd45357a53f03dc3c996ec86a374005875",
+      "declaration_text": "The declared class is frost.",
+      "declared_class": "frost",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_32_frost_thunder:frost",
+      "negative_class": "thunder",
+      "pair_id": "holdout_32_frost_thunder",
+      "positive_class": "frost",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_32_frost_thunder:thunder",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_32_frost_thunder:holdout_33_slate_limestone",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_33_slate_limestone:slate"
+    },
+    {
+      "cluster_id": "holdout_32_frost_thunder",
+      "declaration_sha256": "3e63bf183db0413f02a032fa9b00db8258e0b46ea88593e8c830f750ba7845f7",
+      "declaration_text": "The declared class is thunder.",
+      "declared_class": "thunder",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_32_frost_thunder:thunder",
+      "negative_class": "thunder",
+      "pair_id": "holdout_32_frost_thunder",
+      "positive_class": "frost",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_32_frost_thunder:frost",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_32_frost_thunder:holdout_33_slate_limestone",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_33_slate_limestone:limestone"
+    },
+    {
+      "cluster_id": "holdout_33_slate_limestone",
+      "declaration_sha256": "fbba2eb30182689ed3ad8fabf8a2d14d85d03b2b6ef3faa65651d20f0da6e690",
+      "declaration_text": "The declared class is limestone.",
+      "declared_class": "limestone",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_33_slate_limestone:limestone",
+      "negative_class": "limestone",
+      "pair_id": "holdout_33_slate_limestone",
+      "positive_class": "slate",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_33_slate_limestone:slate",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_32_frost_thunder:holdout_33_slate_limestone",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_32_frost_thunder:thunder"
+    },
+    {
+      "cluster_id": "holdout_33_slate_limestone",
+      "declaration_sha256": "ea0124558dba2d6047edb83ec357e0bb47ba9c778369efb6941259d881bd7b02",
+      "declaration_text": "The declared class is slate.",
+      "declared_class": "slate",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_33_slate_limestone:slate",
+      "negative_class": "limestone",
+      "pair_id": "holdout_33_slate_limestone",
+      "positive_class": "slate",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_33_slate_limestone:limestone",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_32_frost_thunder:holdout_33_slate_limestone",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_32_frost_thunder:frost"
+    },
+    {
+      "cluster_id": "holdout_34_galaxy_pulsar",
+      "declaration_sha256": "0b5e023e427439f2c9109d66456f767e136c8a7a1aaa9669c67b6484e3faf189",
+      "declaration_text": "The declared class is galaxy.",
+      "declared_class": "galaxy",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_34_galaxy_pulsar:galaxy",
+      "negative_class": "pulsar",
+      "pair_id": "holdout_34_galaxy_pulsar",
+      "positive_class": "galaxy",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_34_galaxy_pulsar:pulsar",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_27_zenith_nadir:holdout_34_galaxy_pulsar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_27_zenith_nadir:zenith"
+    },
+    {
+      "cluster_id": "holdout_34_galaxy_pulsar",
+      "declaration_sha256": "236d7aad38cb7c7c5ad09633efd7de6323ade7744968deda9147abb8415a1e77",
+      "declaration_text": "The declared class is pulsar.",
+      "declared_class": "pulsar",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_34_galaxy_pulsar:pulsar",
+      "negative_class": "pulsar",
+      "pair_id": "holdout_34_galaxy_pulsar",
+      "positive_class": "galaxy",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_34_galaxy_pulsar:galaxy",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_27_zenith_nadir:holdout_34_galaxy_pulsar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_27_zenith_nadir:nadir"
+    },
+    {
+      "cluster_id": "holdout_35_raven_beaver",
+      "declaration_sha256": "7a939b5f20a73dbf7bcf5c6ef72f04c748dfe819db50c670e2bc5618055ce1a7",
+      "declaration_text": "The declared class is beaver.",
+      "declared_class": "beaver",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_35_raven_beaver:beaver",
+      "negative_class": "beaver",
+      "pair_id": "holdout_35_raven_beaver",
+      "positive_class": "raven",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_35_raven_beaver:raven",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_35_raven_beaver:holdout_38_acacia_poplar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_38_acacia_poplar:poplar"
+    },
+    {
+      "cluster_id": "holdout_35_raven_beaver",
+      "declaration_sha256": "f88f02a1faac0df1239eede11c0f538d046d00dcca8492df2e2030509093123f",
+      "declaration_text": "The declared class is raven.",
+      "declared_class": "raven",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_35_raven_beaver:raven",
+      "negative_class": "beaver",
+      "pair_id": "holdout_35_raven_beaver",
+      "positive_class": "raven",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_35_raven_beaver:beaver",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_35_raven_beaver:holdout_38_acacia_poplar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_38_acacia_poplar:acacia"
+    },
+    {
+      "cluster_id": "holdout_36_wool_satin",
+      "declaration_sha256": "5b7ae3b49f18e1f0ee3158fd800b1ef453042af2d86e8863d0ebd8fb50b29981",
+      "declaration_text": "The declared class is satin.",
+      "declared_class": "satin",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_36_wool_satin:satin",
+      "negative_class": "satin",
+      "pair_id": "holdout_36_wool_satin",
+      "positive_class": "wool",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_36_wool_satin:wool",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_36_wool_satin:holdout_39_sunrise_sunset",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_39_sunrise_sunset:sunset"
+    },
+    {
+      "cluster_id": "holdout_36_wool_satin",
+      "declaration_sha256": "d46167917bfba25fb49aecf47e1df469bcd17f683b1293d884b3b0e6d7e676bb",
+      "declaration_text": "The declared class is wool.",
+      "declared_class": "wool",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_36_wool_satin:wool",
+      "negative_class": "satin",
+      "pair_id": "holdout_36_wool_satin",
+      "positive_class": "wool",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_36_wool_satin:satin",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_36_wool_satin:holdout_39_sunrise_sunset",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_39_sunrise_sunset:sunrise"
+    },
+    {
+      "cluster_id": "holdout_37_magenta_teal",
+      "declaration_sha256": "5285d1b032f25ea17f3784fc39d6b793a4a4b35dea4acf7944038a8d96570e9a",
+      "declaration_text": "The declared class is magenta.",
+      "declared_class": "magenta",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_37_magenta_teal:magenta",
+      "negative_class": "teal",
+      "pair_id": "holdout_37_magenta_teal",
+      "positive_class": "magenta",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_37_magenta_teal:teal",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_30_harp_oboe:holdout_37_magenta_teal",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_30_harp_oboe:harp"
+    },
+    {
+      "cluster_id": "holdout_37_magenta_teal",
+      "declaration_sha256": "4264c369b79ba76f4538793e386fe6205d79024a84065c23d3e5453b7a6e31db",
+      "declaration_text": "The declared class is teal.",
+      "declared_class": "teal",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_37_magenta_teal:teal",
+      "negative_class": "teal",
+      "pair_id": "holdout_37_magenta_teal",
+      "positive_class": "magenta",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_37_magenta_teal:magenta",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_30_harp_oboe:holdout_37_magenta_teal",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_30_harp_oboe:oboe"
+    },
+    {
+      "cluster_id": "holdout_38_acacia_poplar",
+      "declaration_sha256": "e055f953ee4681d8e1822b2a2cb7250e3e90379ee165c994b85a71c5d7bb91cb",
+      "declaration_text": "The declared class is acacia.",
+      "declared_class": "acacia",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_38_acacia_poplar:acacia",
+      "negative_class": "poplar",
+      "pair_id": "holdout_38_acacia_poplar",
+      "positive_class": "acacia",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_38_acacia_poplar:poplar",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_35_raven_beaver:holdout_38_acacia_poplar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_35_raven_beaver:raven"
+    },
+    {
+      "cluster_id": "holdout_38_acacia_poplar",
+      "declaration_sha256": "30a7077e5f584a31873daca3b989c01393394f4192ce0ce38818f7bddd6cf0f1",
+      "declaration_text": "The declared class is poplar.",
+      "declared_class": "poplar",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_38_acacia_poplar:poplar",
+      "negative_class": "poplar",
+      "pair_id": "holdout_38_acacia_poplar",
+      "positive_class": "acacia",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_38_acacia_poplar:acacia",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_35_raven_beaver:holdout_38_acacia_poplar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_35_raven_beaver:beaver"
+    },
+    {
+      "cluster_id": "holdout_39_sunrise_sunset",
+      "declaration_sha256": "aeab279d84886e26647bafd7560fdb1ed8427cdb0b4a0dc87959ec9720e97882",
+      "declaration_text": "The declared class is sunrise.",
+      "declared_class": "sunrise",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_39_sunrise_sunset:sunrise",
+      "negative_class": "sunset",
+      "pair_id": "holdout_39_sunrise_sunset",
+      "positive_class": "sunrise",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_39_sunrise_sunset:sunset",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_36_wool_satin:holdout_39_sunrise_sunset",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_36_wool_satin:wool"
+    },
+    {
+      "cluster_id": "holdout_39_sunrise_sunset",
+      "declaration_sha256": "4fae54a96bb283ed242ca562bfb817350473ac80224410f77544ca3fe1a88ee2",
+      "declaration_text": "The declared class is sunset.",
+      "declared_class": "sunset",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_39_sunrise_sunset:sunset",
+      "negative_class": "sunset",
+      "pair_id": "holdout_39_sunrise_sunset",
+      "positive_class": "sunrise",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_39_sunrise_sunset:sunrise",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_36_wool_satin:holdout_39_sunrise_sunset",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_36_wool_satin:satin"
+    },
+    {
+      "cluster_id": "holdout_40_sphere_cube",
+      "declaration_sha256": "b846a6cb21ca096401e935ed4c6ca227528b810fa0f171e2fbcc3752bd0774ee",
+      "declaration_text": "The declared class is cube.",
+      "declared_class": "cube",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_40_sphere_cube:cube",
+      "negative_class": "cube",
+      "pair_id": "holdout_40_sphere_cube",
+      "positive_class": "sphere",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_40_sphere_cube:sphere",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_40_sphere_cube:holdout_41_nickel_zinc",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_41_nickel_zinc:zinc"
+    },
+    {
+      "cluster_id": "holdout_40_sphere_cube",
+      "declaration_sha256": "bd207726e3986beeb6f4629f2af42b7b89db6d3ba88933f9ce9de3ce2877e73a",
+      "declaration_text": "The declared class is sphere.",
+      "declared_class": "sphere",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_40_sphere_cube:sphere",
+      "negative_class": "cube",
+      "pair_id": "holdout_40_sphere_cube",
+      "positive_class": "sphere",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_40_sphere_cube:cube",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_40_sphere_cube:holdout_41_nickel_zinc",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_41_nickel_zinc:nickel"
+    },
+    {
+      "cluster_id": "holdout_41_nickel_zinc",
+      "declaration_sha256": "afc828de66356c182b21dc597af10fbe7b852a49938af0debc747634039564a3",
+      "declaration_text": "The declared class is nickel.",
+      "declared_class": "nickel",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_41_nickel_zinc:nickel",
+      "negative_class": "zinc",
+      "pair_id": "holdout_41_nickel_zinc",
+      "positive_class": "nickel",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_41_nickel_zinc:zinc",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_40_sphere_cube:holdout_41_nickel_zinc",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_40_sphere_cube:sphere"
+    },
+    {
+      "cluster_id": "holdout_41_nickel_zinc",
+      "declaration_sha256": "6e3b1e8dbc2c9dff962242dabd4378a216bfd749c5dbba495966ceed02653a50",
+      "declaration_text": "The declared class is zinc.",
+      "declared_class": "zinc",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_41_nickel_zinc:zinc",
+      "negative_class": "zinc",
+      "pair_id": "holdout_41_nickel_zinc",
+      "positive_class": "nickel",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_41_nickel_zinc:nickel",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_40_sphere_cube:holdout_41_nickel_zinc",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_40_sphere_cube:cube"
+    },
+    {
+      "cluster_id": "holdout_42_banjo_bassoon",
+      "declaration_sha256": "5a9eec5319f19003bd7ca19f1c3ac04c1881eaa1ac5cf49311b053f3394ff217",
+      "declaration_text": "The declared class is banjo.",
+      "declared_class": "banjo",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_42_banjo_bassoon:banjo",
+      "negative_class": "bassoon",
+      "pair_id": "holdout_42_banjo_bassoon",
+      "positive_class": "banjo",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_42_banjo_bassoon:bassoon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_42_banjo_bassoon:holdout_43_lagoon_tundra",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_43_lagoon_tundra:lagoon"
+    },
+    {
+      "cluster_id": "holdout_42_banjo_bassoon",
+      "declaration_sha256": "13ba206f39817a25f79023f98e5e33f1fa0a15c29aa9b3debae22fd026c27f2c",
+      "declaration_text": "The declared class is bassoon.",
+      "declared_class": "bassoon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_42_banjo_bassoon:bassoon",
+      "negative_class": "bassoon",
+      "pair_id": "holdout_42_banjo_bassoon",
+      "positive_class": "banjo",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_42_banjo_bassoon:banjo",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_42_banjo_bassoon:holdout_43_lagoon_tundra",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_43_lagoon_tundra:tundra"
+    },
+    {
+      "cluster_id": "holdout_43_lagoon_tundra",
+      "declaration_sha256": "1e2807ab61ed613d40b605d25052bc172de27595fd6a40eb6971f4c39ceb5739",
+      "declaration_text": "The declared class is lagoon.",
+      "declared_class": "lagoon",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_43_lagoon_tundra:lagoon",
+      "negative_class": "tundra",
+      "pair_id": "holdout_43_lagoon_tundra",
+      "positive_class": "lagoon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_43_lagoon_tundra:tundra",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_42_banjo_bassoon:holdout_43_lagoon_tundra",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_42_banjo_bassoon:banjo"
+    },
+    {
+      "cluster_id": "holdout_43_lagoon_tundra",
+      "declaration_sha256": "b86c7afd791926ee485bedd242a98edd75697bf352b0d5cac07f3d1491bfcd05",
+      "declaration_text": "The declared class is tundra.",
+      "declared_class": "tundra",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_43_lagoon_tundra:tundra",
+      "negative_class": "tundra",
+      "pair_id": "holdout_43_lagoon_tundra",
+      "positive_class": "lagoon",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_43_lagoon_tundra:lagoon",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_42_banjo_bassoon:holdout_43_lagoon_tundra",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_42_banjo_bassoon:bassoon"
+    },
+    {
+      "cluster_id": "holdout_44_breeze_storm",
+      "declaration_sha256": "1e8a5d85272daa40ec33ba8793ca9df9b414ebbb15333ec8905acd9d7a0e23ae",
+      "declaration_text": "The declared class is breeze.",
+      "declared_class": "breeze",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_44_breeze_storm:breeze",
+      "negative_class": "storm",
+      "pair_id": "holdout_44_breeze_storm",
+      "positive_class": "breeze",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_44_breeze_storm:storm",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_44_breeze_storm:holdout_48_denim_suede",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_48_denim_suede:denim"
+    },
+    {
+      "cluster_id": "holdout_44_breeze_storm",
+      "declaration_sha256": "b5abd0c71a77a0056344a36a8561acb6d95364eaaee088cd6c4784917e2df672",
+      "declaration_text": "The declared class is storm.",
+      "declared_class": "storm",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_44_breeze_storm:storm",
+      "negative_class": "storm",
+      "pair_id": "holdout_44_breeze_storm",
+      "positive_class": "breeze",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_44_breeze_storm:breeze",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_44_breeze_storm:holdout_48_denim_suede",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_48_denim_suede:suede"
+    },
+    {
+      "cluster_id": "holdout_45_obsidian_sandstone",
+      "declaration_sha256": "b9ef78282b08e6419ca48453c49901a5cd6a01dd9d35f1ece999544c3f038a1c",
+      "declaration_text": "The declared class is obsidian.",
+      "declared_class": "obsidian",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_45_obsidian_sandstone:obsidian",
+      "negative_class": "sandstone",
+      "pair_id": "holdout_45_obsidian_sandstone",
+      "positive_class": "obsidian",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_45_obsidian_sandstone:sandstone",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_45_obsidian_sandstone:holdout_47_heron_lynx",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_47_heron_lynx:heron"
+    },
+    {
+      "cluster_id": "holdout_45_obsidian_sandstone",
+      "declaration_sha256": "de9a383409d71f38fc24b0bb34f6bd9d60dcec459cbb400c44784c62e62452e4",
+      "declaration_text": "The declared class is sandstone.",
+      "declared_class": "sandstone",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_45_obsidian_sandstone:sandstone",
+      "negative_class": "sandstone",
+      "pair_id": "holdout_45_obsidian_sandstone",
+      "positive_class": "obsidian",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_45_obsidian_sandstone:obsidian",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_45_obsidian_sandstone:holdout_47_heron_lynx",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_47_heron_lynx:lynx"
+    },
+    {
+      "cluster_id": "holdout_46_meteor_quasar",
+      "declaration_sha256": "0e96e70d1616135688b63f7fdb2141a327135ea0ef8ae092087cbb6d35027d86",
+      "declaration_text": "The declared class is meteor.",
+      "declared_class": "meteor",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_46_meteor_quasar:meteor",
+      "negative_class": "quasar",
+      "pair_id": "holdout_46_meteor_quasar",
+      "positive_class": "meteor",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_46_meteor_quasar:quasar",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_11_falcon_otter:holdout_46_meteor_quasar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_11_falcon_otter:falcon"
+    },
+    {
+      "cluster_id": "holdout_46_meteor_quasar",
+      "declaration_sha256": "8e2d009b5e7204f20e234cd073d9a3a55d7c1dc35e80160c45265a35455bb321",
+      "declaration_text": "The declared class is quasar.",
+      "declared_class": "quasar",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_46_meteor_quasar:quasar",
+      "negative_class": "quasar",
+      "pair_id": "holdout_46_meteor_quasar",
+      "positive_class": "meteor",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_46_meteor_quasar:meteor",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_11_falcon_otter:holdout_46_meteor_quasar",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_11_falcon_otter:otter"
+    },
+    {
+      "cluster_id": "holdout_47_heron_lynx",
+      "declaration_sha256": "d98b4c8b997733e7695f0af0443004923bf3b93033e1375a5517a9734231d24c",
+      "declaration_text": "The declared class is heron.",
+      "declared_class": "heron",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_47_heron_lynx:heron",
+      "negative_class": "lynx",
+      "pair_id": "holdout_47_heron_lynx",
+      "positive_class": "heron",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_47_heron_lynx:lynx",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_45_obsidian_sandstone:holdout_47_heron_lynx",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_45_obsidian_sandstone:obsidian"
+    },
+    {
+      "cluster_id": "holdout_47_heron_lynx",
+      "declaration_sha256": "497a5103568492819516912eb9feb1ab45e8635d87f63a5eb62c3400624d5996",
+      "declaration_text": "The declared class is lynx.",
+      "declared_class": "lynx",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_47_heron_lynx:lynx",
+      "negative_class": "lynx",
+      "pair_id": "holdout_47_heron_lynx",
+      "positive_class": "heron",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_47_heron_lynx:heron",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_45_obsidian_sandstone:holdout_47_heron_lynx",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_45_obsidian_sandstone:sandstone"
+    },
+    {
+      "cluster_id": "holdout_48_denim_suede",
+      "declaration_sha256": "daba277ba9599ffb302437c1f1602d7b1f742d7c570a3a517fbe2fc56c6a4543",
+      "declaration_text": "The declared class is denim.",
+      "declared_class": "denim",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_48_denim_suede:denim",
+      "negative_class": "suede",
+      "pair_id": "holdout_48_denim_suede",
+      "positive_class": "denim",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_48_denim_suede:suede",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "positive",
+      "unrelated_control_cluster_id": "control_dyad:holdout_44_breeze_storm:holdout_48_denim_suede",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_44_breeze_storm:breeze"
+    },
+    {
+      "cluster_id": "holdout_48_denim_suede",
+      "declaration_sha256": "3304ef0ab5654a8f5f833d79d1669a743dd3675706eb7119a156e701c95dc63f",
+      "declaration_text": "The declared class is suede.",
+      "declared_class": "suede",
+      "firewall": {
+        "activation_gap_inference": "forbidden",
+        "biology_inference": "forbidden",
+        "latent_knowledge_inference": "forbidden",
+        "model_family_generalization": "forbidden",
+        "physical_law_inference": "forbidden",
+        "scope": "causal_syntax_binding_holdout"
+      },
+      "item_id": "causal-binding:holdout_48_denim_suede:suede",
+      "negative_class": "suede",
+      "pair_id": "holdout_48_denim_suede",
+      "positive_class": "denim",
+      "same_pair_counterfactual_item_id": "causal-binding:holdout_48_denim_suede:denim",
+      "schema_version": "coherent-readout-v2-causal-binding-item-v1",
+      "truth_polarity": "negative",
+      "unrelated_control_cluster_id": "control_dyad:holdout_44_breeze_storm:holdout_48_denim_suede",
+      "unrelated_same_polarity_item_id": "causal-binding:holdout_44_breeze_storm:storm"
+    }
+  ],
+  "mode": "development",
+  "model_calls_made_by_builder": 0,
+  "outcome_exposure": {
+    "holdout_native_behavior_observed": false,
+    "intervention_outcomes_observed": false,
+    "prior_syntax_behavior_used_to_define_contrast": true
+  },
+  "pair_registry": [
+    {
+      "cluster_id": "holdout_02_oak_pine",
+      "negative_class": "pine",
+      "pair_id": "holdout_02_oak_pine",
+      "positive_class": "oak"
+    },
+    {
+      "cluster_id": "holdout_03_east_west",
+      "negative_class": "west",
+      "pair_id": "holdout_03_east_west",
+      "positive_class": "east"
+    },
+    {
+      "cluster_id": "holdout_05_brass_gold",
+      "negative_class": "gold",
+      "pair_id": "holdout_05_brass_gold",
+      "positive_class": "brass"
+    },
+    {
+      "cluster_id": "holdout_07_ocean_forest",
+      "negative_class": "forest",
+      "pair_id": "holdout_07_ocean_forest",
+      "positive_class": "ocean"
+    },
+    {
+      "cluster_id": "holdout_08_autumn_spring",
+      "negative_class": "spring",
+      "pair_id": "holdout_08_autumn_spring",
+      "positive_class": "autumn"
+    },
+    {
+      "cluster_id": "holdout_09_marble_granite",
+      "negative_class": "granite",
+      "pair_id": "holdout_09_marble_granite",
+      "positive_class": "marble"
+    },
+    {
+      "cluster_id": "holdout_10_comet_planet",
+      "negative_class": "planet",
+      "pair_id": "holdout_10_comet_planet",
+      "positive_class": "comet"
+    },
+    {
+      "cluster_id": "holdout_12_linen_velvet",
+      "negative_class": "velvet",
+      "pair_id": "holdout_12_linen_velvet",
+      "positive_class": "linen"
+    },
+    {
+      "cluster_id": "holdout_15_dawn_dusk",
+      "negative_class": "dusk",
+      "pair_id": "holdout_15_dawn_dusk",
+      "positive_class": "dawn"
+    },
+    {
+      "cluster_id": "holdout_16_oval_diamond",
+      "negative_class": "diamond",
+      "pair_id": "holdout_16_oval_diamond",
+      "positive_class": "oval"
+    },
+    {
+      "cluster_id": "holdout_17_bronze_platinum",
+      "negative_class": "platinum",
+      "pair_id": "holdout_17_bronze_platinum",
+      "positive_class": "bronze"
+    },
+    {
+      "cluster_id": "holdout_24_cotton_silk",
+      "negative_class": "silk",
+      "pair_id": "holdout_24_cotton_silk",
+      "positive_class": "cotton"
+    },
+    {
+      "cluster_id": "holdout_29_iron_tin",
+      "negative_class": "tin",
+      "pair_id": "holdout_29_iron_tin",
+      "positive_class": "iron"
+    },
+    {
+      "cluster_id": "holdout_31_canyon_valley",
+      "negative_class": "valley",
+      "pair_id": "holdout_31_canyon_valley",
+      "positive_class": "canyon"
+    },
+    {
+      "cluster_id": "holdout_32_frost_thunder",
+      "negative_class": "thunder",
+      "pair_id": "holdout_32_frost_thunder",
+      "positive_class": "frost"
+    },
+    {
+      "cluster_id": "holdout_33_slate_limestone",
+      "negative_class": "limestone",
+      "pair_id": "holdout_33_slate_limestone",
+      "positive_class": "slate"
+    },
+    {
+      "cluster_id": "holdout_36_wool_satin",
+      "negative_class": "satin",
+      "pair_id": "holdout_36_wool_satin",
+      "positive_class": "wool"
+    },
+    {
+      "cluster_id": "holdout_39_sunrise_sunset",
+      "negative_class": "sunset",
+      "pair_id": "holdout_39_sunrise_sunset",
+      "positive_class": "sunrise"
+    },
+    {
+      "cluster_id": "holdout_40_sphere_cube",
+      "negative_class": "cube",
+      "pair_id": "holdout_40_sphere_cube",
+      "positive_class": "sphere"
+    },
+    {
+      "cluster_id": "holdout_41_nickel_zinc",
+      "negative_class": "zinc",
+      "pair_id": "holdout_41_nickel_zinc",
+      "positive_class": "nickel"
+    },
+    {
+      "cluster_id": "holdout_44_breeze_storm",
+      "negative_class": "storm",
+      "pair_id": "holdout_44_breeze_storm",
+      "positive_class": "breeze"
+    },
+    {
+      "cluster_id": "holdout_48_denim_suede",
+      "negative_class": "suede",
+      "pair_id": "holdout_48_denim_suede",
+      "positive_class": "denim"
+    },
+    {
+      "cluster_id": "holdout_01_coral_indigo",
+      "negative_class": "indigo",
+      "pair_id": "holdout_01_coral_indigo",
+      "positive_class": "coral"
+    },
+    {
+      "cluster_id": "holdout_04_triangle_hexagon",
+      "negative_class": "hexagon",
+      "pair_id": "holdout_04_triangle_hexagon",
+      "positive_class": "triangle"
+    },
+    {
+      "cluster_id": "holdout_13_ruby_sapphire",
+      "negative_class": "sapphire",
+      "pair_id": "holdout_13_ruby_sapphire",
+      "positive_class": "ruby"
+    },
+    {
+      "cluster_id": "holdout_18_piano_clarinet",
+      "negative_class": "clarinet",
+      "pair_id": "holdout_18_piano_clarinet",
+      "positive_class": "piano"
+    },
+    {
+      "cluster_id": "holdout_19_desert_meadow",
+      "negative_class": "meadow",
+      "pair_id": "holdout_19_desert_meadow",
+      "positive_class": "desert"
+    },
+    {
+      "cluster_id": "holdout_21_quartz_basalt",
+      "negative_class": "basalt",
+      "pair_id": "holdout_21_quartz_basalt",
+      "positive_class": "quartz"
+    },
+    {
+      "cluster_id": "holdout_22_asteroid_nebula",
+      "negative_class": "nebula",
+      "pair_id": "holdout_22_asteroid_nebula",
+      "positive_class": "asteroid"
+    },
+    {
+      "cluster_id": "holdout_23_eagle_badger",
+      "negative_class": "badger",
+      "pair_id": "holdout_23_eagle_badger",
+      "positive_class": "eagle"
+    },
+    {
+      "cluster_id": "holdout_27_zenith_nadir",
+      "negative_class": "nadir",
+      "pair_id": "holdout_27_zenith_nadir",
+      "positive_class": "zenith"
+    },
+    {
+      "cluster_id": "holdout_34_galaxy_pulsar",
+      "negative_class": "pulsar",
+      "pair_id": "holdout_34_galaxy_pulsar",
+      "positive_class": "galaxy"
+    },
+    {
+      "cluster_id": "holdout_46_meteor_quasar",
+      "negative_class": "quasar",
+      "pair_id": "holdout_46_meteor_quasar",
+      "positive_class": "meteor"
+    },
+    {
+      "cluster_id": "holdout_11_falcon_otter",
+      "negative_class": "otter",
+      "pair_id": "holdout_11_falcon_otter",
+      "positive_class": "falcon"
+    },
+    {
+      "cluster_id": "holdout_14_birch_willow",
+      "negative_class": "willow",
+      "pair_id": "holdout_14_birch_willow",
+      "positive_class": "birch"
+    },
+    {
+      "cluster_id": "holdout_28_pentagon_octagon",
+      "negative_class": "octagon",
+      "pair_id": "holdout_28_pentagon_octagon",
+      "positive_class": "pentagon"
+    },
+    {
+      "cluster_id": "holdout_35_raven_beaver",
+      "negative_class": "beaver",
+      "pair_id": "holdout_35_raven_beaver",
+      "positive_class": "raven"
+    },
+    {
+      "cluster_id": "holdout_38_acacia_poplar",
+      "negative_class": "poplar",
+      "pair_id": "holdout_38_acacia_poplar",
+      "positive_class": "acacia"
+    },
+    {
+      "cluster_id": "holdout_42_banjo_bassoon",
+      "negative_class": "bassoon",
+      "pair_id": "holdout_42_banjo_bassoon",
+      "positive_class": "banjo"
+    },
+    {
+      "cluster_id": "holdout_43_lagoon_tundra",
+      "negative_class": "tundra",
+      "pair_id": "holdout_43_lagoon_tundra",
+      "positive_class": "lagoon"
+    },
+    {
+      "cluster_id": "holdout_45_obsidian_sandstone",
+      "negative_class": "sandstone",
+      "pair_id": "holdout_45_obsidian_sandstone",
+      "positive_class": "obsidian"
+    },
+    {
+      "cluster_id": "holdout_47_heron_lynx",
+      "negative_class": "lynx",
+      "pair_id": "holdout_47_heron_lynx",
+      "positive_class": "heron"
+    },
+    {
+      "cluster_id": "holdout_06_cello_flute",
+      "negative_class": "flute",
+      "pair_id": "holdout_06_cello_flute",
+      "positive_class": "cello"
+    },
+    {
+      "cluster_id": "holdout_20_monsoon_drought",
+      "negative_class": "drought",
+      "pair_id": "holdout_20_monsoon_drought",
+      "positive_class": "monsoon"
+    },
+    {
+      "cluster_id": "holdout_25_scarlet_turquoise",
+      "negative_class": "turquoise",
+      "pair_id": "holdout_25_scarlet_turquoise",
+      "positive_class": "scarlet"
+    },
+    {
+      "cluster_id": "holdout_26_spruce_elm",
+      "negative_class": "elm",
+      "pair_id": "holdout_26_spruce_elm",
+      "positive_class": "spruce"
+    },
+    {
+      "cluster_id": "holdout_37_magenta_teal",
+      "negative_class": "teal",
+      "pair_id": "holdout_37_magenta_teal",
+      "positive_class": "magenta"
+    },
+    {
+      "cluster_id": "holdout_30_harp_oboe",
+      "negative_class": "oboe",
+      "pair_id": "holdout_30_harp_oboe",
+      "positive_class": "harp"
+    }
+  ],
+  "purpose": "causal_syntax_binding_holdout",
+  "schema_version": "coherent-readout-v2-causal-binding-bank-v1"
+}

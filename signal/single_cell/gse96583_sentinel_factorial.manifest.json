@@ -1,0 +1,732 @@
+{
+  "analysis_id": "gse96583-sentinel-factorial-holdout-v1",
+  "artifacts": {
+    "builder_path": "signal/single_cell/build_gse96583_sentinel_factorial.py",
+    "builder_sha256": "9336e633763b91c8d0c983d75b67004da9ee6f681c1b4f7dd2d4ba92b07f8992",
+    "csv_path": "signal/single_cell/gse96583_sentinel_factorial.csv",
+    "csv_sha256": "673db8c8bcd6ba923e62891de6cd5f04f97967706ac3ade8a6e44ad2d14a4b95"
+  },
+  "claim_scope": "held_out_multi_donor_sle_control_output_level_three_token_factorial_not_gene_pathway_hidden_state_activation_gap_or_physical_law",
+  "control_matching": {
+    "cost": "rank_distance/3 + abs_log_expression_distance/0.5 + top50_prevalence_distance/0.10 + token_length_distance/3",
+    "exact_matches": [
+      {
+        "cell_barcode": "AGGACTTGCTATGG-1",
+        "control_gene": "GAPDH",
+        "control_rank_1based": 16,
+        "donor_id": "101",
+        "expression_distance": 0.2805797583266947,
+        "prevalence_distance": 0.12118177265898844,
+        "rank_distance": 6,
+        "target_gene": "GNLY",
+        "target_rank_1based": 10,
+        "token_length_distance": 1,
+        "total_cost": 4.106310576576607
+      },
+      {
+        "cell_barcode": "AGGACTTGCTATGG-1",
+        "control_gene": "PTMA",
+        "control_rank_1based": 45,
+        "donor_id": "101",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.17426139208813218,
+        "rank_distance": 3,
+        "target_gene": "NKG7",
+        "target_rank_1based": 42,
+        "token_length_distance": 0,
+        "total_cost": 2.742613920881322
+      },
+      {
+        "cell_barcode": "AGGACTTGCTATGG-1",
+        "control_gene": "HLA-A",
+        "control_rank_1based": 11,
+        "donor_id": "101",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.24336504757135702,
+        "rank_distance": 2,
+        "target_gene": "CCL5",
+        "target_rank_1based": 9,
+        "token_length_distance": 1,
+        "total_cost": 3.43365047571357
+      },
+      {
+        "cell_barcode": "GTTAACCTCGCAAT-1",
+        "control_gene": "ACTB",
+        "control_rank_1based": 34,
+        "donor_id": "107",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.14221331997996994,
+        "rank_distance": 12,
+        "target_gene": "GNLY",
+        "target_rank_1based": 46,
+        "token_length_distance": 0,
+        "total_cost": 5.422133199799699
+      },
+      {
+        "cell_barcode": "GTTAACCTCGCAAT-1",
+        "control_gene": "EIF1",
+        "control_rank_1based": 16,
+        "donor_id": "107",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.17626439659489235,
+        "rank_distance": 2,
+        "target_gene": "NKG7",
+        "target_rank_1based": 18,
+        "token_length_distance": 0,
+        "total_cost": 2.42931063261559
+      },
+      {
+        "cell_barcode": "GTTAACCTCGCAAT-1",
+        "control_gene": "H3F3B",
+        "control_rank_1based": 7,
+        "donor_id": "107",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.06659989984977466,
+        "rank_distance": 1,
+        "target_gene": "CCL5",
+        "target_rank_1based": 6,
+        "token_length_distance": 1,
+        "total_cost": 1.332665665164413
+      },
+      {
+        "cell_barcode": "AAGATTACCAAGCT-1",
+        "control_gene": "ACTB",
+        "control_rank_1based": 29,
+        "donor_id": "1015",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.14221331997996994,
+        "rank_distance": 13,
+        "target_gene": "GNLY",
+        "target_rank_1based": 42,
+        "token_length_distance": 0,
+        "total_cost": 5.755466533133032
+      },
+      {
+        "cell_barcode": "AAGATTACCAAGCT-1",
+        "control_gene": "HLA-C",
+        "control_rank_1based": 7,
+        "donor_id": "1015",
+        "expression_distance": 0.1318179828379984,
+        "prevalence_distance": 0.2613920881321983,
+        "rank_distance": 2,
+        "target_gene": "NKG7",
+        "target_rank_1based": 5,
+        "token_length_distance": 1,
+        "total_cost": 3.8775568469979795
+      },
+      {
+        "cell_barcode": "AAGATTACCAAGCT-1",
+        "control_gene": "HLA-B",
+        "control_rank_1based": 3,
+        "donor_id": "1015",
+        "expression_distance": 0.13266914771840188,
+        "prevalence_distance": 0.272909364046069,
+        "rank_distance": 1,
+        "target_gene": "CCL5",
+        "target_rank_1based": 4,
+        "token_length_distance": 1,
+        "total_cost": 3.6610986025641608
+      },
+      {
+        "cell_barcode": "CTTTAGACAGCCAT-1",
+        "control_gene": "HLA-B",
+        "control_rank_1based": 8,
+        "donor_id": "1016",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.3885828743114672,
+        "rank_distance": 1,
+        "target_gene": "GNLY",
+        "target_rank_1based": 7,
+        "token_length_distance": 1,
+        "total_cost": 4.552495409781338
+      },
+      {
+        "cell_barcode": "CTTTAGACAGCCAT-1",
+        "control_gene": "HLA-A",
+        "control_rank_1based": 11,
+        "donor_id": "1016",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.31196795192789184,
+        "rank_distance": 1,
+        "target_gene": "NKG7",
+        "target_rank_1based": 12,
+        "token_length_distance": 1,
+        "total_cost": 3.786346185945585
+      },
+      {
+        "cell_barcode": "CTTTAGACAGCCAT-1",
+        "control_gene": "ANXA1",
+        "control_rank_1based": 4,
+        "donor_id": "1016",
+        "expression_distance": 0.24901513561331612,
+        "prevalence_distance": 0.25888833249874815,
+        "rank_distance": 1,
+        "target_gene": "CCL5",
+        "target_rank_1based": 3,
+        "token_length_distance": 1,
+        "total_cost": 3.75358026288078
+      },
+      {
+        "cell_barcode": "AGTCACGAGCTTCC-1",
+        "control_gene": "GAPDH",
+        "control_rank_1based": 5,
+        "donor_id": "1039",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.12118177265898844,
+        "rank_distance": 1,
+        "target_gene": "GNLY",
+        "target_rank_1based": 6,
+        "token_length_distance": 1,
+        "total_cost": 1.878484393256551
+      },
+      {
+        "cell_barcode": "AGTCACGAGCTTCC-1",
+        "control_gene": "PTMA",
+        "control_rank_1based": 7,
+        "donor_id": "1039",
+        "expression_distance": 0.5034364275836194,
+        "prevalence_distance": 0.17426139208813218,
+        "rank_distance": 5,
+        "target_gene": "NKG7",
+        "target_rank_1based": 12,
+        "token_length_distance": 0,
+        "total_cost": 4.416153442715228
+      },
+      {
+        "cell_barcode": "AGTCACGAGCTTCC-1",
+        "control_gene": "H3F3B",
+        "control_rank_1based": 16,
+        "donor_id": "1039",
+        "expression_distance": 0.21765740527742938,
+        "prevalence_distance": 0.06659989984977466,
+        "rank_distance": 3,
+        "target_gene": "CCL5",
+        "target_rank_1based": 13,
+        "token_length_distance": 1,
+        "total_cost": 2.434647142385939
+      },
+      {
+        "cell_barcode": "TTTCCAGAGCTGAT-1",
+        "control_gene": "H3F3B",
+        "control_rank_1based": 8,
+        "donor_id": "1244",
+        "expression_distance": 0.6133637204878362,
+        "prevalence_distance": 0.18227341011517284,
+        "rank_distance": 4,
+        "target_gene": "GNLY",
+        "target_rank_1based": 4,
+        "token_length_distance": 1,
+        "total_cost": 4.716128208794067
+      },
+      {
+        "cell_barcode": "TTTCCAGAGCTGAT-1",
+        "control_gene": "PTMA",
+        "control_rank_1based": 11,
+        "donor_id": "1244",
+        "expression_distance": 0.0,
+        "prevalence_distance": 0.17426139208813218,
+        "rank_distance": 1,
+        "target_gene": "NKG7",
+        "target_rank_1based": 10,
+        "token_length_distance": 0,
+        "total_cost": 2.0759472542146553
+      },
+      {
+        "cell_barcode": "TTTCCAGAGCTGAT-1",
+        "control_gene": "HLA-C",
+        "control_rank_1based": 7,
+        "donor_id": "1244",
+        "expression_distance": 0.4384114715888279,
+        "prevalence_distance": 0.19278918377566345,
+        "rank_distance": 4,
+        "target_gene": "CCL5",
+        "target_rank_1based": 3,
+        "token_length_distance": 1,
+        "total_cost": 4.471381447600956
+      },
+      {
+        "cell_barcode": "AGAGATGAGTATGC-1",
+        "control_gene": "HLA-B",
+        "control_rank_1based": 3,
+        "donor_id": "1256",
+        "expression_distance": 0.3429415462974168,
+        "prevalence_distance": 0.3885828743114672,
+        "rank_distance": 1,
+        "target_gene": "GNLY",
+        "target_rank_1based": 4,
+        "token_length_distance": 1,
+        "total_cost": 5.238378502376172
+      },
+      {
+        "cell_barcode": "AGAGATGAGTATGC-1",
+        "control_gene": "H3F3B",
+        "control_rank_1based": 8,
+        "donor_id": "1256",
+        "expression_distance": 0.5324538329309032,
+        "prevalence_distance": 0.13520280420630948,
+        "rank_distance": 2,
+        "target_gene": "NKG7",
+        "target_rank_1based": 6,
+        "token_length_distance": 1,
+        "total_cost": 3.416935707924901
+      },
+      {
+        "cell_barcode": "AGAGATGAGTATGC-1",
+        "control_gene": "PTMA",
+        "control_rank_1based": 9,
+        "donor_id": "1256",
+        "expression_distance": 0.151545551661191,
+        "prevalence_distance": 0.10565848773159736,
+        "rank_distance": 1,
+        "target_gene": "CCL5",
+        "target_rank_1based": 10,
+        "token_length_distance": 0,
+        "total_cost": 1.6930093139716889
+      },
+      {
+        "cell_barcode": "AGTCTACTTGCTAG-1",
+        "control_gene": "HLA-B",
+        "control_rank_1based": 5,
+        "donor_id": "1488",
+        "expression_distance": 0.26070412739244553,
+        "prevalence_distance": 0.3885828743114672,
+        "rank_distance": 1,
+        "target_gene": "GNLY",
+        "target_rank_1based": 4,
+        "token_length_distance": 1,
+        "total_cost": 5.073903664566229
+      },
+      {
+        "cell_barcode": "AGTCTACTTGCTAG-1",
+        "control_gene": "HLA-A",
+        "control_rank_1based": 6,
+        "donor_id": "1488",
+        "expression_distance": 0.39952140782552004,
+        "prevalence_distance": 0.31196795192789184,
+        "rank_distance": 4,
+        "target_gene": "NKG7",
+        "target_rank_1based": 10,
+        "token_length_distance": 1,
+        "total_cost": 5.585389001596624
+      },
+      {
+        "cell_barcode": "AGTCTACTTGCTAG-1",
+        "control_gene": "PTMA",
+        "control_rank_1based": 7,
+        "donor_id": "1488",
+        "expression_distance": 0.6812948989340333,
+        "prevalence_distance": 0.10565848773159736,
+        "rank_distance": 4,
+        "target_gene": "CCL5",
+        "target_rank_1based": 11,
+        "token_length_distance": 0,
+        "total_cost": 3.752508008517373
+      }
+    ],
+    "exact_matches_sha256": "c7db33ffb8a753f6b53ab87ab39da4c93bcc859643a3e8fed158b04bd48dfb3c",
+    "framed_prevalence_sha256": "235a44326a7ac5b4bf72bfb030fa2693b47eadc771c6404376c758fd2285804e",
+    "matched_pairs": 24,
+    "max_rank_distance": 13.0,
+    "max_total_cost": 5.755466533133032,
+    "median_rank_distance": 2.0,
+    "median_total_cost": 3.769963224413183,
+    "method": "within-cell linear-sum assignment for all three sentinels jointly, minimizing the frozen total cost over distinct controls",
+    "pbmc3k_reference_prevalence_balance_rule": "PBMC3k absolute CD8-vs-NK top-50 prevalence gap <= 0.10; all 30 frozen parent markers excluded from controls",
+    "pbmc3k_reference_prevalence_balanced_control_gene_count": 13436,
+    "pbmc3k_reference_prevalence_gap_sha256": "b4e8b3a1b26e1a9b8a13f47334fc1747d0d3c8fd0db076fd91f118ae156e2606",
+    "prevalence_population": "all 1997 renderable cells in the frozen CD8/NK task frame",
+    "semantic_boundary": "reference-prevalence-balanced is an operational matching criterion and does not imply that a control token is biologically, linguistically, or causally neutral"
+  },
+  "eligibility_and_sampling": {
+    "eligible_after_parent_holdout": 656,
+    "full_frame_eligible_cells": 678,
+    "minimum_unused_support_per_donor": 5,
+    "required_top50_sentinels": [
+      "GNLY",
+      "NKG7",
+      "CCL5"
+    ],
+    "sampling_hash_payload": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321|<donor_id>|<barcode>",
+    "sampling_policy": "within each donor, take the eligible non-parent cell with the lowest SHA-256 key salted by the immutable parent CSV digest; barcode is the deterministic tie break",
+    "sampling_salt_provenance": "immutable pre-hypothesis parent CSV SHA-256; the analysis ID is retained for artifact identity but excluded from selection",
+    "selected_cells": [
+      {
+        "cell_barcode": "AGGACTTGCTATGG-1",
+        "donor_id": "101",
+        "joint_control_genes": [
+          "GAPDH",
+          "PTMA",
+          "HLA-A"
+        ],
+        "reference_annotation_descriptive_only": "CD8 T cells",
+        "sampling_hash": "04234d05f3aa4b9dbf31474385c898d13e898f66d0c57aaf2e1dc7b8871310a3",
+        "sentinel_ranks_1based": {
+          "CCL5": 9,
+          "GNLY": 10,
+          "NKG7": 42
+        },
+        "sentinel_values": {
+          "CCL5": 3.8451690674129457,
+          "GNLY": 3.8451690674129457,
+          "NKG7": 3.1731792687244615
+        }
+      },
+      {
+        "cell_barcode": "GTTAACCTCGCAAT-1",
+        "donor_id": "107",
+        "joint_control_genes": [
+          "ACTB",
+          "EIF1",
+          "H3F3B"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "01526c836ea62f41236adfa5cfe6144c2cf57710158df0492c7d8947d3fcd858",
+        "sentinel_ranks_1based": {
+          "CCL5": 6,
+          "GNLY": 46,
+          "NKG7": 18
+        },
+        "sentinel_values": {
+          "CCL5": 4.063839490992019,
+          "GNLY": 2.999015723647545,
+          "NKG7": 3.6669291456516224
+        }
+      },
+      {
+        "cell_barcode": "AAGATTACCAAGCT-1",
+        "donor_id": "1015",
+        "joint_control_genes": [
+          "ACTB",
+          "HLA-C",
+          "HLA-B"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "00ffc72d1c122a8c1cc2b7f15b78976a8bf95585f0295c7133bd3806f500c0ac",
+        "sentinel_ranks_1based": {
+          "CCL5": 4,
+          "GNLY": 42,
+          "NKG7": 5
+        },
+        "sentinel_values": {
+          "CCL5": 4.976960763619654,
+          "GNLY": 3.0715876892319844,
+          "NKG7": 4.422502890421029
+        }
+      },
+      {
+        "cell_barcode": "CTTTAGACAGCCAT-1",
+        "donor_id": "1016",
+        "joint_control_genes": [
+          "HLA-B",
+          "HLA-A",
+          "ANXA1"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "02bd40d86c0d8b8df05d803ccbeebc975cdc62ce9688b3f3a5ca061cc2e7d67b",
+        "sentinel_ranks_1based": {
+          "CCL5": 3,
+          "GNLY": 7,
+          "NKG7": 12
+        },
+        "sentinel_values": {
+          "CCL5": 4.821240904065932,
+          "GNLY": 4.239878982818527,
+          "NKG7": 4.0203312925186125
+        }
+      },
+      {
+        "cell_barcode": "AGTCACGAGCTTCC-1",
+        "donor_id": "1039",
+        "joint_control_genes": [
+          "GAPDH",
+          "PTMA",
+          "H3F3B"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "42a8551930ac094222968d512b70f61a713894a6ecd6cc94e0cb33ba8ba6fd71",
+        "sentinel_ranks_1based": {
+          "CCL5": 13,
+          "GNLY": 6,
+          "NKG7": 12
+        },
+        "sentinel_values": {
+          "CCL5": 3.816490578706582,
+          "GNLY": 4.498574339722272,
+          "NKG7": 3.9951379121386528
+        }
+      },
+      {
+        "cell_barcode": "TTTCCAGAGCTGAT-1",
+        "donor_id": "1244",
+        "joint_control_genes": [
+          "H3F3B",
+          "PTMA",
+          "HLA-C"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "03c35425fb49777287136957a72d953d3fda34ac51a088a92140afc25aba5c5f",
+        "sentinel_ranks_1based": {
+          "CCL5": 3,
+          "GNLY": 4,
+          "NKG7": 10
+        },
+        "sentinel_values": {
+          "CCL5": 5.0882425342202415,
+          "GNLY": 5.014608976584313,
+          "NKG7": 4.249136167633547
+        }
+      },
+      {
+        "cell_barcode": "AGAGATGAGTATGC-1",
+        "donor_id": "1256",
+        "joint_control_genes": [
+          "HLA-B",
+          "H3F3B",
+          "PTMA"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "01b8d5af520e570028e7c6a7e76a3f3c4db99251c98487a900fe9e562b2584bd",
+        "sentinel_ranks_1based": {
+          "CCL5": 10,
+          "GNLY": 4,
+          "NKG7": 6
+        },
+        "sentinel_values": {
+          "CCL5": 4.005665537210122,
+          "GNLY": 5.035265084678158,
+          "NKG7": 4.689664921802216
+        }
+      },
+      {
+        "cell_barcode": "AGTCTACTTGCTAG-1",
+        "donor_id": "1488",
+        "joint_control_genes": [
+          "HLA-B",
+          "HLA-A",
+          "PTMA"
+        ],
+        "reference_annotation_descriptive_only": "NK cells",
+        "sampling_hash": "0075f3f06fc82226ba0bd22a4fe1b946a02874d42c6bbce2d994755986f07e6d",
+        "sentinel_ranks_1based": {
+          "CCL5": 11,
+          "GNLY": 4,
+          "NKG7": 10
+        },
+        "sentinel_values": {
+          "CCL5": 3.7480079947328564,
+          "GNLY": 5.196052116995152,
+          "NKG7": 4.02978148584137
+        }
+      }
+    ],
+    "selected_cells_sha256": "72786a863e10f2fd081fc8a4299466305f54394d043103264b21f208585a1eb8",
+    "selected_reference_annotation_counts_descriptive_only": {
+      "CD8 T cells": 1,
+      "NK cells": 7
+    },
+    "support_by_donor": [
+      {
+        "donor_id": "101",
+        "eligible_after_parent_holdout": 37,
+        "eligible_excluded_barcodes": [
+          "CGCCTAACTGCAGT-1",
+          "TAGGCATGTTATCC-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 2,
+        "eligible_in_full_ranked_frame": 39,
+        "selected_barcode": "AGGACTTGCTATGG-1",
+        "selected_sampling_hash": "04234d05f3aa4b9dbf31474385c898d13e898f66d0c57aaf2e1dc7b8871310a3"
+      },
+      {
+        "donor_id": "107",
+        "eligible_after_parent_holdout": 11,
+        "eligible_excluded_barcodes": [
+          "ACGCCTTGGGAAGC-1",
+          "CCTTAATGTCCGAA-1",
+          "TGAGTGACTACTCT-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 3,
+        "eligible_in_full_ranked_frame": 14,
+        "selected_barcode": "GTTAACCTCGCAAT-1",
+        "selected_sampling_hash": "01526c836ea62f41236adfa5cfe6144c2cf57710158df0492c7d8947d3fcd858"
+      },
+      {
+        "donor_id": "1015",
+        "eligible_after_parent_holdout": 132,
+        "eligible_excluded_barcodes": [
+          "CATTTGACATGTGC-1",
+          "CCAATGGACCTTTA-1",
+          "GACATTCTGTCTTT-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 3,
+        "eligible_in_full_ranked_frame": 135,
+        "selected_barcode": "AAGATTACCAAGCT-1",
+        "selected_sampling_hash": "00ffc72d1c122a8c1cc2b7f15b78976a8bf95585f0295c7133bd3806f500c0ac"
+      },
+      {
+        "donor_id": "1016",
+        "eligible_after_parent_holdout": 193,
+        "eligible_excluded_barcodes": [
+          "CCAACCTGCTGTCC-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 1,
+        "eligible_in_full_ranked_frame": 194,
+        "selected_barcode": "CTTTAGACAGCCAT-1",
+        "selected_sampling_hash": "02bd40d86c0d8b8df05d803ccbeebc975cdc62ce9688b3f3a5ca061cc2e7d67b"
+      },
+      {
+        "donor_id": "1039",
+        "eligible_after_parent_holdout": 5,
+        "eligible_excluded_barcodes": [
+          "ACATTCTGCGCTAA-1",
+          "ATTTCGTGTGAGGG-1",
+          "GCGTATGATTGGCA-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 3,
+        "eligible_in_full_ranked_frame": 8,
+        "selected_barcode": "AGTCACGAGCTTCC-1",
+        "selected_sampling_hash": "42a8551930ac094222968d512b70f61a713894a6ecd6cc94e0cb33ba8ba6fd71"
+      },
+      {
+        "donor_id": "1244",
+        "eligible_after_parent_holdout": 55,
+        "eligible_excluded_barcodes": [
+          "ACTACTACACACCA-1",
+          "TCACCGTGCTGAGT-1",
+          "TTAGGTCTGCTGTA-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 3,
+        "eligible_in_full_ranked_frame": 58,
+        "selected_barcode": "TTTCCAGAGCTGAT-1",
+        "selected_sampling_hash": "03c35425fb49777287136957a72d953d3fda34ac51a088a92140afc25aba5c5f"
+      },
+      {
+        "donor_id": "1256",
+        "eligible_after_parent_holdout": 157,
+        "eligible_excluded_barcodes": [
+          "AGGGAGTGCAAAGA-1",
+          "CATTGTACCTGATG-1",
+          "GACGATTGCCGTTC-1",
+          "GATGCCCTGCGTTA-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 4,
+        "eligible_in_full_ranked_frame": 161,
+        "selected_barcode": "AGAGATGAGTATGC-1",
+        "selected_sampling_hash": "01b8d5af520e570028e7c6a7e76a3f3c4db99251c98487a900fe9e562b2584bd"
+      },
+      {
+        "donor_id": "1488",
+        "eligible_after_parent_holdout": 66,
+        "eligible_excluded_barcodes": [
+          "CCGTAAGATGCCAA-1",
+          "GCATCAGAGAATCC-1",
+          "TAATGCCTGTTGTG-1"
+        ],
+        "eligible_excluded_by_parent_holdout": 3,
+        "eligible_in_full_ranked_frame": 69,
+        "selected_barcode": "AGTCTACTTGCTAG-1",
+        "selected_sampling_hash": "0075f3f06fc82226ba0bd22a4fe1b946a02874d42c6bbce2d994755986f07e6d"
+      }
+    ]
+  },
+  "execution_budget": {
+    "base_rows": 8,
+    "factorial_subset_rows": 56,
+    "formula": "8 cells * (1 unmasked + 7 subsets * 2 masks) * 4 forms = 480",
+    "input_sentence_plan_sha256": "8e2e22a3e612f3383f6466d79fb6978e1c1bd0117cae87c6f0edff74f0026933",
+    "logical_condition_form_observations": 480,
+    "model_calls_made_by_builder": 0,
+    "prompt_forms_per_input": 4,
+    "unique_api_calls_after_input_deduplication": 480,
+    "unique_input_sentences": 120
+  },
+  "factorial": {
+    "mask_token": "MASKED_GENE",
+    "nesting_rule": "jointly assign one distinct control to each sentinel once per cell; every subset masks its targets and the corresponding subset of that fixed control assignment",
+    "nonempty_subsets": [
+      {
+        "subset_id": "GNLY",
+        "subset_mask": "100",
+        "subset_size": 1
+      },
+      {
+        "subset_id": "NKG7",
+        "subset_mask": "010",
+        "subset_size": 1
+      },
+      {
+        "subset_id": "CCL5",
+        "subset_mask": "001",
+        "subset_size": 1
+      },
+      {
+        "subset_id": "GNLY+NKG7",
+        "subset_mask": "110",
+        "subset_size": 2
+      },
+      {
+        "subset_id": "GNLY+CCL5",
+        "subset_mask": "101",
+        "subset_size": 2
+      },
+      {
+        "subset_id": "NKG7+CCL5",
+        "subset_mask": "011",
+        "subset_size": 2
+      },
+      {
+        "subset_id": "GNLY+NKG7+CCL5",
+        "subset_mask": "111",
+        "subset_size": 3
+      }
+    ],
+    "sentinel_order": [
+      "GNLY",
+      "NKG7",
+      "CCL5"
+    ]
+  },
+  "freeze_date": "2026-07-30",
+  "parent_holdout_exclusion": {
+    "analysis_id": "gse96583-cd8-nk-context-module-donor-replication-v1",
+    "builder_path": "signal/single_cell/build_gse96583_module_replication.py",
+    "builder_sha256": "b089e91231042db7c8a7e17fd6dbe1e32169bf1f05361cd6e5e8041c395f00bf",
+    "csv_path": "signal/single_cell/gse96583_cd8_nk_module_replication.csv",
+    "csv_sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321",
+    "excluded_base_cells": 56,
+    "exclusion_records_sha256": "35d2ba1aa04f7e740f037d30b677001b5b05900e75a35da1b82fc2dd1f036950",
+    "manifest_path": "signal/single_cell/gse96583_cd8_nk_module_replication.manifest.json",
+    "manifest_sha256": "3e59808e09675f98be5e88fa8266f56c43aeea3592f023b6f91750ffdd0cb53f",
+    "rule": "exclude every barcode represented by a base row in the frozen 56-cell parent CSV before sentinel eligibility and sampling"
+  },
+  "source": {
+    "annotation_boundary": "deposited CD8/NK labels define only the upstream task frame and are descriptive after selection; they do not enter the eligibility gate, holdout exclusion rule, sampling hash, sentinel subset, or control assignment",
+    "arm": "batch 2 control; 6-hour culture without IFN-beta",
+    "authenticated_gse96583_hashes": {
+      "archive": "e5d41a3248a813f99d68fd5c9eb9773de7f46a83680a67f4a02d683b8955fe80",
+      "archive_members_transitively_locked_not_ingested": {
+        "GSM2560249_2.2.mtx.gz": {
+          "bytes": 29050932,
+          "sha256": "8aecc98a7ac4957bbc2570f87ebe8ce97332a5bcdbf557d40bd5aabfd287bdc5",
+          "status": "transitively_locked_not_ingested"
+        },
+        "GSM2560249_barcodes.tsv.gz": {
+          "bytes": 52366,
+          "sha256": "9bb38e080dfae81036fbcd9902c6c6254a4466aa85f70705479be3b2d6679d55",
+          "status": "transitively_locked_not_ingested"
+        }
+      },
+      "barcodes": "d58d8d55cbe4a12757207784b3bc9227bf200c9100ca15131176e9f8159c955e",
+      "genes": "93aa4e9b530ef9d6411ca129b416324c5cc1cc5a01a1fa6ed4f4a845480ed3ca",
+      "matrix": "32add28a0b3397d9ef3f220b7a6a55e98e60fe7b66fe48d0986d634df8ca0013",
+      "metadata": "1d57e72e92ca8695250e88cc0f1c3fa8c0be1175d974f8b427c58f1274dc6c09"
+    },
+    "common_non_housekeeping_universe_genes": 13503,
+    "common_universe_sha256": "145e849b9860115d455226de456935ba3b29366915e659dd2a58637916cb5506",
+    "geo_accession": "GSE96583",
+    "pbmc3k_source_sha256": "0db367b991dd95809732b218539ede489bea99113807f62ebd7ccc970025fe38",
+    "population": "eight SLE donors",
+    "renderable_cd8_nk_frame_cells": 1997
+  },
+  "status": "built_not_executed"
+}

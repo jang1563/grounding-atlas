@@ -1,0 +1,257 @@
+{
+  "analysis_id": "coherent-readout-v3-cross-codebook-anticopy-v1",
+  "basis_rule": {
+    "all_nonempty_walsh_coefficients": 31,
+    "erasure_center": "direction_fit_intercept_only",
+    "factor_order": [
+      "p",
+      "m",
+      "d",
+      "e",
+      "o"
+    ],
+    "null_signs": [
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        -1
+      ],
+      [
+        1,
+        1,
+        1,
+        1
+      ],
+      [
+        -1,
+        1,
+        -1,
+        1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        1
+      ],
+      [
+        1,
+        1,
+        1,
+        -1
+      ],
+      [
+        -1,
+        1,
+        -1,
+        -1
+      ],
+      [
+        1,
+        -1,
+        -1,
+        -1
+      ],
+      [
+        -1,
+        -1,
+        1,
+        -1
+      ]
+    ],
+    "svd_relative_tolerance": 1e-06
+  },
+  "biological_model_calls": 0,
+  "call_plan_sha256": "fb95a8e5314b806a3aa3e35b33e13ff164e550726721c2305098fa07f1cbb0dd",
+  "claim_scope": "single_model_synthetic_symbolic_projected_content_recomposition_only",
+  "conditions": {
+    "holdout": [
+      "content_anticopy",
+      "content_same",
+      "answer_anticopy",
+      "codebook_anticopy",
+      "distractor_anticopy",
+      "query_anticopy",
+      "order_anticopy",
+      "null_0_anticopy",
+      "null_1_anticopy",
+      "null_2_anticopy",
+      "null_3_anticopy",
+      "full_anticopy",
+      "identity",
+      "full_text_counterfactual",
+      "content_erase",
+      "content_rescue_same",
+      "content_rescue_opposite",
+      "null_0_erase",
+      "null_1_erase",
+      "null_2_erase",
+      "null_3_erase"
+    ],
+    "localization": [
+      "content_anticopy",
+      "content_same",
+      "answer_anticopy",
+      "codebook_anticopy",
+      "distractor_anticopy",
+      "query_anticopy",
+      "order_anticopy",
+      "null_0_anticopy",
+      "null_1_anticopy",
+      "null_2_anticopy",
+      "null_3_anticopy",
+      "full_anticopy",
+      "identity",
+      "full_text_counterfactual"
+    ]
+  },
+  "expected_counts": {
+    "all_prompts": 1792,
+    "fit_baselines": 512,
+    "holdout_baselines": 1024,
+    "holdout_patch_rows": 5376,
+    "localization_baselines": 256,
+    "localization_patch_rows": 4480
+  },
+  "generation_used": false,
+  "layer_grid": [
+    8,
+    12,
+    16,
+    20,
+    24
+  ],
+  "locks": {
+    "analyzer": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/analyze_coherent_readout_v3_cross_codebook.py",
+      "sha256": "5c55b5ed17007e4f6db8c67b312b066046c98b38236f44b74315649047f384c0"
+    },
+    "dependency_lock": {
+      "canonical_sha256": "d719c7eaf18a4137566edfc9286b45e249ebd793ebc03128dd03fb0ea6032651",
+      "file_sha256": "33e1a6849a237f30b8af6f0ed271ffec01c1552982642df573b5d27985010969",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v3_cross_codebook/qwen2.5-1.5b-instruct/dependency_lock.json"
+    },
+    "dependency_lock_canonical_sha256": "d719c7eaf18a4137566edfc9286b45e249ebd793ebc03128dd03fb0ea6032651",
+    "fixture": {
+      "canonical_sha256": "65a4f768fcebd648f51667dce84e594049804cb412248e7abe37351e3ac4e5b4",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/coherent_readout_v3_content_routing_bank.json",
+      "sha256": "a63dced290410ef6d463a0f2c04431dcea871ea564f2a6d0b2e0a05b4bb0d78f"
+    },
+    "fixture_builder": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/build_coherent_readout_v3_content_routing_bank.py",
+      "sha256": "74192ecda496667b094b6ad0420fd56efcc41644de41aae06cf42758751263f1"
+    },
+    "fixture_manifest": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/coherent_readout_v3_content_routing_bank.manifest.json",
+      "sha256": "bf8559d7922a01403d7d77aa914f459cc88ecec94311da815bd37c28a4340425"
+    },
+    "model_hooks": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/model_hooks.py",
+      "sha256": "62495bd77adc40d7fd5e5643df334eb98aba363f5b81b4b7925314e877bad0c4"
+    },
+    "preregistration": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/docs/COHERENT_READOUT_V3_CROSS_CODEBOOK_ANTICOPY_PREREG.md",
+      "sha256": "98a31bd903744fa054e696ecb421c07da78557d8f8a51ab00fb471514776f949"
+    },
+    "runner": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_readout_v3_cross_codebook.py",
+      "sha256": "407364fb492fe6cbfd4dc927944a3062eb174e28d4819ebadbb308cb6bbfd21e"
+    },
+    "tokenization_receipt": {
+      "canonical_sha256": "d9b38cbdd6d0446db6befd1340644cf11339f6e1a3fe2a0aa5991111e949fea7",
+      "file_sha256": "089d320370cd1f1e933ce1d2aacd232f5b1eb02a4d012cd1c7b56febc9d9e554",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v3_cross_codebook/qwen2.5-1.5b-instruct/tokenization_receipt.json"
+    },
+    "tokenization_receipt_canonical_sha256": "d9b38cbdd6d0446db6befd1340644cf11339f6e1a3fe2a0aa5991111e949fea7",
+    "v3_tests": [
+      {
+        "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_analyze_coherent_readout_v3_cross_codebook.py",
+        "sha256": "40d83c832c38e5255b13c8da642f78952d8002cf9fe35a229911d1e047f7844d"
+      },
+      {
+        "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_coherent_readout_v3_content_routing_bank.py",
+        "sha256": "2ce83eaa2050d900fdbaa897ea8f953d1470746cf5087ec196abd4c193f7656b"
+      },
+      {
+        "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_run_coherent_readout_v3_cross_codebook.py",
+        "sha256": "183e92bc1e35225cb29ea78a51561ec59304fd69ad5ed592000a87072aba4709"
+      }
+    ]
+  },
+  "mode": "prospective_development_synthetic_nonbiological",
+  "model": {
+    "attention_implementation": "sdpa",
+    "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+    "decoder_layers": 28,
+    "device": "mps",
+    "dtype": "float32",
+    "hidden_width": 1536,
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer_config_sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_vocab_size": 151665,
+    "vocab_size": 151936,
+    "weights_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  },
+  "model_calls": 0,
+  "prohibited_claims": [
+    "biology",
+    "latent_knowledge",
+    "activation_gap",
+    "physical_law",
+    "general_variable_binding",
+    "model_family_generality"
+  ],
+  "schema_version": "coherent-readout-v3-cross-codebook-design-v1"
+}

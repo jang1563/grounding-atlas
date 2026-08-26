@@ -1,0 +1,137 @@
+{
+  "analysis_id": "pbmc68k-cd8-nk-program-mask-v1",
+  "artifacts": {
+    "builder_sha256": "da3b9807e8352be18761eaeca7836cab4393eda53fd228ef9b06c670c2738b95",
+    "csv_path": "signal/single_cell/pbmc68k_cd8_nk_program_mask.csv",
+    "csv_sha256": "6f9fae1ecd3cbe03cd2d317f97cf27f26c8070ec7aaf6fb8fdf236f7b3b1a57d"
+  },
+  "claim_scope": "single_external_cohort_output_level_program_mask_intervention_not_multi_donor_generalization_or_hidden_state_causality",
+  "construction": {
+    "all_target_cd8_nk_cells": 128,
+    "common_gene_universe_sha256": "bde551f53a514c4ef5a9e840814f4a7dbc15e24d471369e587d38de9a18dc3e5",
+    "common_non_housekeeping_gene_count": 750,
+    "control_matching": {
+      "matched_gene_pairs": 279,
+      "max_expression_distance": 1.933000087738037,
+      "max_prevalence_distance": 0.5546875,
+      "max_rank_distance": 19.0,
+      "median_expression_distance": 0.0,
+      "median_prevalence_distance": 0.1171875,
+      "median_rank_distance": 3.0,
+      "method": "within-cell linear-sum assignment on rank, expression, global top-50 prevalence, and token length; all parent-program genes and source-PBMC3k class-associated genes excluded",
+      "source_neutral_control_gene_count": 664,
+      "source_neutrality_rule": "absolute CD8-vs-NK top-50 prevalence gap in PBMC3k <= 0.10",
+      "source_prevalence_gap_sha256": "102a20c794ba6dedf57c8dd82f592b59534f8c0bce8e472188f146a5d665be71"
+    },
+    "eligible_cells": 119,
+    "eligible_class_counts": {
+      "CD8": 88,
+      "NK": 31
+    },
+    "mask_token": "MASKED_GENE",
+    "max_masked_program_genes": 3,
+    "target_annotation_map": {
+      "CD56+ NK": {
+        "label_a": 0,
+        "program": "NK_identity"
+      },
+      "CD8+ Cytotoxic T": {
+        "label_a": 1,
+        "program": "CD8_identity"
+      },
+      "CD8+/CD45RA+ Naive Cytotoxic": {
+        "label_a": 1,
+        "program": "CD8_identity"
+      }
+    },
+    "top_k": 50,
+    "zero_hit_cells": {
+      "CD8_identity": 9
+    }
+  },
+  "freeze_date": "2026-07-27",
+  "program_provenance": {
+    "cd8_identity": [
+      "CD247",
+      "CD3D",
+      "CD3E",
+      "CD3G",
+      "CD8A",
+      "CD8B",
+      "GZMK",
+      "IL7R",
+      "KLRB1"
+    ],
+    "nk_identity": [
+      "FCGR3A",
+      "FGFBP2",
+      "GNLY",
+      "GZMB",
+      "GZMH",
+      "KLRC1",
+      "KLRC2",
+      "KLRD1",
+      "KLRF1",
+      "NCAM1",
+      "NCR1",
+      "NKG7",
+      "PRF1",
+      "SPON2",
+      "TYROBP",
+      "XCL1",
+      "XCL2"
+    ],
+    "parent_file": "signal/single_cell/build_cd8t_nk.py",
+    "parent_git_commit": "20f94201c60878b83dbae182b8447248666ede29",
+    "parent_set": [
+      "CCL5",
+      "CD247",
+      "CD3D",
+      "CD3E",
+      "CD3G",
+      "CD8A",
+      "CD8B",
+      "CST7",
+      "CTSW",
+      "FCGR3A",
+      "FGFBP2",
+      "GNLY",
+      "GZMA",
+      "GZMB",
+      "GZMH",
+      "GZMK",
+      "IL7R",
+      "KLRB1",
+      "KLRC1",
+      "KLRC2",
+      "KLRD1",
+      "KLRF1",
+      "NCAM1",
+      "NCR1",
+      "NKG7",
+      "PRF1",
+      "SPON2",
+      "TYROBP",
+      "XCL1",
+      "XCL2"
+    ],
+    "shared_excluded_from_target_and_control": [
+      "CCL5",
+      "CST7",
+      "CTSW",
+      "GZMA"
+    ]
+  },
+  "source_pbmc3k": {
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/data/pbmc3k_processed.h5ad",
+    "role": "frozen gene-universe and pre-existing marker-set source",
+    "sha256": "0db367b991dd95809732b218539ede489bea99113807f62ebd7ccc970025fe38"
+  },
+  "target_pbmc68k": {
+    "cohort": "10x Fresh 68k PBMC Donor A; reduced annotated Scanpy artifact",
+    "path": "<HOME>/miniconda3-arm64/lib/python3.13/site-packages/scanpy/datasets/10x_pbmc68k_reduced.h5ad",
+    "primary_source_doi": "10.1038/ncomms14049",
+    "scanpy_documentation": "https://scanpy.readthedocs.io/en/stable/generated/scanpy.datasets.pbmc68k_reduced.html",
+    "sha256": "863e19914ab2d4ba97edc9623ac3a343c0461f1e40b121bfb5fa92638b22e9bd"
+  }
+}

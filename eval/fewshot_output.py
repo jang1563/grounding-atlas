@@ -1,11 +1,9 @@
 """Supervision-asymmetry control: 8B FEW-SHOT output on hERG.
 
-The activation probe is trained on 1250 labels (supervised) while the output arm is
-zero-shot, which is an unfair comparison (eval/README confound 1). This gives the LLM
-matched in-context examples and re-measures the output. If few-shot output stays well
-below the activation probe (0.787), the probe's advantage is NOT just supervision: the
-model is handed labeled examples and still cannot verbalize the property, so the
-expression gap is real, not a trained-vs-zero-shot artifact.
+The activation probe is trained on roughly 1250 labels while this output arm receives
+only K in-context examples. It therefore measures whether a small demonstration prompt
+improves native output, not a supervision-matched probe comparison. A null result cannot
+rule out supervision or establish an expression mechanism.
 
 Same 1250 query set and seed as activation_arm.py; the K few-shot examples are held out
 from the query set. Env: ACT_MODEL, ACT_CSV, ACT_N, ACT_FEWSHOT.
@@ -96,4 +94,4 @@ p = np.array(p)
 print(f"MODEL={MODEL}  few-shot K={K}  n={len(y)}", flush=True)
 print(f"FEW-SHOT OUTPUT AUROC={roc_auc_score(y, p):.3f}  parse={dict(Counter(kinds))}", flush=True)
 print("compare: zero-shot output 0.453 | activation probe 0.787 | structure-probe 0.825", flush=True)
-print("read: if few-shot stays near 0.45-0.55, the probe advantage is not supervision; the expression gap is real.", flush=True)
+print("read: K=10 is not supervision-matched to the full probe; a null result only shows this prompt did not elicit the target.", flush=True)

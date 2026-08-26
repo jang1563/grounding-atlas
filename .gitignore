@@ -68,3 +68,19 @@ signal/sfm_embedding/MoLFormer*.npz
 # Experiment-3 reward-head ensembles (regenerable via eval/reward_head_load.py)
 signal/reward/
 data/herg_karim.tab
+
+# ── Regenerable run artifacts (added 2026-08-25) ─────────────────────
+# Public repository. Raw model logits and per-run plan manifests are
+# rebuildable from the committed code and configs and dominate size
+# (1.5 GB of .npy alone). Code, specs, task banks and result summaries stay.
+*.npy
+results/**/raw_logits/
+results/**/plan_manifest.json
+results/**/*_raw.jsonl
+results/**/discovery_patches.jsonl
+*.quarantine-*/
+data/*.h5ad
+
+# Local editor / launcher config and a handoff note with an absolute path
+.claude/
+HANDOFF_grounding_atlas_direction_2026-07-11.md

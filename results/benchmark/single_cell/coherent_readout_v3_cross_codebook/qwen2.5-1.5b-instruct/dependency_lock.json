@@ -1,0 +1,64 @@
+{
+  "canonical_sha256": "d719c7eaf18a4137566edfc9286b45e249ebd793ebc03128dd03fb0ea6032651",
+  "implementation_files": {
+    "analyzer": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/analyze_coherent_readout_v3_cross_codebook.py",
+      "sha256": "5c55b5ed17007e4f6db8c67b312b066046c98b38236f44b74315649047f384c0"
+    },
+    "model_hooks": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/model_hooks.py",
+      "sha256": "62495bd77adc40d7fd5e5643df334eb98aba363f5b81b4b7925314e877bad0c4"
+    },
+    "run_coherent_binary_readout": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_binary_readout.py",
+      "sha256": "09f78e090a7a4f4d0440502991d7a011b74543b662691710e6382b441f67e64b"
+    },
+    "run_coherent_readout_v2_causal_binding": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_readout_v2_causal_binding.py",
+      "sha256": "62dd3d27f46fad5ad3988bed0f65ecdcbcae27b440e5a2626e1720326f5dba40"
+    },
+    "run_coherent_readout_v2_syntax": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_readout_v2_syntax.py",
+      "sha256": "6387eec115f1a8ee64149334d9a7934bcc3229ea1c81952b2a2fa0db86ae6c34"
+    },
+    "runner": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_readout_v3_cross_codebook.py",
+      "sha256": "407364fb492fe6cbfd4dc927944a3062eb174e28d4819ebadbb308cb6bbfd21e"
+    },
+    "tests": [
+      {
+        "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_analyze_coherent_readout_v3_cross_codebook.py",
+        "sha256": "40d83c832c38e5255b13c8da642f78952d8002cf9fe35a229911d1e047f7844d"
+      },
+      {
+        "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_coherent_readout_v3_content_routing_bank.py",
+        "sha256": "2ce83eaa2050d900fdbaa897ea8f953d1470746cf5087ec196abd4c193f7656b"
+      },
+      {
+        "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_run_coherent_readout_v3_cross_codebook.py",
+        "sha256": "183e92bc1e35225cb29ea78a51561ec59304fd69ad5ed592000a87072aba4709"
+      }
+    ]
+  },
+  "machine": "arm64",
+  "packages": {
+    "huggingface-hub": "1.5.0",
+    "numpy": "2.4.2",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.10.0",
+    "transformers": "5.3.0"
+  },
+  "platform": "macOS-26.2-arm64-arm-64bit",
+  "python": "3.11.14",
+  "runtime": {
+    "attention_implementation": "sdpa",
+    "default_dtype": "torch.float32",
+    "device": "mps",
+    "dtype": "float32",
+    "float32_matmul_precision": "highest",
+    "mps_is_available": true,
+    "mps_is_built": true
+  },
+  "schema_version": "coherent-readout-v3-cross-codebook-dependency-lock-v1"
+}

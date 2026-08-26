@@ -1,9 +1,9 @@
 """Run GroundBench inside Inspect (UK AISI's inspect_ai).
 
-This reuses the SAME task registry, prompts, decode, and probability parser as
-eval/run_grounding_eval.py, so an Inspect run is the same benchmark, just driven by Inspect's model
-providers, logging, and viewer. The reported metric is per-task AUROC (with the registry's a-priori
-label orientation) -- the same grounding number the standalone harness reports.
+This reuses the same task registry, matched-item sampler, prompts, decode, and strict probability
+parser as eval/run_grounding_eval.py, driven by Inspect's model providers, logging, and viewer.
+It reports per-task matched-condition AUROC plus valid-response rate. Use the standalone harness for
+the full re-notation/scrambling diagnostics, proper scores, bootstrap intervals, and submission files.
 
 Examples:
   inspect eval eval/groundbench_inspect.py@groundbench -T task_id=single_cell/cd8t_nk:name \\
@@ -26,16 +26,16 @@ from sklearn.metrics import roc_auc_score
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from benchmark_tasks import CORE, TASKS, task_items  # noqa: E402
-from run_grounding_eval import DECODE, SYSTEM, parse_prob  # noqa: E402
+from benchmark_tasks import CORE, TASKS, GroundBenchSampler  # noqa: E402
+from run_grounding_eval import DECODE, SYSTEM, parse_prob_with_status  # noqa: E402
 
 
 def _dataset(task_ids, n, seed):
-    rng = np.random.default_rng(seed)
+    sampler = GroundBenchSampler(seed=seed)
     samples = []
     for tid in task_ids:
         t = TASKS[tid]
-        items, _ = task_items(tid, n, rng)
+        items, _ = sampler.task_items(tid, n)
         for i, it in enumerate(items):
             text = t["prompt"].format(rep=it.get("rep", ""))
             if it.get("image"):   # multimodal task: image + the text prompt
@@ -43,8 +43,10 @@ def _dataset(task_ids, n, seed):
             else:
                 inp = text
             md = {"task": tid, "label": int(it["label"]), "orient": t["orient"], "web": t["web"]}
-            samples.append(Sample(input=inp, target=str(int(it["label"])), id=f"{tid}#{i}", metadata=md))
-    rng.shuffle(samples)   # mix classes so a user's --limit still gets both labels
+            samples.append(Sample(input=inp, target=str(int(it["label"])), id=it["id"], metadata=md))
+    # Deterministically mix classes/tasks so a user's --limit still gets representative rows.
+    np_rng = np.random.default_rng(seed)
+    np_rng.shuffle(samples)
     return MemoryDataset(samples)
 
 
@@ -68,14 +70,29 @@ def auroc():
     return compute
 
 
-@scorer(metrics=[auroc()])
+@metric
+def valid_response_rate():
+    """Fraction of samples satisfying the exact single-probability output contract."""
+    def compute(scores: list[SampleScore]) -> float:
+        valid = []
+        for sample_score in scores:
+            score = getattr(sample_score, "score", sample_score)
+            valid.append(bool((score.metadata or {}).get("parse_valid", False)))
+        return float(np.mean(valid)) if valid else float("nan")
+    return compute
+
+
+@scorer(metrics=[auroc(), valid_response_rate()])
 def prob_scorer():
     async def score(state, target):  # noqa: ARG001 (label carried via sample metadata)
         out = state.output.completion or ""
         md = state.metadata or {}
-        return Score(value=parse_prob(out), answer=out,
+        probability, parsed = parse_prob_with_status(out)
+        return Score(value=probability, answer=out,
                      metadata={"label": md.get("label"), "orient": md.get("orient"),
-                               "task": md.get("task"), "web": md.get("web")})
+                               "task": md.get("task"), "web": md.get("web"),
+                               "parse_valid": parsed,
+                               "parse_status": "parsed" if parsed else "invalid_or_refusal"})
     return score
 
 
@@ -104,7 +121,7 @@ def groundbench_all(n=100, seed=0):
         dataset=_dataset(list(CORE), n, seed),
         solver=[system_message(SYSTEM), generate()],
         scorer=prob_scorer(),
-        metrics=[grouped(auroc(), "task")],
+        metrics=[grouped(auroc(), "task"), grouped(valid_response_rate(), "task")],
         config=_config(),
         name="groundbench/all",
     )

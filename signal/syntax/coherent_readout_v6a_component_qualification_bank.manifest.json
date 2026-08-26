@@ -1,0 +1,20 @@
+{
+  "analysis_id": "coherent-readout-v6a-component-qualification-v1",
+  "biological_model_calls": 0,
+  "builder_file_sha256": "0b025da227a39850f3f7339cc2d33e0c0bee2a4c2594f084c9c448546b66f592",
+  "builder_path": "signal/syntax/build_coherent_readout_v6a_component_qualification_bank.py",
+  "cell_count": 384,
+  "composition_cell_count": 0,
+  "design_date": "2026-08-03",
+  "family_counts": {
+    "codebook_lookup": 128,
+    "property_retrieval": 256
+  },
+  "fixture_canonical_sha256": "6b27741825bdce268427d53c076f528405c9967f615b0fb63ba8162d90b422aa",
+  "fixture_file_sha256": "084ba96dc785f26ca99387ea758bb542ce974e8bd86fa97ff4b6abc6b7a13cd6",
+  "fixture_path": "signal/syntax/coherent_readout_v6a_component_qualification_bank.json",
+  "model_calls": 0,
+  "schema_version": "coherent-readout-v6a-component-qualification-manifest-v1",
+  "tokenizer_calls": 0,
+  "world_count": 8
+}

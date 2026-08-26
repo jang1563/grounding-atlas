@@ -1,0 +1,37 @@
+{
+  "call_plan_sha256": "61fd6c4a7c34d8efccca54d4d4091a7d2fac16023aa8257f64eb3afb62cd1f7d",
+  "composition_calls": 0,
+  "execution_revision": "v2_mps_allocator_warmup_bypass",
+  "expected_calls": 384,
+  "locks": {
+    "analyzer_file_sha256": "cc0b8c50719a510aca1a3cfb9f6d125748770813c031f0288cd0ace3a2e72150",
+    "dependency_lock_file_sha256": "8b52bb32ce972a36d316ae5b6f63810956d0b9cba955f11e8fd2b15b01a8a73e",
+    "design_file_sha256": "b299caf0d1549f90f9ac12cae23ba944203bfd0f7e55227e7df0fb56b2b93d42",
+    "fixture_file_sha256": "084ba96dc785f26ca99387ea758bb542ce974e8bd86fa97ff4b6abc6b7a13cd6",
+    "plan_manifest_file_sha256": "27b33868fb6269e2dd73ea50c8f41c21d6ab9fbb67a82c795b476993fa185758",
+    "runner_file_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+    "tokenization_receipt_file_sha256": "b8eda62d4bca9bc7cdebda721f617a6f3f103d663333ec83ec8dbf4a22eb48e5",
+    "v1_analysis_file_sha256": "34f1a622862b54c66e99882b014706ba117390153b358361953ab6293c60bec8",
+    "v1_attempt_file_sha256": "fb13237f77995932b3fb9fced04ddc1395d123a7e56f3592b1bd0657e911af3b",
+    "v1_plan_manifest_file_sha256": "0be35c0d6635924658985b5ea47b6f02b09c4245e10ba00bd28735e00eedaaf9"
+  },
+  "model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "model_loading_device_map": "mps",
+  "model_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+  "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+  "partial_resume_allowed": false,
+  "phase": "qualification-baseline",
+  "preflight": {
+    "disk_free_bytes": 30472523776,
+    "model_safetensor_bytes": 15231271888,
+    "mps_allocated_before_bytes": 0,
+    "mps_bfloat16_kernel_pass": true,
+    "mps_recommended_max_memory_bytes": 19069665280,
+    "raw_logits_expected_bytes": 233570304,
+    "required_disk_free_bytes": 1307312128,
+    "required_mps_headroom_bytes": 16754399077
+  },
+  "schema_version": "coherent-readout-v6a-qualification-attempt-v2",
+  "scientific_registry_sha256": "b766fa49a66b0c3f5b8d87cbbcddb1e44708f15c337dd09e297dca8b11e54676",
+  "status": "QUALIFICATION_EXECUTION_ATTEMPT_STARTED_IMMUTABLE"
+}

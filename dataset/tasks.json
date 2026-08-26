@@ -1,200 +1,343 @@
 {
-  "admet/herg": {
-    "modality": "molecule",
-    "kind": "pairs",
-    "web": "rich",
-    "orientation": "align",
-    "ceiling": 0.893,
-    "n": 1250,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\nsmiles: {rep}\nProbability:"
-  },
-  "admet/cyp3a4": {
-    "modality": "molecule",
-    "kind": "pairs",
-    "web": "rich",
-    "orientation": "align",
-    "ceiling": 0.809,
-    "n": 1178,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule inhibits the CYP3A4 enzyme. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
-  },
-  "admet/cyp2d6": {
-    "modality": "molecule",
-    "kind": "pairs",
-    "web": "rich",
-    "orientation": "align",
-    "ceiling": 0.825,
-    "n": 888,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule inhibits the CYP2D6 enzyme. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
-  },
-  "admet/ames": {
-    "modality": "molecule",
-    "kind": "pairs",
-    "web": "rich",
-    "orientation": "oppose",
-    "ceiling": 0.896,
-    "n": 206,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is mutagenic in the Ames test. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
-  },
-  "admet/solubility": {
-    "modality": "molecule",
-    "kind": "pairs",
-    "web": "rich",
-    "orientation": "oppose",
-    "ceiling": 0.786,
-    "n": 368,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is highly soluble in water. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
-  },
-  "admet/permeability": {
-    "modality": "molecule",
-    "kind": "pairs",
-    "web": "rich",
-    "orientation": "oppose",
-    "ceiling": 0.893,
-    "n": 350,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is highly permeable across a cell membrane. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
-  },
   "single_cell/cd8t_nk:name": {
     "modality": "single-cell expression",
     "kind": "twocol",
     "web": "rich",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "constructed_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:pbmc:cd8t_vs_nk",
+    "task_family_id": "tf:single_cell_annotation",
+    "pair_group": "single_cell/cd8t_nk",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "ranked_gene_symbols_top50",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.992,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.992,
     "n": 308,
-    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
+    "condition_counts": {
+      "matched": 308
+    },
+    "prompt": "These are the 50 highest-expressed genes retained by the benchmark preprocessing for one human immune cell (PBMC), ordered from highest to lower expression:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
   },
   "single_cell/cd8t_nk:anon": {
     "modality": "single-cell expression",
     "kind": "twocol",
     "web": "zero",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "constructed_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:pbmc:cd8t_vs_nk",
+    "task_family_id": "tf:single_cell_annotation",
+    "pair_group": "single_cell/cd8t_nk",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "ranked_anonymized_gene_ids_top50",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.992,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.992,
     "n": 308,
-    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
+    "condition_counts": {
+      "matched": 308
+    },
+    "prompt": "These are the 50 highest-expressed genes retained by the benchmark preprocessing for one human immune cell (PBMC), ordered from highest to lower expression:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
   },
   "single_cell/mono:name": {
     "modality": "single-cell expression",
     "kind": "twocol",
     "web": "rich",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "constructed_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:pbmc:classical_vs_nonclassical_monocyte",
+    "task_family_id": "tf:single_cell_annotation",
+    "pair_group": "single_cell/mono",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "ranked_gene_symbols_top50",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.989,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.989,
     "n": 300,
-    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a classical CD14+ monocyte or a non-classical CD16+ monocyte? Reply with ONLY a number between 0 and 1 = the probability that it is a classical CD14+ monocyte."
+    "condition_counts": {
+      "matched": 300
+    },
+    "prompt": "These are the 50 highest-expressed genes retained by the benchmark preprocessing for one human immune cell (PBMC), ordered from highest to lower expression:\n{rep}\nIs it a classical CD14+ monocyte or a non-classical CD16+ monocyte? Reply with ONLY a number between 0 and 1 = the probability that it is a classical CD14+ monocyte."
   },
   "single_cell/mono:anon": {
     "modality": "single-cell expression",
     "kind": "twocol",
     "web": "zero",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "constructed_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:pbmc:classical_vs_nonclassical_monocyte",
+    "task_family_id": "tf:single_cell_annotation",
+    "pair_group": "single_cell/mono",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "ranked_anonymized_gene_ids_top50",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.989,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.989,
     "n": 300,
-    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a classical CD14+ monocyte or a non-classical CD16+ monocyte? Reply with ONLY a number between 0 and 1 = the probability that it is a classical CD14+ monocyte."
+    "condition_counts": {
+      "matched": 300
+    },
+    "prompt": "These are the 50 highest-expressed genes retained by the benchmark preprocessing for one human immune cell (PBMC), ordered from highest to lower expression:\n{rep}\nIs it a classical CD14+ monocyte or a non-classical CD16+ monocyte? Reply with ONLY a number between 0 and 1 = the probability that it is a classical CD14+ monocyte."
   },
   "single_cell/cd8t_nk:obscure": {
     "modality": "single-cell expression",
     "kind": "twocol",
     "web": "mixed",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "constructed_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:pbmc:cd8t_vs_nk",
+    "task_family_id": "tf:single_cell_annotation",
+    "pair_group": "single_cell/cd8t_nk",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "ranked_marker_depleted_gene_symbols_top50",
+      "web_exposure": "mixed",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.979,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.979,
     "n": 308,
-    "prompt": "These are the most distinctively expressed genes of one human immune cell (PBMC), highest first:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
+    "condition_counts": {
+      "matched": 308
+    },
+    "prompt": "These are the 50 highest-expressed genes retained by the benchmark preprocessing for one human immune cell (PBMC), ordered from highest to lower expression:\n{rep}\nIs it a CD8+ T cell or a NK cell? Reply with ONLY a number between 0 and 1 = the probability that it is a CD8+ T cell."
   },
   "variant/text": {
     "modality": "protein variant",
     "kind": "twocol",
     "web": "rich",
     "orientation": "align",
-    "ceiling": 0.962,
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T4",
+    "target_source_kind": "database_assertion",
+    "truth_level": "T4",
+    "biological_question_id": "bq:variant:clinvar_pathogenic_assertion",
+    "task_family_id": "tf:variant_assertion",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "clinvar_style_text",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": null,
+    "reference_comparability": "not_available",
+    "ceiling": null,
     "n": 2400,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this human genetic variant is pathogenic. Judge only from the representation below.\nvariant: {rep}\nProbability:"
-  },
-  "variant/seq": {
-    "modality": "protein variant",
-    "kind": "pairs",
-    "web": "zero",
-    "orientation": "align",
-    "ceiling": 0.962,
-    "n": 2000,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this human genetic variant is pathogenic. Judge only from the representation below.\nvariant: {rep}\nProbability:"
+    "condition_counts": {
+      "matched": 2400
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this ClinVar-style record is assigned to the pathogenic/likely-pathogenic class in the benchmark source snapshot. This is a database-assertion target, not an independent clinical diagnosis. Judge only from the record below.\nvariant record: {rep}\nProbability:"
   },
   "methyl/age": {
     "modality": "DNA methylation",
     "kind": "twocol",
     "web": "zero",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "constructed_measurement",
+    "truth_level": "T3",
+    "biological_question_id": "bq:methylation:age_above_cohort_median",
+    "task_family_id": "tf:methylation_demographic",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "cpg_beta_value_pairs",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.701,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.701,
     "n": 704,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this individual is over 40 years old, from their blood DNA methylation profile (CpG site: beta-value pairs). Judge only from the values below.\nmethylation: {rep}\nProbability:"
+    "condition_counts": {
+      "matched": 704
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this individual is older than the benchmark cohort median of 33 years, from their blood DNA methylation profile (CpG site: beta-value pairs). Judge only from the values below.\nmethylation: {rep}\nProbability:"
   },
   "msa/conservation": {
     "modality": "protein MSA",
     "kind": "twocol",
     "web": "rich",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T0",
+    "target_source_kind": "algorithmic_construct",
+    "truth_level": "T0",
+    "biological_question_id": "bq:protein:msa_column_conservation",
+    "task_family_id": "tf:protein_sequence_conservation",
+    "pair_group": null,
+    "split_group_scope": "protein_family",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "msa_column_residues",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.999,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.999,
-    "n": 658,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this column of a protein multiple-sequence alignment is evolutionarily conserved. Judge only from the residues below.\ncolumn: {rep}\nProbability:"
+    "n": 648,
+    "condition_counts": {
+      "matched": 648
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this protein multiple-sequence-alignment column belongs to the lower within-family Shannon-entropy tercile (the benchmark's conserved class), rather than the upper tercile (the variable class). Middle-tercile columns are excluded. Judge only from the residues below.\ncolumn: {rep}\nProbability:"
   },
   "materials/metal:formula": {
     "modality": "materials composition",
     "kind": "twocol",
     "web": "rich",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "database_label",
+    "truth_level": "T3",
+    "biological_question_id": "bq:materials:experimental_metallicity",
+    "task_family_id": "tf:materials_property",
+    "pair_group": "materials/metal",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "chemical_formula",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.927,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.927,
-    "n": 4902,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this chemical compound is a metal. Judge only from the composition below.\ncomposition: {rep}\nProbability:"
+    "n": 4898,
+    "condition_counts": {
+      "matched": 4898
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this composition is assigned to the metallic class, rather than the non-metallic class, in the MatBench experimental-is-metal benchmark. Judge only from the composition below.\ncomposition: {rep}\nProbability:"
   },
   "materials/metal:anon": {
     "modality": "materials composition",
     "kind": "twocol",
     "web": "zero",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "database_label",
+    "truth_level": "T3",
+    "biological_question_id": "bq:materials:experimental_metallicity",
+    "task_family_id": "tf:materials_property",
+    "pair_group": "materials/metal",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "anonymized_element_formula",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.927,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.927,
-    "n": 4902,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this chemical compound is a metal. Judge only from the composition below.\ncomposition: {rep}\nProbability:"
-  },
-  "protein/esm2_emb": {
-    "modality": "SFM embedding",
-    "kind": "emb",
-    "web": "zero",
-    "orientation": "align",
-    "ceiling": 0.633,
-    "n": 320,
-    "prompt": "Below is a 640-dimensional protein embedding from the ESM-2 protein language model (a scientific foundation model). Estimate the probability (a single number between 0 and 1) that this protein is thermostable (melting temperature above the dataset median). Judge only from the embedding.\nembedding: {rep}\nProbability:"
-  },
-  "herg/graph": {
-    "modality": "molecule",
-    "kind": "twocol",
-    "web": "zero",
-    "orientation": "align",
-    "ceiling": 0.892,
-    "n": 600,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\nmolecular graph: {rep}\nProbability:"
-  },
-  "herg/nmr": {
-    "modality": "molecule",
-    "kind": "twocol",
-    "web": "zero",
-    "orientation": "align",
-    "ceiling": 0.892,
-    "n": 600,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\ncarbon-13 NMR chemical shifts: {rep}\nProbability:"
-  },
-  "herg/struct3d": {
-    "modality": "molecule",
-    "kind": "twocol",
-    "web": "zero",
-    "orientation": "align",
-    "ceiling": 0.868,
-    "n": 400,
-    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\n3D atomic coordinates (element x y z): {rep}\nProbability:"
+    "n": 4898,
+    "condition_counts": {
+      "matched": 4898
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this composition is assigned to the metallic class, rather than the non-metallic class, in the MatBench experimental-is-metal benchmark. Judge only from the composition below.\ncomposition: {rep}\nProbability:"
   },
   "rna/coding": {
     "modality": "RNA sequence",
     "kind": "twocol",
     "web": "mixed",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "database_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:rna:protein_coding_status",
+    "task_family_id": "tf:rna_coding",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "nucleotide_sequence",
+      "web_exposure": "mixed",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.856,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.856,
     "n": 1500,
+    "condition_counts": {
+      "matched": 1500
+    },
     "prompt": "Estimate the probability (a single number between 0 and 1) that this nucleotide sequence is protein-coding (vs non-coding). Judge only from the sequence below.\nsequence: {rep}\nProbability:"
   },
   "histo/pcam_tumor": {
@@ -202,17 +345,412 @@
     "kind": "image",
     "web": "rich",
     "orientation": "align",
-    "ceiling": 0.9,
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "expert_image_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:histopathology:pcam_central_tumor",
+    "task_family_id": "tf:histopathology_annotation",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "h_and_e_image_96x96",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": null,
+    "reference_comparability": "not_available",
+    "ceiling": null,
     "n": 400,
-    "prompt": "This is an H&E-stained histopathology image patch. Estimate the probability (a single number between 0 and 1) that it contains tumor tissue (vs normal).\nProbability:"
+    "condition_counts": {
+      "matched": 400
+    },
+    "prompt": "This is a 96x96 H&E-stained PatchCamelyon image patch. Estimate the probability (a single number between 0 and 1) that its central 32x32 region contains at least one tumor pixel (vs no tumor pixel in that central region).\nProbability:"
   },
   "rna/nt_emb": {
     "modality": "SFM embedding",
     "kind": "emb",
     "web": "zero",
     "orientation": "align",
+    "status": "active",
+    "status_reason": "",
+    "truth_level_code": "T3",
+    "target_source_kind": "database_annotation",
+    "truth_level": "T3",
+    "biological_question_id": "bq:rna:protein_coding_status",
+    "task_family_id": "tf:rna_coding",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "nucleotide_transformer_embedding_512d",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "snapshot_local_row",
+    "reference_score": 0.918,
+    "reference_comparability": "context_only_external_cohort_or_split",
     "ceiling": 0.918,
     "n": 600,
+    "condition_counts": {
+      "matched": 600
+    },
     "prompt": "Below is a 512-dimensional nucleotide-sequence embedding from the Nucleotide Transformer (a genomic foundation model). Estimate the probability (a single number between 0 and 1) that the underlying sequence is protein-coding (vs non-coding). Judge only from the embedding.\nembedding: {rep}\nProbability:"
+  },
+  "admet/herg": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:herg_blockade",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": "herg/common",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "smiles",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.893,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.893,
+    "n": 308,
+    "condition_counts": {
+      "matched": 308,
+      "re_notation": 19,
+      "scrambled": 19
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/cyp3a4": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:cyp3a4_inhibition",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": null,
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "smiles",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.809,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.809,
+    "n": 1178,
+    "condition_counts": {
+      "matched": 1178,
+      "re_notation": 200,
+      "scrambled": 200
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule inhibits the CYP3A4 enzyme. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/cyp2d6": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:cyp2d6_inhibition",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": null,
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "smiles",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.825,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.825,
+    "n": 888,
+    "condition_counts": {
+      "matched": 888,
+      "re_notation": 200,
+      "scrambled": 200
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule inhibits the CYP2D6 enzyme. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/ames": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "oppose",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:ames_mutagenicity",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": null,
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "smiles",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.896,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.896,
+    "n": 206,
+    "condition_counts": {
+      "matched": 206,
+      "re_notation": 148,
+      "scrambled": 148
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is mutagenic in the Ames test. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/solubility": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "oppose",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:aqueous_solubility",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": null,
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "smiles",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.786,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.786,
+    "n": 368,
+    "condition_counts": {
+      "matched": 368,
+      "re_notation": 200,
+      "scrambled": 200
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is highly soluble in water. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "admet/permeability": {
+    "modality": "molecule",
+    "kind": "pairs",
+    "web": "rich",
+    "orientation": "oppose",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:membrane_permeability",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": null,
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "smiles",
+      "web_exposure": "rich",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.893,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.893,
+    "n": 350,
+    "condition_counts": {
+      "matched": 350,
+      "re_notation": 186,
+      "scrambled": 186
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule is highly permeable across a cell membrane. Judge only from the representation below.\nsmiles: {rep}\nProbability:"
+  },
+  "protein/esm2_emb": {
+    "modality": "SFM embedding",
+    "kind": "emb",
+    "web": "zero",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "The committed embedding reference AUROC is 0.633, below the preregistered 0.65 viability gate.",
+    "truth_level_code": "T2",
+    "target_source_kind": "empirical_measurement_via_embedding",
+    "truth_level": "T2",
+    "biological_question_id": "bq:protein:thermostability_above_dataset_median",
+    "task_family_id": "tf:protein_thermostability",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "esm2_embedding_640d",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": 0.633,
+    "reference_comparability": "context_only_external_cohort_or_split",
+    "ceiling": 0.633,
+    "n": 320,
+    "condition_counts": {
+      "matched": 320
+    },
+    "prompt": "Below is a 640-dimensional protein embedding from the ESM-2 protein language model (a scientific foundation model). Estimate the probability (a single number between 0 and 1) that this protein is thermostable (melting temperature above the dataset median). Judge only from the embedding.\nembedding: {rep}\nProbability:"
+  },
+  "herg/graph": {
+    "modality": "molecule",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:herg_blockade",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": "herg/common",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "molecular_graph_text",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": null,
+    "reference_comparability": "not_available",
+    "ceiling": null,
+    "n": 308,
+    "condition_counts": {
+      "matched": 308
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\nmolecular graph: {rep}\nProbability:"
+  },
+  "herg/nmr": {
+    "modality": "molecule",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:herg_blockade",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": "herg/common",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "carbon13_nmr_shift_list",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": null,
+    "reference_comparability": "not_available",
+    "ceiling": null,
+    "n": 308,
+    "condition_counts": {
+      "matched": 308
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\ncarbon-13 NMR chemical shifts: {rep}\nProbability:"
+  },
+  "herg/struct3d": {
+    "modality": "molecule",
+    "kind": "twocol",
+    "web": "zero",
+    "orientation": "align",
+    "status": "exploratory",
+    "status_reason": "Provisional assay task: the committed source does not yet provide release-grade assay context, units, binary threshold, and replicate-aggregation provenance.",
+    "truth_level_code": "T2",
+    "target_source_kind": "operational_assay_aggregation",
+    "truth_level": "T2",
+    "biological_question_id": "bq:molecule:herg_blockade",
+    "task_family_id": "tf:molecular_admet",
+    "pair_group": "herg/common",
+    "split_group_scope": "exact_entity_proxy_not_biological_dependency_group",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "xyz_coordinates",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": null,
+    "reference_comparability": "not_available",
+    "ceiling": null,
+    "n": 308,
+    "condition_counts": {
+      "matched": 308
+    },
+    "prompt": "Estimate the probability (a single number between 0 and 1) that this molecule blocks the hERG potassium channel (cardiotoxicity risk). Judge only from the representation below.\n3D atomic coordinates (element x y z): {rep}\nProbability:"
+  },
+  "variant/seq": {
+    "modality": "protein variant",
+    "kind": "pairs",
+    "web": "zero",
+    "orientation": "align",
+    "status": "quarantined",
+    "status_reason": "The committed rows omit mutation position and WT-to-ALT identity and originally lacked stable entity IDs; rebuild from explicit variant records before scoring.",
+    "truth_level_code": "T4",
+    "target_source_kind": "database_assertion",
+    "truth_level": "T4",
+    "biological_question_id": "bq:variant:clinvar_pathogenic_assertion",
+    "task_family_id": "tf:variant_assertion",
+    "pair_group": null,
+    "split_group_scope": "unavailable_no_biological_dependency_metadata",
+    "intervention_pair_field": null,
+    "intervention_pair_id": null,
+    "factor_levels": {
+      "representation": "incomplete_protein_sequence_context",
+      "web_exposure": "zero",
+      "causal_status": "descriptive_interface_only"
+    },
+    "entity_id_scope": "content_hash_or_source_id",
+    "reference_score": null,
+    "reference_comparability": "not_available",
+    "ceiling": null,
+    "n": 0,
+    "condition_counts": {},
+    "prompt": "Estimate the probability (a single number between 0 and 1) that the variant represented below is assigned to the pathogenic class in the benchmark source snapshot. Judge only from the representation below.\nvariant representation: {rep}\nProbability:"
   }
 }

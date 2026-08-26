@@ -1,4 +1,4 @@
-"""GroundBench cheap-head baseline: the "orchestrate via a trained head" reference.
+"""GroundBench cheap-head pilot: an optimistic surface-readability diagnostic.
 
 For every task a cheap, representation-agnostic head is cross-validated on the SAME
 representation the LLM is shown:
@@ -6,12 +6,11 @@ representation the LLM is shown:
   - image tasks       -> per-channel color statistics
   - numeric reps      -> the parsed value vector (e.g. methylation betas)
   - everything else   -> char n-gram hashing (a uniform cheap text head)
-This is the "can a dumb specialist read this representation" baseline. The point it
-makes is the orchestration prescription: on the web-zero tasks the cheap head often
-GROUNDS (the information is present in the representation) where the LLM verbalizes at
-chance. So you orchestrate by putting a trained head on the representation, you do not
-prompt-paste it. Where the head is weak but the cited ceiling is high (numeric NMR/3D,
-variant sequence), a modality-specific specialist is needed; the uniform head is a floor.
+This asks whether a generic supervised classifier can predict the benchmark label from
+the presented representation. It is not a specialist ceiling, proof of biological
+grounding, or a supervision-matched comparison with native output. The current random
+StratifiedKFold and IID item bootstrap are optimistic pilot estimates where biological
+dependency groups exist.
 
 No API, no GPU. Writes results/benchmark/baseline-cheap-head/scorecard.json and
 regenerates the leaderboard.  Run:  python eval/head_baseline.py
@@ -19,6 +18,7 @@ regenerates the leaderboard.  Run:  python eval/head_baseline.py
 import json
 import os
 import sys
+from datetime import datetime, timezone
 
 import numpy as np
 from sklearn.feature_extraction.text import HashingVectorizer
@@ -27,10 +27,20 @@ from sklearn.model_selection import StratifiedKFold, cross_val_predict
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, HERE)
-from benchmark_tasks import CORE, TASKS, task_items  # noqa: E402
-from run_grounding_eval import OUT, auroc, ci, update_leaderboard  # noqa: E402
+from benchmark_tasks import CORE, TASKS, GroundBenchSampler  # noqa: E402
+from run_grounding_eval import (  # noqa: E402
+    OUT,
+    PROMPT_VERSION,
+    SCORE_SCHEMA,
+    _task_rng,
+    auroc,
+    ci,
+    update_leaderboard,
+)
 
 NUMERIC = {"methyl/age"}  # reps that are key:value numeric panels, parsed to a value vector
+N = int(os.environ.get("GROUNDBENCH_N", "100"))
+SEED = int(os.environ.get("GROUNDBENCH_SEED", "0"))
 
 
 def _img_feats(path):
@@ -63,10 +73,10 @@ def featurize(task, items):
 
 
 def main():
-    rng = np.random.default_rng(0)
+    sampler = GroundBenchSampler(seed=SEED)
     sc = {}
     for task in CORE:
-        items, _ = task_items(task, 100000, rng)  # all available, balanced
+        items = sampler.task_condition_items(task, N)["matched"]
         if not items:
             continue
         try:
@@ -82,15 +92,37 @@ def main():
             print(f"  skip {task}: {e}", flush=True)
             continue
         sc[task] = {"n": int(len(y)), "output_auroc": round(float(a), 3),
-                    "output_auroc_ci": ci(auroc, p, y, rng),
-                    "ceiling": None, "web_exposure": TASKS[task]["web"],
+                    "output_auroc_ci": ci(
+                        auroc,
+                        p,
+                        y,
+                        _task_rng(SEED, task, "cheap-head-bootstrap"),
+                    ),
+                    "reference_score": None, "ceiling": None, "web_exposure": TASKS[task]["web"],
                     "orientation": TASKS[task]["orient"],
-                    "method": "cheap-head: char3-5 hashing / value-vector / color"}
+                    "method": "optimistic-pilot-supervised-surface-readability",
+                    "split_contract": "random_stratified_5fold_not_biologically_grouped",
+                    "uncertainty_method": "iid_entity_item_bootstrap_pilot",
+                    "interpretation": "predictability diagnostic; not ceiling or grounding proof",
+                    "sampling_contract": "same matched GroundBench v5 entities; different CV contract"}
         print(f"  {task:28s} web={TASKS[task]['web']:5s} head AUROC={sc[task]['output_auroc']} "
               f"{sc[task]['output_auroc_ci']}", flush=True)
-    d = os.path.join(OUT, "baseline-cheap-head")
+    d = os.path.join(OUT, f"baseline-cheap-head__{PROMPT_VERSION}")
     os.makedirs(d, exist_ok=True)
     json.dump(sc, open(os.path.join(d, "scorecard.json"), "w"), indent=2)
+    manifest = {
+        "model": "baseline-cheap-head",
+        "prompt_version": PROMPT_VERSION,
+        "score_schema": SCORE_SCHEMA,
+        "artifact_kind": "diagnostic_non_submission",
+        "submission_eligible": False,
+        "seed": SEED,
+        "n_per_task": N,
+        "tasks": list(sc),
+        "sampling_contract": "same matched GroundBench v5 entities; random-CV diagnostic only",
+        "date_utc": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%MZ"),
+    }
+    json.dump(manifest, open(os.path.join(d, "manifest.json"), "w"), indent=2)
     update_leaderboard()
     print(f"\nwrote {d}/scorecard.json [{len(sc)} tasks]")
 

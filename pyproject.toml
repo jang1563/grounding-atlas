@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "grounding-atlas"
 version = "0.1.0"
-description = "A measurement-first map of where a language model grounds biological content (by content vs by name), and where each capability should live: train / retrieve / orchestrate."
+description = "A pilot benchmark of supervised representation-label decodability and native model output across biological representations."
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
@@ -60,6 +60,14 @@ dataset = [
   "pandas",
   "pyarrow",
   "mlcroissant",
+]
+dev = [
+  "pytest>=8",
+  "ruff==0.15.4",
+  "pandas",
+  # the GSE96583 builders import anndata at module scope, so the contract tests
+  # that pin their source hashes need it present to import them
+  "anndata",
 ]
 
 [project.urls]

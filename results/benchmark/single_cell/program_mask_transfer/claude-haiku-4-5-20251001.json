@@ -1,0 +1,350 @@
+{
+  "analysis_id": "pbmc68k-cd8-nk-program-mask-v1",
+  "cell_effect_counts": {
+    "negative": 1,
+    "positive": 108,
+    "zero": 10
+  },
+  "claim_scope": "single_external_cohort_output_level_program_mask_intervention_not_multi_donor_generalization_or_hidden_state_causality",
+  "class_counts": {
+    "CD8": 88,
+    "NK": 31
+  },
+  "class_effects": {
+    "CD8": {
+      "cell_effect_counts": {
+        "negative": 1,
+        "positive": 78,
+        "zero": 9
+      },
+      "ci95_lower": 0.09616477272727275,
+      "ci95_upper": 0.15184730113636358,
+      "control_mean_correct_probability": 0.7344886363636363,
+      "effect": 0.1228409090909091,
+      "program_mean_correct_probability": 0.6116477272727272
+    },
+    "NK": {
+      "cell_effect_counts": {
+        "negative": 0,
+        "positive": 30,
+        "zero": 1
+      },
+      "ci95_lower": 0.39379032258064517,
+      "ci95_upper": 0.5358870967741934,
+      "control_mean_correct_probability": 0.7294354838709678,
+      "effect": 0.4658064516129033,
+      "program_mean_correct_probability": 0.26362903225806456
+    }
+  },
+  "condition_metrics": {
+    "control": {
+      "mean_aligned_probability_a": 0.6136344537815128,
+      "orientation_averaged_auroc": 0.9395161290322581,
+      "orientation_averaged_brier": 0.11126517857142856
+    },
+    "program": {
+      "mean_aligned_probability_a": 0.6441386554621851,
+      "orientation_averaged_auroc": 0.26759530791788855,
+      "orientation_averaged_brier": 0.3026086659663866
+    }
+  },
+  "exploratory_biological_localization": {
+    "interpretation": "post-hoc descriptive localization only; co-masking and class-dependent mask dose preclude single-gene or dose-response attribution",
+    "masked_gene_frequencies": {
+      "CD8_identity": [
+        {
+          "cells": 67,
+          "gene": "CD3D"
+        },
+        {
+          "cells": 42,
+          "gene": "CD3E"
+        },
+        {
+          "cells": 24,
+          "gene": "GZMK"
+        },
+        {
+          "cells": 16,
+          "gene": "CD8B"
+        },
+        {
+          "cells": 12,
+          "gene": "CD3G"
+        },
+        {
+          "cells": 10,
+          "gene": "CD247"
+        },
+        {
+          "cells": 8,
+          "gene": "IL7R"
+        },
+        {
+          "cells": 6,
+          "gene": "CD8A"
+        },
+        {
+          "cells": 4,
+          "gene": "KLRB1"
+        }
+      ],
+      "NK_identity": [
+        {
+          "cells": 31,
+          "gene": "GNLY"
+        },
+        {
+          "cells": 30,
+          "gene": "NKG7"
+        },
+        {
+          "cells": 20,
+          "gene": "GZMB"
+        },
+        {
+          "cells": 2,
+          "gene": "FGFBP2"
+        },
+        {
+          "cells": 2,
+          "gene": "GZMH"
+        },
+        {
+          "cells": 2,
+          "gene": "PRF1"
+        },
+        {
+          "cells": 2,
+          "gene": "SPON2"
+        },
+        {
+          "cells": 1,
+          "gene": "XCL2"
+        }
+      ]
+    },
+    "reference_annotations": [
+      {
+        "cell_effect_counts": {
+          "negative": 0,
+          "positive": 30,
+          "zero": 1
+        },
+        "control_mean_correct_probability": 0.7294354838709678,
+        "mean_effect": 0.4658064516129033,
+        "n": 31,
+        "program_mean_correct_probability": 0.26362903225806456,
+        "reference_annotation": "CD56+ NK"
+      },
+      {
+        "cell_effect_counts": {
+          "negative": 1,
+          "positive": 41,
+          "zero": 4
+        },
+        "control_mean_correct_probability": 0.616413043478261,
+        "mean_effect": 0.15048913043478263,
+        "n": 46,
+        "program_mean_correct_probability": 0.4659239130434782,
+        "reference_annotation": "CD8+ Cytotoxic T"
+      },
+      {
+        "cell_effect_counts": {
+          "negative": 0,
+          "positive": 37,
+          "zero": 5
+        },
+        "control_mean_correct_probability": 0.8638095238095238,
+        "mean_effect": 0.09255952380952383,
+        "n": 42,
+        "program_mean_correct_probability": 0.7712500000000001,
+        "reference_annotation": "CD8+/CD45RA+ Naive Cytotoxic"
+      }
+    ]
+  },
+  "form_effects": {
+    "ab_pa": {
+      "ci95_lower": 0.18248497067448682,
+      "ci95_upper": 0.3055924211876832,
+      "effect": 0.24432001466275663
+    },
+    "ab_pb": {
+      "ci95_lower": 0.24708270711143693,
+      "ci95_upper": 0.3684221499266862,
+      "effect": 0.30839259530791785
+    },
+    "ba_pa": {
+      "ci95_lower": 0.29128088343108505,
+      "ci95_upper": 0.3730857771260996,
+      "effect": 0.33368218475073314
+    },
+    "ba_pb": {
+      "ci95_lower": 0.22628931451612896,
+      "ci95_upper": 0.35485167705278586,
+      "effect": 0.290899926686217
+    }
+  },
+  "mask_dose": [
+    {
+      "class_counts": {
+        "CD8": 22,
+        "NK": 1
+      },
+      "equal_class_effect": 0.04670454545454545,
+      "mask_k": 1,
+      "n": 23
+    },
+    {
+      "class_counts": {
+        "CD8": 31,
+        "NK": 1
+      },
+      "equal_class_effect": 0.3226209677419355,
+      "mask_k": 2,
+      "n": 32
+    },
+    {
+      "class_counts": {
+        "CD8": 35,
+        "NK": 29
+      },
+      "equal_class_effect": 0.3085431034482759,
+      "mask_k": 3,
+      "n": 64
+    }
+  ],
+  "model": "claude-haiku-4-5-20251001",
+  "model_calls": 952,
+  "n_cells": 119,
+  "parse_rate": 1.0,
+  "primary_ci95_lower": 0.2555997411107038,
+  "primary_ci95_upper": 0.3317713182734604,
+  "primary_effect": 0.2943236803519062,
+  "primary_estimand": "equal-class mean over four prompt forms of signed P(A)_control_mask minus P(A)_program_mask",
+  "primary_sign_flip_p_value": 1.999960000799984e-05,
+  "prompt_factor_interactions": {
+    "both_interactions_equivalent": false,
+    "equivalence_margin": 0.03,
+    "order_ab_minus_ba": {
+      "ci95_lower": -0.07328784824046912,
+      "ci95_upper": 0.0014972049120233724,
+      "effect": -0.03593475073313779
+    },
+    "queried_target_a_minus_b": {
+      "ci95_lower": -0.08122275934750729,
+      "ci95_upper": 0.06143557551319644,
+      "effect": -0.010645161290322613
+    }
+  },
+  "provenance": {
+    "bootstrap_replicates": 20000,
+    "decode": {
+      "max_tokens": 16,
+      "temperature": 0.0
+    },
+    "input_csv": "signal/single_cell/pbmc68k_cd8_nk_program_mask.csv",
+    "input_csv_sha256": "6f9fae1ecd3cbe03cd2d317f97cf27f26c8070ec7aaf6fb8fdf236f7b3b1a57d",
+    "input_manifest": "signal/single_cell/pbmc68k_cd8_nk_program_mask.manifest.json",
+    "input_manifest_sha256": "757eec7507b3cf5da410546409c43e2e3cd685b87019e83284c0a81e6076f749",
+    "prompt_template_sha256": "8da04371ae26646b51f22aaead0815b3625b62be6c537a1788b298f67064433a",
+    "raw_checkpoint": "results/benchmark/single_cell/program_mask_transfer/claude-haiku-4-5-20251001_raw.jsonl",
+    "raw_checkpoint_sha256": "d16f8e6d078cc34b78f3a290fad54a0471684a866c6544920d890e8e10ff4e42",
+    "sign_flip_permutations": 50000,
+    "system_prompt_sha256": "37aa5ee3d2b27cd4ae670f3a064e89de1d25013f939951d3993a6732acd5dacb"
+  },
+  "run_finished_at_utc": "2026-07-27T12:03:21.489861+00:00",
+  "run_started_at_utc": "2026-07-27T11:57:39.551344+00:00",
+  "strict_matching_sensitivity": {
+    "ci95_lower": 0.22482650380143115,
+    "ci95_upper": 0.34460873211091236,
+    "class_counts": {
+      "CD8": 86,
+      "NK": 13
+    },
+    "effect": 0.2873076923076923,
+    "n": 99
+  },
+  "technical_groups": [
+    {
+      "class_counts": {
+        "CD8": 14,
+        "NK": 4
+      },
+      "equal_class_effect": 0.28870535714285717,
+      "mean_correct_oriented_effect": 0.17305555555555557,
+      "n": 18,
+      "technical_group": "1"
+    },
+    {
+      "class_counts": {
+        "CD8": 12,
+        "NK": 3
+      },
+      "equal_class_effect": 0.21260416666666668,
+      "mean_correct_oriented_effect": 0.14466666666666667,
+      "n": 15,
+      "technical_group": "2"
+    },
+    {
+      "class_counts": {
+        "CD8": 12,
+        "NK": 5
+      },
+      "equal_class_effect": 0.3473333333333333,
+      "mean_correct_oriented_effect": 0.27088235294117646,
+      "n": 17,
+      "technical_group": "3"
+    },
+    {
+      "class_counts": {
+        "CD8": 9,
+        "NK": 6
+      },
+      "equal_class_effect": 0.29229166666666667,
+      "mean_correct_oriented_effect": 0.2613333333333333,
+      "n": 15,
+      "technical_group": "4"
+    },
+    {
+      "class_counts": {
+        "CD8": 12,
+        "NK": 3
+      },
+      "equal_class_effect": 0.37729166666666664,
+      "mean_correct_oriented_effect": 0.2731666666666666,
+      "n": 15,
+      "technical_group": "5"
+    },
+    {
+      "class_counts": {
+        "CD8": 7,
+        "NK": 3
+      },
+      "equal_class_effect": 0.33089285714285716,
+      "mean_correct_oriented_effect": 0.21925000000000003,
+      "n": 10,
+      "technical_group": "6"
+    },
+    {
+      "class_counts": {
+        "CD8": 14,
+        "NK": 2
+      },
+      "equal_class_effect": 0.09000000000000001,
+      "mean_correct_oriented_effect": 0.08812500000000001,
+      "n": 16,
+      "technical_group": "7"
+    },
+    {
+      "class_counts": {
+        "CD8": 8,
+        "NK": 5
+      },
+      "equal_class_effect": 0.326,
+      "mean_correct_oriented_effect": 0.2876923076923077,
+      "n": 13,
+      "technical_group": "8"
+    }
+  ]
+}

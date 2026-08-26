@@ -1,0 +1,12 @@
+{
+  "analysis_file_sha256": "8fccd38dba2b1ac92572eaf09ea44801d0ab753b052720692162e5038d7f8ca2",
+  "analysis_path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v2_causal_binding/qwen2.5-1.5b-instruct/analysis.json",
+  "analyzer_sha256": "ec2e897bfe00e3c8a834f412b19b981c349e3f39b2d4439903d302d3d992e471",
+  "biological_model_calls": 0,
+  "call_plan_sha256": "cf8b795ed1bf931b6811eb28ea0bd0629692d55cbf3059eaae489c6bf77672d0",
+  "report_file_sha256": "00923bcf5dbcaa6641f42550c119a05b2d42d50b462ca229899bfa705f4d23b1",
+  "report_path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v2_causal_binding/qwen2.5-1.5b-instruct/analysis.md",
+  "runner_sha256": "62dd3d27f46fad5ad3988bed0f65ecdcbcae27b440e5a2626e1720326f5dba40",
+  "schema_version": "coherent-readout-v2-causal-binding-analysis-manifest-v1",
+  "status": "NONSPECIFIC_DECISION_STATE_TRANSFER_REPLICATED"
+}

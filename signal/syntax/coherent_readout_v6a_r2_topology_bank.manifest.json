@@ -1,0 +1,30 @@
+{
+  "analysis_id": "coherent-readout-v6a-r2-natural-token-topology-v1",
+  "biological_model_calls": 0,
+  "builder_file_sha256": "858bc2fb52daedbd51fa2fd931d181cb34b0105b3dba2493434e443a1fc2c17b",
+  "builder_path": "signal/syntax/build_coherent_readout_v6a_r2_topology_bank.py",
+  "cell_count": 2304,
+  "design_date": "2026-08-03",
+  "execution_block_counts": {
+    "confirmation-components": 640,
+    "confirmation-topology": 512,
+    "discovery-components": 640,
+    "discovery-topology": 512
+  },
+  "family_counts": {
+    "codebook_lookup": 256,
+    "property_retrieval": 512,
+    "single_target_composition": 512,
+    "two_fact_composition": 1024
+  },
+  "fixture_canonical_sha256": "685e101638a047f52ea2ae437599f7931f97a7697de79cb756d298144617f506",
+  "fixture_file_sha256": "7e4782c20b39972779df76e1a443f4026d55f8903f2ad1fe89614d907baf7a4e",
+  "fixture_path": "signal/syntax/coherent_readout_v6a_r2_topology_bank.json",
+  "model_calls": 0,
+  "r2_symbols_sha256": "63444875c035dbb1a4a22ce2efc6e9444ed565d4b4d6e0a9395d45e10f11530b",
+  "registration_state": "FROZEN_BEFORE_ANY_R2_MODEL_FORWARD",
+  "replacement_provenance_sha256": "3e6cdaf7d4b38737c0c0f37a21c40e8fdae970296f94d248a5e8e78cefefd64a",
+  "schema_version": "coherent-readout-v6a-r2-topology-manifest-v1",
+  "tokenizer_calls": 0,
+  "world_count": 16
+}

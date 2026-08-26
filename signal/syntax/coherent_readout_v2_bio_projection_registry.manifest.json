@@ -1,0 +1,49 @@
+{
+  "analysis_id": "coherent-readout-v2-biological-answer-envelope-projections-v1",
+  "artifacts": {
+    "builder_path": "signal/syntax/build_coherent_readout_v2_bio_projection_registry.py",
+    "builder_sha256": "beb6d697151ecfca83a80a785b2eaf69458cccbe376b612c95503b082c12c10b",
+    "projection_entries_canonical_sha256": "c6fbf6649068a260d249e87d6b0206b049e1114e9cffec1984214c135de3e684",
+    "registry_canonical_sha256": "b009d16e420d993405661077741c4638cb5a701abeb8bcf4603741ee90ce62a3",
+    "registry_path": "signal/syntax/coherent_readout_v2_bio_projection_registry.json",
+    "registry_sha256": "c1e5de573c58734b57d1c2884086cf948e5fdd1f0ab6cce2ae78ed747fc54304"
+  },
+  "claim_scope": "answer_envelope_projection_only_no_biology_knowledge_or_activation_inference",
+  "contract": {
+    "biological_items_present": false,
+    "candidate_priority": [
+      "assistant_prefill_answer_colon",
+      "system_user_exact",
+      "user_only_exact",
+      "user_label_colon_v1_control"
+    ],
+    "candidates": 4,
+    "gold_labels_present": false,
+    "model_calls_made_by_builder": 0,
+    "projections": 4,
+    "syntax_outcomes_observed_by_builder": false,
+    "winner_selected": false
+  },
+  "firewall": {
+    "claim_scope": "answer_envelope_projection_only_no_biology_knowledge_or_activation_inference",
+    "confirmatory_eligibility": "prohibited",
+    "gold_labels": "absent",
+    "partition": "permanent_development_only",
+    "permanent": true,
+    "promotion_to_confirmation": "forbidden",
+    "syntax_outcomes_at_freeze": "unobserved"
+  },
+  "freeze_date": "2026-08-02",
+  "mode": "development",
+  "provenance": {
+    "construction": "deterministic_in_code_four_candidate_projection",
+    "external_data_sources": [],
+    "source_syntax_candidate_registry_sha256": "6e5c17ffa3a3c7603dfa5fae77818eec76a282f53bb1a7d01dd7bd2797b2bc8e",
+    "source_syntax_runner_path": "eval/run_coherent_readout_v2_syntax.py",
+    "source_syntax_runner_sha256": "6387eec115f1a8ee64149334d9a7934bcc3229ea1c81952b2a2fa0db86ae6c34",
+    "syntax_outcomes_consulted": false
+  },
+  "purpose": "outcome_blind_biological_answer_envelope_projection",
+  "schema_version": "coherent-readout-v2-biological-projection-registry-manifest-v1",
+  "status": "built_not_selected_not_executed"
+}

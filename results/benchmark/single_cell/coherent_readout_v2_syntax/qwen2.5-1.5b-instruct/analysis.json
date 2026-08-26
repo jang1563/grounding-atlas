@@ -1,0 +1,2973 @@
+{
+  "analysis_code_sha256": "02ca4234a05c20bd2fe7ce00b2b0d9e50d2b6803eaf2394b2d1d87552f5717ae",
+  "artifact_type": "groundbench.coherent_readout_v2_syntax_selection",
+  "candidates": {
+    "assistant_prefill_answer_colon": {
+      "by_form": {
+        "negative_first::positive_is_x": {
+          "mean_s": 0.2848506134662448,
+          "median_s": 0.5162378088662373,
+          "native_correct_count": 10,
+          "native_count": 16,
+          "positive_s_count": 10,
+          "record_count": 16
+        },
+        "negative_first::positive_is_y": {
+          "mean_s": 0.8227881422359802,
+          "median_s": 0.9521928939809974,
+          "native_correct_count": 16,
+          "native_count": 16,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_x": {
+          "mean_s": 0.8608058982382605,
+          "median_s": 0.968067065950461,
+          "native_correct_count": 16,
+          "native_count": 16,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_y": {
+          "mean_s": 0.19046191854340977,
+          "median_s": 0.32984979384695867,
+          "native_correct_count": 8,
+          "native_count": 16,
+          "positive_s_count": 8,
+          "record_count": 16
+        }
+      },
+      "by_form_truth": {
+        "negative_first::positive_is_x::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_x::positive": {
+          "native_correct_count": 2,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::negative": {
+          "native_correct_count": 0,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        }
+      },
+      "candidate_id": "assistant_prefill_answer_colon",
+      "candidate_rank": 0,
+      "eligible": false,
+      "eligible_rank": null,
+      "failure_reasons": [
+        "overall_native_correct_below_floor",
+        "form_native_correct_below_floor::positive_first::positive_is_y",
+        "form_native_correct_below_floor::negative_first::positive_is_x",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_x::positive",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_y::negative",
+        "form_positive_s_below_floor::positive_first::positive_is_y",
+        "form_median_s_below_floor::positive_first::positive_is_y",
+        "form_positive_s_below_floor::negative_first::positive_is_x",
+        "item_range_gate_failed",
+        "pair_equivalence_failed::D_I",
+        "pair_equivalence_failed::D_O",
+        "pair_equivalence_failed::D_R",
+        "pair_equivalence_failed::M_I",
+        "pair_equivalence_failed::M_O",
+        "pair_equivalence_failed::M_R"
+      ],
+      "item_range_pass_count": 0,
+      "items": {
+        "syntax:pair_01_amber_cobalt:amber": {
+          "I": 0.8185010355435898,
+          "O": 0.7828537678983803,
+          "R": -0.8455622825576046,
+          "mean_s": 0.5569259337630912,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.6640633181011943,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_01_amber_cobalt:cobalt": {
+          "I": 0.852171405934685,
+          "O": -0.8300446142601953,
+          "R": 0.8996337078393449,
+          "mean_s": 0.5350651320679529,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.75180511377403,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_02_cedar_maple:cedar": {
+          "I": 0.6105431868829487,
+          "O": 0.5046307426719896,
+          "R": -0.5702887288701074,
+          "mean_s": 0.6549892084076504,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 1.180831915753056,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_02_cedar_maple:maple": {
+          "I": 0.6153883681132523,
+          "O": -0.4480986248048401,
+          "R": 0.6533352563788777,
+          "mean_s": 0.5835920300686518,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 1.2687236244921298,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_03_north_south:north": {
+          "I": 0.6395035039607296,
+          "O": 0.47333779743118404,
+          "R": -1.0788763792115539,
+          "mean_s": 0.3486236367482154,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.7183798831722834,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_03_north_south:south": {
+          "I": 0.5491169253010206,
+          "O": -0.5330390928129587,
+          "R": 1.2318961815164384,
+          "mean_s": 0.3562629820188885,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.781013106817459,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_04_circle_square:circle": {
+          "I": 0.7044938822287463,
+          "O": 0.6862480120252106,
+          "R": -0.9151370161443673,
+          "mean_s": 0.5278673573262431,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 1.6196308983731136,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_04_circle_square:square": {
+          "I": 0.22343013623639923,
+          "O": 0.012637648704755318,
+          "R": 0.9015376778473823,
+          "mean_s": 0.410885697294211,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 1.1249678140837815,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_05_copper_silver:copper": {
+          "I": 0.4539927202707512,
+          "O": 0.43245636223749956,
+          "R": -0.47103668886580824,
+          "mean_s": 0.7487395063912213,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 0.9250294091365595,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_05_copper_silver:silver": {
+          "I": 0.8199879031422156,
+          "O": -0.813888089830161,
+          "R": 0.8745791506374324,
+          "mean_s": 0.5535926871757574,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 1.694567053779648,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:trumpet": {
+          "I": 0.5093725912616397,
+          "O": -0.46553797863055696,
+          "R": 0.6420729256148651,
+          "mean_s": 0.6539254748185794,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 1.1514455168765048,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:violin": {
+          "I": 0.29858299742829475,
+          "O": 0.22330665487051077,
+          "R": -0.4109030241110753,
+          "mean_s": 0.7552513121900902,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 0.7094860215393701,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_07_river_mountain:mountain": {
+          "I": 0.7265401636252484,
+          "O": -0.6688230437338786,
+          "R": 0.9997195387922163,
+          "mean_s": 0.462349109542016,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 1.7262597024174648,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_07_river_mountain:river": {
+          "I": 0.6021872634381134,
+          "O": 0.551038234185875,
+          "R": -0.9944940486386198,
+          "mean_s": 0.47059316273087154,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 1.5966813120767331,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_08_winter_summer:summer": {
+          "I": 0.7487086156605092,
+          "O": -0.7450761094650473,
+          "R": 0.9733216574993515,
+          "mean_s": 0.49693258503949334,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.7220302731598607,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_08_winter_summer:winter": {
+          "I": 0.49373136868854395,
+          "O": 0.38703082214779483,
+          "R": -0.83054632032585,
+          "mean_s": 0.5200304743526467,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.324277689014394,
+          "truth_polarity": "positive"
+        }
+      },
+      "mean_label_mass": 0.9912332431137028,
+      "native_correct_count": 50,
+      "native_correct_fraction": 0.78125,
+      "native_count": 64,
+      "native_fraction": 1.0,
+      "native_wrong_count": 14,
+      "non_native_count": 0,
+      "pair_estimands": {
+        "D_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.11389690111566404,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.060999382261507515,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.027822127174439795,
+            -0.02988106925735348,
+            -0.03668333782092581,
+            -0.0645888497732571,
+            -0.0040846405686991395,
+            -0.015170754071421957,
+            -0.021344803617579806,
+            -0.01201449313294908
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.63671875,
+            "successes": 4,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.296875,
+          "lower_shift_student_t_p": 0.24543976247514523,
+          "margin": 0.06,
+          "mean": -0.026448759427078264,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.01683518519554761,
+            "pair_02_cedar_maple": -0.002422590615151765,
+            "pair_03_north_south": 0.0451932893298545,
+            "pair_04_circle_square": 0.24053187299617354,
+            "pair_05_copper_silver": -0.1829975914357322,
+            "pair_06_violin_trumpet": -0.10539479691667247,
+            "pair_07_river_mountain": -0.06217645009356754,
+            "pair_08_winter_summer": -0.1274886234859826
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.13055182577071997,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.05078125,
+          "upper_shift_student_t_p": 0.0516165357245965
+        },
+        "D_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.4295075831928843,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.6370889540947817,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.49427670829591086,
+            0.5414316379160355,
+            0.5375996720040846,
+            0.5613687096414909,
+            0.5204591318738334,
+            0.5602805474857329,
+            0.5223507871701124,
+            0.5286189547634633
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 6.309338309588397e-06,
+          "margin": 0.06,
+          "mean": 0.533298268643833,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.8064491910792878,
+            "pair_02_cedar_maple": 0.47636468373841484,
+            "pair_03_north_south": 0.5031884451220714,
+            "pair_04_circle_square": 0.3368051816602276,
+            "pair_05_copper_silver": 0.6231722260338303,
+            "pair_06_violin_trumpet": 0.34442231675053386,
+            "pair_07_river_mountain": 0.6099306389598769,
+            "pair_08_winter_summer": 0.5660534658064211
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.15494970186867316,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.9999721969526055
+        },
+        "D_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.9720779985487003,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -0.6895395745576616,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.8248388996038533,
+            -0.8620940428287077,
+            -0.7844405731516358,
+            -0.8197332779185105,
+            -0.8533803389534038,
+            -0.8742831882232112,
+            -0.807051928387147,
+            -0.8206480433589781
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9999914082947436,
+          "margin": 0.06,
+          "mean": -0.8308087865531809,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.8725979951984748,
+            "pair_02_cedar_maple": -0.6118119926244925,
+            "pair_03_north_south": -1.155386280363996,
+            "pair_04_circle_square": -0.9083373469958748,
+            "pair_05_copper_silver": -0.6728079197516204,
+            "pair_06_violin_trumpet": -0.5264879748629702,
+            "pair_07_river_mountain": -0.9971067937154181,
+            "pair_08_winter_summer": -0.9019339889126008
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.2109016063129587,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 3.2754665831152755e-06
+        },
+        "M_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.5170479827077523,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.6912335257568336,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.5711128304456009,
+            0.602880036622892,
+            0.6055451170324957,
+            0.6241662892322531,
+            0.5994479603074087,
+            0.6327354627876253,
+            0.5955374743323806,
+            0.6017008630976883
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 9.070404478134176e-07,
+          "margin": 0.06,
+          "mean": 0.604140754232293,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.8353362207391374,
+            "pair_02_cedar_maple": 0.6129657774981006,
+            "pair_03_north_south": 0.5943102146308752,
+            "pair_04_circle_square": 0.4639620092325728,
+            "pair_05_copper_silver": 0.6369903117064835,
+            "pair_06_violin_trumpet": 0.4039777943449672,
+            "pair_07_river_mountain": 0.6643637135316809,
+            "pair_08_winter_summer": 0.6212199921745265
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.13002129164106688,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.9999965154187632
+        },
+        "M_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.1426918485642694,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.08632090964371464,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.028841190357330203,
+            -0.03624997351654196,
+            -0.02794758685590451,
+            -0.08213236943531456,
+            -0.004966841697984019,
+            -0.014909727686027968,
+            -0.023798764415459587,
+            -0.00663730171765609
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.36328125,
+            "successes": 5,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.375,
+          "lower_shift_student_t_p": 0.30743885129622994,
+          "margin": 0.06,
+          "mean": -0.02818546946027737,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.02359542318090746,
+            "pair_02_cedar_maple": 0.028266058933574756,
+            "pair_03_north_south": -0.029850647690887328,
+            "pair_04_circle_square": 0.34944283036498297,
+            "pair_05_copper_silver": -0.19071586379633074,
+            "pair_06_violin_trumpet": -0.1211156618800231,
+            "pair_07_river_mountain": -0.05889240477400176,
+            "pair_08_winter_summer": -0.17902264365862625
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.17094722158483108,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.08984375,
+          "upper_shift_student_t_p": 0.09395445916931396
+        },
+        "M_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.02058506540400748,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.11182138552110779,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.07179858443708442,
+            0.06972893427801086,
+            0.06473084322114554,
+            0.07663221040699338,
+            0.04683636754494986,
+            0.059148693278366596,
+            0.0752875798033804,
+            0.06546259073053004
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 0.0005987259140039854,
+          "margin": 0.06,
+          "mean": 0.06620322546255764,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.02703571264087018,
+            "pair_02_cedar_maple": 0.04152326375438514,
+            "pair_03_north_south": 0.07650990115244227,
+            "pair_04_circle_square": -0.006799669148492504,
+            "pair_05_copper_silver": 0.2017712308858121,
+            "pair_06_violin_trumpet": 0.11558495075189487,
+            "pair_07_river_mountain": 0.002612745076798262,
+            "pair_08_winter_summer": 0.07138766858675077
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.06810360939576154,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.63671875,
+            "successes": 4,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.58203125,
+          "upper_shift_student_t_p": 0.597948110848191
+        }
+      },
+      "ranking_metrics": {
+        "candidate_id": "assistant_prefill_answer_colon",
+        "candidate_rank": 0,
+        "max_abs_mean_pair_estimand": 0.8308087865531809,
+        "max_item_range": 1.781013106817459,
+        "min_form_median_s": 0.32984979384695867,
+        "min_form_native_correct_count": 8,
+        "min_form_native_count": 16,
+        "min_form_truth_native_correct_count": 0,
+        "total_native_correct_count": 50,
+        "total_native_count": 64
+      },
+      "record_count": 64,
+      "selected": false,
+      "tied_maximum_count": 0
+    },
+    "system_user_exact": {
+      "by_form": {
+        "negative_first::positive_is_x": {
+          "mean_s": 0.20565899254227074,
+          "median_s": 0.5578355692419755,
+          "native_correct_count": 9,
+          "native_count": 16,
+          "positive_s_count": 9,
+          "record_count": 16
+        },
+        "negative_first::positive_is_y": {
+          "mean_s": 0.9095282762565083,
+          "median_s": 0.9705792885108215,
+          "native_correct_count": 16,
+          "native_count": 16,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_x": {
+          "mean_s": 0.9441793599752766,
+          "median_s": 0.9806521063673059,
+          "native_correct_count": 16,
+          "native_count": 16,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_y": {
+          "mean_s": 0.08816204545440248,
+          "median_s": 0.2622807718556968,
+          "native_correct_count": 8,
+          "native_count": 16,
+          "positive_s_count": 8,
+          "record_count": 16
+        }
+      },
+      "by_form_truth": {
+        "negative_first::positive_is_x::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_x::positive": {
+          "native_correct_count": 1,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::negative": {
+          "native_correct_count": 0,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        }
+      },
+      "candidate_id": "system_user_exact",
+      "candidate_rank": 1,
+      "eligible": false,
+      "eligible_rank": null,
+      "failure_reasons": [
+        "overall_native_correct_below_floor",
+        "form_native_correct_below_floor::positive_first::positive_is_y",
+        "form_native_correct_below_floor::negative_first::positive_is_x",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_x::positive",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_y::negative",
+        "form_positive_s_below_floor::positive_first::positive_is_y",
+        "form_median_s_below_floor::positive_first::positive_is_y",
+        "form_positive_s_below_floor::negative_first::positive_is_x",
+        "item_range_gate_failed",
+        "pair_equivalence_failed::D_I",
+        "pair_equivalence_failed::D_O",
+        "pair_equivalence_failed::D_R",
+        "pair_equivalence_failed::M_I",
+        "pair_equivalence_failed::M_O",
+        "pair_equivalence_failed::M_R"
+      ],
+      "item_range_pass_count": 0,
+      "items": {
+        "syntax:pair_01_amber_cobalt:amber": {
+          "I": 0.8348481026956847,
+          "O": 0.8325176364004815,
+          "R": -0.8699596711710953,
+          "mean_s": 0.5638004216807964,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.70480777386678,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_01_amber_cobalt:cobalt": {
+          "I": 0.9319730504200592,
+          "O": -0.9247973703037403,
+          "R": 0.9789697270749935,
+          "mean_s": 0.5022503144194553,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.9109427774950527,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_02_cedar_maple:cedar": {
+          "I": 0.8427054866164017,
+          "O": 0.8382932107898712,
+          "R": -0.8789589758508759,
+          "mean_s": 0.5581342708011532,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 1.7216644624672774,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_02_cedar_maple:maple": {
+          "I": 0.9069653489942642,
+          "O": -0.8938297192365485,
+          "R": 0.9429172694295871,
+          "mean_s": 0.5216630108577136,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 1.8498826184238515,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_03_north_south:north": {
+          "I": 0.9245141642377979,
+          "O": 0.9276141944721181,
+          "R": -1.0026913375187667,
+          "mean_s": 0.49076101312109344,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.9303055319908848,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_03_north_south:south": {
+          "I": 0.8687317884332975,
+          "O": -0.8693245228986333,
+          "R": 1.0896288235161666,
+          "mean_s": 0.4540547613272554,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.9589533464147997,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_04_circle_square:circle": {
+          "I": 0.8075941871924057,
+          "O": 0.8055030967545893,
+          "R": -0.9647458296600846,
+          "mean_s": 0.5165185529492912,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 1.7723400168524903,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_04_circle_square:square": {
+          "I": 0.5920586443868607,
+          "O": -0.571480706079974,
+          "R": 0.8525908925975982,
+          "mean_s": 0.5632221879961508,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 1.444649536984459,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_05_copper_silver:copper": {
+          "I": 0.4164396811659695,
+          "O": 0.4120754568835641,
+          "R": -0.4454759918583034,
+          "mean_s": 0.7744616216238853,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 0.8619156730242729,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_05_copper_silver:silver": {
+          "I": 0.8379257419909991,
+          "O": -0.8347948170863129,
+          "R": 0.897095895671685,
+          "mean_s": 0.5496257064341546,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 1.7350216376626841,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:trumpet": {
+          "I": 0.9091541637783482,
+          "O": -0.8878588077845097,
+          "R": 0.997324621526525,
+          "mean_s": 0.49019044904764103,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 1.9064787853048732,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:violin": {
+          "I": 0.5711546941462937,
+          "O": 0.5407697946081587,
+          "R": -0.6603785620903904,
+          "mean_s": 0.6544076459713317,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 1.231533256236684,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_07_river_mountain:mountain": {
+          "I": 0.866075269700521,
+          "O": -0.8583090901021444,
+          "R": 0.948274651870359,
+          "mean_s": 0.5206232711858256,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 1.8143499215708798,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_07_river_mountain:river": {
+          "I": 0.8227952257435085,
+          "O": 0.8152677079142343,
+          "R": -0.9322094818341954,
+          "mean_s": 0.5300743808973787,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 1.755004707577704,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_08_winter_summer:summer": {
+          "I": 0.6658600116107387,
+          "O": -0.6620697738832033,
+          "R": 1.219147289875005,
+          "mean_s": 0.38501725356480965,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.8850073014857438,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_08_winter_summer:winter": {
+          "I": 0.6802972247677435,
+          "O": 0.6676568025992495,
+          "R": -0.9543450751251155,
+          "mean_s": 0.5153098350358969,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.634642299892859,
+          "truth_polarity": "positive"
+        }
+      },
+      "mean_label_mass": 0.9997638699380451,
+      "native_correct_count": 49,
+      "native_correct_fraction": 0.765625,
+      "native_count": 64,
+      "native_fraction": 1.0,
+      "native_wrong_count": 15,
+      "non_native_count": 0,
+      "pair_estimands": {
+        "D_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.11168540417941694,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.0268859975857565,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.041519307501779214,
+            -0.04386681359795864,
+            -0.05244125918241314,
+            -0.06385219968248775,
+            -0.018350656566018135,
+            -0.024313984508373496,
+            -0.04536537205659079,
+            -0.049488033279020585
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.14453125,
+            "successes": 6,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.31640625,
+          "lower_shift_student_t_p": 0.322502155696306,
+          "margin": 0.06,
+          "mean": -0.04239970329683022,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.04856247386218726,
+            "pair_02_cedar_maple": -0.03212993118893126,
+            "pair_03_north_south": 0.027891187902250203,
+            "pair_04_circle_square": 0.1077677714027725,
+            "pair_05_copper_silver": -0.2107430304125148,
+            "pair_06_violin_trumpet": -0.16899973481602726,
+            "pair_07_river_mountain": -0.02164002197850623,
+            "pair_08_winter_summer": 0.007218606578502373
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.10343701507388732,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.01171875,
+          "upper_shift_student_t_p": 0.013260935931711586
+        },
+        "D_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.6978934884342134,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.8448768500404533,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.7560605500780794,
+            0.7578599841264939,
+            0.7532302850304701,
+            0.7832270646401979,
+            0.7925208881305326,
+            0.7795381503860475,
+            0.7620418506986396,
+            0.7866025808082059
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 6.064163394153578e-08,
+          "margin": 0.06,
+          "mean": 0.7713851692373334,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.8786575033521109,
+            "pair_02_cedar_maple": 0.8660614650132099,
+            "pair_03_north_south": 0.8984693586853757,
+            "pair_04_circle_square": 0.6884919014172817,
+            "pair_05_copper_silver": 0.6234351369849385,
+            "pair_06_violin_trumpet": 0.7143143011963342,
+            "pair_07_river_mountain": 0.8367883990081894,
+            "pair_08_winter_summer": 0.6648632882412264
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.10971614630729898,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.9999998224781933
+        },
+        "D_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -1.0002634165557427,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -0.8290758455281003,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.9132703356017613,
+            -0.9152027036707346,
+            -0.8958852811168437,
+            -0.9155269553152188,
+            -0.9494387292243399,
+            -0.9269293509324165,
+            -0.9110164259261565,
+            -0.8900872665479017
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9999998566205957,
+          "margin": 0.06,
+          "mean": -0.9146696310419216,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.9244646991230444,
+            "pair_02_cedar_maple": -0.9109381226402316,
+            "pair_03_north_south": -1.0461600805174667,
+            "pair_04_circle_square": -0.9086683611288414,
+            "pair_05_copper_silver": -0.6712859437649942,
+            "pair_06_violin_trumpet": -0.8288515918084577,
+            "pair_07_river_mountain": -0.9402420668522772,
+            "pair_08_winter_summer": -1.0867461825000602
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.12778344693990576,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 5.795324878228419e-08
+        },
+        "M_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.7082271455657171,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.8516594526693947,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.765162259483225,
+            0.7663872821621591,
+            0.7632747738007,
+            0.7913885681644021,
+            0.8017662401945662,
+            0.7856274234254466,
+            0.7707301636026332,
+            0.7952096821073152
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 4.7714392117943904e-08,
+          "margin": 0.06,
+          "mean": 0.7799432991175559,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.8834105765578719,
+            "pair_02_cedar_maple": 0.8748354178053329,
+            "pair_03_north_south": 0.8966229763355477,
+            "pair_04_circle_square": 0.6998264157896332,
+            "pair_05_copper_silver": 0.6271827115784843,
+            "pair_06_violin_trumpet": 0.740154428962321,
+            "pair_07_river_mountain": 0.8444352477220147,
+            "pair_08_winter_summer": 0.6730786181892411
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.10706545162260354,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.9999998618069751
+        },
+        "M_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.11257136055199818,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.029725497182898235,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.04074908378925292,
+            -0.043373599893294444,
+            -0.05150404132330604,
+            -0.0640563784019582,
+            -0.01714625333928935,
+            -0.022548420984032046,
+            -0.04426610891177783,
+            -0.047739566833489
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.14453125,
+            "successes": 6,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.3125,
+          "lower_shift_student_t_p": 0.31798604997329527,
+          "margin": 0.06,
+          "mean": -0.041422931684549975,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.046139866951629416,
+            "pair_02_cedar_maple": -0.027768254223338673,
+            "pair_03_north_south": 0.02914483578674243,
+            "pair_04_circle_square": 0.11701119533730764,
+            "pair_05_copper_silver": -0.21135968010137438,
+            "pair_06_violin_trumpet": -0.1735445065881755,
+            "pair_07_river_mountain": -0.021520691093955047,
+            "pair_08_winter_summer": 0.002793514358023108
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.10621789222738803,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.01171875,
+          "upper_shift_student_t_p": 0.015303022834498898
+        },
+        "M_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.014215897936552077,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.1379321328700845,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.07915529932494245,
+            0.0823732823481701,
+            0.0807319114611209,
+            0.09495279882254135,
+            0.05468316733140792,
+            0.06287415621549698,
+            0.08579421974406634,
+            0.0680272879788002
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 0.002100725729437194,
+          "margin": 0.06,
+          "mean": 0.07607401540331829,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.054505027951949114,
+            "pair_02_cedar_maple": 0.031979146789355595,
+            "pair_03_north_south": 0.04346874299869996,
+            "pair_04_circle_square": -0.05607746853124318,
+            "pair_05_copper_silver": 0.22580995190669081,
+            "pair_06_violin_trumpet": 0.16847302971806732,
+            "pair_07_river_mountain": 0.008032585018081795,
+            "pair_08_winter_summer": 0.13240110737494482
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.09234833374486766,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.36328125,
+            "successes": 5,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.67578125,
+          "upper_shift_student_t_p": 0.6812187535947873
+        }
+      },
+      "ranking_metrics": {
+        "candidate_id": "system_user_exact",
+        "candidate_rank": 1,
+        "max_abs_mean_pair_estimand": 0.9146696310419216,
+        "max_item_range": 1.9589533464147997,
+        "min_form_median_s": 0.2622807718556968,
+        "min_form_native_correct_count": 8,
+        "min_form_native_count": 16,
+        "min_form_truth_native_correct_count": 0,
+        "total_native_correct_count": 49,
+        "total_native_count": 64
+      },
+      "record_count": 64,
+      "selected": false,
+      "tied_maximum_count": 0
+    },
+    "user_label_colon_v1_control": {
+      "by_form": {
+        "negative_first::positive_is_x": {
+          "mean_s": 0.6180436822755417,
+          "median_s": 0.9652398014470174,
+          "native_correct_count": 5,
+          "native_count": 5,
+          "positive_s_count": 13,
+          "record_count": 16
+        },
+        "negative_first::positive_is_y": {
+          "mean_s": 0.9956705470421532,
+          "median_s": 0.9981827549552686,
+          "native_correct_count": 3,
+          "native_count": 3,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_x": {
+          "mean_s": 0.9936202255239678,
+          "median_s": 0.9979915514539286,
+          "native_correct_count": 0,
+          "native_count": 0,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_y": {
+          "mean_s": 0.4268410000771642,
+          "median_s": 0.7476715798291529,
+          "native_correct_count": 5,
+          "native_count": 5,
+          "positive_s_count": 10,
+          "record_count": 16
+        }
+      },
+      "by_form_truth": {
+        "negative_first::positive_is_x::negative": {
+          "native_correct_count": 0,
+          "native_count": 0,
+          "record_count": 8
+        },
+        "negative_first::positive_is_x::positive": {
+          "native_correct_count": 5,
+          "native_count": 5,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::negative": {
+          "native_correct_count": 2,
+          "native_count": 2,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::positive": {
+          "native_correct_count": 1,
+          "native_count": 1,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::negative": {
+          "native_correct_count": 0,
+          "native_count": 0,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::positive": {
+          "native_correct_count": 0,
+          "native_count": 0,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::negative": {
+          "native_correct_count": 5,
+          "native_count": 5,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::positive": {
+          "native_correct_count": 0,
+          "native_count": 0,
+          "record_count": 8
+        }
+      },
+      "candidate_id": "user_label_colon_v1_control",
+      "candidate_rank": 3,
+      "eligible": false,
+      "eligible_rank": null,
+      "failure_reasons": [
+        "overall_native_below_floor",
+        "form_native_below_floor::positive_first::positive_is_x",
+        "form_native_below_floor::positive_first::positive_is_y",
+        "form_native_below_floor::negative_first::positive_is_x",
+        "form_native_below_floor::negative_first::positive_is_y",
+        "form_truth_native_below_floor::negative_first::positive_is_x::negative",
+        "form_truth_native_below_floor::negative_first::positive_is_x::positive",
+        "form_truth_native_below_floor::negative_first::positive_is_y::negative",
+        "form_truth_native_below_floor::negative_first::positive_is_y::positive",
+        "form_truth_native_below_floor::positive_first::positive_is_x::negative",
+        "form_truth_native_below_floor::positive_first::positive_is_x::positive",
+        "form_truth_native_below_floor::positive_first::positive_is_y::negative",
+        "form_truth_native_below_floor::positive_first::positive_is_y::positive",
+        "overall_native_correct_below_floor",
+        "form_native_correct_below_floor::positive_first::positive_is_x",
+        "form_native_correct_below_floor::positive_first::positive_is_y",
+        "form_native_correct_below_floor::negative_first::positive_is_x",
+        "form_native_correct_below_floor::negative_first::positive_is_y",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_x::negative",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_x::positive",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_y::negative",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_y::positive",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_x::negative",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_x::positive",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_y::negative",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_y::positive",
+        "form_positive_s_below_floor::positive_first::positive_is_y",
+        "form_positive_s_below_floor::negative_first::positive_is_x",
+        "item_range_gate_failed",
+        "pair_equivalence_failed::D_I",
+        "pair_equivalence_failed::D_O",
+        "pair_equivalence_failed::D_R",
+        "pair_equivalence_failed::M_I",
+        "pair_equivalence_failed::M_O",
+        "pair_equivalence_failed::M_R"
+      ],
+      "item_range_pass_count": 2,
+      "items": {
+        "syntax:pair_01_amber_cobalt:amber": {
+          "I": 0.6788229226408437,
+          "O": -0.6909835467584359,
+          "R": 0.6797837738546899,
+          "mean_s": 0.6537552822653867,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.370767320613126,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_01_amber_cobalt:cobalt": {
+          "I": 0.7296146837014037,
+          "O": 0.7352001231608924,
+          "R": -0.7298297934550613,
+          "mean_s": 0.6320482137071621,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.4650299166159537,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_02_cedar_maple:cedar": {
+          "I": 0.765250754104129,
+          "O": -0.7672341057631713,
+          "R": 0.7663804646750862,
+          "mean_s": 0.6158023097110116,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 1.5336145704382576,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_02_cedar_maple:maple": {
+          "I": 0.46237768478590724,
+          "O": 0.4628317039011109,
+          "R": -0.46326520236874946,
+          "mean_s": 0.7681152028106011,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 0.9260969062698603,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_03_north_south:north": {
+          "I": 0.6792667691974419,
+          "O": -0.6813627215571871,
+          "R": 0.7125926369682984,
+          "mean_s": 0.6415115285993978,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.3939553585254858,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_03_north_south:south": {
+          "I": 0.11339853505521602,
+          "O": 0.1063011685212471,
+          "R": -0.15166797943250898,
+          "mean_s": 0.9162329687072605,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 0.265066514487725,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_04_circle_square:circle": {
+          "I": 0.3163474849382939,
+          "O": -0.3165614061890659,
+          "R": 0.3194265207458638,
+          "mean_s": 0.8401434207492235,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 0.6359879269349297,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_04_circle_square:square": {
+          "I": 0.9113637236943382,
+          "O": 0.9121832734794343,
+          "R": -0.9219721056006078,
+          "mean_s": 0.5386007142797091,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 1.834155379080042,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_05_copper_silver:copper": {
+          "I": 0.6782627863760557,
+          "O": -0.6787468664527253,
+          "R": 0.6822860935393181,
+          "mean_s": 0.6586053391507318,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 1.3610329599920434,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_05_copper_silver:silver": {
+          "I": 0.14432300417489796,
+          "O": 0.14659689075717652,
+          "R": -0.1463102179366294,
+          "mean_s": 0.9256773981911011,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 0.2929071086938059,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:trumpet": {
+          "I": 0.5578664544665741,
+          "O": 0.5601316438339777,
+          "R": -0.5655228089387734,
+          "mean_s": 0.7157383931524204,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 1.125654452772751,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:violin": {
+          "I": 0.5172496881568331,
+          "O": -0.5205123458661061,
+          "R": 0.5177911813035094,
+          "mean_s": 0.7394500535808796,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 1.0383035271696155,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_07_river_mountain:mountain": {
+          "I": 0.062137439730061694,
+          "O": 0.06342751264721286,
+          "R": -0.06392722643894827,
+          "mean_s": 0.9673513692813623,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": true,
+          "score_range": 0.12735473908616102,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_07_river_mountain:river": {
+          "I": 0.24361185222765103,
+          "O": -0.24823334113616052,
+          "R": 0.24489398215827252,
+          "mean_s": 0.8751944722628171,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 0.493127323294433,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_08_winter_summer:summer": {
+          "I": 0.033043978537379226,
+          "O": 0.03370093709789468,
+          "R": -0.03458188487935321,
+          "mean_s": 0.9822871798879287,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": true,
+          "score_range": 0.06828282197724789,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_08_winter_summer:winter": {
+          "I": 0.6623109599202939,
+          "O": -0.6627629494085989,
+          "R": 0.6671414512471296,
+          "mean_s": 0.6661879733383145,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.3299044006557286,
+          "truth_polarity": "positive"
+        }
+      },
+      "mean_label_mass": 0.22933777157891952,
+      "native_correct_count": 13,
+      "native_correct_fraction": 0.203125,
+      "native_count": 13,
+      "native_fraction": 0.203125,
+      "native_wrong_count": 0,
+      "non_native_count": 51,
+      "pair_estimands": {
+        "D_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.042812017491791254,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.23368673166876175,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.11269924817688029,
+            0.08743747457839587,
+            0.06865210566239559,
+            0.15157242515512917,
+            0.07093270937247188,
+            0.11197246283753606,
+            0.09610880720844106,
+            0.0641236237166321
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.0390625,
+          "lower_shift_student_t_p": 0.03532863715157473,
+          "margin": 0.06,
+          "mean": 0.09543735708848525,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.025395880530280024,
+            "pair_02_cedar_maple": 0.1514365346591109,
+            "pair_03_north_south": 0.28293411707111293,
+            "pair_04_circle_square": -0.29750811937802213,
+            "pair_05_copper_silver": 0.2669698911005789,
+            "pair_06_violin_trumpet": -0.02030838315487049,
+            "pair_07_river_mountain": 0.09073720624879467,
+            "pair_08_winter_summer": 0.3146334906914573
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.20639327394044646,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.85546875,
+            "successes": 3,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.6875,
+          "upper_shift_student_t_p": 0.6789716637585559
+        },
+        "D_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.595166750789164,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -0.35317956627713576,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.4400419190436478,
+            -0.454050337633294,
+            -0.48565047474656886,
+            -0.45414470406156415,
+            -0.48295905566574976,
+            -0.4647233247735939,
+            -0.5196506916247875,
+            -0.4921647607159932
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9998306107906665,
+          "margin": 0.06,
+          "mean": -0.4741731585331499,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.7130918349596642,
+            "pair_02_cedar_maple": -0.6150329048321411,
+            "pair_03_north_south": -0.39383194503921715,
+            "pair_04_circle_square": -0.6143723398342501,
+            "pair_05_copper_silver": -0.4126718786049509,
+            "pair_06_violin_trumpet": -0.540321994850042,
+            "pair_07_river_mountain": -0.1558304268916867,
+            "pair_08_winter_summer": -0.3482319432532468
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.18063201882359115,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 3.4257086776751984e-05
+        },
+        "D_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.3600303746681671,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.5983912907746828,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.44698283973093206,
+            0.45983768974992595,
+            0.48593662193871373,
+            0.4589981926568806,
+            0.4884840722904894,
+            0.4702899523786083,
+            0.5256108653532557,
+            0.4975464276725941
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 2.9255698080001828e-05,
+          "margin": 0.06,
+          "mean": 0.47921083272142495,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.7048067836548756,
+            "pair_02_cedar_maple": 0.6148228335219179,
+            "pair_03_north_south": 0.4321303082004037,
+            "pair_04_circle_square": 0.6206993131732358,
+            "pair_05_copper_silver": 0.4142981557379738,
+            "pair_06_violin_trumpet": 0.5416569951211414,
+            "pair_07_river_mountain": 0.1544106042986104,
+            "pair_08_winter_summer": 0.3508616680632414
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.1779251805081456,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.999856614788626
+        },
+        "M_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.3520680829311731,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.592338007282242,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.43905793681179095,
+            0.4519728773440917,
+            0.483041672675333,
+            0.4519669652196206,
+            0.4809044950825977,
+            0.4628666127917081,
+            0.5178213878392577,
+            0.4899924130892605
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 3.350996334002172e-05,
+          "margin": 0.06,
+          "mean": 0.4722030451067075,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.7042188031711236,
+            "pair_02_cedar_maple": 0.6138142194450181,
+            "pair_03_north_south": 0.39633265212632895,
+            "pair_04_circle_square": 0.613855604316316,
+            "pair_05_copper_silver": 0.41129289527547686,
+            "pair_06_violin_trumpet": 0.5375580713117036,
+            "pair_07_river_mountain": 0.15287464597885636,
+            "pair_08_winter_summer": 0.3476774692288366
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.1793501651157391,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.9998330298257501
+        },
+        "M_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.23506003011476453,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.04180702639820147,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.11358861472392578,
+            -0.08868725913360313,
+            -0.06935446262118318,
+            -0.1529747069302052,
+            -0.07241957528835398,
+            -0.11326023769288403,
+            -0.09722987151739693,
+            -0.06549728695870002
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.85546875,
+            "successes": 3,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.69140625,
+          "lower_shift_student_t_p": 0.6842192883134575,
+          "margin": 0.06,
+          "mean": -0.09662650185828153,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.022108288201228288,
+            "pair_02_cedar_maple": -0.1522012009310302,
+            "pair_03_north_south": -0.28753077651797,
+            "pair_04_circle_square": 0.2978109336451842,
+            "pair_05_copper_silver": -0.2660749878477744,
+            "pair_06_violin_trumpet": 0.019809648983935835,
+            "pair_07_river_mountain": -0.09240291424447383,
+            "pair_08_winter_summer": -0.3145310061553521
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.2066681980061489,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.0390625,
+          "upper_shift_student_t_p": 0.034634369517179305
+        },
+        "M_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.04457042997739041,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.23372279065758245,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.11166177893156481,
+            0.08643597308108568,
+            0.06802101627898191,
+            0.15112603359259144,
+            0.06980307213134626,
+            0.11149646521977144,
+            0.09516086640872944,
+            0.06290423707669712
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.03515625,
+            "successes": 7,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.0390625,
+          "lower_shift_student_t_p": 0.036682157022367254,
+          "margin": 0.06,
+          "mean": 0.09457618034009602,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.02502300980018568,
+            "pair_02_cedar_maple": 0.1515576311531684,
+            "pair_03_north_south": 0.28046232876789473,
+            "pair_04_circle_square": -0.30127279242737204,
+            "pair_05_copper_silver": 0.26798793780134433,
+            "pair_06_violin_trumpet": -0.023865813817631976,
+            "pair_07_river_mountain": 0.09048337785966212,
+            "pair_08_winter_summer": 0.3162797831838882
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.20773276225177764,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.85546875,
+            "successes": 3,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.6875,
+          "upper_shift_student_t_p": 0.673942058604458
+        }
+      },
+      "ranking_metrics": {
+        "candidate_id": "user_label_colon_v1_control",
+        "candidate_rank": 3,
+        "max_abs_mean_pair_estimand": 0.47921083272142495,
+        "max_item_range": 1.834155379080042,
+        "min_form_median_s": 0.7476715798291529,
+        "min_form_native_correct_count": 0,
+        "min_form_native_count": 0,
+        "min_form_truth_native_correct_count": 0,
+        "total_native_correct_count": 13,
+        "total_native_count": 13
+      },
+      "record_count": 64,
+      "selected": false,
+      "tied_maximum_count": 0
+    },
+    "user_only_exact": {
+      "by_form": {
+        "negative_first::positive_is_x": {
+          "mean_s": 0.5476215021919321,
+          "median_s": 0.9631263529575265,
+          "native_correct_count": 11,
+          "native_count": 16,
+          "positive_s_count": 11,
+          "record_count": 16
+        },
+        "negative_first::positive_is_y": {
+          "mean_s": 0.9765800589593366,
+          "median_s": 0.9982951492355806,
+          "native_correct_count": 16,
+          "native_count": 16,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_x": {
+          "mean_s": 0.9897588598966427,
+          "median_s": 0.9985747851416291,
+          "native_correct_count": 16,
+          "native_count": 16,
+          "positive_s_count": 16,
+          "record_count": 16
+        },
+        "positive_first::positive_is_y": {
+          "mean_s": 0.43384039238671396,
+          "median_s": 0.9642037002239077,
+          "native_correct_count": 11,
+          "native_count": 16,
+          "positive_s_count": 11,
+          "record_count": 16
+        }
+      },
+      "by_form_truth": {
+        "negative_first::positive_is_x::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_x::positive": {
+          "native_correct_count": 3,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "negative_first::positive_is_y::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::negative": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_x::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::negative": {
+          "native_correct_count": 3,
+          "native_count": 8,
+          "record_count": 8
+        },
+        "positive_first::positive_is_y::positive": {
+          "native_correct_count": 8,
+          "native_count": 8,
+          "record_count": 8
+        }
+      },
+      "candidate_id": "user_only_exact",
+      "candidate_rank": 2,
+      "eligible": false,
+      "eligible_rank": null,
+      "failure_reasons": [
+        "overall_native_correct_below_floor",
+        "form_native_correct_below_floor::positive_first::positive_is_y",
+        "form_native_correct_below_floor::negative_first::positive_is_x",
+        "form_truth_native_correct_below_floor::negative_first::positive_is_x::positive",
+        "form_truth_native_correct_below_floor::positive_first::positive_is_y::negative",
+        "form_positive_s_below_floor::positive_first::positive_is_y",
+        "form_positive_s_below_floor::negative_first::positive_is_x",
+        "item_range_gate_failed",
+        "pair_equivalence_failed::D_I",
+        "pair_equivalence_failed::D_O",
+        "pair_equivalence_failed::D_R",
+        "pair_equivalence_failed::M_I",
+        "pair_equivalence_failed::M_O",
+        "pair_equivalence_failed::M_R"
+      ],
+      "item_range_pass_count": 3,
+      "items": {
+        "syntax:pair_01_amber_cobalt:amber": {
+          "I": 0.5765282426072418,
+          "O": 0.5729961441017644,
+          "R": -0.5811465689429973,
+          "mean_s": 0.7076299530230343,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.157674811550239,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_01_amber_cobalt:cobalt": {
+          "I": 0.982469299647158,
+          "O": -0.9770444839628152,
+          "R": 0.9781489306585247,
+          "mean_s": 0.5079031127220786,
+          "pair_id": "pair_01_amber_cobalt",
+          "range_pass": false,
+          "score_range": 1.9606182303056827,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_02_cedar_maple:cedar": {
+          "I": 0.11770162533776257,
+          "O": 0.11353110938815708,
+          "R": -0.11448070869697496,
+          "mean_s": 0.9400794522652912,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 0.23218233403473754,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_02_cedar_maple:maple": {
+          "I": 0.2926519807146626,
+          "O": -0.2902749559738503,
+          "R": 0.29208566581091805,
+          "mean_s": 0.852584123834561,
+          "pair_id": "pair_02_cedar_maple",
+          "range_pass": false,
+          "score_range": 0.5847376465255806,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_03_north_south:north": {
+          "I": 0.9160827351228169,
+          "O": 0.9150509192803087,
+          "R": -0.981081046778712,
+          "mean_s": 0.5065182035866652,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.8971637819015288,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_03_north_south:south": {
+          "I": 0.8492643836475869,
+          "O": -0.8493763853505314,
+          "R": 1.129251295570997,
+          "mean_s": 0.43459364394945255,
+          "pair_id": "pair_03_north_south",
+          "range_pass": false,
+          "score_range": 1.9786276809215284,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_04_circle_square:circle": {
+          "I": 0.561470011150516,
+          "O": 0.5578270954368754,
+          "R": -0.5580795930295468,
+          "mean_s": 0.7189218119846998,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": false,
+          "score_range": 1.1195496041800628,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_04_circle_square:square": {
+          "I": 0.03502100469108632,
+          "O": -0.009835206273998531,
+          "R": 0.008707767202644545,
+          "mean_s": 0.9811981326543541,
+          "pair_id": "pair_04_circle_square",
+          "range_pass": true,
+          "score_range": 0.04485621096508485,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_05_copper_silver:copper": {
+          "I": 0.028733608983845527,
+          "O": 0.016725047774345636,
+          "R": -0.0173872451067541,
+          "mean_s": 0.984716539800393,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": true,
+          "score_range": 0.04612085409059963,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_05_copper_silver:silver": {
+          "I": 0.5339001201287821,
+          "O": -0.5201657867704256,
+          "R": 0.5266902168630236,
+          "mean_s": 0.7294204843496099,
+          "pair_id": "pair_05_copper_silver",
+          "range_pass": false,
+          "score_range": 1.0605903369918057,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:trumpet": {
+          "I": 0.560724914720683,
+          "O": -0.5474520472726156,
+          "R": 0.54956772113348,
+          "mean_s": 0.7172738107127211,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": false,
+          "score_range": 1.110292635854163,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_06_violin_trumpet:violin": {
+          "I": 0.06018629741715886,
+          "O": 0.04257392629403817,
+          "R": -0.04688191752952714,
+          "mean_s": 0.9674753053973311,
+          "pair_id": "pair_06_violin_trumpet",
+          "range_pass": true,
+          "score_range": 0.10706821494668606,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_07_river_mountain:mountain": {
+          "I": 0.3229705793087407,
+          "O": -0.30949164331016593,
+          "R": 0.31250732639748213,
+          "mean_s": 0.8364307049554371,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 0.6354779057062228,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_07_river_mountain:river": {
+          "I": 0.7336746407484203,
+          "O": 0.7221560298824536,
+          "R": -0.7247379477454736,
+          "mean_s": 0.6318305677538797,
+          "pair_id": "pair_07_river_mountain",
+          "range_pass": false,
+          "score_range": 1.4584125884938939,
+          "truth_polarity": "positive"
+        },
+        "syntax:pair_08_winter_summer:summer": {
+          "I": 0.7641116588551843,
+          "O": -0.7616037093379822,
+          "R": 0.8285556095557813,
+          "mean_s": 0.5816764515900642,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.5926672684109655,
+          "truth_polarity": "negative"
+        },
+        "syntax:pair_08_winter_summer:winter": {
+          "I": 0.5435250911370206,
+          "O": 0.5195654751511445,
+          "R": -0.5860402194226719,
+          "mean_s": 0.6929509551589281,
+          "pair_id": "pair_08_winter_summer",
+          "range_pass": false,
+          "score_range": 1.1295653105596926,
+          "truth_polarity": "positive"
+        }
+      },
+      "mean_label_mass": 0.9999645463909765,
+      "native_correct_count": 54,
+      "native_correct_fraction": 0.84375,
+      "native_count": 64,
+      "native_fraction": 1.0,
+      "native_wrong_count": 10,
+      "non_native_count": 0,
+      "pair_estimands": {
+        "D_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.18413379935638155,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.08373233820524387,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.028376473726370376,
+            -0.04487580955944296,
+            -0.06214500290602367,
+            -0.09497576397632364,
+            -0.021288941290297493,
+            -0.02161950513611267,
+            -0.08670826790348436,
+            -0.04161608010649557
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.85546875,
+            "successes": 3,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.44921875,
+          "lower_shift_student_t_p": 0.4468279120287486,
+          "margin": 0.06,
+          "mean": -0.050200730575568835,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.20297052851995812,
+            "pair_02_cedar_maple": -0.08747517768845,
+            "pair_03_north_south": 0.03340917573761498,
+            "pair_04_circle_square": 0.2632245032297148,
+            "pair_05_copper_silver": -0.2525832555724683,
+            "pair_06_violin_trumpet": -0.25026930865176206,
+            "pair_07_river_mountain": 0.2053520307198398,
+            "pair_08_winter_summer": -0.11029328385908183
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.19994943657782477,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.14453125,
+            "successes": 6,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.08984375,
+          "upper_shift_student_t_p": 0.08149491298922763
+        },
+        "D_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.30917387076588904,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.656534874929295,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.44111638124977803,
+            0.522990278585676,
+            0.4258030472093308,
+            0.5112862617036141,
+            0.51348422364405,
+            0.5096888565710583,
+            0.47814444945491796,
+            0.4603214843623103
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 0.00029326136827205224,
+          "margin": 0.06,
+          "mean": 0.482854372847592,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.7750203140322898,
+            "pair_02_cedar_maple": 0.20190303268100368,
+            "pair_03_north_south": 0.88221365231542,
+            "pair_04_circle_square": 0.283831150855437,
+            "pair_05_copper_silver": 0.2684454172723856,
+            "pair_06_violin_trumpet": 0.2950129867833269,
+            "pair_07_river_mountain": 0.5158238365963098,
+            "pair_08_winter_summer": 0.6405845922445633
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.25928860476289833,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.9987763809213914
+        },
+        "D_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.7197080717315781,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -0.30971065082411064,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.47686102006028486,
+            -0.5591988147098298,
+            -0.43750124557827147,
+            -0.5477544585866655,
+            -0.5493765941768379,
+            -0.5456357244130359,
+            -0.5141503218787539,
+            -0.48719671081907545
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9979881805434714,
+          "margin": 0.06,
+          "mean": -0.5147093612778444,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.779647749800761,
+            "pair_02_cedar_maple": -0.2032831872539465,
+            "pair_03_north_south": -1.0551661711748546,
+            "pair_04_circle_square": -0.28339368011609567,
+            "pair_05_copper_silver": -0.27203873098488884,
+            "pair_06_violin_trumpet": -0.2982248193315036,
+            "pair_07_river_mountain": -0.5186226370714779,
+            "pair_08_winter_summer": -0.7072979144892266
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.30604373533384494,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 0.0005547756335484703
+        },
+        "M_I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.32073923155282186,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.6641377927245116,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.45142990371173336,
+            0.5334758991547315,
+            0.4366906482463045,
+            0.5201803698840759,
+            0.5225987475075742,
+            0.5184360701486302,
+            0.4873122124401075,
+            0.46938424601617573
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 0.0002465683051917529,
+          "margin": 0.06,
+          "mean": 0.4924385121386667,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.7794987711271999,
+            "pair_02_cedar_maple": 0.20517680302621258,
+            "pair_03_north_south": 0.882673559385202,
+            "pair_04_circle_square": 0.2982455079208012,
+            "pair_05_copper_silver": 0.2813168645563138,
+            "pair_06_violin_trumpet": 0.3104556060689209,
+            "pair_07_river_mountain": 0.5283226100285805,
+            "pair_08_winter_summer": 0.6538183749961024
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.2563308279760391,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 1.0,
+          "upper_shift_student_t_p": 0.998984083729628
+        },
+        "M_O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.18636665881877246,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.08576434995086026,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            -0.028626437934446188,
+            -0.04486247316840031,
+            -0.0621780717766482,
+            -0.0966293114361553,
+            -0.021526980853372676,
+            -0.021424310711765707,
+            -0.08696306125111322,
+            -0.040198588339747134
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.85546875,
+            "successes": 3,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.4453125,
+          "lower_shift_student_t_p": 0.4481880043432491,
+          "margin": 0.06,
+          "mean": -0.050301154433956094,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": -0.2020241699305254,
+            "pair_02_cedar_maple": -0.0883719232928466,
+            "pair_03_north_south": 0.032837266964888645,
+            "pair_04_circle_square": 0.2739959445814384,
+            "pair_05_copper_silver": -0.25172036949804,
+            "pair_06_violin_trumpet": -0.25243906048928877,
+            "pair_07_river_mountain": 0.20633219328614386,
+            "pair_08_winter_summer": -0.12101911709341884
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.20313296176275733,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.14453125,
+            "successes": 6,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.08984375,
+          "upper_shift_student_t_p": 0.08422853998683373
+        },
+        "M_R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.07077362851252268,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.1977335392550469,
+          "exact_shifted_tost_pass": false,
+          "leave_one_pair_out_means": [
+            0.04419120887319044,
+            0.05986245205901788,
+            0.061964931224850604,
+            0.11178936512622115,
+            0.03616973672742314,
+            0.036642391595445765,
+            0.10199356480629894,
+            0.05522599255764887
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.14453125,
+            "successes": 6,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.06640625,
+          "lower_shift_student_t_p": 0.062472453551653956,
+          "margin": 0.06,
+          "mean": 0.0634799553712621,
+          "n_pairs": 8,
+          "pair_values": {
+            "pair_01_amber_cobalt": 0.1985011808577637,
+            "pair_02_cedar_maple": 0.08880247855697154,
+            "pair_03_north_south": 0.07408512439614251,
+            "pair_04_circle_square": -0.2746859129134511,
+            "pair_05_copper_silver": 0.2546514858781348,
+            "pair_06_violin_trumpet": 0.2513429018019764,
+            "pair_07_river_mountain": -0.20611531067399574,
+            "pair_08_winter_summer": 0.1212576950665547
+          },
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.20042793538948742,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.96484375,
+            "successes": 2,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.5234375,
+          "upper_shift_student_t_p": 0.5188978351650158
+        }
+      },
+      "ranking_metrics": {
+        "candidate_id": "user_only_exact",
+        "candidate_rank": 2,
+        "max_abs_mean_pair_estimand": 0.5147093612778444,
+        "max_item_range": 1.9786276809215284,
+        "min_form_median_s": 0.9631263529575265,
+        "min_form_native_correct_count": 11,
+        "min_form_native_count": 16,
+        "min_form_truth_native_correct_count": 3,
+        "total_native_correct_count": 54,
+        "total_native_count": 64
+      },
+      "record_count": 64,
+      "selected": false,
+      "tied_maximum_count": 0
+    }
+  },
+  "claim_boundary": "This fixed-bank development artifact can select one model-specific answer syntax only. It does not establish biology, knowledge, natural use, calibration, latent representation, an activation gap, or a physical law.",
+  "design": {
+    "analysis_id": "coherent-readout-v2-syntax-selection-bank-v1",
+    "call_plan_sha256": "8d982fd96cb623f9c9d9c8deec10c73ab47afda440769cba7b6f4644e967ae44",
+    "candidate_bank_sha256": "6e5c17ffa3a3c7603dfa5fae77818eec76a282f53bb1a7d01dd7bd2797b2bc8e",
+    "candidate_registry": [
+      {
+        "add_generation_prompt": false,
+        "assistant_template": "Answer:",
+        "candidate_definition_sha256": "6d97abafc68c607fa8318bb137393e4dfbfe88c68aef9e11eea53ec1c67eddec",
+        "candidate_id": "assistant_prefill_answer_colon",
+        "candidate_rank": 0,
+        "continue_final_message": true,
+        "enable_thinking": false,
+        "message_roles": [
+          "system",
+          "user",
+          "assistant"
+        ],
+        "render_mode": "continue_final_message",
+        "system_template": "Complete the assistant answer with exactly X or Y and no other text.",
+        "user_template": "Classify the record from its explicit declaration.\n{line_1}\n{line_2}\n{declaration}",
+        "x_answer_text": " X",
+        "x_token_id": 1599,
+        "y_answer_text": " Y",
+        "y_token_id": 809
+      },
+      {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_definition_sha256": "d925789214e930dd346ce2d20055d1851cb7f77c0bf49b0e4fb605f3783e0729",
+        "candidate_id": "system_user_exact",
+        "candidate_rank": 1,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "system",
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": "Follow the user's label mapping. Your entire response must be exactly one character: X or Y. Do not write any other text.",
+        "user_template": "Classify the record from its explicit declaration.\n{line_1}\n{line_2}\n{declaration}\nReturn exactly X or Y.",
+        "x_answer_text": "X",
+        "x_token_id": 55,
+        "y_answer_text": "Y",
+        "y_token_id": 56
+      },
+      {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_definition_sha256": "a4d2edde2157864ea6705d1bb6ac02a92471e85adb348ea153fd91d03da6eae8",
+        "candidate_id": "user_only_exact",
+        "candidate_rank": 2,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": null,
+        "user_template": "Follow the label mapping. Answer with exactly one character: X or Y. Do not write any other text.\nClassify the record from its explicit declaration.\n{line_1}\n{line_2}\n{declaration}\nAnswer:",
+        "x_answer_text": "X",
+        "x_token_id": 55,
+        "y_answer_text": "Y",
+        "y_token_id": 56
+      },
+      {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_definition_sha256": "2d8d5f4bb15ad5052768f7247346fd985e9852e0cb354c21fbb034e020124f38",
+        "candidate_id": "user_label_colon_v1_control",
+        "candidate_rank": 3,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": null,
+        "user_template": "Classify the record using exactly one label.\n{line_1}\n{line_2}\n{declaration}\nLabel:",
+        "x_answer_text": "X",
+        "x_token_id": 55,
+        "y_answer_text": "Y",
+        "y_token_id": 56
+      }
+    ],
+    "claim_scope": "syntax_selection_only_no_biology_knowledge_or_activation_claim",
+    "confirmatory_execution_allowed": false,
+    "expected_analyzer_code_sha256": "02ca4234a05c20bd2fe7ce00b2b0d9e50d2b6803eaf2394b2d1d87552f5717ae",
+    "expected_chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "expected_device": "mps",
+    "expected_dtype": "float32",
+    "expected_environment": {
+      "dependencies": {
+        "huggingface-hub": "1.5.0",
+        "numpy": "2.4.2",
+        "scipy": "1.17.1",
+        "torch": "2.10.0",
+        "transformers": "5.3.0"
+      },
+      "environment_sha256": "7bc3cf0a133e9c39cfdfe8f0b799c9c0166f47bef038a9a181506c0e7a71d144",
+      "execution_source_sha256": {
+        "causal_intervention": "ea3178186dd17ef2a64343671f24279452102baa23cc88030f4bc2d378a61b9c",
+        "coherent_binary_readout": "67ddbc3a6abfd0e5112b1bffeb3d3d8b88a042f12ec32c220608c3b08aed212f",
+        "run_coherent_binary_readout": "09f78e090a7a4f4d0440502991d7a011b74543b662691710e6382b441f67e64b"
+      },
+      "platform": "macOS-26.2-arm64-arm-64bit",
+      "python_implementation": "CPython",
+      "python_version": "3.11.14"
+    },
+    "expected_item_ids": [
+      "syntax:pair_01_amber_cobalt:amber",
+      "syntax:pair_01_amber_cobalt:cobalt",
+      "syntax:pair_02_cedar_maple:cedar",
+      "syntax:pair_02_cedar_maple:maple",
+      "syntax:pair_03_north_south:north",
+      "syntax:pair_03_north_south:south",
+      "syntax:pair_04_circle_square:circle",
+      "syntax:pair_04_circle_square:square",
+      "syntax:pair_05_copper_silver:copper",
+      "syntax:pair_05_copper_silver:silver",
+      "syntax:pair_06_violin_trumpet:trumpet",
+      "syntax:pair_06_violin_trumpet:violin",
+      "syntax:pair_07_river_mountain:mountain",
+      "syntax:pair_07_river_mountain:river",
+      "syntax:pair_08_winter_summer:summer",
+      "syntax:pair_08_winter_summer:winter"
+    ],
+    "expected_model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "expected_model_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "expected_model_weights_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee",
+    "expected_record_count": 256,
+    "expected_record_ids": [
+      "00b247039dc6d058d4df7da03269836869513ae30c39d1c36e67ec454400c269",
+      "02dee695060448c48ee6371a2a725ca6028adb22fdeea5dee2c2d75e7b4610e5",
+      "03cad1596ed5b8404b34bbe6844a725d5335a03d249c8fcd194983c538220d4c",
+      "0457af897b91c0848070bb7b05e513d54d4dc138e81f29b5691dee67ae72418a",
+      "04c3c2d506053ca1f1f7d6c146eb40383b9261047b08b05b5ce69e396cf044c6",
+      "04c7c31838fe6e9493e04892893f328c536cff61d4051d96c8b09036bd431885",
+      "0539504c33b960dfa602d35ec934258c65ee44022633eceb14be5259010f952d",
+      "058b03d6cb30a780a94ab8e188de0510a81e062e91bb743e9dd73a4cff0712a2",
+      "0953b429a893c55a8d772ae76c1c0f0d040bf6abfa987301ffc1b935d1e62cb3",
+      "0995558e520242a5ad57d2bc9d46381183b889089b29ce0b972a25c8e088f6bd",
+      "09a087b98cfa249eaf2f200fd24f186631adfe0bb5caa49e7784091ac99879c6",
+      "0a862c48c40588aa3eddc7d74db31fc079bc8ae52833b252f6fa2af6b37e4d7c",
+      "0ac89d425cf528d7a05d029794a322364ef98b8048a859e0fbf0e9b19ee29636",
+      "0c74cf6a005673a588908481e47f8cf0e5e34c3b15384da72bf2d92e3a96bffe",
+      "0c81b97a54b0d2b126df7f48c99b0fa5bd33df21b0303c98994ec8ae1c74c3a8",
+      "0d040b5e18739d5db9be2919ad83523704e0930c38de22772a248f31707f4285",
+      "0db5761283374fe46d0a26d1f83c73c817f31b3e576f632ef9db51105ccce32b",
+      "0dc072bfab1158ffed1b8b471891c016bbf070804d0e048b951c75d1b84b7c74",
+      "0f462eda13d9c65d2cb257e7ee14ad786082fe5fcc9abd38967c0bcb7940ec6c",
+      "1223432841d19f10a974dd82929fc2fe5a1adae8357a26015a6466f5c29be31e",
+      "124536a688db8c44e3a337918e00149cae620a69605d32e6e6d96700c3485cc9",
+      "1320ac2ee2fa89a096a1839a25d39565a42acb557d2bd9acdde70da53af5a1f9",
+      "13ee00399c44045796f98f53a4dfd2c9ed1679b28cf8d859ae273d8b0bd85c8c",
+      "1428b10ad8c8cfa3759f9aee6ffb42177b9e52b4ab480b03f9a2069e1b53a91d",
+      "14a6091f04ba1aa4f475a4266568214b8d5558e359166b1654a03f73482f61a2",
+      "1531ca2c841f425ca30e2b7cce57faf8689e0e45fa1d19d3e7cb6710af7a961e",
+      "178cf040f187d1d3244b581381c45fdb8907f64027885326a6f3436756a295c4",
+      "18410e8d0a3a61efc8ec81645bb964832f6a1573410598467c1df28a96f247ff",
+      "1a84aa190e5b050c1d7e692703338e4bc305fe52800600f73a0c9f5e08cd1df5",
+      "1b5bd4406b5aaaed28b5a6ed6950980af718650b195a253e0742eb5072f4fe1e",
+      "1c897eb0cdee52511d182143098a2fa02d564a7f12c64d8b46928dfa94ebbca9",
+      "1d07c6bf2dfa6e402e0f6600efbfc30cba65eed57a36d04bfaa839f80e2ecc7f",
+      "1d706697f82288253932315b36dd7ca8cb5de8330b8b34771c00ade196cf0cfc",
+      "1e96f3533f31f37c8e84554518d9b6c0e0ab8df2690f50f8039cb76c19cac3f8",
+      "1e9a5972f3c616986d659cefc5af53b8304629ebb9d3e385136d1875c2c6a93a",
+      "20317b891a7f9b013a2f1e93b776c17fb724f19ddab4aabc431adef64685a6da",
+      "215ff80a5784adbda1170d96ed458dca7d5631efbd7974d11013f50774f14929",
+      "2441ed01fc20e918fa3f77e9e65807564aabdbb0c2704a04e189a58a25c79f1c",
+      "26752b15527fc5688032b5e39b59d835f007f1ed699bc10c0f0cca149dab4227",
+      "26c0585df08469767367e4a2e0b6724a7e1df0c924e90f8f4c58f5071e6d0c28",
+      "27f97b8d8fc7dc627cdd1860a1b26c258aec9773193bbd3a1877472d4af7ff6c",
+      "286ba0132445ed70ef1308fe1f0d9abea2eb34a067e7f46603b7f613b95c111e",
+      "2a38a77f9cf56fef480b5afd89b3b0ac4cb0cb70e1a2e6270be91d54a80d7140",
+      "2bfc42734b94990c7af11cee6791fa62cce419fe16bb7be7b0d405d01b5ecd84",
+      "2c288fe86f71928c3055cf9a3b48f25620b96081ed5e706456f535b242a3ee1d",
+      "2dbef07022860be12d952f489881366cdc6dee119bed9c928fe04ecf25cc9565",
+      "2df94d82ef02b8379ad2834416c054178be88b43e5fd860a1be005007d212829",
+      "2e30f100c59bb86668318b072a0176b323372a487a1e1dda3960decfb34deff7",
+      "2ec64e215ba677910aec7bdd361bc7f0e14a0f6953963877f81b365cca2d2a4f",
+      "2f0d1349db96751cc71572e37545ab925fc08f53cc964a0f03345b4829fe558f",
+      "3019411e61ed16fedb2eba9a233c9df793218849d219a3cd6fe7e2ec35cafd31",
+      "30b505600a2cd86903e42b955a0a78c9bf84f5887e241a527db3eb766ec28612",
+      "3198b04a0277a7546e063ba809990d78e72a5b7f0cbe35f4741d63fac5ec366e",
+      "325e60fc6da38844f8a38421010f1a1d88c389c6eb0291fece9704117a6c294b",
+      "33e1e25c478a1144c313fa0560d94a9d0d7907876071152bd3f8aa7214d59225",
+      "33f9d70c99b2f365f5312a9c90df7fc2d2f9574a1647c448450c0be769ec9bd8",
+      "35a17d724938301f9a6d8e15f87f1648976cf6cd5438051f9a662e50251a2b17",
+      "384716a61158877a50094956a75b4783a09f0f84906a741b1396a5bad85a599e",
+      "3b82288574f6c4493a2bc9968fc046f7ac527942b17e8fa250ff022f04601c02",
+      "3bef83ddf4663b83dcc46584929d9ddb6b59602a73876d0b45950ec1bfeb4494",
+      "3c4321ebfb6603c7e09a396c096a43db4c80cb05fbce185e34377b028b24faee",
+      "3cb14bb05218b26456535312c0d4006f30c7f4c6f89452364009ce7a57b2f1af",
+      "3de8fe28968b8d1177f2c720571c462f8e05ccf700ae6b461803cfaec775c8af",
+      "3f4cf105cdd3c604a6fd2ad9ddb9b008c1bb9d303cfec57cbb9070a8865aa161",
+      "3f7e259e5c62c197673df0f026521316c902f7206f58f2f41317c7048338f114",
+      "419c0aba31826f3a543b431c1883a9be6e13bfac85c0268fd849dd1aaea183a5",
+      "4481b4407ca50cad18030795a915e78881ee07ead773d418a8af64051c49417b",
+      "44c5a6ff874c5594ed9d1ee6f8738a4ca1d2820e29cc9d1756e351c1e485fe29",
+      "450c54a34d8b97fd97d9d2faea7a2c40618d7721476cfb0efa133af67a3856d9",
+      "464fb388121eed3f2bceede96ba4200743f03d75fd72e32fe5b0418066d6f1ae",
+      "46cac1b1c88517d89ccfccc84dc5e2d8c1c8028349d7ea69526da778d07b213f",
+      "4705a6721796d98be30c620a5f1691a8eb4b0adf96d333b1df814159d980e1ce",
+      "474dd3985d25be0b8f3b300392b98baa3fc297ebc4bd3e621f98f296b6c0cd68",
+      "48598c9082e4f427ea85444aefc5cd87f8a3a81fabbf99bb376ad6e856eaff1d",
+      "49134e623d789e1170a604dd77256c0e5fa0fac4f3a85e354e8d92b7c54e4724",
+      "49b6a40cfecc422c0ba034db4918c573081d8842abfc1ff08d2ee333418657ca",
+      "4aef52783ba4eaaed991d61db4c93fc33ce0d73c983a1f5f81b84fbdbe1e2b5a",
+      "4b337b024fef5ad7c4cece5c0c0279076111eef382c5a9d390956207d39d1a7d",
+      "4c563ecfa434fbf7511ad3ec432294637df47fc6e4f3f5f5fd20e1d1937877e9",
+      "4dc527eef5d470a521779a2e901698ff8b17d293076850c5e6c63e0e2f87ef34",
+      "4e097ea75c904e485720e7846007bbeafa95c31def672969c863b4acf3569d4a",
+      "4e3151ef9c41a2f8550cf9497505e2b7562be3be564e0677d19e6f30a363475e",
+      "4e8432b8ef9e0b3f4c5852975c46a09bf500af27eeb63afe84c0ab45eaea7fbb",
+      "5292fef2c05d6ef9dc1b9bf3c1f49728bbbfde556b7692b25fe4312aa37aaf10",
+      "53acaac7300074e5ed854ba2309d54b6af33a9ad609030ccead0d95946f0ff9d",
+      "555f57a871ca285203ffc1cf491633df05fa614bf302df5afa2ed9854efd9a3f",
+      "57638aeaddc12f2b99c995b24f37730f2b5df5b269b1f82af50603671e41905e",
+      "576bac6e827dac07ce6761bd0879caa7f8e5a961e617e9e5da91f03a81f25370",
+      "5980a2ec14a1fb826c38fedc9cee3c9bdf25c45ddd8d55980ed4a375e3f5be69",
+      "5a4385d7e52d45422545e9b82fbf17f8357a4513c62a3ea09e3efa59af7413bb",
+      "5adc33e07b008c8b7d81fbf439992ae83531fe171d75aff0e173331edb994d0f",
+      "5b678ee61feefb0d9588ed65ba66697f4ddad78cc96e58f8ff6b10d2dd172d62",
+      "5c4719c1faf5bbc71bd13f9bf696c11729babf095b25551f3e17bfb51a01a07e",
+      "5c48fc28dff877c3b96924c41f1f0d53ccad21beb37c0dada72a742297a2c1a5",
+      "5cdffde8b127cfec50ec40fb53bca1344fdfef16f3c6e395e65d0bad64fefaa1",
+      "5d2b430b2f6649dfaecc219d60999040547fd8b9ac4be6d620ce851ebd65b09e",
+      "5d3ba18f307cf33bfb4106d6c262694c07403147e34f9d0036f938255d9dd9ec",
+      "5ee7b12b287388454fce239556d1b5d08cbca520fa5030a4736ce926661f287a",
+      "5fa544611aaad8941bc078e361d38758ec8b7f0e2ba4dcabb74c62ea9ca73c81",
+      "6004cbbc1f2e4931db6329c6b012bfe9137d83c70859c3f2f1276390fc899edd",
+      "626304f75722dc539a2a11ffc2b4ee152f5028ee5cab6cf2a209a52d8a6c2bdf",
+      "62ba539a40a67689ac435ec4985921b46225fd3b97089ce281667726fc58c310",
+      "633359ab6ad2b54a92bb5ed27ccec50ef209153384c5ea41124450886248706c",
+      "64687ef37d8158cff03d611c3b36eab41d41e97e51be355e9f786cf71d6c4f80",
+      "667faf47ea9dbc3231efe239b638f0a1f98169ad40e504211720fa43dfd7318f",
+      "67d3f0e265752474ad9adf5798c4c05a0308f40806a38260356f91f2022ee169",
+      "6816cc5ad269ba653ba29ba0694d5410d81ae66d30d48ec9443316e51f8e40ff",
+      "68af5652ff7acb7d15048d7d07eb82fa5f89a3dc4f6208a1f696de24da41ef67",
+      "6a5cd9ba390c5583dbf876684b219d81c5f86e72ac300c8a2ae0dc7d5a6c5b08",
+      "6d8732eec4bcf6d019ef3bec8ad572e559af0589aaf2c285dabaab45741c21c9",
+      "6e3eb9b501b25cf0e72ef8f7fb42e09935dfb3ff1fd905cadf4ced9d08c18a92",
+      "6f8a3d28eb11d153d85f912ca821606025894a84e98587d1bef3b1eb3cb31657",
+      "706df76bd02952187cdd7f3149a9167475626b21535e1570c5280904cac73d83",
+      "7078d33df06fd51214651f6cc66f890e6a71e579e5a60e8d9a376409d3c621df",
+      "719b785b994594433b71674c1f970287cd9dea4e340b25471a7a417d88fb37a6",
+      "738aea2c45917d21e5e2e111652e5ae68f685ae04904cbf2cbe6c9c74cba35a4",
+      "74158372aef345f05193449c96ddcfa2c88790edcb6eaf8ebe0bdb02edb3ea72",
+      "751efb81c911a766472e8b7de14f9b57316999d07ad534ac67764f7340a1e5c8",
+      "75fbf26e7a13074e8e08282ee26fc06362a3b86983e3aec3dd3488ddfdc4cdcf",
+      "765b82c7550aee55bf3775e29181662dbcb046261200e9794f755e94eab05ac9",
+      "780fa8ae962f10ddd5c3e8750719d160a492d93dd0fd553c466516f7ad40c9e4",
+      "7863d5f0441552592ada476815aa44830e8c5d2e9fea971f04df998ae3ca7774",
+      "796ed1d5f534ec93517244c6e36b6de8c27efe20f94c3fc3b8fb08fb8df044f7",
+      "7a934ac7e95cd81d322b8bcfcdf7a9fb28d1730189baea9af4e4982ab03684bd",
+      "7b02becdb3eb47f76ec8b5134e1df3af1d782e5352e6df0c647d8b4586b73523",
+      "7b91c5072a12f27814e4ace75d2b26eb92f238543e0e04f7fc1dfca1c5b48fba",
+      "7c484d2676ba0adecda86c0909656b30a9b34638d90574bd97f65345886f5682",
+      "7e1fae505ddd42f394de937ed84fbac423dd389c07dd899cad5bb43ee0c92339",
+      "7f411a90989822624788aee34ead962c6b58af798781af741fe5c59d10a737c2",
+      "7fb66d8e135b7d6bfccac16fb5c7a8e75cc7372d001559fd6dc73528d42492e2",
+      "7fe8a6f05a9b730fd15fbdd76aa6b6fb3720ce02a588106ad0f206e065fcbfec",
+      "803b4acadbe9d30f79a601a992779956bbf1befc8d12e9ad9df8466510723767",
+      "80476e57abdf332abb6a80d966b322b72e65bd88251ba191f0221a0c97c3feff",
+      "809044732b688a351fb44abc361f8319fdd845cec8dbbe56a308496bf97ea6a0",
+      "8120c7af9ae85ebc02cbf10837561b6b9e6f523ca2bfa27d75ef3b8a5d375e5a",
+      "815d26717c8463c7b67a58807be2b3386fc54bb95980c2ff55beb1dea5402efd",
+      "816c4a17cc1c1dadb0ae0e297b07297da18cb0a2c07311056a041fa5b360ed01",
+      "83ac70d6bc137d4b3be5b5213603f99f9951c6429fdcb8a4c83e3fbd36dc051b",
+      "83f68e523a3416fad8bcbb9d63b45a068bdbc09a328b72ab106bae36661e5a5a",
+      "8488d790ff5c13c9ded75ce1c29236b3f36b37af36ab0da343ffc939470ac1a2",
+      "8632e28d00623a1497c405c9792308f394bcb70f89a8cc18ab1fede5ca853b82",
+      "86f83a0aba22310c6f6d8cbdfd988a9b8eab3bb5bb9e4f4eeaa2276f33a781c6",
+      "870111d093a315b9c5471e64aedaca977ed4f1360d1499c7d91f4714da10a536",
+      "8760f9cc1f1cd6893025441aa0cf40a7fed3cf4a9ea0199787193d5efc2fbad4",
+      "88b15d36db9d0b627307b4e7a6910c947d599d8d2f094e3bcb1c4df6af4012aa",
+      "8a698392efd8accc975a182b6f89601249ad2955ed40d45607ad4fb4b89b87bb",
+      "8ac2af5754b9fbd8a622fda58699cd78a8345c39f5afb424a2ec39fa46eefd23",
+      "8bb2febfc9aaef09151d2800f0d94720f999d16699767ea4b583dea97f3c8cd7",
+      "8bddef8bd8617d600ef02fa05f1bf7ca145ce0e6d4c6fc2fcbcc2c485d423b72",
+      "8d095e4457f2fefe50806df87236f7f5e73b2b5cca2b8a64c23fde3c933d01be",
+      "8e06538ec5fe6210d24613de0c63d3834836d6c03cb363a1dfe0da2efb2ac89a",
+      "8f02fff80a42f46d7a6f7973e480c44086b6a8783cf402602c01c84e55468544",
+      "8f39804bdb710df507888d66257871776f275fc1cac48860a854f89fa48ca3a9",
+      "908510e233caf8e97d596f717bca6c7c6d9143305613c050b779882c636153d8",
+      "9093f545ebb9690480823e352626661f507d5c6f4889671ecc8742cc561777e6",
+      "90ff437359f7d28fc81eff3f194092ce99de2c3d82f647094d202130f28daeaf",
+      "91241bc14f6cb5a939530da11c2a2499b95aaa18e82344d658c6a27a8cc93a37",
+      "9318c71b9be6ae8b956942833cc145f5a69111696000051789582b08ba0c0f69",
+      "931d7554dbd7b93c5ff9fa08e0ce0b6cb2aa40f08350f3836238a15ca622338c",
+      "943c7f64fbc3c1bc4cecce7f11dfbe2a2b81e6cacabdd62ed164da21164504b8",
+      "9455c9d093b70501e23d752e16ccf14c419e9f50a59e0b8e877dea8dadd999e5",
+      "946c5b1ce5d14cf882f5e7312081301ea1ced3ebf4f4f3fd9bb7c2850201f29e",
+      "94c4ce5b6784f31267e1f97008c70aa65f063673a095306e8ee94ba79e95d322",
+      "94cb9b754e54eca8a82eb8ccf48089cc80587e52dbfb18dbbbfa41362ff353ac",
+      "94dbfe3e45b38534d1e929dbdddaff192db20970962a55e2df7ef1389944ec64",
+      "95d1e19069e1ed390cfcaea44e6b9920e56cc74e26522972e33d598a117f1ca3",
+      "96098548f0b7aee49d69dfc5e2281b3f60c2957ea114aa0fdc01f69f05085cc9",
+      "98757a449731d47003a5f1ee2657d825c62536a2eb78199029c97eb29b0a9232",
+      "98d43a5799a17a49cb8259799a3b3681cc4085fe999a6759bc4a46748fcabe04",
+      "993cc960fdfff9beac6f78da5d89ebf2feefe418d591a6d664e3fce99bf237a0",
+      "99bffb4a1a16274ef3957ae43a92cb012b841875c5bc9913bae50a6ce6bbc8a8",
+      "9a3e7de454af3e24debc7b9c7fee73580cf06cc07b81db47907fdfc535e26f41",
+      "9d5da3c7a96b6e83dbc003f46a03916f756581624fb9328a3b0e464423d21aea",
+      "9ff302ece939fec32160912262f3fcdfd08e610791d9b98832b5d2efdfe8d8a7",
+      "a097f8ff3ae8fef3806f5f92862f9e1e38ed12ab98bf2d450fda95c13ddf7610",
+      "a0fb9b01aff9d132f798aca50114fd9dbfcb2f023264f2e76933ac8666118b24",
+      "a2dea16a9fa8394d2cf1b0407aa45fa8c78691026012c8c203348be7e39922f2",
+      "a3ef27ebad6ff7bb28de8b24bab98f04929e287b7d711a1f6780c059153e4454",
+      "a66f64b7dda035930570ba3f2881dda3c3ad8f2d2ff73a7a0ad48ed3189ecd88",
+      "a7bcff2d015bb33dd4c2db6e2ba14fba4b1a473bcd985d8580e4fcdb5fc73ca5",
+      "a888dbc84982eb9b50988bf4d93e0949c6f842dfde5a6661ec4775663ee26863",
+      "a88c11b43d99a8d35654bfd8b86da7864814edbeed6dbb975d56165a9266ba47",
+      "aa2cd70d697c2865379bbf50827f5b31ca0d3b605f3778e5e5971a1ff14ced83",
+      "aaf4112519f855c6e6001f0bcf11f6597e96119a26f3b412672c404620e51eef",
+      "af8d511948191708c6db73069f4d5671abda4de2f00bec6e9d7af76236528cf0",
+      "b0aa7681d729fc5f191347147ca61d5b84d443f5acfbc7967410956e8646c7a7",
+      "b4889907ead65f00a66ad70bd277c91ba045f4dfd8bd0a014e720c38da362c66",
+      "b490e5b20afe4f2e458bd3bc1e474acda0b2218538f1704d7b9b8bcf59fdbf34",
+      "b59c174d76bf428c73027f7fe20aaf6b1885cc404ed2f38608ba4da60c455acd",
+      "b73b4161db38f36c19c24d62b960624cfb4f24f9cef63199efc39dceda6efa3b",
+      "b88f91e9f144e91108872a7bece9dc1ccd0cb234046ba5951bd93e6ce4af553f",
+      "b892ab72033c0c8c94e6e5563c4da85738d3f4457c14b2d239a363abe72714f0",
+      "b8fa0f24a3d8ce9640d30cb89d8b79141befec651b1069db16c55fc25ef69445",
+      "b9d71d54ad831a9da4754ebd3a355754aa2eccf4834b29406d970265bccdc7c4",
+      "ba2fb4c897332d0ea1804573af1e4f043afbbdf2d6884d7a598389141f995c26",
+      "bb23fd9d094f97eaa5ca5ba651d82c387ed5a7b116ff9ef2a8581b49cfacf8be",
+      "bbbe8902d58178d8913372db31c251c3ac002204cd7bd648ddf77e275f6a7f9a",
+      "bbe1d5f41ef3d995d10c4922427964b4e2ad5017f9cf9d0cc0a3729ae230d977",
+      "bd3b9221529f2a8648b1a0cad633b8893918aeb6867525ca4f16ca61af2c9625",
+      "beeb2a4be0deb98da432ec6f25224c178ccb19ca11bf5fb782843a84e7525435",
+      "c1357ae71b6a265d1e2b941caf26329e9f75ca008a91350c13b86f7c1989ec88",
+      "c3df5aeaeec92b0e809a6bd598374c13abf635cdef4e2bc7abee8cde3ed2f555",
+      "c55de1092f9749d637f22861c4e225e010e6afd574811a1108fca543278affd0",
+      "c5b5f6752ff00c2c89c80a77961d2d77d5fe1db8f983394bc57345056a6d7a94",
+      "c65df600cbd476b19265943c36eaf20de8d296e656d295ab7f3095e49ee1a225",
+      "c86930f946af7f5d622e8c86ade6fc4eb954f7fa579bb9fbf79b890297f0e2d7",
+      "ca4fbb7ed00a514e04bda23c0c44668005ef4814617d6bee557eec3baad6397f",
+      "ca62ebc820256e62315f050dc2cfffe6cd4059081b5fc372322c55a5ad656e30",
+      "ca7dd385912de0e9cbfe72854d5b5f302e7945ae615937aadc77c549051fd554",
+      "cc2bfb6842559efc6aa740b5e2463eda1255a6afde48573d34fd9e15ce932351",
+      "cc936ac4b1e682295f9b0c4e116241527c02dec56b94e92e1d1f4ca2eca9bc03",
+      "ce5e58ae55830475ab2422ca7c9594de2bf54f8de32706b0ec35afb37a8f029a",
+      "ce772a6c82797b7ca8b087b9b0498a31ac0b56b41346344705e166581e53074e",
+      "ceb6dd8efa45b4bfdd3540fe038ec85971c32078c4feb797d76d7b8a77243a50",
+      "cf434d2e25bab2d29f65725621afaa25e8b3310213b4909ff1e9e9763c08d944",
+      "d263e15721dd16023b75d3e9936084099b4c425c05987e773b2a961364ecf82a",
+      "d47196a245d0cab3282c0a1643a27aa46fe65c4fa12436f4d93e8921d6600203",
+      "d5644c77bc8b86ad9547b01186621605a219ac0694acad6a56ee3d39244b5b9f",
+      "da42b60da25f8611065b36818b6ec5f66286779a963e465f89ef1b15c43e8089",
+      "dac7af7c844642d6973920c564fecb46c1af9e60de2344abc92afd2dd2a89d9f",
+      "db1cde5b5ba19dba563f0a3cec5775fa3a28086a09fb078e8a18344ad1e6a451",
+      "db994901f3fd22415d018392f140582d297ad740cffc635dc13db7c5ead29039",
+      "dbc7e6cbec76c3b70fa9741a1d1315d809cb237ac49e0999b53ddf8b225f33ca",
+      "dc2002d068fe19a50879ceb71617e0443a12f33b34ed1738b2a79e37eee3c770",
+      "dd5437d1b959df874298530009b02f3f625364e9de402b4b2921c5b9558d2a55",
+      "df3ac809aecbee2794bb16f3bdee09d4f989ca41a0c6ae335976bbce1bc39fac",
+      "e1a81ceed2df4eb774a8ed5a232b22186538ada3bedbd7bab74d405b40a9e64d",
+      "e25e0377f17c2f46970485c5ecc90c376e78e1c7d790c89a147b243f86c37c3e",
+      "e285f2c08ed27661733376fe485954caafa13f3abd301fb8b109543871a377d2",
+      "e37597e4bf558be57712087d563113cf7472e5e25f43ff59efddc5480ddd3474",
+      "e37c3e4e0d0e4d5d1e130c8d9ddf42921017c43a87201db8c89d51b046021732",
+      "e500fd9ec91436edf3aef05c9ae8269e20af2a62a8f7a9d4ff587aad10ed5a0d",
+      "e5221c8ab591051fda2576a2bf97b473b3ae7422534efa1fd87bdf5ac8ba24b5",
+      "e65862df74de3dd8ac8d38f5ad2ba5036435d3996301c743a5bbe61d1a599469",
+      "e6d15ed025e25ed7391cb9fbcf3354aaf970e594c9ac87b3131b89e6bc93fe47",
+      "e73d95eaa28dc19b5468907f50202a9589587e3b7184497c80e8630edc008bbd",
+      "e7c2ef873348b84a2a82d4143269ed7c73c4463416889169604556c2c84343e7",
+      "e7c8b185242c8e489efbff16006d4367d34134c63605e5c2db70976e58589402",
+      "e80a392365042fc6b91b0bfd27227602a0a8a95d0408dcd384818046a9e242e8",
+      "e96829bb886cf94d68a1d10ac62e4a4a2ca083069de7d3f7d1537b3b8ef8f7b1",
+      "eb616042295d034c5eaa23f6e8225dee615e6f599a0b4181e93c5f818f9c962f",
+      "ed74c958cb202bb941c704bb7c379fe45b61bbe092a42af113fe008d3a9af19e",
+      "ee44828d5b797aac131c165a131853d6f1ed61188eb470a29e369ef03d8240ec",
+      "ef8be3b065e24b61573048bac3fc77579bde7df40e9978708bd0556b5c5f22cf",
+      "f09faf34ef72352ed2d7304d94369ed4083c43507bca83df746cb65840463697",
+      "f21fd68c9192582dccb6aa83eb7a95fc51bc293dd351334075e8ad227e1ba01c",
+      "f316e0f4b71d90d9c46682278a0fd1f0168f940c2544d6a568ea4101330c6aac",
+      "f606086c461974d6b868b094fe878acc44cd588dd17a6bee59ec84f6ef534d49",
+      "f6171c08adbdc6dc84bd1a05ffe11229a1b7dd11831f59b12b1d23e0f422786b",
+      "f7f18d1dbfa1566116d61f6925d0855e3f704ef04548dfe04a31281ffb747583",
+      "f89110d21eed091ad022a4f98d4dbdd2adf4d56fed0629dbf2061fda3adf1afe",
+      "f9541a9b97b36f34aae91d1979909922cd83db108ecf1a606cbd3f3f6e5a92af",
+      "fcb1f0e2b9a634da158f3bfaefaa9368a78fe3e407f5ae70441cf65ba8fc6853",
+      "fe12c28e5b17e66ee22783ecee524824d82744e3e78b7a5583b76eff43ff3efc",
+      "fe7ccfd3a789cff7358fb538aca23adbcb97691f1251ed940d742d0af378083a",
+      "ff18429276242738534fecec26fc3a50e777861f0583798672161989a750886d"
+    ],
+    "expected_runner_code_sha256": "6387eec115f1a8ee64149334d9a7934bcc3229ea1c81952b2a2fa0db86ae6c34",
+    "expected_tokenizer_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "expected_tokenizer_revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "expected_tokenizer_vocab_size": 151665,
+    "expected_vocab_size": 151936,
+    "gate_config": {
+      "argmax_tie_policy": "valid_behavior_but_native_and_native_correct_false",
+      "equivalence_alpha": 0.05,
+      "equivalence_margin": 0.06,
+      "forms_per_candidate": 4,
+      "inference_scope": "fixed_bank_engineering_only",
+      "item_range_margin": 0.2,
+      "item_range_required_count": 16,
+      "items_per_candidate": 16,
+      "overall_native_correct_min_count": 61,
+      "overall_native_min_count": 61,
+      "pair_estimands": [
+        "D_I",
+        "D_O",
+        "D_R",
+        "M_I",
+        "M_O",
+        "M_R"
+      ],
+      "pairs_per_candidate": 8,
+      "per_form_median_s_min": 0.5,
+      "per_form_native_correct_min_count": 15,
+      "per_form_native_min_count": 15,
+      "per_form_positive_s_min_count": 15,
+      "per_form_truth_native_correct_min_count": 7,
+      "per_form_truth_native_min_count": 7,
+      "ranking": [
+        {
+          "direction": "max",
+          "metric": "min_form_native_correct_count"
+        },
+        {
+          "direction": "max",
+          "metric": "total_native_correct_count"
+        },
+        {
+          "direction": "max",
+          "metric": "min_form_truth_native_correct_count"
+        },
+        {
+          "direction": "max",
+          "metric": "min_form_native_count"
+        },
+        {
+          "direction": "max",
+          "metric": "total_native_count"
+        },
+        {
+          "direction": "min",
+          "metric": "max_item_range"
+        },
+        {
+          "direction": "min",
+          "metric": "max_abs_mean_pair_estimand"
+        },
+        {
+          "direction": "max",
+          "metric": "min_form_median_s"
+        },
+        {
+          "direction": "min",
+          "metric": "candidate_rank"
+        },
+        {
+          "direction": "min",
+          "metric": "candidate_id"
+        }
+      ],
+      "records_per_candidate": 64,
+      "schema_version": "coherent-readout-v2-syntax-gates-v1",
+      "sign_symmetry_assumption": "required_unverified",
+      "truth_polarities": [
+        "negative",
+        "positive"
+      ]
+    },
+    "mode": "development",
+    "model_role": "syntax_selection",
+    "pair_registry": [
+      {
+        "cluster_id": "pair_01_amber_cobalt",
+        "negative_class": "cobalt",
+        "pair_id": "pair_01_amber_cobalt",
+        "positive_class": "amber"
+      },
+      {
+        "cluster_id": "pair_02_cedar_maple",
+        "negative_class": "maple",
+        "pair_id": "pair_02_cedar_maple",
+        "positive_class": "cedar"
+      },
+      {
+        "cluster_id": "pair_03_north_south",
+        "negative_class": "south",
+        "pair_id": "pair_03_north_south",
+        "positive_class": "north"
+      },
+      {
+        "cluster_id": "pair_04_circle_square",
+        "negative_class": "square",
+        "pair_id": "pair_04_circle_square",
+        "positive_class": "circle"
+      },
+      {
+        "cluster_id": "pair_05_copper_silver",
+        "negative_class": "silver",
+        "pair_id": "pair_05_copper_silver",
+        "positive_class": "copper"
+      },
+      {
+        "cluster_id": "pair_06_violin_trumpet",
+        "negative_class": "trumpet",
+        "pair_id": "pair_06_violin_trumpet",
+        "positive_class": "violin"
+      },
+      {
+        "cluster_id": "pair_07_river_mountain",
+        "negative_class": "mountain",
+        "pair_id": "pair_07_river_mountain",
+        "positive_class": "river"
+      },
+      {
+        "cluster_id": "pair_08_winter_summer",
+        "negative_class": "summer",
+        "pair_id": "pair_08_winter_summer",
+        "positive_class": "winter"
+      }
+    ],
+    "preregistration_sha256": "659bb45361697c0967d9339f2cdda6299021d12860fbbef7f04c8dcaebd604b7",
+    "purpose": "syntax_selection_only",
+    "schema_version": "coherent-readout-v2-syntax-design-v1",
+    "selection_eligible_model": true,
+    "source_fixture_canonical_sha256": "1476a30b8c9f34c1b885f1adf7ae0ab3161250a88d1bbd0622508dcef8747d03",
+    "source_fixture_sha256": "d00e27d9e4130ff7d0d4ab32b1e26d31f40482cb1f4654204fd8a748ed06f4f8",
+    "source_manifest_sha256": "b7b8467c2595af5bf5cfb414cb052289062e721300ea3415c23d22de16c22ae5"
+  },
+  "design_sha256": "3d361a5addf0bcff80076ead2ab8b9354df7a39bda188d8706ac66dcf42c4787",
+  "eligible_ranking_order": [],
+  "full_vocab_matrix_sha256": "1dc6a239b9cb984e328df0357337d1791b210a5acfbc8722ecd6d9b1585b028e",
+  "gate_config_sha256": "dd5d37509febd6b86d01285b162bdd40ff353549057a1b7766853cb81d2ea031",
+  "mode": "development",
+  "model_role": "syntax_selection",
+  "purpose": "syntax_selection_only",
+  "raw_records_canonical_sha256": "9624832a9e1daff28874fcba8b68d0de6f3fc5942ffee2668b80ba845f5e7b52",
+  "schema_version": "coherent-readout-v2-syntax-analysis-v1",
+  "selected_candidate_id": null,
+  "selected_candidate_projection": null,
+  "selected_candidate_projection_sha256": null,
+  "selection_authorized": true,
+  "status": "SYNTAX_SELECTION_STOP_NO_ELIGIBLE_CONTEXT",
+  "validation": {
+    "candidate_count": 4,
+    "exact_cartesian_topology": true,
+    "expected_records": 256,
+    "finite_full_vocab_logits": true,
+    "forms_per_candidate_item": 4,
+    "item_count": 16,
+    "observed_records": 256,
+    "pair_count": 8,
+    "sidecar_reconstructed": true
+  }
+}

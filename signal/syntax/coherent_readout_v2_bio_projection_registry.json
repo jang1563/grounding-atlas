@@ -1,0 +1,188 @@
+{
+  "analysis_id": "coherent-readout-v2-biological-answer-envelope-projections-v1",
+  "biological_core": "Classify the cell using exactly one label.\n{line_1}\n{line_2}\nGenes, highest expression rank first: {gene_sentence}",
+  "biological_core_sha256": "55508b9a0ee0fe327f352007b670625a75e0415ec03c0731261dd952ba5cfe05",
+  "candidate_priority": [
+    "assistant_prefill_answer_colon",
+    "system_user_exact",
+    "user_only_exact",
+    "user_label_colon_v1_control"
+  ],
+  "firewall": {
+    "claim_scope": "answer_envelope_projection_only_no_biology_knowledge_or_activation_inference",
+    "confirmatory_eligibility": "prohibited",
+    "gold_labels": "absent",
+    "partition": "permanent_development_only",
+    "permanent": true,
+    "promotion_to_confirmation": "forbidden",
+    "syntax_outcomes_at_freeze": "unobserved"
+  },
+  "freeze_date": "2026-08-02",
+  "mode": "development",
+  "model_calls_made_by_builder": 0,
+  "projection_entries_canonical_sha256": "c6fbf6649068a260d249e87d6b0206b049e1114e9cffec1984214c135de3e684",
+  "projections": [
+    {
+      "biological_projection": {
+        "add_generation_prompt": false,
+        "assistant_template": "Answer:",
+        "candidate_id": "assistant_prefill_answer_colon",
+        "candidate_rank": 0,
+        "continue_final_message": true,
+        "enable_thinking": false,
+        "message_roles": [
+          "system",
+          "user",
+          "assistant"
+        ],
+        "render_mode": "continue_final_message",
+        "system_template": "Complete the assistant answer with exactly X or Y and no other text.",
+        "user_template": "Classify the cell using exactly one label.\n{line_1}\n{line_2}\nGenes, highest expression rank first: {gene_sentence}",
+        "x_answer_text": " X",
+        "y_answer_text": " Y"
+      },
+      "biological_projection_sha256": "966d53d2ccbc2e70e335a7af81e8ec7de1010f15ccf4afd5e14b2b90113324d6",
+      "candidate_id": "assistant_prefill_answer_colon",
+      "candidate_rank": 0,
+      "source_syntax_candidate_definition": {
+        "add_generation_prompt": false,
+        "assistant_template": "Answer:",
+        "candidate_id": "assistant_prefill_answer_colon",
+        "candidate_rank": 0,
+        "continue_final_message": true,
+        "enable_thinking": false,
+        "message_roles": [
+          "system",
+          "user",
+          "assistant"
+        ],
+        "render_mode": "continue_final_message",
+        "system_template": "Complete the assistant answer with exactly X or Y and no other text.",
+        "user_template": "Classify the record from its explicit declaration.\n{line_1}\n{line_2}\n{declaration}",
+        "x_answer_text": " X",
+        "y_answer_text": " Y"
+      },
+      "source_syntax_candidate_definition_sha256": "6d97abafc68c607fa8318bb137393e4dfbfe88c68aef9e11eea53ec1c67eddec"
+    },
+    {
+      "biological_projection": {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_id": "system_user_exact",
+        "candidate_rank": 1,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "system",
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": "Follow the user's label mapping. Your entire response must be exactly one character: X or Y. Do not write any other text.",
+        "user_template": "Classify the cell using exactly one label.\n{line_1}\n{line_2}\nGenes, highest expression rank first: {gene_sentence}\nReturn exactly X or Y.",
+        "x_answer_text": "X",
+        "y_answer_text": "Y"
+      },
+      "biological_projection_sha256": "0f51d22b89e39ca90a34ff7e0388a67808855da6f92236fa88e7f8149c477ab9",
+      "candidate_id": "system_user_exact",
+      "candidate_rank": 1,
+      "source_syntax_candidate_definition": {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_id": "system_user_exact",
+        "candidate_rank": 1,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "system",
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": "Follow the user's label mapping. Your entire response must be exactly one character: X or Y. Do not write any other text.",
+        "user_template": "Classify the record from its explicit declaration.\n{line_1}\n{line_2}\n{declaration}\nReturn exactly X or Y.",
+        "x_answer_text": "X",
+        "y_answer_text": "Y"
+      },
+      "source_syntax_candidate_definition_sha256": "d925789214e930dd346ce2d20055d1851cb7f77c0bf49b0e4fb605f3783e0729"
+    },
+    {
+      "biological_projection": {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_id": "user_only_exact",
+        "candidate_rank": 2,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": null,
+        "user_template": "Follow the label mapping. Answer with exactly one character: X or Y. Do not write any other text.\nClassify the cell using exactly one label.\n{line_1}\n{line_2}\nGenes, highest expression rank first: {gene_sentence}\nAnswer:",
+        "x_answer_text": "X",
+        "y_answer_text": "Y"
+      },
+      "biological_projection_sha256": "3e2ab1d2ca083f9d9d655af41b89260839812bcb2ae58765c0adca9629ff7901",
+      "candidate_id": "user_only_exact",
+      "candidate_rank": 2,
+      "source_syntax_candidate_definition": {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_id": "user_only_exact",
+        "candidate_rank": 2,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": null,
+        "user_template": "Follow the label mapping. Answer with exactly one character: X or Y. Do not write any other text.\nClassify the record from its explicit declaration.\n{line_1}\n{line_2}\n{declaration}\nAnswer:",
+        "x_answer_text": "X",
+        "y_answer_text": "Y"
+      },
+      "source_syntax_candidate_definition_sha256": "a4d2edde2157864ea6705d1bb6ac02a92471e85adb348ea153fd91d03da6eae8"
+    },
+    {
+      "biological_projection": {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_id": "user_label_colon_v1_control",
+        "candidate_rank": 3,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": null,
+        "user_template": "Classify the cell using exactly one label.\n{line_1}\n{line_2}\nGenes, highest expression rank first: {gene_sentence}\nLabel:",
+        "x_answer_text": "X",
+        "y_answer_text": "Y"
+      },
+      "biological_projection_sha256": "ae151678d621bf3d04de4c1bb0f74c91105cf3a81c62c48a72fee5b728279e86",
+      "candidate_id": "user_label_colon_v1_control",
+      "candidate_rank": 3,
+      "source_syntax_candidate_definition": {
+        "add_generation_prompt": true,
+        "assistant_template": null,
+        "candidate_id": "user_label_colon_v1_control",
+        "candidate_rank": 3,
+        "continue_final_message": false,
+        "enable_thinking": false,
+        "message_roles": [
+          "user"
+        ],
+        "render_mode": "add_generation_prompt",
+        "system_template": null,
+        "user_template": "Classify the record using exactly one label.\n{line_1}\n{line_2}\n{declaration}\nLabel:",
+        "x_answer_text": "X",
+        "y_answer_text": "Y"
+      },
+      "source_syntax_candidate_definition_sha256": "2d8d5f4bb15ad5052768f7247346fd985e9852e0cb354c21fbb034e020124f38"
+    }
+  ],
+  "purpose": "outcome_blind_biological_answer_envelope_projection",
+  "schema_version": "coherent-readout-v2-biological-projection-registry-v1",
+  "source_syntax_candidate_registry_sha256": "6e5c17ffa3a3c7603dfa5fae77818eec76a282f53bb1a7d01dd7bd2797b2bc8e",
+  "status": "frozen_before_syntax_outcomes_no_model_execution"
+}

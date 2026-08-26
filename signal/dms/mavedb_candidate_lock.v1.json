@@ -1,0 +1,78 @@
+{
+  "access_date": "2026-07-25",
+  "api_base_url": "https://api.mavedb.org/api/v1",
+  "artifact_type": "groundbench.dms_mavedb_candidate_source_lock",
+  "confirmatory_status": "candidate_not_ingested",
+  "records": [
+    {
+      "dms_id": "BRCA1_HUMAN_Findlay_2018",
+      "gene": "BRCA1",
+      "license": {
+        "identifier": "CC0-1.0",
+        "snapshot_value": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "metadata_sha256": "4a4ddeea431a9580ac56b50d9af8850d07f4cf37f0951a5846bba6fd92e88292",
+      "metadata_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-0-2",
+      "num_variants": 3893,
+      "score_set_urn": "urn:mavedb:00000097-0-2",
+      "scores_sha256": "906dc152f28b4c8261e4e532a03c9c42f2e45e211aa3ada12e3c826c151580ec",
+      "scores_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000097-0-2/scores",
+      "title": "BRCA1 SGE Normalized Scores"
+    },
+    {
+      "dms_id": "MSH2_HUMAN_Jia_2020",
+      "gene": "MSH2",
+      "license": {
+        "identifier": "CC0-1.0",
+        "snapshot_value": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "metadata_sha256": "0eb9df453005d4a216aa7345e81afa8564e9186235d1c539c48db39967af4569",
+      "metadata_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000050-a-1",
+      "num_variants": 17746,
+      "score_set_urn": "urn:mavedb:00000050-a-1",
+      "scores_sha256": "83b2a4a6692b32b7f14b89589eb858ceb5aae2e5941065b387be058adca2e1b9",
+      "scores_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000050-a-1/scores",
+      "title": "MSH2 LOF scores (HAP1)"
+    },
+    {
+      "dms_id": "P53_HUMAN_Kotler_2018",
+      "gene": "TP53",
+      "license": {
+        "identifier": "CC0-1.0",
+        "snapshot_value": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "metadata_sha256": "29b61390d6c6f7ad1c3b657dde126494e39cc7cba659429aef6d0a72283b0b33",
+      "metadata_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000059-a-1",
+      "num_variants": 9273,
+      "score_set_urn": "urn:mavedb:00000059-a-1",
+      "scores_sha256": "a58f9f7d3fa70fe2dbf1ae347fb5fc46280a68f98d9d042d108ee707fe64ff41",
+      "scores_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000059-a-1/scores",
+      "title": "p53 variant effect measured by cell growth"
+    },
+    {
+      "dms_id": "PTEN_HUMAN_Mighell_2018",
+      "gene": "PTEN",
+      "license": {
+        "identifier": "CC0-1.0",
+        "snapshot_value": "CC0",
+        "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+      },
+      "metadata_sha256": "d3ea1c2840c17894e6042813440bc6988ed6077b76e5606cef7fec5826ce607f",
+      "metadata_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1",
+      "num_variants": 8681,
+      "score_set_urn": "urn:mavedb:00000054-a-1",
+      "scores_sha256": "16764c9b4afed9f7507bb8e615fdcd703329f3145108a8c28bdf0b1c60f076e7",
+      "scores_url": "https://api.mavedb.org/api/v1/score-sets/urn:mavedb:00000054-a-1/scores",
+      "title": "PTEN lipid phosphatase scores"
+    }
+  ],
+  "release_blockers": [
+    "No score set is admitted until its assay-specific WT reference, score transformation, orientation, threshold, replicate aggregation, QC, and duplicate/codon policy are frozen.",
+    "The MaveDB and ProteinGym tables are not assumed to be interchangeable; equivalence must be demonstrated per assay.",
+    "Four proteins are below the preregistered eight held-out target-family minimum."
+  ],
+  "schema_version": 1
+}

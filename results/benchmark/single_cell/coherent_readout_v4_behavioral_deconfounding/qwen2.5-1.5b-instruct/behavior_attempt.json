@@ -1,0 +1,42 @@
+{
+  "analyzer_sha256": "7b8b460714d146371d6a24a2459bb6a19c7fa979bb4a4ecd86ecec6bfc2b1175",
+  "attempt_id": "a5cc708f8674f063a657695d19bf66c3263c0c9ad151338d8e52efce8f3ca4f4",
+  "biological_model_calls": 0,
+  "call_plan_sha256": "a0bbd4006bfd0c3f51ae1f2452dabfef965d8f5af9103b7c8e0239a2fac51106",
+  "dependency_lock_canonical_sha256": "cb88eb89d4bc2809eae3132f01bbc455a334664ce92d274ddded74dd12aa5519",
+  "dependency_lock_file_sha256": "14e3cc08b61df3d5e05036897640e925c8f0ee54e7e767591dde486aa49c5bbb",
+  "design_file_sha256": "1b6d841db45025452d6bc3f845ea3872718cd15e4d8aa339aac6b4056827de23",
+  "expected_model_calls": 448,
+  "generation_used": false,
+  "intended_outputs": {
+    "execution_manifest": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_execution_manifest.json",
+    "full_vocab_logits": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_full_vocab_logits.npy",
+    "records": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_records.jsonl"
+  },
+  "logit_processors_used": false,
+  "model": {
+    "attention_implementation": "sdpa",
+    "chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "config_sha256": "98d2ff8cc47488d08a2b0b3acf4eb99ef210779b42bd48605f6b8e36acdbf670",
+    "decoder_layers": 28,
+    "device": "mps",
+    "dtype": "float32",
+    "hidden_width": 1536,
+    "model_id": "Qwen/Qwen2.5-1.5B-Instruct",
+    "model_vocab_size": 151936,
+    "revision": "989aa7980e4cf806f80c7fef2b1adb7bc71aa306",
+    "tokenizer_config_sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+    "tokenizer_json_sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+    "tokenizer_vocab_size": 151665,
+    "weights_sha256": "dd924a11b4c220f385b51ffa522daea7c9f3d850e31b162bb5661df483c6d3ee"
+  },
+  "model_calls_at_attempt_write": 0,
+  "phase": "behavior",
+  "plan_manifest_canonical_sha256": "0f10476abdf3eb02d3842ef66172c03b1b42c2b78f56f56df5343d0861ed433e",
+  "plan_manifest_file_sha256": "fc0446884ff51c9fb2b9fc4d1f99490adbf99faaf3637b6463ebdc82b73ffb1a",
+  "result_root": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct",
+  "runner_sha256": "4773f48ec1fa6d7e9b6a685456e3729183d1ff66682f14c41954243f4d60d28a",
+  "schema_version": "coherent-readout-v4-behavioral-deconfounding-attempt-v1",
+  "status": "BEHAVIOR_ATTEMPT_FROZEN_BEFORE_MODEL_LOAD",
+  "tokenization_receipt_file_sha256": "a7c600a7af28366f2dc369b60adcf2277b86bf0121e862306bfb527af8f84543"
+}

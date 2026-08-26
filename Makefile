@@ -1,9 +1,10 @@
-.PHONY: help install data lint fix figures clean
+.PHONY: help install data lint test fix figures clean
 
 help:
 	@echo "make install  - install Python dependencies"
 	@echo "make data     - fetch large reference DBs (per-branch setup scripts)"
 	@echo "make lint     - ruff check"
+	@echo "make test     - run benchmark contract and analysis tests"
 	@echo "make fix      - ruff check --fix (safe autofixes)"
 	@echo "make figures  - regenerate the synthesis figure"
 	@echo "make clean    - remove Python caches"
@@ -17,6 +18,9 @@ data:
 
 lint:
 	ruff check .
+
+test:
+	python -m pytest -q
 
 fix:
 	ruff check --fix .

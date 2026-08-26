@@ -1,0 +1,358 @@
+{
+  "analysis_id": "gse96583-coherent-readout-v2-biological-development-fixture-v1",
+  "artifacts": {
+    "builder_path": "signal/single_cell/build_coherent_readout_v2_bio_fixture.py",
+    "builder_sha256": "63b33ca4bc21efc3afbdaca45b7c16afba37b4f35f308155251dcd6ea923b8da",
+    "fixture_canonical_sha256": "0bfd809d44c6b7e18461d711098ae28155cbefde1c01e19ada728acad8709b77",
+    "fixture_path": "signal/single_cell/coherent_readout_v2_bio_fixture.json",
+    "fixture_sha256": "d9c8256cc249f5f3b1b5ea07d99bdb80927b1c2b6b50bcb17540ae3ea0dd601a"
+  },
+  "claim_scope": "qwen_readout_development_only_not_confirmation_biology_knowledge_activation_gap_or_physical_law",
+  "contract": {
+    "confirmatory_eligibility": "prohibited",
+    "donors": 8,
+    "input_families": [
+      "unmodified"
+    ],
+    "items": 16,
+    "model_calls_made_by_builder": 0,
+    "readouts": {
+      "cytotoxic_state": {
+        "negative_class": "cytotoxic-low",
+        "positive_class": "cytotoxic-high"
+      },
+      "lineage": {
+        "negative_class": "CD8 T cell",
+        "positive_class": "NK cell"
+      }
+    },
+    "source_cells": 8
+  },
+  "exclusions": {
+    "excluded_unique_barcodes": 64,
+    "excluded_unique_entities": 64,
+    "exclusion_records_sha256": "12342bfd34d305b69c6396670be35e6d0256b6ddd7e117fd56b9910fd72780fa",
+    "registries": [
+      {
+        "analysis_id": "gse96583-cd8-nk-context-module-donor-replication-v1",
+        "builder_path": "signal/single_cell/build_gse96583_module_replication.py",
+        "builder_sha256": "b089e91231042db7c8a7e17fd6dbe1e32169bf1f05361cd6e5e8041c395f00bf",
+        "csv_path": "signal/single_cell/gse96583_cd8_nk_module_replication.csv",
+        "csv_sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321",
+        "manifest_path": "signal/single_cell/gse96583_cd8_nk_module_replication.manifest.json",
+        "manifest_sha256": "3e59808e09675f98be5e88fa8266f56c43aeea3592f023b6f91750ffdd0cb53f",
+        "name": "module_replication",
+        "rows": 168,
+        "unique_barcodes": 56,
+        "unique_entities": 56
+      },
+      {
+        "analysis_id": "gse96583-sentinel-factorial-holdout-v1",
+        "builder_path": "signal/single_cell/build_gse96583_sentinel_factorial.py",
+        "builder_sha256": "9336e633763b91c8d0c983d75b67004da9ee6f681c1b4f7dd2d4ba92b07f8992",
+        "csv_path": "signal/single_cell/gse96583_sentinel_factorial.csv",
+        "csv_sha256": "673db8c8bcd6ba923e62891de6cd5f04f97967706ac3ade8a6e44ad2d14a4b95",
+        "manifest_path": "signal/single_cell/gse96583_sentinel_factorial.manifest.json",
+        "manifest_sha256": "9f0035469c81852b11e2a36651b7892bf2dad4d30f8049b37cd1f655ca9bf0c4",
+        "name": "sentinel_factorial",
+        "rows": 64,
+        "unique_barcodes": 8,
+        "unique_entities": 8
+      }
+    ],
+    "rule": "exclude every barcode or entity occurring in any row of both frozen source registries before donor-wise hash selection"
+  },
+  "firewall": {
+    "claim_scope": "readout_engineering_only_no_biology_knowledge_or_activation_inference",
+    "confirmatory_eligibility": "prohibited",
+    "outcome_exposure": "project_record_qwen_outcome_unexposed_at_freeze",
+    "partition": "permanent_development_only",
+    "permanent": true,
+    "promotion_to_confirmation": "forbidden"
+  },
+  "freeze_date": "2026-08-02",
+  "label_boundary": {
+    "permitted_interpretation": "readout_engineering_only",
+    "source_labels_exported": false,
+    "source_labels_used_for_selection": false,
+    "source_labels_used_only_for_pre_existing_frame": true,
+    "state_or_ground_truth_label_present": false
+  },
+  "mode": "development",
+  "outcome_exposure": "project_record_qwen_outcome_unexposed_at_freeze",
+  "outcome_exposure_audit": {
+    "bounded_scope": "exact selected barcode, entity, and top-50 sentence were absent from structured project result files associated with Qwen at freeze",
+    "exact_identity_hits": 0,
+    "global_or_external_exposure_claimed": false,
+    "included_suffixes": [
+      ".csv",
+      ".json",
+      ".jsonl"
+    ],
+    "qwen_registry_files": [
+      {
+        "bytes": 84726,
+        "path": "results/benchmark/bridge3way/bridge_arm_Qwen3-8B_clearance_transfer.json",
+        "sha256": "50fa19250ebebeb2838a835a2f440bd5bff4352c627dfa785620b5addfea55f9"
+      },
+      {
+        "bytes": 84710,
+        "path": "results/benchmark/bridge3way/bridge_arm_Qwen3-8B_clearance_within.json",
+        "sha256": "fddcb0f6eb4b3cf01f775a3d585156e4493822817c65687667def92c2929bebb"
+      },
+      {
+        "bytes": 78536,
+        "path": "results/benchmark/bridge3way/bridge_arm_Qwen3-8B_herg_transfer.json",
+        "sha256": "6712a43df73b0465bab5ba2a762792953c64933ecbdf7957d1db4c5e3bf53030"
+      },
+      {
+        "bytes": 78435,
+        "path": "results/benchmark/bridge3way/bridge_arm_Qwen3-8B_herg_within.json",
+        "sha256": "628a8ab4ce3e3d2e4294a629f6903ee22b9a6f9c050874092a437659295ed066"
+      },
+      {
+        "bytes": 1724,
+        "path": "results/benchmark/bridge3way/ws3_lora.json",
+        "sha256": "b3ac51c9cbc3413a3ac712f980340b1b6db966b6d455e32e03be22ec01b58a17"
+      },
+      {
+        "bytes": 47221,
+        "path": "results/benchmark/layerloc/layer_loc_dna_promoter_Qwen3-8B.json",
+        "sha256": "49e01cd25b56c3e5d8134aa2e74d8e50c6f1117f008f6f9c7fee820484d3937d"
+      },
+      {
+        "bytes": 38172,
+        "path": "results/benchmark/layerloc/layer_loc_herg_Qwen3-8B.json",
+        "sha256": "f2ff4519feba1b31d28669cb3a41967afa0668bf31c1f11d839dc563f9b5906a"
+      },
+      {
+        "bytes": 19971,
+        "path": "results/benchmark/layerloc/layer_loc_msa_conservation_Qwen3-8B.json",
+        "sha256": "96510246dc3f0b9b33d7146095391fe0c31dc05b82d112eaf207f0189d0c08b3"
+      },
+      {
+        "bytes": 13204,
+        "path": "results/benchmark/layerloc/layer_loc_single_cell_anon_Qwen3-8B.json",
+        "sha256": "9ca737c436805fbe5dccae8777bc2008c19255af1a34223d2783cc239e249f9e"
+      },
+      {
+        "bytes": 13534,
+        "path": "results/benchmark/layerloc/layer_loc_single_cell_cell_sentence_Qwen3-8B.json",
+        "sha256": "172112dd39d4ecf21e82531e2187fd011c2599ec9db2839186913a9b0d61e93c"
+      },
+      {
+        "bytes": 7441,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-0.5b-instruct/design.json",
+        "sha256": "4efeb26ac2312b082da2cc9db8a4a1be4c0745166c78bb0a4b390c55fc1f1f05"
+      },
+      {
+        "bytes": 109801,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-0.5b-instruct/plan_manifest.json",
+        "sha256": "7d533b23572bdb96de32c310ccbaec84dc31293ed9222661fb9ab42d57c3039d"
+      },
+      {
+        "bytes": 115801,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-0.5b-instruct/raw.jsonl",
+        "sha256": "93745868ce87def756341f97957ffd88ac4060414a6abe68947dde95ce68c457"
+      },
+      {
+        "bytes": 22725,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-0.5b-instruct/result.json",
+        "sha256": "16145dc569d6c01f62229638ae25ae4469252f8faf31f6007aec6a788ab6a5ed"
+      },
+      {
+        "bytes": 119685,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-0.5b-instruct/run_manifest.json",
+        "sha256": "31e14e3222c627944bf62b535fa3a31afef316f3716ff4233a0ba42011d6f68a"
+      },
+      {
+        "bytes": 7441,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-1.5b-instruct/design.json",
+        "sha256": "4367ff26b1e9d012c309976168b5db48a60e8af1d064f373917089aa291cc767"
+      },
+      {
+        "bytes": 109801,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-1.5b-instruct/plan_manifest.json",
+        "sha256": "58762e23d9453fa90d22f24621958180e10b4fcc4be539b0e2f555d2cbe94cef"
+      },
+      {
+        "bytes": 115798,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-1.5b-instruct/raw.jsonl",
+        "sha256": "8ebfaa0e9a886848c2d5a31f1cf8ef10803529fb19281472e3d3c0b71ada2e43"
+      },
+      {
+        "bytes": 22750,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-1.5b-instruct/result.json",
+        "sha256": "2fed302d09cbc95830b057863ca7486d8ff6563d8f62c3a1dce8c9b93703c57c"
+      },
+      {
+        "bytes": 119685,
+        "path": "results/benchmark/single_cell/coherent_readout_dev/qwen2.5-1.5b-instruct/run_manifest.json",
+        "sha256": "fca137bc94787c074ec97da29fdf0f751383484983bbf902d361505cfd09c403"
+      },
+      {
+        "bytes": 489138,
+        "path": "results/dna_act_peritem.json",
+        "sha256": "7610bab29f217a7c8fe7317d7f736f961031756617630ae93bdf0c362b7e85e2"
+      },
+      {
+        "bytes": 13060,
+        "path": "results/frontier_output_panel.json",
+        "sha256": "5990369832fcea81bf791426b36cb21dbb7f6421d972d3898a5733b687d50e9d"
+      },
+      {
+        "bytes": 444,
+        "path": "results/sfm_embedding_activation_Qwen2.5-0.5B-Instruct.json",
+        "sha256": "2b83ba6a1c0b0445bd429baaa45cfe7a5a6dfcfa0b9f7ccfffafe5776512a4f1"
+      },
+      {
+        "bytes": 325,
+        "path": "results/sfm_embedding_activation_Qwen3-8B.json",
+        "sha256": "050c231e2e5f6ad1530910c4a261d29f2be828b996a4b0867504e3ff794212ae"
+      },
+      {
+        "bytes": 274306,
+        "path": "results/wd_act_peritem.json",
+        "sha256": "fbe15cd494a24957391ffe26a5cbc051854285ec6b0cad1669779f50b9c8d741"
+      },
+      {
+        "bytes": 997,
+        "path": "results/ws3_lora.json",
+        "sha256": "a96eee98e4878c5c1a9989d0ed61402752b07cd7789086c1798eba2cd105bbb2"
+      },
+      {
+        "bytes": 741,
+        "path": "results/ws3_lora_cells.json",
+        "sha256": "4a896d695f68511affc23cb69bea48f847eab883c827d6e2fcba4dea8da6d3b0"
+      }
+    ],
+    "qwen_registry_files_sha256": "88123881ada8594095a9cba20c0ee5775b4c15dd3cf93ec71207e5b1dc661262",
+    "results_root": "results",
+    "status": "project_record_qwen_outcome_unexposed_at_freeze"
+  },
+  "schema_version": "coherent-readout-v2-biological-development-fixture-manifest-v1",
+  "selection": {
+    "candidate_registry_records": 1933,
+    "candidate_registry_sha256": "b7c69fd14ff52f3c2509e9971cc61533ac840ce17132bc8dc131eb5d03c04db8",
+    "eligible_after_exclusion_by_donor": {
+      "101": 136,
+      "1015": 348,
+      "1016": 656,
+      "1039": 36,
+      "107": 52,
+      "1244": 155,
+      "1256": 384,
+      "1488": 166
+    },
+    "policy": "within each donor after the complete barcode-or-entity exclusion, select the lowest SHA-256 key with barcode as deterministic tie break",
+    "sampling_fields_exclude_deposited_labels": true,
+    "sampling_hash_payload": "gse96583-coherent-readout-v2-biological-development-fixture-v1|<matrix_sha256>|<exclusion_records_sha256>|<donor_id>|<barcode>|<gene_sentence_sha256>",
+    "selected_cells": [
+      {
+        "donor_id": "101",
+        "gene_sentence_sha256": "63802b64e514631cc5f1c7d18755da40673717faffde95143136fb469ceed655",
+        "selection_hash": "00d4c6aeea017c97cb99d692536a222b5157b058d5eba8bb6d1cec2b91cf8035",
+        "selection_record_sha256": "c31d9cdbc1c94ab6ec576babc3e65f64b76e7e994bfad239b3acef359a956fe9",
+        "source_cell_barcode": "TTACTCGAGCGTTA-1",
+        "source_entity_id": "gse96583:ctrl:101:TTACTCGAGCGTTA-1"
+      },
+      {
+        "donor_id": "107",
+        "gene_sentence_sha256": "4912c2a4d9bd331cec0240e186ffcaf2eae55255ede758e83739f90d0cc0bd94",
+        "selection_hash": "0515bccfd4847f890217dd4242de655ceaccfb1fa6f724278ede040d7602508c",
+        "selection_record_sha256": "1c581632f8ca8d808e79ebc6266e8254c44bd25f93e41d6e93e4fa175c1d9927",
+        "source_cell_barcode": "AGAAAGTGGACAAA-1",
+        "source_entity_id": "gse96583:ctrl:107:AGAAAGTGGACAAA-1"
+      },
+      {
+        "donor_id": "1015",
+        "gene_sentence_sha256": "5f17daaf529214d300da58ea1ec3ad4125e050343478ff4362b649e20e1909e0",
+        "selection_hash": "011e21af00a4b1b3937d0b45bcaf0171dda373d87b4509f9d11dd49b80da063b",
+        "selection_record_sha256": "2947f6558a41365c9bd50956a200583084807cd74bb178465435cc07879d8716",
+        "source_cell_barcode": "AATCAAACCGTGTA-1",
+        "source_entity_id": "gse96583:ctrl:1015:AATCAAACCGTGTA-1"
+      },
+      {
+        "donor_id": "1016",
+        "gene_sentence_sha256": "04599f794faf87e6be810f258bf0211417650b5a6a5457d4250665469d500932",
+        "selection_hash": "00479c8b753dc98612233e436881b540734671486027e4564f11b998ac284b15",
+        "selection_record_sha256": "b378a929e8684dce2b9fb4b1c69747601a4c9f8a708d79524385b751432f7d60",
+        "source_cell_barcode": "TCACGAGACTCTCG-1",
+        "source_entity_id": "gse96583:ctrl:1016:TCACGAGACTCTCG-1"
+      },
+      {
+        "donor_id": "1039",
+        "gene_sentence_sha256": "ca06fc8c38bd22730f64044bf1e3110512b04722573f2130c00e5515a9ba36c1",
+        "selection_hash": "00c3e054db6eb8f372b92ab531048a264d96ab2470ecfa7b223a57bee2fad178",
+        "selection_record_sha256": "356326c970fd52198490922916369ac65a0200ace6549154411ea51e2ee9f81f",
+        "source_cell_barcode": "ATCGCAGAACCAAC-1",
+        "source_entity_id": "gse96583:ctrl:1039:ATCGCAGAACCAAC-1"
+      },
+      {
+        "donor_id": "1244",
+        "gene_sentence_sha256": "1fd65ffffae156eb11c9af2760b7a65da28cca18a2a8dd738736a232fb6e075d",
+        "selection_hash": "00088e4ddc1604bfb5b05b82fe5effbd93bd73cbd682558534281d82fb932b21",
+        "selection_record_sha256": "90346cfd17253800d5e498d511853f6a39ec4d717bb2b773dace2798ecc9d435",
+        "source_cell_barcode": "GGTACAACAGTACC-1",
+        "source_entity_id": "gse96583:ctrl:1244:GGTACAACAGTACC-1"
+      },
+      {
+        "donor_id": "1256",
+        "gene_sentence_sha256": "f5498de3e9f97795834dcae550994d4136688ed54cf400670d9b0fcebdefa1f2",
+        "selection_hash": "00b45484be63e87ffa2d1debad5ffef5f901c6d1126b5813f5eb01f20bd43a5d",
+        "selection_record_sha256": "4ee2051460c90f82d72419d174ee8a112cfe986492b98ccae4e4825736bd2e01",
+        "source_cell_barcode": "CTGATGGATCCTCG-1",
+        "source_entity_id": "gse96583:ctrl:1256:CTGATGGATCCTCG-1"
+      },
+      {
+        "donor_id": "1488",
+        "gene_sentence_sha256": "3952b21b0c234679b336c7b7b812f92d65233eaf367024b905320ce0de93a6c7",
+        "selection_hash": "0054e48bf90341127584d96269abc631f48768be3c81ecad08efe5c1be49a906",
+        "selection_record_sha256": "9e3eb0667bd6137ab368851c42b7f516bf3d4b3eb1f9f21764f278bd7ae8ef0f",
+        "source_cell_barcode": "CTGATTTGAGAACA-1",
+        "source_entity_id": "gse96583:ctrl:1488:CTGATTTGAGAACA-1"
+      }
+    ],
+    "selected_cells_sha256": "67c581b17f9006a03de8036b33e4f0ee04471d0a5c4b8aa20378048c81ddb0bf"
+  },
+  "source": {
+    "annotation_boundary": "deposited CD8/NK labels are used only inside the authenticated renderer to define the pre-existing task frame; no deposited label enters selection, fixture fields, model fields, or exported audits",
+    "arm": "batch 2 control; 6-hour culture without IFN-beta",
+    "authenticated_raw_paths": {
+      "archive": "data/raw/gse96583/GSE96583_RAW.tar",
+      "barcodes": "data/raw/gse96583/GSM2560248_barcodes.tsv.gz",
+      "genes": "data/raw/gse96583/GSE96583_batch2.genes.tsv.gz",
+      "matrix": "data/raw/gse96583/GSM2560248_2.1.mtx.gz",
+      "metadata": "data/raw/gse96583/GSE96583_batch2.total.tsne.df.tsv.gz"
+    },
+    "authenticated_raw_sha256": {
+      "archive": "e5d41a3248a813f99d68fd5c9eb9773de7f46a83680a67f4a02d683b8955fe80",
+      "archive_members_transitively_locked_not_ingested": {
+        "GSM2560249_2.2.mtx.gz": {
+          "bytes": 29050932,
+          "sha256": "8aecc98a7ac4957bbc2570f87ebe8ce97332a5bcdbf557d40bd5aabfd287bdc5",
+          "status": "transitively_locked_not_ingested"
+        },
+        "GSM2560249_barcodes.tsv.gz": {
+          "bytes": 52366,
+          "sha256": "9bb38e080dfae81036fbcd9902c6c6254a4466aa85f70705479be3b2d6679d55",
+          "status": "transitively_locked_not_ingested"
+        }
+      },
+      "barcodes": "d58d8d55cbe4a12757207784b3bc9227bf200c9100ca15131176e9f8159c955e",
+      "genes": "93aa4e9b530ef9d6411ca129b416324c5cc1cc5a01a1fa6ed4f4a845480ed3ca",
+      "matrix": "32add28a0b3397d9ef3f220b7a6a55e98e60fe7b66fe48d0986d634df8ca0013",
+      "metadata": "1d57e72e92ca8695250e88cc0f1c3fa8c0be1175d974f8b427c58f1274dc6c09"
+    },
+    "common_non_housekeeping_universe_genes": 13503,
+    "common_universe_sha256": "145e849b9860115d455226de456935ba3b29366915e659dd2a58637916cb5506",
+    "geo_accession": "GSE96583",
+    "pbmc3k_rendering_universe_path": "data/pbmc3k_processed.h5ad",
+    "pbmc3k_rendering_universe_sha256": "0db367b991dd95809732b218539ede489bea99113807f62ebd7ccc970025fe38",
+    "population": "eight SLE donors",
+    "renderable_frame_cells": 1997,
+    "renderer_builder_path": "signal/single_cell/build_gse96583_module_replication.py",
+    "renderer_builder_sha256": "b089e91231042db7c8a7e17fd6dbe1e32169bf1f05361cd6e5e8041c395f00bf"
+  },
+  "status": "built_not_executed"
+}

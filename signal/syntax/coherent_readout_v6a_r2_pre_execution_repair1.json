@@ -1,0 +1,95 @@
+{
+  "canonical_sha256": "6af1b85ae9c53a6c8cacc91143f31373262db894c5dd93c3879b8bf3dc15be6f",
+  "correction_contract": {
+    "cell_shared_identity_fields": [
+      "block_call_index",
+      "cell_id",
+      "execution_block",
+      "execution_stage",
+      "global_call_index",
+      "stage_call_index"
+    ],
+    "cell_stored_identity_must_equal_prompt_reconstruction": true,
+    "prompt_identity_reconstruction_fields": [
+      "block_call_index",
+      "cell_id",
+      "execution_block",
+      "execution_stage",
+      "global_call_index",
+      "prompt_id",
+      "stage_call_index"
+    ],
+    "prompt_stored_identity_must_equal_prompt_reconstruction": true
+  },
+  "date": "2026-08-03",
+  "failure": {
+    "analyzer_error": "R2 planned record identity changed",
+    "mandatory_replay_passed": false,
+    "status": "ZERO_FORWARD_PLAN_REPLAY_ENGINEERING_INVALID"
+  },
+  "identity_audit": {
+    "cell_prompt_shared_six_match": 2304,
+    "cell_prompt_stored_identity_match": 2304,
+    "cells_missing_prompt_id_by_design": 2304,
+    "prompt_identity_reconstructed": 2304,
+    "unique_record_identity_ids": 2304
+  },
+  "model_calls": 0,
+  "generation_calls": 0,
+  "behavioral_calls": 0,
+  "retired_inventory": {
+    "dependency_lock.json": {
+      "file_sha256": "41a24e893af103cfb438706a01aad8436bc00b2ae7fb3ddd153519ce13a40709",
+      "size_bytes": 28443
+    },
+    "design.json": {
+      "file_sha256": "7b1459d02dc94b237eed340b239f0738751550cb393b6ef756a104a3bf559b5e",
+      "size_bytes": 7996
+    },
+    "plan_manifest.json": {
+      "file_sha256": "3642c02d7a15dfdfd88c1c0e08a06aa68c29c2c5e035450e860fccc3e6e354d4",
+      "size_bytes": 28470012
+    },
+    "tokenization_receipt.json": {
+      "file_sha256": "b53a87141eeaeafc56e39821ea6a38a0e9ff68780a7cae9e0b9865c312ccc175",
+      "size_bytes": 2275351
+    }
+  },
+  "retired_plan": {
+    "call_plan_sha256": "23b8035eedc5c5baa91f1e04eed26bb960803f7c748213d153c5c06534735790",
+    "dependency_canonical_sha256": "55dde616efec663465a94a1a8a6b8512b88ccc3456a7652fc0d0546876b4873a",
+    "execution_revision": "coherent-readout-v6a-r2-natural-token-topology-exec-v1",
+    "ordered_cell_ids_sha256": "a81c1abc3b7fed7f2e45e19554d576fab938f83c2e91c96c62cfd087bd76f5c1",
+    "ordered_prompt_ids_sha256": "c4691623f8848014a0937f4789d8193bf0e8a0e519b323d4168a2eac6aa52e53",
+    "ordered_record_identity_ids_sha256": "ed56afada36df73674b85de5cc23bf442f290ba8c9e2e16f359561a113de2bda",
+    "plan_manifest_canonical_sha256": "d0ec15845cf8e6553296babb15cf17530e3f0e450516d76e21f216597441b703",
+    "plan_manifest_file_sha256": "3642c02d7a15dfdfd88c1c0e08a06aa68c29c2c5e035450e860fccc3e6e354d4",
+    "scientific_registry_sha256": "21ddd5bf0e7ab3dde05c4bfab4fa5811053ef11b4d77ab7625e5457d7944f98e",
+    "stage_plan_sha256": {
+      "discovery-components": "c584d1def8256ee5f2132885f7400ab36b2283e0b5c25620ff564fc80989f5b8",
+      "remaining-main": "96eb73a8f43b0db2dd52db2a968f7b4ce45c8540f6ebd9d4febab52601a8d70c"
+    }
+  },
+  "retired_result_root": "results/benchmark/single_cell/coherent_readout_v6a_r2_topology/qwen2.5-7b-instruct.quarantine-zero-forward-replay-fail-20260803-3642c02d",
+  "schema_version": "coherent-readout-v6a-r2-pre-execution-repair1-v1",
+  "source_bindings_before_repair": {
+    "analyzer_file_sha256": "c6b078300ac9c6664119f6092d790a31966ba43e54de67a488d022ea451b39b8",
+    "analyzer_test_file_sha256": "624a185c245b4ee417e7a768b90bc3c4d0f7a5179a5fe15ef7a8bb7a723f991a",
+    "design_document_file_sha256": "53274fd4f47198bc097c126bbc50113a3faf13de86b55d5fef9a6dd75f1607c4",
+    "runner_file_sha256": "27a964e8377df840f659a3698490fdb3f5fdb680a0a167bd72a26a21d74a6241",
+    "runner_test_file_sha256": "cc277f7b1e226d7eb28ea15cc515a58ff274f384590d61e2e4f900a43a8f08bb"
+  },
+  "status": "ZERO_FORWARD_PLAN_REPLAY_ENGINEERING_INVALID_RETIRED",
+  "unchanged_contract": {
+    "component_gates": true,
+    "estimands": true,
+    "execution_revision": true,
+    "fixture": true,
+    "glyphs": true,
+    "planned_calls": 2304,
+    "rendered_prompts": true,
+    "seven_field_identity_definition": true,
+    "stage_order": true,
+    "token_ids": true
+  }
+}

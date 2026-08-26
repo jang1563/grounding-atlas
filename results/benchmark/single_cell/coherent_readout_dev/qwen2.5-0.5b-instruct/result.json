@@ -1,0 +1,618 @@
+{
+  "analysis_code_sha256": "67ddbc3a6abfd0e5112b1bffeb3d3d8b88a042f12ec32c220608c3b08aed212f",
+  "artifact_type": "groundbench.level0_coherent_binary_readout",
+  "claim_boundary": "Level 0 measures only whether the two-token interface satisfies the registered conditional measurement gates. It does not adjudicate calibration, biological validity, knowledge, integration, gain, activation, or a physical law. Exact sign-flip conclusions remain conditional on the required but unverified donor-effect sign-symmetry assumption.",
+  "design": {
+    "alpha": 0.05,
+    "call_plan_sha256": "bb678962349e0a462c120fffd29caa29151fbfc64b66017481903d0541a03de9",
+    "coherence_tolerance": 1e-06,
+    "equivalence_margin": 0.06,
+    "expected_chat_template_sha256": "cd8e9439f0570856fd70470bf8889ebd8b5d1107207f67a5efb46e342330527f",
+    "expected_confirmatory_donors": null,
+    "expected_donor_ids": [
+      "101",
+      "1015",
+      "1016",
+      "1039",
+      "107",
+      "1244",
+      "1256",
+      "1488"
+    ],
+    "expected_dtype": "float32",
+    "expected_model_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "expected_model_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "expected_record_ids": [
+      "004b6a63aca647b29ed8b58db1bad15b15c3b9470e33718f99a0f58d9162bafa",
+      "018857cbfdf282c8750b2e97ec967694d64ab04680020cba329d664cef8db424",
+      "02ca5282634a12ec2f706a449120edc04b0f22d296f756a8b4511b890ae4544e",
+      "02df38f93f28ab7b3e6255e832813155dab538f9ab1d772be7e1c13ce41a1ec8",
+      "077f38b502b1dec4507ca39c23e33debd494457215d108866e7d988bf8019c3a",
+      "0d1d55fe707737ae351b28b67b16f7d3c66b1327e67e04fb41bdc5bb002c07b9",
+      "17c26b596ba4d40be3823595637ccb72856a3bfdbf216e8e9e0a99251fe5d9b5",
+      "1c4c435174ddd95e2f0b94bac9aedac26e0272cbd3c7d83fcda2054d7f48c067",
+      "20d04e4d29832e4707175c608f7fae86109078d855c27721f84eff813ddfa7fe",
+      "21797a3e5154bf6f40b49cced3a903983f0aee4f05bd18ca5f159e5b1f47d894",
+      "21c4fbaf6d0858237b909dbab14e28ab8e5aa35d6ef832316026c91894b436cf",
+      "3d354e4e159410dbfa57233cac474f3adcdd6ea0dc120b5e71061abe94c1172a",
+      "3dc0dcd1604a2ffaa670aae95f3daf4d343d325203d5a8ae2578b00f88a2c9d1",
+      "41a410147d483a62614d21094acb1c61c2d4013263f32f9f2d4e41af90239425",
+      "43d07f4ddba86f987769925f3bb0532ba80cf2f3a61e3b09da5a027a0c54182c",
+      "454d03341cd92ea9ce99c59ac64cc52c060d180c745ab56c0477cdebc157adbb",
+      "4c572cb7e29c74b4253a101931f54e488ac8b01171cbf11ca91dd9bd9423663e",
+      "4ff84115c0391adb8999a04e0f3658d02423f5704b4330a3877638d2670b2711",
+      "529c7757762c3c49c8b4e1686193cebab96446482a35d5c8a6a662a271f7a200",
+      "5421c74aa26fba046fb82360e550b65364345b65ac071d0214e46ac3f28647fd",
+      "614fdde723d2a0eb8c2fd209c4ea3b41f8ec3d91943371382b0d6db0a57ccbd7",
+      "65f97bfe3d655fbc777c9ed4660c2a1cee3fb125fc3a9f8bb95d7813868a39a1",
+      "67232a353590cddaf9634123d06e8381dad0fd40da6eef305a072a2344548109",
+      "6b4dd25aba8f74b4d528ae23140c61fad99ab5ef702e0827e4cf616ca6763497",
+      "6b9a564064bdc0a80e4a29f1dae3653590fc6739a71ea04ea4a37650f0919de5",
+      "6c5ae34b3b42d919020e9090613f7b23d8b637e11b041cd0b5a52190c4399d22",
+      "6e1463be060f5ecef341d0786f7d567329daad03945ef30fe36ca7b1538fa094",
+      "71257fb88a4eb26dfba6b4171bf085be7e3f55b0782d3af15dcbaa6794cb3653",
+      "7d7b96b24d75b17ea148a13a5d60a56f4e47ba871268178387524d17923adb05",
+      "7df1df50914ed99c97627e8e04a9c862c553b2b880a855d26609fad7ab74fd32",
+      "7f307d4fcb21e2eddf275d0ccaa8a2e14862702671f2879e6e7e2f3635a549b2",
+      "7f6a3c88fd12f19cc96acde4ef41e3a3d735b93a76c511a3e7a471dc53fe0d98",
+      "833eb80484635b37beab3aa5e2ce5df3327c7672a6d345eeee2259b072a9b1d0",
+      "88dd6f596f9d2009ce516a6d008f79339876f9d3e9b8b756e3c22b89ddfdc3a3",
+      "8aba3a8aab03635bf1d235d269c975960bd81c27146218afd28dd0fb924bd6f9",
+      "8b6064e3644d49791e7cc5de23541669f7080d56a928bbbd2cbc2b761733c75b",
+      "913e08d379abd565abe0e99a73b4c0dec8063b992af3078f0cd39b135c1c83b3",
+      "98a87d001a454a1d3a68b10777c76b1f12c038d94b8334630c2b617c950a15d8",
+      "9e926bbb2af961eb7a7155975190bd7df77d829696ef505d636e9c87940ab4b7",
+      "a3c07501707c7598ac9d6699aeb8adb98c2d56de402b02326d1500a8deeafdc5",
+      "a44b1ad5bb81ef45d5ef10f2ddd1ced15ecb2ed929d60cedfabc28ec13c5c3cb",
+      "a57f9c5ef36e75856a5bce175333d0fa2e19a2bfaaf2ee6b2940d423929d26f5",
+      "aaa8c60f6abb577c2b2c16f3945f93303a933b8e31958871fb7614b83b355196",
+      "aafde19afc26ff44c39801ba908e55530fe77781d8bfb7cb791bd9d1ca2adb71",
+      "b19d5c27bc6b939a7896884e06ce35ca9637353d465b04e5249796d74c473c7d",
+      "b5f47a946403179ddd5bf768d1e5eeb7316557b472fa438213d3256df7ac3500",
+      "b79b3809fa9e03abcdfcf22a037cf980a17831a6eb8db438245e1040303acc26",
+      "c44b91d530447b0d42dd39f237188bad9fc6a11dd36619b961ef20158f4cddde",
+      "c5e820ff674335e667d06089a17aa7c8ec811b9d8377c68181e64dce3c2d84b2",
+      "c78643220fced072a00a59ecd6c274df1f3b8a7b44393881e7ef6aaf0391fa86",
+      "d100fe94db9fc2eccbedb1cc591d2c12247f3e7d05dc8f1440c100d2bf056fb0",
+      "d1648fae207ea0c5060a471b40db803ed44ab896ac366bf7245154e2592db03c",
+      "d187960fe8169517467bd1925088f6256bb7592525836768e062c0c4847c09c0",
+      "d2c24b6eb48676ebd1ec1685573503694122dd3364a06c509bdb2d6c6e134ec4",
+      "d3e37b0e4800267d6174fb433d265a12b1c6ec31d8bcf0d1a28baab1b04de5ee",
+      "dfac7950b72325a591d4448686a968f0eaff68d30a07891c516150bb6791bba8",
+      "e10ebfb35c2b0f45ec18cf205681484fab22389fc4524cd1c67d15a4df7b6aab",
+      "e751fbf4f0dec136371c72cd99eb57a78c494cc38065938b82b27dd24ee9965c",
+      "ea01060b03f1a9d0fe498b8ac646e55f48917ad89b6b6de7508f34df2011286c",
+      "eabb6c9078904f47c27fbae9f0f32b476f112c35b288c6485ba1316c5f535226",
+      "eb38febfd08c5e6c10795b62a6773c0659bf2365862af3243b363d878e9e86ca",
+      "f0b36bcf8a453e91225857b1e07c173a7d32047a4a618cbffe98fd6eb332d32c",
+      "f92d71c4daccf153cea0835e2f79eb13cf2ea1fcdcf1072bed2893b9f87ad910",
+      "fd29a21ba2dd0d6614282ee26117446bd170aa213cf52c2f2537bec4700f220b"
+    ],
+    "expected_source_items": [
+      {
+        "donor_id": "1015",
+        "source_item_id": "gse96583:ctrl:1015:AAGATTACCAAGCT-1"
+      },
+      {
+        "donor_id": "1016",
+        "source_item_id": "gse96583:ctrl:1016:CTTTAGACAGCCAT-1"
+      },
+      {
+        "donor_id": "101",
+        "source_item_id": "gse96583:ctrl:101:AGGACTTGCTATGG-1"
+      },
+      {
+        "donor_id": "1039",
+        "source_item_id": "gse96583:ctrl:1039:AGTCACGAGCTTCC-1"
+      },
+      {
+        "donor_id": "107",
+        "source_item_id": "gse96583:ctrl:107:GTTAACCTCGCAAT-1"
+      },
+      {
+        "donor_id": "1244",
+        "source_item_id": "gse96583:ctrl:1244:TTTCCAGAGCTGAT-1"
+      },
+      {
+        "donor_id": "1256",
+        "source_item_id": "gse96583:ctrl:1256:AGAGATGAGTATGC-1"
+      },
+      {
+        "donor_id": "1488",
+        "source_item_id": "gse96583:ctrl:1488:AGTCTACTTGCTAG-1"
+      }
+    ],
+    "expected_tokenizer_id": "Qwen/Qwen2.5-0.5B-Instruct",
+    "expected_tokenizer_revision": "7ae557604adf67be50417f59c2c2f167def9a775",
+    "expected_vocab_size": 151936,
+    "expected_x_token_id": 55,
+    "expected_y_token_id": 56,
+    "format_overall_min": 0.95,
+    "format_per_donor_min": 0.9,
+    "format_per_group_min": 0.95,
+    "item_range_margin": 0.2,
+    "item_range_pass_min": 0.95,
+    "margin_lock_sha256": "68b7f0a5354654d5c5027af00c00dad1c8608ab039f82f4e68b879525b3b6625",
+    "margin_lock_status": "candidate_unqualified",
+    "mode": "development",
+    "preregistration_sha256": "2f297578a9e9352b29348337000d11759159d4dac7927c271f63195b6325dc07",
+    "readout_classes": {
+      "cytotoxic_state": {
+        "negative_class": "cytotoxic-low",
+        "positive_class": "cytotoxic-high"
+      },
+      "lineage": {
+        "negative_class": "CD8 T cell",
+        "positive_class": "NK cell"
+      }
+    },
+    "required_input_families": [
+      "unmodified"
+    ],
+    "required_readouts": [
+      "cytotoxic_state",
+      "lineage"
+    ],
+    "runner_code_sha256": "09f78e090a7a4f4d0440502991d7a011b74543b662691710e6382b441f67e64b",
+    "schema_version": "coherent-binary-readout-design-v1",
+    "source_fixture_sha256": "047be03ee29691506710cf9483cfe20a45c5d28e859818db9f612632d8d05367",
+    "source_manifest_sha256": "3ef29d500f85883063ceb842532b1b865ea8bee1b28222b02daabbd05a2b477e",
+    "strong_score_threshold": 0.2
+  },
+  "design_sha256": "fd85775771dcb33ef25f7913c4862c610db47b7c8eceb433ac168263762354ab",
+  "donor_ids": [
+    "101",
+    "1015",
+    "1016",
+    "1039",
+    "107",
+    "1244",
+    "1256",
+    "1488"
+  ],
+  "full_vocab_sidecar_sha256": "a4d0656fce150d3b8dc814d5ae766562b1b7bf27c7229ad0617d0a37bcff3f20",
+  "global_format_adherence": {
+    "adherent_records": 3,
+    "fraction": 0.046875,
+    "pass": false,
+    "record_count": 64,
+    "required": 0.95
+  },
+  "groups": {
+    "cytotoxic_state::unmodified": {
+      "donor_effects": {
+        "101": {
+          "I": -0.19301195082435274,
+          "O": -0.6136951602367169,
+          "R": -1.3057955573356481
+        },
+        "1015": {
+          "I": -0.12756531745281108,
+          "O": -1.356324723251419,
+          "R": -0.2976908120701288
+        },
+        "1016": {
+          "I": -0.15888402161420168,
+          "O": -1.3371979555114208,
+          "R": -0.36550843833373037
+        },
+        "1039": {
+          "I": -0.2777404277393105,
+          "O": -1.0814249603515278,
+          "R": -0.7621112620135424
+        },
+        "107": {
+          "I": -0.2352023808348876,
+          "O": -1.1587943710359383,
+          "R": -0.7430283422545354
+        },
+        "1244": {
+          "I": -0.18346164146897248,
+          "O": -1.3690990285660658,
+          "R": -0.42679356599557294
+        },
+        "1256": {
+          "I": -0.16607563159859645,
+          "O": -1.3004244127928695,
+          "R": -0.46950013761748494
+        },
+        "1488": {
+          "I": -0.24430961769137277,
+          "O": -1.1402094317979843,
+          "R": -0.6472345952288445
+        }
+      },
+      "extraction_coherence": {
+        "max_residual": 0.0,
+        "pass": true
+      },
+      "format_adherence": {
+        "adherent_records": 0,
+        "fraction": 0.0,
+        "mean_two_token_probability_mass": 0.1947418119302527,
+        "pass": false,
+        "per_donor_fraction": {
+          "101": 0.0,
+          "1015": 0.0,
+          "1016": 0.0,
+          "1039": 0.0,
+          "107": 0.0,
+          "1244": 0.0,
+          "1256": 0.0,
+          "1488": 0.0
+        },
+        "required_group": 0.95,
+        "required_per_donor": 0.9
+      },
+      "input_family": "unmodified",
+      "item_guardrail": {
+        "all_strong_items_same_sign": true,
+        "pass": false,
+        "range_pass_count": 0,
+        "range_pass_fraction": 0.0,
+        "range_required_count": 8,
+        "required_fraction": 0.95,
+        "strong_item_count": 0
+      },
+      "n_donors": 8,
+      "n_items": 8,
+      "n_records": 32,
+      "nuisance_equivalence": {
+        "I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.23190014950608462,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -0.16466259780004172,
+          "exact_shifted_tost_pass": false,
+          "leave_one_donor_out_means": [
+            -0.19903414834287897,
+            -0.20838366739595632,
+            -0.20390956680147196,
+            -0.1869300802121707,
+            -0.19300694405565968,
+            -0.2003984782507904,
+            -0.2028821939465584,
+            -0.19170591021901892
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9999461336096495,
+          "margin": 0.06,
+          "mean": -0.19828137365306317,
+          "n_donors": 8,
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.05018966078682746,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 8.622694073626631e-07
+        },
+        "O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -1.3371347165320548,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -1.0021577943539306,
+          "exact_shifted_tost_pass": false,
+          "leave_one_donor_out_means": [
+            -1.2490678404724609,
+            -1.142977902898932,
+            -1.1457102982903604,
+            -1.1822492975989165,
+            -1.1711965246440006,
+            -1.1411530021396967,
+            -1.1509636615358674,
+            -1.1738515159637082
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9999976503783008,
+          "margin": 0.06,
+          "mean": -1.1696462554429927,
+          "n_donors": 8,
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.2500444717118479,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 1.1736815819801286e-06
+        },
+        "R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.8442002127095438,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -0.410215465002828,
+          "exact_shifted_tost_pass": false,
+          "leave_one_donor_out_means": [
+            -0.5302667362162629,
+            -0.6742816998256226,
+            -0.664593467502251,
+            -0.6079359212622778,
+            -0.6106620526564218,
+            -0.6558384492648449,
+            -0.6497375104617146,
+            -0.6243468736600918
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9991740668686686,
+          "margin": 0.06,
+          "mean": -0.6272078388561859,
+          "n_donors": 8,
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.3239491433192586,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 0.0002711104494959329
+        }
+      },
+      "pass": false,
+      "readout_id": "cytotoxic_state"
+    },
+    "lineage::unmodified": {
+      "donor_effects": {
+        "101": {
+          "I": 0.13774132579756537,
+          "O": -1.1136718127925862,
+          "R": -0.6100823823636571
+        },
+        "1015": {
+          "I": 0.15508838951055393,
+          "O": -1.0668072678950915,
+          "R": 0.5542593046851154
+        },
+        "1016": {
+          "I": 0.12747623488405024,
+          "O": -1.1107771552131502,
+          "R": 0.49468060270790526
+        },
+        "1039": {
+          "I": 0.05831883410715183,
+          "O": -1.4078417133313936,
+          "R": -0.19304814865579728
+        },
+        "107": {
+          "I": 0.15002056972305317,
+          "O": -1.3156942285513877,
+          "R": -0.2911845269748346
+        },
+        "1244": {
+          "I": 0.13326043476957417,
+          "O": -1.349982176108272,
+          "R": 0.15863390283354306
+        },
+        "1256": {
+          "I": 0.10924883522245613,
+          "O": -1.0464458016892249,
+          "R": 0.4051979697010073
+        },
+        "1488": {
+          "I": 0.2199406015193699,
+          "O": -1.1711471190627238,
+          "R": 0.018163671752813526
+        }
+      },
+      "extraction_coherence": {
+        "max_residual": 0.0,
+        "pass": true
+      },
+      "format_adherence": {
+        "adherent_records": 3,
+        "fraction": 0.09375,
+        "mean_two_token_probability_mass": 0.17726618635650282,
+        "pass": false,
+        "per_donor_fraction": {
+          "101": 0.0,
+          "1015": 0.0,
+          "1016": 0.25,
+          "1039": 0.0,
+          "107": 0.0,
+          "1244": 0.25,
+          "1256": 0.25,
+          "1488": 0.0
+        },
+        "required_group": 0.95,
+        "required_per_donor": 0.9
+      },
+      "input_family": "unmodified",
+      "item_guardrail": {
+        "all_strong_items_same_sign": true,
+        "pass": false,
+        "range_pass_count": 0,
+        "range_pass_fraction": 0.0,
+        "range_required_count": 8,
+        "required_fraction": 0.95,
+        "strong_item_count": 0
+      },
+      "n_donors": 8,
+      "n_items": 8,
+      "n_records": 32,
+      "nuisance_equivalence": {
+        "I": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": 0.10596499670370892,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.16680880967973474,
+          "exact_shifted_tost_pass": false,
+          "leave_one_donor_out_means": [
+            0.13619341424802991,
+            0.13371526228903155,
+            0.1376598558071035,
+            0.14753948448951754,
+            0.13443923654438877,
+            0.13683354153774294,
+            0.14026377004447407,
+            0.1244506605734864
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.00390625,
+          "lower_shift_student_t_p": 2.798019628414584e-06,
+          "margin": 0.06,
+          "mean": 0.13638690319172184,
+          "n_donors": 8,
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.04541703641433238,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.99609375,
+            "successes": 1,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.99609375,
+          "upper_shift_student_t_p": 0.998966834231779
+        },
+        "O": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -1.2913688863818527,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": -1.104222932279105,
+          "exact_shifted_tost_pass": false,
+          "leave_one_donor_out_means": [
+            -1.2098136374073205,
+            -1.216508572392677,
+            -1.2102271599186685,
+            -1.1677893659017768,
+            -1.1809532922989203,
+            -1.1760550140765085,
+            -1.2194173532792294,
+            -1.2016028793687297
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 1.0,
+            "successes": 0,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 1.0,
+          "lower_shift_student_t_p": 0.9999999631826947,
+          "margin": 0.06,
+          "mean": -1.1977959093304789,
+          "n_donors": 8,
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.1396956271565122,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.00390625,
+            "successes": 8,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.00390625,
+          "upper_shift_student_t_p": 1.8383662610448713e-08
+        },
+        "R": {
+          "all_lodo_strictly_inside_margin": false,
+          "alpha": 0.05,
+          "ci90_lower": -0.21024344863772274,
+          "ci90_strictly_inside_margin": false,
+          "ci90_upper": 0.34439854705924666,
+          "exact_shifted_tost_pass": false,
+          "leave_one_donor_out_means": [
+            0.16381468229282178,
+            -0.0025198444284314026,
+            0.005991398711170048,
+            0.10423836319169899,
+            0.11825784580870431,
+            0.05399807012179322,
+            0.018774631997869756,
+            0.07406524599046886
+          ],
+          "lower_exact_sign_test": {
+            "p_value": 0.36328125,
+            "successes": 5,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "lower_shift_exact_sign_flip_p": 0.2109375,
+          "lower_shift_student_t_p": 0.2070390847750285,
+          "margin": 0.06,
+          "mean": 0.06707754921076195,
+          "n_donors": 8,
+          "pass": false,
+          "pass_is_conditional_on_sign_symmetry": true,
+          "sign_symmetry_assumption": "required_unverified",
+          "standard_deviation": 0.41401408760185504,
+          "student_t_tost_pass": false,
+          "upper_exact_sign_test": {
+            "p_value": 0.63671875,
+            "successes": 4,
+            "ties_counted_as_failures": 0,
+            "trials": 8
+          },
+          "upper_shift_exact_sign_flip_p": 0.515625,
+          "upper_shift_student_t_p": 0.5186067496463042
+        }
+      },
+      "pass": false,
+      "readout_id": "lineage"
+    }
+  },
+  "level0_pass": false,
+  "margin_lock_status": "candidate_unqualified",
+  "mode": "development",
+  "n_donors": 8,
+  "n_items": 16,
+  "n_records": 64,
+  "raw_records_sha256": "c834c2eb26ed3f20359f0d5317d2b6d073e19ed42d323d202f98ba10174b0035",
+  "schema_version": "coherent-binary-readout-level0-analysis-v1",
+  "status": "DEVELOPMENT_READOUT_FORMAT_INVALID",
+  "validation": {
+    "expected_records": 64,
+    "finite_logits": true,
+    "max_complement_error": 0.0,
+    "missing_records": [],
+    "observed_records": 64,
+    "unexpected_records": []
+  }
+}

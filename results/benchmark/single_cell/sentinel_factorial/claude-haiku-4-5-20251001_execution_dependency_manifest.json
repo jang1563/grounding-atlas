@@ -1,0 +1,54 @@
+{
+  "analysis_id": "gse96583-sentinel-factorial-holdout-v1",
+  "artifact_hashes": {
+    "benchmark_tasks_sha256": "1d3409867ac523fd2d2639395ddaa552e159fcf95d97a7ba5e0ee7b1375869fb",
+    "call_plan_sha256": "db5af60a5142c6f79cbac7abdba85520077efd75fab732db0bfda80f6843a20e",
+    "execution_code_sha256": "a7a35904dbf0b8c519ed58b4844fbe2a772035478f526f7f496d23bbe1315e23",
+    "input_csv_sha256": "673db8c8bcd6ba923e62891de6cd5f04f97967706ac3ade8a6e44ad2d14a4b95",
+    "input_manifest_sha256": "9f0035469c81852b11e2a36651b7892bf2dad4d30f8049b37cd1f655ca9bf0c4",
+    "parent_csv_sha256": "f2f0859ca4c3559494a7c132921fef3d1286c2a20384a5b35d44e7b9ac280321",
+    "parent_exclusion_records_sha256": "35d2ba1aa04f7e740f037d30b677001b5b05900e75a35da1b82fc2dd1f036950",
+    "parent_manifest_sha256": "3e59808e09675f98be5e88fa8266f56c43aeea3592f023b6f91750ffdd0cb53f",
+    "parsing_helper_sha256": "2acce057c05646297c9d3576288ec9496d5f1dd9c2fcdaf65a840d437498c430",
+    "preregistration_sha256": "eaa0ad301d44dcb644e45deeb83a8de75ce6121a14635a8c5a36ee2fa3fbb707",
+    "prompt_template_sha256": "8da04371ae26646b51f22aaead0815b3625b62be6c537a1788b298f67064433a",
+    "pyproject_sha256": "e6113c066f5492f5c97435a526435331d714acf759c59eda3c237f734a76210c",
+    "requirements_sha256": "3aada9b15250e762230e1ad75eefdff256df37789a9649c39841954d2f070763",
+    "system_prompt_sha256": "37aa5ee3d2b27cd4ae670f3a064e89de1d25013f939951d3993a6732acd5dacb"
+  },
+  "decode": {
+    "max_tokens": 16,
+    "temperature": 0.0
+  },
+  "dependencies": {
+    "anthropic": "0.102.0",
+    "httpx": "0.28.1",
+    "numpy": "2.3.5",
+    "scipy": "1.17.1"
+  },
+  "model": "claude-haiku-4-5-20251001",
+  "platform": {
+    "machine": "arm64",
+    "release": "25.2.0",
+    "system": "Darwin"
+  },
+  "provider": "anthropic",
+  "provider_retry_policy": {
+    "retryable_classes": [
+      "APIConnectionError",
+      "APITimeoutError",
+      "RateLimitError",
+      "InternalServerError",
+      "APIStatusError(status in 408,409,429,500-599)"
+    ],
+    "runner_max_attempts": 5,
+    "sdk_automatic_retries": 0,
+    "temperature_fallback": "one retry without temperature only for a BadRequestError whose message identifies temperature"
+  },
+  "python": {
+    "executable": "<HOME>/miniconda3-arm64/bin/python3",
+    "implementation": "CPython",
+    "version": "3.13.11"
+  },
+  "schema_version": 1
+}

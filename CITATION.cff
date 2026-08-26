@@ -1,17 +1,14 @@
 cff-version: 1.2.0
 message: "If you use this work, please cite it as below."
-title: "grounding-atlas: a measurement-first map of biological content-grounding in language models"
+title: "grounding-atlas: a pilot benchmark of supervised biological decodability and native model output"
 abstract: >-
-  A research program that measures whether a language model does biology by the
-  content of a specialist model's output (sequence, structure, identifier, numeric
-  prediction) or merely by its name, decomposes grounding into encoding (a linear
-  probe on hidden states) versus expression (generation) against a specialist
-  ceiling, and maps where each capability should live across train, retrieve, and
-  orchestrate. Findings span a modality ladder (small molecules, proteins, variants,
-  methylation, histopathology, single-cell, and more) under leakage-controlled splits,
-  and characterize how token-familiarity and mapping-documentation together (a
-  capability-dependent web-exposure effect, not a single law) predict where a general
-  model can and cannot ground biological content.
+  A pilot research benchmark comparing native model outputs with supervised
+  representation-label readouts across biological and scientific representations.
+  GroundBench records operational target definitions, task status, truth level,
+  paired entity identifiers, raw outputs, parse validity, proper scores, and
+  provenance metadata. A supervised decodability-native-output gap is an operational
+  statistical contrast; it does not by itself establish latent biological knowledge,
+  causal use of a decoded feature, a specialist ceiling, or a universal law.
 type: software
 authors:
   - family-names: Kim
@@ -22,9 +19,9 @@ keywords:
   - biological foundation models
   - grounding
   - model evaluation
-  - orchestration
+  - supervised decodability
   - calibration
-  - web-exposure effect
+  - biological evaluation
 license: Apache-2.0
 repository-code: "https://github.com/jang1563/grounding-atlas"
 version: "0.1.0"

@@ -1,5 +1,11 @@
 # PREREG: Route-vs-Train in the Generative Regime
 
+> **Historical-premise warning (2026-07-24).** The protocol below may still be
+> useful as an arm-specific generative comparison, but its opening claim that a general
+> “route, don't train” verdict was already established is superseded. Current evidence
+> supports only task-, model-, split-, budget-, and implementation-specific comparisons.
+> A result from this preregistration cannot establish a universal placement rule.
+
 ## 1. Title and framing
 
 **Route-vs-Train in the Generative Regime: a contamination-safe 3-arm head-to-head (internalized reward-update vs frozen-FM inference-time guidance vs base) on a SMILES generator with our hERG ADMET head as the reward.**

@@ -1,0 +1,124 @@
+{
+  "analyzer_file_sha256": "cc0b8c50719a510aca1a3cfb9f6d125748770813c031f0288cd0ace3a2e72150",
+  "attempt": {
+    "file_sha256": "8950a68ac52c9b83aa51f2c9eeb38f389caad030c487421ebfadba0c509131f1",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/qualification_baseline_attempt.json"
+  },
+  "biological_model_calls": 0,
+  "call_plan_sha256": "61fd6c4a7c34d8efccca54d4d4091a7d2fac16023aa8257f64eb3afb62cd1f7d",
+  "composition_calls": 0,
+  "cumulative_model_calls": 384,
+  "dependency_lock_file_sha256": "8b52bb32ce972a36d316ae5b6f63810956d0b9cba955f11e8fd2b15b01a8a73e",
+  "design_file_sha256": "b299caf0d1549f90f9ac12cae23ba944203bfd0f7e55227e7df0fb56b2b93d42",
+  "execution_revision": "v2_mps_allocator_warmup_bypass",
+  "generation_used": false,
+  "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+  "partial_resume_allowed": false,
+  "phase": "qualification-baseline",
+  "phase_model_calls": 384,
+  "plan_manifest_file_sha256": "27b33868fb6269e2dd73ea50c8f41c21d6ab9fbb67a82c795b476993fa185758",
+  "raw_logits_shards": [
+    {
+      "dtype": "<f4",
+      "file_sha256": "5374be775a9e6d6682f6a03b22aafeea6992b9233ee697a922752ce90b663eba",
+      "index": 0,
+      "logical_sha256": "519fe13af77957377fb5c0c6ee22c0e2cf8a6239199ee68937ee5925e6c827c8",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/raw_logits/qualification-baseline/shard_000.npy",
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512,
+      "start_row": 0,
+      "stop_row": 64
+    },
+    {
+      "dtype": "<f4",
+      "file_sha256": "36404e1b2cd822152fcd42fd8638d68e87f4f2c0f13476d7f14d749633653789",
+      "index": 1,
+      "logical_sha256": "341f165f069f09b1c75699ee9e8c10ec4d6b71e6d11d97f7a54480bbbba2cf88",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/raw_logits/qualification-baseline/shard_001.npy",
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512,
+      "start_row": 64,
+      "stop_row": 128
+    },
+    {
+      "dtype": "<f4",
+      "file_sha256": "47f417ea955d238fb17c90d384a50da47735b4051d8e47a8ff4d65cfe4cb7dc2",
+      "index": 2,
+      "logical_sha256": "bc4108869a697b7e56039da0a33b4647d8a6d955e314a274cfb16c1777843f2e",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/raw_logits/qualification-baseline/shard_002.npy",
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512,
+      "start_row": 128,
+      "stop_row": 192
+    },
+    {
+      "dtype": "<f4",
+      "file_sha256": "ca2646612d1d95ccba5d9c5f7bd909f9e764de2632f9ee8fadbc76176ffd6df7",
+      "index": 3,
+      "logical_sha256": "d4dd8a53fb1b4a6b862f4079f38b5c8df37e910d5b25b331546d9d4b223f258f",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/raw_logits/qualification-baseline/shard_003.npy",
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512,
+      "start_row": 192,
+      "stop_row": 256
+    },
+    {
+      "dtype": "<f4",
+      "file_sha256": "933012f78833544b8caae3094fed888e176d474c7fd3acb6a5e6540faf35d7a5",
+      "index": 4,
+      "logical_sha256": "de4391bbb486d85ba8a74888e0ceb89b6bcf0675276c609f1099f98cd8f6dffe",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/raw_logits/qualification-baseline/shard_004.npy",
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512,
+      "start_row": 256,
+      "stop_row": 320
+    },
+    {
+      "dtype": "<f4",
+      "file_sha256": "f8494885842590cf6ff201cc5c5b7218d6297402b234323402a7230b9bc2ffc1",
+      "index": 5,
+      "logical_sha256": "03f530e987fe513efccccba2b4047d6e0f2217c105eaf2789e4b9be49242272a",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/raw_logits/qualification-baseline/shard_005.npy",
+      "rows": 64,
+      "shape": [
+        64,
+        152064
+      ],
+      "size_bytes": 38928512,
+      "start_row": 320,
+      "stop_row": 384
+    }
+  ],
+  "records": {
+    "canonical_sha256": "cd4b603e5bb452c9b390fb7d574d3a2104c5635b5831752bb4fa57a6e82a02bd",
+    "count": 384,
+    "file_sha256": "8ba92c45a72173680f080d9cd9ceffe9006a833fbd3f023d9cf3833499c3b162",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification_v2/qwen2.5-7b-instruct/qualification_baseline_records.jsonl",
+    "size_bytes": 659745
+  },
+  "runner_file_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+  "schema_version": "coherent-readout-v6a-qualification-execution-v2",
+  "scientific_registry_sha256": "b766fa49a66b0c3f5b8d87cbbcddb1e44708f15c337dd09e297dca8b11e54676",
+  "status": "QUALIFICATION_EXECUTION_COMPLETE_NOT_ANALYZED",
+  "tokenization_receipt_file_sha256": "b8eda62d4bca9bc7cdebda721f617a6f3f103d663333ec83ec8dbf4a22eb48e5"
+}

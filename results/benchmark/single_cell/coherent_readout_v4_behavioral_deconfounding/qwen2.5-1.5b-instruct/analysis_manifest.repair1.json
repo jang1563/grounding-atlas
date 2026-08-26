@@ -1,0 +1,102 @@
+{
+  "activation_authorized": false,
+  "analysis": {
+    "canonical_sha256": "49ab2b0aa18f9da7e8e795ef703058028ca5fc451344721e129e9af4efa442a2",
+    "file_sha256": "9f6a02863dd84299f859480b11e53b37b0b51b02b758b77035ce2e857812e5d9",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_analysis.repair1.json"
+  },
+  "biological_model_calls": 0,
+  "decision_rules_changed": false,
+  "markdown": {
+    "file_sha256": "a0d3d415b9101047edf80c8767e739858db8f9b2d10eeca8df409acd50d1eb4f",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/analysis.repair1.md"
+  },
+  "model_forwards_executed_by_repair": 0,
+  "original_artifacts": {
+    "behavior_attempt.json": {
+      "file_sha256": "56e06041ae81b88b7dfda1cb928fdeef15f117b0124a68b147961a1bf4f59b53",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_attempt.json"
+    },
+    "behavior_execution_manifest.json": {
+      "file_sha256": "3ebf2262111376d0870c0189016d62eed83e46ef9b231cf12f3edc28433c4132",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_execution_manifest.json"
+    },
+    "behavior_full_vocab_logits.npy": {
+      "file_sha256": "4f281510fb70f5f678eee3680999193b559970cf823e67d7c03f6b50bde80928",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_full_vocab_logits.npy"
+    },
+    "behavior_records.jsonl": {
+      "file_sha256": "a96554156f91f7b6721cd5abdb21f3694f30ab6efd3f55f0aec4de840e14d041",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/behavior_records.jsonl"
+    },
+    "dependency_lock.json": {
+      "file_sha256": "14e3cc08b61df3d5e05036897640e925c8f0ee54e7e767591dde486aa49c5bbb",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/dependency_lock.json"
+    },
+    "design.json": {
+      "file_sha256": "1b6d841db45025452d6bc3f845ea3872718cd15e4d8aa339aac6b4056827de23",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/design.json"
+    },
+    "plan_manifest.json": {
+      "file_sha256": "fc0446884ff51c9fb2b9fc4d1f99490adbf99faaf3637b6463ebdc82b73ffb1a",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/plan_manifest.json"
+    },
+    "tokenization_receipt.json": {
+      "file_sha256": "a7c600a7af28366f2dc369b60adcf2277b86bf0121e862306bfb527af8f84543",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/tokenization_receipt.json"
+    }
+  },
+  "original_frozen_analyzer_completed_unchanged": false,
+  "original_sources": {
+    "analyzer": {
+      "file_sha256": "7b8b460714d146371d6a24a2459bb6a19c7fa979bb4a4ecd86ecec6bfc2b1175",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/analyze_coherent_readout_v4_behavioral_deconfounding.py"
+    },
+    "preregistration": {
+      "file_sha256": "af63bb4fabcff96486adf9715c5ade276a44fe5f07dc07add02cb452836e0bdb",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/docs/COHERENT_READOUT_V4_BEHAVIORAL_DECONFOUNDING_PREREG.md"
+    },
+    "runner": {
+      "file_sha256": "4773f48ec1fa6d7e9b6a685456e3729183d1ff66682f14c41954243f4d60d28a",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_readout_v4_behavioral_deconfounding.py"
+    },
+    "test_analyzer": {
+      "file_sha256": "f20d303f1a6f8d6147af6d7ba15fe9d802232f80c7a0b5d62300dc7f1b3c5a3d",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_analyze_coherent_readout_v4_behavioral_deconfounding.py"
+    },
+    "test_builder": {
+      "file_sha256": "a56dd83388e9d38000f005ca036ec75efbd75bb4ee5d93f529c4070ee2eb7c54",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_build_coherent_readout_v4_behavioral_deconfounding_bank.py"
+    },
+    "test_runner": {
+      "file_sha256": "ec7541a1633e5086aeb841e1f1677d57a1338c615bcc0cd7c0d7e8363c239e55",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_run_coherent_readout_v4_behavioral_deconfounding.py"
+    }
+  },
+  "outcome_exposure_before_repair_lock_disclosed": true,
+  "raw_artifacts_modified": false,
+  "raw_full_vocab_logical_f32_sha256": "3beb4b6e09ef91d23c94e961008a99044b49798d5b9747d9750192761bba9a23",
+  "repair_id": "coherent-readout-v4-analysis-adapter-repair1",
+  "repair_implementation": {
+    "repair_adapter": {
+      "file_sha256": "f22fa1883689fce3cedea383161d492995e846d7d0c3ee17d31168aa0c44fdae",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/analyze_coherent_readout_v4_behavioral_deconfounding_repair1.py"
+    },
+    "repair_memo": {
+      "file_sha256": "ac7e0914bf1c6dfc65c716e323cfcbd6dac2810916eb0e14176748c5423a09cd",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/docs/COHERENT_READOUT_V4_ANALYSIS_ADAPTER_REPAIR1.md"
+    },
+    "repair_test": {
+      "file_sha256": "e132f0578df35feed8bee96e4b5e156a4776f65336b29b7d7edb6d21533d28bc",
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_coherent_readout_behavioral_deconfounding_repair1.py"
+    }
+  },
+  "repair_plan": {
+    "canonical_sha256": "bba4bf08c63d77b25d4a4725a0a2103d0868d65ffd090b26f5013a701d75e0e5",
+    "file_sha256": "f0786a30278f8d875c18665f2023bd2edbf402358e9020bfc3979ed12d3c6e13",
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v4_behavioral_deconfounding/qwen2.5-1.5b-instruct/analysis_adapter_repair1_plan.json"
+  },
+  "repair_qualifier": "disclosed_post_freeze_implementation_repair",
+  "schema_version": "coherent-readout-v4-analysis-adapter-repair-manifest-v1",
+  "status": "V4_LOOKUP_COMPONENT_FAIL"
+}

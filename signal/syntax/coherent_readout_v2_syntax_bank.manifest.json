@@ -1,0 +1,42 @@
+{
+  "analysis_id": "coherent-readout-v2-syntax-selection-bank-v1",
+  "artifacts": {
+    "builder_path": "signal/syntax/build_coherent_readout_v2_syntax_bank.py",
+    "builder_sha256": "637b8e363f4c63e3d81ac03b2fbe0ee08694947fb1966733740023a5d5660085",
+    "fixture_canonical_sha256": "1476a30b8c9f34c1b885f1adf7ae0ab3161250a88d1bbd0622508dcef8747d03",
+    "fixture_path": "signal/syntax/coherent_readout_v2_syntax_bank.json",
+    "fixture_sha256": "d00e27d9e4130ff7d0d4ab32b1e26d31f40482cb1f4654204fd8a748ed06f4f8"
+  },
+  "claim_scope": "syntax_selection_only_no_biology_knowledge_or_activation_inference",
+  "contract": {
+    "inferential_unit": "pair_cluster",
+    "inferential_units": 8,
+    "items": 16,
+    "items_per_pair": 2,
+    "model_calls_made_by_builder": 0,
+    "pairs": 8,
+    "truth_polarity_counts": {
+      "negative": 8,
+      "positive": 8
+    }
+  },
+  "firewall": {
+    "activation_inference": "forbidden",
+    "biology_inference": "forbidden",
+    "knowledge_inference": "forbidden",
+    "scope": "syntax_selection_only"
+  },
+  "freeze_date": "2026-08-02",
+  "mode": "development",
+  "provenance": {
+    "declaration_encoding": "utf-8",
+    "declaration_template": "The declared class is {declared_class}.",
+    "external_data_sources": [],
+    "pair_registry_canonical_sha256": "7b21315796fcb3bc5788b641d4aa6842dcf269564079f0588e92ed44cbae7268",
+    "pair_registry_constant": "PAIR_DEFINITIONS",
+    "source_type": "deterministic_in_code_direct_declarations"
+  },
+  "purpose": "syntax_selection_only",
+  "schema_version": "coherent-readout-v2-syntax-bank-manifest-v1",
+  "status": "built_not_executed"
+}

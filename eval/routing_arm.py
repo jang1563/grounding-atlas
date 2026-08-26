@@ -1,4 +1,4 @@
-"""Calibration/routing arm (Part A, no API): does the model's confidence say when to defer?
+"""Historical in-sample calibration/routing prototype (not adjudicated).
 
 For each model, pools the corrected ADMET items and asks the project's prescription question:
 if you route each compound to the model when it is confident and to a cheap Morgan specialist
@@ -6,7 +6,9 @@ when it is not, do you beat always-answering-yourself and always-calling-the-spe
 the model probabilities already in results/benchmark/<model>/raw.jsonl (implicit confidence
 |P-0.5|) and a per-item out-of-fold Morgan+LR specialist on the oriented label. Read-only.
 
-Run:  python eval/routing_arm.py
+The threshold in this legacy implementation is optimized and evaluated on the same
+items and its raw schema predates GroundBench v5. It is retained for provenance, but
+execution is disabled; use the held-out, ID-aligned routing contract instead.
 """
 import json
 import os
@@ -83,6 +85,11 @@ def load_conf(model):
 
 
 def main():
+    raise SystemExit(
+        "NOT ADJUDICATED: this legacy router selects and scores its threshold in-sample. "
+        "Use calibration_discovery/eval/per_item_router.py after regenerating per-item "
+        "predictions with stable item_id alignment."
+    )
     spec = {rung: specialist_oof(rung) for rung in RUNGS}
     report = {}
     print(f"{'model':20s} {'self':>5} {'spec':>5} {'oracle':>6} | {'imp_rt':>6} {'impAURC':>7} | "

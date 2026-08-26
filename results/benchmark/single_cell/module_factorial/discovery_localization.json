@@ -1,0 +1,421 @@
+{
+  "analysis": "post_hoc_descriptive_localization_of_preregistered_module_comparison",
+  "boundary": "Post-hoc and context-confounded localization in one label-informed reduced panel, one donor, and one model. GNLY and NKG7 are NK associated but are not NK-lineage-specific, and the selected-target strata do not isolate either gene from its cellular context. The result does not establish individual-gene causality, a biological pathway mechanism, hidden-state activation, latent knowledge, prompt invariance, or a physical law.",
+  "cell_level_summary": {
+    "both_module_effects_expected_direction": 18,
+    "positive_t_minus_cytotoxic_separation": 54
+  },
+  "class_counts": {
+    "CD8": 55,
+    "NK": 10
+  },
+  "condition_equal_class_p_cd8": {
+    "T_TCR_CD8:module_mask": 0.46128409090909095,
+    "T_TCR_CD8:neutral_mask": 0.5338750000000001,
+    "cytotoxic_effector:module_mask": 0.7350340909090909,
+    "cytotoxic_effector:neutral_mask": 0.5208409090909091,
+    "unmasked": 0.5304886363636364
+  },
+  "discovery_claim": "In this mixed-marker subset, Haiku 4.5 shows opposing token-deletion sensitivities: a modest distributed CD3/TCR-category sensitivity and a larger context-dependent sensitivity concentrated in cells whose selected NK-associated cue was GNLY or NKG7. The localization does not support a generic cytotoxic-program interpretation.",
+  "logical_observations": 1300,
+  "module_results": {
+    "T_TCR_CD8": {
+      "by_annotation": [
+        {
+          "annotation": "CD56+ NK",
+          "mean_effect_on_p_cd8": 0.081,
+          "n": 10,
+          "sign_counts": {
+            "negative": 2,
+            "positive": 5,
+            "zero": 3
+          }
+        },
+        {
+          "annotation": "CD8+ Cytotoxic T",
+          "mean_effect_on_p_cd8": 0.07445945945945945,
+          "n": 37,
+          "sign_counts": {
+            "negative": 2,
+            "positive": 22,
+            "zero": 13
+          }
+        },
+        {
+          "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+          "mean_effect_on_p_cd8": 0.04305555555555556,
+          "n": 18,
+          "sign_counts": {
+            "negative": 0,
+            "positive": 11,
+            "zero": 7
+          }
+        }
+      ],
+      "by_masked_target": [
+        {
+          "equal_class_contribution": 0.029568181818181813,
+          "expected_direction_regime_switch_rate": 0.07926829268292683,
+          "expected_direction_regime_switches": 13,
+          "form_level_pairs": 164,
+          "fraction_of_aggregate_effect": 0.4073262366938008,
+          "gene": "CD3D",
+          "n_cells": 41,
+          "per_annotation": [
+            {
+              "annotation": "CD56+ NK",
+              "mean_effect_on_p_cd8": 0.05833333333333333,
+              "n": 3
+            },
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.06055555555555556,
+              "n": 27
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": 0.05954545454545455,
+              "n": 11
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.06012195121951219,
+          "sign_counts": {
+            "negative": 2,
+            "positive": 20,
+            "zero": 19
+          }
+        },
+        {
+          "equal_class_contribution": 0.022227272727272727,
+          "expected_direction_regime_switch_rate": 0.08823529411764706,
+          "expected_direction_regime_switches": 6,
+          "form_level_pairs": 68,
+          "fraction_of_aggregate_effect": 0.306199123356293,
+          "gene": "CD3E",
+          "n_cells": 17,
+          "per_annotation": [
+            {
+              "annotation": "CD56+ NK",
+              "mean_effect_on_p_cd8": 0.049999999999999996,
+              "n": 6
+            },
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.11541666666666667,
+              "n": 6
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": 0.020500000000000008,
+              "n": 5
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.06441176470588235,
+          "sign_counts": {
+            "negative": 2,
+            "positive": 12,
+            "zero": 3
+          }
+        },
+        {
+          "equal_class_contribution": 0.0030454545454545456,
+          "expected_direction_regime_switch_rate": 0.16666666666666666,
+          "expected_direction_regime_switches": 2,
+          "form_level_pairs": 12,
+          "fraction_of_aggregate_effect": 0.041953663118346904,
+          "gene": "CD3G",
+          "n_cells": 3,
+          "per_annotation": [
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.1675,
+              "n": 2
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": 0.0,
+              "n": 1
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.11166666666666668,
+          "sign_counts": {
+            "negative": 0,
+            "positive": 2,
+            "zero": 1
+          }
+        },
+        {
+          "equal_class_contribution": 0.0006136363636363637,
+          "expected_direction_regime_switch_rate": 0.0,
+          "expected_direction_regime_switches": 0,
+          "form_level_pairs": 4,
+          "fraction_of_aggregate_effect": 0.008453350031308704,
+          "gene": "CD8A",
+          "n_cells": 1,
+          "per_annotation": [
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.0675,
+              "n": 1
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.0675,
+          "sign_counts": {
+            "negative": 0,
+            "positive": 1,
+            "zero": 0
+          }
+        },
+        {
+          "equal_class_contribution": 0.017136363636363637,
+          "expected_direction_regime_switch_rate": 0.16666666666666666,
+          "expected_direction_regime_switches": 2,
+          "form_level_pairs": 12,
+          "fraction_of_aggregate_effect": 0.23606762680025048,
+          "gene": "CD8B",
+          "n_cells": 3,
+          "per_annotation": [
+            {
+              "annotation": "CD56+ NK",
+              "mean_effect_on_p_cd8": 0.335,
+              "n": 1
+            },
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.024999999999999994,
+              "n": 1
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": 0.017500000000000016,
+              "n": 1
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.12583333333333335,
+          "sign_counts": {
+            "negative": 0,
+            "positive": 3,
+            "zero": 0
+          }
+        }
+      ],
+      "cd8_effect_on_p_cd8": 0.06418181818181817,
+      "cell_sign_counts": {
+        "negative": 4,
+        "positive": 38,
+        "zero": 23
+      },
+      "equal_class_effect_on_p_cd8": 0.0725909090909091,
+      "nk_effect_on_p_cd8": 0.081
+    },
+    "cytotoxic_effector": {
+      "by_annotation": [
+        {
+          "annotation": "CD56+ NK",
+          "mean_effect_on_p_cd8": -0.31975,
+          "n": 10,
+          "sign_counts": {
+            "negative": 8,
+            "positive": 1,
+            "zero": 1
+          }
+        },
+        {
+          "annotation": "CD8+ Cytotoxic T",
+          "mean_effect_on_p_cd8": -0.16885135135135135,
+          "n": 37,
+          "sign_counts": {
+            "negative": 22,
+            "positive": 4,
+            "zero": 11
+          }
+        },
+        {
+          "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+          "mean_effect_on_p_cd8": 0.015138888888888884,
+          "n": 18,
+          "sign_counts": {
+            "negative": 6,
+            "positive": 3,
+            "zero": 9
+          }
+        }
+      ],
+      "by_masked_target": [
+        {
+          "equal_class_contribution": 0.003863636363636363,
+          "expected_direction_regime_switch_rate": 0.0,
+          "expected_direction_regime_switches": 0,
+          "form_level_pairs": 104,
+          "fraction_of_aggregate_effect": -0.0180380922064831,
+          "gene": "CCL5",
+          "n_cells": 26,
+          "per_annotation": [
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.013676470588235293,
+              "n": 17
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": 0.021388888888888888,
+              "n": 9
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.016346153846153844,
+          "sign_counts": {
+            "negative": 5,
+            "positive": 5,
+            "zero": 16
+          }
+        },
+        {
+          "equal_class_contribution": -0.00015909090909090924,
+          "expected_direction_regime_switch_rate": 0.0,
+          "expected_direction_regime_switches": 0,
+          "form_level_pairs": 4,
+          "fraction_of_aggregate_effect": 0.0007427449732081285,
+          "gene": "CTSW",
+          "n_cells": 1,
+          "per_annotation": [
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": -0.017500000000000016,
+              "n": 1
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": -0.017500000000000016,
+          "sign_counts": {
+            "negative": 1,
+            "positive": 0,
+            "zero": 0
+          }
+        },
+        {
+          "equal_class_contribution": -0.18961363636363635,
+          "expected_direction_regime_switch_rate": 0.5208333333333334,
+          "expected_direction_regime_switches": 50,
+          "form_level_pairs": 96,
+          "fraction_of_aggregate_effect": 0.8852459016393442,
+          "gene": "GNLY",
+          "n_cells": 24,
+          "per_annotation": [
+            {
+              "annotation": "CD56+ NK",
+              "mean_effect_on_p_cd8": -0.3864285714285714,
+              "n": 7
+            },
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": -0.397,
+              "n": 15
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": -0.012499999999999997,
+              "n": 2
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": -0.36187499999999995,
+          "sign_counts": {
+            "negative": 22,
+            "positive": 0,
+            "zero": 2
+          }
+        },
+        {
+          "equal_class_contribution": 0.0019090909090909093,
+          "expected_direction_regime_switch_rate": 0.0,
+          "expected_direction_regime_switches": 0,
+          "form_level_pairs": 20,
+          "fraction_of_aggregate_effect": -0.008912939678497534,
+          "gene": "GZMK",
+          "n_cells": 5,
+          "per_annotation": [
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": 0.017500000000000016,
+              "n": 2
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": 0.05833333333333333,
+              "n": 3
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": 0.042,
+          "sign_counts": {
+            "negative": 0,
+            "positive": 2,
+            "zero": 3
+          }
+        },
+        {
+          "equal_class_contribution": -0.030193181818181817,
+          "expected_direction_regime_switch_rate": 0.19444444444444445,
+          "expected_direction_regime_switches": 7,
+          "form_level_pairs": 36,
+          "fraction_of_aggregate_effect": 0.14096238527242824,
+          "gene": "NKG7",
+          "n_cells": 9,
+          "per_annotation": [
+            {
+              "annotation": "CD56+ NK",
+              "mean_effect_on_p_cd8": -0.16416666666666666,
+              "n": 3
+            },
+            {
+              "annotation": "CD8+ Cytotoxic T",
+              "mean_effect_on_p_cd8": -0.18666666666666668,
+              "n": 3
+            },
+            {
+              "annotation": "CD8+/CD45RA+ Naive Cytotoxic",
+              "mean_effect_on_p_cd8": -0.017500000000000016,
+              "n": 3
+            }
+          ],
+          "pooled_mean_effect_on_p_cd8": -0.12277777777777778,
+          "sign_counts": {
+            "negative": 8,
+            "positive": 1,
+            "zero": 0
+          }
+        }
+      ],
+      "cd8_effect_on_p_cd8": -0.10863636363636364,
+      "cell_sign_counts": {
+        "negative": 36,
+        "positive": 8,
+        "zero": 21
+      },
+      "equal_class_effect_on_p_cd8": -0.2141931818181818,
+      "nk_effect_on_p_cd8": -0.31975
+    }
+  },
+  "n_cells": 65,
+  "primary_gate_unchanged": true,
+  "provenance": {
+    "call_plan_sha256": "25d083894f54b17ee0dca72a04b19a30f03e076403dde7f9ae05d05c7c42ae96",
+    "execution_code_sha256": "6168ea801d0f77a1c9216468aa00d0119ca6a09b3bc4f53ae99797bc85d15141",
+    "factorial_csv": "signal/single_cell/pbmc68k_cd8_nk_module_factorial.csv",
+    "factorial_csv_sha256": "fadd90b9aa1249c2691943287962a381329bcba8f91f0b392636ba80ce9f1d9b",
+    "preregistration_sha256": "a7f38447ceaae932b87492b15d667af02c21b006fedb7beb7469d7448b17e605",
+    "raw_checkpoint": "results/benchmark/single_cell/module_factorial/claude-haiku-4-5-20251001_raw.jsonl",
+    "raw_checkpoint_sha256": "2a68e04ead9a55b28f348e7790e06b24cf273b8ddc9ae53c7263f919c9fdb0d7"
+  },
+  "response_quantization": {
+    "fraction_exactly_0.15_or_0.85": 0.7515923566878981,
+    "raw_probability_counts": {
+      "0.05": 5,
+      "0.15": 390,
+      "0.25": 81,
+      "0.72": 1,
+      "0.75": 97,
+      "0.85": 554,
+      "0.92": 128
+    },
+    "unique_raw_probabilities": 7
+  },
+  "unique_model_calls": 1256
+}

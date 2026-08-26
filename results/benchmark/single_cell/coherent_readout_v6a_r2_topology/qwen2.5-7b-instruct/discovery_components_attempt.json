@@ -1,0 +1,82 @@
+{
+  "block_counts": {
+    "discovery-components": 640
+  },
+  "block_order": [
+    "discovery-components"
+  ],
+  "call_plan_sha256": "1a8e9cb5c1c0ea94e43c4b890da39249c85117b733236f83f77611a82766c83c",
+  "execution_revision": "coherent-readout-v6a-r2-natural-token-topology-exec-v1",
+  "execution_stage": "discovery-components",
+  "expected_calls": 640,
+  "forward_contract": {
+    "logits_to_keep": 1,
+    "retained_logits_dtype": "float32_little_endian",
+    "retained_logits_expression": "output.logits[0,-1,:]",
+    "retained_logits_shape": [
+      152064
+    ],
+    "return_dict": true,
+    "teacher_forced_prompt_forward": true,
+    "torch_inference_mode": true,
+    "use_cache": false
+  },
+  "generation_used": false,
+  "global_start_row": 0,
+  "global_stop_row": 640,
+  "model": {
+    "attention_implementation": "sdpa",
+    "device": "mps",
+    "hidden_size": 3584,
+    "model_dtype": "bfloat16",
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "model_loader_source": "sealed_v2_runner._load_model",
+    "model_loader_source_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+    "model_loading_device_map": "mps",
+    "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+    "num_hidden_layers": 28,
+    "snapshot_revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "vocab_size": 152064
+  },
+  "partial_resume_allowed": false,
+  "preflight": {
+    "disk_free_bytes": 31897772032,
+    "execution_stage": "discovery-components",
+    "generation_calls": 0,
+    "global_start_row": 0,
+    "global_stop_row": 640,
+    "model_calls": 0,
+    "model_safetensor_bytes": 15231271888,
+    "mps_allocated_before_bytes": 0,
+    "mps_bfloat16_kernel_pass": true,
+    "mps_recommended_max_memory_bytes": 19069665280,
+    "no_model_forward_performed": true,
+    "no_model_loaded": true,
+    "pass": true,
+    "planned_calls": 640,
+    "required_disk_free_bytes": 1463025664,
+    "required_mps_headroom_bytes": 16754399077,
+    "stage_raw_logits_expected_bytes": 389283840,
+    "stored_logits_dtype": "float32_little_endian",
+    "total_raw_logits_expected_bytes": 1401421824
+  },
+  "registration_state": "FROZEN_BEFORE_ANY_R2_MODEL_FORWARD",
+  "schema_version": "coherent-readout-v6a-r2-topology-attempt-v1",
+  "scientific_registry_sha256": "21ddd5bf0e7ab3dde05c4bfab4fa5811053ef11b4d77ab7625e5457d7944f98e",
+  "source_locks": {
+    "analyzer_file_sha256": "d07550ed0df7c691d63ac71fe26fc691fe5564c9626bbed16204f02400cba10a",
+    "dependency_lock_file_sha256": "88e270e4269c91db06f106d80d254f06a4d6d4cdb4682041a3526b02f782649e",
+    "design_document_file_sha256": "ec15caf9c263b8399bc4734c764e2443bf484c0e6829ff163fd8d5d871e5d8d8",
+    "design_file_sha256": "7a928911fde631a7e7f1b42cc9654c2fd09bce401dd873a91ed692e7ece31bfe",
+    "fixture_file_sha256": "7e4782c20b39972779df76e1a443f4026d55f8903f2ad1fe89614d907baf7a4e",
+    "fixture_manifest_file_sha256": "ca703fc116b5ac20754c057f9d771779b5d18834562996dc2cb6763d0d9cf4f9",
+    "plan_manifest_file_sha256": "a4bfa6561c4d387d6ea28cd9e2e29fd35550e8a04d5ee8ee4105edeae15907e9",
+    "runner_file_sha256": "b6fc22ba105835d189624a8ad34189bb635a1c3bce82181423c26d502cef4449",
+    "sealed_v2_runner_file_sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867",
+    "tokenization_receipt_file_sha256": "b53a87141eeaeafc56e39821ea6a38a0e9ff68780a7cae9e0b9865c312ccc175"
+  },
+  "stage_plan_sha256": "c584d1def8256ee5f2132885f7400ab36b2283e0b5c25620ff564fc80989f5b8",
+  "stage_start_row": 0,
+  "stage_stop_row": 640,
+  "status": "V6A_R2_DISCOVERY_COMPONENTS_EXECUTION_ATTEMPT_STARTED_IMMUTABLE"
+}

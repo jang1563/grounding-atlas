@@ -19,7 +19,7 @@ jobs:
           python-version: "3.11"
 
       - name: Install tooling
-        run: pip install ruff==0.15.4 cffconvert
+        run: pip install -e ".[dev]" cffconvert
 
       - name: Lint (ruff)
         run: ruff check .
@@ -42,3 +42,6 @@ jobs:
               print(f"INVALID {f}: {e}")
           sys.exit(1 if bad else 0)
           PY
+
+      - name: Benchmark contract tests
+        run: python -m pytest -q

@@ -1,0 +1,301 @@
+{
+  "analysis_id": "pbmc68k-cd8-nk-module-factorial-v1",
+  "artifacts": {
+    "builder_sha256": "fdde7ccc4cbecbfe283a00a82f57dcca3b29b00a87d1d1bf6a980b49021beff3",
+    "csv_path": "signal/single_cell/pbmc68k_cd8_nk_module_factorial.csv",
+    "csv_sha256": "fadd90b9aa1249c2691943287962a381329bcba8f91f0b392636ba80ce9f1d9b"
+  },
+  "claim_scope": "single_model_single_external_cohort_label_blind_text_input_module_ablation_not_hidden_state_or_biological_causality",
+  "construction": {
+    "all_target_cells": 128,
+    "candidate_module_support": {
+      "NK_receptor_identity": {
+        "CD56+ NK:all": 31,
+        "CD56+ NK:ge1": 4,
+        "CD56+ NK:ge2": 0,
+        "CD56+ NK:ge3": 0,
+        "CD8+ Cytotoxic T:all": 54,
+        "CD8+ Cytotoxic T:ge1": 6,
+        "CD8+ Cytotoxic T:ge2": 0,
+        "CD8+ Cytotoxic T:ge3": 0,
+        "CD8+/CD45RA+ Naive Cytotoxic:all": 43,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge1": 0,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge2": 0,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge3": 0,
+        "all_cells": 128
+      },
+      "T_TCR_CD8": {
+        "CD56+ NK:all": 31,
+        "CD56+ NK:ge1": 10,
+        "CD56+ NK:ge2": 2,
+        "CD56+ NK:ge3": 1,
+        "CD8+ Cytotoxic T:all": 54,
+        "CD8+ Cytotoxic T:ge1": 39,
+        "CD8+ Cytotoxic T:ge2": 26,
+        "CD8+ Cytotoxic T:ge3": 7,
+        "CD8+/CD45RA+ Naive Cytotoxic:all": 43,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge1": 41,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge2": 25,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge3": 9,
+        "all_cells": 128
+      },
+      "cytotoxic_effector": {
+        "CD56+ NK:all": 31,
+        "CD56+ NK:ge1": 31,
+        "CD56+ NK:ge2": 31,
+        "CD56+ NK:ge3": 31,
+        "CD8+ Cytotoxic T:all": 54,
+        "CD8+ Cytotoxic T:ge1": 51,
+        "CD8+ Cytotoxic T:ge2": 50,
+        "CD8+ Cytotoxic T:ge3": 43,
+        "CD8+/CD45RA+ Naive Cytotoxic:all": 43,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge1": 19,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge2": 13,
+        "CD8+/CD45RA+ Naive Cytotoxic:ge3": 7,
+        "all_cells": 128
+      }
+    },
+    "common_gene_universe_sha256": "bde551f53a514c4ef5a9e840814f4a7dbc15e24d471369e587d38de9a18dc3e5",
+    "common_non_housekeeping_gene_count": 750,
+    "common_support_cells": 65,
+    "common_support_class_counts": {
+      "CD8": 55,
+      "NK": 10
+    },
+    "control_matching": {
+      "independently_matched_controls_may_coincide": true,
+      "matched_gene_pairs": 130,
+      "max_expression_distance": 1.4429998397827148,
+      "max_prevalence_distance": 0.515625,
+      "max_rank_distance": 9.0,
+      "median_expression_distance": 0.17200005054473877,
+      "median_prevalence_distance": 0.1484375,
+      "median_rank_distance": 3.0,
+      "method": "within-cell linear-sum assignment on rank, expression, global top-50 prevalence, and token length; all frozen parent markers and source-PBMC3k class-associated genes excluded",
+      "source_neutral_control_gene_count": 664,
+      "source_neutrality_rule": "absolute CD8-vs-NK top-50 prevalence gap in PBMC3k <= 0.10",
+      "source_prevalence_gap_sha256": "102a20c794ba6dedf57c8dd82f592b59534f8c0bce8e472188f146a5d665be71"
+    },
+    "dose_policy": {
+      "NK_receptor_identity": "not executed because the reduced feature panel censors the canonical module",
+      "higher_dose": "not executed because common support falls to 36 cells at k=2 and 9 cells at k=3, including only 2 and 1 NK cells",
+      "primary": "k=1 highest-ranked hit from each executed module on the two-module common-support population"
+    },
+    "expected_unique_api_calls": 1256,
+    "intervention_rows": 130,
+    "logical_condition_form_observations": 1300,
+    "mask_token": "MASKED_GENE",
+    "module_dose_annotation_counts": [
+      {
+        "dose_k": 1,
+        "module": "T_TCR_CD8",
+        "n": 10,
+        "reference_annotation": "CD56+ NK"
+      },
+      {
+        "dose_k": 1,
+        "module": "T_TCR_CD8",
+        "n": 37,
+        "reference_annotation": "CD8+ Cytotoxic T"
+      },
+      {
+        "dose_k": 1,
+        "module": "T_TCR_CD8",
+        "n": 18,
+        "reference_annotation": "CD8+/CD45RA+ Naive Cytotoxic"
+      },
+      {
+        "dose_k": 1,
+        "module": "cytotoxic_effector",
+        "n": 10,
+        "reference_annotation": "CD56+ NK"
+      },
+      {
+        "dose_k": 1,
+        "module": "cytotoxic_effector",
+        "n": 37,
+        "reference_annotation": "CD8+ Cytotoxic T"
+      },
+      {
+        "dose_k": 1,
+        "module": "cytotoxic_effector",
+        "n": 18,
+        "reference_annotation": "CD8+/CD45RA+ Naive Cytotoxic"
+      }
+    ],
+    "module_gene_top50_frequencies": {
+      "NK_receptor_identity": [
+        {
+          "cells": 10,
+          "gene": "FCGR3A"
+        }
+      ],
+      "T_TCR_CD8": [
+        {
+          "cells": 74,
+          "gene": "CD3D"
+        },
+        {
+          "cells": 50,
+          "gene": "CD3E"
+        },
+        {
+          "cells": 17,
+          "gene": "CD8B"
+        },
+        {
+          "cells": 14,
+          "gene": "CD3G"
+        },
+        {
+          "cells": 6,
+          "gene": "CD8A"
+        }
+      ],
+      "cytotoxic_effector": [
+        {
+          "cells": 84,
+          "gene": "NKG7"
+        },
+        {
+          "cells": 72,
+          "gene": "CCL5"
+        },
+        {
+          "cells": 72,
+          "gene": "GNLY"
+        },
+        {
+          "cells": 56,
+          "gene": "CTSW"
+        },
+        {
+          "cells": 55,
+          "gene": "GZMA"
+        },
+        {
+          "cells": 42,
+          "gene": "GZMB"
+        },
+        {
+          "cells": 39,
+          "gene": "GZMH"
+        },
+        {
+          "cells": 26,
+          "gene": "GZMK"
+        },
+        {
+          "cells": 23,
+          "gene": "FGFBP2"
+        },
+        {
+          "cells": 21,
+          "gene": "PRF1"
+        },
+        {
+          "cells": 3,
+          "gene": "XCL2"
+        }
+      ]
+    },
+    "shared_neutral_control_cells": 11,
+    "top_k": 50
+  },
+  "freeze_date": "2026-07-27",
+  "module_provenance": {
+    "NK_receptor_identity_deferred": [
+      "FCGR3A",
+      "KLRC1",
+      "KLRC2",
+      "KLRD1",
+      "KLRF1",
+      "NCAM1",
+      "NCR1"
+    ],
+    "T_TCR_CD8": [
+      "CD3D",
+      "CD3E",
+      "CD3G",
+      "CD8A",
+      "CD8B"
+    ],
+    "ambiguous_excluded": [
+      "CD247",
+      "CST7",
+      "IL7R",
+      "KLRB1",
+      "SPON2",
+      "TYROBP"
+    ],
+    "cytotoxic_effector": [
+      "CCL5",
+      "CTSW",
+      "FGFBP2",
+      "GNLY",
+      "GZMA",
+      "GZMB",
+      "GZMH",
+      "GZMK",
+      "NKG7",
+      "PRF1",
+      "XCL1",
+      "XCL2"
+    ],
+    "deferred_modules": [
+      "NK_receptor_identity"
+    ],
+    "deferred_reason": "PBMC68k-reduced has no k>=2 support for the canonical NK-receptor module and only FCGR3A contributes at k=1",
+    "executed_modules": [
+      "T_TCR_CD8",
+      "cytotoxic_effector"
+    ],
+    "operational_boundary": "fixed marker categories for a token-ablation experiment; not purified pathways or claims of gene-specific biological causality",
+    "parent_file": "signal/single_cell/build_cd8t_nk.py",
+    "parent_git_commit": "20f94201c60878b83dbae182b8447248666ede29",
+    "parent_set": [
+      "CCL5",
+      "CD247",
+      "CD3D",
+      "CD3E",
+      "CD3G",
+      "CD8A",
+      "CD8B",
+      "CST7",
+      "CTSW",
+      "FCGR3A",
+      "FGFBP2",
+      "GNLY",
+      "GZMA",
+      "GZMB",
+      "GZMH",
+      "GZMK",
+      "IL7R",
+      "KLRB1",
+      "KLRC1",
+      "KLRC2",
+      "KLRD1",
+      "KLRF1",
+      "NCAM1",
+      "NCR1",
+      "NKG7",
+      "PRF1",
+      "SPON2",
+      "TYROBP",
+      "XCL1",
+      "XCL2"
+    ]
+  },
+  "source_pbmc3k": {
+    "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/data/pbmc3k_processed.h5ad",
+    "role": "frozen gene universe, parent marker set, and neutral-control filter",
+    "sha256": "0db367b991dd95809732b218539ede489bea99113807f62ebd7ccc970025fe38"
+  },
+  "target_pbmc68k": {
+    "cohort": "10x Fresh 68k PBMC Donor A; reduced annotated Scanpy artifact",
+    "path": "<HOME>/miniconda3-arm64/lib/python3.13/site-packages/scanpy/datasets/10x_pbmc68k_reduced.h5ad",
+    "primary_source_doi": "10.1038/ncomms14049",
+    "scanpy_documentation": "https://scanpy.readthedocs.io/en/stable/generated/scanpy.datasets.pbmc68k_reduced.html",
+    "sha256": "863e19914ab2d4ba97edc9623ac3a343c0461f1e40b121bfb5fa92638b22e9bd"
+  }
+}

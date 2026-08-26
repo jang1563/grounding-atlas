@@ -1,0 +1,163 @@
+{
+  "canonical_sha256": "714b9fe33145105b6006a584a179c5aa49f112e73ebe7dcae40bba953f7ea6ac",
+  "implementation_files": {
+    "analyzer": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/analyze_coherent_readout_v6a_component_qualification_v2.py",
+      "sha256": "cc0b8c50719a510aca1a3cfb9f6d125748770813c031f0288cd0ace3a2e72150"
+    },
+    "analyzer_test": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_analyze_coherent_readout_v6a_component_qualification_v2.py",
+      "sha256": "96ef463972203d79e02a3e408928558a1d83ce782f2a231e146273b2b6f2270c"
+    },
+    "builder": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/build_coherent_readout_v6a_component_qualification_bank.py",
+      "sha256": "0b025da227a39850f3f7339cc2d33e0c0bee2a4c2594f084c9c448546b66f592"
+    },
+    "builder_test": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_build_coherent_readout_v6a_component_qualification_bank.py",
+      "sha256": "13b8f1e960a632560a7b5a5012c68bbbc414d26a26affe9e9479bbfc2d97cd19"
+    },
+    "fixture": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/coherent_readout_v6a_component_qualification_bank.json",
+      "sha256": "084ba96dc785f26ca99387ea758bb542ce974e8bd86fa97ff4b6abc6b7a13cd6"
+    },
+    "fixture_manifest": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/signal/syntax/coherent_readout_v6a_component_qualification_bank.manifest.json",
+      "sha256": "bec8d61a1b0c845198daf2e8677e5c50421435de88273a1dd6acb0dfa25594da"
+    },
+    "preregistration": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/docs/COHERENT_READOUT_V6A_COMPONENT_QUALIFICATION_V2_PREREG.md",
+      "sha256": "97612c04008f97b948e4f8c6c0b37dc241e986e44ece0d41162ff8c3dccc20e0"
+    },
+    "runner": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/eval/run_coherent_readout_v6a_component_qualification_v2.py",
+      "sha256": "cbff3d552ca8517c00e2dfbe6be1c63bbb0b7278e493de9f18edfc14cd511867"
+    },
+    "runner_test": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/tests/test_run_coherent_readout_v6a_component_qualification_v2.py",
+      "sha256": "75ea25bef763e5f73e1183e633b385b8dd7e6552ad2809e81a2bc6763fd2b59d"
+    },
+    "transformers_modeling_utils": {
+      "path": "<HOME>/miniconda3-arm64/lib/python3.13/site-packages/transformers/modeling_utils.py",
+      "sha256": "2f45c2139ce633e6e3eae9290675dd5815643b37c27f2cc4dd83586fb648f7bb"
+    },
+    "v1_analysis": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/qualification_analysis.json",
+      "sha256": "34f1a622862b54c66e99882b014706ba117390153b358361953ab6293c60bec8"
+    },
+    "v1_attempt": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/qualification_baseline_attempt.json",
+      "sha256": "fb13237f77995932b3fb9fced04ddc1395d123a7e56f3592b1bd0657e911af3b"
+    },
+    "v1_dependency_lock": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/dependency_lock.json",
+      "sha256": "e7efebc16a4b14522e2a305d82150425c17e74f99b68fb7186264b466096b391"
+    },
+    "v1_design": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/design.json",
+      "sha256": "7a252615bd7d8927fffd0b6b20a98a61d4e4430442da235e9027bf1b71648e7c"
+    },
+    "v1_plan_manifest": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/plan_manifest.json",
+      "sha256": "0be35c0d6635924658985b5ea47b6f02b09c4245e10ba00bd28735e00eedaaf9"
+    },
+    "v1_preregistration": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/docs/COHERENT_READOUT_V6A_COMPONENT_QUALIFICATION_PREREG.md",
+      "sha256": "f97fff418a4403b4f273d1302644b47e5731f206958476c38dc526d47a6635d5"
+    },
+    "v1_tokenization_receipt": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/results/benchmark/single_cell/coherent_readout_v6a_component_qualification/qwen2.5-7b-instruct/tokenization_receipt.json",
+      "sha256": "d3e95323377e67ddcfab9ffa713c78ba4e8db28de2c2c16c909ab35df0fc3162"
+    },
+    "v6a_topology_design": {
+      "path": "<HOME>/Dropbox/Bioinformatics/Claude/Bio_Grounding_Eval/docs/COHERENT_READOUT_V6A_TOPOLOGY_IDENTIFICATION_DESIGN.md",
+      "sha256": "c569835c7e7f3031ce8a65c72c645919bdedc724191b38feabe67b575fa21a79"
+    }
+  },
+  "machine": "arm64",
+  "model": {
+    "assets": {
+      "config.json": {
+        "sha256": "7463bb0ea78315365e6c6b74de4e73bbcc8359dfb0c5a737584e077d42c0b03c",
+        "size_bytes": 663
+      },
+      "generation_config.json": {
+        "sha256": "3a8f9087e486054c8a4a08dae2e5a3ba62e23da212b5b8c08bc42cb983c3459f",
+        "size_bytes": 243
+      },
+      "merges.txt": {
+        "sha256": "599bab54075088774b1733fde865d5bd747cbcc7a547c5bc12610e874e26f5e3",
+        "size_bytes": 1671839
+      },
+      "model-00001-of-00004.safetensors": {
+        "sha256": "a1333e6293854747c481288ea83b348226af178dd565c49b6f9495ba1966aba7",
+        "size_bytes": 3945441440
+      },
+      "model-00002-of-00004.safetensors": {
+        "sha256": "f5d25a2772cb825164a2a2c0fb6d51a87e282abf21e4dd75bc5cfb3cd0ea6185",
+        "size_bytes": 3864726352
+      },
+      "model-00003-of-00004.safetensors": {
+        "sha256": "8efdec4c1bc12317ae1a38dc42b595ce777738a64deea3fcb8a0a91381bcdfd5",
+        "size_bytes": 3864726424
+      },
+      "model-00004-of-00004.safetensors": {
+        "sha256": "1a72d403cdf0c1ec3cb7f289f17b394a01e64394c2e9b3c0f94dbce3faf879bd",
+        "size_bytes": 3556377672
+      },
+      "model.safetensors.index.json": {
+        "sha256": "624bf7c47cd12468fdc16e38a47cf4f19e0415b859a223ba3c027eed2f0e1028",
+        "size_bytes": 27752
+      },
+      "tokenizer.json": {
+        "sha256": "c0382117ea329cdf097041132f6d735924b697924d6f6fc3945713e96ce87539",
+        "size_bytes": 7031645
+      },
+      "tokenizer_config.json": {
+        "sha256": "5b5d4f65d0acd3b2d56a35b56d374a36cbc1c8fa5cf3b3febbbfabf22f359583",
+        "size_bytes": 7305
+      },
+      "vocab.json": {
+        "sha256": "ca10d7e9fb3ed18575dd1e277a2579c16d108e32f27439684afa0e10b1440910",
+        "size_bytes": 2776833
+      }
+    },
+    "config": {
+      "architectures": [
+        "Qwen2ForCausalLM"
+      ],
+      "hidden_size": 3584,
+      "num_hidden_layers": 28,
+      "torch_dtype": "bfloat16",
+      "vocab_size": 152064
+    },
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "snapshot_path": "<HOME>/.cache/huggingface/hub/models--Qwen--Qwen2.5-7B-Instruct/snapshots/a09a35458c702b33eeacc393d103063234e8bc28",
+    "snapshot_revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "packages": {
+    "accelerate": "1.12.0",
+    "huggingface-hub": "1.4.1",
+    "numpy": "2.3.5",
+    "safetensors": "0.7.0",
+    "tokenizers": "0.22.2",
+    "torch": "2.10.0",
+    "transformers": "5.2.0"
+  },
+  "platform": "macOS-26.2-arm64-arm-64bit-Mach-O",
+  "python": "3.13.11",
+  "runtime": {
+    "attention_implementation": "sdpa",
+    "default_dtype": "torch.float32",
+    "device": "mps",
+    "float32_matmul_precision": "highest",
+    "model_dtype": "bfloat16",
+    "model_loading_device_map": "mps",
+    "mps_allocator_warmup_policy": "skip_transformers_warmup_only_for_all_mps_map_v2",
+    "mps_is_available": true,
+    "mps_is_built": true,
+    "stored_logits_dtype": "float32",
+    "transformers_version": "5.2.0"
+  },
+  "schema_version": "coherent-readout-v6a-qualification-dependencies-v2"
+}
